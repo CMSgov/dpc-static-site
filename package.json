@@ -1,0 +1,26 @@
+{
+  "name": "docker-jekyll-shell",
+  "version": "1.0.0",
+  "description": "A static Jekyll site for the BCDA splash page: [https://bcda.cms.gov](https://bcda.cms.gov/)",
+  "main": "index.js",
+  "dependencies": {
+    "@cmsgov/design-system-core": "^3.7.0",
+    "@cmsgov/design-system-layout": "^3.7.0",
+    "normalize.css": "^8.0.1",
+    "svg4everybody": "^2.1.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sun-Mountain/docker-jekyll-shell.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sun-Mountain/docker-jekyll-shell/issues"
+  },
+  "homepage": "https://github.com/Sun-Mountain/docker-jekyll-shell#readme"
+}

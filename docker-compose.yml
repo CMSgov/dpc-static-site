@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  static_site:
+    build:
+      context: .
+      dockerfile: Dockerfiles/Dockerfile.static_site
+    volumes:
+      - .:/dpc-site-static

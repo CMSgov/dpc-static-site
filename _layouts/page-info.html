@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+{% include _banner-title.html %}
+
+<section class="ds-l-container ds-base ds-u-margin-bottom--7">
+  <div class="ds-l-row">
+    {% if page.sections %}
+      <div class="ds-l-col--4 ds-u-margin-left--right ds-u-display--none ds-u-sm-display--block" role="complementary">
+        <ul class="ds-c-list ds-c-list--bare sidenav" >
+          {% for item in page.sections %}
+            <li class="sidenav__item"><a href="#{{ item | slugify }}" aria-label="{{ item }} section, current page" class="ds-u-display--block sidenav__link" aria-label="{{ item }} section, current page">{{ item }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <article class="ds-l-col--12 ds-l-sm-col--7 {{ page.badge | slugify }}" id="main" role="main">
+    {% endif %}
+
+      {{ content }}
+
+    {% if page.sections %}
+      </article>
+    {% endif %}
+
+  </div>
+</section>
