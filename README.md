@@ -34,7 +34,7 @@ docker-compose -f docker-compose.yml run --rm static_site
 This process uses a Docker container to execute `bundle exec jekyll build`, compiling site files into the same `_site` directory used when executing this command on the Docker host. The advantage here is that there's no need to install ruby or any dependencies on the machine building the static site—Docker takes care of all that.
 
 ### Using Docker for serving
-To host the site in Docker, accessible at `http://localhost:4000/`:
+To host the site in Docker, accessible at `http://localhost:4001/`:
 
 ```
 docker-compose run --publish 4001:4000 --rm --entrypoint "bundle exec jekyll serve -H 0.0.0.0" static_site
