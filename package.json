@@ -1,5 +1,5 @@
 {
-  "name": "docker-jekyll-shell",
+  "name": "dpc-static-site",
   "version": "1.0.0",
   "description": "A static Jekyll site for the DPC splash page: [https://dpc.cms.gov](https://dpc.cms.gov/)",
   "main": "index.js",
