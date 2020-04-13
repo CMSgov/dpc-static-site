@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sun-Mountain/docker-jekyll-shell.git"
+    "url": "git+https://github.com/CMSgov/dpc-static-site.git"
   },
   "author": "",
   "license": "ISC",
