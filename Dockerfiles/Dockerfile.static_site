@@ -1,0 +1,6 @@
+FROM jekyll/builder
+
+WORKDIR /dpc-site-static
+COPY . .
+RUN ["bundle", "install"]
+ENTRYPOINT ["bundle", "exec", "jekyll", "build"]

@@ -1,0 +1,9 @@
+// Remote/CMS 
+@import 'normalize.css/normalize';
+@import '@cmsgov/design-system-core/src/index.scss';
+@import '../node_modules/@cmsgov/design-system-layout/src/index';
+
+// Local
+@import './settings/0_settings_dir';
+@import './base/0_base_dir';
+@import './components/0_components_dir';

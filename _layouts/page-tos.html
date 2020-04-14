@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="header-separator"></div>
+
+<div id="main">
+  <section class="ds-l-container ds-u-padding-top--7 ds-u-padding-bottom--7">
+
+    <h1 class="ds-u-font-size--title ds-u-font-weight--normal ds-u-margin--0">
+      {{ page.title }}
+    </h1>
+
+    {% if page.id == "tos" %}
+      <div class="box">
+        <div class="box__content">
+          <div class="ds-u-measure--wide">
+    {% endif %}
+          {{ content }}
+    {% if page.id == tos %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </section>
+</div>

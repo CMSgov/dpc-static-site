@@ -1,0 +1,24 @@
+.page__banner {
+  background-color: $color-gray-dark;
+  padding: 10px;
+
+  h1 {
+    color: $color-white;
+    margin: 0;
+    padding: 40px 120px;
+  }
+}
+
+.page__nav {
+  color: $color-white;
+  list-style: none;
+  margin: 0;
+  padding: 0 110px;
+
+  .page__nav-item {
+    display: inline;
+    font-size: 20px;
+    font-weight: 700;
+    padding-right: 25px;
+  }
+}

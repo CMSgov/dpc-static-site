@@ -1,0 +1,26 @@
+{
+  "name": "dpc-static-site",
+  "version": "1.0.0",
+  "description": "A static Jekyll site for the DPC splash page: [https://dpc.cms.gov](https://dpc.cms.gov/)",
+  "main": "index.js",
+  "dependencies": {
+    "@cmsgov/design-system-core": "^3.7.0",
+    "@cmsgov/design-system-layout": "^3.7.0",
+    "normalize.css": "^8.0.1",
+    "svg4everybody": "^2.1.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CMSgov/dpc-static-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CMSgov/dpc-static-site/issues"
+  },
+  "homepage": "https://github.com/CMSgov/dpc-static-site#readme"
+}
