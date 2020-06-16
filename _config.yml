@@ -34,8 +34,8 @@ global_nav:
     id: home
   - title: Documentation
     id: docs
-  - title: Support
-    id: support
+  - title: Frequently Asked Questions
+    id: faq
 
 footer_nav:
   - title: Documentation
