@@ -18,12 +18,12 @@
 		},
 		{
 			"key": "organization_id",
-			"value": "",
+			"value": "TEST",
 			"enabled": false
 		},
 		{
 			"key": "attribution_group",
-			"value": "",
+			"value": "TEST",
 			"enabled": false
 		}
 	],
