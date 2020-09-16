@@ -3,7 +3,6 @@ GEM
   specs:
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    childprocess (4.0.0)
     colorator (1.1.0)
     concurrent-ruby (1.1.6)
     em-websocket (0.5.1)
@@ -15,7 +14,6 @@ GEM
     http_parser.rb (0.6.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
-    iniparse (1.5.0)
     jekyll (4.0.0)
       addressable (~> 2.4)
       colorator (~> 1.0)
@@ -52,9 +50,6 @@ GEM
       jekyll (>= 3.5, < 5.0)
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
-    overcommit (0.55.0)
-      childprocess (>= 0.6.3, < 5)
-      iniparse (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.3)
@@ -83,7 +78,6 @@ DEPENDENCIES
   jekyll-feed (~> 0.12)
   json
   minima (~> 2.5)
-  overcommit
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)
