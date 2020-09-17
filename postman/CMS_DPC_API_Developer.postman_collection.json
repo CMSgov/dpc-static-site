@@ -9,7 +9,7 @@
 			"name": "Security: Authentication",
 			"item": [
 				{
-					"name": "Client Tokens",
+					"name": "Client Tokens2",
 					"item": [
 						{
 							"name": "Fetch Registered Client Tokens (MACAROONS)",
