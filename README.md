@@ -19,6 +19,7 @@ Navigate to the repository and install the appropriate Gem file and `package.jso
 1. `gem install bundler` <— install Gem bundler
 2. `bundle install` <— install Gem bundles
 3. `npm install` <— install `package.json` dependencies
+4. `make install-git-hooks` <— install git-hook(s)
 
 ## Local builds
 Jekyll builds the CSS and HTML pages. Run `bundle exec jekyll serve` from the project root for a local build. By default, the site will run in `http://localhost:4000/`. You can also run `bundle exec jekyll build` to compile the site files into the `_site` directory.
