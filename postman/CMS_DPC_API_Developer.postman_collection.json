@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "12b6c023-695f-435f-9754-0bc7ad9b3546",
+		"_postman_id": "51fc1411-b567-4e8e-9d79-f4a1339e6a87",
 		"name": "Centers for Medicare Services  (CMS) - Data at the Point of Care (DPC) API - App Developer",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -27,8 +27,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Token",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Token",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -61,8 +60,7 @@
 									"urlencoded": []
 								},
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Token?label=Test token&expiration=2021-01-31T00:00:00.000Z",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Token?label=Test token&expiration=2021-01-31T00:00:00.000Z",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -108,8 +106,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Key",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Key",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -159,8 +156,7 @@
 									"raw": "-----BEGIN PUBLIC KEY-----\nINSERT PUBLIC KEY\n\n-----END PUBLIC KEY-----"
 								},
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Key?label=Test Public Key",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Key?label=Test Public Key",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -195,8 +191,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Key/{{key_id}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Key/{{key_id}}",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -220,7 +215,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "3e777b23-077d-4736-8b24-dd4d39723b8e",
+								"id": "f0effd73-9030-4781-9613-f80151c0d635",
 								"exec": [
 									"",
 									"var navigator = {}; //fake a navigator object for the lib",
@@ -264,7 +259,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ad28cd25-b0c2-42b1-8b6a-0c64250b3b92",
+								"id": "57d9d815-7567-41ad-b73d-fec97868161d",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
 									"postman.setEnvironmentVariable(\"access_token\", data.access_token);",
@@ -319,8 +314,7 @@
 							]
 						},
 						"url": {
-							"raw": "https://{{baseUrl}}/api/v1/Token/auth",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/api/v1/Token/auth",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -360,8 +354,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://{{baseUrl}}/api/v1/Token/validate",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/api/v1/Token/validate",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -381,7 +374,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "798e339c-0b71-48e1-a007-06d0a9a80da4",
+						"id": "23825b59-8459-4865-a729-71d0d20e07a5",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -391,7 +384,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "0b2bef8d-b6d9-4f1b-bd2f-fd07a92685e6",
+						"id": "419af908-0417-4d7c-9ea3-68f7d98d0135",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -413,7 +406,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "a7d1a11f-1ee9-4373-92f1-e768dbb8191c",
+										"id": "f1961a76-4fb0-4f9f-a392-7b806d8d7436",
 										"exec": [
 											""
 										],
@@ -441,8 +434,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Organization/{{organization-id}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Organization/{{organization-id}}",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -479,8 +471,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Practitioner",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Practitioner",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -499,7 +490,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "427361a9-2060-42cb-abe0-e4ab8a5737a0",
+										"id": "20a959d6-fcd8-4fe6-bedc-012e1576236f",
 										"exec": [
 											"var data = JSON.parse(responseBody);",
 											"postman.setEnvironmentVariable(\"practitioner-id\", data.entry[0].resource.id);"
@@ -522,8 +513,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Practitioner?identifier={{provider_npi}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Practitioner?identifier={{provider_npi}}",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -548,7 +538,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "e9588a74-cb9d-48ad-aa19-7f439ac1a418",
+										"id": "245f9e65-8ca9-4fc1-9049-cecbf6463d09",
 										"exec": [
 											"var data = JSON.parse(responseBody);",
 											"//postman.setEnvironmentVariable(\"practitioner-id\", data.entry.resource.id);"
@@ -571,8 +561,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Practitioner/{{practitioner-id}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Practitioner/{{practitioner-id}}",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -592,7 +581,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "153162eb-6538-4859-b95c-7f882b718352",
+										"id": "cad52127-a0d6-42fa-9454-03bcd9c92e29",
 										"exec": [
 											"// Status should be 200",
 											"pm.test(\"Status is 200\", function () {",
@@ -650,8 +639,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Practitioner/$submit",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Practitioner/$submit",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -672,7 +660,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "a2fb4cc8-1642-4d1c-a88e-5f07f944795b",
+										"id": "d1aa92a7-5bc4-4c52-8a3f-dd5c9000363c",
 										"exec": [
 											"// Status should be 200",
 											"pm.test(\"Status is 200\", function () {",
@@ -730,8 +718,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Practitioner/$submit",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Practitioner/$submit",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -752,7 +739,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "00421188-22a9-4ad4-b81c-4e516f72e9a3",
+										"id": "37401ab7-5bac-45aa-b0fa-d601604ab65c",
 										"exec": [
 											"// Status should be 200",
 											"pm.test(\"Status is 200\", function () {",
@@ -777,8 +764,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Practitioner/{{practitioner-id}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Practitioner/{{practitioner-id}}",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -805,7 +791,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "6411091b-3a97-490d-89db-0a0279a2636d",
+										"id": "7e636168-ae3e-4bf7-bc3e-c6e4d5fd8714",
 										"exec": [
 											"// Status should be 200",
 											"pm.test(\"Status is 200\", function () {",
@@ -851,8 +837,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Patient?identifier={{patient_mbi}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Patient?identifier={{patient_mbi}}",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -878,7 +863,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "f21331e5-e452-46d4-947d-bb7a1c2226db",
+										"id": "63fefb0a-5a73-4d0e-b8b0-0bfa213f9fa3",
 										"exec": [
 											"// Status should be 200",
 											"pm.test(\"Status is 200\", function () {",
@@ -921,8 +906,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Patient/{{patient-id}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Patient/{{patient-id}}",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -953,8 +937,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Patient",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Patient",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -973,7 +956,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "eccdca74-3be3-4fa4-a616-81957c74bd24",
+										"id": "50b6fdb3-8632-4d35-9ee4-e90630a8c193",
 										"exec": [
 											"// Status should be 200",
 											"pm.test(\"Status is 200\", function () {",
@@ -1033,8 +1016,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Patient/$submit",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Patient/$submit",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1055,7 +1037,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "ff183d14-a601-493b-aa1c-6fb1d1976744",
+										"id": "8d4f79ab-687b-405f-bfa4-b917ad3f0132",
 										"exec": [
 											"// Status should be 200",
 											"pm.test(\"Status is 200\", function () {",
@@ -1109,8 +1091,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Patient/$submit",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Patient/$submit",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1141,8 +1122,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Patient/{{patient-id}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Patient/{{patient-id}}",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1170,7 +1150,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "20fa8a14-26ec-4931-99cd-0b5a64ab561d",
+										"id": "22803508-52d6-4581-af64-a9036155c536",
 										"exec": [
 											"// Status should be 200",
 											"pm.test(\"Status is 200\", function () {",
@@ -1212,8 +1192,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Group?characteristic-value=attributed-to${{provider_npi}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Group?characteristic-value=attributed-to${{provider_npi}}",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1239,7 +1218,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "bc178d90-b584-4d50-8a8b-cbcda413caa7",
+										"id": "62b4abdf-7e9c-4874-8b4b-5ba0510f121c",
 										"exec": [
 											"// Status should be 200",
 											"pm.test(\"Status is 200\", function () {",
@@ -1281,8 +1260,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Group/{{group-id}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Group/{{group-id}}",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1303,7 +1281,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "9b62462d-460b-4bd3-8f2e-25cdbf1c1862",
+										"id": "b0da30a0-fb37-47e4-abca-4d153f7b2932",
 										"exec": [
 											"// Status should be 200",
 											"pm.test(\"Status is 200\", function () {",
@@ -1345,8 +1323,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Group",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Group",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1366,7 +1343,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "206b52b5-9c3f-4dab-a5e6-cc6779a51b73",
+										"id": "0f348c47-6534-4dd6-875e-f9694c3d9165",
 										"exec": [
 											"var response = pm.response.json();",
 											"pm.environment.set(\"group-id\", response.id)"
@@ -1412,8 +1389,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Group",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Group",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1465,8 +1441,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Group/{{group-id}}/$add",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Group/{{group-id}}/$add",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1487,7 +1462,7 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "df84b7ad-789e-4cca-8b72-f8ee9d6132c7",
+										"id": "c3f25d1b-ed0d-46c6-8286-2267a3abb74f",
 										"exec": [
 											""
 										],
@@ -1497,7 +1472,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "1476bcbd-7d79-4acc-a18d-e4f5d5296934",
+										"id": "0fade6c3-e69b-4392-b840-dc39edc80c52",
 										"exec": [
 											"// Status should be 200",
 											"pm.test(\"Status is 200\", function () {",
@@ -1564,8 +1539,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Group/{{group-id}}/$remove",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Group/{{group-id}}/$remove",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1620,8 +1594,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Group/{{group-id}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Group/{{group-id}}",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1651,8 +1624,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://{{baseUrl}}/api/v1/Group/{{group-id}}",
-									"protocol": "https",
+									"raw": "{{baseUrl}}/api/v1/Group/{{group-id}}",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1683,7 +1655,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6c9a4dec-170c-47b5-b5a9-4dbbced81a87",
+								"id": "9b2087f0-5592-4c0f-a970-9da9bee93112",
 								"exec": [
 									"postman.setEnvironmentVariable(\"job-id\", postman.getResponseHeader(\"Content-Location\").substr(postman.getResponseHeader(\"Content-Location\").indexOf(\"Jobs/\")+5));"
 								],
@@ -1721,8 +1693,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://{{baseUrl}}/api/v1/Group/{{group-id}}/$export?_type=Patient",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/api/v1/Group/{{group-id}}/$export?_type=Patient",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -1749,7 +1720,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "82bd2a3d-c22f-42b5-8694-571ec84928bd",
+								"id": "644e8430-0265-4d20-ba06-a862678f3e12",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
 									"postman.setEnvironmentVariable(\"file_name\", data.output[0].url.substr(data.output[0].url.indexOf(\"Data/\")+5, data.output[0].url.indexOf(\".coverage\") - data.output[0].url.indexOf(\"Data/\")-5));"
@@ -1778,8 +1749,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://{{baseUrl}}/api/v1/Jobs/{{job-id}}",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/api/v1/Jobs/{{job-id}}",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -1809,8 +1779,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{baseUrl}}/api/v1/Data/{{file_name}}.patient.ndjson",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/api/v1/Data/{{file_name}}.patient.ndjson",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -1840,8 +1809,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{baseUrl}}/api/v1/Data/{{file_name}}.coverage.ndjson",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/api/v1/Data/{{file_name}}.coverage.ndjson",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -1871,8 +1839,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{baseUrl}}/api/v1/Data/{{file_name}}.explanationofbenefit.ndjson",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/api/v1/Data/{{file_name}}.explanationofbenefit.ndjson",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -1892,7 +1859,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "425037f9-44dc-44f9-a907-24c8b4becbad",
+								"id": "57b98f87-e343-4168-a968-3cd1dc9ca427",
 								"exec": [
 									"postman.setEnvironmentVariable(\"job-id\", postman.getResponseHeader(\"Content-Location\").substr(postman.getResponseHeader(\"Content-Location\").indexOf(\"Jobs/\")+5));"
 								],
@@ -1930,8 +1897,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://{{baseUrl}}/api/v1/Patient/{{patient-id}}/$everything",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/api/v1/Patient/{{patient-id}}/$everything",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -1954,7 +1920,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "1e07895b-1720-467f-aa50-456b817f8bc0",
+				"id": "5169e091-db71-46e3-8e6a-2b739dbf97e0",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1964,7 +1930,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a1e5829b-5227-45a0-842d-c053075b1ed7",
+				"id": "b6797ba7-a60b-4c5b-863c-b219e7828479",
 				"type": "text/javascript",
 				"exec": [
 					""
