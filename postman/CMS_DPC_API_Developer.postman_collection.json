@@ -541,7 +541,7 @@
 										"id": "245f9e65-8ca9-4fc1-9049-cecbf6463d09",
 										"exec": [
 											"var data = JSON.parse(responseBody);",
-											"//postman.setEnvironmentVariable(\"practitioner-id\", data.entry.resource.id);"
+											"postman.setEnvironmentVariable(\"practitioner-id\", data.entry.resource.id);"
 										],
 										"type": "text/javascript"
 									}
