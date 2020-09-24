@@ -1035,13 +1035,13 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "8d4f79ab-687b-405f-bfa4-b917ad3f0132",
+										"id": "f5594ee9-5289-43e5-b7fe-7b0cbab88bca",
 										"exec": [
 											"var responseOutput = pm.response.json()",
 											"",
-											"// Status should be 200",
-											"pm.test(\"Status is 200\", function () {",
-											"    pm.response.to.have.status(200);",
+											"// Status should be 200 or 201",
+											"pm.test(\"Status is 200 or 201\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
 											"});",
 											"",
 											"// Response should have FHIR Content-Type",
@@ -1049,11 +1049,7 @@
 											"   pm.response.to.have.header(\"Content-Type\", \"application/fhir+json\"); ",
 											"});",
 											"",
-											"// Parse the Bundle and get a list of practitioner ids ",
-											"pm.test(\"Patient correct\", function() {",
-											"    pm.response.to.be.ok;",
-											"    pm.environment.set(\"patient-id\", responseOutput.id)",
-											"});"
+											"pm.environment.set(\"patient-id\", responseOutput.id)"
 										],
 										"type": "text/javascript"
 									}
