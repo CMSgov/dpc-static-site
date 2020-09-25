@@ -494,7 +494,7 @@
 										"$submit"
 									]
 								},
-								"description": "FHIR operation for submitting a Bundle of Practitioner resources, which will be associated to your Organization.\n\nEach Practitioner MUST implement the https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-practitioner profile.\n\nSIDE EFFECTS:\n- Updates `provider_npi` from first entry in successful response"
+								"description": "FHIR operation for submitting a Bundle of Practitioner resources, which will be associated to your Organization.\n\nEach Practitioner MUST implement the https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-practitioner profile.\n\nFor details on the origin of the sample data in this request, see: https://dpc.cms.gov/docs#load-sample-data\n\nSIDE EFFECTS:\n- Updates `provider_npi` from first entry in successful response"
 							},
 							"response": []
 						},
@@ -768,7 +768,7 @@
 										"$submit"
 									]
 								},
-								"description": "FHIR operation for submitting a Bundle of Patient resources, which will be associated to your Organization.\n\nEach Practitioner MUST implement the https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient profile.\n\nSIDE EFFECTS:\n- Updates list of `patient_ids` from successful response"
+								"description": "FHIR operation for submitting a Bundle of Patient resources, which will be associated to your Organization.\n\nEach Practitioner MUST implement the https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient profile.\n\nFor details on the origin of the sample data in this request, see: https://dpc.cms.gov/docs#load-sample-data\n\nSIDE EFFECTS:\n- Updates list of `patient_ids` from successful response"
 							},
 							"response": []
 						},
@@ -1062,7 +1062,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n \"resourceType\": \"Group\",\n \"type\": \"person\",\n \"actual\": true,\n \"active\": true,\n \"characteristic\": [\n   {\n     \"code\": {\n       \"coding\": [\n         {\n           \"code\": \"attributed-to\"\n         }\n       ]\n     },\n     \"valueCodeableConcept\": {\n       \"coding\": [\n         {\n           \"system\": \"http://hl7.org/fhir/sid/us-npi\",\n           \"code\": \"1234329724\"\n         }\n       ]\n     }\n   }\n ],\n \"member\": [\n   {\n     \"entity\": {\n       \"reference\": \"Patient/995a1c0f-b6bc-4d16-b6b0-b8a6597c6e1d\"\n     }\n   }\n ]\n}\n",
+									"raw": "{\n \"resourceType\": \"Group\",\n \"type\": \"person\",\n \"actual\": true,\n \"active\": true,\n \"characteristic\": [\n   {\n     \"code\": {\n       \"coding\": [\n         {\n           \"code\": \"attributed-to\"\n         }\n       ]\n     },\n     \"valueCodeableConcept\": {\n       \"coding\": [\n         {\n           \"system\": \"http://hl7.org/fhir/sid/us-npi\",\n           \"code\": \"{{provider_npi}}\"\n         }\n       ]\n     }\n   }\n ],\n \"member\": [\n   {\n     \"entity\": {\n       \"reference\": \"Patient/{{patient-id}}\"\n     }\n   }\n ]\n}\n",
 									"options": {
 										"raw": {}
 									}
@@ -1078,7 +1078,7 @@
 										"Group"
 									]
 								},
-								"description": "FHIR endpoint to create an Attribution Group resource associated to the provider listed in the in the Group characteristics.\n\nPREREQUISITES:\n- Create Practitioner: Run `POST Register Single Practitioner into Organization`\n- Store Practitioner-id: Run `GET Request Data on Specific Practitioner (by NPI)` (saves practitioner-id in env)"
+								"description": "FHIR endpoint to create an Attribution Group resource associated to the provider listed in the in the Group characteristics.\n\nPREREQUISITES:\n- Create Practitioner: Run `POST Register Single Practitioner into Organization` (saves `provider_npi` in env)\n- Store Practitioner-id: Run `GET Request Data on Specific Practitioner (by NPI)` (saves `practitioner-id` in env)\n- Create Patient: Run `POST Register Single Patient to Organization` (saves `patient-id` in env)\n- `organization-id`\n\n\nSIDE EFFECTS:\n- Updates `group-id` based on successful response"
 							},
 							"response": []
 						},
@@ -1134,7 +1134,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n   \"resourceType\": \"Group\",\n        \"type\": \"person\",\n        \"actual\": true,\n        \"characteristic\": [\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"attributed-to\"\n                }\n              ]\n            },\n            \"valueCodeableConcept\": {\n              \"coding\": [\n                {\n                  \"system\": \"http://hl7.org/fhir/sid/us-npi\",\n                  \"code\": \"1234329724\"\n                }\n              ]\n            }\n          }\n        ],\n        \"member\": [\n          {\n            \"entity\": {\n              \"reference\": \"Patient/dbef14f5-f48e-458e-9a2a-5479db87db38\"\n            }\n          }\n        ]\n\t\n}\n",
+									"raw": "{\n   \"resourceType\": \"Group\",\n        \"type\": \"person\",\n        \"actual\": true,\n        \"characteristic\": [\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"attributed-to\"\n                }\n              ]\n            },\n            \"valueCodeableConcept\": {\n              \"coding\": [\n                {\n                  \"system\": \"http://hl7.org/fhir/sid/us-npi\",\n                  \"code\": \"{{provider_npi}}\"\n                }\n              ]\n            }\n          }\n        ],\n        \"member\": [\n          {\n            \"entity\": {\n              \"reference\": \"Patient/{{patient-id}}\"\n            }\n          }\n        ]\n\t\n}\n",
 									"options": {
 										"raw": {}
 									}
@@ -1151,7 +1151,8 @@
 										"{{group-id}}",
 										"$add"
 									]
-								}
+								},
+								"description": "FHIR endpoint to add a single patient to an existing Attribution Group resource.\n\nPREREQUISITES:\n- Create Group: Run `POST Submit New Practitioner:Patient Attribution Group` (saves `group-id` in env)\n- `patient_id`\n- `provider_npi`\n- `practitioner-id`\n- `organization-id`"
 							},
 							"response": []
 						},
@@ -1209,7 +1210,7 @@
 										}
 									]
 								},
-								"description": "Finds the attribution group for the given provider NPI."
+								"description": "Finds the attribution group for the given provider NPI.\n\nPREREQUISITES:\n- `provider_npi`\n\nSIDE EFFECTS:\n- Updates `group_id` from successful resonse"
 							},
 							"response": []
 						},
@@ -1237,8 +1238,6 @@
 											"    // Should be a search set with 1 entry",
 											"    pm.expect(response.type).to.equal(\"searchset\")",
 											"    pm.expect(response.total).to.equal(1);",
-											"      ",
-											"    postman.setEnvironmentVariable(\"group-id\", response.entry[0].resource.id);",
 											"})",
 											"",
 											""
@@ -1262,7 +1261,7 @@
 										"{{group-id}}"
 									]
 								},
-								"description": "Finds the attribution group for the given provider NPI."
+								"description": "Finds the attribution group for the given provider NPI.\n\nPREREQUISITES:\n- `group_id`"
 							},
 							"response": []
 						},
@@ -1290,8 +1289,6 @@
 											"    // Should be a search set with 1 entry",
 											"    pm.expect(response.type).to.equal(\"searchset\")",
 											"    pm.expect(response.total).to.gt(0);",
-											"      ",
-											"    postman.setEnvironmentVariable(\"group-id\", response.entry[0].resource.id);",
 											"})",
 											"",
 											""
@@ -1314,7 +1311,7 @@
 										"Group"
 									]
 								},
-								"description": "Finds the attribution group for the given provider NPI."
+								"description": "Finds all existing attribution groups for the given Organization based on auth."
 							},
 							"response": []
 						},
@@ -1402,7 +1399,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n   \"resourceType\": \"Group\",\n        \"type\": \"person\",\n        \"actual\": true,\n        \"characteristic\": [\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"attributed-to\"\n                }\n              ]\n            },\n            \"valueCodeableConcept\": {\n              \"coding\": [\n                {\n                  \"system\": \"http://hl7.org/fhir/sid/us-npi\",\n                  \"code\": \"1234329724\"\n                }\n              ]\n            }\n          }\n        ],\n        \"member\": [\n          {\n            \"entity\": {\n              \"reference\": \"Patient/dbef14f5-f48e-458e-9a2a-5479db87db38\"\n            }\n          }\n        ]\n\t\n}",
+									"raw": "{\n   \"resourceType\": \"Group\",\n        \"type\": \"person\",\n        \"actual\": true,\n        \"characteristic\": [\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"attributed-to\"\n                }\n              ]\n            },\n            \"valueCodeableConcept\": {\n              \"coding\": [\n                {\n                  \"system\": \"http://hl7.org/fhir/sid/us-npi\",\n                  \"code\": \"{{provider_npi}}\"\n                }\n              ]\n            }\n          }\n        ],\n        \"member\": [\n          {\n            \"entity\": {\n              \"reference\": \"Patient/{{patient-id}}\"\n            }\n          }\n        ]\n\t\n}",
 									"options": {
 										"raw": {}
 									}
@@ -1420,7 +1417,7 @@
 										"$remove"
 									]
 								},
-								"description": "Remove a patient from the attribution roster."
+								"description": "Remove a patient from the attribution roster.\n\nPREREQUESITES:\n- `group_id`\n- `organization-id`\n- `practitioner-id`\n- `provider_npi`\n- `patient-id` (to be removed from Group)"
 							},
 							"response": []
 						},
@@ -1492,7 +1489,8 @@
 										"Group",
 										"{{group-id}}"
 									]
-								}
+								},
+								"description": "Update existing Attribution Group by adding or removing patients as members of the group.\n\nPREREQUISITES:\n- `group_id`\n- `organization-id`\n- `practitioner-id`\n- `provider_npi`"
 							},
 							"response": []
 						},
@@ -1513,7 +1511,7 @@
 										"{{group-id}}"
 									]
 								},
-								"description": "Ensure we can successfully remove patients."
+								"description": "Delete Attribution Group from the system entirely.\n\nPREREQUISITES:\n- `group_id`"
 							},
 							"response": []
 						}
@@ -1578,7 +1576,8 @@
 									"value": "Patient"
 								}
 							]
-						}
+						},
+						"description": "Request to initiate a data export job for a given Attribution Group.\n\nThe `_type` query parameter allows you to specify a list of FHIR resources to export. Options are: `ExplanationOfBenefit`, `Coverage`, and `Patient`\n\nAn optional `_since` query parameter can be used to indicate how far back the request for data should go, but it must be a time in history.\n\nPREREQUISITES:\n- `group-id`\n\nSIDE EFFECTS:\n- Updates `job-id` with Job id from `Content-Location` response header if successful response"
 					},
 					"response": []
 				},
@@ -1591,7 +1590,28 @@
 								"id": "4a77dca7-95d0-4f1b-80e5-d4713379a9c7",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"file_name\", data.output[0].url.substr(data.output[0].url.indexOf(\"Data/\")+5, data.output[0].url.indexOf(\".coverage\") - data.output[0].url.indexOf(\"Data/\")-5));"
+									"var url = data.output[0].url;",
+									"var _type = data.request.substr(data.request.indexOf(\"?_type=\")+7)",
+									"",
+									"function getFileName(dataType) {",
+									"    return url.substr(url.indexOf(\"Data/\")+5, url.indexOf(dataType) - url.indexOf(\"Data/\")-6) + \".\" + dataType + \".ndjson\"",
+									"}",
+									"",
+									"switch (_type) {",
+									"    case \"Patient\":",
+									"        pm.environment.set(\"patient_file\", getFileName(\"patient\"))",
+									"        break;",
+									"    case \"Coverage\":",
+									"        pm.environment.set(\"coverage_file\", getFileName(\"coverage\"))",
+									"        break;",
+									"    case \"ExplanationOfBenefit\":",
+									"        pm.environment.set(\"eob_file\", getFileName(\"explanationofbenefit\"))",
+									"        break;",
+									"    default:",
+									"        console.log(\"No file name stored as type was not determined.\")",
+									"        break;",
+									"}",
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -1617,7 +1637,8 @@
 								"Jobs",
 								"{{job-id}}"
 							]
-						}
+						},
+						"description": "This endpoint is used to query the status of a given Export operation. When the job is in progress, the API returns a 202 status. \n\nWhen completed, an output response is returned, which contains the necessary metadata for retrieving any output files.\n\nPREREQUISITES:\n- `job-id`\n\nSIDE EFFECTS:\n- Updates `file_name`"
 					},
 					"response": []
 				},
@@ -1627,7 +1648,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/v1/Data/{{file_name}}.patient.ndjson",
+							"raw": "{{baseUrl}}/api/v1/Data/{{patient_file}}",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -1635,7 +1656,7 @@
 								"api",
 								"v1",
 								"Data",
-								"{{file_name}}.patient.ndjson"
+								"{{patient_file}}"
 							]
 						}
 					},
@@ -1647,7 +1668,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/v1/Data/{{file_name}}.coverage.ndjson",
+							"raw": "{{baseUrl}}/api/v1/Data/{{coverage_file}}",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -1655,7 +1676,7 @@
 								"api",
 								"v1",
 								"Data",
-								"{{file_name}}.coverage.ndjson"
+								"{{coverage_file}}"
 							]
 						}
 					},
@@ -1667,7 +1688,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/v1/Data/{{file_name}}.explanationofbenefit.ndjson",
+							"raw": "{{baseUrl}}/api/v1/Data/{{eob_file}}",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -1675,7 +1696,7 @@
 								"api",
 								"v1",
 								"Data",
-								"{{file_name}}.explanationofbenefit.ndjson"
+								"{{eob_file}}"
 							]
 						}
 					},
