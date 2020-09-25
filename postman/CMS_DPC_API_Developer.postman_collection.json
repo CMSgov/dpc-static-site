@@ -1192,6 +1192,33 @@
 										],
 										"type": "text/javascript"
 									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "60a9dbf3-c325-4940-94f1-686dffeab1f1",
+										"exec": [
+											"var recorded_at = new Date().toJSON();",
+											"",
+											"var provenance = { ",
+											"    \"resourceType\": \"Provenance\",",
+											"    \"meta\": { ",
+											"        \"profile\": [ \"https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation\" ] },",
+											"        \"recorded\": recorded_at,",
+											"        \"reason\": [ { \"system\": \"http://hl7.org/fhir/v3/ActReason\", \"code\": \"TREAT\" } ],",
+											"        \"agent\": [ ",
+											"            { ",
+											"                \"role\": [ { \"coding\": [ { \"system\": \"http://hl7.org/fhir/v3/RoleClass\", \"code\": \"AGNT\" } ] } ],",
+											"                \"whoReference\": { \"reference\": \"Organization/{{organization_id}}}}\" },",
+											"                \"onBehalfOfReference\": { \"reference\": \"Practitioner/{{practitioner-id}}\" } ",
+											"            }",
+											"        ]",
+											"}",
+											"",
+											"pm.environment.set(\"x-provenance\", JSON.stringify(provenance));"
+										],
+										"type": "text/javascript"
+									}
 								}
 							],
 							"request": {
@@ -1220,7 +1247,7 @@
 									{
 										"key": "X-Provenance",
 										"type": "text",
-										"value": "{ \"resourceType\": \"Provenance\", \"meta\": { \"profile\": [ \"https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation\" ] }, \"recorded\": \"1990-01-01T00:00:00.000-05:00\", \"reason\": [ { \"system\": \"http://hl7.org/fhir/v3/ActReason\", \"code\": \"TREAT\" } ], \"agent\": [ { \"role\": [ { \"coding\": [ { \"system\": \"http://hl7.org/fhir/v3/RoleClass\", \"code\": \"AGNT\" } ] } ], \"whoReference\": { \"reference\": \"Organization/{{organization_id}}}}\" }, \"onBehalfOfReference\": { \"reference\": \"Practitioner/{{practitioner-id}}\" } } ] }"
+										"value": "{{x-provenance}}"
 									}
 								],
 								"body": {
@@ -1240,12 +1267,42 @@
 										"v1",
 										"Group"
 									]
-								}
+								},
+								"description": "FHIR endpoint to create an Attribution Group resource associated to the provider listed in the in the Group characteristics.\n\nPREREQUISITES:\n- Create Practitioner: Run `POST Register Single Practitioner into Organization`\n- Store Practitioner-id: Run `GET Request Data on Specific Practitioner (by NPI)` (saves practitioner-id in env)"
 							},
 							"response": []
 						},
 						{
 							"name": "Add Single Patient to Existing Group",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "767a3bd6-8b8c-4a07-8733-8b79a6697b9c",
+										"exec": [
+											"var recorded_at = new Date().toJSON();",
+											"",
+											"var provenance = { ",
+											"    \"resourceType\": \"Provenance\",",
+											"    \"meta\": { ",
+											"        \"profile\": [ \"https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation\" ] },",
+											"        \"recorded\": recorded_at,",
+											"        \"reason\": [ { \"system\": \"http://hl7.org/fhir/v3/ActReason\", \"code\": \"TREAT\" } ],",
+											"        \"agent\": [ ",
+											"            { ",
+											"                \"role\": [ { \"coding\": [ { \"system\": \"http://hl7.org/fhir/v3/RoleClass\", \"code\": \"AGNT\" } ] } ],",
+											"                \"whoReference\": { \"reference\": \"Organization/{{organization_id}}}}\" },",
+											"                \"onBehalfOfReference\": { \"reference\": \"Practitioner/{{practitioner-id}}\" } ",
+											"            }",
+											"        ]",
+											"}",
+											"",
+											"pm.environment.set(\"x-provenance\", JSON.stringify(provenance));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1271,7 +1328,7 @@
 									},
 									{
 										"key": "X-Provenance",
-										"value": "{ \"resourceType\": \"Provenance\", \"meta\": { \"profile\": [ \"https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation\" ] }, \"recorded\": \"1990-01-01T00:00:00.000-05:00\", \"reason\": [ { \"system\": \"http://hl7.org/fhir/v3/ActReason\", \"code\": \"TREAT\" } ], \"agent\": [ { \"role\": [ { \"coding\": [ { \"system\": \"http://hl7.org/fhir/v3/RoleClass\", \"code\": \"AGNT\" } ] } ], \"whoReference\": { \"reference\": \"Organization/{{organization_id}}}}\" }, \"onBehalfOfReference\": { \"reference\": \"Practitioner/{{practitioner-id}}\" } } ] }",
+										"value": "{{x-provenance}}",
 										"type": "text"
 									}
 								],
@@ -1499,7 +1556,24 @@
 									"script": {
 										"id": "60e52e96-8f4f-4bc8-b21e-6de20f366628",
 										"exec": [
-											""
+											"var recorded_at = new Date().toJSON();",
+											"",
+											"var provenance = { ",
+											"    \"resourceType\": \"Provenance\",",
+											"    \"meta\": { ",
+											"        \"profile\": [ \"https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation\" ] },",
+											"        \"recorded\": recorded_at,",
+											"        \"reason\": [ { \"system\": \"http://hl7.org/fhir/v3/ActReason\", \"code\": \"TREAT\" } ],",
+											"        \"agent\": [ ",
+											"            { ",
+											"                \"role\": [ { \"coding\": [ { \"system\": \"http://hl7.org/fhir/v3/RoleClass\", \"code\": \"AGNT\" } ] } ],",
+											"                \"whoReference\": { \"reference\": \"Organization/{{organization_id}}}}\" },",
+											"                \"onBehalfOfReference\": { \"reference\": \"Practitioner/{{practitioner-id}}\" } ",
+											"            }",
+											"        ]",
+											"}",
+											"",
+											"pm.environment.set(\"x-provenance\", JSON.stringify(provenance));"
 										],
 										"type": "text/javascript"
 									}
@@ -1556,12 +1630,12 @@
 									},
 									{
 										"key": "X-Provenance",
-										"value": "{ \"resourceType\": \"Provenance\", \"meta\": { \"profile\": [ \"https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation\" ] }, \"recorded\": \"1990-01-01T00:00:00.000-05:00\", \"reason\": [ { \"system\": \"http://hl7.org/fhir/v3/ActReason\", \"code\": \"TREAT\" } ], \"agent\": [ { \"role\": [ { \"coding\": [ { \"system\": \"http://hl7.org/fhir/v3/RoleClass\", \"code\": \"AGNT\" } ] } ], \"whoReference\": { \"reference\": \"Organization/{{organization_id}}}}\" }, \"onBehalfOfReference\": { \"reference\": \"Practitioner/{{practitioner-id}}\" } } ] }",
+										"value": "{{x-provenance}}",
 										"type": "text"
 									},
 									{
 										"key": "",
-										"value": "{ \"resourceType\": \"Provenance\", \"meta\": { \"profile\": [ \"https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation\" ] }, \"recorded\": \"1990-01-01T00:00:00.000-05:00\", \"reason\": [ { \"system\": \"http://hl7.org/fhir/v3/ActReason\", \"code\": \"TREAT\" } ], \"agent\": [ { \"role\": [ { \"coding\": [ { \"system\": \"http://hl7.org/fhir/v3/RoleClass\", \"code\": \"AGNT\" } ] } ], \"whoReference\": { \"reference\": \"Organization/{{organization_id}}}}\" }, \"onBehalfOfReference\": { \"reference\": \"Practitioner/{{practitioner-id}}\" } } ] }",
+										"value": "",
 										"type": "text",
 										"disabled": true
 									}
@@ -1592,6 +1666,35 @@
 						},
 						{
 							"name": "Overwrite Group",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "27bb1456-c98e-46d4-91d4-8dbdb6b6e8ab",
+										"exec": [
+											"var recorded_at = new Date().toJSON();",
+											"",
+											"var provenance = { ",
+											"    \"resourceType\": \"Provenance\",",
+											"    \"meta\": { ",
+											"        \"profile\": [ \"https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation\" ] },",
+											"        \"recorded\": recorded_at,",
+											"        \"reason\": [ { \"system\": \"http://hl7.org/fhir/v3/ActReason\", \"code\": \"TREAT\" } ],",
+											"        \"agent\": [ ",
+											"            { ",
+											"                \"role\": [ { \"coding\": [ { \"system\": \"http://hl7.org/fhir/v3/RoleClass\", \"code\": \"AGNT\" } ] } ],",
+											"                \"whoReference\": { \"reference\": \"Organization/{{organization_id}}}}\" },",
+											"                \"onBehalfOfReference\": { \"reference\": \"Practitioner/{{practitioner-id}}\" } ",
+											"            }",
+											"        ]",
+											"}",
+											"",
+											"pm.environment.set(\"x-provenance\", JSON.stringify(provenance));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1613,7 +1716,7 @@
 									{
 										"key": "X-Provenance",
 										"type": "text",
-										"value": "{ \"resourceType\": \"Provenance\", \"meta\": { \"profile\": [ \"https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation\" ] }, \"recorded\": \"1990-01-01T00:00:00.000-05:00\", \"reason\": [ { \"system\": \"http://hl7.org/fhir/v3/ActReason\", \"code\": \"TREAT\" } ], \"agent\": [ { \"role\": [ { \"coding\": [ { \"system\": \"http://hl7.org/fhir/v3/RoleClass\", \"code\": \"AGNT\" } ] } ], \"whoReference\": { \"reference\": \"Organization/{{organization_id}}}}\" }, \"onBehalfOfReference\": { \"reference\": \"Practitioner/{{practitioner-id}}\" } } ] }"
+										"value": "{{x-provenance}}"
 									},
 									{
 										"key": "Content-Type",
