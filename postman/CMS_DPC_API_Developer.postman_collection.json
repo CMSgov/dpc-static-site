@@ -1659,7 +1659,8 @@
 								"Data",
 								"{{patient_file}}"
 							]
-						}
+					},
+						"description": "Download patient data details from ndjson file.\n\nRequires that you first have a group that includes a patient, that you start a data export job using `_type=Patient`, and that you run the `Status/URL of Data Export Job` request to save the patient filename. Finally, this request uses that patient filename to retrieve the actual data.\n\nPREREQUESITES:\n- `patient_file`, which comes from `Status/URL of Data Export Job`"
 					},
 					"response": []
 				},
@@ -1679,7 +1680,8 @@
 								"Data",
 								"{{coverage_file}}"
 							]
-						}
+					},
+						"description": "Download coverage data details from ndjson file.\n\nRequires that you first have a group that includes a patient, that you start a data export job using `_type=Coverage`, and that you run the `Status/URL of Data Export Job` request to save the coverage filename. Finally, this request uses that coverage filename to retrieve the actual data.\n\nPREREQUESITES:\n- `coverage_file`, which comes from `Status/URL of Data Export Job`"
 					},
 					"response": []
 				},
@@ -1699,7 +1701,8 @@
 								"Data",
 								"{{eob_file}}"
 							]
-						}
+					},
+						"description": "Download Explanation Of Benefit (Claims) data details from ndjson file.\n\nRequires that you first have a group that includes a patient, that you start a data export job using `_type=ExplanationOfBenefit`, and that you run the `Status/URL of Data Export Job` request to save the EOB filename. Finally, this request uses that EOB filename to retrieve the actual data.\n\nPREREQUESITES:\n- `eob_file`, which comes from `Status/URL of Data Export Job`"
 					},
 					"response": []
 				},
@@ -1779,123 +1782,8 @@
 								"{{patient-id}}",
 								"$everything"
 							]
-						}
 					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Usage: Configuration",
-			"item": [
-				{
-					"name": "Create endpoint",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "a06572fd-a6d5-4d8c-a21e-36d4b8dc086b",
-								"exec": [
-									"pm.test(\"Status is 201 Created\", function () {",
-									"    pm.expect(pm.response.code).equals(201);",
-									"});",
-									"",
-									"pm.globals.set(\"endpoint_id\", pm.response.json().id);"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/fhir+json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"resourceType\": \"Endpoint\",\n\t\"status\": \"test\",\n\t\"connectionType\": {\n\t\t\"system\": \"http://terminology.hl7.org/CodeSystem/endpoint-connection-type\",\n\t\t\"code\": \"hl7-fhir-rest\"\n\t},\n\t\"name\": \"Test Organization Endpoint\",\n\t\"address\": \"http://test-address.nope\",\n\t\"managingOrganization\": {\n\t\t\"reference\": \"{{organization_id}}\"\n\t},\n\t\"payloadType\": [\n\t\t{\n\t\t\t\"coding\": {\n\t\t\t\t\"code\": \"test\",\n\t\t\t\t\"system\": \"http://www.example.com/test\"\n\t\t\t}\n\t\t}\n\t]\n}\n    "
-						},
-						"url": {
-							"raw": "http://{{hostname}}:{{attribution_port}}/v1/Endpoint",
-							"protocol": "http",
-							"host": [
-								"{{hostname}}"
-							],
-							"port": "{{attribution_port}}",
-							"path": [
-								"v1",
-								"Endpoint"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get endpoint",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "04fe499a-62ae-499d-be97-ac014d6cd2a8",
-								"exec": [
-									"pm.test(\"Status is OK\", function () {",
-									"    pm.response.to.be.ok;",
-									"});",
-									"",
-									"pm.test(\"Body matches expected response\", function() {",
-									"    var respJson = pm.response.json();",
-									"    pm.expect(respJson.name).equals(\"Test Organization Endpoint\");",
-									"    pm.expect(respJson.status).equals(\"test\");",
-									"    pm.expect(respJson.address).equals(\"http://test-address.nope\");",
-									"    pm.expect(respJson.connectionType.system).equals(\"http://terminology.hl7.org/CodeSystem/endpoint-connection-type\");",
-									"    pm.expect(respJson.connectionType.code).equals(\"hl7-fhir-rest\");",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://{{hostname}}:{{api_port}}/v1/Endpoint/{{endpoint_id}}",
-							"protocol": "http",
-							"host": [
-								"{{hostname}}"
-							],
-							"port": "{{api_port}}",
-							"path": [
-								"v1",
-								"Endpoint",
-								"{{endpoint_id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "FHIR API Server Metadata",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/api/v1/metadata",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"metadata"
-							]
-						}
+						"description": "If you only need claims data on a single patient, it is possible to get that data without going through all the steps of starting a data export job, checking the status to get the file name, and then fetching the data from that file. This is a synchronous shortcut to the data for a specific patient based on `patient-id`.\n\nTo use this endpoint, you must have the system id of a patient in an existing attribution group. You can set this up multiple ways in this Postman collection, but the easiest way is probably to do the following:\n\n1) Run `Register Single Patient to Organization` (saves `patient-id` to the env)\n2) Run `Submit New Practitioner:Patient Attribution Group` (ensures Practitioner/Patient relationship exists)\n3) Run this request which uses the `patient_id` to fetch the data\n\nPREREQUESITES:\n- Existing Attribution Group connecting patient and practitioner\n- `organization-id`\n- `practitioner-id`\n- `patient-id`"
 					},
 					"response": []
 				}
