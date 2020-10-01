@@ -55,7 +55,7 @@ Your first client token must be created through the DPC Portal. After successful
 2. **Add a Label:** Title your token with a recognizable name that includes the environment for which you are requesting access
 3. Click "Create Token" to generate your client token
 
-![Client Token](/assets/img/guide_client_token.svg)
+![Client Token](/assets/images/guide_client_token.svg)
 
 <div class="ds-c-alert ds-c-alert--warn">
   <div class="ds-c-alert__body">
@@ -247,7 +247,7 @@ Public keys verify that client token requests are coming from an authorized appl
 
 **3. Paste the contents** of your public key (public.pem file) into the ‘Public Key’ field in the DPC Portal. You must include the “BEGIN PUBLIC KEY” and “END PUBLIC KEY” tags before and after your key.
 
-![Public Key Example - Shows public key with the BEGIN PUBLIC KEY and END PUBLIC KEY tags.](/assets/img/guide_public_key_ex.svg)
+![Public Key Example - Shows public key with the BEGIN PUBLIC KEY and END PUBLIC KEY tags.](/assets/images/guide_public_key_ex.svg)
 
 **4. Add a Label:** Title your public key with a descriptive name that can be easily recognized for future purposes.
 
@@ -392,7 +392,7 @@ The following instructions are to be completed via the JWT Tool downloaded onto 
 2. Please input your Client Token.
 3. Please input your Public Key ID
     * This ID can be found under the "Public Keys” section in your DPC Portal.
-![Public Key Id - The public key id is found underneath the key's label.](/assets/img/guide_public_key_id.svg)
+![Public Key Id - The public key id is found underneath the key's label.](/assets/images/guide_public_key_id.svg)
 4. Click "Generate JWT"
 5. Copy "Your JWT" to begin validation for DPC
 
@@ -594,7 +594,7 @@ _Users can provide their own sample FHIR resources that fulfill the required FHI
 ### Find Organization ID
 You will need your organization ID to create an Attribution Group for Attestation. To find your Organization ID, sign-in to your account in the DPC Portal and locate your Organization ID underneath the organization name.
 
-![Dashboard Org Id](/assets/img/guide_org_id.png)
+![Dashboard Org Id](/assets/images/guide_org_id.png)
 
 The Organization endpoint supports a GET /Organization operation, which allows the user to retrieve their Organization ID.
 

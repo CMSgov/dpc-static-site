@@ -86,8 +86,8 @@
   font-weight: normal;
   margin: 0;
   text-align: left;
-  background-image: url(/assets/img/minus.svg), -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent));
-  background-image: url(/assets/img/minus.svg), linear-gradient(transparent, transparent);
+  background-image: url(/assets/images/minus.svg), -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent));
+  background-image: url(/assets/images/minus.svg), linear-gradient(transparent, transparent);
   background-repeat: no-repeat;
   background-color: $color-warn-lightest;
   background-position: right 1.25rem center;
@@ -128,8 +128,8 @@
 }
 
 .usa-accordion__button[aria-expanded=false] {
-  background-image: url(/assets/img/plus.svg), -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent));
-  background-image: url(/assets/img/plus.svg), linear-gradient(transparent, transparent);
+  background-image: url(/assets/images/plus.svg), -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent));
+  background-image: url(/assets/images/plus.svg), linear-gradient(transparent, transparent);
   background-repeat: no-repeat;
   background-size: 1rem;
 }
