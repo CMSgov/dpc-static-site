@@ -6,21 +6,44 @@ layout: default
 
 <section class="ds-l-container ds-base ds-u-margin-bottom--7">
   <div class="ds-l-row">
-    {% if page.sections %}
+    <div class="ds-l-col--4 ds-u-margin-left--right ds-u-display--none ds-u-sm-display--block" role="complementary">
+      {% if page.id == "docs" %}
+        <ul class="ds-c-list ds-c-list--bare sidenav">
+          {% for item in site.guide_nav %}
+            <li class="sidenav__item">
+              <a href="#{{ item.id }}" class="ds-u-display--block sidenav__link">{{item.title}}</a>
+
+              {% if item.subnav.size > 0 %}
+                <ul>
+                  {% for subitem in item.subnav %}
+                    <li class="sidenav__item">
+                      <a href="#{{ subitem.id }}" class="ds-u-display--block sidenav__link">{{subitem.title}}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+    </div>
+
+    <!-- {% if page.sections %}
       <div class="ds-l-col--4 ds-u-margin-left--right ds-u-display--none ds-u-sm-display--block" role="complementary">
         <ul class="ds-c-list ds-c-list--bare sidenav" >
           {% for item in page.sections %}
             <li class="sidenav__item"><a href="#{{ item | slugify }}" aria-label="{{ item }} section, current page" class="ds-u-display--block sidenav__link" aria-label="{{ item }} section, current page">{{ item }}</a></li>
+            {% for entry in item.subsection %}
+            {% endfor %}
           {% endfor %}
         </ul>
-      </div>
+      </div> {% endif %} -->
 
       <article class="ds-l-col--12 ds-l-sm-col--7 {{ page.badge | slugify }}" role="main">
     {% endif %}
 
       {{ content }}
 
-    {% if page.sections %}
+    {% if page.id == "docs" %}
       </article>
     {% endif %}
 

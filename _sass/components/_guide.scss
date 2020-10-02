@@ -11,14 +11,23 @@
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
   }
+}
 
-  .button-ex {
-    background-color: $color-primary;
-    border-radius: 6px;
-    color: $color-white;
-    font-weight: 700;
-    padding: 3px 7px 3px 6px;
-  }
+.button-ex {
+  background-color: $color-primary;
+  border-radius: 6px;
+  color: $color-white;
+  font-weight: 700;
+  padding: 3px 7px 3px 6px;
+}
+
+.download_btn {
+  text-decoration: none;
+}
+
+.download_btn--container {
+  display: block;
+  text-align: center;
 }
 
 .guide_sub-link {
