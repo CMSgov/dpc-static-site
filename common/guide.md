@@ -425,8 +425,8 @@ The response from the API will return with a HTTP 200 if the JWT is valid, other
 
 ## Step Five: Access/Bearer Token
 
-<a href="#obtain-an-accesstoken" class="ds-u-padding-left--3 guide_sub-link">Obtain an access_token</a><br />
-<a href="#obtain-a-bearertoken" class="ds-u-padding-left--3 guide_sub-link">Obtain a bearer_token</a>
+<a href="#obtain-an-access_token" class="ds-u-padding-left--3 guide_sub-link">Obtain an access_token</a><br />
+<a href="#obtain-a-bearer_token" class="ds-u-padding-left--3 guide_sub-link">Obtain a bearer_token</a>
 
 Obtaining an access_token and setting it as your bearer_token are the final steps in connecting to the DPC API. **The access_token must be set as the bearer_token in EVERY API request and has a maximum expiration time of FIVE MINUTES.**
 
