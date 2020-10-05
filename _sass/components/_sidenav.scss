@@ -13,6 +13,10 @@
 .sidenav__item {
   font-size: $h4-font-size;
   margin-bottom: $spacer-2;
+
+  ul {
+    list-style: none;
+  }
 }
 
 .sidenav__link:visited,

@@ -27,7 +27,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://dpc.cms.gov" # the base hostname & protocol for your site, e.g. http://example.com
 cssurl: /assets/css/static-main.css
-logourl: /assets/img/top-nav-heart.svg
+logourl: /assets/images/top-nav-heart.svg
 
 global_nav:
   - title: Home
@@ -44,6 +44,45 @@ footer_nav:
     id: faq
   - title: Terms of Service
     id: tos
+
+guide_nav:
+  - title: Authorization
+    id: authorization
+    subnav:
+      - title: Step One&#x3a; Request Access
+        id: step-one-request-access
+      - title: Step Two&#x3a; Client Tokens
+        id: step-two-client-tokens
+      - title: Step Three&#x3a; Public Keys
+        id: step-three-public-keys
+      - title: Step Four&#x3a; JSON Web Tokens
+        id: step-four-json-web-tokens
+      - title: Step Five&#x3a; Access/Bearer Token
+        id: step-five-accessbearer-token
+  - title: Attestation & Attribution
+    id: attestation--attribution
+    subnav:
+      - title: Load Sample Data
+        id: load-sample-data
+      - title: Practitioners
+        id: practitioners
+      - title: Patients
+        id: patients
+      - title: Attestation
+        id: attestation
+      - title: Groups (Attribution)
+        id: groups-attribution
+  - title: Export Data
+    id: export-data
+    subnav:
+      - title: Initiate an Export Job
+        id: initiate-an-export-job
+      - title: Specify Resources
+        id: specify-which-resources-to-download
+      - title: Check Status of Export Job
+        id: check-status-of-the-export-job
+      - title: Retrieve NDJSON Output
+        id: retrieve-the-ndjson-output-files
 
 # Build settings
 markdown: kramdown
