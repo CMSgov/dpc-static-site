@@ -27,17 +27,6 @@ layout: default
         </ul>
     </div>
 
-    <!-- {% if page.sections %}
-      <div class="ds-l-col--4 ds-u-margin-left--right ds-u-display--none ds-u-sm-display--block" role="complementary">
-        <ul class="ds-c-list ds-c-list--bare sidenav" >
-          {% for item in page.sections %}
-            <li class="sidenav__item"><a href="#{{ item | slugify }}" aria-label="{{ item }} section, current page" class="ds-u-display--block sidenav__link" aria-label="{{ item }} section, current page">{{ item }}</a></li>
-            {% for entry in item.subsection %}
-            {% endfor %}
-          {% endfor %}
-        </ul>
-      </div> {% endif %} -->
-
       <article class="ds-l-col--12 ds-l-sm-col--7 {{ page.badge | slugify }}" role="main">
     {% endif %}
 
