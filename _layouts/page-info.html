@@ -6,8 +6,8 @@ layout: default
 
 <section class="ds-l-container ds-base ds-u-margin-bottom--7">
   <div class="ds-l-row">
+    {% if page.id == "docs" %}
     <div class="ds-l-col--4 ds-u-margin-left--right ds-u-display--none ds-u-sm-display--block" role="complementary">
-      {% if page.id == "docs" %}
         <ul class="ds-c-list ds-c-list--bare sidenav">
           {% for item in site.guide_nav %}
             <li class="sidenav__item">

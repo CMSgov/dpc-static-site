@@ -98,8 +98,6 @@
     padding-left: $spacer-1;
   }
 
-
-
   .banner-content {
     display: flex;
     flex-direction: row;
@@ -115,10 +113,12 @@
   .banner-text__title {
     font-size: $h2-font-size;
     font-weight: 700;
+    padding: 5px 0;
   }
 
   .banner-text__content {
     font-size: $small-font-size;
+    padding: 5px 0;
 
     a {
       color: $color-primary;
