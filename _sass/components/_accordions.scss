@@ -63,6 +63,10 @@
 
   li {
     margin: 1em 0;
+
+    ol {
+      list-style-type: lower-alpha;
+    }
   }
 }
 
