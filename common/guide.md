@@ -6,6 +6,8 @@ permalink: /docs
 id: docs
 ---
 
+Welcome to the Data at the Point of Care pilot API program! This documentation covers using the sandbox API with synthetic data. Once you’ve tested your implementation in sandbox, you can sign up for [the queue to be onboarded to the production environment](https://airtable.com/shr3m3BL3IWY5hYnm).
+
 # Authorization
 ------------------
 
