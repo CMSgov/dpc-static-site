@@ -12,4 +12,5 @@ jobs:
       - name: "Build and Test"
         run: |
           mkdir -p _site
+          mkdir -p .jekyll-cache
           ./scripts/build_and_test.sh
