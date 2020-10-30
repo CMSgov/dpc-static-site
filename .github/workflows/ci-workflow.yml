@@ -1,0 +1,15 @@
+name: "DPC Static Site CI Workflow"
+
+on: [push]
+
+jobs:
+  build:
+    name: "Build and Test"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v2
+      - name: "Build and Test"
+        run: |
+          mkdir -p _site
+          ./scripts/build_and_test.sh
