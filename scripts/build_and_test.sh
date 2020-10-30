@@ -14,7 +14,7 @@ build() {
 test() {
     trap docker_cleanup EXIT
     docker-compose run -u "$(id -u "${USER}")":"$(id -g "${USER}")" --publish 4001:4000 --rm --entrypoint "bundle exec jekyll serve -H 0.0.0.0" -d static_site
-    sleep 20
+    sleep 45
     curl localhost:4001 | grep "Join the Production Pilot Onboarding Queue"
 }
 
