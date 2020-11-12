@@ -1,0 +1,62 @@
+def github_creds = 'jenkins-github-token'
+DEPLOY = 'Do Not Deploy'
+
+pipeline {
+  options {
+    disableConcurrentBuilds()
+  }
+
+  agent {
+    node {
+      label ''
+      customWorkspace 'workspace/dpc-static-site-continuous-delivery'
+    }
+  }
+
+  triggers {
+    pollSCM('H/2 * * * *')
+  }
+
+  stages {
+
+    stage('Clear the working dir') {
+      steps {
+        script {
+          dir(env.WORKSPACE) {
+            sh  """
+              # Since Docker daemon runs as root, it is likely that some root-owned artifacts will exist in each workspace
+              # Deleting the workspace as root to ensure with confidence that all artifacts are removed
+              docker exec --user root -w $WORKSPACE jenkins bash -c 'rm -fr *'
+                """
+          }
+        }
+      }
+    }
+
+    stage('Checkout dpc-static-site') {
+      steps {
+        checkout([
+          $class: 'GitSCM',
+          branches: [[name: "${env.BRANCH_NAME}"]],
+          doGenerateSubmoduleConfigurations: false,
+          extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'dpc-static-site']],
+          userRemoteConfigs: [[url: 'https://github.com/CMSgov/dpc-static-site.git', credentialsId: github_creds]]
+        ])
+        script {
+            if (env.BRANCH_NAME == "master") {
+                DEPLOY='stage'
+            }
+        } 
+      }
+    }
+
+    stage('Deploy Static Site') {
+      steps {
+        build job: 'DPC - Deploy - Static Site',
+        parameters: [string(name: 'DPC_STATIC_SITE_BRANCH', value: "${env.BRANCH_NAME}"), string(name: 'ENV', value: "${DEPLOY}")],
+        wait: true,
+        propagate: true
+      }
+    }
+  }
+}
