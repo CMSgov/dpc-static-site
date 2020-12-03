@@ -6,4 +6,5 @@ services:
       context: .
       dockerfile: Dockerfiles/Dockerfile.static_site
     volumes:
-      - .:/dpc-site-static
+      - ./_site:/dpc-site-static/_site
+      - ./.jekyll-cache:/dpc-site-static/.jekyll-cache
