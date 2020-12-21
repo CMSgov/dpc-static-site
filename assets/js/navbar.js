@@ -33,9 +33,14 @@ if(typeof(open_mobile_nav_button) != 'undefined' && open_mobile_nav_button != nu
     navbar.insertBefore(overlay, mobile_nav);
     overlay.classList.add(overlay_class);
 
-    setTimeout(function(){
-      overlay.classList.add(visible_class);
-    }, 100);
+    try {
+      setTimeout(function(){
+        overlay.classList.add(visible_class);
+      }, 100);
+    }
+    catch(err) {
+      console.log(err)
+    }
 
     trapFocus(mobile_nav);
   })
