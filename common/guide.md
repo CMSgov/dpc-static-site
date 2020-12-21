@@ -1482,7 +1482,7 @@ The response will return a [Bundle](https://www.hl7.org/fhir/STU3/bundle.html) r
 ------------
 The primary interaction with the DPC pilot API is via the FHIR /Group/$export operation.This allows an organization to export Patient. Coverage, and Explanation of Benefit data in an asynchronous and bulk manner. Details on the FHIR bulk data operations can be found in the [FHIR Bulk Data Specification](https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-group-export.html).
 
-## Prerequisites:
+### Prerequisites:
 - Completion of the Authorization section
 - Access to the API: active Bearer <span style="color: #046B99;">{access_token}</span>
 - Completion of the Attestation & Attribution section
@@ -1588,7 +1588,7 @@ To obtain the exported explanation of benefit data, a GET request is made to the
   </div>
 </div>
 
-### Request:
+#### Request:
 
 <pre class="highlight"><code>GET https://sandbox.dpc.cms.gov/api/v1/data/<span style="color: #046B99;">{job_id}</span>/<span style="color: #046B99;">{file_name}</span></code></pre>
 
