@@ -264,7 +264,7 @@ Public keys verify that client token requests are coming from an authorized appl
   openssl dgst -verify public.pem -sha256 -signature snippet.txt.sig snippet.txt
   ~~~
 
-  <p style="font-weight: 700;">Response <u>must yield</u> <span style="color: #4AA564;">Verified Ok</span>.</p>
+  <p style="font-weight: 700;">Response <u>must yield</u> <span style="color: #2A7A3B;">Verified Ok</span>.</p>
 
 **4. Generate a _verified_ public key signature.**
 
