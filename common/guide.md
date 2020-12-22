@@ -95,7 +95,7 @@ POST /api/v1/Token
 #### cURL command:
 
 <pre class="highlight"><code>curl -d '' -v https://sandbox.dpc.cms.gov/api/v1/Token?label={token label}&expiration={ISO formatted dateTime} \
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/json' \
      -H 'Content-Type: application/json' \
      -X POST</code></pre>
@@ -135,7 +135,7 @@ GET /api/v1/Token
 #### cURL command:
 
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Token \
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/json' \
      -H 'Content-Type: application/json' \
      -X GET</code></pre>
@@ -177,11 +177,11 @@ You may want to delete a client token from your organization if a vendor or grou
 Client_token IDs can be found either at creation or as the result of [listing client_tokens](#list-all-client-tokens).
 
 #### Request:
-<pre class="highlight"><code>DELETE /api/v1/Token/<span style="color: #046B99;">{client_token id}</span></code></pre>
+<pre class="highlight"><code>DELETE /api/v1/Token/<span style="color: #045E87;">{client_token id}</span></code></pre>
 
 #### cURL command:
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Token/{client_token id} \
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/json' \
      -H 'Content-Type: application/json' \
      -X DELETE</code></pre>
@@ -293,7 +293,7 @@ GET /api/v1/Key
 #### cURL command:
 
 <pre class="highlight"><code>curl -v http://localhost:3002/v1/Key \
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/json' \
      -H 'Content-Type: application/json' \
      -X GET</code></pre>
@@ -323,12 +323,12 @@ Specific public keys can be listed by making a GET request to the /Key endpoint 
 
 #### Request:
 
-<pre class="highlight"><code>GET /api/v1/Key/<span style="color: #046B99;">{public key id}</span></code></pre>
+<pre class="highlight"><code>GET /api/v1/Key/<span style="color: #045E87;">{public key id}</span></code></pre>
 
 #### cURL command:
 
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{public key id} \
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/json' \
      -H 'Content-Type: application/json' \
      -X GET</code></pre>
@@ -351,12 +351,12 @@ Public keys can be removed by sending a DELETE request to the /Key endpoint usin
 
 #### Request:
 
-<pre class="highlight"><code>DELETE /api/v1/Key/<span style="color: #046B99;">{public key ID}</span></code></pre>
+<pre class="highlight"><code>DELETE /api/v1/Key/<span style="color: #045E87;">{public key ID}</span></code></pre>
 
 #### cURL command:
 
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{public key id} \
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/json' \
      -H 'Content-Type: application/json' \
      -X DELETE</code></pre>
@@ -420,7 +420,7 @@ POST /api/v1/Token/validate
      -H 'Accept: application/json' \
      -H 'Content-Type: text/plain' \
      -X POST \
-     -d <span style="color: #046B99;">"{Signed JWT}"</span></code></pre>
+     -d <span style="color: #045E87;">"{Signed JWT}"</span></code></pre>
 
 #### Response:
 The response from the API will return with a HTTP 200 if the JWT is valid, otherwise an error message will be returned.
@@ -433,7 +433,7 @@ The response from the API will return with a HTTP 200 if the JWT is valid, other
 Obtaining an access token is the final step in connecting to the DPC API. **The access token must be set in the Authorization header in EVERY API request and has a maximum expiration time of 5 MINUTES.**
 
 Example Header:
-<pre><code>Authorization: Bearer <span style="color: #046B99;">{access_token}</span></code></pre>
+<pre><code>Authorization: Bearer <span style="color: #045E87;">{access_token}</span></code></pre>
 
 ### Prerequisites:
 - A valid JSON Web Token (JWT)
@@ -472,7 +472,7 @@ In order to receive an access token, the valid JWT must be submitted to the /Tok
   </tr>
   <tr>
     <td cellspacing="0">"client_assertion":</td>
-    <td cellspacing="0">"<span style="color: #046B99;">{Signed authentication JWT value}</span>"</td>
+    <td cellspacing="0">"<span style="color: #045E87;">{Signed authentication JWT value}</span>"</td>
     <td cellspacing="0">Dynamic</td>
     <td cellspacing="0">The assertion being used to authenticate the client.</td>
   </tr>
@@ -496,7 +496,7 @@ POST /api/v1/Token/auth
      -H 'Content-Type: application/x-www-form-urlencoded' \
      -H 'Accept: application/json' \
      -X POST
-     -d "grant_type=client_credentials&scope=system%2F*.*&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer&client_assertion=<span style="color: #046B99;">{self-signed JWT}</span>"</code></pre>
+     -d "grant_type=client_credentials&scope=system%2F*.*&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer&client_assertion=<span style="color: #045E87;">{self-signed JWT}</span>"</code></pre>
 
 #### Response:
 The endpoint response is a JSON object which contains the access token, the lifetime of the token (in seconds), and the authorized system scopes.
@@ -621,7 +621,7 @@ GET /api/v1/Organization
 #### cURL command:
 
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Organization
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -X GET</code></pre>
@@ -694,7 +694,7 @@ POST /api/v1/Practitioner
 #### cURL command:
 
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Practitioner
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -X POST \
@@ -718,7 +718,7 @@ POST /api/v1/Practitioner/$submit
 #### cURL command:
 
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Practitioner/\$submit
--H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+-H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
 -H 'Accept: application/fhir+json'</span> \
 -H 'Content-Type: application/fhir+json'</span> \
 -X POST \
@@ -736,7 +736,7 @@ GET /api/v1/Practitioner
 #### cURL command:
 
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Practitioner
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -X GET</code></pre>
@@ -746,12 +746,12 @@ The Practitioner endpoint also supports a GET /Practitioner operation where you 
 
 #### Request:
 
-<pre class="highlight"><code>GET /api/v1/Practitioner?identifier=<span style="color: #046B99;">{{Practitioner NPI}}</span></code></pre>
+<pre class="highlight"><code>GET /api/v1/Practitioner?identifier=<span style="color: #045E87;">{{Practitioner NPI}}</span></code></pre>
 
 #### cURL command:
 
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Practitioner
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/fhir+json'</span> \
      -H 'Content-Type: application/fhir+json'</span> \
      -X GET</code></pre>
@@ -859,7 +859,7 @@ POST /api/v1/Patient
 #### cURL command:
 
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Patient
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -X POST \
@@ -937,7 +937,7 @@ POST /api/v1/Patient/$submit
 #### cURL command:
 
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Patient/\$submit
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -X POST \
@@ -955,7 +955,7 @@ GET /api/v1/Patient
 #### cURL command:
 
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Patient
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -X GET</code></pre>
@@ -964,11 +964,11 @@ GET /api/v1/Patient
 The Patient endpoint also supports a GET /Patient operation where you can supply the Patient MBI and receive the Patient Resource. You may use this to identify a Patient’s system ID based off of an MBI.
 
 #### Request:
-<pre class="highlight"><code>GET /api/v1/Patient?identifier=<span style="color: #046B99;">{{Patient MBI}}</span></code></pre>
+<pre class="highlight"><code>GET /api/v1/Patient?identifier=<span style="color: #045E87;">{{Patient MBI}}</span></code></pre>
 
 #### cURL command:
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Patient
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -X GET</code></pre>
@@ -1023,7 +1023,7 @@ The Patient endpoint also supports a GET /Patient operation where you can supply
 CMS requires Practitioners to attest that they have a treatment related purpose for adding a patient to their Group each time they make a Group addition. This is accomplished by submitting an attestation with every request. Attestations are posted as a [Provenance](https://www.hl7.org/fhir/provenance.html) Resource via the X-Provenance header, as outlined in the [FHIR specification](https://www.hl7.org/fhir/implementationguide.html).
 
 ### Prerequisites:
-- Access to the API: active Bearer <span style="color: #046B99;">{access_token}</span>
+- Access to the API: active Bearer <span style="color: #045E87;">{access_token}</span>
 - At least one registered Practitioner
 - At least one registered Patient
 
@@ -1133,7 +1133,7 @@ POST /api/v1/Group
 #### cURL command:
 
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Group
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -H 'X-Provenance: {FHIR Provenance resource} \
@@ -1191,11 +1191,11 @@ After 90 days, patient attributions expire and must be renewed. You can identify
 
 #### Request
 
-<pre class="highlight"><code>GET api/v1/Group?characteristic-value=attributed-to$<span style="color: #046B99;">{Group ID}</span></code></pre>
+<pre class="highlight"><code>GET api/v1/Group?characteristic-value=attributed-to$<span style="color: #045E87;">{Group ID}</span></code></pre>
 
 #### cURL command:
 
-<pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Group?characteristic-value=attributed-to$<span style="color: #046B99;">{Group ID}</span>
+<pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Group?characteristic-value=attributed-to$<span style="color: #045E87;">{Group ID}</span>
      -H 'Authorization: Bearer {access_token}' \
      -H 'Accept: application/fhir+json'</code></pre>
 
@@ -1240,13 +1240,13 @@ After 90 days, patient attributions expire and must be renewed. You can identify
 Additions are handled through a custom $add operation on the /Group endpoint. This takes the members listed into a given resource and adds them to the existing Group.
 
 #### Request:
-<pre class="highlight"><code>POST /api/v1/Group/<span style="color: #046B99;">{Group.id}</span>/$add</code></pre>
+<pre class="highlight"><code>POST /api/v1/Group/<span style="color: #045E87;">{Group.id}</span>/$add</code></pre>
 
 #### cURL command:
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{Group.id}/\$add
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/fhir+json' \
-     -H 'X-Provenance: <span style="color: #046B99;">{FHIR provenance resource}</span> \
+     -H 'X-Provenance: <span style="color: #045E87;">{FHIR provenance resource}</span> \
      -X POST \
      -d @group_addition.json</code></pre>
 
@@ -1289,11 +1289,11 @@ Removals are handled through a custom remove operation on the /Group endpoint. T
 </div>
 
 #### Request:
-<pre class="highlight"><code>POST /api/v1/Group/<span style="color: #046B99;">{Group.id}</span>/$remove</code></pre>
+<pre class="highlight"><code>POST /api/v1/Group/<span style="color: #045E87;">{Group.id}</span>/$remove</code></pre>
 
 #### cURL command:
-<pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Group/<span style="color: #046B99;">{Group.id}</span>/\$remove
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+<pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Group/<span style="color: #045E87;">{Group.id}</span>/\$remove
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/fhir+json' \
      -X POST \
      -d @group_removal.json</code></pre>
@@ -1346,13 +1346,13 @@ Users can also submit a Group resource which completely overwrites the existing 
 </div>
 
 #### Request:
-<pre class="highlight"><code>PUT /api/v1/Group/<span style="color: #046B99;">{Group.id}</span></code></pre>
+<pre class="highlight"><code>PUT /api/v1/Group/<span style="color: #045E87;">{Group.id}</span></code></pre>
 
 #### cURL command:
-<pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Group/<span style="color: #046B99;">{Group.id}</span>
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+<pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Group/<span style="color: #045E87;">{Group.id}</span>
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/fhir+json' \
-     -H 'X-Provenance: <span style="color: #046B99;">{FHIR provenance resource}</span> \
+     -H 'X-Provenance: <span style="color: #045E87;">{FHIR provenance resource}</span> \
      -X PUT \
      -d @updated_group.json</code></pre>
 
@@ -1420,13 +1420,13 @@ The response will return a [Bundle](https://www.hl7.org/fhir/STU3/bundle.html) r
 
 #### Request:
 <pre class="highlight"><code>GET
-/api/v1/Group?characteristic-value=attributed-to$<span style="color: #046B99;">{Practitioner NPI}</span></code></pre>
+/api/v1/Group?characteristic-value=attributed-to$<span style="color: #045E87;">{Practitioner NPI}</span></code></pre>
 
 #### cURL command:
-<pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Group/<span style="color: #046B99;">{Group.id}</span>
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+<pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Group/<span style="color: #045E87;">{Group.id}</span>
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/fhir+json' \
-     -H 'X-Provenance: <span style="color: #046B99;">{FHIR provenance resource}</span></code></pre>
+     -H 'X-Provenance: <span style="color: #045E87;">{FHIR provenance resource}</span></code></pre>
 
 #### Response:
 
@@ -1484,7 +1484,7 @@ The primary interaction with the DPC pilot API is via the FHIR /Group/$export op
 
 ### Prerequisites:
 - Completion of the Authorization section
-- Access to the API: active Bearer <span style="color: #046B99;">{access_token}</span>
+- Access to the API: active Bearer <span style="color: #045E87;">{access_token}</span>
 - Completion of the Attestation & Attribution section
 
 ## Initiate an export job
@@ -1505,12 +1505,12 @@ The dollar sign (‘$’) before the word “export” in the URL indicates that
 
 ### Request:
 
-<pre class="highlight"><code>GET /api/v1/Group/<span style="color: #046B99;">{attribution group ID}</span>/$export</code></pre>
+<pre class="highlight"><code>GET /api/v1/Group/<span style="color: #045E87;">{attribution group ID}</span>/$export</code></pre>
 
 ### cURL command:
 
-<pre class="highlight"><code>curl -v https://sandbox.DPC.cms.gov/api/v1/Group/<span style="color: #046B99;">{attribution Group.id}</span>/\$export \
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+<pre class="highlight"><code>curl -v https://sandbox.DPC.cms.gov/api/v1/Group/<span style="color: #045E87;">{attribution Group.id}</span>/\$export \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/fhir+json' \
      -H 'Prefer: respond-async'</code></pre>
 
@@ -1518,23 +1518,23 @@ The dollar sign (‘$’) before the word “export” in the URL indicates that
 If the request was successful, a 202 Accepted response code will be returned with a Content-Location header. The value of this header indicates the location to monitor your job status and outcomes. The value of the header also contains the Export Job ID of the Job. There is no BODY to the Response, only headers.
 
 **Example:**
-<pre class="highlight"><code>Content-Location: https://sandbox.dpc.cms.gov/api/v1/Jobs/<span style="color: #046B99;">{unique ID of export job}</span></code></pre>
+<pre class="highlight"><code>Content-Location: https://sandbox.dpc.cms.gov/api/v1/Jobs/<span style="color: #045E87;">{unique ID of export job}</span></code></pre>
 
 ## Specify which Resources to Download
 The Resources to Export can be specified using the _type Parameter. Multiple Resources are specified in a comma delimited list. The following request will export the Patient and Coverage esources, but NOT the Explanation of Benefit Resource.
 
 ### Request:
-<pre class="highlight"><code>GET /api/v1/Group/<span style="color: #046B99;">{attribution group ID}</span>/$export?_type=Patient,Coverage</code></pre>
+<pre class="highlight"><code>GET /api/v1/Group/<span style="color: #045E87;">{attribution group ID}</span>/$export?_type=Patient,Coverage</code></pre>
 
 ## Check status of the export job
 You can check the status of your job using the {unique ID of the export job}. This is retrieved from the Content-Location header of the response as shown in the previous section. The status of the job will change from 202 Accepted to 200 OK when the export job is complete and the data is ready to be downloaded.
 
 ### Request:
-<pre class="highlight"><code>GET https://sandbox.dpc.cms.gov/api/v1/Jobs/<span style="color: #046B99;">{unique ID of export job}</span></code></pre>
+<pre class="highlight"><code>GET https://sandbox.dpc.cms.gov/api/v1/Jobs/<span style="color: #045E87;">{unique ID of export job}</span></code></pre>
 
 ### cURL command:
-<pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Jobs/<span style="color: #046B99;">{unique ID of export job}</span> \
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>'</code></pre>
+<pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Jobs/<span style="color: #045E87;">{unique ID of export job}</span> \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>'</code></pre>
 
 ### Response:
 If the request was successful, the status of the job will change from 202 Accepted to 200 OK when the export job is complete and the data is ready to be downloaded.
@@ -1590,12 +1590,12 @@ To obtain the exported explanation of benefit data, a GET request is made to the
 
 #### Request:
 
-<pre class="highlight"><code>GET https://sandbox.dpc.cms.gov/api/v1/data/<span style="color: #046B99;">{job_id}</span>/<span style="color: #046B99;">{file_name}</span></code></pre>
+<pre class="highlight"><code>GET https://sandbox.dpc.cms.gov/api/v1/data/<span style="color: #045E87;">{job_id}</span>/<span style="color: #045E87;">{file_name}</span></code></pre>
 
 ### cURL command:
 
-<pre class="highlight"><code>curl https://sandbox.dpc.cms.gov/api/v1/data/<span style="color: #046B99;">{job_id}</span>/<span style="color: #046B99;">{file_name}</span> \
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>'</code></pre>
+<pre class="highlight"><code>curl https://sandbox.dpc.cms.gov/api/v1/data/<span style="color: #045E87;">{job_id}</span>/<span style="color: #045E87;">{file_name}</span> \
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>'</code></pre>
 
 **Example:** Explanation of Benefit Resource
 
@@ -1896,14 +1896,14 @@ Learn more about the HL7 FHIR Specification for:
 
 #### Request
 
-<pre class="highlight"><code>GET /api/v1/Patient/<span style="color: #046B99;">{id}</span>/$everything</code></pre>
+<pre class="highlight"><code>GET /api/v1/Patient/<span style="color: #045E87;">{id}</span>/$everything</code></pre>
 
 #### cURL Command
 
-<pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Patient/<span style="color: #046B99;">{id}</span>/$everything
-     -H 'Authorization: Bearer <span style="color: #046B99;">{access_token}</span>' \
+<pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Patient/<span style="color: #045E87;">{id}</span>/$everything
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/fhir+json' \
-     -H 'X-Provenance: <span style="color: #046B99;">{FHIR Provenance resource}</span></code></pre>
+     -H 'X-Provenance: <span style="color: #045E87;">{FHIR Provenance resource}</span></code></pre>
 
 
 <a class="guide_top_link" href="#export-data">Back to Start of Section</a><br />
