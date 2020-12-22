@@ -121,11 +121,12 @@
     padding: 5px 0;
 
     a {
-      color: $color-primary;
+      font-weight: 700;
+      text-decoration: underline solid $color-black 2px;
     }
 
     a:visited {
-      color: $color-primary-darker;
+      color: $color-black;
     }
   }
 
