@@ -1,7 +1,7 @@
 var close_mobile_nav_button = document.getElementById("topnav__close-button"),
     open_mobile_nav_button = document.getElementById("topnav__show-button"),
     mobile_nav = document.getElementById("topnav-wrap"),
-    navbar = document.getElementById("navbar"),
+    navbar = document.getElementById("navigation"),
     overlay = document.createElement("div"),
     nav_open_class = "nav-is-open",
     visible_class = "is-visible",
