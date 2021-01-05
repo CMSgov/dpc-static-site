@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <body>
-    <header role="banner">
+    <div role="banner">
       {% include _head.html %}
       {% include _nav.html %}
-    </header>
-    <div role="main">
-      {{ content }}
     </div>
+
+    {{ content }}
 
     {% include _footer.html %}
   </body>
