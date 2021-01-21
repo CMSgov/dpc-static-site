@@ -5,4 +5,4 @@ WORKDIR /dpc-site-static
 COPY . .
 RUN bundle install
 RUN npm install
-ENTRYPOINT ["bundle", "exec", "jekyll", "build"]
+ENTRYPOINT ["bundle", "exec", "jekyll", "build", "--config", "_config.yml,_version_config.yml"]
