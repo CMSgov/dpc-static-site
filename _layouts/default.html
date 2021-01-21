@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include _head.html %}
-  {% include _nav.html %}
-<body>
+  <body>
+    <div role="banner">
+      {% include _head.html %}
+      {% include _nav.html %}
+    </div>
 
-  {{ content }}
+    {{ content }}
 
-  {% include _footer.html %}
-</body>
+    {% include _footer.html %}
+  </body>
   <script src="/assets/js/accordions.js"></script>
   <script src="/assets/js/modals.js"></script>
   <script src="/assets/js/navbar.js"></script>
