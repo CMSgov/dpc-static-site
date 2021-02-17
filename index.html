@@ -7,9 +7,9 @@ landing-page: live
 nav_link: home
 id: home
 ---
+<div role="main">
 {% include _hero.html %}
 
-<main id="main">
   <section class="site-block site-block--alt">
     <div class="ds-l-container">
       <div class="site-block-header">
@@ -18,7 +18,7 @@ id: home
       <div class="ds-l-row ds-u-margin-top--5">
         <div class="ds-l-col--12 ds-l-md-col--4 benefit-prop">
           <div class="benefit-prop__img-wrap">
-            <img src="/assets/images/provider-calendar.svg" alt="Provider Calendar">
+            <img src="/assets/images/provider-calendar.svg" alt="Image of a calendar">
           </div>
           <div class="benefit-prop__body">
             <h3>Reveals the claims history of your new patients</h3>
@@ -27,7 +27,7 @@ id: home
         </div>
         <div class="ds-l-col--12 ds-l-md-col--4 benefit-prop">
           <div class="benefit-prop__img-wrap">
-            <img src="/assets/images/provider-conversation.svg" alt="">
+            <img src="/assets/images/provider-conversation.svg" alt="Image of two speech boxes. One has a heart monitor line inside of it. The other has a pill bottle inside of it.">
           </div>
           <div class="benefit-prop__body">
             <h3>Lets you see the care that patients are receiving from a variety of sources</h3>
@@ -36,7 +36,7 @@ id: home
         </div>
         <div class="ds-l-col--12 ds-l-md-col--4 benefit-prop">
           <div class="benefit-prop__img-wrap">
-            <img src="/assets/images/provider-medications.svg" alt="">
+            <img src="/assets/images/provider-medications.svg" alt="Image of three pill bottles. The bottle in the middle has an x over it.">
           </div>
           <div class="benefit-prop__body">
             <h3>Gives insight into your patients' medication history</h3>
@@ -55,7 +55,7 @@ id: home
       <div class="ds-l-row ds-u-margin-top--5">
         <div class="ds-l-col--12 ds-l-md-col--4 benefit-prop">
           <div class="benefit-prop__img-wrap">
-            <img src="/assets/images/patient-documents.svg">
+            <img src="/assets/images/patient-documents.svg" alt="Image of paper documents overlapping">
           </div>
           <div class="benefit-prop__body">
             <h3>Reduces their frustration and documentation</h3>
@@ -64,7 +64,7 @@ id: home
         </div>
         <div class="ds-l-col--12 ds-l-md-col--4 benefit-prop">
           <div class="benefit-prop__img-wrap">
-            <img src="/assets/images/patient-clock.svg">
+            <img src="/assets/images/patient-clock.svg" alt="Image of an alarm clock">
           </div>
           <div class="benefit-prop__body">
             <h3>Gives them more time to focus on their current needs</h3>
@@ -73,7 +73,7 @@ id: home
         </div>
         <div class="ds-l-col--12 ds-l-md-col--4 benefit-prop">
           <div class="benefit-prop__img-wrap">
-            <img src="/assets/images/patient-teamwork.svg" alt="">
+            <img src="/assets/images/patient-teamwork.svg" alt="Image of three hands overlapping.">
           </div>
           <div class="benefit-prop__body">
             <h3>Keeps the entire provider team on the same page</h3  >
@@ -117,19 +117,17 @@ id: home
       </div>
     </div>
   </section>
-</main>
 
-<div class="ds-c-dialog-wrap" aria-labelledby="dialog-title" aria-hidden="true" role="dialog" id="filter-modal">
-  <div class="ds-c-dialog ds-c-dialog--full ds-u-fill--base" role="document">
-    <header class="ds-c-dialog__header" role="banner">
-      <button class="ds-c-button ds-c-button--transparent ds-c-dialog__close ds-u-color--white" aria-label="Close modal dialog">Close</button>
-    </header>
-
+  <div class="ds-c-dialog-wrap" aria-labelledby="dialog-title" aria-hidden="true" role="dialog" id="filter-modal">
+    <div class="ds-c-dialog ds-c-dialog--full ds-u-fill--base" role="document">
+      <header class="ds-c-dialog__header" role="banner">
+        <button class="ds-c-button ds-c-button--transparent ds-c-dialog__close ds-u-color--white" aria-label="Close modal dialog">Close</button>
+      </header>
 
       <style>.codegena{position:relative;width:100%;height:0;padding-bottom:56.27198%;}.codegena iframe{position:absolute;top:0;left:0;width:100%;height:100%;}</style><div class="codegena"><iframe width='500' height='294' src="https://www.youtube.com/embed/zIwphPlI9RA?&theme=dark&autohide=2&modestbranding=1&rel=0&iv_load_policy=3&showinfo=0&showtitle=0"frameborder="0"></iframe></div>
 
       <button class="ds-c-button ds-c-button--transparent ds-c-dialog__close ds-u-color--white ds-u-visibility--screen-reader" aria-label="Close modal dialog">Close</button>
-
-
+    </div>
   </div>
+
 </div>
