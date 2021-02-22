@@ -28,6 +28,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://dpc.cms.gov" # the base hostname & protocol for your site, e.g. http://example.com
 cssurl: /assets/css/static-main.css
 logourl: /assets/images/top-nav-heart.svg
+sbx_register: "https://sandbox.dpc.cms.gov/users/sign_up"
+sbx_sign_in: "https://sandbox.dpc.cms.gov/users/sign_in"
 
 global_nav:
   - title: Home
