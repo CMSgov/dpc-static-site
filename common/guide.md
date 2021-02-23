@@ -556,7 +556,7 @@ var sHeader = JSON.stringify("de56ae6d-e42c-4738-81e6-c23009797cd1");
 const header = {
     'alg': 'RS384',
     'kid': 'XXXXXXXXXXXXXXXXX', 
-    //THIS IS THE KEY ID HAT IS ASSOCIATED WITH THE PUBLIC KEY
+    //THIS IS THE KEY ID THAT IS ASSOCIATED WITH THE PUBLIC KEY
     //YOU REGISTERED WITH DPC
   }
 var sPayload = JSON.stringify(data);

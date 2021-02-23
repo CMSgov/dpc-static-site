@@ -11,7 +11,7 @@
 
 <!-- Replace xxx with the JIRA ticket number: -->
 
-### Fixes [DPC-xxx](https://jiraent.cms.gov/browse/DPC-xxx)
+### Fixes [DPC-xxx](https://jira.cms.gov/browse/DPC-xxx)
 
 <!-- Describe the problem being solved here: -->
 
