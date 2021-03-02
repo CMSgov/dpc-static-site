@@ -123,3 +123,11 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - package.json
+  - package-lock.json
+  - ops/
+  - scripts/
+  - README.md
+  - Dockerfiles/
+  - docker-compose.yml
+  - Makefile
