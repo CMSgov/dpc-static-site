@@ -1,0 +1,12 @@
+---
+title: User Password Reset Redirect
+permalink: /internal/users/password/edit
+id: user-password-redirect
+---
+
+<script>
+  const baseURL = 'https://sandbox.dpc.cms.gov/users/password/edit'
+  const params = new URLSearchParams(window.location.search);
+  const redirectURL = baseURL + '?' + params.toString()
+  window.location.replace(redirectURL)
+</script>
