@@ -104,9 +104,9 @@
   transform: translateX($spacer-3);
   width: auto;
 
-  // @media (min-width: $width-nav) {
-  //   display: none;
-  // }
+  @media (min-width: $width-nav) {
+    display: none;
+  }
 }
 
 .topnav__close-button {
