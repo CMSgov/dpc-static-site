@@ -2,12 +2,6 @@
 title: User Confirmation Redirect
 permalink: /users/confirmation
 id: user-confirmation-redirect
-layout: default
+layout: redirect
+redirectURL: https://sandbox.dpc.cms.gov/users/confirmation
 ---
-
-<script>
-  const baseURL = 'https://sandbox.dpc.cms.gov/users/confirmation'
-  const params = new URLSearchParams(window.location.search);
-  const redirectURL = baseURL + '?' + params.toString()
-  window.location.replace(redirectURL)
-</script>

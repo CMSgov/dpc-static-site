@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <style type="text/css" media="screen">
+    .container {
+      margin: 10px auto;
+      max-width: 600px;
+      text-align: center;
+    }
+    h1 {
+      margin: 30px 0;
+      font-size: 4em;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+  </style>
+
+  <body>
+    <div role="banner">
+      {% include _head.html %}
+      {% include _nav.html %}
+    </div>
+
+    <div role="container">
+      <h1>The content you are looking for is no longer here</h1>
+      <p>Please be patient as we redirect to your content's new home or click <a href="{{ page.redirectURL }}">here</a></p>
+    </div>
+
+    {{ content }}
+
+    {% include _footer.html %}
+  </body>
+  <script src="/assets/js/accordions.js"></script>
+  <script src="/assets/js/modals.js"></script>
+  <script src="/assets/js/navbar.js"></script>
+  <script>
+    const baseURL = '{{ page.redirectURL }}'
+    const params = new URLSearchParams(window.location.search);
+    const redirectURL = baseURL + '?' + params.toString()
+    window.location.replace(redirectURL)
+  </script>
+</html>
