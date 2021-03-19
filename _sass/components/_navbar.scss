@@ -4,18 +4,19 @@
   color: $color-primary-darkest;
   display: flex;
   flex-shrink: 0;
-  font-size: $h5-font-size;
+  font-size: 21px;
+  font-stretch: ultra-condensed;
   font-weight: $font-bold;
+  letter-spacing: 0.1px;
   text-decoration: none;
   width: 15rem;
 
   @media (min-width: $width-sm) {
-    font-size: $h3-font-size;
     width: 20rem;
   }
 
   img {
-    margin-right: $spacer-1;
+    margin-right: 6px;
     width: $spacer-2;
 
     @media (min-width: $width-sm) {
@@ -32,13 +33,15 @@
   align-items: center;
   background-color: #fff;
   display: flex;
+  min-height: 45px;
   justify-content: space-between;
-  padding: $spacer-2;
+  padding: $spacer-2 $spacer-1 $spacer-2 $spacer-2;
   position: relative;
 
-  @media (min-width: $width-sm) {
+  @media (min-width: 1020px) {
+    min-height: 77px;
     padding-left: $spacer-4;
-    padding-right: $spacer-4;
+    padding-right: $spacer-3;
   }
 }
 
@@ -140,6 +143,7 @@
 
 .topnav__item--buttons {
   border: 0;
+  font-size: 15px !important;
   margin-top: $spacer-3;
 
   @media (min-width: $width-nav) {
@@ -152,15 +156,15 @@
   border-bottom: 2px solid $color-white;
   color: $color-primary-darkest;
   display: block;
-  font-size: $h4-font-size;
+  font-size: 17px;
   font-weight: $font-bold;
   padding: $spacer-2 0;
   text-decoration: none;
 
   @media (min-width: $width-nav) {
     display: inline-block;
-    padding: $spacer-1 $spacer-1;
-    margin-right: $spacer-2;
+    padding: $spacer-1;
+    margin-right: 14px;
   }
 }
 
