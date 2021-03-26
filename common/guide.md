@@ -1854,6 +1854,125 @@ To obtain the exported explanation of benefit data, a GET request is made to the
 }
 ~~~
 
+## Requesting filtered data
+
+You may want to obtain filtered data for all of your beneficiaries in order to reduce file size and download time. 
+
+You can filter data using the _since parameter with either the /Patient or /Group endpoints. You may want to set  _since queries as a repeating call or as a way to check for patient updates to avoid downloading duplicate data. 
+
+<div class="ds-c-alert ds-c-alert--warn">
+  <div class="ds-c-alert__body"> 
+    <h3 class="ds-c-alert__heading">Before using _since, download all of your data.</h3>
+    <p class="ds-c-alert__text">
+      Before using _since for the first time, we recommend that you run an unfiltered request (without using _since) to all resource types using the  /Group/{id}/$export endpoint in order to retrieve all historical data for your associated beneficiaries. You only need to do this once. <br /><br />
+      On subsequent calls you can begin retrieving incremental claims data for your beneficiaries using _since. We suggest using the transactionTime from your last bulk data request as the _since date.
+    </p>
+  </div>
+</div>
+
+
+**You can make two types of filtered requests for data:**
+1. Request the most recent data for all beneficiaries: [Use _since within the /Group endpoint](https://bcda.cms.gov/build.html#requesting-since-with-Group)
+2. Request data synchronously for an individual patient: [Use _since within the /Patient endpoint](https://bcda.cms.gov/build.html#requesting-since-with-Patient)
+
+### Steps
+
+Each request will follow the same four-step process as an unfiltered request:
+
+1. Obtain an access token
+2. Start a job to acquire data (you will input the _since parameter here)
+3. Check the job status
+4. Download the data
+
+The only difference appears in the request of Step 2: Start a job to acquire data. We show examples of this step below.
+
+**Dates and times submitted in _since must be listed in the FHIR Instant format** (YYYY-MM-DDThh:mm:sss[-/+]zz:zz).
+
+* Sample Date: February 20, 2020 12:00 PM EST
+* Instant Format: YYYY-MM-DDThh:mm:sss[-/+]zz:zz
+* Formatted Sample: 2020-02-20T12:00:00.000-05:00
+
+<div class="ds-c-alert ds-c-alert--warn">
+  <div class="ds-c-alert__body"> 
+    <h3 class="ds-c-alert__heading">TBD</h3>
+    <p class="ds-c-alert__text">
+      The value of the _since parameter must be URL encoded. When using the <a href="#postman-collection">Postman Collection</a>, you will need to manually encode the _since parameter when it contains a + sign since Postman does not automatically encode this character. You can do this either by replacing the + with %2B (e.g., 2020-01-23T04:00:00.000%2B07:00 instead of 2020-01-23T04:00:00.000+07:00), or you can select the value and choose “EncodeURIComponent” from the context menu to have Postman encode the entire parameter automatically.
+    </p>
+  </div>
+</div>
+
+insert image
+
+An access token as well as Accept and Prefer headers are required for the Group/{id}all/$export. 
+
+The Prefer header is NOT required for /Patient/{id}/$everything, but it DOES require an X-Provenance header whereas the /Group/{id}/$export endpoint does not. The format is defined by the FHIR Bulk Data Export spec. Consult the [FHIR Datatypes](https://www.hl7.org/fhir/datatypes.html#instant) page for more information.
+
+<div class="ds-c-alert ds-c-alert--warn">
+  <div class="ds-c-alert__body"> 
+    <h3 class="ds-c-alert__heading">TBD</h3>
+    <p class="ds-c-alert__text">
+      Due to limitations in the Beneficiary FHIR Data (BFD) Server, data from before 02-12-2020 is marked with the arbitrary <a href="https://www.hl7.org/fhir/search.html#lastUpdated">lastUpdated</a> date of 01-01-2020. If you input dates between 01-01-2020 and 02-11-2020 in the _since parameter, you will receive all historical data for your beneficiaries. Data loads from 02-12-2020 onwards have been marked with accurate dates.
+    </p>
+  </div>
+</div>
+
+## Requesting data using _since with the /Group endpoint
+
+#### Request to Start a job using the _since parameter within the /Group endpoint
+
+<pre class="highlight"><code>GET /api/v1/Group/<span style="color: #045E87;">{id}</span>/$export?_type=Patient&_since=2020-02-13T08:00:00.000-05:00
+</code></pre>
+
+#### Request Headers:
+<pre class="highlight"><code>
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
+     -H 'Accept: application/fhir+json' \
+     “X-Provenance:<a href="#attestation">{provenance header}</a>
+</code></pre>
+
+#### Response:
+
+~~~
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 1,
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "995a1c0f-b6bc-4d16-b6b0-b8a6597c6e1d",
+        "meta": {
+          "lastUpdated": "2020-06-12T15:39:42.834+00:00",
+          "profile": [
+            "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-mbi",
+            "value": "5S41C00AA00"
+          }
+        ],
+        "name": [
+          {
+            "family": "Wyman904",
+            "given": [
+              "Cruz300"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1956-02-08",
+        "managingOrganization": {
+          "reference": "Organization/351fbb5f-f2f9-4094-bc6f-2b3600bb56e9"
+        }
+      }
+    }
+  ]
+}
+~~~
+
 <a class="guide_top_link" href="#export-data">Back to Start of Section</a><br />
 <a class="guide_top_link" href="#">Back to Top of Page</a>
 
@@ -1886,7 +2005,7 @@ Additional instructions and details can be found within the description of each 
 ## Patient/$everything
 Patient/{id}/$everything is an endpoint that allows users to retrieve all resources about a Patient using their DPC internal ID (UUID), represented as {id} in the request. Included in the resources will be the Patient, Coverage, and ExplanationOfBenefit resources for one patient’s historical data from the last seven years, combined into a Bundle. It is a synchronous download, so it differs from the Group $export operation in that it does not create a job that needs to be monitored or data files to download. The response body will contain the Bundle.
 
-If you only have the Medicare Beneficiary Identifier (MBI) of the patient, you can retrieve the DPC internal ID by first making a GET request for that specific patient as the UUID is returned in that response. See List a Specific Patient for details.
+If you only have the Medicare Beneficiary Identifier (MBI) of the patient, you can retrieve the DPC internal ID by first making a GET request for that specific patient as the UUID is returned in that response. See [List a Specific Patient](#list-a-specific-patient) for details.
 
 A Patient record must already exist in the DPC database to successfully complete your Patient/$everything request; however, the patient does not need to belong to a group.
 
