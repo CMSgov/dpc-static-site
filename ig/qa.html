@@ -1,0 +1,653 @@
+﻿<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- broken links = 84, errors = 25, warn = 7, info = 2 -->
+<head>
+  <title>Data @ the Point of Care Implementation Guide : Validation Results</title>
+  <link href="fhir.css" rel="stylesheet"/>
+  <style>
+    span.flip  { background-color: #4CAF50; color: white; border: solid 1px #a6d8a8; padding: 2px }
+  </style>
+  <script>
+    function flip(id) {
+      var span = document.getElementById('s'+id);
+      var div = document.getElementById(id);
+      if (document.getElementById('s'+id).innerHTML == 'Show Reasoning') {
+        div.style.display = 'block';
+        span.innerHTML = 'Hide Reasoning';
+      } else {
+        div.style.display = 'none';
+        span.innerHTML = 'Show Reasoning';
+      }
+    }
+  </script>
+</head>
+<body style="margin: 20px; background-color: #ffffff">
+ <h1>Validation Results for Data @ the Point of Care Implementation Guide</h1>
+ <p>Generated Fri Mar 26 14:23:57 EDT 2021, FHIR version 3.0.2 for cms-dpc-ig# (canonical = <a href="https://dpc.cms.gov/api/v1">https://dpc.cms.gov/api/v1</a> (<a href="https://dpc.cms.gov/api/v1/history.html">history</a>))</p>
+<p style="background-color: #ffcccc">IG Publisher Version: v1.1.0, which is out of date. The current version is ?pub-ver-1? <a href="https://storage.googleapis.com/ig-build/org.hl7.fhir.publisher.jar">Download Latest</a></p>
+<p>No Suppressed Errors</p>
+ <p>HL7 Publication check:</p> <ul><li>n/a - not an HL7.org or FHIR.org implementation guide</li></ul>
+
+ <p>Realm check:</p> <ul><li>n/a</li></ul>
+ <table class="grid">
+   <tr>
+     <td><b>Filename</b></td><td><b>Errors</b></td><td><b>Information messages &amp; Warnings</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#internal"><b>Build Errors</b></a></td><td><b>84</b></td><td><b>1</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_DPCCapabilities"><b>/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/DPCCapabilities</b></a></td><td><b>3</b></td><td><b>1</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_implementationguide_cms-dpc-ig"><b>/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/implementationguide/cms-dpc-ig</b></a></td><td><b>9</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_operationdefinition_dpc-group-add"><b>/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-group-add</b></a></td><td><b>1</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_operationdefinition_dpc-group-remove"><b>/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-group-remove</b></a></td><td><b>1</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_operationdefinition_dpc-patient-submit"><b>/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-patient-submit</b></a></td><td><b>1</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_operationdefinition_dpc-patient-validate"><b>/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-patient-validate</b></a></td><td><b>1</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_operationdefinition_dpc-practitioner-submit"><b>/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-practitioner-submit</b></a></td><td><b>1</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_operationdefinition_dpc-practitioner-validate"><b>/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-practitioner-validate</b></a></td><td><b>1</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_patient_DPC-sample-patient"><b>/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/patient/DPC-sample-patient</b></a></td><td><b>1</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_practitioner_DPC-sample-practitioner"><b>/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/practitioner/DPC-sample-practitioner</b></a></td><td><b>0</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_validations_DPCAddress"><b>/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCAddress</b></a></td><td><b>0</b></td><td><b>1</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_validations_DPCAttestation"><b>/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCAttestation</b></a></td><td><b>2</b></td><td><b>1</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_validations_DPCAttributionRoster"><b>/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCAttributionRoster</b></a></td><td><b>0</b></td><td><b>1</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_validations_DPCEndpoint"><b>/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCEndpoint</b></a></td><td><b>0</b></td><td><b>1</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_validations_DPCOrganization"><b>/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCOrganization</b></a></td><td><b>1</b></td><td><b>1</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_validations_DPCPatient"><b>/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCPatient</b></a></td><td><b>2</b></td><td><b>1</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_validations_DPCPractitioner"><b>/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCPractitioner</b></a></td><td><b>1</b></td><td><b>1</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="internal"> </a>
+<h2><a href="">n/a</a></h2>
+ <table class="grid">
+   <tr style="background-color: #ffffe6">
+     <td><b>CapabilityStatement-dpc-capabilities.html</b></td><td><b>information</b></td><td><b>The html source does not contain the publish box; this is recommended for publishing support  (see note at http://wiki.hl7.org/index.php?title=FHIR_Implementation_Guide_Publishing_Requirements#HL7_HTML_Standards_considerations). Note that this is mandatory for HL7 specifications, and on the ci-build, but in other cases it's still recommended (this is only reported once, but applies for all pages)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="CapabilityStatement-dpc-capabilities.html#3a341767-c263-4d1e-a211-92d08e5e2085">CapabilityStatement-dpc-capabilities.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="CapabilityStatement-dpc-capabilities.json.html#e95f614e-c76f-4a10-8ce2-4f44cf1973c1">CapabilityStatement-dpc-capabilities.json.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="CapabilityStatement-dpc-capabilities.ttl.html#208e16e7-3f3b-495a-a457-9966ba6e3d07">CapabilityStatement-dpc-capabilities.ttl.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="CapabilityStatement-dpc-capabilities.xml.html#23bd1603-e75c-42b1-98bd-1d414c94ca19">CapabilityStatement-dpc-capabilities.xml.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="ImplementationGuide-cms-dpc-ig.html#e0fd6637-2ece-4832-a351-268fead06986">ImplementationGuide-cms-dpc-ig.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="ImplementationGuide-cms-dpc-ig.json.html#af42c8c2-fee1-4075-8d83-74d4788eb7f4">ImplementationGuide-cms-dpc-ig.json.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="ImplementationGuide-cms-dpc-ig.ttl.html#019cb620-face-4319-bdc7-51f6beafaa87">ImplementationGuide-cms-dpc-ig.ttl.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="ImplementationGuide-cms-dpc-ig.xml.html#e9e2b7f4-f283-448c-83f6-57d24ad4f095">ImplementationGuide-cms-dpc-ig.xml.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-group-add.html#29a6b4f2-29ad-4b0c-8a71-22d3f172ac98">OperationDefinition-dpc-operation-group-add.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-group-add.json.html#8c3a2a19-6d41-41f9-a230-d8f0173f4daf">OperationDefinition-dpc-operation-group-add.json.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-group-add.ttl.html#bc8615ef-62fb-453d-a718-fe4459ced705">OperationDefinition-dpc-operation-group-add.ttl.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-group-add.xml.html#54926cb3-0445-48fb-82c3-728be3e70e94">OperationDefinition-dpc-operation-group-add.xml.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-group-remove.html#dff84cee-fc28-4c2d-be1c-75569dec6c3a">OperationDefinition-dpc-operation-group-remove.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-group-remove.json.html#abd00d23-ae70-4414-8bb6-9382db1c22bf">OperationDefinition-dpc-operation-group-remove.json.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-group-remove.ttl.html#1147461e-354d-474d-8889-b829f55d2105">OperationDefinition-dpc-operation-group-remove.ttl.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-group-remove.xml.html#a1b1c58f-bc75-4514-8665-4115b69b59f6">OperationDefinition-dpc-operation-group-remove.xml.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-patient-submit.html#b61994db-fd5b-4152-9a7e-32cd5a4bb6e3">OperationDefinition-dpc-operation-patient-submit.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-patient-submit.json.html#49c8195d-6f3b-40d3-bc33-66a3cfcc4415">OperationDefinition-dpc-operation-patient-submit.json.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-patient-submit.ttl.html#b34bac36-6a39-444c-ba67-6f3b4e5dd727">OperationDefinition-dpc-operation-patient-submit.ttl.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-patient-submit.xml.html#4d0b8a0b-c8b9-49af-8e8d-e88f889255dc">OperationDefinition-dpc-operation-patient-submit.xml.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-patient-validate.html#ae8a7edf-5e4c-4ba4-8db0-4a5508696791">OperationDefinition-dpc-operation-patient-validate.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-patient-validate.json.html#7614673e-e8e6-4dc3-948c-d3716abb119f">OperationDefinition-dpc-operation-patient-validate.json.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-patient-validate.ttl.html#56e17e78-80a8-4c25-b7c9-c62026bc7f6f">OperationDefinition-dpc-operation-patient-validate.ttl.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-patient-validate.xml.html#501a9004-86cc-4111-8dfa-000aa35c7375">OperationDefinition-dpc-operation-patient-validate.xml.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-practitioner-submit.html#16cbfffe-8c06-4b8d-88d1-a06052d6a800">OperationDefinition-dpc-operation-practitioner-submit.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-practitioner-submit.json.html#76168b21-97d8-4ba5-bb0a-b70ab96a1f5d">OperationDefinition-dpc-operation-practitioner-submit.json.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-practitioner-submit.ttl.html#cc1a9444-5060-4f2f-a1cf-33ff42133d8d">OperationDefinition-dpc-operation-practitioner-submit.ttl.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-practitioner-submit.xml.html#ae3624da-1d4a-431a-9145-7e19227ed9f9">OperationDefinition-dpc-operation-practitioner-submit.xml.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-practitioner-validate.html#2da2f396-e950-4052-adf3-9ff6e8042013">OperationDefinition-dpc-operation-practitioner-validate.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-practitioner-validate.json.html#d5ba4c5e-56a7-4e3d-86a9-358a8a69244e">OperationDefinition-dpc-operation-practitioner-validate.json.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-practitioner-validate.ttl.html#36a588f5-2e2f-401f-9dce-c6e33c8228e3">OperationDefinition-dpc-operation-practitioner-validate.ttl.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="OperationDefinition-dpc-operation-practitioner-validate.xml.html#87164b8f-02e6-4d3d-8d88-f2c8ed7086a8">OperationDefinition-dpc-operation-practitioner-validate.xml.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="Patient-728b270d-d7de-4143-82fe-d3ccd92cebe4.html#571730db-63b9-4c07-8833-21fd07c99389">Patient-728b270d-d7de-4143-82fe-d3ccd92cebe4.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="Patient-728b270d-d7de-4143-82fe-d3ccd92cebe4.json.html#25a19486-e7e3-4c9d-a508-ce55222761fe">Patient-728b270d-d7de-4143-82fe-d3ccd92cebe4.json.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="Patient-728b270d-d7de-4143-82fe-d3ccd92cebe4.ttl.html#81a37831-8a6e-4869-9425-b2a17f53db96">Patient-728b270d-d7de-4143-82fe-d3ccd92cebe4.ttl.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="Patient-728b270d-d7de-4143-82fe-d3ccd92cebe4.xml.html#f8283e52-c83b-41f1-a6b1-8fdaa868a1ec">Patient-728b270d-d7de-4143-82fe-d3ccd92cebe4.xml.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="Practitioner-0c527d2e-2e8a-4808-b11d-0fa06baf8254.html#a9662c09-8e61-4999-a762-2ec8efe993d8">Practitioner-0c527d2e-2e8a-4808-b11d-0fa06baf8254.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="Practitioner-0c527d2e-2e8a-4808-b11d-0fa06baf8254.json.html#c4fffe95-5a69-4eae-acb6-68b980d6e075">Practitioner-0c527d2e-2e8a-4808-b11d-0fa06baf8254.json.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="Practitioner-0c527d2e-2e8a-4808-b11d-0fa06baf8254.ttl.html#6397a8d7-0966-47ab-ae9b-eda296b5b1bf">Practitioner-0c527d2e-2e8a-4808-b11d-0fa06baf8254.ttl.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="Practitioner-0c527d2e-2e8a-4808-b11d-0fa06baf8254.xml.html#cdd7f5e6-47c1-488d-8b87-a1d38fd578e7">Practitioner-0c527d2e-2e8a-4808-b11d-0fa06baf8254.xml.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-address-definitions.html#7040b400-5dfc-4469-ab39-5eba63917396">StructureDefinition-dpc-profile-address-definitions.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-address.html#40f6dc05-f427-48a7-9a52-38a505294f6b">StructureDefinition-dpc-profile-address.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-address.json.html#81acf85e-8484-4ddf-90bb-3b55a590340e">StructureDefinition-dpc-profile-address.json.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-address.ttl.html#943feb69-8958-4e0f-82d6-48b030576876">StructureDefinition-dpc-profile-address.ttl.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-address.xml.html#7198fda6-177e-4088-8927-ecfc4f9c385b">StructureDefinition-dpc-profile-address.xml.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-attestation-definitions.html#78b085f9-f112-42a0-8ad9-2028e3c58804">StructureDefinition-dpc-profile-attestation-definitions.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-attestation.html#d2ccd27b-a06e-46cf-894c-2a2ccace4874">StructureDefinition-dpc-profile-attestation.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-attestation.json.html#98edc661-8ebd-47c1-8fe5-e212f46f81b8">StructureDefinition-dpc-profile-attestation.json.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-attestation.ttl.html#6d1438d4-d6d6-42ec-873a-19a277bdf22d">StructureDefinition-dpc-profile-attestation.ttl.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-attestation.xml.html#8412ef21-7f02-4677-8fc7-afe0f04d3dc0">StructureDefinition-dpc-profile-attestation.xml.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-attribution-roster-definitions.html#a8ceae66-db5c-424e-a0dd-8d3d76527832">StructureDefinition-dpc-profile-attribution-roster-definitions.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-attribution-roster.html#01da0577-59bc-4a54-a74e-fc6081c5f5b1">StructureDefinition-dpc-profile-attribution-roster.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-attribution-roster.json.html#011f6cac-0194-4c1e-951f-7d0869fcc461">StructureDefinition-dpc-profile-attribution-roster.json.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-attribution-roster.ttl.html#e1c46d9b-4736-493e-8a21-a4ccdd5da964">StructureDefinition-dpc-profile-attribution-roster.ttl.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-attribution-roster.xml.html#08b98685-01e2-4fc5-b05d-cb1153db52b1">StructureDefinition-dpc-profile-attribution-roster.xml.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-endpoint-definitions.html#5b23ca6b-fb25-4612-91b7-8e24509f550b">StructureDefinition-dpc-profile-endpoint-definitions.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-endpoint.html#120daba2-5891-4a29-9379-07b8f2c08e50">StructureDefinition-dpc-profile-endpoint.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-endpoint.json.html#9cd06ad0-fbb7-4baa-acb6-b1364d9f6a0e">StructureDefinition-dpc-profile-endpoint.json.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-endpoint.ttl.html#1f57c83d-4a74-4df5-932c-6e380abc6bd7">StructureDefinition-dpc-profile-endpoint.ttl.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-endpoint.xml.html#c957dea8-0aac-4cc3-80ce-61d422d7cae4">StructureDefinition-dpc-profile-endpoint.xml.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-organization-definitions.html#0d2c8a23-20e6-469d-9ea0-bebbc661a5d7">StructureDefinition-dpc-profile-organization-definitions.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-organization.html#a4704dab-1ab5-401f-9128-616e57a867d0">StructureDefinition-dpc-profile-organization.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-organization.json.html#0abbf078-3612-4a35-9c03-2933eadc599d">StructureDefinition-dpc-profile-organization.json.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-organization.ttl.html#76e3f606-f02d-4db4-836f-bde00f938713">StructureDefinition-dpc-profile-organization.ttl.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-organization.xml.html#9665c79c-e6f5-4a06-8bd9-eff26874671e">StructureDefinition-dpc-profile-organization.xml.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-patient-definitions.html#f44d7e4e-9d6a-4676-9651-be5f17d06bd5">StructureDefinition-dpc-profile-patient-definitions.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-patient.html#25ebdd18-d888-4ce7-bb8d-b3fc8d881dcf">StructureDefinition-dpc-profile-patient.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-patient.json.html#c5b836ba-a3b1-4efa-b40a-0571c5c6ad5b">StructureDefinition-dpc-profile-patient.json.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-patient.ttl.html#905f5fae-22ba-4772-8e31-bcd7fc3f2095">StructureDefinition-dpc-profile-patient.ttl.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-patient.xml.html#e8c5866b-20cd-464c-8c6c-2faa5154d18e">StructureDefinition-dpc-profile-patient.xml.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-practitioner-definitions.html#b1a27a7b-d82f-4715-9c1d-0443dc6ba341">StructureDefinition-dpc-profile-practitioner-definitions.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-practitioner.html#311ffcde-583c-49aa-85d6-9ba9b08ab4bf">StructureDefinition-dpc-profile-practitioner.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-practitioner.json.html#7ee520a8-9776-49f6-a8f1-0435d3d99744">StructureDefinition-dpc-profile-practitioner.json.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-practitioner.ttl.html#7a27e7f0-37dd-40c6-ad0d-5f87e77b9d3d">StructureDefinition-dpc-profile-practitioner.ttl.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="StructureDefinition-dpc-profile-practitioner.xml.html#a391cafd-13e8-487f-bc8a-29ea4959dadf">StructureDefinition-dpc-profile-practitioner.xml.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="capstatements.html#01d002b1-3868-4aca-bc4c-75a8356af6ca">capstatements.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="downloads.html#7963a953-a1ae-4d3c-867c-dff63cbad5b6">downloads.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="extensions.html#14c246f3-32b9-47ab-b1ef-80739b4e0b19">extensions.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="index.html#11708793-0d99-42d5-b30c-612a42a6fa74">index.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="operations.html#0f187bfc-8170-4a99-9104-f027db9822ec">operations.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="profiles.html#cb093247-d6ef-4f01-b417-340cd6f15ef5">profiles.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="security.html#4622d60a-0de0-4c05-99cb-d72cdb53ff06">security.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="terminology.html#1bab0562-69f3-4468-898e-a7957f0b71d5">terminology.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="toc.html#8a449252-7aff-4fbd-9afa-c50507566b24">toc.html#/html/head/link/body/div/div/a at Line 43, column 7</a></b></td><td><b>error</b></td><td><b>The link '/ig/index.html' for &quot;null&quot; cannot be resolved</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_DPCCapabilities"> </a>
+<h2><a href="CapabilityStatement-dpc-capabilities.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/DPCCapabilities.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>CapabilityStatement/dpc-capabilities: CapabilityStatement.instantiates[0] (l12/c4)</b></td><td><b>error</b></td><td><b>URL value &quot;http://hl7.org/fhir/uv/bulkdata/CapabilityStatement/bulk-data&quot; does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>CapabilityStatement/dpc-capabilities: CapabilityStatement.rest[0].security.extension[0] (l30/c12)</b></td><td><b>error</b></td><td><b>The extension http://fhir-registry.smarthealthit.org/StructureDefinition/oauth-uris is unknown, and not allowed here</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>CapabilityStatement/dpc-capabilities: CapabilityStatement.rest[0].security.service[0].coding[0] (l43/c16)</b></td><td><b>information</b></td><td><b>Code System URI &quot;http://terminology.hl7.org/CodeSystem/restful-security-service&quot; is unknown so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>CapabilityStatement/dpc-capabilities: CapabilityStatement.rest[0].operation[0].definition (l202/c12)</b></td><td><b>error</b></td><td><b>Unable to resolve resource &quot;http://hl7.org/fhir/uv/bulkdata/OperationDefinition/group-export&quot;</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_implementationguide_cms-dpc-ig"> </a>
+<h2><a href="ImplementationGuide-cms-dpc-ig.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/implementationguide/cms-dpc-ig.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>ImplementationGuide/cms-dpc-ig: ImplementationGuide.package[0].resource[0].source.ofType(Reference)</b></td><td><b>error</b></td><td><b>Unable to resolve resource &quot;Patient/dpc-sample-patient&quot;</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>ImplementationGuide/cms-dpc-ig: ImplementationGuide.package[0].resource[1].source.ofType(Reference)</b></td><td><b>error</b></td><td><b>Unable to resolve resource &quot;Practitioner/dpc-sample-practitioner&quot;</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>ImplementationGuide/cms-dpc-ig: ImplementationGuide.package[0].resource[9].source.ofType(Reference)</b></td><td><b>error</b></td><td><b>Unable to resolve resource &quot;CapabilityStatement/dpc-capabilities-statement&quot;</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>ImplementationGuide/cms-dpc-ig: ImplementationGuide.package[0].resource[10].source.ofType(Reference)</b></td><td><b>error</b></td><td><b>Unable to resolve resource &quot;OperationDefinition/dpc-practitioner-submit&quot;</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>ImplementationGuide/cms-dpc-ig: ImplementationGuide.package[0].resource[11].source.ofType(Reference)</b></td><td><b>error</b></td><td><b>Unable to resolve resource &quot;OperationDefinition/dpc-practitioner-validate&quot;</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>ImplementationGuide/cms-dpc-ig: ImplementationGuide.package[0].resource[12].source.ofType(Reference)</b></td><td><b>error</b></td><td><b>Unable to resolve resource &quot;OperationDefinition/dpc-patient-submit&quot;</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>ImplementationGuide/cms-dpc-ig: ImplementationGuide.package[0].resource[13].source.ofType(Reference)</b></td><td><b>error</b></td><td><b>Unable to resolve resource &quot;OperationDefinition/dpc-patient-validate&quot;</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>ImplementationGuide/cms-dpc-ig: ImplementationGuide.package[0].resource[14].source.ofType(Reference)</b></td><td><b>error</b></td><td><b>Unable to resolve resource &quot;OperationDefinition/dpc-group-add&quot;</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>ImplementationGuide/cms-dpc-ig: ImplementationGuide.package[0].resource[15].source.ofType(Reference)</b></td><td><b>error</b></td><td><b>Unable to resolve resource &quot;OperationDefinition/dpc-group-remove&quot;</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_operationdefinition_dpc-group-add"> </a>
+<h2><a href="OperationDefinition-dpc-operation-group-add.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-group-add.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>OperationDefinition (l6/c49)</b></td><td><b>error</b></td><td><b>Unrecognised property '@title'</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_operationdefinition_dpc-group-remove"> </a>
+<h2><a href="OperationDefinition-dpc-operation-group-remove.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-group-remove.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>OperationDefinition (l6/c48)</b></td><td><b>error</b></td><td><b>Unrecognised property '@title'</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_operationdefinition_dpc-patient-submit"> </a>
+<h2><a href="OperationDefinition-dpc-operation-patient-submit.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-patient-submit.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>OperationDefinition (l6/c52)</b></td><td><b>error</b></td><td><b>Unrecognised property '@title'</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_operationdefinition_dpc-patient-validate"> </a>
+<h2><a href="OperationDefinition-dpc-operation-patient-validate.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-patient-validate.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>OperationDefinition (l6/c44)</b></td><td><b>error</b></td><td><b>Unrecognised property '@title'</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_operationdefinition_dpc-practitioner-submit"> </a>
+<h2><a href="OperationDefinition-dpc-operation-practitioner-submit.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-practitioner-submit.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>OperationDefinition (l6/c57)</b></td><td><b>error</b></td><td><b>Unrecognised property '@title'</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_operationdefinition_dpc-practitioner-validate"> </a>
+<h2><a href="OperationDefinition-dpc-operation-practitioner-validate.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-practitioner-validate.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>OperationDefinition (l6/c49)</b></td><td><b>error</b></td><td><b>Unrecognised property '@title'</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_patient_DPC-sample-patient"> </a>
+<h2><a href="Patient-728b270d-d7de-4143-82fe-d3ccd92cebe4.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/patient/DPC-sample-patient.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Patient/728b270d-d7de-4143-82fe-d3ccd92cebe4: Patient.identifier[1].system (l14/c50)</b></td><td><b>error</b></td><td><b>URL value &quot;http://hl7.org/fhir/sid/us-mbi&quot; does not resolve</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_practitioner_DPC-sample-practitioner"> </a>
+<h2><a href="Practitioner-0c527d2e-2e8a-4808-b11d-0fa06baf8254.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/practitioner/DPC-sample-practitioner.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td>&check;</td>
+   </tr>
+</table>
+<hr/>
+<a name="_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_validations_DPCAddress"> </a>
+<h2><a href="StructureDefinition-dpc-profile-address.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCAddress.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>StructureDefinition.where(url = 'https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-address')</b></td><td><b>warning</b></td><td><b>The Implementation Guide contains no examples for this data type profile</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_validations_DPCAttestation"> </a>
+<h2><a href="StructureDefinition-dpc-profile-attestation.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCAttestation.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DPC Attribution Attestation.Provenance.target</b></td><td><b>error</b></td><td><b>Element Provenance.target: derived min (0) cannot be less than base min (1)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Coding.system</b></td><td><b>error</b></td><td><b>The fixed value has type 'code' which is not valid (valid type: [uri])</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>StructureDefinition.where(url = 'https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation')</b></td><td><b>warning</b></td><td><b>The Implementation Guide contains no examples for this profile</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_validations_DPCAttributionRoster"> </a>
+<h2><a href="StructureDefinition-dpc-profile-attribution-roster.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCAttributionRoster.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>StructureDefinition.where(url = 'https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attribution-roster')</b></td><td><b>warning</b></td><td><b>The Implementation Guide contains no examples for this profile</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_validations_DPCEndpoint"> </a>
+<h2><a href="StructureDefinition-dpc-profile-endpoint.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCEndpoint.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>StructureDefinition.where(url = 'https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-endpoint')</b></td><td><b>warning</b></td><td><b>The Implementation Guide contains no examples for this profile</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_validations_DPCOrganization"> </a>
+<h2><a href="StructureDefinition-dpc-profile-organization.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCOrganization.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Identifier.system</b></td><td><b>error</b></td><td><b>The fixed value has type 'code' which is not valid (valid type: [uri])</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>StructureDefinition.where(url = 'https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-organization')</b></td><td><b>warning</b></td><td><b>The Implementation Guide contains no examples for this profile</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_validations_DPCPatient"> </a>
+<h2><a href="StructureDefinition-dpc-profile-patient.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCPatient.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>StructureDefinition.differential.element[9].max (l82/c18)</b></td><td><b>error</b></td><td><b>Error parsing JSON: the primitive value must be a string</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Identifier.system</b></td><td><b>error</b></td><td><b>The fixed value has type 'code' which is not valid (valid type: [uri])</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>StructureDefinition.where(url = 'https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient')</b></td><td><b>warning</b></td><td><b>The Implementation Guide contains no examples for this profile</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_Users_pat_Documents_develop_cms_dpc-static-site_implementation_guide_source_resources_validations_DPCPractitioner"> </a>
+<h2><a href="StructureDefinition-dpc-profile-practitioner.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCPractitioner.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Identifier.system</b></td><td><b>error</b></td><td><b>The fixed value has type 'code' which is not valid (valid type: [uri])</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>StructureDefinition.where(url = 'https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-practitioner')</b></td><td><b>warning</b></td><td><b>The Implementation Guide contains no examples for this profile</b></td>
+   </tr>
+</table>
+<a name="suppressed"> </a>
+<p><b>Suppressed Messages (Warnings, hints, broken links)</b></p>
+<p>No suppressed messsages</p><a name="sorted"> </a>
+<p><b>Errors sorted by type</b></p>
+<hr/>
+<a name="Extension_EXT_Unknown_NotHere"> </a>
+<h2>Extension_EXT_Unknown_NotHere</h2>
+ <table class="grid">
+   <tr style="background-color: #ffeeee">
+     <td><a href="CapabilityStatement-dpc-capabilities.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/DPCCapabilities.json</a></td><td><b>The extension http://fhir-registry.smarthealthit.org/StructureDefinition/oauth-uris is unknown, and not allowed here</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="Reference_REF_CantResolve"> </a>
+<h2>Reference_REF_CantResolve</h2>
+ <table class="grid">
+   <tr style="background-color: #ffeeee">
+     <td><a href="CapabilityStatement-dpc-capabilities.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/DPCCapabilities.json</a></td><td><b>Unable to resolve resource &quot;http://hl7.org/fhir/uv/bulkdata/OperationDefinition/group-export&quot;</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="ImplementationGuide-cms-dpc-ig.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/implementationguide/cms-dpc-ig.xml</a></td><td><b>Unable to resolve resource &quot;Patient/dpc-sample-patient&quot;</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="ImplementationGuide-cms-dpc-ig.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/implementationguide/cms-dpc-ig.xml</a></td><td><b>Unable to resolve resource &quot;Practitioner/dpc-sample-practitioner&quot;</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="ImplementationGuide-cms-dpc-ig.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/implementationguide/cms-dpc-ig.xml</a></td><td><b>Unable to resolve resource &quot;CapabilityStatement/dpc-capabilities-statement&quot;</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="ImplementationGuide-cms-dpc-ig.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/implementationguide/cms-dpc-ig.xml</a></td><td><b>Unable to resolve resource &quot;OperationDefinition/dpc-practitioner-submit&quot;</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="ImplementationGuide-cms-dpc-ig.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/implementationguide/cms-dpc-ig.xml</a></td><td><b>Unable to resolve resource &quot;OperationDefinition/dpc-practitioner-validate&quot;</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="ImplementationGuide-cms-dpc-ig.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/implementationguide/cms-dpc-ig.xml</a></td><td><b>Unable to resolve resource &quot;OperationDefinition/dpc-patient-submit&quot;</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="ImplementationGuide-cms-dpc-ig.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/implementationguide/cms-dpc-ig.xml</a></td><td><b>Unable to resolve resource &quot;OperationDefinition/dpc-patient-validate&quot;</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="ImplementationGuide-cms-dpc-ig.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/implementationguide/cms-dpc-ig.xml</a></td><td><b>Unable to resolve resource &quot;OperationDefinition/dpc-group-add&quot;</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="ImplementationGuide-cms-dpc-ig.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/implementationguide/cms-dpc-ig.xml</a></td><td><b>Unable to resolve resource &quot;OperationDefinition/dpc-group-remove&quot;</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="Terminology_TX_System_NotKnown"> </a>
+<h2>Terminology_TX_System_NotKnown</h2>
+ <table class="grid">
+   <tr style="background-color: #fffff2">
+     <td><a href="CapabilityStatement-dpc-capabilities.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/DPCCapabilities.json</a></td><td><b>Code System URI &quot;http://terminology.hl7.org/CodeSystem/restful-security-service&quot; is unknown so the code cannot be validated</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="Type_Specific_Checks_DT_URL_Resolve"> </a>
+<h2>Type_Specific_Checks_DT_URL_Resolve</h2>
+ <table class="grid">
+   <tr style="background-color: #ffeeee">
+     <td><a href="CapabilityStatement-dpc-capabilities.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/DPCCapabilities.json</a></td><td><b>URL value &quot;http://hl7.org/fhir/uv/bulkdata/CapabilityStatement/bulk-data&quot; does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="Patient-728b270d-d7de-4143-82fe-d3ccd92cebe4.html">/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/patient/DPC-sample-patient.json</a></td><td><b>URL value &quot;http://hl7.org/fhir/sid/us-mbi&quot; does not resolve</b></td>
+   </tr>
+</table>
+</body>
+</html>

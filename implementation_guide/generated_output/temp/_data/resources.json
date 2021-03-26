@@ -1,0 +1,160 @@
+{
+  "ImplementationGuide/cms-dpc-ig": {
+    "history": false,
+    "index": 0,
+    "source": "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/implementationguide/cms-dpc-ig.xml",
+    "url": "https://dpc.cms.gov/api/v1/ImplementationGuide/cms-dpc-ig",
+    "name": "Data @ the Point of Care Implementation Guide",
+    "date": "2021-03-26T14:23:39-04:00",
+    "status": "draft"
+  },
+  "Patient/728b270d-d7de-4143-82fe-d3ccd92cebe4": {
+    "history": false,
+    "index": 1,
+    "source": "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/patient/DPC-sample-patient.json"
+  },
+  "Practitioner/0c527d2e-2e8a-4808-b11d-0fa06baf8254": {
+    "history": false,
+    "index": 2,
+    "source": "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/practitioner/DPC-sample-practitioner.json"
+  },
+  "StructureDefinition/dpc-profile-address": {
+    "history": false,
+    "index": 3,
+    "source": "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCAddress.json",
+    "url": "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-address",
+    "name": "DPC Address",
+    "version": "0.0.1",
+    "date": "2021-03-26T14:23:39-04:00",
+    "status": "draft"
+  },
+  "StructureDefinition/dpc-profile-attestation": {
+    "history": false,
+    "index": 4,
+    "source": "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCAttestation.json",
+    "url": "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation",
+    "name": "DPC Attribution Attestation",
+    "version": "0.0.1",
+    "date": "2021-03-26T14:23:39-04:00",
+    "status": "draft"
+  },
+  "StructureDefinition/dpc-profile-attribution-roster": {
+    "history": false,
+    "index": 5,
+    "source": "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCAttributionRoster.json",
+    "url": "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attribution-roster",
+    "name": "DPC Attribution Roster",
+    "version": "0.0.1",
+    "date": "2021-03-26T14:23:39-04:00",
+    "status": "draft"
+  },
+  "StructureDefinition/dpc-profile-endpoint": {
+    "history": false,
+    "index": 6,
+    "source": "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCEndpoint.json",
+    "url": "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-endpoint",
+    "name": "DPC Endpoint",
+    "version": "0.0.1",
+    "date": "2021-03-26T14:23:39-04:00",
+    "status": "draft"
+  },
+  "StructureDefinition/dpc-profile-organization": {
+    "history": false,
+    "index": 7,
+    "source": "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCOrganization.json",
+    "url": "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-organization",
+    "name": "DPC Organization",
+    "version": "0.0.1",
+    "date": "2021-03-26T14:23:39-04:00",
+    "status": "draft"
+  },
+  "StructureDefinition/dpc-profile-patient": {
+    "history": false,
+    "index": 8,
+    "source": "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCPatient.json",
+    "url": "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient",
+    "name": "DPC Patient",
+    "version": "0.0.1",
+    "date": "2021-03-26T14:23:39-04:00",
+    "status": "draft"
+  },
+  "StructureDefinition/dpc-profile-practitioner": {
+    "history": false,
+    "index": 9,
+    "source": "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCPractitioner.json",
+    "url": "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-practitioner",
+    "name": "DPC Practitioner",
+    "version": "0.0.1",
+    "date": "2021-03-26T14:23:39-04:00",
+    "status": "draft"
+  },
+  "CapabilityStatement/dpc-capabilities": {
+    "history": false,
+    "index": 10,
+    "source": "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/DPCCapabilities.json",
+    "url": "https://dpc.cms.gov/api/v1/CapabilityStatement/dpc-capabilities",
+    "version": "0.3.0-SNAPSHOT",
+    "date": "2019",
+    "status": "draft"
+  },
+  "OperationDefinition/dpc-operation-practitioner-submit": {
+    "history": false,
+    "index": 11,
+    "source": "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-practitioner-submit.json",
+    "url": "https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-practitioner-submit",
+    "name": "Submit Practitioners",
+    "version": "0.0.1",
+    "date": "2021-03-26T14:23:39-04:00",
+    "status": "draft"
+  },
+  "OperationDefinition/dpc-operation-practitioner-validate": {
+    "history": false,
+    "index": 12,
+    "source": "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-practitioner-validate.json",
+    "url": "https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-practitioner-validate",
+    "name": "Validate Practitioner",
+    "version": "0.0.1",
+    "date": "2021-03-26T14:23:39-04:00",
+    "status": "draft"
+  },
+  "OperationDefinition/dpc-operation-patient-submit": {
+    "history": false,
+    "index": 13,
+    "source": "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-patient-submit.json",
+    "url": "https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-patient-submit",
+    "name": "Submit Patients",
+    "version": "0.0.1",
+    "date": "2021-03-26T14:23:39-04:00",
+    "status": "draft"
+  },
+  "OperationDefinition/dpc-operation-patient-validate": {
+    "history": false,
+    "index": 14,
+    "source": "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-patient-validate.json",
+    "url": "https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-patient-validate",
+    "name": "Validate Patient",
+    "version": "0.0.1",
+    "date": "2021-03-26T14:23:39-04:00",
+    "status": "draft"
+  },
+  "OperationDefinition/dpc-operation-group-add": {
+    "history": false,
+    "index": 15,
+    "source": "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-group-add.json",
+    "url": "https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-group-add",
+    "name": "Add Member to Attribution Roster",
+    "version": "0.0.1",
+    "date": "2021-03-26T14:23:39-04:00",
+    "status": "draft"
+  },
+  "OperationDefinition/dpc-operation-group-remove": {
+    "history": false,
+    "index": 16,
+    "source": "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-group-remove.json",
+    "url": "https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-group-remove",
+    "name": "Remove Members from Attribution Roster",
+    "version": "0.0.1",
+    "date": "2021-03-26T14:23:39-04:00",
+    "status": "draft"
+  }
+}

@@ -5,6 +5,8 @@ _site
 .vscode/
 .idea/
 .DS_Store
+.bin/
+common/
 vendor
 
 node_modules

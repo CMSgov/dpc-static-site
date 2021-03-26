@@ -1,0 +1,33 @@
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "application/json"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:ietf:bcp:13"
+    }]
+  }
+}, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "application/json",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "application/fhir+json"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:ietf:bcp:13"
+    }]
+  }
+}, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "application/fhir+json",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------

@@ -1,0 +1,51 @@
+{% raw %}<pre class="xml">
+
+&lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition">OperationDefinition</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.id">id</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#id">value</a>=&quot;dpc-operation-practitioner-validate&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.text">text</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;extensions&quot;/&gt;
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;Validate Practitioner&lt;/h2&gt;&lt;p&gt;OPERATION: Validate Practitioner&lt;/p&gt;&lt;p&gt;The official URL for this operation definition is: &lt;/p&gt;&lt;pre&gt;https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-practitioner-validate&lt;/pre&gt;&lt;div&gt;&lt;p&gt;Validate a Practitioner resource against the DPC Roster Practitioner Profile.&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;URL: [base]/Practitioner/$validate&lt;/p&gt;&lt;p&gt;Parameters&lt;/p&gt;&lt;table class=&quot;grid&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Use&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Cardinality&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Binding&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;resource&lt;/td&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/STU3/practitioner.html&quot;&gt;Practitioner&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Practitioner resource to validate against profile&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OUT&lt;/td&gt;&lt;td&gt;return&lt;/td&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/STU3/operationoutcome.html&quot;&gt;OperationOutcome&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Result of validation operation.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+  &lt;/text&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.url">url</a>
+       <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">value</a>=&quot;https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-practitioner-validate&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.version">version</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;0.0.1&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.name">name</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Validate Practitioner&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.status">status</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;draft&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.kind">kind</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;operation&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.date">date</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#dateTime">value</a>=&quot;2021-03-26T14:23:39-04:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.publisher">publisher</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;The DPC Team&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.description">description</a>
+               <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>=&quot;Validate a Practitioner resource against the DPC Roster Practitioner Profile.&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.code">code</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;validate&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.base">base</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;http://hl7.org/fhir/OperationDefinition/Resource-validate&quot;/&gt;
+  &lt;/base&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.resource">resource</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;Practitioner&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.system">system</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.type">type</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#boolean">value</a>=&quot;true&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.instance">instance</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;resource&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;in&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#integer">value</a>=&quot;1&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;1&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Practitioner resource to validate against profile&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;Practitioner&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.profile">profile</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/references.html#Reference#Reference.reference">reference</a>
+                 <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-practitioner&quot;/&gt;
+    &lt;/profile&gt;
+  &lt;/parameter&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;return&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;out&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#integer">value</a>=&quot;1&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;1&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Result of validation operation.&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;OperationOutcome&quot;/&gt;
+  &lt;/parameter&gt;
+&lt;/OperationDefinition&gt;</pre>
+{% endraw %}
