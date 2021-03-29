@@ -81,6 +81,8 @@ guide_nav:
         id: initiate-an-export-job
       - title: Specify Resources
         id: specify-which-resources-to-download
+      - title: Requesting filtered data
+        id: requesting-filtered-data
       - title: Check Status of Export Job
         id: check-status-of-the-export-job
       - title: Retrieve NDJSON Output

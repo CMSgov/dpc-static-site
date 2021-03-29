@@ -1697,14 +1697,14 @@ If the request was successful, a 202 Accepted response code will be returned and
 #### Request Headers:
 <pre class="highlight"><code>Authorization: Bearer <span style="color: #045E87;">{access_token}</span>
 Accept: application/fhir+json
-X-Provenance:<a href="#attestation">{provenance header}</a>
+X-Provenance: <a href="#attestation">{provenance header}</a>
 </code></pre>
 
 #### cURL Command using the _since parameter within the /Patient endpoint:
 <pre class="highlight"><code>curl -X GET 'https://sandbox.dpc.cms.gov/api/v1/Patient/{id}/$everything?_since=2021-05-13T08:00:00.000-05:00' \
 	-H "Accept: application/fhir+json" \
-	-H “X-Provenance:<a href="#attestation">{provenance header}</a>
-	-H "Authorization: Bearer <a href="https://dpc.cms.gov/docs#obtain-an-access_token">{access token}</a>
+	-H "X-Provenance: <a href="#attestation">{provenance header}</a>" \
+	-H "Authorization: Bearer <a href="https://dpc.cms.gov/docs#obtain-an-access_token">{access token}</a>"
 </code></pre>
 
 #### Response Example: Successful Request
