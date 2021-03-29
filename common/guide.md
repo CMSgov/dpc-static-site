@@ -1697,7 +1697,7 @@ If the request was successful, a 202 Accepted response code will be returned and
 #### Request Headers:
 <pre class="highlight"><code>Authorization: Bearer <span style="color: #045E87;">{access_token}</span>
 Accept: application/fhir+json
- “X-Provenance:<a href="#attestation">{provenance header}</a>
+X-Provenance:<a href="#attestation">{provenance header}</a>
 </code></pre>
 
 #### cURL Command using the _since parameter within the /Patient endpoint:
