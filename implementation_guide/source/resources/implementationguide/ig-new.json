@@ -10,6 +10,18 @@
     "valueString" : "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources"
   },
   {
+    "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
+    "valueString" : "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/pages"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
+    "valueString" : "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/validations"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
+    "valueString" : "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source"
+  },
+  {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
     "valueString" : "/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/framework"
   },

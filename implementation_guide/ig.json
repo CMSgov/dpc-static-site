@@ -14,7 +14,10 @@
       "source/pages"
     ],
     "resources": [
-      "source/resources"
+      "source/resources",
+      "source/pages",
+      "source/validations",
+      "source"
     ]
   },
   "pages": [
@@ -112,42 +115,42 @@
     "StructureDefinition/dpc-profile-address": {
       "base": "StructureDefinition-dpc-profile-address.html",
       "defns": "StructureDefinition-dpc-profile-address-definitions.html",
-      "source": "validations/DPCAddress.json"
+      "source": "DPCAddress.json"
     },
     "StructureDefinition/dpc-profile-attestation": {
       "base": "StructureDefinition-dpc-profile-attestation.html",
       "defns": "StructureDefinition-dpc-profile-attestation-definitions.html",
-      "source": "validations/DPCAttestation.json"
+      "source": "DPCAttestation.json"
     },
     "StructureDefinition/dpc-profile-attribution-roster": {
       "base": "StructureDefinition-dpc-profile-attribution-roster.html",
       "defns": "StructureDefinition-dpc-profile-attribution-roster-definitions.html",
-      "source": "validations/DPCAttributionRoster.json"
+      "source": "DPCAttributionRoster.json"
     },
     "StructureDefinition/dpc-profile-endpoint": {
       "base": "StructureDefinition-dpc-profile-endpoint.html",
       "defns": "StructureDefinition-dpc-profile-endpoint-definitions.html",
-      "source": "validations/DPCEndpoint.json"
+      "source": "DPCEndpoint.json"
     },
     "StructureDefinition/dpc-profile-organization": {
       "base": "StructureDefinition-dpc-profile-organization.html",
       "defns": "StructureDefinition-dpc-profile-organization-definitions.html",
-      "source": "validations/DPCOrganization.json"
+      "source": "DPCOrganization.json"
     },
     "StructureDefinition/dpc-profile-patient": {
       "base": "StructureDefinition-dpc-profile-patient.html",
       "defns": "StructureDefinition-dpc-profile-patient-definitions.html",
-      "source": "validations/DPCPatient.json"
+      "source": "DPCPatient.json"
     },
     "StructureDefinition/dpc-profile-practitioner": {
       "base": "StructureDefinition-dpc-profile-practitioner.html",
       "defns": "StructureDefinition-dpc-profile-practitioner-definitions.html",
-      "source": "validations/DPCPractitioner.json"
+      "source": "DPCPractitioner.json"
     },
     "CapabilityStatement/dpc-capabilities-statement": {
       "base": "CapabilityStatement-dpc-capabilities.html",
       "defns": "CapabilityStatement-dpc-capabilities-definitions.html",
-      "source": "../DPCCapabilities.json"
+      "source": "./DPCCapabilities.json"
     },
     "OperationDefinition/dpc-operation-practitioner-submit": {
       "base": "OperationDefinition-dpc-operation-practitioner-submit.html",

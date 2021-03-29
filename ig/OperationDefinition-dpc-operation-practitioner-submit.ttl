@@ -17,7 +17,7 @@
   fhir:OperationDefinition.name [ fhir:value "Submit Practitioners"];
   fhir:OperationDefinition.status [ fhir:value "draft"];
   fhir:OperationDefinition.kind [ fhir:value "operation"];
-  fhir:OperationDefinition.date [ fhir:value "2021-03-26T14:23:39-04:00"^^xsd:dateTime];
+  fhir:OperationDefinition.date [ fhir:value "2021-03-26T14:34:24-04:00"^^xsd:dateTime];
   fhir:OperationDefinition.publisher [ fhir:value "The DPC Team"];
   fhir:OperationDefinition.description [ fhir:value "Submit a Bundle of Practitioner resources which will be registered with the DPC application in a single Batch.\n\nThis operation is designed to support initial on-boarding of Organizations."];
   fhir:OperationDefinition.code [ fhir:value "submit"];

@@ -9,6 +9,15 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
     <valueString value="/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources"/>
   </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/pages"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/validations"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source"/>
+  </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
     <valueString value="/Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/framework"/>
   </extension>

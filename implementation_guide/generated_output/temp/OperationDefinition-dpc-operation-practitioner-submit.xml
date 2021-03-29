@@ -14,7 +14,7 @@
   <name value="Submit Practitioners"/>
   <status value="draft"/>
   <kind value="operation"/>
-  <date value="2021-03-26T14:23:39-04:00"/>
+  <date value="2021-03-26T14:34:24-04:00"/>
   <publisher value="The DPC Team"/>
   <description value="Submit a Bundle of Practitioner resources which will be registered with the DPC application in a single Batch.&#xA;&#xA;This operation is designed to support initial on-boarding of Organizations."/>
   <code value="submit"/>

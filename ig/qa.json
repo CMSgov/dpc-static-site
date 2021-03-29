@@ -2,7 +2,7 @@
   "url": "https://dpc.cms.gov/api/v1/ImplementationGuide/cms-dpc-ig",
   "name": "Data @ the Point of Care Implementation Guide",
   "package-id": "cms-dpc-ig",
-  "date": "Fri, 26 Mar, 2021 14:23:39 -0400",
+  "date": "Fri, 26 Mar, 2021 14:34:24 -0400",
   "errs": 25,
   "warnings": 7,
   "hints": 2,

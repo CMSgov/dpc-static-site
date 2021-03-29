@@ -10,7 +10,7 @@
   "name": "Submit Patients",
   "status": "draft",
   "kind": "operation",
-  "date": "2021-03-26T14:23:39-04:00",
+  "date": "2021-03-26T14:34:24-04:00",
   "publisher": "The DPC Team",
   "description": "Submit a Bundle of Patient resources which will be registered with the DPC application in a single Batch.\n\nThis operation is designed to support initial on-boarding of Organizations.",
   "code": "submit",

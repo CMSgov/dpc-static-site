@@ -10,7 +10,7 @@
   "name": "Validate Patient",
   "status": "draft",
   "kind": "operation",
-  "date": "2021-03-26T14:23:39-04:00",
+  "date": "2021-03-26T14:34:24-04:00",
   "publisher": "The DPC Team",
   "description": "Validate a Patient resource against the DPC Roster Patient Profile.",
   "code": "validate",

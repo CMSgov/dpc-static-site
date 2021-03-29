@@ -17,7 +17,7 @@
   fhir:OperationDefinition.name [ fhir:value "Remove Members from Attribution Roster"];
   fhir:OperationDefinition.status [ fhir:value "draft"];
   fhir:OperationDefinition.kind [ fhir:value "operation"];
-  fhir:OperationDefinition.date [ fhir:value "2021-03-26T14:23:39-04:00"^^xsd:dateTime];
+  fhir:OperationDefinition.date [ fhir:value "2021-03-26T14:34:24-04:00"^^xsd:dateTime];
   fhir:OperationDefinition.publisher [ fhir:value "The DPC Team"];
   fhir:OperationDefinition.description [ fhir:value "Remove members in the provided in the Group resource from the existing membership list."];
   fhir:OperationDefinition.code [ fhir:value "remove"];

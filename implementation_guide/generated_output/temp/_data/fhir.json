@@ -13,7 +13,7 @@
   "toolingVersionFull": "4.4.0 (3)",
   "totalFiles": 17,
   "processedFiles": 147,
-  "genDate": "Fri, Mar 26, 2021 14:23-0400",
+  "genDate": "Fri, Mar 26, 2021 14:34-0400",
   "genDay": "26/03/2021",
   "ig": {
     "id": "cms-dpc-ig",
@@ -23,7 +23,7 @@
     "experimental": false,
     "publisher": "Centers for Medicare and Medicaid Services",
     "gitstatus": "",
-    "date": "2021-03-26T14:23:39-04:00",
+    "date": "2021-03-26T14:34:24-04:00",
     "description": "Draft implementation guide for DPC Application",
     "fhirVersion": "3.0.1"
   }

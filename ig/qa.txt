@@ -3,10 +3,10 @@
 
 err = 25, warn = 7, info = 2
 IG Publisher Version: v1.1.0 Out of date - current version is ?pub-ver-1?
-Generated Fri Mar 26 14:23:57 EDT 2021. FHIR version 3.0.2 for cms-dpc-ig# (canonical = https://dpc.cms.gov/api/v1)
+Generated Fri Mar 26 14:34:39 EDT 2021. FHIR version 3.0.2 for cms-dpc-ig# (canonical = https://dpc.cms.gov/api/v1)
 
  Build Errors : 84 / 1
- /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/DPCCapabilities : 3 / 1
+ /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/./DPCCapabilities : 3 / 1
  /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/implementationguide/cms-dpc-ig : 9 / 0
  /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-group-add : 1 / 0
  /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-group-remove : 1 / 0
@@ -16,13 +16,13 @@ Generated Fri Mar 26 14:23:57 EDT 2021. FHIR version 3.0.2 for cms-dpc-ig# (cano
  /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-practitioner-validate : 1 / 0
  /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/patient/DPC-sample-patient : 1 / 0
  /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/practitioner/DPC-sample-practitioner : 0 / 0
- /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCAddress : 0 / 1
- /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCAttestation : 2 / 1
- /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCAttributionRoster : 0 / 1
- /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCEndpoint : 0 / 1
- /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCOrganization : 1 / 1
- /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCPatient : 2 / 1
- /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCPractitioner : 1 / 1
+ /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/validations/DPCAddress : 0 / 1
+ /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/validations/DPCAttestation : 2 / 1
+ /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/validations/DPCAttributionRoster : 0 / 1
+ /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/validations/DPCEndpoint : 0 / 1
+ /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/validations/DPCOrganization : 1 / 1
+ /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/validations/DPCPatient : 2 / 1
+ /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/validations/DPCPractitioner : 1 / 1
 </table>
 == n/a ==
 INFORMATION: /Users/pat/Documents/develop/cms/dpc-static-site/ig/CapabilityStatement-dpc-capabilities.html: The html source does not contain the publish box; this is recommended for publishing support
@@ -140,23 +140,23 @@ ERROR: OperationDefinition: Unrecognised property '@title'
 == /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/patient/DPC-sample-patient.json ==
 ERROR: Patient/728b270d-d7de-4143-82fe-d3ccd92cebe4: Patient.identifier[1].system: URL value "http://hl7.org/fhir/sid/us-mbi" does not resolve
 == /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/practitioner/DPC-sample-practitioner.json ==
-== /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCAddress.json ==
+== /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/validations/DPCAddress.json ==
 WARNING: StructureDefinition.where(url = 'https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-address'): The Implementation Guide contains no examples for this data type profile
-== /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCAttestation.json ==
+== /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/validations/DPCAttestation.json ==
 ERROR: DPC Attribution Attestation.Provenance.target: Element Provenance.target: derived min (0) cannot be less than base min (1)
 ERROR: Coding.system: The fixed value has type 'code' which is not valid (valid type: [uri])
 WARNING: StructureDefinition.where(url = 'https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation'): The Implementation Guide contains no examples for this profile
-== /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCAttributionRoster.json ==
+== /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/validations/DPCAttributionRoster.json ==
 WARNING: StructureDefinition.where(url = 'https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attribution-roster'): The Implementation Guide contains no examples for this profile
-== /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCEndpoint.json ==
+== /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/validations/DPCEndpoint.json ==
 WARNING: StructureDefinition.where(url = 'https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-endpoint'): The Implementation Guide contains no examples for this profile
-== /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCOrganization.json ==
+== /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/validations/DPCOrganization.json ==
 ERROR: Identifier.system: The fixed value has type 'code' which is not valid (valid type: [uri])
 WARNING: StructureDefinition.where(url = 'https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-organization'): The Implementation Guide contains no examples for this profile
-== /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCPatient.json ==
+== /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/validations/DPCPatient.json ==
 ERROR: StructureDefinition.differential.element[9].max: Error parsing JSON: the primitive value must be a string
 ERROR: Identifier.system: The fixed value has type 'code' which is not valid (valid type: [uri])
 WARNING: StructureDefinition.where(url = 'https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient'): The Implementation Guide contains no examples for this profile
-== /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/validations/DPCPractitioner.json ==
+== /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/validations/DPCPractitioner.json ==
 ERROR: Identifier.system: The fixed value has type 'code' which is not valid (valid type: [uri])
 WARNING: StructureDefinition.where(url = 'https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-practitioner'): The Implementation Guide contains no examples for this profile
