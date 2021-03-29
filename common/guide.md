@@ -606,31 +606,96 @@ The DPC team has created a collection of sample Practitioner, Patient, and Group
 _Users can provide their own sample FHIR resources that fulfill the required FHIR profiles to DPC, but will need to ensure that all Patient resources have a Medicare Beneficiary Identifier (MBI) that matches a record in the Beneficiary FHIR Data Server (BFD)._
 
 ### Find Organization ID
-You will need your organization ID to create an Attribution Group for Attestation. To find your Organization ID, sign-in to your account in the DPC Portal and locate your Organization ID underneath the organization name.
+You will need your organization ID to create an Attribution Group for Attestation. The Organization endpoint supports a GET /Organization operation, which allows the user to retrieve their Organization ID.
+
+To find your Organization ID, sign-in to your account in the DPC Portal and locate your Organization ID underneath the organization name. You can also make a request to `/Organization` via the API and retrieve your Organization ID from the response.
 
 ![Dashboard Org Id](/assets/images/guide_org_id.png)
 
-The Organization endpoint supports a GET /Organization operation, which allows the user to retrieve their Organization ID.
+#### Request:
+
+<pre class="highlight"><code>GET /api/v1/Organization
+</code></pre>
+
+#### cURL command:
+<pre class="highlight"><code>Authorization: Bearer<span style="color: #045E87;">{access_token}</span>
+Accept: application/fhir+json
+Prefer: respond-async
+</code></pre>
+
+#### cURL Command
+<pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Organization
+     -H 'Authorization: Bearer<span style="color: #045E87;">{access_token}</span>
+     -H 'Accept: application/fhir+json' \
+     -H 'Content-Type: application/fhir+json' \
+     -X GET
+  </code></pre>
+
+#### Response:
+<pre class="highlight"><code>{
+    "resourceType": "Bundle",
+    "type": "collection",
+    "total": 1,
+    "entry": [
+        {
+            "resource": {
+                "resourceType": "Organization",
+                "id": "351fbb5f-f2f9-4094-bc6f-2b3600bb56e9",
+                "identifier": [
+                    {
+                        "system": "http://hl7.org/fhir/sid/us-npi",
+                        "value": "3905293015"
+                    }
+                ],
+                "name": "Happy Healthcare",
+                "address": [
+                    {
+                        "use": "work",
+                        "type": "postal",
+                        "line": [
+                            "1 Main Street"
+                        ],
+                        "city": "Baltimore",
+                        "state": "MD",
+                        "postalCode": "21224",
+                        "country": "US"
+                    }
+                ],
+                "endpoint": [
+                    {
+                        "reference": "Endpoint/ccf649dd-5258-4c97-a378-449693e73997"
+                    }
+                ]
+            }
+        }
+    ]
+}
+</code></pre>
+
+It is still possible to retrieve your organization using `/Organization/{id}`, in which case you will receive a single Resource instead of a Bundle.
 
 #### Request:
 
-~~~
-GET /api/v1/Organization
-~~~
+<pre class="highlight"><code>GET /api/v1/Organization/{id}
+</code></pre>
 
 #### cURL command:
+<pre class="highlight"><code>Authorization: Bearer<span style="color: #045E87;">{access_token}</span>
+Accept: application/fhir+json
+Prefer: respond-async
+</code></pre>
 
-<pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Organization
-     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
+#### cURL Command
+<pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Organization/{id}
+     -H 'Authorization: Bearer {access_token}' \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
-     -X GET</code></pre>
+     -X GET
+  </code></pre>
 
 #### Response:
-
-~~~
-{
-  "resourceType": "Organization",
+<pre class="highlight"><code>{
+    {"resourceType": "Organization",
   "id": "351fbb5f-f2f9-4094-bc6f-2b3600bb56e9",
   "identifier": [
     {
@@ -658,7 +723,11 @@ GET /api/v1/Organization
     }
   ]
 }
-~~~
+</code></pre>
+
+
+
+
 
 ## Practitioners
 
@@ -1526,6 +1595,128 @@ The Resources to Export can be specified using the _type Parameter. Multiple Res
 ### Request:
 <pre class="highlight"><code>GET /api/v1/Group/<span style="color: #045E87;">{attribution group ID}</span>/$export?_type=Patient,Coverage</code></pre>
 
+
+## Requesting filtered data
+
+You may want to obtain filtered data for all of your beneficiaries in order to reduce file size and download time. 
+
+You can filter data using the _since parameter with either the /Patient or /Group endpoints. You may want to set  _since queries as a repeating call or as a way to check for patient updates to avoid downloading duplicate data. 
+
+<div class="ds-c-alert ds-c-alert--warn">
+  <div class="ds-c-alert__body"> 
+    <h3 class="ds-c-alert__heading">Before using _since, download all of your data.</h3>
+    <p class="ds-c-alert__text">
+      Before using _since for the first time, we recommend that you run an unfiltered request (without using _since) to all resource types using the  /Group/{id}/$export endpoint in order to retrieve all historical data for your associated beneficiaries. You only need to do this once. <br /><br />
+      On subsequent calls you can begin retrieving incremental claims data for your beneficiaries using _since. We suggest using the transactionTime from your last bulk data request as the _since date.
+    </p>
+  </div>
+</div>
+
+
+**You can make two types of filtered requests for data:**
+1. Request the most recent data for all beneficiaries: [Use _since within the /Group endpoint](https://bcda.cms.gov/build.html#requesting-since-with-Group)
+2. Request data synchronously for an individual patient: [Use _since within the /Patient endpoint](https://bcda.cms.gov/build.html#requesting-since-with-Patient)
+
+### Steps
+
+Each request will follow the same four-step process as an unfiltered request:
+
+1. Obtain an access token
+2. Start a job to acquire data (you will input the _since parameter here)
+3. Check the job status
+4. Download the data
+
+The only difference appears in the request of Step 2: Start a job to acquire data. We show examples of this step below.
+
+**Dates and times submitted in _since must be listed in the FHIR [Instant](https://www.hl7.org/fhir/datatypes.html#instant) format** (YYYY-MM-DDThh:mm:sss[-/+]zz:zz).
+
+* Sample Date: February 20, 2020 12:00 PM EST
+* Instant Format: YYYY-MM-DDThh:mm:sss[-/+]zz:zz
+* Formatted Sample: 2020-02-20T12:00:00.000-05:00
+
+<div class="ds-c-alert ds-c-alert--warn">
+  <div class="ds-c-alert__body"> 
+    <h3 class="ds-c-alert__heading">The value of the _since parameter must be URL encoded.</h3>
+    <p class="ds-c-alert__text">
+      When using the <a href="#postman-collection">Postman Collection</a>, you will need to manually encode the <strong>_since</strong> parameter when it contains a <strong>+</strong> sign since Postman does not automatically encode this character. You can do this either by replacing the + with <strong>%2B</strong> (e.g., 2020-01-23T04:00:00.000%2B07:00 instead of 2020-01-23T04:00:00.000+07:00), or you can select the value and choose “EncodeURIComponent” from the context menu to have Postman encode the entire parameter automatically.
+    </p>
+  </div>
+</div>
+
+![alt](/assets/images/since-example.png)
+
+An access token as well as Accept and Prefer headers are required for the Group/{id}all/$export. 
+
+The Prefer header is NOT required for /Patient/{id}/$everything, but it DOES require an X-Provenance header whereas the /Group/{id}/$export endpoint does not. The format is defined by the FHIR Bulk Data Export spec. Consult the [FHIR Datatypes](https://www.hl7.org/fhir/datatypes.html#instant) page for more information.
+
+<div class="ds-c-alert ds-c-alert--warn">
+  <div class="ds-c-alert__body"> 
+    <h3 class="ds-c-alert__heading">Be wary of requesting data from before 02-12-2020</h3>
+    <p class="ds-c-alert__text">
+      Due to limitations in the Beneficiary FHIR Data (BFD) Server, data from before 02-12-2020 is marked with the arbitrary <a href="https://www.hl7.org/fhir/search.html#lastUpdated">lastUpdated</a> date of 01-01-2020. If you input dates between 01-01-2020 and 02-11-2020 in the _since parameter, you will receive all historical data for your beneficiaries. Data loads from 02-12-2020 onwards have been marked with accurate dates.
+    </p>
+  </div>
+</div>
+
+## Requesting data using _since with the /Group endpoint
+
+#### Request to Start a job using the _since parameter within the /Group endpoint
+
+<pre class="highlight"><code>GET /api/v1/Group/<span style="color: #045E87;">{id}</span>/$export?_type=Patient&_since=2020-02-13T08:00:00.000-05:00
+</code></pre>
+
+#### Request Headers:
+<pre class="highlight"><code>Authorization: Bearer <span style="color: #045E87;">{access_token}</span>
+Accept: application/fhir+json
+Prefer: respond-async
+</code></pre>
+
+#### cURL Command using the _since parameter within the /Group endpoint:
+<pre class="highlight"><code>curl -X GET 'https://sandbox.dpc.cms.gov/api/v1/Group/{id}/$export?_since=2021-05-13T08:00:00.000-05:00' \
+	-H "Accept: application/fhir+json" \
+	-H "Prefer: respond-async" \
+	-H "Authorization: Bearer <a href="#obtain-an-access-token">{access token}</a>
+</code></pre>
+
+#### Response Example: Successful Request
+  <pre class="highlight"><code>202 Accepted</code></pre>
+
+This operation will start a job for filtered data for existing beneficiaries since 8PM EST on May 13th, 2021 and will include all 7 years of historical data for all patients in the Group who have a `lastUpdated` date that falls after the `_since` date. In the example, we request the Patient resource type. The steps and format would work similarly for other resource types.
+<br />
+
+If the request was successful, a 202 Accepted response code will be returned and the response will include a Content-Location header.
+<br />
+
+## Requesting data using _since with the /Patient endpoint
+
+#### Request data synchronously for an individual Patient  using the _since parameter within the /Patient/{id}/$everything endpoint
+
+<pre class="highlight"><code>GET /api/v1/Patient/<span style="color: #045E87;">{id}</span>/$everything?_since=2020-02-13T08:00:00.000-05:00
+</code></pre>
+
+#### Request Headers:
+<pre class="highlight"><code>Authorization: Bearer <span style="color: #045E87;">{access_token}</span>
+Accept: application/fhir+json
+ “X-Provenance:<a href="#attestation">{provenance header}</a>
+</code></pre>
+
+#### cURL Command using the _since parameter within the /Patient endpoint:
+<pre class="highlight"><code>curl -X GET 'https://sandbox.dpc.cms.gov/api/v1/Patient/{id}/$everything?_since=2021-05-13T08:00:00.000-05:00' \
+	-H "Accept: application/fhir+json" \
+	-H “X-Provenance:<a href="#attestation">{provenance header}</a>
+	-H "Authorization: Bearer <a href="https://dpc.cms.gov/docs#obtain-an-access_token">{access token}</a>
+</code></pre>
+
+#### Response Example: Successful Request
+  <pre class="highlight"><code>200 Success</code></pre>
+
+This operation will return  all data for the specified Patient  since the selected date: May 13, 2021. Notice that we are seeking data from the /Patient/{id}/$everything endpoint. This is a synchronous request for an individual Patient referenced by the internal ID (UUID) and would behave differently if it was made from the /Group endpoint as data is returned immediately. 
+<br />
+
+If the request was successful, a 200 Success response code will be returned and the response will not include a Content-Location header. Instead, it contains the data in the body of the response.   
+<br />
+
+
 ## Check status of the export job
 You can check the status of your job using the {unique ID of the export job}. This is retrieved from the Content-Location header of the response as shown in the previous section. The status of the job will change from 202 Accepted to 200 OK when the export job is complete and the data is ready to be downloaded.
 
@@ -1576,6 +1767,8 @@ Claims data can be found at the URLs within the output field.
 The output includes file integrity information in an extension array. It contains https://dpc.cms.gov/checksum (a checksum in the format algorithm:checksum) and https://dpc.cms.gov/file_length (the file length in bytes).
 
 The number 42 in the example data file URLs is the same job ID from the Content-Location header URL when you initiate an export job. If some of the data cannot be exported due to errors, details of the errors can be found at the URLs in the error field. The errors are provided in [NDJSON](http://ndjson.org/) files as FHIR [OperationOutcome](http://hl7.org/fhir/STU3/operationoutcome.html) resources.
+
+
 
 ## Retrieve the NDJSON output file(s)
 To obtain the exported explanation of benefit data, a GET request is made to the output URLs in the job status response when the job reaches the Completed state. The data will be presented as an [NDJSON](http://ndjson.org/) file of ExplanationOfBenefit resources.
@@ -1852,126 +2045,7 @@ To obtain the exported explanation of benefit data, a GET request is made to the
    }
  ]
 }
-~~~
-
-## Requesting filtered data
-
-You may want to obtain filtered data for all of your beneficiaries in order to reduce file size and download time. 
-
-You can filter data using the _since parameter with either the /Patient or /Group endpoints. You may want to set  _since queries as a repeating call or as a way to check for patient updates to avoid downloading duplicate data. 
-
-<div class="ds-c-alert ds-c-alert--warn">
-  <div class="ds-c-alert__body"> 
-    <h3 class="ds-c-alert__heading">Before using _since, download all of your data.</h3>
-    <p class="ds-c-alert__text">
-      Before using _since for the first time, we recommend that you run an unfiltered request (without using _since) to all resource types using the  /Group/{id}/$export endpoint in order to retrieve all historical data for your associated beneficiaries. You only need to do this once. <br /><br />
-      On subsequent calls you can begin retrieving incremental claims data for your beneficiaries using _since. We suggest using the transactionTime from your last bulk data request as the _since date.
-    </p>
-  </div>
-</div>
-
-
-**You can make two types of filtered requests for data:**
-1. Request the most recent data for all beneficiaries: [Use _since within the /Group endpoint](https://bcda.cms.gov/build.html#requesting-since-with-Group)
-2. Request data synchronously for an individual patient: [Use _since within the /Patient endpoint](https://bcda.cms.gov/build.html#requesting-since-with-Patient)
-
-### Steps
-
-Each request will follow the same four-step process as an unfiltered request:
-
-1. Obtain an access token
-2. Start a job to acquire data (you will input the _since parameter here)
-3. Check the job status
-4. Download the data
-
-The only difference appears in the request of Step 2: Start a job to acquire data. We show examples of this step below.
-
-**Dates and times submitted in _since must be listed in the FHIR Instant format** (YYYY-MM-DDThh:mm:sss[-/+]zz:zz).
-
-* Sample Date: February 20, 2020 12:00 PM EST
-* Instant Format: YYYY-MM-DDThh:mm:sss[-/+]zz:zz
-* Formatted Sample: 2020-02-20T12:00:00.000-05:00
-
-<div class="ds-c-alert ds-c-alert--warn">
-  <div class="ds-c-alert__body"> 
-    <h3 class="ds-c-alert__heading">TBD</h3>
-    <p class="ds-c-alert__text">
-      The value of the _since parameter must be URL encoded. When using the <a href="#postman-collection">Postman Collection</a>, you will need to manually encode the _since parameter when it contains a + sign since Postman does not automatically encode this character. You can do this either by replacing the + with %2B (e.g., 2020-01-23T04:00:00.000%2B07:00 instead of 2020-01-23T04:00:00.000+07:00), or you can select the value and choose “EncodeURIComponent” from the context menu to have Postman encode the entire parameter automatically.
-    </p>
-  </div>
-</div>
-
-insert image
-
-An access token as well as Accept and Prefer headers are required for the Group/{id}all/$export. 
-
-The Prefer header is NOT required for /Patient/{id}/$everything, but it DOES require an X-Provenance header whereas the /Group/{id}/$export endpoint does not. The format is defined by the FHIR Bulk Data Export spec. Consult the [FHIR Datatypes](https://www.hl7.org/fhir/datatypes.html#instant) page for more information.
-
-<div class="ds-c-alert ds-c-alert--warn">
-  <div class="ds-c-alert__body"> 
-    <h3 class="ds-c-alert__heading">TBD</h3>
-    <p class="ds-c-alert__text">
-      Due to limitations in the Beneficiary FHIR Data (BFD) Server, data from before 02-12-2020 is marked with the arbitrary <a href="https://www.hl7.org/fhir/search.html#lastUpdated">lastUpdated</a> date of 01-01-2020. If you input dates between 01-01-2020 and 02-11-2020 in the _since parameter, you will receive all historical data for your beneficiaries. Data loads from 02-12-2020 onwards have been marked with accurate dates.
-    </p>
-  </div>
-</div>
-
-## Requesting data using _since with the /Group endpoint
-
-#### Request to Start a job using the _since parameter within the /Group endpoint
-
-<pre class="highlight"><code>GET /api/v1/Group/<span style="color: #045E87;">{id}</span>/$export?_type=Patient&_since=2020-02-13T08:00:00.000-05:00
-</code></pre>
-
-#### Request Headers:
-<pre class="highlight"><code>
-     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
-     -H 'Accept: application/fhir+json' \
-     “X-Provenance:<a href="#attestation">{provenance header}</a>
-</code></pre>
-
-#### Response:
-
-~~~
-{
-  "resourceType": "Bundle",
-  "type": "searchset",
-  "total": 1,
-  "entry": [
-    {
-      "resource": {
-        "resourceType": "Patient",
-        "id": "995a1c0f-b6bc-4d16-b6b0-b8a6597c6e1d",
-        "meta": {
-          "lastUpdated": "2020-06-12T15:39:42.834+00:00",
-          "profile": [
-            "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
-          ]
-        },
-        "identifier": [
-          {
-            "system": "http://hl7.org/fhir/sid/us-mbi",
-            "value": "5S41C00AA00"
-          }
-        ],
-        "name": [
-          {
-            "family": "Wyman904",
-            "given": [
-              "Cruz300"
-            ]
-          }
-        ],
-        "gender": "male",
-        "birthDate": "1956-02-08",
-        "managingOrganization": {
-          "reference": "Organization/351fbb5f-f2f9-4094-bc6f-2b3600bb56e9"
-        }
-      }
-    }
-  ]
-}
-~~~
+~~~ 
 
 <a class="guide_top_link" href="#export-data">Back to Start of Section</a><br />
 <a class="guide_top_link" href="#">Back to Top of Page</a>
