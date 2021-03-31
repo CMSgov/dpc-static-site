@@ -1614,8 +1614,8 @@ You can filter data using the _since parameter with either the /Patient or /Grou
 
 
 **You can make two types of filtered requests for data:**
-1. Request the most recent data for all beneficiaries: [Use _since within the /Group endpoint](https://bcda.cms.gov/build.html#requesting-since-with-Group)
-2. Request data synchronously for an individual patient: [Use _since within the /Patient endpoint](https://bcda.cms.gov/build.html#requesting-since-with-Patient)
+1. Request the most recent data for all beneficiaries: [Use _since within the /Group endpoint](#requesting-data-using-_since-with-the-group-endpoint)
+2. Request data synchronously for an individual patient: [Use _since within the /Patient endpoint](#requesting-data-using-_since-with-the-patient-endpoint)
 
 ### Steps
 
@@ -1638,7 +1638,9 @@ The only difference appears in the request of Step 2: Start a job to acquire dat
   <div class="ds-c-alert__body"> 
     <h3 class="ds-c-alert__heading">The value of the _since parameter must be URL encoded.</h3>
     <p class="ds-c-alert__text">
-      When using the <a href="#postman-collection">Postman Collection</a>, you will need to manually encode the <strong>_since</strong> parameter when it contains a <strong>+</strong> sign since Postman does not automatically encode this character. You can do this either by replacing the + with <strong>%2B</strong> (e.g., 2020-01-23T04:00:00.000%2B07:00 instead of 2020-01-23T04:00:00.000+07:00), or you can select the value and choose “EncodeURIComponent” from the context menu to have Postman encode the entire parameter automatically.
+      When using the <a href="#postman-collection">Postman Collection</a>, you will need to manually encode the <strong>_since</strong> parameter when it contains a <strong>+</strong> sign since Postman does not automatically encode this character. 
+      <br /><br />
+      You can do this either by replacing the + with <strong>%2B</strong> (e.g., 2020-01-23T04:00:00.000%2B07:00 instead of 2020-01-23T04:00:00.000+07:00), or you can select the value and choose “EncodeURIComponent” from the context menu to have Postman encode the entire parameter automatically.
     </p>
   </div>
 </div>
