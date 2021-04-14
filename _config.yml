@@ -19,11 +19,9 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Data at the Point of Care
-email: your-email@example.com
+email: dpc-api@googlegroups.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Data at the Point of Care is a pilot CMS API program that enables healthcare providers to deliver high quality care to Medicare beneficiaries by sharing their patients' Medicare claims data for treatment needs.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://dpc.cms.gov" # the base hostname & protocol for your site, e.g. http://example.com
 cssurl: /assets/css/static-main.css
@@ -81,6 +79,8 @@ guide_nav:
         id: initiate-an-export-job
       - title: Specify Resources
         id: specify-which-resources-to-download
+      - title: Requesting filtered data
+        id: requesting-filtered-data
       - title: Check Status of Export Job
         id: check-status-of-the-export-job
       - title: Retrieve NDJSON Output
