@@ -1662,7 +1662,7 @@ The Prefer header is NOT required for /Patient/{id}/$everything, but it DOES req
 
 ## Requesting data using _since with the /Group endpoint
 
-#### Request to Start a job using the _since parameter within the /Group endpoint
+### Request to Start a job using the _since parameter within the /Group endpoint
 
 <pre class="highlight"><code>GET /api/v1/Group/<span style="color: #045E87;">{id}</span>/$export?_type=Patient&_since=2020-02-13T08:00:00.000-05:00
 </code></pre>
@@ -1691,7 +1691,7 @@ If the request was successful, a 202 Accepted response code will be returned and
 
 ## Requesting data using _since with the /Patient endpoint
 
-#### Request data synchronously for an individual Patient  using the _since parameter within the /Patient/{id}/$everything endpoint
+### Request data synchronously for an individual Patient using the _since parameter within the /Patient/{id}/$everything endpoint
 
 <pre class="highlight"><code>GET /api/v1/Patient/<span style="color: #045E87;">{id}</span>/$everything?_since=2020-02-13T08:00:00.000-05:00
 </code></pre>
