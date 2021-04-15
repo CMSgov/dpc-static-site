@@ -1,0 +1,30 @@
+{
+  "path": "http://hl7.org/fhir/STU3/",
+  "canonical": "https://dpc.cms.gov/api/v1",
+  "igId": "cms-dpc-ig",
+  "igName": "Data @ the Point of Care Implementation Guide",
+  "packageId": "cms-dpc-ig",
+  "errorCount": 25,
+  "version": "3.0.2",
+  "revision": "11200",
+  "versionFull": "3.0.2-11200",
+  "toolingVersion": "4.4.0",
+  "toolingRevision": "3",
+  "toolingVersionFull": "4.4.0 (3)",
+  "totalFiles": 17,
+  "processedFiles": 147,
+  "genDate": "Fri, Mar 26, 2021 14:34-0400",
+  "genDay": "26/03/2021",
+  "ig": {
+    "id": "cms-dpc-ig",
+    "name": "Data @ the Point of Care Implementation Guide",
+    "url": "https://dpc.cms.gov/api/v1/ImplementationGuide/cms-dpc-ig",
+    "status": "draft",
+    "experimental": false,
+    "publisher": "Centers for Medicare and Medicaid Services",
+    "gitstatus": "",
+    "date": "2021-03-26T14:34:24-04:00",
+    "description": "Draft implementation guide for DPC Application",
+    "fhirVersion": "3.0.1"
+  }
+}

@@ -1,0 +1,55 @@
+﻿<html>
+<head>
+  <title>StructureDefinition-dpc-profile-attribution-roster-maps</title>
+  <link rel="stylesheet" href="fhir.css"/>
+</head>
+<body>
+<a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>DPC Attribution Roster</b></td></tr>
+ <tr><td>Group</td><td>Entity. Role, or Act, Entity[determinerCode=&quot;GRP&quot; or determinerCode=&quot;GRP_KIND&quot;]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>unique(./id[displayable=&quot;true&quot; and scope=&quot;OBJ&quot;])</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>./statusCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>person: ./classCode=&quot;PSN&quot;  animal: ./classCode=&quot;ANM&quot;  device: ./classCode=&quot;DEV&quot;  medication: ./classCode=&quot;MMAT&quot; and ./playedRole[isNormalRole() and classCode=&quot;THER&quot;]  food: ./classCode=&quot;FOOD&quot;</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;actual</td><td>true: ./determinerCode=&quot;GRP&quot;  false: ./determinerCode=&quot;GRP_KIND&quot;</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>./code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>./name[type=&quot;ST&quot;]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;quantity</td><td>./quantity</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;characteristic</td><td>./playedRole[isNormalRole()]/participation[isNormalParticipation() and typeCode=&quot;SBJ&quot;]/act[isNormalAct and classCode=&quot;OBS&quot; and moodCode=&quot;EVN&quot;]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>./code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (group-characteristic)</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>./codeSystem</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</td><td>./codeSystemVersion</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>./code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>CV.displayName</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSelected</td><td>CD.codingRationale</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>./value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude</td><td>./valueNegationInd</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;member</td><td>./scopedRole[isNormalRole() and classCode=&quot;MBR&quot;]/player</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+</table>
+<a name="w5"> </a><h3>Mappings for W5 Mapping (<a href="http://hl7.org/fhir/w5.html">http://hl7.org/fhir/w5</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>DPC Attribution Roster</b></td></tr>
+ <tr><td>Group</td><td>administrative.group</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;actual</td><td>class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>what</td> </tr>
+</table>
+</body>
+</html>

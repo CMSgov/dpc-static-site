@@ -1,0 +1,105 @@
+[
+  {
+    "url": "https://dpc.cms.gov/api/v1/CapabilityStatement/dpc-capabilities",
+    "id": "dpc-capabilities",
+    "type": "CapabilityStatement",
+    "version": "0.3.0-SNAPSHOT"
+  },
+  {
+    "url": "https://dpc.cms.gov/api/v1/ImplementationGuide/cms-dpc-ig",
+    "id": "cms-dpc-ig",
+    "type": "ImplementationGuide",
+    "name": "Data @ the Point of Care Implementation Guide"
+  },
+  {
+    "url": "https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-group-add",
+    "id": "dpc-operation-group-add",
+    "type": "OperationDefinition",
+    "version": "0.0.1",
+    "name": "Add Member to Attribution Roster"
+  },
+  {
+    "url": "https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-group-remove",
+    "id": "dpc-operation-group-remove",
+    "type": "OperationDefinition",
+    "version": "0.0.1",
+    "name": "Remove Members from Attribution Roster"
+  },
+  {
+    "url": "https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-patient-submit",
+    "id": "dpc-operation-patient-submit",
+    "type": "OperationDefinition",
+    "version": "0.0.1",
+    "name": "Submit Patients"
+  },
+  {
+    "url": "https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-patient-validate",
+    "id": "dpc-operation-patient-validate",
+    "type": "OperationDefinition",
+    "version": "0.0.1",
+    "name": "Validate Patient"
+  },
+  {
+    "url": "https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-practitioner-submit",
+    "id": "dpc-operation-practitioner-submit",
+    "type": "OperationDefinition",
+    "version": "0.0.1",
+    "name": "Submit Practitioners"
+  },
+  {
+    "url": "https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-practitioner-validate",
+    "id": "dpc-operation-practitioner-validate",
+    "type": "OperationDefinition",
+    "version": "0.0.1",
+    "name": "Validate Practitioner"
+  },
+  {
+    "url": "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-address",
+    "id": "dpc-profile-address",
+    "type": "StructureDefinition",
+    "version": "0.0.1",
+    "name": "DPC Address"
+  },
+  {
+    "url": "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation",
+    "id": "dpc-profile-attestation",
+    "type": "StructureDefinition",
+    "version": "0.0.1",
+    "name": "DPC Attribution Attestation"
+  },
+  {
+    "url": "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attribution-roster",
+    "id": "dpc-profile-attribution-roster",
+    "type": "StructureDefinition",
+    "version": "0.0.1",
+    "name": "DPC Attribution Roster"
+  },
+  {
+    "url": "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-endpoint",
+    "id": "dpc-profile-endpoint",
+    "type": "StructureDefinition",
+    "version": "0.0.1",
+    "name": "DPC Endpoint"
+  },
+  {
+    "url": "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-organization",
+    "id": "dpc-profile-organization",
+    "type": "StructureDefinition",
+    "version": "0.0.1",
+    "name": "DPC Organization"
+  },
+  {
+    "url": "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient",
+    "id": "dpc-profile-patient",
+    "type": "StructureDefinition",
+    "version": "0.0.1",
+    "name": "DPC Patient"
+  },
+  {
+    "url": "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-practitioner",
+    "id": "dpc-profile-practitioner",
+    "type": "StructureDefinition",
+    "version": "0.0.1",
+    "name": "DPC Practitioner"
+  }
+]

@@ -1,0 +1,78 @@
+---
+# jekyll header
+level: 2
+template: base
+active: format
+layout: fhir-artifact
+type: OperationDefinition
+id: dpc-operation-practitioner-submit
+---
+
+<!-- ig template for many conformance resource html pages  ('base' in definitions file)  can not be used for conformance resources that have more that a single base template. e.g.,  sd since there are mapping and definitions templates for it as well  they need to be split out into 3 separate templates -->
+
+<!-- ============ CONTENT CONTENT=============== -->
+
+{% case 'OperationDefinition' %} <!-- content depends on type -->
+{% when 'ValueSet' %}
+<!-- ============VAlUESET CONTENT CONTENT=============== -->
+
+  {% include OperationDefinition-dpc-operation-practitioner-submit-summary.xhtml %}
+  {% include OperationDefinition-dpc-operation-practitioner-submit-xref.xhtml %}
+  {% include OperationDefinition-dpc-operation-practitioner-submit-cld.xhtml %}
+
+  <h3>Expansion</h3>
+
+  {% include OperationDefinition-dpc-operation-practitioner-submit-expansion.xhtml %}
+<!-- ============VAlUESET CONTENT CONTENT=============== -->
+
+<!-- ( % when 'StructureMap' % }
+============StructureMap CONTENT CONTENT===============
+  ( % include nav-tabs.html type="OperationDefinition" id="dpc-operation-practitioner-submit" active="content" % }
+
+  <p>
+  Thise is the mapping between FHIR resources and the Logical Model:
+  </p>
+
+  <a name="summary"> </a>
+  <h2>Summary</h2>
+  ( % include OperationDefinition-dpc-operation-practitioner-submit-summary.xhtml % }
+  <br/>
+
+  <h2>Content</h2>
+  ( %  include OperationDefinition-dpc-operation-practitioner-submit-content.xhtml % }
+  <br/>
+
+  <a name="script"> </a>
+  <h2>Script</h2>
+  <pre>
+  ( % include OperationDefinition-dpc-operation-practitioner-submit-script.xhtml % }
+  </pre>
+============StructureMap CONTENT CONTENT=============== -->
+
+{% when 'OperationDefinition' %}
+<!-- ============OperationDefinition CONTENT CONTENT=============== -->
+
+  {% include OperationDefinition-dpc-operation-practitioner-submit-html.xhtml %}
+
+  {% capture my-include %}{% include dpc-operation-practitioner-submit.md %}{% endcapture %}{{ my-include | markdownify }}  <!--add inline examples here -->
+<!-- ============OperationDefinition CONTENT CONTENT=============== -->
+
+{% else %}
+<!-- ============CodeSystem ConceptMap CapabilityStatement CONTENT CONTENT=============== -->
+
+  <h2>OperationDefinition: dpc-operation-practitioner-submit</h2>
+
+  {% include OperationDefinition-dpc-operation-practitioner-submit-html.xhtml %}
+  <!-- ============CodeSystem ConceptMap CapabilityStatement CONTENT CONTENT=============== -->
+
+{% endcase %}
+
+
+<!-- simple format links
+<p>
+Formats: <a href="OperationDefinition-dpc-operation-practitioner-submit.html">Narrative</a>, <a href="OperationDefinition-dpc-operation-practitioner-submit.xml.html">XML</a>, <a href="OperationDefinition-dpc-operation-practitioner-submit.json.html">JSON</a>, <a href="OperationDefinition-dpc-operation-practitioner-submit.ttl.html">Turtle</a>
+</p>
+-->
+
+
+  <!-- ==============END CONTENT END CONTENT=================== -->

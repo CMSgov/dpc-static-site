@@ -1,0 +1,256 @@
+{% raw %}<pre class="json">
+{
+  "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement">resourceType</a>" : "CapabilityStatement",
+  "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.id">id</a>" : "dpc-capabilities",
+  "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.text">text</a>" : {
+    "<a href="http://hl7.org/fhir/STU3/datatypes.html#Narrative#Narrative.status">status</a>" : "extensions",
+    "<a href="http://hl7.org/fhir/STU3/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h2/&gt;&lt;div&gt;&lt;p&gt;This Capability Statement defines the available resource, endpoints and operations supported by the Data @ the Point of Care Application.&lt;/p&gt;\n&lt;/div&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Mode&lt;/td&gt;&lt;td&gt;SERVER&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Description&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Transaction&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;System History&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;System Search&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;&lt;b&gt;Resource Type&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b&gt;Profile&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b title=\&quot;GET a resource (read interaction)\&quot;&gt;Read&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b title=\&quot;GET all set of resources of the type (search interaction)\&quot;&gt;Search&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b title=\&quot;PUT a new resource version (update interaction)\&quot;&gt;Update&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b title=\&quot;POST a new resource (create interaction)\&quot;&gt;Create&lt;/b&gt;&lt;/th&gt;&lt;th&gt;&lt;b title=\&quot;DELETE a resource (delete interaction)\&quot;&gt;Delete&lt;/b&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Endpoint&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-endpoint\&quot;&gt;https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-endpoint&lt;/a&gt;&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Group&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attribution-roster\&quot;&gt;https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attribution-roster&lt;/a&gt;&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Organization&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-organization\&quot;&gt;https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-organization&lt;/a&gt;&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Patient&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient\&quot;&gt;https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient&lt;/a&gt;&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Practitioner&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-practitioner\&quot;&gt;https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-practitioner&lt;/a&gt;&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;StructureDefinition&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;y&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
+  },
+  "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.url">url</a>" : "https://dpc.cms.gov/api/v1/CapabilityStatement/dpc-capabilities",
+  "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.version">version</a>" : "0.3.0-SNAPSHOT",
+  "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.status">status</a>" : "draft",
+  "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.date">date</a>" : "2019",
+  "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.publisher">publisher</a>" : "Centers for Medicare and Medicaid Services",
+  "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.description">description</a>" : "This Capability Statement defines the available resource, endpoints and operations supported by the Data @ the Point of Care Application.",
+  "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.kind">kind</a>" : "instance",
+  "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.instantiates">instantiates</a>" : [
+    "http://hl7.org/fhir/uv/bulkdata/CapabilityStatement/bulk-data"
+  ],
+  "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.software">software</a>" : {
+    "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.software.name">name</a>" : "Data @ Point of Care API",
+    "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.software.version">version</a>" : "0.3.0-SNAPSHOT",
+    "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.software.releaseDate">releaseDate</a>" : "2019"
+  },
+  "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.fhirVersion">fhirVersion</a>" : "3.0.2",
+  "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.acceptUnknown">acceptUnknown</a>" : "extensions",
+  "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.format">format</a>" : [
+    "application/json",
+    "application/fhir+json"
+  ],
+  "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest">rest</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.mode">mode</a>" : "server",
+      "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.security">security</a>" : {
+        "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.security.extension">extension</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/STU3/extensibility.html#Extension#Extension.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/extensibility.html#Extension#Extension.url">url</a>" : "token",
+                "<a href="http://hl7.org/fhir/STU3/extensibility.html#Extension#Extension.value[x]">valueUri</a>" : "https://dpc.cms.gov/api/v1/Token/auth"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/extensibility.html#Extension#Extension.url">url</a>" : "http://fhir-registry.smarthealthit.org/StructureDefinition/oauth-uris"
+          }
+        ],
+        "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.security.cors">cors</a>" : true,
+        "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.security.service">service</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/restful-security-service",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Coding#Coding.code">code</a>" : "SMART-on-FHIR",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Coding#Coding.display">display</a>" : "SMART on FHIR"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept#CodeableConcept.text">text</a>" : "SMART on FHIR Backend Services"
+          }
+        ]
+      },
+      "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource">resource</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a>" : "Endpoint",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.profile">profile</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/references.html#Reference#Reference.reference">reference</a>" : "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-endpoint"
+          },
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "read"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "search-type"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.versioning">versioning</a>" : "no-version"
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a>" : "Group",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.profile">profile</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/references.html#Reference#Reference.reference">reference</a>" : "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attribution-roster"
+          },
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "read"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "create"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "update"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "delete"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "search-type"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.versioning">versioning</a>" : "no-version",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "characteristic-value",
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "token",
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "Search for Attribution rosters which are attributed to the given provider NPI"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "member",
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "reference",
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "Search for Attribution groups in which the given Patient resource is a member."
+            }
+          ]
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a>" : "Organization",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.profile">profile</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/references.html#Reference#Reference.reference">reference</a>" : "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-organization"
+          },
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "read"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.versioning">versioning</a>" : "no-version"
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a>" : "Patient",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.profile">profile</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/references.html#Reference#Reference.reference">reference</a>" : "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+          },
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "read"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "create"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "update"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "delete"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "search-type"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.versioning">versioning</a>" : "no-version",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "identifier",
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "token",
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "Find patient resources which match the given Identifier. For DPC, this will always return a single resource, as MBIs are unique."
+            }
+          ]
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a>" : "Practitioner",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.profile">profile</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/references.html#Reference#Reference.reference">reference</a>" : "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-practitioner"
+          },
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "read"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "create"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "update"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "delete"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "search-type"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.versioning">versioning</a>" : "no-version",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "identifier",
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "token",
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "Find practitioner resources which match the given Identifier. For DPC, this will always return a single resource, as NPIs are unique."
+            }
+          ]
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a>" : "StructureDefinition",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "read"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "search-type"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.versioning">versioning</a>" : "no-version"
+        }
+      ],
+      "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.interaction">interaction</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.interaction.code">code</a>" : "batch"
+        }
+      ],
+      "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation">operation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.name">name</a>" : "group-export",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.definition">definition</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/references.html#Reference#Reference.reference">reference</a>" : "http://hl7.org/fhir/uv/bulkdata/OperationDefinition/group-export"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.name">name</a>" : "patient-everything",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.definition">definition</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/references.html#Reference#Reference.reference">reference</a>" : "http://hl7.org/fhir/OperationDefinition/Patient-everything"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.name">name</a>" : "validate",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.definition">definition</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/references.html#Reference#Reference.reference">reference</a>" : "https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-practitioner-validate"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.name">name</a>" : "submit",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.definition">definition</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/references.html#Reference#Reference.reference">reference</a>" : "https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-practitioner-submit"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.name">name</a>" : "validate",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.definition">definition</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/references.html#Reference#Reference.reference">reference</a>" : "https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-patient-validate"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.name">name</a>" : "submit",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.definition">definition</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/references.html#Reference#Reference.reference">reference</a>" : "https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-patient-submit"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.name">name</a>" : "add",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.definition">definition</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/references.html#Reference#Reference.reference">reference</a>" : "https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-group-add"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.name">name</a>" : "remove",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.definition">definition</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/references.html#Reference#Reference.reference">reference</a>" : "https://dpc.cms.gov/api/v1/OperationDefinition/dpc-operation-group-remove"
+          }
+        }
+      ]
+    }
+  ]
+}</pre>
+{% endraw %}

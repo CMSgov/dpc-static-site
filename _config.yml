@@ -131,3 +131,5 @@ exclude:
   - Dockerfiles/
   - docker-compose.yml
   - Makefile
+  - implementation_guide/
+  
