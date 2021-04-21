@@ -17,7 +17,7 @@
   fhir:OperationDefinition.name [ fhir:value "Validate Practitioner"];
   fhir:OperationDefinition.status [ fhir:value "draft"];
   fhir:OperationDefinition.kind [ fhir:value "operation"];
-  fhir:OperationDefinition.date [ fhir:value "2021-03-26T14:34:24-04:00"^^xsd:dateTime];
+  fhir:OperationDefinition.date [ fhir:value "2021-04-21T11:33:40-04:00"^^xsd:dateTime];
   fhir:OperationDefinition.publisher [ fhir:value "The DPC Team"];
   fhir:OperationDefinition.description [ fhir:value "Validate a Practitioner resource against the DPC Roster Practitioner Profile."];
   fhir:OperationDefinition.code [ fhir:value "validate"];

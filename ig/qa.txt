@@ -1,12 +1,12 @@
 ﻿Data @ the Point of Care Implementation Guide : Validation Results
 =========================================
 
-err = 25, warn = 7, info = 2
+err = 26, warn = 7, info = 2
 IG Publisher Version: v1.1.0 Out of date - current version is ?pub-ver-1?
-Generated Fri Mar 26 14:34:39 EDT 2021. FHIR version 3.0.2 for cms-dpc-ig# (canonical = https://dpc.cms.gov/api/v1)
+Generated Wed Apr 21 11:34:32 EDT 2021. FHIR version 3.0.2 for cms-dpc-ig# (canonical = https://dpc.cms.gov/api/v1)
 
  Build Errors : 84 / 1
- /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/./DPCCapabilities : 3 / 1
+ /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/./DPCCapabilities : 4 / 1
  /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/implementationguide/cms-dpc-ig : 9 / 0
  /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-group-add : 1 / 0
  /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/operationdefinition/dpc-group-remove : 1 / 0
@@ -114,6 +114,7 @@ ERROR: /Users/pat/Documents/develop/cms/dpc-static-site/ig/toc.html#/html/head/l
 ERROR: CapabilityStatement/dpc-capabilities: CapabilityStatement.instantiates[0]: URL value "http://hl7.org/fhir/uv/bulkdata/CapabilityStatement/bulk-data" does not resolve
 ERROR: CapabilityStatement/dpc-capabilities: CapabilityStatement.rest[0].security.extension[0]: The extension http://fhir-registry.smarthealthit.org/StructureDefinition/oauth-uris is unknown, and not allowed here
 INFORMATION: CapabilityStatement/dpc-capabilities: CapabilityStatement.rest[0].security.service[0].coding[0]: Code System URI "http://terminology.hl7.org/CodeSystem/restful-security-service" is unknown so the code cannot be validated
+ERROR: CapabilityStatement/dpc-capabilities: CapabilityStatement.rest[0].resource[4].profile: Unable to resolve resource "https://dpc.cms.gov/api/v1/StructureDefinition"
 ERROR: CapabilityStatement/dpc-capabilities: CapabilityStatement.rest[0].operation[0].definition: Unable to resolve resource "http://hl7.org/fhir/uv/bulkdata/OperationDefinition/group-export"
 == /Users/pat/Documents/develop/cms/dpc-static-site/implementation_guide/source/resources/implementationguide/cms-dpc-ig.xml ==
 ERROR: ImplementationGuide/cms-dpc-ig: ImplementationGuide.package[0].resource[0].source.ofType(Reference): Unable to resolve resource "Patient/dpc-sample-patient"
