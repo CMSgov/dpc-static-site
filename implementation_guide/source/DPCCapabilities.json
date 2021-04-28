@@ -52,21 +52,6 @@
       },
       "resource": [
         {
-          "type": "Endpoint",
-          "profile": {
-            "reference": "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-endpoint"
-          },
-          "interaction": [
-            {
-              "code": "read"
-            },
-            {
-              "code": "search-type"
-            }
-          ],
-          "versioning": "no-version"
-        },
-        {
           "type": "Group",
           "profile": {
             "reference": "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attribution-roster"
@@ -178,6 +163,9 @@
         },
         {
           "type": "StructureDefinition",
+          "profile": {
+            "reference": "https://dpc.cms.gov/api/v1/StructureDefinition"
+          },
           "interaction": [
             {
               "code": "read"
