@@ -30,3 +30,6 @@ gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
 
 # Required for git pre-commit hook to parse json var files
 gem "json"
+
+# rexml 3.2.5 resolves a vulnerability
+gem "rexml", ">= 3.2.5"
