@@ -1590,11 +1590,17 @@ If the request was successful, a 202 Accepted response code will be returned wit
 <pre class="highlight"><code>Content-Location: https://sandbox.dpc.cms.gov/api/v1/Jobs/<span style="color: #045E87;">{unique ID of export job}</span></code></pre>
 
 ## Specify which Resources to Download
-The Resources to Export can be specified using the _type Parameter. Multiple Resources are specified in a comma delimited list. The following request will export the Patient and Coverage esources, but NOT the Explanation of Benefit Resource.
+The _type query parameter allows you to specify which FHIR resources you wish to export. If you do not specify a _type parameter in your request, all three resources will be exported. Currently, DPC makes Explanation of Benefit, Patient, and Coverage resources available, which can be specified individually or as a group using a comma delimited list and the syntax `?_type=ExplanationOfBenefit,Patient,Coverage`. 
+
+The following request will export the Patient and Coverage esources, but NOT the Explanation of Benefit Resource.
 
 ### Request:
 <pre class="highlight"><code>GET /api/v1/Group/<span style="color: #045E87;">{attribution group ID}</span>/$export?_type=Patient,Coverage</code></pre>
 
+The following request, by contrast, will export the Explanation of Benefit resource, but NOT the Patient or Coverage resources.
+
+### Request:
+<pre class="highlight"><code>GET /api/v1/Group/<span style="color: #045E87;">{attribution group ID}</span>/$export?_type=ExplanationOfBenefit</code></pre>
 
 ## Requesting filtered data
 
