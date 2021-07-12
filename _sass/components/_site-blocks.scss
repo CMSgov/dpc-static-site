@@ -1,36 +1,20 @@
 .site-block {
-  border-top: 2px solid $color-primary-alt-light;
   line-height: 1.5;
   padding: $spacer-7 0;
   position: relative;
 
-  .ds-l-container {
-    position: relative;
-
-    &:before {
-      content: "";
-      background-color: $color-white;
-      border: 2px solid $color-primary-alt-light;
-      border-radius: 50%;
-      height: .5rem;
-      left: $spacer-2;
-      position: absolute;
-      top: calc(0px - #{$spacer-7} - .25rem - 2.5px);
-      width: .5rem;
-
-      @media (min-width: $width-sm) {
-        left: $spacer-4;
-      }
-    }
+  .site-block-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1040px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
 .site-block--alt {
-  background-color: $color-primary-alt-lightest;
-
-  a {
-    color: $color-primary-darker;
-  }
+  background-color: $color-primary-darkest;
+  color: $color-white;
 }
 
 .site-block-header * {
@@ -62,4 +46,28 @@
 
 .card--shadow {
   box-shadow: 0px 0px 50px rgba(0,0,0,0.5);
+}
+
+.flex--row {
+  display: flex;
+  flex-direction: row;
+}
+
+#hero {
+  background: url("/assets/images/dpc-header.svg") no-repeat center;
+  background-size:contain;
+  height: 400px;
+}
+
+#home-checklist {
+  .flex--row {
+    div {
+      width: 50%;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
 }
