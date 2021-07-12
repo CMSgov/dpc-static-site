@@ -17,12 +17,13 @@
 
   img {
     margin-right: 6px;
-    width: $spacer-2;
-
-    @media (min-width: $width-sm) {
-      width: $spacer-4;
-    }
+    width: 50px;
   }
+}
+
+.site-logo-text {
+  border-left: 1px $color-primary solid;
+  padding-left: $spacer-1;
 }
 
 .site-logo-text:hover {
@@ -69,8 +70,7 @@
 
     @media (min-width: $width-nav) {
       background-color: transparent;
-      display: block;
-      position: static;
+      display: flex;
       height: auto;
       max-width: unset;
       width: auto;
@@ -93,6 +93,7 @@
 
   @media (min-width: $width-nav) {
     display: flex;
+    flex: 1;
     flex-direction: row;
     align-items: center;
   }

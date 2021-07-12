@@ -32,10 +32,16 @@ sbx_sign_in: "https://sandbox.dpc.cms.gov/users/sign_in"
 global_nav:
   - title: Home
     id: home
+  - title: DPC Data
+    id: data
+  - title: About the Pilot
+    id: pilot
   - title: Documentation
     id: docs
   - title: Frequently Asked Questions
     id: faq
+  - title: Updates
+    id: updates
 
 footer_nav:
   - title: Documentation

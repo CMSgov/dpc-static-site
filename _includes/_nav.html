@@ -2,7 +2,7 @@
 
 <div class="navigation-bar" id="navigation" role="navigation">
   <a class="site-logo" href="/">
-    <img src="{{ site.logourl | relative_url }}" alt="Heart logo"> <span class="site-logo-text">Data at the Point of Care</span>
+    <img src="{{ site.logourl | relative_url }}" alt="Heart logo"> <span class="site-logo-text">Data at the<br />Point of Care</span>
   </a>
 
   <button id="topnav__show-button" class="ds-c-button ds-c-button--transparent ds-c-button--big topnav__show-button" type="button" aria-controls="topnav-wrap" aria-label="Show menu">
@@ -28,10 +28,7 @@ aria-controls="topnav-wrap" aria-label="Close menu">
         {% endfor %}
       {% endfor %}
         <li class="topnav__item topnav__item--buttons ds-u-padding-right--1">
-          <a href={{ site.sbx_sign_in }} class="ds-c-button">Log in</a>
-        </li>
-        <li class="topnav__item topnav__item--buttons">
-          <a href={{ site.sbx_register }} class="ds-c-button ds-c-button--primary">Request Access</a>
+          <a href={{ site.sbx_sign_in }} class="ds-c-button">Sandbox<br />Sign Up / Login</a>
         </li>
     </ul>
   </div>
