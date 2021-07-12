@@ -37,7 +37,7 @@ global_nav:
   - title: About the Pilot
     id: pilot
   - title: Documentation
-    id: docs
+    id: docsV2
   - title: Frequently Asked Questions
     id: faq
   - title: Updates

@@ -1,6 +1,6 @@
 .site-block {
   line-height: 1.5;
-  padding: $spacer-7 0;
+  padding: 0;
   position: relative;
 
   .site-block-content {
@@ -60,14 +60,27 @@
 }
 
 #home-checklist {
-  .flex--row {
-    div {
-      width: 50%;
-    }
+  background: url("/assets/images/hexagon-bg.svg");
+  padding: $spacer-6;
 
+  .ds-text-heading--2xl {
+    color: $color-white;
+    margin-bottom: 0.25rem;
+  }
+
+  .flex--row {
     img {
       height: 100%;
       width: 100%;
     }
+  }
+
+  #checklist {
+    width: 66%;
+    padding: 0 4rem 0 2rem;
+  }
+
+  #hero-heart-container {
+    width: 33%;
   }
 }
