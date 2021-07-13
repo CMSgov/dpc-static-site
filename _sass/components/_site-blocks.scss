@@ -42,6 +42,53 @@
   }
 }
 
+.api-card {
+  border-radius: 20px;
+  color: $color-base;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px;
+
+  height: 350px;
+  max-width: 250px;
+
+  .logo-container {
+    text-align: center;
+
+    .logo {
+      width: 50%;
+    }
+  }
+}
+
+.api-card--blue {
+  background-color: $color-primary-alt;
+}
+
+.api-card--white {
+  background-color: $color-white;
+}
+
+.api-card--yellow {
+  background-color: $color-warn-lighter;
+}
+
+.api-btn,
+.api-btn:visited {
+  background-color: $color-primary-alt-darkest;
+  border-radius: 5px;
+  color: $color-white;
+  padding: 10px 50px;
+  text-decoration: none;
+}
+
+.api-btn-container {
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+}
+
 .card {
   background-color: $color-white;
   box-shadow: 0 0 0 rbga(0,0,0, .5);
@@ -79,8 +126,17 @@
   }
 }
 
+#api-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 25px 0;
+}
+
 #fhir-apis {
-  padding: $spacer-3;
+  background: url("/assets/images/hexagon-bg.svg");
+  padding: $spacer-3 0 $spacer-7 0;
 
   h2 {
     text-align: center;
