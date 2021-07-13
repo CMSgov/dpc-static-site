@@ -15,6 +15,18 @@
 .site-block--alt {
   background-color: $color-primary-darkest;
   color: $color-white;
+
+  h2 {
+    color: $color-white;
+  }
+}
+
+.site-block--mint {
+  background-color: $color-success-lightest;
+
+  h1 {
+    color: $color-base;
+  }
 }
 
 .site-block-header * {
@@ -53,10 +65,32 @@
   flex-direction: row;
 }
 
+.use-case {
+  display: flex;
+  flex-direction: row;
+
+  .img-container {
+    width: 33%;
+  }
+
+  .use-case-descr {
+    padding: $spacer-6 0;
+    width: 66%;
+  }
+}
+
+#fhir-apis {
+  padding: $spacer-3;
+
+  h2 {
+    text-align: center;
+  }
+}
+
 #hero {
   background: url("/assets/images/dpc-header.svg") no-repeat center;
   background-size:contain;
-  height: 400px;
+  height: 500px;
 }
 
 #home-checklist {
@@ -82,5 +116,12 @@
 
   #hero-heart-container {
     width: 33%;
+  }
+}
+
+#pagers {
+  .pagers-container {
+    padding: 20px;
+    width: 50%;
   }
 }
