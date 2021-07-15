@@ -49,8 +49,9 @@
   height: 350px;
   flex-direction: column;
   justify-content: space-between;
-  padding: 25px;
-  max-width: 250px;
+  padding: 24px;
+  max-height: 460px;
+  max-width: 280px;
 
   @media screen and (max-width: $width-nav) {
     margin: 25px auto;
@@ -131,7 +132,7 @@
 
 #api-cards {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 
   @media screen and (min-width: $width-nav) {
     flex-direction: row;
