@@ -46,22 +46,46 @@
   border-radius: 20px;
   color: $color-base;
   display: flex;
-  height: 350px;
   flex-direction: column;
   justify-content: space-between;
   padding: 24px;
-  max-height: 460px;
-  max-width: 280px;
+
+  max-width: 250px;
 
   @media screen and (max-width: $width-nav) {
     margin: 25px auto;
   }
 
   .logo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
 
+    height: 250px;
+
     .logo {
-      width: 50%;
+      margin-bottom: 15px;
+    }
+  }
+
+  .api-descript {
+    height: 150px;
+    margin-bottom: 15px;
+  }
+
+  .api-btn-container {
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+
+    .api-btn,
+    .api-btn:visited {
+      background-color: $color-primary-alt-darkest;
+      border-radius: 5px;
+      color: $color-white;
+      padding: 10px 50px;
+      text-decoration: none;
     }
   }
 }
@@ -76,21 +100,6 @@
 
 .api-card--yellow {
   background-color: $color-warn-lighter;
-}
-
-.api-btn,
-.api-btn:visited {
-  background-color: $color-primary-alt-darkest;
-  border-radius: 5px;
-  color: $color-white;
-  padding: 10px 50px;
-  text-decoration: none;
-}
-
-.api-btn-container {
-  margin: 0 auto;
-  padding: 10px;
-  text-align: center;
 }
 
 .card {
@@ -116,23 +125,58 @@
   flex-direction: row;
 }
 
+.checklist-container {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $width-nav) {
+    flex-direction: row;
+  }
+
+  #hero-heart-container {
+    @media screen and (max-width: $width-nav) {
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
 .use-case {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  h1 {
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: $width-nav) {
+    flex-direction: row;
+  }
 
   .img-container {
-    width: 33%;
+    max-width: 33%;
+    margin: 0 auto;
+
+    img {
+      min-width: 260px;
+    }
   }
 
   .use-case-descr {
-    padding: $spacer-6 0;
     width: 66%;
+    margin: 0 auto;
+    
+    @media screen and (min-width: $width-nav) {
+      padding: $spacer-6 0;
+    }
   }
 }
 
 #api-cards {
   display: flex;
   flex-wrap: wrap;
+  padding: 0 42px;
 
   @media screen and (min-width: $width-nav) {
     flex-direction: row;
@@ -188,4 +232,8 @@
     padding: 20px;
     width: 50%;
   }
+}
+
+#use-cases {
+  padding-bottom: 24px;
 }
