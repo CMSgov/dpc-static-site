@@ -97,6 +97,17 @@ guide_nav:
       - title: Patient/$everything
         id: patienteverything
 
+
+data_nav:
+  - title: What is FHIR
+    id: what-is-fhir
+  - title: What is in DPC data?
+    id: what-is-in-dpc-data
+  - title: Sample DPC Files
+    id: sample-dpc-files
+  - title: Additional Resources
+    id: additional-resources
+
 # Build settings
 markdown: kramdown
 theme: minima

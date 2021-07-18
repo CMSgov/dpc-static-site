@@ -1,0 +1,25 @@
+---
+layout: default
+---
+{% include _banner-title.html %}
+
+<div id="main" role="main">
+  <div class="ds-l-container ds-base ds-u-margin-bottom--7" id="page-with-sidenav">
+    <section aria-label="Side NavBar">
+      <ul class="sidenav">
+        {% if page.id == "data" %}
+          {% for item in site.data_nav %}
+            <li>
+              <a href="#{{ item.id }}">{{ item.title }}</a>
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </section>
+    <section class="{{ page.badge | slugify }} {{ page.id }}-content" aria-label="Page Content">
+  
+      {{ content }}
+  
+    </section>
+  </div>
+</div>
