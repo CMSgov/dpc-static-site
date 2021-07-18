@@ -3,13 +3,15 @@
   position: sticky;
   top: $spacer-5;
   list-style: none;
-  padding: 0;
+  margin: -$spacer-7 $spacer-2 0 0;
+  padding: $spacer-7 $spacer-2;
   min-width: 250px;
+
+  background-color: $color-gray-lightest;
 
   @media (min-width: $width-md) {
     position: -webkit-sticky;
     position: sticky;
-    top: $spacer-5;
   }
 }
 

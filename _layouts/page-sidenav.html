@@ -6,11 +6,11 @@ layout: default
 <div id="main" role="main">
   <div class="ds-l-container ds-base ds-u-margin-bottom--7" id="page-with-sidenav">
     <section aria-label="Side NavBar">
-      <ul class="sidenav">
+      <ul class="ds-c-list ds-c-list--bare sidenav">
         {% if page.id == "data" %}
           {% for item in site.data_nav %}
-            <li>
-              <a href="#{{ item.id }}">{{ item.title }}</a>
+            <li class="sidenav__item">
+              <a href="#{{ item.id }}" class="ds-u-display--block sidenav__link">{{ item.title }}</a>
             </li>
           {% endfor %}
         {% endif %}
