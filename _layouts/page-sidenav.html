@@ -13,9 +13,26 @@ layout: default
               <a href="#{{ item.id }}" class="ds-u-display--block sidenav__link">{{ item.title }}</a>
             </li>
           {% endfor %}
+        {% elsif page.id == "pilot" %}
+          {% for item in site.pilot_nav %}
+            <li class="sidenav__item">
+              <a href="#{{ item.id }}" class="ds-u-display--block sidenav__link">{{ item.title }}</a>
+
+              {% if item.subnav.size > 0 %}
+                <ul>
+                  {% for subitem in item.subnav %}
+                    <li class="sidenav__item">
+                      <a href="#{{ subitem.id }}" class="ds-u-display--block sidenav__link">{{subitem.title}}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
         {% endif %}
       </ul>
     </section>
+
     <section class="{{ page.badge | slugify }} {{ page.id }}-content" aria-label="Page Content">
   
       {{ content }}

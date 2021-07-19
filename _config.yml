@@ -51,7 +51,17 @@ footer_nav:
   - title: Terms of Service
     id: tos
 
-guide_nav:
+data_nav:
+  - title: What is FHIR
+    id: what-is-fhir
+  - title: What is in DPC data?
+    id: what-is-in-dpc-data
+  - title: Sample DPC Files
+    id: sample-dpc-files
+  - title: Additional Resources
+    id: additional-resources
+
+guide1_nav:
   - title: Authorization
     id: authorization
     subnav:
@@ -97,16 +107,26 @@ guide_nav:
       - title: Patient/$everything
         id: patienteverything
 
+guide2_nav:
 
-data_nav:
-  - title: What is FHIR
-    id: what-is-fhir
-  - title: What is in DPC data?
-    id: what-is-in-dpc-data
-  - title: Sample DPC Files
-    id: sample-dpc-files
-  - title: Additional Resources
-    id: additional-resources
+pilot_nav:
+  - title: About the DPC Pilot
+    id: about-the-pilot
+  - title: Test the API
+    id: test-api
+  - title: Apply for Production Credentials
+    id: apply-for-production
+    subnav:
+      - title: Apply
+        id: join-prod-queue
+      - title: Demo
+        id: demo-dpc
+      - title: Upload Security Credentials
+        id: upload-security-cred
+  - title: Onboard with DPC
+    id: onboard-with-dpc
+  - title: Share Your Feedback
+    id: share-feedback
 
 # Build settings
 markdown: kramdown
