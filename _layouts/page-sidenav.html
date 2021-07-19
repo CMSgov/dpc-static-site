@@ -29,7 +29,7 @@ layout: default
               {% endif %}
             </li>
           {% endfor %}
-        {% elsif page.id == "docsV1" %}
+        {% elsif page.id == "docs" %}
           {% for item in site.guide1_nav %}
             <li class="sidenav__item">
               <a href="#{{ item.id }}" class="ds-u-display--block sidenav__link">{{ item.title }}</a>
@@ -65,7 +65,7 @@ layout: default
       </ul>
     </section>
 
-    <section class="{{ page.badge | slugify }} {{ page.id }}-content" aria-label="Page Content">
+    <section class="ds-l-lg-col--8 {{ page.badge | slugify }} {{ page.id }}-content" aria-label="Page Content">
   
       {{ content }}
   

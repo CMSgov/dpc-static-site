@@ -36,6 +36,7 @@
 
 #page-with-sidenav {
   display: flex;
+  flex-direction: column;
 
   @media screen and (min-width: $layout-breakpoint) {
     flex-direction: row;
