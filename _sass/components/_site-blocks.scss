@@ -219,7 +219,24 @@
 
   #checklist {
     width: 66%;
-    padding: 0 4rem 0 2rem;
+
+    ul {
+      margin-left: 0;
+      padding-left: 0;
+      list-style: none;
+
+      h1 {
+        margin: 0;
+      }
+    }
+
+    li {
+      padding: 0 0 0 50px;
+      margin: 0 0 15px 0;
+      background-image: url(/assets/images/yellow-heart-bullet.png);
+      background-repeat: no-repeat;
+      background-position: 0 .75em;
+    }
   }
 
   #hero-heart-container {
@@ -236,4 +253,18 @@
 
 #use-cases {
   padding-bottom: 24px;
+}
+
+#get-involved {
+  background-image: url(/assets/images/bottom-heart.svg);
+  background-size: 180% 100%;
+
+  .get-involved-info {
+    background-color: rgba(255,255,255,0.75);
+    
+    @media screen and (min-width: $width-nav) {
+      background-color: rgba(255,255,255,0);
+      max-width: 75%;
+    }
+  }
 }
