@@ -108,6 +108,15 @@ guide1_nav:
         id: patienteverything
 
 guide2_nav:
+  - title: Attestation & Attribution
+    id: attestation--attribution
+    subnav:
+      - title: Load Sample Data
+        id: load-sample-data
+      - title: Find Organization ID
+        id: find-organization-id
+      - title: Groups
+        id: groups
 
 pilot_nav:
   - title: About the DPC Pilot

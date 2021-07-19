@@ -29,6 +29,38 @@ layout: default
               {% endif %}
             </li>
           {% endfor %}
+        {% elsif page.id == "docsV1" %}
+          {% for item in site.guide1_nav %}
+            <li class="sidenav__item">
+              <a href="#{{ item.id }}" class="ds-u-display--block sidenav__link">{{ item.title }}</a>
+
+              {% if item.subnav.size > 0 %}
+                <ul>
+                  {% for subitem in item.subnav %}
+                    <li class="sidenav__item">
+                      <a href="#{{ subitem.id }}" class="ds-u-display--block sidenav__link">{{subitem.title}}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        {% elsif page.id == "docsV2" %}
+          {% for item in site.guide2_nav %}
+            <li class="sidenav__item">
+              <a href="#{{ item.id }}" class="ds-u-display--block sidenav__link">{{ item.title }}</a>
+
+              {% if item.subnav.size > 0 %}
+                <ul>
+                  {% for subitem in item.subnav %}
+                    <li class="sidenav__item">
+                      <a href="#{{ subitem.id }}" class="ds-u-display--block sidenav__link">{{subitem.title}}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
         {% endif %}
       </ul>
     </section>
