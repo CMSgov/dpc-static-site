@@ -7,8 +7,6 @@
   padding: $spacer-7 $spacer-2;
   min-width: 250px;
 
-  background-color: $color-gray-lightest;
-
   @media (min-width: $width-md) {
     position: -webkit-sticky;
     position: sticky;

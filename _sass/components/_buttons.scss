@@ -1,10 +1,11 @@
-.banner-btn__container {
+.hero-btn__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  .sign_up_btn {
+  .sign_up_btn, .sign_up_btn:visited, .sign_up_btn:hover {
     background-color: $color-primary-alt-light;
+    border: 0px;
     color: $color-black;
     font-weight: 700;
     margin: 8px 0;
