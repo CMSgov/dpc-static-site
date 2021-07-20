@@ -87,6 +87,10 @@
       padding: 10px 50px;
       text-decoration: none;
     }
+
+    .api-btn:hover {
+      background-color: $color-primary-darkest;
+    }
   }
 }
 
@@ -249,7 +253,7 @@
 
 #pagers {
   .pagers-container {
-    padding: 20px;
+    padding: 20px 0;
     width: 50%;
   }
 }
