@@ -1,5 +1,25 @@
 <section class="page__banner ds-u-margin-bottom--7" role="complementary" aria-label="Page title">
   {% if page.banner_title %}
     <h1>{{ page.banner_title }}</h1>
+    {% if page.coming_soon %}
+      <div class="banner-btn__container">
+        <div class="banner-btn coming-soon">
+          {{ page.button }}<br />
+          (coming soon)
+        </div>
+      </div>
+    {% elsif page.id == "docsV2" %}
+      <div class="banner-btn__container">
+        <a href={{ site.sbx_sign_in }} target="_blank" rel=noopener class="banner-btn">
+          {{ page.button }}
+        </a>
+      </div>
+    {% elsif page.button %}
+      <div class="banner-btn__container">
+        <a href={{page.button_url}} target="_blank" rel=noopener class="banner-btn">
+          {{ page.button }}
+        </a>
+      </div>
+    {% endif %}
   {% endif %}
 </section>

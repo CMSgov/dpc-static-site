@@ -130,20 +130,4 @@
       color: $color-black;
     }
   }
-
-  .banner-btn__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    .sign_up_btn {
-      background-color: $color-primary-alt-light;
-      color: $color-black;
-      font-weight: 700;
-      margin: 8px 0;
-      padding: 3px $spacer-3;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-  }
 }

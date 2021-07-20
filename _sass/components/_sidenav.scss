@@ -1,12 +1,15 @@
 .sidenav {
+  position: -webkit-sticky;
   position: sticky;
   top: $spacer-5;
   list-style: none;
-  padding: 0;
+  margin: -$spacer-7 $spacer-2 0 0;
+  padding: $spacer-7 $spacer-2;
+  min-width: 250px;
 
   @media (min-width: $width-md) {
+    position: -webkit-sticky;
     position: sticky;
-    top: $spacer-5;
   }
 }
 
@@ -29,4 +32,13 @@
   color: #000;
   border-left: 3px solid blue;
   padding-left: $spacer-1;
+}
+
+#page-with-sidenav {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $layout-breakpoint) {
+    flex-direction: row;
+  }
 }

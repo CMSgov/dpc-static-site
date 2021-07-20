@@ -10,124 +10,155 @@ id: home
 <div id="main" role="main">
 {% include _hero.html %}
 
-  <section class="site-block site-block--alt">
-    <div class="ds-l-container">
-      <div class="site-block-header">
-        <h2 class="site-block-header__heading">How does Data at the Point of Care reduce your burden and help you improve care?</h2>
+  <div class="site-block site-block--alt">
+    <div class="site-block-content" id="home-checklist">
+      <div>
+        As patients move throughout the healthcare system, providers often struggle to gain and maintain a complete picture of their patients’ medical history. Data at the Point of Care (DPC) aims to fill these gaps in care with Medicare Fee-For-Service claims data to inform providers with secure, structured, and standardized data for improved quality of beneficiary care.
       </div>
-      <div class="ds-l-row ds-u-margin-top--5">
-        <div class="ds-l-col--12 ds-l-md-col--4 benefit-prop">
-          <div class="benefit-prop__img-wrap">
-            <img src="/assets/images/provider-calendar.svg" alt="Image of a calendar">
-          </div>
-          <div class="benefit-prop__body">
-            <h3>Reveals the claims history of your new patients</h3>
-            <p>Avoid having to rely on paper, faxes, or the patient's memory to know past diagnoses, procedures, and medications.</p>
-          </div>
+      <div class="checklist-container">
+        <div id="checklist">
+          <ul>
+            <li>
+              <h1 class="ds-text-heading--2xl">
+                Get More Data
+              </h1>
+              <div>
+                Learn about new diagnoses, medications, completed procedures, and preventive items on your patients' visits to other clinics, including urgent care, hospitals, and ER visits.
+              </div>
+            </li>
+            <li>
+              <h1 class="ds-text-heading--2xl">
+                Manage Less Paperwork
+              </h1>
+              <div>
+                Facilitate seamless transitions of care across provider teams by sharing a fuller picture of the patient's care.
+              </div>
+            </li>
+            <li>
+              <h1 class="ds-text-heading--2xl">
+                Improve quality of Care
+              </h1>
+              <div>
+                Spend less time tracking down patient records or relying on the patient's memory for their medical history. Spend more time delivering better care and addressing patient needs during the visit.
+              </div>
+            </li>
+          </ul>
         </div>
-        <div class="ds-l-col--12 ds-l-md-col--4 benefit-prop">
-          <div class="benefit-prop__img-wrap">
-            <img src="/assets/images/provider-conversation.svg" alt="Image of two speech boxes. One has a heart monitor line inside of it. The other has a pill bottle inside of it.">
-          </div>
-          <div class="benefit-prop__body">
-            <h3>Lets you see the care that patients are receiving from a variety of sources</h3>
-            <p>Learn about visits to other clinics, new diagnoses and medications, completed procedures and preventive items, and urgent care, hospital, or ER visits.</p>
-          </div>
-        </div>
-        <div class="ds-l-col--12 ds-l-md-col--4 benefit-prop">
-          <div class="benefit-prop__img-wrap">
-            <img src="/assets/images/provider-medications.svg" alt="Image of three pill bottles. The bottle in the middle has an x over it.">
-          </div>
-          <div class="benefit-prop__body">
-            <h3>Gives insight into your patients' medication history</h3>
-            <p>View medications that were filled at the pharmacy to learn about possible gaps in medication history.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="site-block">
-    <div class="ds-l-container">
-      <div class="site-block-header">
-        <h2 class="site-block-header__heading">How does Data at the Point of Care improve <em>the patient</em> experience and give them better care? </h2>
-      </div>
-      <div class="ds-l-row ds-u-margin-top--5">
-        <div class="ds-l-col--12 ds-l-md-col--4 benefit-prop">
-          <div class="benefit-prop__img-wrap">
-            <img src="/assets/images/patient-documents.svg" alt="Image of paper documents overlapping">
-          </div>
-          <div class="benefit-prop__body">
-            <h3>Reduces their frustration and documentation</h3>
-            <p> Patient-provided details on past medical history can be supplemented with claims data.</p>
-          </div>
-        </div>
-        <div class="ds-l-col--12 ds-l-md-col--4 benefit-prop">
-          <div class="benefit-prop__img-wrap">
-            <img src="/assets/images/patient-clock.svg" alt="Image of an alarm clock">
-          </div>
-          <div class="benefit-prop__body">
-            <h3>Gives them more time to focus on their current needs</h3>
-            <p>Patients get more of your time to focus on their concerns and issues instead of spending time searching for information.</p>
-          </div>
-        </div>
-        <div class="ds-l-col--12 ds-l-md-col--4 benefit-prop">
-          <div class="benefit-prop__img-wrap">
-            <img src="/assets/images/patient-teamwork.svg" alt="Image of three hands overlapping.">
-          </div>
-          <div class="benefit-prop__body">
-            <h3>Keeps the entire provider team on the same page</h3  >
-            <p>Patients receive better coordination between their providers because the whole team has a fuller picture of their care.</p>
-          </div>
+        <div id="hero-heart-container">
+          <img src="/assets/images/hero-heart.svg" alt="Image with a heart and a silhouette of a stick figure woman with her arms open in the center.">
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="site-block" id="about-the-pilot">
-    <div class="ds-l-container">
-      <div class="site-block-header">
-        <h2 class="site-block-header__heading">About the pilot</h2>
-        <div class="site-block-header__description">
-          <p>Data at the Point of Care (DPC) is a pilot API program that enables healthcare providers to deliver high quality care directly to Medicare beneficiaries by making a patient's Medicare claims data available to the provider for treatment needs. DPC’s pilot phase enables CMS to better understand how FHIR standards may be leveraged to grant healthcare providers timely, standardized claims history data for the Medicare beneficiaries in their care.</p>
-
-          <p>Provider organizations and vendors are encouraged to <a href="/docs">test the API</a> and its capabilities using synthetic claims data in our sandbox environment before requesting access to production data. The DPC team welcomes feedback from sandbox and production partners, which will inform the design of the API as a system best suited for the needs of healthcare providers to directly impact the quality of beneficiary care.</p>
-
-          <p>Learn more about the production pilot and how to join the Production Pilot Onboarding Queue in our <a href="/faq">FAQ</a>s.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="billboard">
-    <div class="ds-l-container">
-      <div class="billboard__content">
-        <h2 class="billboard__heading">Join the community!</h2>
-        <div>
-          <a class="ds-c-button ds-c-button--primary ds-c-button--big ds-u-margin-right--2" href={{ site.sbx_register }}>
-            <svg class="ds-u-margin-right--1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <use xlink:href="/assets/images/solid.svg#key"></use>
-            </svg>
-            Request access
-          </a>
-          <a href="https://groups.google.com/d/forum/dpc-api" class="ds-c-button ds-c-button--inverse ds-c-button--inverse--alt ds-c-button--big">
-            Join Google Group
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="ds-c-dialog-wrap" aria-labelledby="dialog-title" aria-hidden="true" role="dialog" id="filter-modal">
-    <div class="ds-c-dialog ds-c-dialog--full ds-u-fill--base" role="document">
-      <header class="ds-c-dialog__header" role="banner">
-        <button class="ds-c-button ds-c-button--transparent ds-c-dialog__close ds-u-color--white" aria-label="Close modal dialog">Close</button>
-      </header>
-
-      <style>.codegena{position:relative;width:100%;height:0;padding-bottom:56.27198%;}.codegena iframe{position:absolute;top:0;left:0;width:100%;height:100%;}</style><div class="codegena"><iframe width='500' height='294' src="https://www.youtube.com/embed/zIwphPlI9RA?&theme=dark&autohide=2&modestbranding=1&rel=0&iv_load_policy=3&showinfo=0&showtitle=0"frameborder="0"></iframe></div>
-
-      <button class="ds-c-button ds-c-button--transparent ds-c-dialog__close ds-u-color--white ds-u-visibility--screen-reader" aria-label="Close modal dialog">Close</button>
     </div>
   </div>
 
+  <div class="site-block">
+    <div class="site-block-content" id="use-cases">
+      <div class="use-case">
+        <div class="img-container">
+          <img src="/assets/images/use-case-wellness.svg" alt="Icon of a calendar with a date checked off.">
+        </div>
+        <div class="use-case-descr">
+          <h1>Wellness Checks</h1>
+          <div>
+            A 68 year old Medicare beneficiary Maria recalls getting the first dose of her shingles vaccine at her local pharmacy earlier this year, but she can't quite remember when she went. Her provider uses data from DPC to see when Maria got her shot, and if she's ready for her second dose.
+          </div>
+        </div>
+      </div>
+      <div class="use-case">
+        <div class="img-container">
+          <img src="/assets/images/use-case-care.svg" alt="">
+        </div>
+        <div class="use-case-descr">
+          <h1>Population Analytics</h1>
+          <div>
+            Diabetes Care Coordinator Elena manages the care of dozens of patients with chronic conditions. She uses DPC data to stay informed and perform analytics on recent clinic visits, hospital admissions, procedures, and medication refills for her entire population of patients.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-block site-block--mint">
+    <div class="site-block-content ds-u-padding-y--4 ds-u-padding-x--7" id="about-pilot">
+      <h1 class="ds-text-heading--lgds-u-padding-top--0 ds-u-padding-bottom--1">About DPC Pilot</h1>
+      <div class="ds-u-padding-bottom--3">
+        The DPC Pilot starts with Health IT implementers, who are asked to test and develop a solution with the DPC API using synthetic data in the sandbox environment before applying for access to Medicare Fee-For-Service claims data in production. The DPC sandbox and production environments are subject to breaking changes throughout the pilot phase as DPC incorporates research findings and user feedback.
+      </div>
+      <div>
+        The DPC API leverages the industry-standard <a href="https://www.hl7.org/fhir/overview.html" target="_blank" rel=noopener>HL7 Fast Healthcare Interoperability Resources (FHIR)</a>, which allows providers and integrators to incorporate Medicare claims data into the Health IT software and clinical workflow. This allows a timely and standardized reference of data that is accessible to all who are involved in a beneficiary’s care.
+      </div>
+      <h2 class="ds-text-heading--md">Interested in learning more <a href="#">About the DPC Pilot</a>?</h2>
+    </div>
+  </div>
+
+  <div class="site-block">
+    <div class="site-block-content" id="get-involved">
+      <h1>
+        How can I get my healthcare organization involved?
+      </h1>
+      <div class="get-involved-info">
+        Providers at healthcare organizations can get involved by using the Provider resources below. In order to receive claims data for your Medicare beneficiaries, the DPC API requires a partnership between providers and their Health IT team to develop and design a solution that seamlessly integrates with your Health IT software. This capability empowers providers to request claims data directly through the Health IT software and gain insight into patient records within the existing workflows utilized at the point of care.
+      </div>
+      <div class="flex--row ds-u-padding-bottom--2" id="pagers">
+        <div class="pagers-container">
+          <div>
+            <h3>DPC One-Pager</h3>
+            <div class="download_btn--container">
+              <a href="{{ site.url }}/assets/downloads/dpc-one-pager.pdf" class="ds-c-button ds-c-button--primary download_btn" download>
+                <svg class="ds-u-margin-right--1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <use xlink:href="/assets/images/solid.svg#file-download"></use>
+              </svg>
+                DPC One-Pager
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-block site-block--alt">
+    <div class="site-block-content" id="fhir-apis">
+      <h2>Other CMS FHIR-based APIs</h2>
+      <div class="ds-u-padding-x--6">
+        <strong>DPC is one of several CMS APIs that offer Medicare claims data sharing in FHIR format.</strong><br /><br />
+        Check out these other CMS APIs for more information:
+      </div>
+      <div id="api-cards">
+        <div class="api-card api-card--blue">
+          <div class="logo-container">
+            <img src="/assets/images/bcda_logo.svg" class="logo" alt="BCDA Logo depicting a heart with five circles around it.">
+          </div>
+          <div class="api-descript">
+            BCDA serves ACOs participating in the Medicare Shared Savings Program and other eligible CMS Alternative Payment Models.
+          </div>
+          <div class="api-btn-container">
+            <a href="https://bcda.cms.gov/" target="_blank" rel=noopener class="api-btn">BCDA</a>
+          </div>
+        </div>
+        <div class="api-card api-card--white">
+          <div class="logo-container">
+            <img src="/assets/images/bb2_logo.svg" class="logo" alt="Blue Button 2.0 logo depicting a download file button with an arrow pointing down.">
+          </div>
+          <div class="api-descript">
+            Blue Button 2.0 API enables Medicare beneficiaries to connect their data through applications, services, and research programs they trust.
+          </div>
+          <div class="api-btn-container">
+            <a href="https://bluebutton.cms.gov/" target="_blank" rel=noopener class="api-btn">BB 2.0</a>
+          </div>
+        </div>
+        <div class="api-card api-card--yellow">
+          <div class="logo-container">
+            <img src="/assets/images/ab2d_logo.svg" alt="AB2D Logo that reads a AB2D where the 2 is one half of a heart.">
+          </div>
+          <div class="api-descript">
+            The AB2D API provides stand-alone Prescription Drug Plan (PDP) sponsors with claims data to enhance the use of medications and improve long term health of beneficiaries.
+          </div>
+          <div class="api-btn-container">
+            <a href="https://ab2d.cms.gov/" target="_blank" rel=noopener class="api-btn">AB2D</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

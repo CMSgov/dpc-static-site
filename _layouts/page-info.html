@@ -4,39 +4,11 @@ layout: default
 {% include _banner-title.html %}
 
 <div id="main" role="main">
-
-  <section class="ds-l-container ds-base ds-u-margin-bottom--7">
-    <div class="ds-l-row">
-      {% if page.id == "docs" %}
-      <div class="ds-l-col--4 ds-u-margin-left--right ds-u-display--none ds-u-sm-display--block" aria-label="Side NavBar">
-          <ul class="ds-c-list ds-c-list--bare sidenav">
-            {% for item in site.guide_nav %}
-              <li class="sidenav__item">
-                <a href="#{{ item.id }}" class="ds-u-display--block sidenav__link">{{item.title}}</a>
-
-                {% if item.subnav.size > 0 %}
-                  <ul>
-                    {% for subitem in item.subnav %}
-                      <li class="sidenav__item">
-                        <a href="#{{ subitem.id }}" class="ds-u-display--block sidenav__link">{{subitem.title}}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-      </div>
-
-        <article class="ds-l-col--12 ds-l-sm-col--7 {{ page.badge | slugify }} {{ page.id }}-content">
-      {% endif %}
-
-        {{ content }}
-
-      {% if page.id == "docs" %}
-        </article>
-      {% endif %}
-
-    </div>
-  </section>
+  <div class="ds-l-container ds-base ds-u-margin-bottom--7">
+    <section class="ds-l-col--12 {{ page.badge | slugify }} {{ page.id }}-content">
+  
+      {{ content }}
+  
+    </section>
+  </div>
 </div>

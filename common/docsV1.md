@@ -1,9 +1,10 @@
 ---
-layout: page-info
-title: Reference
+layout: page-sidenav
+title: DPC Documentation
 banner_title: Documentation
-permalink: /docs
-id: docs
+permalink: /docsV1
+id: docsV1
+side_nav: true
 ---
 
 Welcome to the Data at the Point of Care pilot API program! This documentation covers using the sandbox API with synthetic data. Once you’ve tested your implementation in sandbox, you can sign up for [the queue to be onboarded to the production environment](https://airtable.com/shr3m3BL3IWY5hYnm).
@@ -384,7 +385,9 @@ A JSON Web Token (JWT) authenticates your organization with DPC. If you have not
 Once completed, please download the DPC JWT Tool (the button below) to generate your JWT for DPC.
 
 <div class="download_btn--container">
-  <a href="{{ site.url }}/assets/downloads/jwt.html" class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>JWT Tool Download</a>
+  <a href="{{ site.url }}/assets/downloads/jwt.html" class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>
+    JWT Tool Download
+  </a>
 </div>
 
 The following instructions are to be completed via the JWT Tool downloaded onto your personal computer. You must have internet access in order for this tool to use its cryptography library.  Your information is not sent over the network, in order to ensure your private key and JWT remain confidential.
