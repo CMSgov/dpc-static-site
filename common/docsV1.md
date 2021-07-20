@@ -3,7 +3,7 @@ layout: page-sidenav
 title: DPC Documentation
 banner_title: Documentation
 permalink: /docsV1
-id: docs
+id: docsV1
 side_nav: true
 ---
 
