@@ -126,11 +126,11 @@ pilot_nav:
   - title: Apply for Production Credentials
     id: apply-for-production
     subnav:
-      - title: Apply
+      - title: Join the Production
         id: join-prod-queue
-      - title: Demo
+      - title: Schedule a Demonstration
         id: demo-dpc
-      - title: Upload Security Credentials
+      - title: Provide Security Certification
         id: upload-security-cred
   - title: Onboard with DPC
     id: onboard-with-dpc
