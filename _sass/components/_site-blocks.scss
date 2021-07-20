@@ -134,6 +134,9 @@
   }
 
   #hero-heart-container {
+    display: flex;
+    justify-content: center;
+
     @media screen and (max-width: $width-nav) {
       img {
         margin: 0 auto;
