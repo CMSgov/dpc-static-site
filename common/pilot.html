@@ -1,0 +1,267 @@
+---
+layout: page-sidenav
+title: About the Pilot
+banner_title: About the Pilot
+permalink: /pilot
+id: pilot
+button: Apply for Production
+button_url: https://airtable.com/shr3m3BL3IWY5hYnm
+---
+
+<h1 id="about-the-pilot">About the DPC Pilot</h1>
+
+<div>
+  The Centers for Medicare and Medicaid Services (CMS) Data at the Point of Care (DPC) API is currently in a pilot phase in which a limited number of users can access Medicare Fee-For-Service claims data through the API once their solution has been approved for production. This pilot program promotes the industry-standard HL7 Fast Healthcare Interoperability Resources (FHIR), specifically the Bulk FHIR specification.
+</div>
+
+<div>
+  Since the pilot is a learning experience for both CMS and users, participants in the pilot program may encounter breaking changes to code, iterations to regulations, and will be asked to participate in research sessions with CMS as the program continues to grow and evolve. 
+</div>
+
+<div>
+  <strong>Healthcare Organizations:</strong><br />
+  Connect with your Health IT team
+</div>
+
+<div>
+  <strong>Health IT Implementers:</strong><br />
+  If interested in implementing DPC on behalf of healthcare organizations, please begin by following the steps below.
+</div>
+
+<h2 class="pilot-page-header" id="test-api">1. Test the API</h2>
+
+<div>
+  Health IT implementers are asked to test and develop a solution in the sandbox environment using synthetic data before applying for production credentials.
+</div>
+
+<div class="banner-btn__container">
+  <a href="{{ site.sbx_sign_in }}" class="banner-btn">Sandbox Sign Up / Login</a>
+</div>
+
+<ol>
+  <li>
+    Review and agree to the <a href="https://dpc.cms.gov/terms-of-service">Terms of Service</a>.
+  </li>
+  <li>
+    Upload synthetic data from DPC’s public <a href="https://github.com/CMSgov/dpc-app/tree/master/src/main/resources">GitHub repository</a>. More details included in this <a href="https://github.com/CMSgov/dpc-app/blob/master/src/main/resources/README.md">README</a> file.
+  </li>
+  <li>
+    Reference the following guides to get started:
+      <ol>
+        <li>
+          <a href="https://dpc.cms.gov/docs">DPC Documentation</a>
+        </li>
+        <li>
+          <a href="https://www.hl7.org/fhir/">HL7 FHIR Standards</a>
+        </li>
+        <li>
+          <a href="https://bluebutton.cms.gov/assets/ig/index.html">BB2.0 Implementation Guide</a>
+        </li>
+      </ol>
+  </li>
+</ol>
+
+
+<h2 class="pilot-page-header" id="apply-for-production">2. Apply for Production Credentials</h2>
+
+After testing and developing a DPC solution in the sandbox environment:
+
+<h3 id="join-prod-queue">a. Join the Production Pilot Queue</h3>
+
+You will receive a follow-up email from the DPC team when it is your turn to onboard. Depending on the backlog of organizations, this may mean that your organization will sit in the queue for a few weeks before it is your turn to onboard.
+
+
+<div class="ds-c-alert ds-u-margin-bottom--5 ds-c-alert--warn">
+  <div class="ds-c-alert__body">
+    <p class="ds-c-alert__text">
+      Please do not plan to fill out the application unless your organization has tested your solution in sandbox and is able to share security documentation with CMS.
+    </p>
+  </div>
+</div>
+
+<h3 id="demo-dpc">b. Schedule a Demonstration with the DPC team</h3>
+
+In the email following up on your application to the pilot program, you will receive a link to schedule a demonstration of your DPC solution with the DPC team.
+
+<div class="usa-accordion usa-accordion--bordered" role="region" id="frequently-asked-questions">
+  <h2 class="usa-accordion__heading" id="accordion__dpc-info">
+    <button class="usa-accordion__button" aria-expanded="false" aria-controls="a1">
+      How can I prepare for the demo?
+    </button>
+  </h2>
+  <div id="a1" class="usa-accordion__content">
+    Please be prepared to answer the following questions:
+    <ul>
+      <li>
+        Walk us through the end-to-end workflow. How will practitioners see the data in your system?
+      </li>
+      <li>
+        How frequently will your organization make requests to the API? How quickly will you need the data returned?
+      </li>
+      <li>
+        What is your retry logic for requests that fail?
+      </li>
+      <li>
+        What will you do if you do not receive data back for some of the requested patients? 
+      </li>
+      <li>
+        How will the data be used? For example, are you using the data for aggregate population reporting, or for insights into the needs of an individual patient? or both?
+      </li>
+      <li>
+        Where does the application live? 
+      </li>
+      <li>
+        Would there be a separate instance if you bring on another practice during pilot or MVP?
+      </li>
+      <li>
+        During onboarding in the early phases of the pilot program, we'll be providing keys directly to the practitioner organization to grant access to production via secure email - we will not be using the same web portal as our sandbox environment. Please consider how to best communicate with the practitioner to securely transfer secrets if necessary.
+      </li>
+      <li>
+        Are you ready for breaking changes during the pilot program?
+      </li>
+      <li>
+        As we introduce new features into the pilot program, how will you incorporate those changes into your solution?
+      </li>
+      <li>
+        How did you test your DPC solution? What documentation did you use the most?
+      </li>
+      <li>
+        How much time do you anticipate needing for testing and QA between obtaining production access and putting data in front of your providers?
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h3 id="upload-security-cred">c. Provide Security Certification</h3>
+
+<div>
+  Health IT implementers preparing to onboard the production environment must provide one of the accepted security certifications below:
+</div>
+
+<div class="usa-accordion usa-accordion--bordered" role="region" id="frequently-asked-questions">
+  <h2 class="usa-accordion__heading" id="accordion__dpc-info">
+    <button class="usa-accordion__button" aria-expanded="false" aria-controls="a2">
+      Which security documentation certifications are accepted?
+    </button>
+  </h2>
+  <div id="a2" class="usa-accordion__content">
+    <ul>
+      <li>
+        Office of the National Coordinator for Health Information Technology (ONC) Health IT Certification
+      </li>
+      <li>
+        Active Health Information Trust Alliance (HITRUST) CSF Validated Assessment 
+        <ul>
+          <li>
+            Active HITRUST self-validation assessment (valid for one year from date of first implementation if currently pursuing the HITRUST validated assessment)
+          </li>
+        </ul>
+      </li>
+      <li>
+        Electronic Healthcare Network Accreditation Commission (EHNAC) Accreditation
+        <ul>
+          <li>
+            Accountable Care Organization Accreditation Program (ACOAP)
+          </li>
+          <li>
+            Data Registry Accreditation Program (DRAP)
+          </li>
+          <li>
+            DirectTrust Privacy & Security (DT P&S)
+          </li>
+          <li>
+            EHNAC Privacy & Security (EHNAC P&S)
+          </li>
+          <li>
+            Financial Services Accreditation Program for Electronic Health Networks (FSAP-EHN)
+          </li>
+          <li>
+            Financial Services Accreditation Program for Lockbox Services (FSAP-Lockbox)
+          </li>
+          <li>
+            Health Information Exchange Accreditation Program (HIEAP)
+          </li>
+          <li>
+            Healthcare Network Accreditation Program for Medical Billers (HNAP-Medical  Biller)
+          </li>
+          <li>
+            Healthcare Network Accreditation Program- Third party administrator (HNAP-TPA)
+          </li>
+          <li>
+            Management Service Organization Accreditation Program (MSOAP)
+          </li>
+          <li>
+            Outsourced Services Accreditation Program (OSAP)
+          </li>
+          <li>
+            Practice Management System Accreditation Program (PMSAP)
+          </li>
+          <li>
+            Trusted Dynamic Registration & Authentication (TDRAAP) Comprehensive
+          </li>
+          <li>
+            Trusted Network Accreditation Program - Participant/Participant Member (TNAP - Participant/Member)
+          </li>
+          <li>
+            Trusted Network Accreditation Program (TNAP - QHIN)
+          </li>
+        </ul>
+      </li>
+      <li>
+        System and Organization Controls (SOC) 2 certified 
+        <ul>
+          <li>
+            Type 1 certified (valid for one year from date of first implementation if currently pursuing type 2)
+          </li>
+          <li>
+            Type 2 certified
+          </li>
+        </ul>
+      </li>
+      <li>
+        International Organization for Standardization (ISO): 27001, 27017, or 27018 certified
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="pilot-page-header" id="onboard-with-dpc">3. Onboard with DPC</h2>
+
+<div>
+  The onboarding session will test your DPC solution with production Medicare Fee-For-Service claims data. 
+</div>
+
+<div>
+  <ol>
+    <li>
+      Approximately 2-3 weeks after your successful DPC solution demonstration in the sandbox environment, you will receive an email with information and a link to schedule an onboarding session. In the same email, you will also receive further instructions on production requirements prior to the onboarding date.
+    </li>
+    <li>
+      After completing production requirements, you will receive production credentials for the healthcare organization for which you are implementing the DPC solution.
+    </li>
+    <li>
+      During the live onboarding session, you will receive real-time support from DPC engineers as you demonstrate the following:
+      <ol>
+        <li>
+          Submit a request for data
+        </li>
+        <li>
+          Receive requested data from DPC
+        </li>
+      </ol>
+    </li>
+  </ol>
+</div>
+
+<h2 id="share-feedback">Share Your Feedback</h2>
+
+<div>
+  <ol>
+    <li>
+      The DPC team is always seeking feedback! Pilot partners will be requested to participate in research sessions where Health IT implementers and healthcare organizations will be asked, together or separately, to share their experiences, challenges, and recommendations regarding the design of the DPC API and its features. 
+    </li>
+    <li>
+      <a href="https://groups.google.com/g/dpc-api">Join the DPC Google Group</a> community to ask questions, share your thoughts, and hear about updates and upcoming events related to DPC.
+    </li>
+  </ol>
+</div>

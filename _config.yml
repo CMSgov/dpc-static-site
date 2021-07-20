@@ -32,10 +32,16 @@ sbx_sign_in: "https://sandbox.dpc.cms.gov/users/sign_in"
 global_nav:
   - title: Home
     id: home
+  - title: DPC Data
+    id: data
+  - title: About the Pilot
+    id: pilot
   - title: Documentation
-    id: docs
+    id: docsV1
   - title: Frequently Asked Questions
     id: faq
+  - title: Updates
+    id: updates
 
 footer_nav:
   - title: Documentation
@@ -45,7 +51,17 @@ footer_nav:
   - title: Terms of Service
     id: tos
 
-guide_nav:
+data_nav:
+  - title: What is FHIR
+    id: what-is-fhir
+  - title: What is in DPC data?
+    id: what-is-in-dpc-data
+  - title: Sample DPC Files
+    id: sample-dpc-files
+  - title: Additional Resources
+    id: additional-resources
+
+guide1_nav:
   - title: Authorization
     id: authorization
     subnav:
@@ -90,6 +106,36 @@ guide_nav:
     subnav:
       - title: Patient/$everything
         id: patienteverything
+
+guide2_nav:
+  - title: Attestation & Attribution
+    id: attestation--attribution
+    subnav:
+      - title: Load Sample Data
+        id: load-sample-data
+      - title: Find Organization ID
+        id: find-organization-id
+      - title: Groups
+        id: groups
+
+pilot_nav:
+  - title: About the DPC Pilot
+    id: about-the-pilot
+  - title: Test the API
+    id: test-api
+  - title: Apply for Production Credentials
+    id: apply-for-production
+    subnav:
+      - title: Join the Production
+        id: join-prod-queue
+      - title: Schedule a Demonstration
+        id: demo-dpc
+      - title: Provide Security Certification
+        id: upload-security-cred
+  - title: Onboard with DPC
+    id: onboard-with-dpc
+  - title: Share Your Feedback
+    id: share-feedback
 
 # Build settings
 markdown: kramdown

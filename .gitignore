@@ -6,7 +6,6 @@ _site
 .idea/
 .DS_Store
 .bin/
-common/
 vendor
 
 node_modules
