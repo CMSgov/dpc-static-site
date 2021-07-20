@@ -10,13 +10,13 @@
       </div>
     {% elsif page.id == "docsV2" %}
       <div class="banner-btn__container">
-        <a href={{ site.sbx_sign_in }} target="_blank" class="banner-btn">
+        <a href={{ site.sbx_sign_in }} target="_blank" rel=noopener class="banner-btn">
           {{ page.button }}
         </a>
       </div>
     {% elsif page.button %}
       <div class="banner-btn__container">
-        <a href={{page.button_url}} target="_blank" class="banner-btn">
+        <a href={{page.button_url}} target="_blank" rel=noopener class="banner-btn">
           {{ page.button }}
         </a>
       </div>
