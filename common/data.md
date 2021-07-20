@@ -23,7 +23,14 @@ CMS provides beneficiary claims data to providers for treatment purposes permitt
 
 For the appropriate beneficiaries, the data provided to providers through DPC includes claims for all services covered by Part A and Part B that were provided and processed during the prior month. Claims data also includes prescriptions covered by a Part D Prescription Drug Program in which the beneficiary is enrolled.
 
-ALERT BOX: Data from DPC does not  include clinical notes, lab results, or substance abuse codes. DPC excludes all claims with substance abuse codes (as required by the Confidentiality of Alcohol and Drug Abuse Patient Records Regulations, 42 CFR Part 2).
+
+<div class="ds-c-alert ds-c-alert--warn">
+  <div class="ds-c-alert__body">
+    <p class="ds-c-alert__text">
+      Data from DPC does not  include clinical notes, lab results, or substance abuse codes. DPC excludes all claims with substance abuse codes (as required by the Confidentiality of Alcohol and Drug Abuse Patient Records Regulations, 42 CFR Part 2).
+    </p>
+  </div>
+</div>
 
 ## Sample DPC Files 
 In order to aid in users' understanding of DPC file data and structure, we provide sample Explanation of Benefit (EoB), Patient, and Coverage files to download and view. These files contain synthetic data, but the structure of the files is similar to production data provided by DPC.
