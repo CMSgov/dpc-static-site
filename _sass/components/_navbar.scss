@@ -74,7 +74,8 @@
 
     @media (min-width: $width-nav) {
       background-color: transparent;
-      display: flex;
+      display: block;
+      position: static;
       height: auto;
       max-width: unset;
       width: auto;
