@@ -9,11 +9,6 @@
   font-weight: $font-bold;
   letter-spacing: 0.1px;
   text-decoration: none;
-  width: 15rem;
-
-  @media (min-width: $width-sm) {
-    width: 20rem;
-  }
 
   img {
     margin-right: 6px;
@@ -79,7 +74,8 @@
 
     @media (min-width: $width-nav) {
       background-color: transparent;
-      display: flex;
+      display: block;
+      position: static;
       height: auto;
       max-width: unset;
       width: auto;
