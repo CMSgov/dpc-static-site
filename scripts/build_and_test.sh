@@ -21,7 +21,6 @@ test() {
     # Perform accessibility scan
     TARGET_TEST_ENV=http://host.docker.internal:4000
     TARGETS_TO_SCAN="${TARGET_TEST_ENV}"
-    TARGETS_TO_SCAN="${TARGETS_TO_SCAN} ${TARGET_TEST_ENV}/docs.html"
     TARGETS_TO_SCAN="${TARGETS_TO_SCAN} ${TARGET_TEST_ENV}/faq.html"
     TARGETS_TO_SCAN="${TARGETS_TO_SCAN} ${TARGET_TEST_ENV}/data.html"
     TARGETS_TO_SCAN="${TARGETS_TO_SCAN} ${TARGET_TEST_ENV}/pilot.html"
