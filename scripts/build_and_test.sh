@@ -13,13 +13,13 @@ build() {
 
 test() {
     trap docker_cleanup EXIT
-    TARGET_TEST_ENV=localhost:4000
     docker-compose run -u "$(id -u "${USER}")":"$(id -g "${USER}")" --publish 4000:4000 --rm --entrypoint "bundle exec jekyll serve -H 0.0.0.0" --name static_site -d static_site
     sleep 20
     docker logs static_site
-    curl "${TARGET_TEST_ENV}" | grep "Join the Production Pilot Onboarding Queue"
+    curl localhost:4000 | grep "Join the Production Pilot Onboarding Queue"
 
     # Perform accessibility scan
+    TARGET_TEST_ENV="http://host.docker.internal:4000"
     TARGETS_TO_SCAN="${TARGET_TEST_ENV}"
     TARGETS_TO_SCAN="${TARGETS_TO_SCAN} ${TARGET_TEST_ENV}/docs.html"
     TARGETS_TO_SCAN="${TARGETS_TO_SCAN} ${TARGET_TEST_ENV}/faq.html"
