@@ -866,8 +866,8 @@ This collection contains example requests to public endpoints for the DPC API. T
 
 2. Select the environment (top right): Data at the Point of Care Sandbox
 3. Please fill in the following values:
-    - access_token
-    - Organization ID
+  - organization_id
+  - access_token
 
 You may occasionally  receive a 401 error message regarding invalid credentials. If this happens, please try your request a second time.
 
