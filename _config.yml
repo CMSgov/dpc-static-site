@@ -147,6 +147,8 @@ guide2_nav:
         id: check-status-of-the-export-job
       - title: Retrieve NDJSON Output
         id: retrieve-the-ndjson-output-files
+  - title: Postman Collection
+    id: postman-collection
 
 
 pilot_nav:
