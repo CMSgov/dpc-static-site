@@ -138,6 +138,7 @@ Next, please download the DPC JWT Tool using the button below to generate your J
 2. Input your Client Token.
 
 3. Input your Public Key ID
+    * This is the system id of your public key, which is returned to you when the public key is uploaded to the DPC portal. You need this to generate a JWT, which will be exchanged for an access token.
 
 4. Click “Generate JWT”
 
@@ -251,7 +252,7 @@ Therefore, the DPC team has created a collection of <a href="https://github.com/
 
 ## Step One: Find Organization ID
 
-You will need the Organization ID with every API request. The Organization endpoint supports a GET /Organization operation, which allows users to retrieve the Organization ID of the practitioner organization being managed. You can also find the Organization ID by signing-in to the DPC Portal and locating the “Org ID” listed under each organization name.
+You will need the Organization ID with every API request. You can find the Organization ID by signing-in to the DPC Portal and locating the “Org ID” listed under each organization name.
 
 
 ## Step Two: Create a Group
@@ -854,9 +855,7 @@ This collection contains example requests to public endpoints for the DPC API. T
 
 **Prerequisites:**
 - Download the [Postman App](https://www.postman.com/downloads/)
-- A registered client token
-- Your private key
-- Your public key ID
+- Your access_token
 
 1. Please download the DPC Postman collection. This will include the collection of requests, the sandbox environment, and global variables to be imported into your Postman App.
 
@@ -866,10 +865,9 @@ This collection contains example requests to public endpoints for the DPC API. T
 
 2. Select the environment (top right): Data at the Point of Care Sandbox
 3. Please fill in the following values:
-    - client_token: Your [client token](#step-two-client-tokens) is generated through the DPC portal. Be sure to save a copy of your token in a safe place.
-    - PRIVATE_KEY: Paste the contents of your private key in the `PRIVATE_KEY` field of your local Postman sandbox environment. Do not share your private key otherwise. If you do not already have your public and private keys, please generate your [public/private](#step-three-public-keys) key pair through the DPC portal.
-    - key-id: This is the system id of your public key, which is returned to you when the public key is uploaded to the DPC portal. You need this to generate a JWT, which will be exchanged for an access token.
+    - access_token
+    - Organization ID
 
-With these 3 values in place, the JWT and a fresh access token are automatically generated for you before each request in this Postman collection to prevent you from having to manually refresh the access token every 5 minutes while using the collection. You may occasionally  receive a 401 error message regarding invalid credentials. If this happens, please try your request a second time.
+You may occasionally  receive a 401 error message regarding invalid credentials. If this happens, please try your request a second time.
 
 Additional instructions and details can be found within the description of each request in the Postman collection. These can be viewed by clicking the drop-down arrow next to each request title.
