@@ -204,7 +204,7 @@ POST /api/v2/Token/auth
 
 **cURL command:**
 ~~~
-curl -v "https://sandbox.dpc.cms.gov/api/v1/Token/auth" \
+curl -v "https://sandbox.dpc.cms.gov/api/v2/Token/auth" \
      -H 'Content-Type: application/x-www-form-urlencoded' \
      -H 'Accept: application/json' \
      -X POST
@@ -539,7 +539,7 @@ If the request was successful, the status of the job will change from 202 Accept
  "output": [
    {
      "type": "ExplanationOfBenefit",
-     "url": "https://sandbox.dpc.cms.gov/api/v2/data/42/DBBD1CE1-AE24-435C-807D-ED45953077D3.ndjson",
+     "url": "https://sandbox.dpc.cms.gov/api/v2/Data/DBBD1CE1-AE24-435C-807D-ED45953077D3.ndjson",
      "extension": [
        {
          "url": "https://dpc.cms.gov/checksum",
@@ -555,7 +555,7 @@ If the request was successful, the status of the job will change from 202 Accept
  "error": [
    {
      "type": "OperationOutcome",
-     "url": "https://sandbox.dpc.cms.gov/api/v2/data/42/DBBD1CE1-AE24-435C-807D-ED45953077D3-error.ndjson"
+     "url": "https://sandbox.dpc.cms.gov/api/v2/Data/DBBD1CE1-AE24-435C-807D-ED45953077D3-error.ndjson"
    }
  ]
 }
@@ -582,11 +582,11 @@ To obtain the exported explanation of benefit data, a GET request is made to the
 
 **Request:**
 
-<pre class="highlight"><code>GET https://sandbox.dpc.cms.gov/api/v2/data/<span style="color: #045E87;">{job_id}</span>/<span style="color: #045E87;">{file_name}</span></code></pre>
+<pre class="highlight"><code>GET https://sandbox.dpc.cms.gov/api/v2/Data/<span style="color: #045E87;">{file_name}</span></code></pre>
 
 **cURL command**
 
-<pre class="highlight"><code>curl https://sandbox.dpc.cms.gov/api/v2/data/<span style="color: #045E87;">{job_id}</span>/<span style="color: #045E87;">{file_name}</span> \
+<pre class="highlight"><code>curl https://sandbox.dpc.cms.gov/api/v2/Data/<span style="color: #045E87;">{file_name}</span>
      -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>'</code></pre>
 
 **Response: Explanation of Benefit Resource (example)**
@@ -855,7 +855,7 @@ This collection contains example requests to public endpoints for the DPC API. T
 
 **Prerequisites:**
 - Download the [Postman App](https://www.postman.com/downloads/)
-- Organization ID
+- organization_id
 - access_token
 
 1. Please download the DPC Postman collection. This will include the collection of requests, the sandbox environment, and global variables to be imported into your Postman App.
