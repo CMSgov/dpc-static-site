@@ -7,12 +7,25 @@ id: docsV1
 side_nav: true
 ---
 
-Welcome to the Data at the Point of Care pilot API program! This documentation covers using the sandbox API with synthetic data. Once you’ve tested your implementation in sandbox, you can sign up for [the queue to be onboarded to the production environment](https://airtable.com/shr3m3BL3IWY5hYnm).
+### Welcome to the Data at the Point of Care pilot API program! 
+
+<div class="ds-c-alert ds-c-alert--warn">
+  <div class="ds-c-alert__body">
+    <p class="ds-c-alert__text">
+<p><b>Data at the Point of Care API has been upgraded to Version 2 (DPC v2) in sandbox as of August 12, 2021.</b>
+</p>
+<p>
+Implementers who have already begun testing DPC v1 in sandbox may continue testing using this user guide, but please note that all new features will be deployed in the DPC v2 sandbox environment only. 
+</p>
+<p>
+</p>
+View a brief synopsis of the differences between DPC v1 and DPC v2 in the <a href="#dpc-v2-upgrade-guide">DPC v2 Upgrade Guide</a>.
+    </p>
+  </div>
+</div>
 
 # Authorization
 ------------------
-
-Welcome to the Data at the Point of Care pilot API program!
 
 ## Step One: Request Access
 Any Fee-for-Service provider or Health IT vendor may [request access](https://sandbox.dpc.cms.gov/users/sign_up) to the sandbox environment and obtain synthetic data by signing-up for an account in the DPC Portal. You will receive a confirmation email from CMS upon account creation. 
@@ -790,9 +803,9 @@ POST /api/v1/Practitioner/$submit
 #### cURL command:
 
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Practitioner/\$submit
--H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
--H 'Accept: application/fhir+json'</span> \
--H 'Content-Type: application/fhir+json'</span> \
+-H 'Authorization: Bearer {access} <span style="color: #045E87;">{access_token}</span>' \
+-H 'Accept: application/fhir+json' \
+-H 'Content-Type: application/fhir+json' \
 -X POST \
 -d @practitioner_bundle.json</code></pre>
 
@@ -2116,3 +2129,78 @@ Learn more about the HL7 FHIR Specification for:
 
 <a class="guide_top_link" href="#export-data">Back to Start of Section</a><br />
 <a class="guide_top_link" href="#">Back to Top of Page</a>
+
+
+# DPC v2 Upgrade Guide
+
+**The DPC API is operating in Version 2 (v2) in the sandbox environment only as of August 12, 2021 and is consistent with HL7’s FHIR R4.**
+
+To support industry alignment, V2 also conforms with the <a href="http://hl7.org/fhir/us/carin-bb/history.html" target="_blank">CARIN Alliance Blue Button® Framework and Common Payer Consumer Data Set (CPCDS) IG</a> and will be deployed to the production environment following an evaluation period in the sandbox environment to identify any necessary changes.
+
+This Upgrade Guide provides a brief synopsis of the differences between DPC v1 and DPC v2 in sandbox. Please share any questions, comments, or concerns in the <a href="https://groups.google.com/g/dpc-api" target="_blank"> DPC Google Group</a>.
+
+## DPC Sandbox Portal:
+**DPC v1:** All users, both providers and developers, were invited to request access to DPC’s sandbox environment to generate client tokens and upload public keys to test solutions for one healthcare organization at a time. This presented challenges for non-technical users as these actions were intended for implementers developing and testing solutions in sandbox.
+
+**DPC v2:** The sandbox experience has been redesigned to allow Health IT implementers the capability of generating client tokens and uploading public keys in the sandbox environment without burdening providers with technical requests before a DPC solution has been approved. The DPC v2 sandbox portal also allows implementers the ability to manage credentials as a team on behalf of multiple healthcare organizations under one account and simplifies the process of downloading sample data from DPC's website.
+
+This workflow enables Health IT implementers to collaborate as a team and establishes best practices between healthcare organizations and their approved Health IT teams.
+
+## Attribution:
+After speaking with DPC’s sandbox users and production pilot partners, research insights indicated that the DPC v1 process for maintaining patient lists on behalf of providers proved more complex and stringent than other existing standards in the healthcare industry today.
+
+**Patient Lists**
+
+**DPC v1:** Users were asked to create and maintain Patient and Practitioner resources with each Practitioner requiring a Group of their own. Patient records were also required to be refreshed every 90 days.
+
+**DPC v2:** There are fewer Group-related API endpoints as implementers no longer need to maintain the age of FHIR resources in v2. Instead, implementers are required to generate a new list of patients using the <a href="/Create a Group" target="_blank"> Create a Group</a> endpoint (link) that will reference Patient MBIs (Medicare Beneficiary Identifier) in conjunction with their practitioner's Provider NPI (National Provider Identifier) in every export request. Groups may contain patients for multiple practitioners in one request. This method of generating a new list every time 
+
+For every subsequent data export, a new Group is needed. This approach simplifies the user experience, limits the number of endpoints being used, ensures that the data being requested on behalf of healthcare organizations is the most updated list of active beneficiaries receiving treatment at the time of request, and creates a path for long-term auditing purposes.
+
+**Patient identifiers**
+
+**DPC v1:** Requested the UUID of a patient provided by the DPC API.
+
+**DPC v2:** Requires the beneficiary’s MBI. 
+
+## Attestation/Provenance Header:
+
+**DPC v1:** Both the organization and the practitioner were to be included in the provenance header. 
+
+**DPC v2:** Only the organization ID is required in the provenance header (link to v2 Provenance section), since a Group will contain multiple patients and practitioners on behalf of a single organization in one request. 
+
+Treatment is the only accepted reason by the DPC v2 Terms of Service.
+
+## Data Differences:
+In addition to API-specific changes, there will be a number of differences to expect in data between DPC v1 (which supports FHIR version STU3 (link)) and DPC v2 (which supports FHIR R4 (link)). The high level summary below focuses on the three primary resources provided by the DPC API: 
+
+* ExplanationOfBenefit
+* Patient
+* Coverage
+
+
+### Explanation of Benefit
+
+The following table summarizes changes to the EOB resource due to changes between versions 3 (STU3) and 4 (R4) of the FHIR specification.
+
+For details, see http://www.hl7.org/fhir/explanationofbenefit.html#resource, and select the "R3 Diff" tab under section 13.10.3 "Resource Content"
+
+![Explanation of Benefit Table](/assets/images/EOB.svg)
+
+### Patient
+
+The following table summarizes changes to the Patient resource due to changes between versions 3 (STU3) and 4 (R4) of the FHIR specification.  The Patient resource is normative, with a maturity level of 5.  In other words, because this resource has been in a mature state for quite some time, the amount of change to this resource in R4 is minimal.
+
+For details, see http://hl7.org/fhir/R4/patient.html#resource, and select the "R3 Diff" tab under section 8.1.2 "Resource Content"
+
+![Patient Table](/assets/images/Patient.svg)
+
+### Coverage
+
+The following table summarizes changes to the Coverage resource due to changes between versions 3 (STU3) and 4 (R4) of the FHIR specification.  
+
+For details, see http://hl7.org/fhir/R4/coverage.html#resource, and select the "R3 Diff" tab under section 13.10.3 "Resource Content"
+
+![Coverage Table](/assets/images/Coverage.svg)
+
+Please be sure to share any questions, comments, or concerns that you or your team have regarding DPC v2 in the <a href="https://groups.google.com/g/dpc-api" target="_blank"> DPC Google Group</a> for collaboration and community support.

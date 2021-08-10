@@ -9,6 +9,7 @@
       var privateKey = document.getElementById("privateKey").value.trim();
       var keyId = document.getElementById("keyId").value.trim();
       var env = document.getElementById("env").value.trim();
+      var version = document.getElementById("version").value.trim();
 
 
       var dt = new Date().getTime();
@@ -21,7 +22,7 @@
       var data = {
         "iss": clientToken,
         "sub": clientToken,
-        "aud": "https://" + env + ".dpc.cms.gov/api/v1/Token/auth",
+        "aud": "https://" + env + ".dpc.cms.gov/api/" + version + "/Token/auth",
         "exp": Math.round(new Date().getTime() / 1000) + 300,
         "iat": Math.round(Date.now()),
         "jti": uuid,
@@ -332,6 +333,22 @@
         <select name="env-select" id="env" style="width:800px;">
           <option value="sandbox">Sandbox</option>
           <option value="prod">Production</option>
+        </select>
+      </div>
+
+      <div>
+        <div class="form-label">
+          <div>
+            Please select the API Version for this JWT:
+          </div>
+          <div class="tooltip">
+            <img class="info-logo" src="https://dpc.cms.gov/assets/information-b8baf2e245c158d1de47193512ae79db36874c8f64793d1a47d9dbef70d86699.svg">
+            <span class="tooltiptext">The JWT's version must match the API version that you will use to make requests.</span>
+          </div>
+        </div>
+        <select name="version-select" id="version" style="width:800px;">
+          <option value="v1">V1</option>
+          <option value="v2">V2</option>
         </select>
       </div>
       

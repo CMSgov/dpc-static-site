@@ -37,7 +37,7 @@ global_nav:
   - title: About the Pilot
     id: pilot
   - title: Documentation
-    id: docsV1
+    id: docsV2
   - title: Frequently Asked Questions
     id: faq
   - title: Updates
@@ -106,17 +106,48 @@ guide1_nav:
     subnav:
       - title: Patient/$everything
         id: patienteverything
+  - title: DPC v2  Upgrade Guide
+    id: dpc-v2-upgrade-guide
 
 guide2_nav:
-  - title: Attestation & Attribution
-    id: attestation--attribution
+  - title: Getting DPC Access
+    id: getting-dpc-access
     subnav:
-      - title: Load Sample Data
-        id: load-sample-data
+      - title: Get Access to the API
+        id: step-one-get-access-to-the-dpc-api
+      - title: Add Provider Organization
+        id: step-two-add-a-provider-organization
+      - title: Generate Public Keys
+        id: step-three-generate-public-keys
+      - title: Generate Client Tokens
+        id: step-four-generate-client-tokens
+      - title: Generate a JSON Web Token
+        id: step-five-generate-a-json-web-token-jwt
+      - title: Generate the Access/Bearer Token
+        id: step-six-generate-the-accessbearer-token
+  - title: Getting DPC Data
+    id: getting-dpc-data
+    subnav:
       - title: Find Organization ID
-        id: find-organization-id
-      - title: Groups
-        id: groups
+        id: step-one-find-organization-id
+      - title: Create a Group
+        id: step-two-create-a-group
+      - title: Add Attestation
+        id: step-three-add-attestation
+  - title: Exporting DPC Data
+    id: exporting-dpc-data
+    subnav:
+      - title: Initiate an Export Job
+        id: initiate-an-export-job
+      - title: Specify Resources
+        id: specify-which-resources-to-download
+      - title: Request Filtered Data
+        id: request-filtered-data
+      - title: Check Status of Export Job
+        id: check-status-of-the-export-job
+      - title: Retrieve NDJSON Output
+        id: retrieve-the-ndjson-output-files
+
 
 pilot_nav:
   - title: About the DPC Pilot
