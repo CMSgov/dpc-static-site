@@ -855,12 +855,13 @@ This collection contains example requests to public endpoints for the DPC API. T
 
 **Prerequisites:**
 - Download the [Postman App](https://www.postman.com/downloads/)
-- Your access_token
+- Organization ID
+- access_token
 
 1. Please download the DPC Postman collection. This will include the collection of requests, the sandbox environment, and global variables to be imported into your Postman App.
 
 <div class="download_btn--container">
-  <a href="{{ site.url }}/assets/downloads/postman.zip" class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>Postman Collection Download</a>
+  <a href="{{ site.url }}/assets/downloads/PostmanV2.zip" class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>Postman Collection Download</a>
 </div>
 
 2. Select the environment (top right): Data at the Point of Care Sandbox
