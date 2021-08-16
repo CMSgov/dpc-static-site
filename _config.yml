@@ -22,9 +22,16 @@
 title: Data at the Point of Care
 email: dpc-api@googlegroups.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Data at the Point of Care is a pilot CMS API program that enables healthcare providers to deliver high quality care to Medicare beneficiaries by sharing their patients' Medicare claims data for treatment needs.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://dpc.cms.gov" # the base hostname, e.g. http://example.com
+  Data at the Point of Care is a pilot CMS API program that enables
+  healthcare providers to deliver high quality care to Medicare
+  beneficiaries by sharing their patients' Medicare claims data for
+  treatment needs.
+#
+# the subpath of your site, e.g. /blog
+baseurl: ""
+#
+# the base hostname, e.g. http://example.com
+url: "https://dpc.cms.gov"
 cssurl: /assets/css/static-main.css
 logourl: /assets/images/top-nav-heart.svg
 sbx_register: "https://sandbox.dpc.cms.gov/users/sign_up"
