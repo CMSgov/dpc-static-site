@@ -12,7 +12,7 @@ If you’ve found yourself on this page, it’s because you’re interested in u
 Please read our Application Programming Interface (API) Terms of Service carefully and post any questions you may have to the [Google Group](https://groups.google.com/d/forum/dpc-api).
 
 ### Scope
-By accessing or using Centers for Medicare & Medicaid Services (CMS) Data at the Point of Care APIs and related services (collectively, DPC), you are agreeing to the terms below, as well as any relevant sections of[CMS’s Privacy Policies](https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/Privacy-Policy.html) (collectively, Terms).
+By accessing or using Centers for Medicare & Medicaid Services (CMS) Data at the Point of Care APIs and related services (collectively, DPC), you are agreeing to the terms below, as well as any relevant sections of [CMS’s Privacy Policies](https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/Privacy-Policy.html) (collectively, Terms).
 
 ## Data Rights and Usage
 
@@ -44,7 +44,7 @@ By accepting these Terms, you attest to the following:
     * A HIPAA Business Associate, as defined in 45 C.F.R. § 160.103
 * You are seeking protected health information (PHI), as defined in 45 C.F.R. § 160.103, for either:
     * Your own use
-    * On behalf of a HIPAA and for which you are a business associate
+    * On behalf of a HIPAA Covered Entity and for which you are a Business Associate
 * You intend to take the data requested herein into your designated record set and only use the data requested herein for a permissible purpose under HIPAA
 
 A business associate/subcontractor is directly liable under the HIPAA Rules and subject to civil and, in some cases, criminal penalties for making uses and disclosures of PHI that are not authorized by its contract or required by law. A business associate submitting API transactions and receiving data on behalf of a HIPAA covered entity:
