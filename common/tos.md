@@ -6,7 +6,6 @@ id: tos
 ---
 *Last updated: 8/19/21*
 
-
 ## Overview
 If you’ve found yourself on this page, it’s because you’re interested in using software that helps millions of Medicare beneficiaries in the United States. Thank you.
 
@@ -14,7 +13,6 @@ Please read our Application Programming Interface (API) Terms of Service careful
 
 ### Scope
 By accessing or using Centers for Medicare & Medicaid Services (CMS) Data at the Point of Care APIs and related services (collectively, DPC), you are agreeing to the terms below, as well as any relevant sections of[CMS’s Privacy Policies](https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/Privacy-Policy.html) (collectively, Terms).
-
 
 ## Data Rights and Usage
 
@@ -26,7 +24,6 @@ In order to access DPC, you may be required to provide certain information (such
 Sandbox or production credentials (such as passwords, keys, tokens, and client IDs) issued to you by CMS for DPC are intended to be used only by you and to identify any software which you are using with DPC. You agree to keep your credentials confidential and make reasonable efforts to prevent and discourage other persons or entities from accessing or using your credentials. Credentials may not be embedded in open source projects.
 
 You may only access (or attempt to access) DPC by the means described in the DPC documentation. If CMS assigns you production credentials, you may only use those production credentials to access the DPC, and you may only access the DPC using an application that has been reviewed and approved by CMS in response to your request. CMS may revoke your credentials if you use (or attempt to use them) with another application that has not been reviewed and approved by CMS.
-
 
 ### Activities and Purposes
 
@@ -43,7 +40,6 @@ Furthermore, data can only be requested through DPC by a covered entity, or a bu
 By accepting these Terms, you attest to the following:
 
 * You are either:
-
     * A HIPAA Covered Entity, as defined in 45 C.F.R. § 160.103
     * A HIPAA Business Associate, as defined in 45 C.F.R. § 160.103
 * You are seeking protected health information (PHI), as defined in 45 C.F.R. § 160.103, for either:
@@ -66,7 +62,6 @@ When using content, data, documentation, code, or related materials associated w
 
 You may use CMS’s name or logo in order to identify the source of API content subject to these Terms. You may not use the CMS name, logo, or the like to imply endorsement of any product, service, or entity, not-for-profit, commercial, or otherwise.
 * [CMS Branding Guidelines](https://www.cms.gov/About-CMS/Agency-Information/CMS-Brand-Identity)
-
 
 ### Service Management
 
