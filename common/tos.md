@@ -4,7 +4,7 @@ title: Terms of service
 permalink: /terms-of-service
 id: tos
 ---
-*Last updated: 8/12/21*
+*Last updated: 8/19/21*
 
 ## Overview
 If you’ve found yourself on this page, it’s because you’re interested in using software that helps millions of Medicare beneficiaries in the United States. Thank you.
@@ -12,7 +12,7 @@ If you’ve found yourself on this page, it’s because you’re interested in u
 Please read our Application Programming Interface (API) Terms of Service carefully and post any questions you may have to the [Google Group](https://groups.google.com/d/forum/dpc-api).
 
 ### Scope
-By accessing or using Centers for Medicare & Medicaid Services (CMS) Data at the Point of Care APIs and related services (collectively, DPC), you are agreeing to the terms below, as well as any relevant sections of [CMS’s Privacy Policies](https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/Privacy-Policy.html) (collectively, Terms).
+By accessing or using Centers for Medicare & Medicaid Services (CMS) Data at the Point of Care APIs and related services (collectively, DPC), you are agreeing to the terms below, as well as any relevant sections of[CMS’s Privacy Policies](https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/Privacy-Policy.html) (collectively, Terms).
 
 ## Data Rights and Usage
 
@@ -23,7 +23,7 @@ In order to access DPC, you may be required to provide certain information (such
 
 Sandbox or production credentials (such as passwords, keys, tokens, and client IDs) issued to you by CMS for DPC are intended to be used only by you and to identify any software which you are using with DPC. You agree to keep your credentials confidential and make reasonable efforts to prevent and discourage other persons or entities from accessing or using your credentials. Credentials may not be embedded in open source projects.
 
-You may only access (or attempt to access) DPC by the means described in the DPC documentation.[1] If CMS assigns you production credentials, you may only use those production credentials to access the DPC, and you may only access the DPC using an application that has been reviewed and approved by CMS in response to your request. CMS may revoke your credentials if you use (or attempt to use them) with another application that has not been reviewed and approved by CMS.
+You may only access (or attempt to access) DPC by the means described in the DPC documentation. If CMS assigns you production credentials, you may only use those production credentials to access the DPC, and you may only access the DPC using an application that has been reviewed and approved by CMS in response to your request. CMS may revoke your credentials if you use (or attempt to use them) with another application that has not been reviewed and approved by CMS.
 
 ### Activities and Purposes
 
@@ -35,23 +35,23 @@ Information or data regarding Medicare beneficiaries from CMS available through 
 
 When records regarding an individual are obtained through DPC, you may not disclose any information or data regarding the individual to any other individuals or third parties without specific, explicit consent from the individual or his or her authorized representative or as part of an approved exception. The terms “individual” and “record” have the meanings specified in the Privacy Act at 5 U.S.C. § 552a(a). [Click here if you would like more information about the application of the Privacy Act at CMS.](https://www.cms.gov/Research-Statistics-Data-and-Systems/Computer-Data-and-Systems/Privacy/PrivacyActof1974)
 
-Furthermore, data can only be requested through DPC by a covered entity, or a business associate on behalf of a covered entity, for treatment      purposes in accordance with 45 C.F.R. § 164.506.
+Furthermore, data can only be requested through DPC by a covered entity, or a business associate on behalf of a covered entity, for treatment purposes in accordance with 45 C.F.R. § 164.506.
 
 By accepting these Terms, you attest to the following:
 
 * You are either:
-    * A HIPAA Covered Entity (CE), as defined in 45 C.F.R. § 160.103
-    * A HIPAA Business Associate (BA), as defined in 45 C.F.R. § 160.103
+    * A HIPAA Covered Entity, as defined in 45 C.F.R. § 160.103
+    * A HIPAA Business Associate, as defined in 45 C.F.R. § 160.103
 * You are seeking protected health information (PHI), as defined in 45 C.F.R. § 160.103, for either:
     * Your own use
-    * On behalf of a HIPAA CE and for which you are a BA
+    * On behalf of a HIPAA and for which you are a business associate
 * You intend to take the data requested herein into your designated record set and only use the data requested herein for a permissible purpose under HIPAA
 
-A Business Associate/Subcontractor is directly liable under the HIPAA Rules and subject to civil and, in some cases, criminal penalties for making uses and disclosures of PHI that are not authorized by its contract or required by law. A business associate submitting API transactions and receiving data on behalf of a HIPAA-covered entity:
+A business associate/subcontractor is directly liable under the HIPAA Rules and subject to civil and, in some cases, criminal penalties for making uses and disclosures of PHI that are not authorized by its contract or required by law. A business associate submitting API transactions and receiving data on behalf of a HIPAA covered entity:
 * The business associate must not use DPC except as an authorized agent of the covered entity.
 * The business associate must be able to associate each inquiry with the covered entity for each API call (request). That is, for each inquiry a business associate makes, that business associate must be able to identify the covered entity making the request for each beneficiary’s information and be able to assure that responses are routed only to the originator of each request.
 
-**HIPAA does not require expiration dates on business associate agreements; it is valid as long as the agreement is in effect (or a regulatory rule change occurs). It is the responsibility of the covered entity to notify DPC at the termination of the business associate agreement.**
+HIPAA does not require expiration dates on business associate agreements; it is valid as long as the agreement is in effect (or a regulatory rule change occurs). It is the responsibility of the covered entity to notify DPC at the termination of the business associate agreement.
 
 
 ### Attribution
