@@ -6,7 +6,7 @@ permalink: /docsV2
 id: docsV2
 button: Sign Up for Sandbox
 button_url: {{ site.sbx_sign_in }}
-side_nav: true
+side_nav_items: guide2_nav
 ---
 
 # Attestation & Attribution
