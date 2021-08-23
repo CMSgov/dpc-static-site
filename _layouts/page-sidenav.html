@@ -5,65 +5,27 @@ layout: default
 
 <div id="main" role="main">
   <div class="ds-l-container ds-base ds-u-margin-bottom--7" id="page-with-sidenav">
+    {% if page.side_nav_items %}
     <section aria-label="Side NavBar">
       <ul class="ds-c-list ds-c-list--bare sidenav">
-        {% if page.id == "data" %}
-          {% for item in site.data_nav %}
-            <li class="sidenav__item">
-              <a href="#{{ item.id }}" class="ds-u-display--block sidenav__link">{{ item.title }}</a>
-            </li>
-          {% endfor %}
-        {% elsif page.id == "pilot" %}
-          {% for item in site.pilot_nav %}
-            <li class="sidenav__item">
-              <a href="#{{ item.id }}" class="ds-u-display--block sidenav__link">{{ item.title }}</a>
+        {% for item in site[page.side_nav_items] %}
+          <li class="sidenav__item">
+            <a href="#{{ item.id }}" class="ds-u-display--block sidenav__link">{{ item.title }}</a>
+          </li>
 
-              {% if item.subnav.size > 0 %}
-                <ul>
-                  {% for subitem in item.subnav %}
-                    <li class="sidenav__item">
-                      <a href="#{{ subitem.id }}" class="ds-u-display--block sidenav__link">{{subitem.title}}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </li>
-          {% endfor %}
-        {% elsif page.id == "docsV1" %}
-          {% for item in site.guide1_nav %}
-            <li class="sidenav__item">
-              <a href="#{{ item.id }}" class="ds-u-display--block sidenav__link">{{ item.title }}</a>
-
-              {% if item.subnav.size > 0 %}
-                <ul>
-                  {% for subitem in item.subnav %}
-                    <li class="sidenav__item">
-                      <a href="#{{ subitem.id }}" class="ds-u-display--block sidenav__link">{{subitem.title}}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </li>
-          {% endfor %}
-        {% elsif page.id == "docsV2" %}
-          {% for item in site.guide2_nav %}
-            <li class="sidenav__item">
-              <a href="#{{ item.id }}" class="ds-u-display--block sidenav__link">{{ item.title }}</a>
-
-              {% if item.subnav.size > 0 %}
-                <ul>
-                  {% for subitem in item.subnav %}
-                    <li class="sidenav__item">
-                      <a href="#{{ subitem.id }}" class="ds-u-display--block sidenav__link">{{subitem.title}}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </li>
-          {% endfor %}
-        {% endif %}
+          {% if item.subnav.size > 0 %}
+            <ul>
+              {% for subitem in item.subnav %}
+                <li class="sidenav__item">
+                  <a href="#{{ subitem.id }}" class="ds-u-display--block sidenav__link">{{subitem.title}}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endfor %}
       </ul>
     </section>
+    {% endif %}
 
     <section class="ds-l-lg-col--8 {{ page.badge | slugify }} {{ page.id }}-content" aria-label="Page Content">
   
