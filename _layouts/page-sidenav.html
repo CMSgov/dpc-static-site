@@ -14,7 +14,7 @@ layout: default
           </li>
 
           {% if item.subnav.size > 0 %}
-            <ul>
+            <ul class="subnav">
               {% for subitem in item.subnav %}
                 <li class="sidenav__item">
                   <a href="#{{ subitem.id }}" class="ds-u-display--block sidenav__link">{{subitem.title}}</a>

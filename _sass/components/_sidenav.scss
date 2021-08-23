@@ -15,6 +15,7 @@
 
 .sidenav__item {
   font-size: $h4-font-size;
+  list-style: none;
   margin-bottom: $spacer-2;
 
   ul {
@@ -32,6 +33,10 @@
   color: #000;
   border-left: 3px solid blue;
   padding-left: $spacer-1;
+}
+
+.subnav {
+  padding-left: $spacer-3;
 }
 
 #page-with-sidenav {
