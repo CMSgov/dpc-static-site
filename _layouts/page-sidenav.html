@@ -12,7 +12,6 @@ layout: default
           <li class="sidenav__item">
             <a href="#{{ item.id }}" class="ds-u-display--block sidenav__link">{{ item.title }}</a>
           </li>
-
           {% if item.subnav.size > 0 %}
             <ul class="subnav">
               {% for subitem in item.subnav %}
@@ -28,9 +27,7 @@ layout: default
     {% endif %}
 
     <section class="ds-l-lg-col--8 {{ page.badge | slugify }} {{ page.id }}-content" aria-label="Page Content">
-  
       {{ content }}
-  
     </section>
   </div>
 </div>
