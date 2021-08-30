@@ -87,7 +87,6 @@
   border-radius:0;
   -webkit-box-shadow: none;
           box-shadow: none;
-  font-weight: normal;
   margin: 0;
   text-align: left;
   background-image: url(/assets/images/minus.svg), -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent));
@@ -105,14 +104,6 @@
   width: 100%;
 }
 
-.usa-accordion__button:hover {
-  color: $color-primary-darkest;
-}
-
-.usa-accordion__button:active {
-  color: $color-primary-darkest;
-}
-
 .usa-accordion__button:visited {
   color: $color-primary-darkest;
 }
@@ -122,6 +113,7 @@
   background-color:transparent;
   -webkit-box-shadow:none;
           box-shadow:none;
+  color: $color-primary-darkest;
   text-decoration:underline;
 }
 
