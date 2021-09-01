@@ -6,7 +6,7 @@ permalink: /data
 id: data
 button: Data Dictionary
 coming_soon: true
-side_nav: data_nav
+side_nav_items: data_nav
 ---
 
 The Centers for Medicare and Medicaid Services (CMS) Data at the Point of Care (DPC) API is a RESTful-based web service providing Medicare Parts A, B, and D claims data using the industry-standard HL7 Fast Healthcare Interoperability Resources (FHIR) resources, specifically the Bulk FHIR specification. The DPC API only provides data records for Medicare Fee-For-Service (FFS) beneficiaries and excludes all claims with substance abuse codes (as required by the Confidentiality of Alcohol and Drug Abuse Patient Records Regulations, 42 CFR Part 2).

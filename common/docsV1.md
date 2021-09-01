@@ -4,7 +4,7 @@ title: DPC Documentation
 banner_title: Documentation
 permalink: /docsV1
 id: docsV1
-side_nav: true
+side_nav_items: guide1_nav
 ---
 
 Welcome to the Data at the Point of Care pilot API program! This documentation covers using the sandbox API with synthetic data. Once you’ve tested your implementation in sandbox, you can sign up for [the queue to be onboarded to the production environment](https://airtable.com/shr3m3BL3IWY5hYnm).
