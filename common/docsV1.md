@@ -2134,7 +2134,7 @@ Learn more about the HL7 FHIR Specification for:
 
 # DPC v2 Upgrade Guide
 
-**The DPC API is operating in Version 2 (v2) in the sandbox environment only as of August 12, 2021 and is consistent with HL7’s FHIR R4.**
+**The DPC API is operating in Version 2 (v2) in the sandbox environment only as of August 12, 2021. This release is consistent with HL7’s FHIR R4.**
 
 To support industry alignment, V2 also conforms with the <a href="http://hl7.org/fhir/us/carin-bb/history.html" target="_blank">CARIN Alliance Blue Button® Framework and Common Payer Consumer Data Set (CPCDS) IG</a> and will be deployed to the production environment following an evaluation period in the sandbox environment to identify any necessary changes.
 
