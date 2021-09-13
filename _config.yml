@@ -6,9 +6,10 @@
 # feature for the data you need to update frequently.
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# 'bundle exec jekyll serve'.
+# If you change this file, please restart the server process.
 #
-# If you need help with YAML syntax, here are some quick references for you: 
+# If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
@@ -21,9 +22,16 @@
 title: Data at the Point of Care
 email: dpc-api@googlegroups.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Data at the Point of Care is a pilot CMS API program that enables healthcare providers to deliver high quality care to Medicare beneficiaries by sharing their patients' Medicare claims data for treatment needs.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://dpc.cms.gov" # the base hostname & protocol for your site, e.g. http://example.com
+  Data at the Point of Care is a pilot CMS API program that enables
+  healthcare providers to deliver high quality care to Medicare
+  beneficiaries by sharing their patients' Medicare claims data for
+  treatment needs.
+#
+# the subpath of your site, e.g. /blog
+baseurl: ""
+#
+# the base hostname, e.g. http://example.com
+url: "https://dpc.cms.gov"
 cssurl: /assets/css/static-main.css
 logourl: /assets/images/top-nav-heart.svg
 sbx_register: "https://sandbox.dpc.cms.gov/users/sign_up"
@@ -178,4 +186,3 @@ exclude:
   - docker-compose.yml
   - Makefile
   - implementation_guide/
-  
