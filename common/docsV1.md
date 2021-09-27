@@ -2204,4 +2204,4 @@ For details, see the "R3 Diff" tab on the <a href="http://hl7.org/fhir/R4/covera
 
 ![Coverage Table](/assets/images/Coverage.svg)
 
-Please be sure to share any questions, comments, or concerns that you or your team have regarding DPC v2 in the <a href="https://groups.google.com/g/dpc-api" target="_blank"> DPC Google Group</a> for collaboration and community support.
+Please be sure to share any questions, comments, or concerns that you or your team have regarding DPC v2 in the <a href="https://groups.google.com/g/dpc-api" target="_blank">DPC Google Group</a> for collaboration and community support.
