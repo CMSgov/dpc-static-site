@@ -2173,7 +2173,7 @@ For every subsequent data export, a new Group is needed. This approach simplifie
 Treatment is the only accepted reason by the DPC v2 Terms of Service.
 
 ## Data Differences:
-In addition to API-specific changes, there will be a number of differences to expect in data between DPC v1 (which supports FHIR version STU3 (link)) and DPC v2 (which supports FHIR R4 (link)). The high level summary below focuses on the three primary resources provided by the DPC API: 
+In addition to API-specific changes, there will be a number of differences to expect in data between DPC v1 (which supports <a href="https://www.hl7.org/fhir/stu3/">FHIR version STU3</a>) and DPC v2 (which supports <a href="https://www.hl7.org/fhir/r4/">FHIR R4</a>). The high level summary below focuses on the three primary resources provided by the DPC API: 
 
 * ExplanationOfBenefit
 * Patient
