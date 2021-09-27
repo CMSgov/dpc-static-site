@@ -2168,7 +2168,7 @@ For every subsequent data export, a new Group is needed. This approach simplifie
 
 **DPC v1:** Both the organization and the practitioner were to be included in the provenance header. 
 
-**DPC v2:** Only the organization ID is required in the provenance header (link to v2 Provenance section), since a Group will contain multiple patients and practitioners on behalf of a single organization in one request. 
+**DPC v2:** Only the organization ID is required in the <a href="/Attestation%20%26%20Attribution" target="_blank">provenance header</a>, since a Group will contain multiple patients and practitioners on behalf of a single organization in one request. 
 
 Treatment is the only accepted reason by the DPC v2 Terms of Service.
 
