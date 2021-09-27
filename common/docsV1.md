@@ -2184,7 +2184,7 @@ In addition to API-specific changes, there will be a number of differences to ex
 
 The following table summarizes changes to the EOB resource due to changes between versions 3 (STU3) and 4 (R4) of the FHIR specification.
 
-For details, see http://www.hl7.org/fhir/explanationofbenefit.html#resource, and select the "R3 Diff" tab under section 13.10.3 "Resource Content"
+For details, see the "R3 Diff" tab on the <a href="http://www.hl7.org/fhir/explanationofbenefit.html#resource">FHIR ExplanationOfBenefit Resource page</a> under section 13.10.3 "Resource Content"
 
 ![Explanation of Benefit Table](/assets/images/EOB.svg)
 
