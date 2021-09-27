@@ -40,7 +40,7 @@ This documentation covers use of the DPC API in sandbox using synthetic data. On
 If you are a Health IT implementer interested in testing the DPC API in sandbox, please <a href="https://sandbox.dpc.cms.gov/users/sign_in" target="_blank">sign up for an account</a> or reach out to your project lead for an invite to join your team in the DPC sandbox environment if an account has already been created. You will need to be invited to an existing account to work with and test the same implementation as your team. 
 </p>
 <p>
-At this time, you may either log in to the Sandbox Portal via the link provided in your confirmation email or check your email for an invite to create an account password and begin your journey with the Data at the Point of Care pilot API!
+At this time, you may either log in to the Sandbox Portal via the link provided in your confirmation email or check your email for an invite to create an account password and begin your journey with the Data at the Point of Care pilot API.
 </p>
 
 
@@ -52,6 +52,7 @@ At this time, you may either log in to the Sandbox Portal via the link provided 
 
 In DPC v2, Health IT teams can manage credentials for multiple provider organizations at once from within the DPC Sandbox Portal. In the production environment, Health IT teams will need to provide Provider NPIs for all healthcare customers onboarding DPC; however, for the purpose of keeping out all sensitive PHI/PII information from the Sandbox Portal, DPC will auto-generate fake provider organizations for you in the sandbox environment. You may add as many provider organizations as needed in sandbox for testing purposes.
 
+Please complete the following steps to add a provider organization:
 1. Select the blue “Add New Provider Org” button in the Sandbox Portal home page.
 
 2. Click the "Add Provider Organization" button again to generate a new organization.
@@ -67,18 +68,22 @@ In DPC v2, Health IT teams can manage credentials for multiple provider organiza
 
 Public keys verify that client token requests are coming from an authorized application. This is accomplished by verifying that the private key used to sign your JSON Web Token (JWT) in the following step also matches a public key previously uploaded to DPC. 
 
-
+Please complete the following steps to generate a public key:
 1. Select the new organization that was added in the previous step.
 
-2. Follow instructions provided in the yellow dropdown under How to Generate a Public Key and Signature to create them on your personal machine. 
+2. Follow instructions provided in the yellow dropdown under *How to Generate a Public Key and Signature* and create your public key and signature on your personal machine. 
 
-3. Copy and paste your Public Key and Public Key Signature in the DPC Sandbox Portal.
+    a. Please ensure all files (the private.pem, public.pem, snippet.txt.sig, signature.sig) are stored in ONE folder.
+
+3. Copy and paste your Public Key and Public Key Signature in the DPC Sandbox Portal. 
+
+    a. The Public Key field must include the "---BEGIN PUBLIC KEY---" and "---END PUBLIC KEY---"tags from your public.pem file.
 
 4. Click the blue "Add Key" button.
 
-5. You will be redirected to the Provider Organization's home page, where your public key will be listed under the Public Keys section.
+5. Success! You will be directed to the creation of your Initial token. Copy or download your token at this time.
 
-After successfully accessing the API, you may view, add, or delete public keys for the sandbox environment using the Sandbox Portal.
+You may return to the Provider Organization's page to view, add, or delete public keys for the sandbox environment.
 
 
 ## Step Four: Generate Client Tokens
@@ -97,19 +102,18 @@ You may also create multiple client tokens for a given provider organization for
 
 Client tokens help monitor API access through your account. A client token is required to create the access token, which is mandatory with every export request made to the API. This ensures every interaction with the API can be traced back to the creator of the client token. Your first client token must be created through the Sandbox Portal.
 
+Please complete the following steps to generate a client token:
 1. Select the provider organization for which you want to create a client token.
 
 2. Click the blue "Add New Token" button at the top of the *Client Tokens* section.
 
-3. Add a Label: You may title your token with a recognizable name that includes the environment for which you are requesting access.
+3. Add a Label: Title your token with a recognizable name.
 
 4. Click “Create Token” to generate your client token.
 
 5. Copy and save your DPC-generated client token.
 
-6. You will be redirected to the Provider Organization's home page, where your client token will be listed under the *Client Tokens* section.
-
-After successfully accessing the API, you may view, add, or delete client tokens for the sandbox environment using the Sandbox Portal.
+You may return to the Provider Organization's page to view, add, or delete client tokens for the sandbox environment under the *Client Tokens* section.
 
 
 
@@ -123,7 +127,7 @@ After successfully accessing the API, you may view, add, or delete client tokens
 
 A JSON Web Token (JWT) authenticates your organization with DPC. Your client token and public/private key pair must already be generated through the DPC Portal before proceeding.
 
-Next, please download the DPC JWT Tool using the button below to generate your JWT for DPC.
+Download the DPC JWT Tool using the blue button below.
 
 <div class="download_btn--container">
   <a href="{{ site.url }}/assets/downloads/jwt.html" class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>
@@ -131,8 +135,9 @@ Next, please download the DPC JWT Tool using the button below to generate your J
   </a>
 </div>
 
-**The following instructions are to be completed via the JWT Tool downloaded onto your personal computer.** You must have internet access in order for this tool to use its cryptography library. To ensure your private key and JWT remain confidential, information will not be sent over the network.
+You must have internet access for the JWT tool to work. To ensure your private key and JWT remain confidential, information will not be sent over the network.
 
+Please complete the following instructions via the JWT Tool downloaded onto your personal computer:
 1. Input your Private Key.
 
 2. Input your Client Token.
@@ -153,6 +158,7 @@ Obtaining an access/bearer token are the final steps in connecting to the DPC AP
 ### Obtain an access_token
 In order to receive an access token, the valid JWT must be submitted to the /Token/auth endpoint via a POST request. The POST request body is encoded as application/x-www-form-urlencoded.
 
+Please complete the following instructions to obtain your access_token:
 1. Set the JWT as the client_assertion form parameter.
 
 2. Add the remaining fields below:
