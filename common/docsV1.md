@@ -2168,12 +2168,12 @@ For every subsequent data export, a new Group is needed. This approach simplifie
 
 **DPC v1:** Both the organization and the practitioner were to be included in the provenance header. 
 
-**DPC v2:** Only the organization ID is required in the provenance header (link to v2 Provenance section), since a Group will contain multiple patients and practitioners on behalf of a single organization in one request. 
+**DPC v2:** Only the organization ID is required in the <a href="/Attestation%20%26%20Attribution" target="_blank">provenance header</a>, since a Group will contain multiple patients and practitioners on behalf of a single organization in one request. 
 
 Treatment is the only accepted reason by the DPC v2 Terms of Service.
 
 ## Data Differences:
-In addition to API-specific changes, there will be a number of differences to expect in data between DPC v1 (which supports FHIR version STU3 (link)) and DPC v2 (which supports FHIR R4 (link)). The high level summary below focuses on the three primary resources provided by the DPC API: 
+In addition to API-specific changes, there will be a number of differences to expect in data between DPC v1 (which supports <a href="https://www.hl7.org/fhir/stu3/">FHIR version STU3</a>) and DPC v2 (which supports <a href="https://www.hl7.org/fhir/r4/">FHIR R4</a>). The high level summary below focuses on the three primary resources provided by the DPC API: 
 
 * ExplanationOfBenefit
 * Patient
@@ -2184,7 +2184,7 @@ In addition to API-specific changes, there will be a number of differences to ex
 
 The following table summarizes changes to the EOB resource due to changes between versions 3 (STU3) and 4 (R4) of the FHIR specification.
 
-For details, see http://www.hl7.org/fhir/explanationofbenefit.html#resource, and select the "R3 Diff" tab under section 13.10.3 "Resource Content"
+For details, see the "R3 Diff" tab on the <a href="http://www.hl7.org/fhir/explanationofbenefit.html#resource">FHIR ExplanationOfBenefit Resource page</a> under section 13.10.3 "Resource Content"
 
 ![Explanation of Benefit Table](/assets/images/EOB.svg)
 
@@ -2192,7 +2192,7 @@ For details, see http://www.hl7.org/fhir/explanationofbenefit.html#resource, and
 
 The following table summarizes changes to the Patient resource due to changes between versions 3 (STU3) and 4 (R4) of the FHIR specification.  The Patient resource is normative, with a maturity level of 5.  In other words, because this resource has been in a mature state for quite some time, the amount of change to this resource in R4 is minimal.
 
-For details, see http://hl7.org/fhir/R4/patient.html#resource, and select the "R3 Diff" tab under section 8.1.2 "Resource Content"
+For details, see the "R3 Diff" tab on the <a href="http://hl7.org/fhir/R4/patient.html#resource">Patient resource page</a> under section 8.1.2 "Resource Content"
 
 ![Patient Table](/assets/images/Patient.svg)
 
@@ -2200,8 +2200,8 @@ For details, see http://hl7.org/fhir/R4/patient.html#resource, and select the "R
 
 The following table summarizes changes to the Coverage resource due to changes between versions 3 (STU3) and 4 (R4) of the FHIR specification.  
 
-For details, see http://hl7.org/fhir/R4/coverage.html#resource, and select the "R3 Diff" tab under section 13.10.3 "Resource Content"
+For details, see the "R3 Diff" tab on the <a href="http://hl7.org/fhir/R4/coverage.html#resource">FHIR Coverage resource page</a>.
 
 ![Coverage Table](/assets/images/Coverage.svg)
 
-Please be sure to share any questions, comments, or concerns that you or your team have regarding DPC v2 in the <a href="https://groups.google.com/g/dpc-api" target="_blank"> DPC Google Group</a> for collaboration and community support.
+Please be sure to share any questions, comments, or concerns that you or your team have regarding DPC v2 in the <a href="https://groups.google.com/g/dpc-api" target="_blank">DPC Google Group</a> for collaboration and community support.
