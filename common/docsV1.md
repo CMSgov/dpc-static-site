@@ -2192,7 +2192,7 @@ For details, see the "R3 Diff" tab on the <a href="http://www.hl7.org/fhir/expla
 
 The following table summarizes changes to the Patient resource due to changes between versions 3 (STU3) and 4 (R4) of the FHIR specification.  The Patient resource is normative, with a maturity level of 5.  In other words, because this resource has been in a mature state for quite some time, the amount of change to this resource in R4 is minimal.
 
-For details, see http://hl7.org/fhir/R4/patient.html#resource, and select the "R3 Diff" tab under section 8.1.2 "Resource Content"
+For details, see the "R3 Diff" tab on the <a href="http://hl7.org/fhir/R4/patient.html#resource">Patient resource page</a> under section 8.1.2 "Resource Content"
 
 ![Patient Table](/assets/images/Patient.svg)
 
