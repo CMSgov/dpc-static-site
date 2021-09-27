@@ -2200,7 +2200,7 @@ For details, see the "R3 Diff" tab on the <a href="http://hl7.org/fhir/R4/patien
 
 The following table summarizes changes to the Coverage resource due to changes between versions 3 (STU3) and 4 (R4) of the FHIR specification.  
 
-For details, see http://hl7.org/fhir/R4/coverage.html#resource, and select the "R3 Diff" tab under section 13.10.3 "Resource Content"
+For details, see the "R3 Diff" tab on the <a href="http://hl7.org/fhir/R4/coverage.html#resource">FHIR Coverage resource page</a>.
 
 ![Coverage Table](/assets/images/Coverage.svg)
 
