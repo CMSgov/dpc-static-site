@@ -7,7 +7,7 @@ id: docsV1
 side_nav_items: guide1_nav
 ---
 
-Welcome to the Data at the Point of Care pilot API program! This documentation covers using the sandbox API with synthetic data. Once you’ve tested your implementation in sandbox, you can sign up for [the queue to be onboarded to the production environment](https://airtable.com/shr3m3BL3IWY5hYnm).
+Welcome to the Data at the Point of Care pilot API program! This documentation covers using the sandbox API with synthetic data. Once you’ve tested your implementation in sandbox, you can [email DPC](mailto:DPCINFO@cms.hhs.gov) to be added to the queue for production access.
 
 # Authorization
 ------------------
