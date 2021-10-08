@@ -36,7 +36,7 @@ cssurl: /assets/css/static-main.css
 logourl: /assets/images/top-nav-heart.svg
 sbx_register: "https://sandbox.dpc.cms.gov/users/sign_up"
 sbx_sign_in: "https://sandbox.dpc.cms.gov/users/sign_in"
-pilot_register: "https://airtable.com/shr3m3BL3IWY5hYnm"
+email_register: "mailto:DPCINFO@cms.hhs.gov"
 
 global_nav:
   - title: Home
