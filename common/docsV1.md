@@ -498,7 +498,7 @@ POST /api/v1/Token/auth
 <pre class="highlight"><code>curl -v "https://sandbox.dpc.cms.gov/api/v1/Token/auth" \
      -H 'Content-Type: application/x-www-form-urlencoded' \
      -H 'Accept: application/json' \
-     -X POST
+     -X POST \
      -d "grant_type=client_credentials&scope=system%2F*.*&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer&client_assertion=<span style="color: #045E87;">{self-signed JWT}</span>"</code></pre>
 
 #### Response:
