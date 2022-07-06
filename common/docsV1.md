@@ -1145,7 +1145,7 @@ The attestation is then included in the X-Provenance header as part of any opera
        "reference":"Organization/{organization_id}"
      },
      "onBehalfOfReference":{
-       "reference":"Practitioner/{practitioner-id}"
+       "reference":"Practitioner/{practitioner_id}"
      }
    }
  ]
