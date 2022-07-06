@@ -1208,7 +1208,7 @@ POST /api/v1/Group
      -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
-     -H 'X-Provenance: {FHIR Provenance resource} \
+     -H 'X-Provenance: {FHIR Provenance resource}' \
      -X POST \
      -d @group.json</code></pre>
 
