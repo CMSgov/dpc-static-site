@@ -1141,10 +1141,10 @@ The attestation is then included in the X-Provenance header as part of any opera
        }
      ],
      "whoReference":{
-       "reference":"Organization/{{organization_id}}"
+       "reference":"Organization/{organization_id}"
      },
      "onBehalfOfReference":{
-       "reference":"Practitioner/{{practitioner-id}}"
+       "reference":"Practitioner/{practitioner-id}"
      }
    }
  ]
