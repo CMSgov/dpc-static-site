@@ -1794,11 +1794,11 @@ To obtain the exported explanation of benefit data, a GET request is made to the
 
 **Request:**
 
-<pre class="highlight"><code>GET https://sandbox.dpc.cms.gov/api/v1/data/<span style="color: #045E87;">{job_id}</span>/<span style="color: #045E87;">{file_name}</span></code></pre>
+<pre class="highlight"><code>GET https://sandbox.dpc.cms.gov/api/v1/Data/<span style="color: #045E87;">{file_name}</span></code></pre>
 
 ### cURL command:
 
-<pre class="highlight"><code>curl https://sandbox.dpc.cms.gov/api/v1/data/<span style="color: #045E87;">{job_id}</span>/<span style="color: #045E87;">{file_name}</span> \
+<pre class="highlight"><code>curl https://sandbox.dpc.cms.gov/api/v1/Data/<span style="color: #045E87;">{file_name}</span> \
      -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>'</code></pre>
 
 **Example:** Explanation of Benefit Resource
