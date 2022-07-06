@@ -621,14 +621,14 @@ To find your Organization ID, sign-in to your account in the DPC Portal and loca
 </code></pre>
 
 #### cURL command:
-<pre class="highlight"><code>Authorization: Bearer<span style="color: #045E87;">{access_token}</span>
+<pre class="highlight"><code>Authorization: Bearer <span style="color: #045E87;">{access_token}</span>
 Accept: application/fhir+json
 Prefer: respond-async
 </code></pre>
 
 #### cURL Command
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Organization
-     -H 'Authorization: Bearer<span style="color: #045E87;">{access_token}</span>
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>'
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -X GET
@@ -683,7 +683,7 @@ It is still possible to retrieve your organization using `/Organization/{id}`, i
 </code></pre>
 
 #### cURL command:
-<pre class="highlight"><code>Authorization: Bearer<span style="color: #045E87;">{access_token}</span>
+<pre class="highlight"><code>Authorization: Bearer <span style="color: #045E87;">{access_token}</span>
 Accept: application/fhir+json
 Prefer: respond-async
 </code></pre>
