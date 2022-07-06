@@ -825,8 +825,8 @@ The Practitioner endpoint also supports a GET /Practitioner operation where you 
 
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Practitioner
      -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
-     -H 'Accept: application/fhir+json'</span> \
-     -H 'Content-Type: application/fhir+json'</span> \
+     -H 'Accept: application/fhir+json' \
+     -H 'Content-Type: application/fhir+json' \
      -X GET</code></pre>
 
 #### Response:
