@@ -790,11 +790,12 @@ POST /api/v1/Practitioner/$submit
 #### cURL command:
 
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Practitioner/\$submit
--H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
--H 'Accept: application/fhir+json'</span> \
--H 'Content-Type: application/fhir+json'</span> \
--X POST \
--d @practitioner_bundle.json</code></pre>
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
+     -H 'Accept: application/fhir+json' \
+     -H 'Content-Type: application/fhir+json' \
+     -X POST \
+     -d @practitioner_bundle.json
+  </code></pre>
 
 ### List all Practitioners
 The Practitioner endpoint supports a GET /Practitioner operation, which allows you to retrieve a [Bundle](https://www.hl7.org/fhir/STU3/bundle.html) of Practitioner resources. You will need to retrieve a Practitioner’s NPI when you get to the Attribution section.
