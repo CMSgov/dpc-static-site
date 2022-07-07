@@ -621,14 +621,14 @@ To find your Organization ID, sign-in to your account in the DPC Portal and loca
 </code></pre>
 
 #### cURL command:
-<pre class="highlight"><code>Authorization: Bearer<span style="color: #045E87;">{access_token}</span>
+<pre class="highlight"><code>Authorization: Bearer <span style="color: #045E87;">{access_token}</span>
 Accept: application/fhir+json
 Prefer: respond-async
 </code></pre>
 
 #### cURL Command
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Organization
-     -H 'Authorization: Bearer<span style="color: #045E87;">{access_token}</span>
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>'
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -X GET
@@ -683,7 +683,7 @@ It is still possible to retrieve your organization using `/Organization/{id}`, i
 </code></pre>
 
 #### cURL command:
-<pre class="highlight"><code>Authorization: Bearer<span style="color: #045E87;">{access_token}</span>
+<pre class="highlight"><code>Authorization: Bearer <span style="color: #045E87;">{access_token}</span>
 Accept: application/fhir+json
 Prefer: respond-async
 </code></pre>
@@ -790,11 +790,12 @@ POST /api/v1/Practitioner/$submit
 #### cURL command:
 
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Practitioner/\$submit
--H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
--H 'Accept: application/fhir+json'</span> \
--H 'Content-Type: application/fhir+json'</span> \
--X POST \
--d @practitioner_bundle.json</code></pre>
+     -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
+     -H 'Accept: application/fhir+json' \
+     -H 'Content-Type: application/fhir+json' \
+     -X POST \
+     -d @practitioner_bundle.json
+  </code></pre>
 
 ### List all Practitioners
 The Practitioner endpoint supports a GET /Practitioner operation, which allows you to retrieve a [Bundle](https://www.hl7.org/fhir/STU3/bundle.html) of Practitioner resources. You will need to retrieve a Practitioner’s NPI when you get to the Attribution section.
@@ -824,8 +825,8 @@ The Practitioner endpoint also supports a GET /Practitioner operation where you 
 
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Practitioner
      -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
-     -H 'Accept: application/fhir+json'</span> \
-     -H 'Content-Type: application/fhir+json'</span> \
+     -H 'Accept: application/fhir+json' \
+     -H 'Content-Type: application/fhir+json' \
      -X GET</code></pre>
 
 #### Response:
@@ -1141,10 +1142,10 @@ The attestation is then included in the X-Provenance header as part of any opera
        }
      ],
      "whoReference":{
-       "reference":"Organization/{{organization_id}}"
+       "reference":"Organization/{organization_id}"
      },
      "onBehalfOfReference":{
-       "reference":"Practitioner/{{practitioner-id}}"
+       "reference":"Practitioner/{practitioner_id}"
      }
    }
  ]
@@ -1208,7 +1209,7 @@ POST /api/v1/Group
      -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
-     -H 'X-Provenance: {FHIR Provenance resource} \
+     -H 'X-Provenance: {FHIR Provenance resource}' \
      -X POST \
      -d @group.json</code></pre>
 
@@ -1794,11 +1795,11 @@ To obtain the exported explanation of benefit data, a GET request is made to the
 
 **Request:**
 
-<pre class="highlight"><code>GET https://sandbox.dpc.cms.gov/api/v1/data/<span style="color: #045E87;">{job_id}</span>/<span style="color: #045E87;">{file_name}</span></code></pre>
+<pre class="highlight"><code>GET https://sandbox.dpc.cms.gov/api/v1/Data/<span style="color: #045E87;">{file_name}</span></code></pre>
 
 ### cURL command:
 
-<pre class="highlight"><code>curl https://sandbox.dpc.cms.gov/api/v1/data/<span style="color: #045E87;">{job_id}</span>/<span style="color: #045E87;">{file_name}</span> \
+<pre class="highlight"><code>curl https://sandbox.dpc.cms.gov/api/v1/Data/<span style="color: #045E87;">{file_name}</span> \
      -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>'</code></pre>
 
 **Example:** Explanation of Benefit Resource
