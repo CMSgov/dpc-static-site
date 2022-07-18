@@ -930,7 +930,9 @@ Where the system is known, a type is unnecessary because the type is always part
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.definition">definition</a>
                   <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>="Whether this practitioner&amp;#39;s record is in active use."/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.comment">comment</a>
-               <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>="Default is true. If the practitioner is not in use by one organization, then it should mark the period on the PractitonerRole with an end date (even if they are active) as they may be active in another role."/&gt;
+               <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>="Default is true. 
+
+If the practitioner is not in use by one organization, then it should mark the period on the PractitonerRole with an end date (even if they are active) as they may be active in another role."/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.requirements">requirements</a>
                     <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>="Need to be able to mark a practitioner record as not to be used because it was created in error."/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#unsignedInt">value</a>="0"/&gt;
@@ -959,7 +961,15 @@ Where the system is known, a type is unnecessary because the type is always part
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.short">short</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>="The name(s) associated with the practitioner"/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.definition">definition</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>="Practitioner must have a provided name"/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.comment">comment</a>
-               <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>="The selection of the use property should ensure that there is a single usual name specified, and others use the nickname (alias), old, or other values as appropriate.In general select the value to be used in the ResourceReference.display based on this:1. There is more than 1 name2. Use = usual3. Period is current to the date of the usage4. Use = official5. Other order as decided by internal business rules."/&gt;
+               <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>="The selection of the use property should ensure that there is a single usual name specified, and others use the nickname (alias), old, or other values as appropriate.
+
+In general select the value to be used in the ResourceReference.display based on this:
+
+1. There is more than 1 name
+2. Use = usual
+3. Period is current to the date of the usage
+4. Use = official
+5. Other order as decided by internal business rules."/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.requirements">requirements</a>
                     <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>="The name(s) that a Practitioner is known by. Where there are multiple, the name that the practitioner is usually known as should be used in the display."/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#unsignedInt">value</a>="1"/&gt;
@@ -1272,7 +1282,9 @@ Where the system is known, a type is unnecessary because the type is always part
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.definition">definition</a>
                   <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>="A contact detail for the practitioner, e.g. a telephone number or an email address."/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.comment">comment</a>
-               <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>="Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently, and also to help with identificationThese typically will have home numbers, or mobile numbers that are not role specific."/&gt;
+               <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>="Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently, and also to help with identification
+
+These typically will have home numbers, or mobile numbers that are not role specific."/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.requirements">requirements</a>
                     <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>="Need to know how to reach a practitioner independent to any roles the practitioner may have."/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#unsignedInt">value</a>="0"/&gt;
@@ -1304,7 +1316,8 @@ Where the system is known, a type is unnecessary because the type is always part
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.short">short</a>
              <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>="Address(es) of the practitioner that are not role specific (typically home address)"/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.definition">definition</a>
-                  <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>="Address(es) of the practitioner that are not role specific (typically home address). Work addresses are not typically entered in this property as they are usually role dependent."/&gt;
+                  <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>="Address(es) of the practitioner that are not role specific (typically home address). 
+Work addresses are not typically entered in this property as they are usually role dependent."/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.comment">comment</a>
                <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>="The PractitionerRole does not have an address value on it, as it is expected that the location property be used for this purpose (which has an address)."/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.requirements">requirements</a>
@@ -1811,18 +1824,6 @@ Formats: <a href="StructureDefinition-dpc-profile-practitioner.html">Narrative</
 <script src="./assets/js/respond.min.js"> </script>
 <script src="./assets/js/anchor.min.js"> </script>
 <script src="./assets/js/fhir.js"> </script>
-
-  <!-- Analytics Below
-================================================== -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-144775756-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
   <!-- add acnhors before the closing body tag. -->
 <script> anchors.add()</script>
