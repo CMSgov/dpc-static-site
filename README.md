@@ -5,8 +5,8 @@ A static Jekyll site for the DPC welcome, FAQ, and documentation pages.
 It is assumed that the environment already has these installed:
 
 - [rbenv](https://github.com/rbenv/rbenv) or [rvm](https://rvm.io/) to install versioned ruby.
-- [ruby](https://www.ruby-lang.org/en/) currently using 2.7.1
-- [jekyll](https://jekyllrb.com/) currently using 4.2.0
+- [ruby](https://www.ruby-lang.org/en/) currently using 2.7.6
+- [jekyll](https://jekyllrb.com/) currently using 4.2.2
 - [npm](https://www.npmjs.com/) currently using 6.13.4
 - [Docker](https://docs.docker.com/install/) to standardize builds across all contributors' local machines
 - [Docker Compose](https://docs.docker.com/compose/install/) to define and run multi-container Docker applications
