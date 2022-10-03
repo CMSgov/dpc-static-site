@@ -249,6 +249,22 @@ Public keys verify that client token requests are coming from an authorized appl
 
 **1. Download the snippet.txt file located in the DPC Portal to create a signature.**
 
+**1a. Verify the type of file.**
+
+- Windows Users, please install WSL (Windows Subsystem for Linux) from <a href="https://learn.microsoft.com/en-us/windows/wsl/install">Microsoft's page</a> and use the command below to generate the snippet.txt file (proceed to do all the following commands using WSL)
+  
+  ~~~
+  echo -n This is the snippet used to verify a key pair in DPC.> snippet.txt
+  ~~~
+
+- Mac / Linux Users, use the command invocation
+
+  ~~~
+  file snippet.txt 
+  ~~~
+  <p style="font-weight: 700;">Response <u>must yield</u> <span style="color: #2A7A3B;">snippet.txt: ASCII text, with no line terminators</span>.</p>
+
+
 **2. Create your public key snippet.**
 
 - Use the command invocation:
@@ -256,6 +272,7 @@ Public keys verify that client token requests are coming from an authorized appl
   ~~~
   openssl dgst -sign private.pem -sha256 -out snippet.txt.sig snippet.txt
   ~~~
+
 
 **3. Verify your public key snippet.**
 
