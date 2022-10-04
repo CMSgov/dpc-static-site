@@ -273,7 +273,6 @@ Public keys verify that client token requests are coming from an authorized appl
   openssl dgst -sign private.pem -sha256 -out snippet.txt.sig snippet.txt
   ~~~
 
-
 **3. Verify your public key snippet.**
 
 - Use the command invocation:
