@@ -249,15 +249,15 @@ Public keys verify that client token requests are coming from an authorized appl
 
 **1. Download the snippet.txt file located in the DPC Portal to create a signature.**
 
+- You are also able to download the snippet.txt file using the command invocation below:
+
+  ~~~
+  curl -JLO https://raw.githubusercontent.com/CMSgov/dpc-app/master/dpc-web/public/snippet.txt 
+  ~~~
+
 **1a. Verify the type of file.**
 
-- Windows Users, please install WSL (Windows Subsystem for Linux) from <a href="https://learn.microsoft.com/en-us/windows/wsl/install">Microsoft's page</a> and use the command below to generate the snippet.txt file (proceed to do all the following commands using WSL)
-  
-  ~~~
-  echo -n This is the snippet used to verify a key pair in DPC.> snippet.txt
-  ~~~
-
-- Mac / Linux Users, use the command invocation
+- If you are using bash, zsh, or similar you can check the file type with this command (will not work in a basic Windows environment)
 
   ~~~
   file snippet.txt 
