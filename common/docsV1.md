@@ -257,7 +257,7 @@ Public keys verify that client token requests are coming from an authorized appl
 
 **1a. Verify the type of file.**
 
-- If you are using bash, zsh, or similar you can check the file type with this command (will not work in a basic Windows environment)
+- If you are using a Mac or Linux shell you can check the file type with this command (will not work in a basic Windows environment)
 
   ~~~
   file snippet.txt 
