@@ -105,8 +105,6 @@ echo "" >> $TMPFILE
 echo "$commits" >> $TMPFILE
 echo "" >> $TMPFILE
 
-git tag -a -m"$PROJECT_NAME release $NEWTAG" -s "$NEWTAG"
-
 RELEASE_PATH="/repos$GITHUB_REPO_PATH/releases"
 python github_release.py --release $NEWTAG --release-file $TMPFILE --repo $RELEASE_PATH
 
