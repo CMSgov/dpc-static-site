@@ -250,6 +250,7 @@ Public keys verify that client token requests are coming from an authorized appl
 **1. Download the snippet.txt file located in the DPC Portal to create a signature.**
 
 - You are also able to download the snippet.txt file using the command invocation below:
+  <p style="font-weight: 700;">Please refer to this method of downloading the snippet.txt file if you see the error stating <span style="color: #d14">"Unable to verify your public key"</span> in the DPC Portal.</p>
 
   ~~~
   curl -JLO https://raw.githubusercontent.com/CMSgov/dpc-app/master/dpc-web/public/snippet.txt 
