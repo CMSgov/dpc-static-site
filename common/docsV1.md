@@ -296,7 +296,7 @@ Public keys verify that client token requests are coming from an authorized appl
 
 **6. Click Add Key** to upload your public key.
 
-- <p>If you see the error message stating, <span style="color: #d14">"Unable to verify your public key"</span> after uploading your public key, please re-download the snippet.txt file using the command stated in <a href="#create-a-public-key-signature" class="guide_sub-link">Step 1</a>, and re-generate your public key and signature pair.</p>
+- <p>If you see the error message stating, "Unable to verify your public key" after uploading your public key, please re-download the snippet.txt file using the command stated in <a href="#create-a-public-key-signature" class="guide_sub-link">Step 1</a>, and re-generate your public key and signature pair.</p>
 
 
 ### List all public keys
