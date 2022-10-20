@@ -33,3 +33,4 @@ gem "json"
 
 # rexml 3.2.5 resolves a vulnerability
 gem "rexml", ">= 3.2.5"
+gem "webrick", "~> 1.7"
