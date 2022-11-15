@@ -1557,13 +1557,8 @@ The response will return a [Bundle](https://www.hl7.org/fhir/STU3/bundle.html) R
 ------------
 The primary interaction with the DPC pilot API is via the FHIR /Group/$export operation.This allows an organization to export Patient. Coverage, and Explanation of Benefit data in an asynchronous and bulk manner. Details on the FHIR bulk data operations can be found in the [FHIR Bulk Data Specification](https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-group-export.html).
 
-**Prerequisites:**
-- Completion of the Authorization section
-- Access to the API: active Bearer <span style="color: #045E87;">{access_token}</span>
-- Completion of the Attestation & Attribution section
-
 ## Initiate an export job
-In order to start a Patient data export job, you will need to locate your Group.id. Locate your Group.id by referencing the {id} variable in the resource object of your Group.
+In order to start a patient data export job, you will need to locate your Group.id. Locate your Group.id by referencing the {id} variable in the resource object of your group.
 
 **Example:**
 
@@ -1595,15 +1590,15 @@ If the request was successful, a 202 Accepted response code will be returned wit
 **Example:**
 <pre class="highlight"><code>Content-Location: https://sandbox.dpc.cms.gov/api/v1/Jobs/<span style="color: #045E87;">{unique ID of export job}</span></code></pre>
 
-## Specify which Resources to Download
-The _type query parameter allows you to specify which FHIR resources you wish to export. If you do not specify a _type parameter in your request, all three resources will be exported. Currently, DPC makes Explanation of Benefit, Patient, and Coverage resources available, which can be specified individually or as a group using a comma delimited list and the syntax `?_type=ExplanationOfBenefit,Patient,Coverage`. 
+## Specify which resources to download
+The _type query parameter allows you to specify which FHIR resources you wish to export. If you do not specify a _type parameter in your request, all three resources will be exported. Currently, DPC makes Explanation of Benefit, Patient, and Coverage Resources available, which can be specified individually or as a group using a comma delimited list and the syntax `?_type=ExplanationOfBenefit,Patient,Coverage`. 
 
-The following request will export the Patient and Coverage esources, but NOT the Explanation of Benefit Resource.
+The following request will export the Patient and Coverage Resources, but NOT the Explanation of Benefit Resource.
 
 ### Request:
 <pre class="highlight"><code>GET /api/v1/Group/<span style="color: #045E87;">{attribution group ID}</span>/$export?_type=Patient,Coverage</code></pre>
 
-The following request, by contrast, will export the Explanation of Benefit resource, but NOT the Patient or Coverage resources.
+The following request, by contrast, will export the Explanation of Benefit Resource, but NOT the Patient or Coverage Resources.
 
 ### Request:
 <pre class="highlight"><code>GET /api/v1/Group/<span style="color: #045E87;">{attribution group ID}</span>/$export?_type=ExplanationOfBenefit</code></pre>
@@ -1638,7 +1633,7 @@ Each request will follow the same four-step process as an unfiltered request:
 3. Check the job status
 4. Download the data
 
-The only difference appears in the request of Step 2: Start a job to acquire data. We show examples of this step below.
+The only difference appears in the request of step 2: "start a job to acquire data". We show examples of this step below.
 
 **Dates and times submitted in _since must be listed in the FHIR [Instant](https://www.hl7.org/fhir/datatypes.html#instant) format** (YYYY-MM-DDThh:mm:sss[-/+]zz:zz).
 
@@ -1674,28 +1669,28 @@ The Prefer header is NOT required for /Patient/{id}/$everything, but it DOES req
 
 ## Requesting data using _since with the /Group endpoint
 
-### Request to Start a job using the _since parameter within the /Group endpoint
+### Request to start a job using the _since parameter within the /Group endpoint
 
 <pre class="highlight"><code>GET /api/v1/Group/<span style="color: #045E87;">{id}</span>/$export?_type=Patient&_since=2020-02-13T08:00:00.000-05:00
 </code></pre>
 
-#### Request Headers:
+#### Request headers:
 <pre class="highlight"><code>Authorization: Bearer <span style="color: #045E87;">{access_token}</span>
 Accept: application/fhir+json
 Prefer: respond-async
 </code></pre>
 
-#### cURL Command using the _since parameter within the /Group endpoint:
+#### cURL command using the _since parameter within the /Group endpoint:
 <pre class="highlight"><code>curl -X GET 'https://sandbox.dpc.cms.gov/api/v1/Group/{id}/$export?_since=2021-05-13T08:00:00.000-05:00' \
 	-H "Accept: application/fhir+json" \
 	-H "Prefer: respond-async" \
 	-H "Authorization: Bearer <a href="#obtain-an-access-token">{access token}</a>
 </code></pre>
 
-#### Response Example: Successful Request
+#### Response example: successful request
   <pre class="highlight"><code>202 Accepted</code></pre>
 
-This operation will start a job for filtered data for existing beneficiaries since 8PM EST on May 13th, 2021 and will include all 7 years of historical data for all patients in the Group who have a `lastUpdated` date that falls after the `_since` date. In the example, we request the Patient resource type. The steps and format would work similarly for other resource types.
+This operation will start a job for filtered data for existing beneficiaries since 8PM EST on May 13th, 2021 and will include all seven years of historical data for all patients in the Group who have a `lastUpdated` date that falls after the `_since` date. In the example, we request the Patient Resource Type. The steps and format would work similarly for other resource types.
 <br />
 
 If the request was successful, a 202 Accepted response code will be returned and the response will include a Content-Location header.
@@ -1703,28 +1698,28 @@ If the request was successful, a 202 Accepted response code will be returned and
 
 ## Requesting data using _since with the /Patient endpoint
 
-### Request data synchronously for an individual Patient using the _since parameter within the /Patient/{id}/$everything endpoint
+### Request data synchronously for an individual patient using the _since parameter within the /Patient/{id}/$everything endpoint
 
 <pre class="highlight"><code>GET /api/v1/Patient/<span style="color: #045E87;">{id}</span>/$everything?_since=2020-02-13T08:00:00.000-05:00
 </code></pre>
 
-#### Request Headers:
+#### Request headers:
 <pre class="highlight"><code>Authorization: Bearer <span style="color: #045E87;">{access_token}</span>
 Accept: application/fhir+json
 X-Provenance: <a href="#attestation">{provenance header}</a>
 </code></pre>
 
-#### cURL Command using the _since parameter within the /Patient endpoint:
+#### cURL command using the _since parameter within the /Patient endpoint:
 <pre class="highlight"><code>curl -X GET 'https://sandbox.dpc.cms.gov/api/v1/Patient/{id}/$everything?_since=2021-05-13T08:00:00.000-05:00' \
 	-H "Accept: application/fhir+json" \
 	-H "X-Provenance: <a href="#attestation">{provenance header}</a>" \
 	-H "Authorization: Bearer <a href="https://dpc.cms.gov/docs#obtain-an-access_token">{access token}</a>"
 </code></pre>
 
-#### Response Example: Successful Request
+#### Response example: successful request
   <pre class="highlight"><code>200 Success</code></pre>
 
-This operation will return  all data for the specified Patient  since the selected date: May 13, 2021. Notice that we are seeking data from the /Patient/{id}/$everything endpoint. This is a synchronous request for an individual Patient referenced by the internal ID (UUID) and would behave differently if it was made from the /Group endpoint as data is returned immediately. 
+This operation will return  all data for the specified patient since the selected date: May 13, 2021. Notice that we are seeking data from the /Patient/{id}/$everything endpoint. This is a synchronous request for an individual patient referenced by the internal ID (UUID) and would behave differently if it was made from the /Group endpoint as data is returned immediately. 
 <br />
 
 If the request was successful, a 200 Success response code will be returned and the response will not include a Content-Location header. Instead, it contains the data in the body of the response.   
@@ -1785,7 +1780,7 @@ The number 42 in the example data file URLs is the same job ID from the Content-
 
 
 ## Retrieve the NDJSON output file(s)
-To obtain the exported explanation of benefit data, a GET request is made to the output URLs in the job status response when the job reaches the Completed state. The data will be presented as an [NDJSON](http://ndjson.org/) file of ExplanationOfBenefit resources.
+To obtain the exported explanation of benefit data, a GET request is made to the output URLs in the job status response when the job reaches the Completed state. The data will be presented as an [NDJSON](http://ndjson.org/) file of ExplanationOfBenefit Resources.
 
 <div class="ds-c-alert ds-c-alert--warn">
   <div class="ds-c-alert__body">
