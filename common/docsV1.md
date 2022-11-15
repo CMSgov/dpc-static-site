@@ -7,41 +7,35 @@ id: docsV1
 side_nav_items: guide1_nav
 ---
 
-Welcome to the Data at the Point of Care pilot API program! This documentation covers using the sandbox API with synthetic data. Once you’ve tested your implementation in sandbox, you can [email DPC](mailto:DPCINFO@cms.hhs.gov) to be added to the queue for production access.
+Welcome to the Data at the Point of Care (DPC) pilot API program! This documentation covers using the API in the sandbox environment with synthetic data. Once you’ve tested your implementation in sandbox, you can [email DPC](mailto:DPCINFO@cms.hhs.gov) to be added to the queue for production access.
 
 # Authorization
 ------------------
 
-Welcome to the Data at the Point of Care pilot API program!
-
 ## Step One: Request Access
-Any Fee-for-Service provider or Health IT vendor may [request access](https://sandbox.dpc.cms.gov/users/sign_up) to the sandbox environment and obtain synthetic data by signing-up for an account in the DPC Portal. You will receive a confirmation email from CMS upon account creation. 
+Any Fee-for-Service provider organization or Health IT implementer may [request access](https://sandbox.dpc.cms.gov/users/sign_up) to the sandbox environment and obtain synthetic data by signing-up for an account through the [Sandbox Sign Up / Login](https://sandbox.dpc.cms.gov/users/sign_in) page. You will receive a confirmation email from CMS upon account creation.
 
-Once your account has been assigned to an organization, you will be notified with a second email, which will include next steps and an invite to join our [Google Group](https://groups.google.com/g/dpc-api) community. At this time, you may log in to the DPC Portal at [https://dpc.cms.gov](https://dpc.cms.gov) to create your first client token and start your journey with the Data at the Point of Care pilot API!
+Once your account has been assigned to an organization, you will be notified with a second email, which will include next steps and an invite to join our [Google Group](https://groups.google.com/g/dpc-api) community. At this time, you may log in to the DPC Portal at [https://dpc.cms.gov](https://dpc.cms.gov) to create your first client token and start your journey with the DPC pilot API!
 
 ## Step Two: Client Tokens
 
-<a href="#create-your-first-client-token" class="ds-u-padding-left--3 guide_sub-link">Create your first client token</a><br />
+<a href="#create-client-token" class="ds-u-padding-left--3 guide_sub-link">Create your first client token</a><br />
 <a href="#create-multiple-client-tokens" class="ds-u-padding-left--3 guide_sub-link">Create multiple client tokens</a><br />
 <a href="#list-all-client-tokens" class="ds-u-padding-left--3 guide_sub-link">List all client tokens</a><br />
 <a href="#delete-client-tokens" class="ds-u-padding-left--3 guide_sub-link">Delete client tokens</a>
 
-Client tokens help monitor who is accessing the API through your account. A client token is required to create an access token, which is needed with every request made to the API. This ensures every interaction with the API can be traced back to the person who created the client token.
+Client tokens help monitor who is accessing the API through your account. A *client* token is required to create an *access* token, which is needed with every request made to the API. This ensures every interaction with the API can be traced back to the person who created the client token.
 
-### Prerequisites:
-- A registered account in the DPC Portal
-- CMS email stating you have been assigned to an organization
-
-### Create your first client token
+### Create client token
 <div class="ds-c-alert ds-c-alert--warn">
   <div class="ds-c-alert__body">
     <p class="ds-c-alert__text">
-      You MUST create different client tokens for every vendor that works with the API. A single client token should not be shared with multiple vendors.
+      You MUST create different client tokens for every provider organization that works with the API.
     </p>
   </div>
 </div>
 
-Your first client token must be created through the DPC Portal. After successfully accessing the API, you may choose to add client tokens through the API or continue using the DPC Portal.
+Your first client token must be created through the DPC Portal.
 
 1. **Log in to your account in the [DPC Portal](https://sandbox.dpc.cms.gov/users/sign_in)** and select <span class="button-ex">+ New Token</span>
 2. **Add a Label:** Title your token with a recognizable name that includes the environment for which you are requesting access
@@ -57,11 +51,13 @@ Your first client token must be created through the DPC Portal. After successful
   </div>
 </div>
 
+After successfully accessing the API, you may choose to add client tokens through the API or continue using the DPC Portal.
+
 ### Create multiple client tokens
 
 You may create as many tokens as you like via your account in the DPC Portal using the instructions above. You can also create multiple client tokens at once by making a POST request to the /Token endpoint.
 
-This endpoint accepts two (optional) query parameters:
+The /Token endpoint accepts two (optional) query parameters:
 
 <table cellspacing="0" class="guide__table">
   <tr>
@@ -115,14 +111,6 @@ The response from the API will include the client_token in the token field.
 }
 ~~~
 
-<div class="ds-c-alert ds-c-alert--warn">
-  <div class="ds-c-alert__body">
-    <p class="ds-c-alert__text">
-      This is the only time that this client token will be visible to you. Ensure that the value is recorded in a safe and durable location.
-    </p>
-  </div>
-</div>
-
 ### List all client tokens
 If you have created multiple client tokens, you may want to list them to reference ID’s, expiration dates, or delete specific client tokens from your account in the DPC Portal.
 
@@ -173,7 +161,7 @@ GET /api/v1/Token
 ~~~
 
 ### Delete client tokens
-You may want to delete a client token from your organization if a vendor or group no longer exists or needs access to the API. This can be done by clicking the “x” on the right side of each client token listed in the DPC Portal or by sending a DELETE request to the /Token endpoint using the unique ID of the client_token. 
+You may want to delete a client token from the sandbox environment if a Health IT implementer no longer exists or needs access to the API. This can be done by clicking the “x” on the right side of each client token listed in the DPC Portal or by sending a DELETE request to the /Token endpoint using the unique ID of the client_token. 
 
 Client_token IDs can be found either at creation or as the result of [listing client_tokens](#list-all-client-tokens).
 
@@ -202,14 +190,7 @@ Client_token IDs can be found either at creation or as the result of [listing cl
 
 Public keys verify that client token requests are coming from an authorized application. This is by verifying that the private key used to sign your JSON Web Token (JWT) also matches a public key previously uploaded to DPC. Please complete the upload of your public key + signature through the DPC Portal.
 
-**ALL files in this section must be stored in ONE folder.**
-
-(private.pem, public.pem, snippet.txt, snippet.txt.sig, signature.sig files)
-
-### Prerequisites:
-- A registered account in the DPC Portal
-- CMS email stating you have been assigned to an organization
-
+**ALL files** (private.pem, public.pem, snippet.txt, snippet.txt.sig, signature.sig files) **in this section must be stored in ONE folder.**
 
 ### Upload your first public key
 
@@ -241,7 +222,7 @@ Public keys verify that client token requests are coming from an authorized appl
 
 ![Public Key Example - Shows public key with the BEGIN PUBLIC KEY and END PUBLIC KEY tags.](/assets/images/guide_public_key_ex.svg)
 
-**4a. 3a:** Title your public key with a descriptive name that can be easily recognized for future purposes.
+**4. Title** your public key with a descriptive name that can be easily recognized for future purposes.
 
 **5. Proceed** to creating your public key signature.
 
@@ -286,7 +267,7 @@ Public keys verify that client token requests are coming from an authorized appl
 
 **4. Generate a _verified_ public key signature.**
 
-- Use the commmand invocation:
+- Use the command invocation:
 
   ~~~
   openssl base64 -in snippet.txt.sig -out signature.sig
@@ -296,7 +277,7 @@ Public keys verify that client token requests are coming from an authorized appl
 
 **6. Click Add Key** to upload your public key.
 
-- <p>If you see the error message stating, "Unable to verify your public key" after uploading your public key, please re-download the snippet.txt file using the command stated in <a href="#create-a-public-key-signature" class="guide_sub-link">Step 1</a>, and re-generate your public key and signature pair.</p>
+- <p>If you see the error message stating, "Unable to verify your public key" after uploading your public key, re-download the snippet.txt file using the command stated in <a href="#create-a-public-key-signature" class="guide_sub-link">Step 1</a>, and re-generate your public key and signature pair.</p>
 
 
 ### List all public keys
@@ -365,7 +346,7 @@ Specific public keys can be listed by making a GET request to the /Key endpoint 
 ~~~
 
 ### Delete public keys
-You may need to delete a public key from your organization if a user no longer needs access or otherwise needs to be removed from the system. 
+You may need to delete a public key from the DPC Portal if you no longer need access.
 
 Public keys can be removed by sending a DELETE request to the /Key endpoint using the unique ID of the public key, which is returned either at creation, or as the result of listing the public keys.
 
@@ -391,17 +372,11 @@ The response from the API will include the client_token in the token field.
 
 ## Step Four: JSON Web Tokens
 
-<a href="#validate-a-json-web-token-for-dpc" class="ds-u-padding-left--3 guide_sub-link">Validate a JSON Web Token for DPC</a>
+<a href="#validate-a-json-web-token-for-dpc" class="ds-u-padding-left--3 guide_sub-link">Validate a JSON web token for DPC</a>
 
-A JSON Web Token (JWT) authenticates your organization with DPC. If you have not generated your client token and public/private key pair through the DPC Portal, please obtain the following prerequisites before proceeding.
+A JSON Web Token (JWT) authenticates your organization with DPC.
 
-### Prerequisites:
-- Internet access
-- A registered client token
-- Your private key
-- Your public key ID
-
-Once completed, please download the DPC JWT Tool (the button below) to generate your JWT for DPC.
+Complete the following steps to generate your JWT via the JWT Tool.
 
 <div class="download_btn--container">
   <a href="{{ site.url }}/assets/downloads/jwt/jwt.html" class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>
@@ -409,23 +384,48 @@ Once completed, please download the DPC JWT Tool (the button below) to generate 
   </a>
 </div>
 
-The following instructions are to be completed via the JWT Tool downloaded onto your personal computer. You must have internet access in order for this tool to use its cryptography library.  Your information is not sent over the network, in order to ensure your private key and JWT remain confidential.
+<div class="ds-c-alert ds-c-alert--warn">
+  <div class="ds-c-alert__body">
+    <p class="ds-c-alert__text">
+      You need internet access to use this tool’s cryptography. However, your information is not sent over the network to ensure your private key and JWT remain confidential.
+    </p>
+  </div>
+</div>
 
-1. Please input your Private Key.
-2. Please input your Client Token.
-3. Please input your Public Key ID
+1. Input your Private Key.
+2. Input your Client Token.
+3. Input your Public Key ID
     * This ID can be found under the "Public Keys” section in your DPC Portal.
 ![Public Key Id - The public key id is found underneath the key's label.](/assets/images/guide_public_key_id.svg)
 4. Click "Generate JWT"
 5. Copy "Your JWT" to begin validation for DPC
 
-### Validate a JSON Web Token for DPC
+Complete the following steps to generate your own JWT.
+1. Generate your JWT payload.
+~~~
+{
+  “iss”: {client_token},
+  “sub”: {client_token},
+  “aud”: "https://sandbox.dpc.cms.gov/api/v1/Token/auth",
+  “exp”: {current datetime + 5 minutes},
+  “jti”: {JWT_unique_id}
+}
+~~~
+2. Generate your JWT header.
+~~~
+{
+  "alg": "RS384",
+  “kid”: “{public_key_id}”
+}
+~~~
+
+### Validate a JSON web token for DPC
 The DPC API supports a /Token/validate endpoint, which allows you to submit your signed JWT for DPC validation. If the fields do not contain the required requests, the response will return an error message with details as to which claims or values on the JWT are missing or incorrect.
 
 <div class="ds-c-alert ds-c-alert--warn">
   <div class="ds-c-alert__body">
     <p class="ds-c-alert__text">
-      This method DOES NOT validate the JWT signature, public key or client tokens, it merely verifies the necessary elements are present in the JWT entity.
+      This method DOES NOT validate the JWT signature, public key, or client tokens. It merely verifies that the necessary elements are present in the JWT entity
     </p>
   </div>
 </div>
@@ -454,11 +454,8 @@ The response from the API will return with a HTTP 200 if the JWT is valid, other
 
 Obtaining an access token is the final step in connecting to the DPC API. **The access token must be set in the Authorization header in EVERY API request and has a maximum expiration time of 5 MINUTES.**
 
-Example Header:
+Example header:
 <pre><code>Authorization: Bearer <span style="color: #045E87;">{access_token}</span></code></pre>
-
-### Prerequisites:
-- A valid JSON Web Token (JWT)
 
 ### Obtain an access_token
 In order to receive an access token, the valid JWT must be submitted to the /Token/auth endpoint via a POST request. The POST request body is encoded as application/x-www-form-urlencoded.
@@ -500,12 +497,6 @@ In order to receive an access token, the valid JWT must be submitted to the /Tok
   </tr>
 </table>
 
-The endpoint response will be a JSON object, which contains:
-
-1. Your access_token
-2. The lifetime of your token (in seconds)
-3. Authorized system scopes
-
 #### Request:
 
 ~~~
@@ -543,11 +534,11 @@ The endpoint response is a JSON object which contains the access token, the life
 You can create multiple access tokens with the same valid JWT. However, once your access token expires, you will likely need to generate a new JWT using the JWT Tool to refresh your access token.
 
 ### Obtain a bearer_token
-To obtain your bearer_token, set your access_token returned in the previous step as your bearer_token. You will need to set the "{access_token value}" from the previous response as a header in most of your API calls preceded by the word Bearer and a space.
+To obtain your bearer_token, set your access_token returned in the previous section as your bearer_token. You will need to set the "{access_token value}" from the previous response as a header in most of your API calls preceded by the word Bearer and a space.
 
 As access tokens expire, you will need to generate new tokens. You will not need to create new JWT’s to create a new access token, unless you are making a call with a different client token or public key.
 
-### Sample Javascript Code to create a JWT and obtain an Access Token
+### Sample JavaScript code to create a JWT and obtain an access token
 
 <pre class="highlight"><code>const jsrsasign = require('jsrsasign')
 const fetch = require('node-fetch')
@@ -606,31 +597,31 @@ fetch('https://sandbox.dpc.cms.gov/api/v1/Token/auth', {
 
 # Attestation & Attribution
 ------------------
-Before accessing Patient data, DPC must establish that you have a valid Patient-Practitioner relationship with CMS Medicare and Medicaid Beneficiaries.  This process is referred to as Attestation/Attribution in the DPC API.
+Before accessing patient data, DPC must establish that you have a valid patient-practitioner relationship with CMS Medicare and Medicaid Beneficiaries. This process is referred to as Attestation/Attribution in the DPC API.
 
-You will need to register Practitioners in your Organization, register Patients in your care, and attribute Patients to the Practitioners treating them. You must also keep these attributions up-to-date by submitting an attestation that  testifies these relationships are valid with each submission.
+You will need to register practitioners in your organization, register patients in your care, and attribute patients to the practitioners treating them. You must also keep these attributions up-to-date by submitting an attestation that testifies these relationships are valid with each submission.
 
 <div class="ds-c-alert ds-c-alert--warn">
   <div class="ds-c-alert__body">
     <p class="ds-c-alert__text">
-      The DPC sandbox environment does not contain any preloaded test data.
+      The DPC Sandbox Environment does not contain any preloaded test data.
     </p>
   </div>
 </div>
 
-## Load Sample Data
-The DPC team has created a collection of sample Practitioner, Patient, and Group resources which can be used to get started in the sandbox environment. These Resources can be found in our public [GitHub repository](https://github.com/CMSgov/dpc-app/tree/master/src/main/resources) as JSON files. More details included in this [README](https://github.com/CMSgov/dpc-app/blob/master/src/main/resources/README.md) file.
+## Load sample data
+The DPC Team has created a collection of sample Practitioner, Patient, and Group Resources which can be used to get started in the sandbox environment. These Resources can be found in our public [GitHub repository](https://github.com/CMSgov/dpc-app/tree/master/src/main/resources) as JSON files. More details included in this [README](https://github.com/CMSgov/dpc-app/blob/master/src/main/resources/README.md) file.
 
 **Uploading Practitioners:** We have included 4 Practitioner Resources that represent fictitious Practitioners that you can add to your Organization.
 
-**Uploading Patients:** The Beneficiary FHIR Data Server (BFD) maintains a list of 101 Patients, along with their MBIs, that can be used for matching existing synthetic data in the sandbox environment. More details and the corresponding data files can be found on the Blue Button 2.0 API’s documentation under [Sample Beneficiaries](https://bluebutton.cms.gov/developers/#sample-beneficiaries).
+**Uploading Patients:** The Beneficiary FHIR Data Server (BFD) maintains a list of 101 patients, along with their MBIs, that can be used for matching existing synthetic data in the sandbox environment. More details and the corresponding data files can be found on the Blue Button 2.0 API’s documentation under [Sample Beneficiaries](https://bluebutton.cms.gov/developers/#sample-beneficiaries).
 
-_Users can provide their own sample FHIR resources that fulfill the required FHIR profiles to DPC, but will need to ensure that all Patient resources have a Medicare Beneficiary Identifier (MBI) that matches a record in the Beneficiary FHIR Data Server (BFD)._
+_Users can provide their own sample FHIR resources that fulfill the required FHIR profiles to DPC, but will need to ensure that all Patient Resources have a Medicare Beneficiary Identifier (MBI) that matches a record in BFD._
 
 ### Find Organization ID
-You will need your organization ID to create an Attribution Group for Attestation. The Organization endpoint supports a GET /Organization operation, which allows the user to retrieve their Organization ID.
+You will need your Organization ID to create an Attribution Group for Attestation. The Organization endpoint supports a GET /Organization operation, which allows the user to retrieve their Organization ID.
 
-To find your Organization ID, sign-in to your account in the DPC Portal and locate your Organization ID underneath the organization name. You can also make a request to `/Organization` via the API and retrieve your Organization ID from the response.
+To find your Organization ID, sign-in to your account in the DPC Portal and locate your Organization ID underneath the Organization name. You can also make a request to `/Organization` via the sandbox API and retrieve your Organization ID from the response.
 
 ![Dashboard Org Id](/assets/images/guide_org_id.png)
 
@@ -645,7 +636,7 @@ Accept: application/fhir+json
 Prefer: respond-async
 </code></pre>
 
-#### cURL Command
+#### cURL command
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Organization
      -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>'
      -H 'Accept: application/fhir+json' \
@@ -694,7 +685,7 @@ Prefer: respond-async
 }
 </code></pre>
 
-It is still possible to retrieve your organization using `/Organization/{id}`, in which case you will receive a single Resource instead of a Bundle.
+It is still possible to retrieve your organization using `/Organization/{id}`, in which case you will receive a single resource instead of a bundle.
 
 #### Request:
 
@@ -754,28 +745,21 @@ Prefer: respond-async
 ## Practitioners
 
 
-<a href="#add-a-practitioner" class="ds-u-padding-left--3 guide_sub-link">Add a Practitioner</a><br />
-<a href="#add-multiple-practitioners" class="ds-u-padding-left--3 guide_sub-link">Add Multiple Practitioners</a><br />
-<a href="#list-all-practitioners" class="ds-u-padding-left--3 guide_sub-link">List all Practitioners</a><br />
-<a href="#list-a-specific-practitioner" class="ds-u-padding-left--3 guide_sub-link">List a specific Practitioner</a>
+<a href="#add-a-practitioner" class="ds-u-padding-left--3 guide_sub-link">Add a practitioner</a><br />
+<a href="#add-multiple-practitioners" class="ds-u-padding-left--3 guide_sub-link">Add multiple practitioners</a><br />
+<a href="#list-all-practitioners" class="ds-u-padding-left--3 guide_sub-link">List all practitioners</a><br />
+<a href="#list-a-specific-practitioner" class="ds-u-padding-left--3 guide_sub-link">List a specific practitioner</a>
 
 Every organization is required to keep a list of [Practitioner](https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-practitioner.html) Resources who are authorized to have access to DPC data. The DPC Team has included four Practitioner Resources that represent fictitious Practitioners that can be added to your Organization.
 
-### Prerequisites:
-- A registered account in the DPC Portal
-- Access to the API: active Bearer {access_token}
-- Practitioner information:
-    - First and Last Name
-    - Type 1 National Provider Identifier (NPI)
+### Add a practitioner
+To register a practitioner at your organization, you must send a FHIR-formatted [Practitioner](https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-practitioner.html) Resource as the BODY of your request. Do not use encoding (raw) when uploading via a POST request to the /Practitioner endpoint.
 
-### Add a Practitioner
-To register a Practitioner at your Organization, you must send a FHIR-formatted [Practitioner](https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-practitioner.html) Resource as the BODY of your request. Please use no encoding (raw) when uploading via a POST request to the /Practitioner endpoint.
+The Practitioner Resource may include additional attributes detailed in the FHIR Implementation Guide within [DPC Practitioner Profile](https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-practitioner.html), but at a minimum must include the practitioner’s:
 
-The Practitioner Resource may include additional attributes detailed in the FHIR Implementation Guide within [DPC Practitioner Profile](https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-practitioner.html), but at a minimum must include the Practitioner’s:
-
-  - First and Last Name
+  - First and last name
   - Type 1 National Provider Identifier (NPI)
-
+    - Note: If an existing practitioner is found with the same NPI, the `/practitioner` endpoint will return that same practitioner and not return a new one.
 #### Request:
 
 ~~~
@@ -792,9 +776,9 @@ POST /api/v1/Practitioner
      -d @practitioner.json</code></pre>
 
 ### Add Multiple Practitioners
-The Practitioner endpoint supports a $submit operation, which allows you to upload a Bundle of resources for registration in a single batch operation.
+The Practitioner endpoint supports a $submit operation, which allows you to upload a bundle of resources for registration in a single batch operation.
  
-Each individual Practitioner Resource in your Bundle must satisfy the requirements on how to add a [Practitioner Resource](#add-a-practitioner), otherwise a 422-Unprocessable Entity error will be returned.
+Each individual Practitioner Resource in your bundle must satisfy the requirements on how to add a [Practitioner Resource](#add-a-practitioner), otherwise a 422-Unprocessable Entity error will be returned.
 
 <div class="download_btn--container">
   <a href="{{ site.url }}/assets/downloads/practitioner_bundle.json" class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>Sample practitoner_bundle.json</a>
@@ -816,8 +800,8 @@ POST /api/v1/Practitioner/$submit
      -d @practitioner_bundle.json
   </code></pre>
 
-### List all Practitioners
-The Practitioner endpoint supports a GET /Practitioner operation, which allows you to retrieve a [Bundle](https://www.hl7.org/fhir/STU3/bundle.html) of Practitioner resources. You will need to retrieve a Practitioner’s NPI when you get to the Attribution section.
+### List all practitioners
+The Practitioner endpoint supports a GET /Practitioner operation, which allows you to retrieve a [bundle](https://www.hl7.org/fhir/STU3/bundle.html) of Practitioner Resources. You will need to retrieve a Practitioner’s NPI when you get to the Attribution section.
 
 #### Request:
 
@@ -833,8 +817,8 @@ GET /api/v1/Practitioner
      -H 'Content-Type: application/fhir+json' \
      -X GET</code></pre>
 
-### List a specific Practitioner
-The Practitioner endpoint also supports a GET /Practitioner operation where you can supply an NPI number and receive the Practitioner resource. You will use this to identify a Practitioners’ system ID based off of an NPI when adding a Patient and/or creating a Group.
+### List a specific practitioner
+The Practitioner endpoint also supports a GET /Practitioner operation where you can supply an NPI number and receive the Practitioner Resource. You will use this to identify a Practitioners’ DPC ID based off of an NPI when adding a practitioner and/or creating a group.
 
 #### Request:
 
@@ -888,39 +872,38 @@ The Practitioner endpoint also supports a GET /Practitioner operation where you 
 
 ## Patients
 
-<a href="#add-a-patient" class="ds-u-padding-left--3 guide_sub-link">Add a Patient</a><br />
-<a href="#add-multiple-patients" class="ds-u-padding-left--3 guide_sub-link">Add Multiple Patients</a><br />
-<a href="#list-all-patients" class="ds-u-padding-left--3 guide_sub-link">List all Patients</a><br />
-<a href="#list-a-specific-patient" class="ds-u-padding-left--3 guide_sub-link">List a specific Patient</a>
+<a href="#add-a-patient" class="ds-u-padding-left--3 guide_sub-link">Add a patient</a><br />
+<a href="#add-multiple-patients" class="ds-u-padding-left--3 guide_sub-link">Add multiple patients</a><br />
+<a href="#list-all-patients" class="ds-u-padding-left--3 guide_sub-link">List all patients</a><br />
+<a href="#list-a-specific-patient" class="ds-u-padding-left--3 guide_sub-link">List a specific patient</a>
 
 Every organization is required to maintain a list of patients which represent the patient population currently being treated at your facilities. 
 
-Since there is not any preloaded data in DPC’s sandbox, The Beneficiary FHIR Data Server (BFD) maintains a list of 101 Patients, along with their MBIs, that can be used for matching existing synthetic data in the sandbox environment. More details and the corresponding data files can be found on the Blue Button 2.0 API’s documentation under [Sample Beneficiaries](https://bluebutton.cms.gov/developers/#sample-beneficiaries).
+Since there is not any preloaded data in DPC’s sandbox, the Beneficiary FHIR Data Server (BFD) maintains a list of 101 Patients, along with their MBIs, that can be used for matching existing synthetic data in the sandbox environment. More details and the corresponding data files can be found on the Blue Button 2.0 API’s documentation under [Sample Beneficiaries](https://bluebutton.cms.gov/developers/#sample-beneficiaries).
 
-### Prerequisites:
-- A registered account in the DPC Portal
-- Access to the API: active Bearer {access_token}
-- Patient information:
-    - First and last name
-    - Birth date in YY-MM-DD format
-    - Medicare Beneficiary Identifier (MBI)
-    - Managing Organization ID
-    - System ID
-
-### Add a Patient
-To register a Patient at your Organization, you must create a [Patient](https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html) Resource as a JSON file in FHIR format. The JSON file must be in the BODY of your request with no encoding (raw) when uploading via a POST request to the /Patient endpoint.
+### Add a patient
+To register a patient at your organization, you must create a [Patient](https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html) Resource as a JSON file in FHIR format. The JSON file must be in the BODY of your request with no encoding (raw) when uploading via a POST request to the /Patient endpoint.
 
 To create the Patient Resource, the JSON file may include additional attributes detailed in the FHIR Implementation Guide within the [DPC Practitioner Profile](https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html), but at a minimum must include the Patient’s:
 
 - First and last name
 - Birth date in YYYY-MM-DD
+- Gender
 - Medicare Beneficiary Identifier (MBI)
-  - identifier: 
+  - Note: If an existing patient is found with the same MBI, the /patient endpoint will return that same patient and not return a new one.
+  - For example:
 
   ~~~
   {
     system: 'https://bluebutton.cms.gov/resources/variables/bene_id',
     value:  'Value of the MBI number'
+  }
+  ~~~
+  OR
+  ~~~
+  {
+    "system": "http://hl7.org/fhir/sid/us-mbi",
+    "value": "Value of the MBI number"
   }
   ~~~
 
@@ -929,16 +912,6 @@ To create the Patient Resource, the JSON file may include additional attributes 
   ~~~
   "managingOrganization": {
     "reference": "Organization/{ID}"
-  }
-  ~~~
-
-- System ID:
-  - This can be found by listing all patients or finding a specific patient by their MBI.
-
-  ~~~
-  "resource": {
-    "resourceType": "Patient",
-    "id": "728b270d-d7de-4143-82fe-d3ccd92cebe4"
   }
   ~~~
 
@@ -1011,10 +984,10 @@ POST /api/v1/Patient
 }
 ~~~
 
-### Add Multiple Patients
-The Patient endpoint supports a $submit operation, which allows you to upload a Bundle of resources for registration in a single batch operation.
- 
-Each Patient Resource in your Bundle may include additional attributes detailed in the FHIR Implementation Guide within the [DPC Patient Profile](https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html), but at a minimum must satisfy the requirements on how to add a [Patient Resource](#add-a-patient), otherwise a 422 - Unprocessable Entity error will be returned.
+### Add multiple patients
+The Patient endpoint supports a $submit operation, which allows you to upload a bundle of resources for registration in a single batch operation.
+
+Each Patient Resource in your bundle may include additional attributes detailed in the FHIR Implementation Guide within the [DPC Patient Profile](https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html), but at a minimum must satisfy the requirements on how to add a [Patient Resource](#add-a-patient), otherwise a 422 - Unprocessable Entity error will be returned.
 
 <div class="download_btn--container">
   <a href="{{ site.url }}/assets/downloads/patient_bundle.json" class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>Sample patient_bundle.json</a>
@@ -1035,8 +1008,8 @@ POST /api/v1/Patient/$submit
      -X POST \
      -d @patient_bundle.json</code></pre>
 
-### List all Patients
-The Patient endpoint supports a GET /Patient operation, which allows you to retrieve a Bundle of Patient Resources. You will need to retrieve the system ID of patients when you get to the Attribution section.
+### List all patients
+The Patient endpoint supports a GET /Patient operation, which allows you to retrieve a bundle of Patient Resources. You will need to retrieve the DPC ID of patients when you get to the Attribution section.
 
 #### Request:
 
@@ -1052,8 +1025,8 @@ GET /api/v1/Patient
      -H 'Content-Type: application/fhir+json' \
      -X GET</code></pre>
 
-### List a specific Patient
-The Patient endpoint also supports a GET /Patient operation where you can supply the Patient MBI and receive the Patient Resource. You may use this to identify a Patient’s system ID based off of an MBI.
+### List a specific patient
+The Patient endpoint also supports a GET /Patient operation where you can supply the Patient MBI and receive the Patient Resource. You may use this to identify a Patient’s DPC ID based off of an MBI.
 
 #### Request:
 <pre class="highlight"><code>GET /api/v1/Patient?identifier=<span style="color: #045E87;">{{Patient MBI}}</span></code></pre>
@@ -1110,28 +1083,23 @@ The Patient endpoint also supports a GET /Patient operation where you can supply
 
 ## Attestation
 
-<a href="#create-an-attestation" class="ds-u-padding-left--3 guide_sub-link">Create an Attestation</a>
+<a href="#create-an-attestation" class="ds-u-padding-left--3 guide_sub-link">Create an attestation</a>
 
-CMS requires Practitioners to attest that they have a treatment related purpose for adding a patient to their Group each time they make a Group addition. This is accomplished by submitting an attestation with every request. Attestations are posted as a [Provenance](https://www.hl7.org/fhir/provenance.html) Resource via the X-Provenance header, as outlined in the [FHIR specification](https://www.hl7.org/fhir/implementationguide.html).
+CMS requires practitioners to attest that they have a treatment related purpose for adding a patient to their group each time they make a group addition. This is accomplished by submitting an attestation with every request. Attestations are posted as a [Provenance](https://www.hl7.org/fhir/provenance.html) Resource via the X-Provenance header, as outlined in the [FHIR specification](https://www.hl7.org/fhir/implementationguide.html).
 
-**Prerequisites:**
-- Access to the API: active Bearer <span style="color: #045E87;">{access_token}</span>
-- At least one registered Practitioner
-- At least one registered Patient
-
-### Create an Attestation
-Details on Provenance resources are given in the [FHIR implementation guide](https://www.hl7.org/fhir/implementationguide.html), but at a minimum, each attestation must include:
+### Create an attestation
+Details on Provenance Resources are given in the [FHIR implementation guide](https://www.hl7.org/fhir/implementationguide.html), but at a minimum, each attestation must include:
 
 - **Timestamp:** Time when attestation was made.
 - **Reason:** Reason for the attestation (currently only: http://hl7.org/fhir/v3/ActReason#TREAT is supported).
 - **Organization ID:** The agent making the attestation referenced by their Organization Resource ID. 
-  - _Your Organization ID can be found by referencing the {id} variable in the resource object of your Practitioner._
+  - _Your Organization ID can be found by referencing the {id} variable in the resource object of your practitioner._
 - **Practitioner ID:** The practitioner attached to the attestation referenced by their Practitioner ID.
-  - _Your Practitioner ID can be found by referencing the {id} variable in the resource object of your Practitioner._
+  - _Your Practitioner ID can be found by referencing the {id} variable in the resource object of your practitioner._
 
 The attestation is then included in the X-Provenance header as part of any operations which add patients to the Group resource.
 
-### Example Attestation for X-Provenance header
+### Example attestation for X-Provenance header
 
 ~~~
 {
@@ -1173,48 +1141,45 @@ The attestation is then included in the X-Provenance header as part of any opera
 
 ## Groups (Attribution)
 
-<a href="#create-a-group" class="ds-u-padding-left--3 guide_sub-link">Create a Group</a><br />
-<a href="#update-a-group" class="ds-u-padding-left--3 guide_sub-link">Update a Group</a><br />
-<a href="#add-patients-to-group" class="ds-u-padding-left--3 guide_sub-link">Add Patients to Group</a><br />
-<a href="#overwrite-a-group-membership" class="ds-u-padding-left--3 guide_sub-link">Overwrite a Group Membership</a><br />
-<a href="#locate-your-groupid" class="ds-u-padding-left--3 guide_sub-link">Locate your Group.id</a>
+<a href="#create-a-group" class="ds-u-padding-left--3 guide_sub-link">Create a group</a><br />
+<a href="#update-a-group" class="ds-u-padding-left--3 guide_sub-link">Update a group</a><br />
+<a href="#add-patients-to-group" class="ds-u-padding-left--3 guide_sub-link">Add patients to group</a><br />
+<a href="#delete-a-group" class="ds-u-padding-left--3 guide_sub-link">delete a group</a><br />
+<a href="#removing-patients-from-a-group" class="ds-u-padding-left--3 guide_sub-link">Removing patients from a group</a><br />
+<a href="#overwrite-a-group-membership" class="ds-u-padding-left--3 guide_sub-link">Overwrite a group membership</a><br />
+<a href="#locate-your-groupid" class="ds-u-padding-left--3 guide_sub-link">Locate your group.id</a>
 
-Once the Practitioner, Patient, and Provenance (Attestation) resources have been created, the final step is to link a list of registered Patients to a registered Practitioner in what is called an Attribution Roster. This is done by creating a Group resource.
+Once the Practitioner, Patient, and Provenance (Attestation) Resources have been created, the final step is to link a list of registered patients to a registered practitioner in what is called an Attribution Roster. This is done by creating a Group Resource.
 
-**Prerequisites:**
-- A registered account in the DPC Portal
-- At least one Patient in your Organization
-- At least one Practitioner in your Organization
+### Create a group
+To link a list of registered patients to a registered practitioner, you must create a Group Resource by creating a JSON file with a list of patients and a single practitioner to be attributed to. Upload this JSON file via a POST request to the /Group endpoint.
 
-### Create a Group
-To link a list of registered Patients to a registered Practitioner, you must create a Group Resource by creating a JSON file with a list of patients and a single Practitioner to be attributed to. Upload this JSON file via a POST request to the /Group endpoint.
-
-Additional details on Provenance Resource can be found in DPC’s implementation guide but, at a minimum, each Attribution Group resource must include:
+Additional details on Provenance Resource can be found in DPC’s Implementation Guide but, at a minimum, each Attribution Group Resource must include:
 
 - **The Practitioner’s NPI** which patients are being attributed to.
-- **The system ID of the Patient(s)** that are members of the Group. This value is the alphanumeric system ID of the Patient Resource in DPC. It is a UUID.
+- **The DPC ID of the patient(s)** that are members of the group. This value is the alphanumeric DPC ID of the Patient Resource in DPC. It is a UUID.
 
 <div class="ds-c-alert ds-c-alert--warn">
   <div class="ds-c-alert__body">
     <p class="ds-c-alert__text">
-      Parameter and Bundle Resources are NOT to be used when adding, updating, or overwriting Groups.
+      Parameter and Bundle Resources are NOT to be used when adding, updating, or overwriting groups.
     </p>
   </div>
 </div>
 
-The Group response returned by DPC includes additional “period” and “inactive” elements for each Patient. These indicate the time period for which the Patient has an active relationship with the Practitioner, or, if the relationship has expired, the time period for which the Patient was active.
+The group response returned by DPC includes additional “period” and “inactive” elements for each patient. These indicate the time period for which the patient has an active relationship with the practitioner, or, if the relationship has expired, the time period for which the patient was active.
 
 <div class="ds-c-alert ds-c-alert--warn">
   <div class="ds-c-alert__body">
     <p class="ds-c-alert__text">
-      Attribution Groups must be updated every 90 days!
+      Attribution groups must be updated every 90 days!
     </p>
   </div>
 </div>
 
-Practitioners at your organization must update their Provenance (Attestation) and Group Resources by re-attributing the Patient to the Practitioner’s Group every 90 days.
+Practitioners at your organization must update their Provenance (Attestation) and Group Resources by re-attributing the patient to the practitioner’s group every 90 days.
 
-When an attribution relationship between a Patient and Practitioner has expired, either due to exceeding the 90 day threshold or being manually removed, the patient’s “inactive” flag will be set to “true.” Patients who are attributed to a Practitioner, but have their inactive flag set to true, will NOT be included in Bulk Data exports.
+When an attribution relationship between a patient and practitioner has expired, either due to exceeding the 90-day threshold or being manually removed, the patient’s “inactive” flag will be set to “true”. Patients who are attributed to a practitioner, but have their inactive flag set to true, will NOT be included in bulk data exports.
 
 #### Request:
 
@@ -1273,13 +1238,13 @@ POST /api/v1/Group
 }
 ~~~
 
-### Update a Group
+### Update a group
 
-Patient/Practitioner relationships automatically expire after 90 days and must be re-attested by the Practitioner. This is accomplished by re-attributing the Patient to the Practitioner’s Group.
+Patient/practitioner relationships automatically expire after 90 days and must be re-attested by the practitioner. This is accomplished by re-attributing the patient to the practitioner’s group.
 
-### Identifying Expired Patients
+### Identifying expired patients
 
-After 90 days, patient attributions expire and must be renewed. You can identify these patients through a GET request to the /Group endpoint. This will return a JSON file with all the patients attributed to the Group. Evaluate this JSON for patients with attribution dates greater than 90 days.
+After 90 days, patient attributions expire and must be renewed. You can identify these patients through a GET request to the /Group endpoint. This will return a JSON file with all the patients attributed to the group. Evaluate this JSON for patients with attribution dates greater than 90 days.
 
 #### Request
 
@@ -1327,9 +1292,9 @@ After 90 days, patient attributions expire and must be renewed. You can identify
 }
 ~~~
 
-### Add Patients to Group
+### Add patients to group
 
-Additions are handled through a custom $add operation on the /Group endpoint. This takes the members listed into a given resource and adds them to the existing Group.
+Additions are handled through a custom $add operation on the /Group endpoint. This takes the members listed into a given resource and adds them to the existing group.
 
 #### Request:
 <pre class="highlight"><code>POST /api/v1/Group/<span style="color: #045E87;">{Group.id}</span>/$add</code></pre>
@@ -1369,7 +1334,25 @@ Additions are handled through a custom $add operation on the /Group endpoint. Th
 ]
 ~~~
 
-### Removing Patients from a Group
+### Delete a group
+You may want to delete a group if you no longer require data for the patients within the group. This can be done by sending a DELETE request to the /Group endpoint using the unique ID of the group.
+
+Group IDs can be found either at creation or as the result of [locating your Group ID](https://dpc.cms.gov/docsV1#locate-your-groupid).
+
+#### Request:
+<pre class="highlight"><code>api/v1/Group?characteristic-value=attributed-to$<span style="color: #045E87;">{Group.id}</span></code></pre>
+
+#### cURL command:
+<pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Group?characteristic-value=attributed-to${Group ID} \
+     -H 'Authorization: Bearer {access_token}' \
+     -H 'Accept: application/json' \
+     -H 'Content-Type: application/json' \
+     -X DELETE</code></pre>
+
+### Reponse:
+<pre class="highlight"><code>200 - Group was removed</code></pre>
+
+### Removing patients from a group
 Removals are handled through a custom remove operation on the /Group endpoint. This takes the members listed into a given resource and removes them from the existing Group.
 
 <div class="ds-c-alert ds-c-alert--warn">
@@ -1426,8 +1409,8 @@ Removals are handled through a custom remove operation on the /Group endpoint. T
 }
 ~~~
 
-### Overwrite a Group Membership
-Users can also submit a Group resource which completely overwrites the existing Group. This results in the current group membership being completely overwritten with the members listed in the given resource.
+### Overwrite a group membership
+Users can also submit a Group Resource which completely overwrites the existing group. This results in the current group membership being completely overwritten with the members listed in the given resource.
 
 <div class="ds-c-alert ds-c-alert--warn">
   <div class="ds-c-alert__body">
@@ -1491,15 +1474,15 @@ Users can also submit a Group resource which completely overwrites the existing 
 ### Locate your Group.id
 You may only pull data for one practitioner’s roster at a time.
 
-You can do this by sending a GET request to the Group endpoint to retrieve the [Attribution Group](https://hl7.org/fhir/STU3/group.html) of the Practitioner. Use the Practitioners’ [National Provider Identity (NPI)](https://www.cms.gov/Regulations-and-Guidance/Administrative-Simplification/NationalProvIdentStand/) number as a parameter in this request.
+You can do this by sending a GET request to the Group endpoint to retrieve the [Attribution Group](https://hl7.org/fhir/STU3/group.html) of the practitioner. Use the practitioners’ [National Provider Identity (NPI)](https://www.cms.gov/Regulations-and-Guidance/Administrative-Simplification/NationalProvIdentStand/) number as a parameter in this request.
 
 <div class="ds-c-alert ds-c-alert--hide-icon">
   <div class="ds-c-alert__body ds-u-measure--wide">
-    <p class="ds-c-alert__text">DPC supports the standard <a href="https://www.hl7.org/fhir/search.html">FHIR search protocol</a>. Searching for Patients associated with a given Practitioner makes use of <a href="https://www.hl7.org/fhir/search.html#combining">composite search parameters</a>.</p>
+    <p class="ds-c-alert__text">DPC supports the standard <a href="https://www.hl7.org/fhir/search.html">FHIR search protocol</a>. Searching for patients associated with a given practitioner makes use of <a href="https://www.hl7.org/fhir/search.html#combining">composite search parameters</a>.</p>
   </div>
 </div>
 
-The response will return a [Bundle](https://www.hl7.org/fhir/STU3/bundle.html) resource which contains the attribution groups for the given Practitioner. **You can use the Group.id value of the returned resources to initiate an export job.** Your Group ID can be found by referencing the {id} variable in the resource object of your Group.
+The response will return a [Bundle](https://www.hl7.org/fhir/STU3/bundle.html) Resource which contains the Attribution Groups for the given practitioner. **You can use the Group.id value of the returned resources to initiate an export job.** Your Group ID can be found by referencing the {id} variable in the resource object of your group.
 
 **Example:**
 
