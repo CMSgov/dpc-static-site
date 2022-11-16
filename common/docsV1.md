@@ -13,9 +13,9 @@ Welcome to the Data at the Point of Care (DPC) pilot API program! This documenta
 ------------------
 
 ## Step One: Request Access
-Any Fee-for-Service provider organization or Health IT implementer may [request access](https://sandbox.dpc.cms.gov/users/sign_up) to the sandbox environment and obtain synthetic data by signing-up for an account through the [Sandbox Sign Up / Login](https://sandbox.dpc.cms.gov/users/sign_in) page. You will receive a confirmation email from CMS upon account creation.
+Any Fee-for-Service provider organization or Health IT implementer may <a href="https://sandbox.dpc.cms.gov/users/sign_up" target="_blank" and rel=noopener>request access</a> to the sandbox environment and obtain synthetic data by signing-up for an account through the <a href="https://sandbox.dpc.cms.gov/users/sign_in" target="_blank" and rel=noopener>Sandbox Sign Up / Login</a> page. You will receive a confirmation email from CMS upon account creation.
 
-Once your account has been assigned to an organization, you will be notified with a second email, which will include next steps and an invite to join our [Google Group](https://groups.google.com/g/dpc-api) community. At this time, you may log in to the DPC Portal at [https://dpc.cms.gov](https://dpc.cms.gov) to create your first client token and start your journey with the DPC pilot API!
+Once your account has been assigned to an organization, you will be notified with a second email, which will include next steps and an invite to join our <a href="https://groups.google.com/g/dpc-api" target="_blank" and rel=noopener>Google Group</a> community. At this time, you may log in to the DPC Portal at <a href="https://dpc.cms.gov" target="_blank" and rel=noopener>https://dpc.cms.gov</a> to create your first client token and start your journey with the DPC pilot API!
 
 ## Step Two: Client Tokens
 
@@ -37,7 +37,7 @@ Client tokens help monitor who is accessing the API through your account. A *cli
 
 Your first client token must be created through the DPC Portal.
 
-1. **Log in to your account in the [DPC Portal](https://sandbox.dpc.cms.gov/users/sign_in)** and select <span class="button-ex">+ New Token</span>
+1. **Log in to your account in the <a href="https://sandbox.dpc.cms.gov/users/sign_in" target="_blank" and rel=noopener>DPC Portal</a>** and select <span class="button-ex">+ New Token</span>
 2. **Add a Label:** Title your token with a recognizable name that includes the environment for which you are requesting access
 3. Click "Create Token" to generate your client token
 
@@ -610,11 +610,11 @@ You will need to register practitioners in your organization, register patien
 </div>
 
 ## Load sample data
-The DPC Team has created a collection of sample Practitioner, Patient, and Group Resources which can be used to get started in the sandbox environment. These Resources can be found in our public [GitHub repository](https://github.com/CMSgov/dpc-app/tree/master/src/main/resources) as JSON files. More details included in this [README](https://github.com/CMSgov/dpc-app/blob/master/src/main/resources/README.md) file.
+The DPC Team has created a collection of sample Practitioner, Patient, and Group Resources which can be used to get started in the sandbox environment. These Resources can be found in our public <a href="https://github.com/CMSgov/dpc-app/tree/master/src/main/resources" target="_blank" and rel=noopener>GitHub repository</a> as JSON files. More details included in this <a href="https://github.com/CMSgov/dpc-app/blob/master/src/main/resources/README.md" target="_blank" and rel=noopener>README</a> file.
 
 **Uploading Practitioners:** We have included 4 Practitioner Resources that represent fictitious Practitioners that you can add to your Organization.
 
-**Uploading Patients:** The Beneficiary FHIR Data Server (BFD) maintains a list of 101 patients, along with their MBIs, that can be used for matching existing synthetic data in the sandbox environment. More details and the corresponding data files can be found on the Blue Button 2.0 API’s documentation under [Sample Beneficiaries](https://bluebutton.cms.gov/developers/#sample-beneficiaries).
+**Uploading Patients:** The Beneficiary FHIR Data Server (BFD) maintains a list of 101 patients, along with their MBIs, that can be used for matching existing synthetic data in the sandbox environment. More details and the corresponding data files can be found on the Blue Button 2.0 API’s documentation under <a href="https://bluebutton.cms.gov/developers/#sample-beneficiaries" target="_blank" and rel=noopener>Sample Beneficiaries</a>.
 
 _Users can provide their own sample FHIR resources that fulfill the required FHIR profiles to DPC, but will need to ensure that all Patient Resources have a Medicare Beneficiary Identifier (MBI) that matches a record in BFD._
 
@@ -750,12 +750,12 @@ Prefer: respond-async
 <a href="#list-all-practitioners" class="ds-u-padding-left--3 guide_sub-link">List all practitioners</a><br />
 <a href="#list-a-specific-practitioner" class="ds-u-padding-left--3 guide_sub-link">List a specific practitioner</a>
 
-Every organization is required to keep a list of [Practitioner](https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-practitioner.html) Resources who are authorized to have access to DPC data. The DPC Team has included four Practitioner Resources that represent fictitious Practitioners that can be added to your Organization.
+Every organization is required to keep a list of <a href="https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-practitioner.html" target="_blank" and rel=noopener>Practitioner</a> Resources who are authorized to have access to DPC data. The DPC Team has included four Practitioner Resources that represent fictitious Practitioners that can be added to your Organization.
 
 ### Add a practitioner
-To register a practitioner at your organization, you must send a FHIR-formatted [Practitioner](https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-practitioner.html) Resource as the BODY of your request. Do not use encoding (raw) when uploading via a POST request to the /Practitioner endpoint.
+To register a practitioner at your organization, you must send a FHIR-formatted <a href="https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-practitioner.html" target="_blank" and rel=noopener>Practitioner</a> Resource as the BODY of your request. Do not use encoding (raw) when uploading via a POST request to the /Practitioner endpoint.
 
-The Practitioner Resource may include additional attributes detailed in the FHIR Implementation Guide within [DPC Practitioner Profile](https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-practitioner.html), but at a minimum must include the practitioner’s:
+The Practitioner Resource may include additional attributes detailed in the FHIR Implementation Guide within <a href="https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-practitioner.html" target="_blank" and rel=noopener>DPC Practitioner Profile</a>, but at a minimum must include the practitioner’s:
 
   - First and last name
   - Type 1 National Provider Identifier (NPI)
@@ -801,7 +801,7 @@ POST /api/v1/Practitioner/$submit
   </code></pre>
 
 ### List all practitioners
-The Practitioner endpoint supports a GET /Practitioner operation, which allows you to retrieve a [bundle](https://www.hl7.org/fhir/STU3/bundle.html) of Practitioner Resources. You will need to retrieve a Practitioner’s NPI when you get to the Attribution section.
+The Practitioner endpoint supports a GET /Practitioner operation, which allows you to retrieve a <a href="https://www.hl7.org/fhir/STU3/bundle.html" target="_blank" and rel=noopener>bundle</a> of Practitioner Resources. You will need to retrieve a Practitioner’s NPI when you get to the Attribution section.
 
 #### Request:
 
@@ -879,12 +879,12 @@ The Practitioner endpoint also supports a GET /Practitioner operation where you
 
 Every organization is required to maintain a list of patients which represent the patient population currently being treated at your facilities. 
 
-Since there is not any preloaded data in DPC’s sandbox, the Beneficiary FHIR Data Server (BFD) maintains a list of 101 Patients, along with their MBIs, that can be used for matching existing synthetic data in the sandbox environment. More details and the corresponding data files can be found on the Blue Button 2.0 API’s documentation under [Sample Beneficiaries](https://bluebutton.cms.gov/developers/#sample-beneficiaries).
+Since there is not any preloaded data in DPC’s sandbox, the Beneficiary FHIR Data Server (BFD) maintains a list of 101 Patients, along with their MBIs, that can be used for matching existing synthetic data in the sandbox environment. More details and the corresponding data files can be found on the Blue Button 2.0 API’s documentation under <a href="https://bluebutton.cms.gov/developers/#sample-beneficiaries" target="_blank" and rel=noopener>Sample Beneficiaries</a>.
 
 ### Add a patient
-To register a patient at your organization, you must create a [Patient](https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html) Resource as a JSON file in FHIR format. The JSON file must be in the BODY of your request with no encoding (raw) when uploading via a POST request to the /Patient endpoint.
+To register a patient at your organization, you must create a <a href="https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html" target="_blank" and rel=noopener>Patient</a> Resource as a JSON file in FHIR format. The JSON file must be in the BODY of your request with no encoding (raw) when uploading via a POST request to the /Patient endpoint.
 
-To create the Patient Resource, the JSON file may include additional attributes detailed in the FHIR Implementation Guide within the [DPC Practitioner Profile](https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html), but at a minimum must include the Patient’s:
+To create the Patient Resource, the JSON file may include additional attributes detailed in the FHIR Implementation Guide within the <a href="https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html" target="_blank" and rel=noopener>DPC Practitioner Profile</a>, but at a minimum must include the Patient’s:
 
 - First and last name
 - Birth date in YYYY-MM-DD
@@ -987,7 +987,7 @@ POST /api/v1/Patient
 ### Add multiple patients
 The Patient endpoint supports a $submit operation, which allows you to upload a bundle of resources for registration in a single batch operation.
 
-Each Patient Resource in your bundle may include additional attributes detailed in the FHIR Implementation Guide within the [DPC Patient Profile](https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html), but at a minimum must satisfy the requirements on how to add a [Patient Resource](#add-a-patient), otherwise a 422 - Unprocessable Entity error will be returned.
+Each Patient Resource in your bundle may include additional attributes detailed in the FHIR Implementation Guide within the <a href="https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html" target="_blank" and rel=noopener>DPC Patient Profile</a>, but at a minimum must satisfy the requirements on how to add a [Patient Resource](#add-a-patient), otherwise a 422 - Unprocessable Entity error will be returned.
 
 <div class="download_btn--container">
   <a href="{{ site.url }}/assets/downloads/patient_bundle.json" target="_blank" rel=noopener class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>Sample patient_bundle.json</a>
@@ -1085,10 +1085,10 @@ The Patient endpoint also supports a GET /Patient operation where you can suppl
 
 <a href="#create-an-attestation" class="ds-u-padding-left--3 guide_sub-link">Create an attestation</a>
 
-CMS requires practitioners to attest that they have a treatment related purpose for adding a patient to their group each time they make a group addition. This is accomplished by submitting an attestation with every request. Attestations are posted as a [Provenance](https://www.hl7.org/fhir/provenance.html) Resource via the X-Provenance header, as outlined in the [FHIR specification](https://www.hl7.org/fhir/implementationguide.html).
+CMS requires practitioners to attest that they have a treatment related purpose for adding a patient to their group each time they make a group addition. This is accomplished by submitting an attestation with every request. Attestations are posted as a <a href="https://www.hl7.org/fhir/provenance.html" target="_blank" and rel=noopener>Provenance</a> Resource via the X-Provenance header, as outlined in the <a href="https://www.hl7.org/fhir/implementationguide.html" target="_blank" and rel=noopener>FHIR specification</a>.
 
 ### Create an attestation
-Details on Provenance Resources are given in the [FHIR implementation guide](https://www.hl7.org/fhir/implementationguide.html), but at a minimum, each attestation must include:
+Details on Provenance Resources are given in the <a href="https://www.hl7.org/fhir/implementationguide.html" target="_blank" and rel=noopener>FHIR implementation guide</a>, but at a minimum, each attestation must include:
 
 - **Timestamp:** Time when attestation was made.
 - **Reason:** Reason for the attestation (currently only: http://hl7.org/fhir/v3/ActReason#TREAT is supported).
@@ -1337,7 +1337,7 @@ Additions are handled through a custom $add operation on the /Group endpoint. Th
 ### Delete a group
 You may want to delete a group if you no longer require data for the patients within the group. This can be done by sending a DELETE request to the /Group endpoint using the unique ID of the group.
 
-Group IDs can be found either at creation or as the result of [locating your Group ID](https://dpc.cms.gov/docsV1#locate-your-groupid).
+Group IDs can be found either at creation or as the result of [locating your Group ID](#locate-your-groupid).
 
 #### Request:
 <pre class="highlight"><code>api/v1/Group?characteristic-value=attributed-to$<span style="color: #045E87;">{Group.id}</span></code></pre>
@@ -1474,7 +1474,7 @@ Users can also submit a Group Resource which completely overwrites the existing 
 ### Locate your Group.id
 You may only pull data for one practitioner’s roster at a time.
 
-You can do this by sending a GET request to the Group endpoint to retrieve the [Attribution Group](https://hl7.org/fhir/STU3/group.html) of the practitioner. Use the practitioners’ [National Provider Identity (NPI)](https://www.cms.gov/Regulations-and-Guidance/Administrative-Simplification/NationalProvIdentStand/) number as a parameter in this request.
+You can do this by sending a GET request to the Group endpoint to retrieve the <a href="https://hl7.org/fhir/STU3/group.html" target="_blank" and rel=noopener>Attribution Group</a> of the practitioner. Use the practitioners’ <a href="https://www.cms.gov/Regulations-and-Guidance/Administrative-Simplification/NationalProvIdentStand/" target="_blank" and rel=noopener>National Provider Identity (NPI)</a> number as a parameter in this request.
 
 <div class="ds-c-alert ds-c-alert--hide-icon">
   <div class="ds-c-alert__body ds-u-measure--wide">
@@ -1482,7 +1482,7 @@ You can do this by sending a GET request to the Group endpoint to retrieve the [
   </div>
 </div>
 
-The response will return a [Bundle](https://www.hl7.org/fhir/STU3/bundle.html) Resource which contains the Attribution Groups for the given practitioner. **You can use the Group.id value of the returned resources to initiate an export job.** Your Group ID can be found by referencing the {id} variable in the resource object of your group.
+The response will return a <a href="https://www.hl7.org/fhir/STU3/bundle.html" target="_blank" and rel=noopener>Bundle</a> Resource which contains the Attribution Groups for the given practitioner. **You can use the Group.id value of the returned resources to initiate an export job.** Your Group ID can be found by referencing the {id} variable in the resource object of your group.
 
 **Example:**
 
@@ -1555,7 +1555,7 @@ The response will return a [Bundle](https://www.hl7.org/fhir/STU3/bundle.html) R
 
 # Export Data
 ------------
-The primary interaction with the DPC pilot API is via the FHIR /Group/$export operation.This allows an organization to export Patient. Coverage, and Explanation of Benefit data in an asynchronous and bulk manner. Details on the FHIR bulk data operations can be found in the [FHIR Bulk Data Specification](https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-group-export.html).
+The primary interaction with the DPC pilot API is via the FHIR /Group/$export operation.This allows an organization to export Patient. Coverage, and Explanation of Benefit data in an asynchronous and bulk manner. Details on the FHIR bulk data operations can be found in the <a href="https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-group-export.html" target="_blank" and rel=noopener>FHIR Bulk Data Specification</a>.
 
 ## Initiate an export job
 In order to start a patient data export job, you will need to locate your Group.id. Locate your Group.id by referencing the {id} variable in the resource object of your group.
@@ -1571,7 +1571,7 @@ In order to start a patient data export job, you will need to locate your Group.
 
 Next, make a GET request to the /Group/$export endpoint with three required headers: an access token, an Accept header, and a Prefer header.
 
-The dollar sign (‘$’) before the word “export” in the URL indicates that the endpoint is an action rather than a resource. The format is defined by the [FHIR Bulk Data Specification](https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-group-export.html).
+The dollar sign (‘$’) before the word “export” in the URL indicates that the endpoint is an action rather than a resource. The format is defined by the <a href="https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-group-export.html" target="_blank" and rel=noopener>FHIR Bulk Data Specification</a>.
 
 ### Request:
 
@@ -1635,7 +1635,7 @@ Each request will follow the same four-step process as an unfiltered request:
 
 The only difference appears in the request of step 2: "start a job to acquire data". We show examples of this step below.
 
-**Dates and times submitted in _since must be listed in the FHIR [Instant](https://www.hl7.org/fhir/datatypes.html#instant) format** (YYYY-MM-DDThh:mm:sss[-/+]zz:zz).
+**Dates and times submitted in _since must be listed in the FHIR <a href="https://www.hl7.org/fhir/datatypes.html#instant" target="_blank" and rel=noopener>Instant</a> format** (YYYY-MM-DDThh:mm:sss[-/+]zz:zz).
 
 * Sample Date: February 20, 2020 12:00 PM EST
 * Instant Format: YYYY-MM-DDThh:mm:sss[-/+]zz:zz
@@ -1656,7 +1656,7 @@ The only difference appears in the request of step 2: "start a job to acquire da
 
 An access token as well as Accept and Prefer headers are required for the Group/{id}all/$export. 
 
-The Prefer header is NOT required for /Patient/{id}/$everything, but it DOES require an X-Provenance header whereas the /Group/{id}/$export endpoint does not. The format is defined by the FHIR Bulk Data Export spec. Consult the [FHIR Datatypes](https://www.hl7.org/fhir/datatypes.html#instant) page for more information.
+The Prefer header is NOT required for /Patient/{id}/$everything, but it DOES require an X-Provenance header whereas the /Group/{id}/$export endpoint does not. The format is defined by the FHIR Bulk Data Export spec. Consult the <a href="https://www.hl7.org/fhir/datatypes.html#instant" target="_blank" and rel=noopener>FHIR Datatypes</a> page for more information.
 
 <div class="ds-c-alert ds-c-alert--warn">
   <div class="ds-c-alert__body"> 
@@ -1775,12 +1775,12 @@ Claims data can be found at the URLs within the output field.
 
 The output includes file integrity information in an extension array. It contains https://dpc.cms.gov/checksum (a checksum in the format algorithm:checksum) and https://dpc.cms.gov/file_length (the file length in bytes).
 
-The number 42 in the example data file URLs is the same job ID from the Content-Location header URL when you initiate an export job. If some of the data cannot be exported due to errors, details of the errors can be found at the URLs in the error field. The errors are provided in [NDJSON](http://ndjson.org/) files as FHIR [OperationOutcome](http://hl7.org/fhir/STU3/operationoutcome.html) resources.
+The number 42 in the example data file URLs is the same job ID from the Content-Location header URL when you initiate an export job. If some of the data cannot be exported due to errors, details of the errors can be found at the URLs in the error field. The errors are provided in <a href="http://ndjson.org/" target="_blank" and rel=noopener>NDJSON</a> files as FHIR <a href="http://hl7.org/fhir/STU3/operationoutcome.html" target="_blank" and rel=noopener>OperationOutcome</a> resources.
 
 
 
 ## Retrieve the NDJSON output file(s)
-To obtain the exported explanation of benefit data, a GET request is made to the output URLs in the job status response when the job reaches the Completed state. The data will be presented as an [NDJSON](http://ndjson.org/) file of ExplanationOfBenefit Resources.
+To obtain the exported explanation of benefit data, a GET request is made to the output URLs in the job status response when the job reaches the Completed state. The data will be presented as an <a href="http://ndjson.org/" target="_blank" and rel=noopener>NDJSON</a> file of ExplanationOfBenefit Resources.
 
 <div class="ds-c-alert ds-c-alert--warn">
   <div class="ds-c-alert__body">
