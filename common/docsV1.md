@@ -698,7 +698,7 @@ Accept: application/fhir+json
 Prefer: respond-async
 </code></pre>
 
-#### cURL Command
+#### cURL command
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Organization/{id}
      -H 'Authorization: Bearer {access_token}' \
      -H 'Accept: application/fhir+json' \
@@ -1652,7 +1652,7 @@ The only difference appears in the request of step 2: "start a job to acquire da
   </div>
 </div>
 
-![alt](/assets/images/since-example.png)
+<img src="/assets/images/since-example.png" alt="alt" style="max-width:661px">
 
 An access token as well as Accept and Prefer headers are required for the Group/{id}all/$export. 
 
@@ -2097,7 +2097,7 @@ Learn more about the HL7 FHIR Specification for:
 
 <pre class="highlight"><code>GET /api/v1/Patient/<span style="color: #045E87;">{id}</span>/$everything</code></pre>
 
-**cURL Command**
+**cURL command**
 
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Patient/<span style="color: #045E87;">{id}</span>/$everything
      -H 'Authorization: Bearer <span style="color: #045E87;">{access_token}</span>' \
