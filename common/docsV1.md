@@ -19,7 +19,7 @@ Once your account has been assigned to an organization, you will be notified wit
 
 ## Step Two: Client Tokens
 
-<a href="#create-client-token" class="ds-u-padding-left--3 guide_sub-link">Create your first client token</a><br />
+<a href="#create-client-token" class="ds-u-padding-left--3 guide_sub-link">Create client token</a><br />
 <a href="#create-multiple-client-tokens" class="ds-u-padding-left--3 guide_sub-link">Create multiple client tokens</a><br />
 <a href="#list-all-client-tokens" class="ds-u-padding-left--3 guide_sub-link">List all client tokens</a><br />
 <a href="#delete-client-tokens" class="ds-u-padding-left--3 guide_sub-link">Delete client tokens</a>
