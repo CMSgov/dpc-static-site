@@ -379,7 +379,7 @@ A JSON Web Token (JWT) authenticates your organization with DPC.
 Complete the following steps to generate your JWT via the JWT Tool.
 
 <div class="download_btn--container">
-  <a href="{{ site.url }}/assets/downloads/jwt/jwt.html" class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>
+  <a href="{{ site.url }}/assets/downloads/jwt/jwt.html" target="_blank" rel=noopener class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>
     JWT Tool Download
   </a>
 </div>
@@ -781,7 +781,7 @@ The Practitioner endpoint supports a $submit operation, which allows you to uplo
 Each individual Practitioner Resource in your bundle must satisfy the requirements on how to add a [Practitioner Resource](#add-a-practitioner), otherwise a 422-Unprocessable Entity error will be returned.
 
 <div class="download_btn--container">
-  <a href="{{ site.url }}/assets/downloads/practitioner_bundle.json" class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>Sample practitoner_bundle.json</a>
+  <a href="{{ site.url }}/assets/downloads/practitioner_bundle.json" target="_blank" rel=noopener class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>Sample practitoner_bundle.json</a>
 </div>
 
 #### Request:
@@ -990,7 +990,7 @@ The Patient endpoint supports a $submit operation, which allows you to upload a�
 Each Patient Resource in your bundle may include additional attributes detailed in the FHIR Implementation Guide within the [DPC Patient Profile](https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html), but at a minimum must satisfy the requirements on how to add a [Patient Resource](#add-a-patient), otherwise a 422 - Unprocessable Entity error will be returned.
 
 <div class="download_btn--container">
-  <a href="{{ site.url }}/assets/downloads/patient_bundle.json" class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>Sample patient_bundle.json</a>
+  <a href="{{ site.url }}/assets/downloads/patient_bundle.json" target="_blank" rel=noopener class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>Sample patient_bundle.json</a>
 </div>
 
 #### Request:
@@ -1478,7 +1478,7 @@ You can do this by sending a GET request to the Group endpoint to retrieve the [
 
 <div class="ds-c-alert ds-c-alert--hide-icon">
   <div class="ds-c-alert__body ds-u-measure--wide">
-    <p class="ds-c-alert__text">DPC supports the standard <a href="https://www.hl7.org/fhir/search.html">FHIR search protocol</a>. Searching for patients associated with a given practitioner makes use of <a href="https://www.hl7.org/fhir/search.html#combining">composite search parameters</a>.</p>
+    <p class="ds-c-alert__text">DPC supports the standard <a href="https://www.hl7.org/fhir/search.html" target="_blank" rel=noopener>FHIR search protocol</a>. Searching for patients associated with a given practitioner makes use of <a href="https://www.hl7.org/fhir/search.html#combining" target="_blank" rel=noopener>composite search parameters</a>.</p>
   </div>
 </div>
 
@@ -1662,7 +1662,7 @@ The Prefer header is NOT required for /Patient/{id}/$everything, but it DOES req
   <div class="ds-c-alert__body"> 
     <h3 class="ds-c-alert__heading">Be wary of requesting data from before 02-12-2020</h3>
     <p class="ds-c-alert__text">
-      Due to limitations in the Beneficiary FHIR Data (BFD) Server, data from before 02-12-2020 is marked with the arbitrary <a href="https://www.hl7.org/fhir/search.html#lastUpdated">lastUpdated</a> date of 01-01-2020. If you input dates between 01-01-2020 and 02-11-2020 in the _since parameter, you will receive all historical data for your beneficiaries. Data loads from 02-12-2020 onwards have been marked with accurate dates.
+      Due to limitations in the Beneficiary FHIR Data (BFD) Server, data from before 02-12-2020 is marked with the arbitrary <a href="https://www.hl7.org/fhir/search.html#lastUpdated" target="_blank" rel=noopener>lastUpdated</a> date of 01-01-2020. If you input dates between 01-01-2020 and 02-11-2020 in the _since parameter, you will receive all historical data for your beneficiaries. Data loads from 02-12-2020 onwards have been marked with accurate dates.
     </p>
   </div>
 </div>
@@ -2064,7 +2064,7 @@ To obtain the exported explanation of benefit data, a GET request is made to the
 This collection contains example requests to public endpoints for the DPC API. To use this collection, you must have the Postman App downloaded onto your computer. This will include the collection of requests, the sandbox environment, and global variables to be imported into your Postman App.
 
 <div class="download_btn--container">
-  <a href="{{ site.url }}/assets/downloads/postman.zip" class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>Postman Collection Download</a>
+  <a href="{{ site.url }}/assets/downloads/postman.zip" class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" target="_blank" rel=noopener download>Postman Collection Download</a>
 </div>
 
 1. Select the environment (top right): Data at the Point of Care Sandbox
@@ -2089,9 +2089,9 @@ This request requires an X-Provenance header for attestation ([see example](#exa
 
 Learn more about the HL7 FHIR Specification for:
 
-[Operation Patient Everything  (Release v4)](http://hl7.org/fhir/R4/operation-patient-everything.html)
+<a href="http://hl7.org/fhir/R4/operation-patient-everything.html" target="_blank" and rel=noopener>Operation Patient Everything  (Release v4)</a>
 
-[Operation Patient Everything  (Release v3)](http://hl7.org/fhir/STU3/operation-patient-everything.html)
+<a href="http://hl7.org/fhir/STU3/operation-patient-everything.html" target="_blank" and rel=noopener>Operation Operation Patient Everything  (Release v3)</a>
 
 **Request**
 
