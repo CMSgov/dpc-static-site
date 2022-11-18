@@ -378,12 +378,11 @@ A JSON Web Token (JWT) authenticates your organization with DPC.
 
 Complete the following steps to generate your JWT via the JWT Tool.
 
-<div class="download_btn--container">
+<div class="download_btn--container ds-u-margin-bottom--3">
   <a href="{{ site.url }}/assets/downloads/jwt/jwt.html" target="_blank" rel=noopener class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>
     JWT Tool Download
   </a>
 </div>
-</br>
 
 <div class="ds-c-alert ds-c-alert--warn">
   <div class="ds-c-alert__body">
