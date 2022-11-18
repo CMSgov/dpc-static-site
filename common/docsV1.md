@@ -37,9 +37,9 @@ Client tokens help monitor who is accessing the API through your account. A *cli
 
 Your first client token must be created through the DPC Portal.
 
-1. **Log in to your account in the <a href="https://sandbox.dpc.cms.gov/users/sign_in" target="_blank" and rel=noopener>DPC Portal</a>** and select <span class="button-ex">+ New Token</span>
-2. **Add a Label:** Title your token with a recognizable name that includes the environment for which you are requesting access
-3. Click "Create Token" to generate your client token
+1. **Log in to your account in the <a href="https://sandbox.dpc.cms.gov/users/sign_in" target="_blank" and rel=noopener>DPC Portal</a>** and select <span class="button-ex">+ New Token</span>.
+2. **Add a Label:** Title your token with a recognizable name that includes the environment for which you are requesting access.
+3. Click "Create Token" to generate your client token.
 
 ![Client Token](/assets/images/guide_client_token.svg)
 
@@ -112,7 +112,7 @@ The response from the API will include the client_token in the token field.
 ~~~
 
 ### List all client tokens
-If you have created multiple client tokens, you may want to list them to reference ID’s, expiration dates, or delete specific client tokens from your account in the DPC Portal.
+If you have created multiple client tokens, you may want to list them to reference IDs, expiration dates, or delete specific client tokens from your account in the DPC Portal.
 
 All client tokens registered by your organization for a given environment can be listed by making a GET request to the /Token endpoint. This will return a list of token IDs with details on when they were created, when they expire, and the label associated with that token.
 
@@ -190,11 +190,11 @@ Client_token IDs can be found either at creation or as the result of [listing cl
 
 Public keys verify that client token requests are coming from an authorized application. This is by verifying that the private key used to sign your JSON Web Token (JWT) also matches a public key previously uploaded to DPC. Please complete the upload of your public key + signature through the DPC Portal.
 
-**ALL files** (private.pem, public.pem, snippet.txt, snippet.txt.sig, signature.sig files) **in this section must be stored in ONE folder.**
+**ALL files** (e.g. private.pem, public.pem, snippet.txt, snippet.txt.sig, signature.sig files) **in this section must be stored in ONE folder.**
 
 ### Upload your first public key
 
-**1. Generate a private key**
+**1. Generate a private key.**
 
 - Use the command invocation:
 
@@ -210,7 +210,7 @@ Public keys verify that client token requests are coming from an authorized appl
   </div>
 </div>
 
-**2. Generate a public key**
+**2. Generate a public key.**
 
 - Use the command invocation:
 
@@ -275,13 +275,13 @@ Public keys verify that client token requests are coming from an authorized appl
 
 **5. Paste the contents** of your verified public key signature (signature.txt file) into the ‘Public Key Signature’ field in your DPC Account.
 
-**6. Click Add Key** to upload your public key.
+**6. Click "Add Key"** to upload your public key.
 
 - <p>If you see the error message stating, "Unable to verify your public key" after uploading your public key, re-download the snippet.txt file using the command stated in <a href="#create-a-public-key-signature" class="guide_sub-link">Step 1</a>, and re-generate your public key and signature pair.</p>
 
 
 ### List all public keys
-If you have created multiple public keys, you may want to list them to reference ID’s, check expiration dates, or delete specific public keys from your account in the DPC Portal.
+If you have created multiple public keys, you may want to list them to reference IDs, check expiration dates, or delete specific public keys from your account in the DPC Portal.
 
 All public keys registered by your organization for an environment can be listed by making a GET request to the /Key endpoint. This will return a list of public key IDs with details on when they were created, when they expire, and the label associated with that key.
 
@@ -318,7 +318,7 @@ The response from the API will include the client_token in the token field.
 ~~~
 
 ### List a specific public key
-If you have created multiple public keys, you may want to confirm the expiration date or content of a single public key from your account in the DPC portal.
+If you have created multiple public keys, you may want to confirm the expiration date or content of a single public key from your account in the DPC Portal.
 
 Specific public keys can be listed by making a GET request to the /Key endpoint using the unique id of the public key.
 
@@ -383,6 +383,7 @@ Complete the following steps to generate your JWT via the JWT Tool.
     JWT Tool Download
   </a>
 </div>
+</br>
 
 <div class="ds-c-alert ds-c-alert--warn">
   <div class="ds-c-alert__body">
@@ -394,11 +395,11 @@ Complete the following steps to generate your JWT via the JWT Tool.
 
 1. Input your Private Key.
 2. Input your Client Token.
-3. Input your Public Key ID
+3. Input your Public Key ID.
     * This ID can be found under the "Public Keys” section in your DPC Portal.
 ![Public Key Id - The public key id is found underneath the key's label.](/assets/images/guide_public_key_id.svg)
-4. Click "Generate JWT"
-5. Copy "Your JWT" to begin validation for DPC
+4. Click "Generate JWT".
+5. Copy "Your JWT" to begin validation for DPC.
 
 Complete the following steps to generate your own JWT.
 1. Generate your JWT payload.
@@ -418,6 +419,7 @@ Complete the following steps to generate your own JWT.
   “kid”: “{public_key_id}”
 }
 ~~~
+3. Sign your JWT with your header and private key.
 
 ### Validate a JSON web token for DPC
 The DPC API supports a /Token/validate endpoint, which allows you to submit your signed JWT for DPC validation. If the fields do not contain the required requests, the response will return an error message with details as to which claims or values on the JWT are missing or incorrect.
@@ -425,7 +427,7 @@ The DPC API supports a /Token/validate endpoint, which allows you to submit your
 <div class="ds-c-alert ds-c-alert--warn">
   <div class="ds-c-alert__body">
     <p class="ds-c-alert__text">
-      This method DOES NOT validate the JWT signature, public key, or client tokens. It merely verifies that the necessary elements are present in the JWT entity
+      This method DOES NOT validate the JWT signature, public key, or client tokens. It merely verifies that the necessary elements are present in the JWT entity.
     </p>
   </div>
 </div>
@@ -445,7 +447,7 @@ POST /api/v1/Token/validate
      -d <span style="color: #045E87;">"{Signed JWT}"</span></code></pre>
 
 #### Response:
-The response from the API will return with a HTTP 200 if the JWT is valid, otherwise an error message will be returned.
+The response from the API will return with a HTTP 200 if the JWT is valid; otherwise, an error message will be returned.
 
 ## Step Five: Access/Bearer Token
 
@@ -534,7 +536,7 @@ The endpoint response is a JSON object which contains the access token, the life
 You can create multiple access tokens with the same valid JWT. However, once your access token expires, you will likely need to generate a new JWT using the JWT Tool or create your own JWT to refresh your access token.
 
 ### Obtain a bearer_token
-To obtain your bearer_token, set your access_token returned in the previous section as your bearer_token. You will need to set the "{access_token value}" from the previous response as a header in most of your API calls preceded by the word Bearer and a space.
+To obtain your bearer_token, set your access_token returned in the previous section as your bearer_token. You will need to set the "{access_token value}" from the previous response as a header in most of your API calls preceded by the word *Bearer* and a space.
 
 As access tokens expire, you will need to generate new tokens. You will not need to create new JWT’s to create a new access token, unless you are making a call with a different client token or public key.
 
@@ -610,7 +612,7 @@ You will need to register practitioners in your organization, register patien
 </div>
 
 ## Load sample data
-The DPC Team has created a collection of sample Practitioner, Patient, and Group Resources which can be used to get started in the sandbox environment. These Resources can be found in our public <a href="https://github.com/CMSgov/dpc-app/tree/master/src/main/resources" target="_blank" and rel=noopener>GitHub repository</a> as JSON files. More details included in this <a href="https://github.com/CMSgov/dpc-app/blob/master/src/main/resources/README.md" target="_blank" and rel=noopener>README</a> file.
+The DPC Team has created a collection of sample Practitioner, Patient, and Group Resources which can be used to get started in the sandbox environment. These resources can be found in our public <a href="https://github.com/CMSgov/dpc-app/tree/master/src/main/resources" target="_blank" and rel=noopener>GitHub repository</a> as JSON files. More details included in this <a href="https://github.com/CMSgov/dpc-app/blob/master/src/main/resources/README.md" target="_blank" and rel=noopener>README</a> file.
 
 **Uploading Practitioners:** We have included 4 Practitioner Resources that represent fictitious Practitioners that you can add to your Organization.
 
@@ -750,7 +752,7 @@ Prefer: respond-async
 <a href="#list-all-practitioners" class="ds-u-padding-left--3 guide_sub-link">List all practitioners</a><br />
 <a href="#list-a-specific-practitioner" class="ds-u-padding-left--3 guide_sub-link">List a specific practitioner</a>
 
-Every organization is required to keep a list of <a href="https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-practitioner.html" target="_blank" and rel=noopener>Practitioner</a> Resources who are authorized to have access to DPC data. The DPC Team has included four Practitioner Resources that represent fictitious Practitioners that can be added to your Organization.
+Every organization is required to keep a list of <a href="https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-practitioner.html" target="_blank" and rel=noopener>Practitioner</a> Resources who are authorized to have access to DPC data. The DPC Team has included four Practitioner Resources that represent fictitious practitioners that can be added to your organization.
 
 ### Add a practitioner
 To register a practitioner at your organization, you must send a FHIR-formatted <a href="https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-practitioner.html" target="_blank" and rel=noopener>Practitioner</a> Resource as the BODY of your request. Do not use encoding (raw) when uploading via a POST request to the /Practitioner endpoint.
@@ -778,7 +780,7 @@ POST /api/v1/Practitioner
 ### Add Multiple Practitioners
 The Practitioner endpoint supports a $submit operation, which allows you to upload a bundle of resources for registration in a single batch operation.
  
-Each individual Practitioner Resource in your bundle must satisfy the requirements on how to add a [Practitioner Resource](#add-a-practitioner), otherwise a 422-Unprocessable Entity error will be returned.
+Each individual Practitioner Resource in your bundle must satisfy the requirements on how to add a [Practitioner Resource](#add-a-practitioner); otherwise, a 422-Unprocessable Entity error will be returned.
 
 <div class="download_btn--container">
   <a href="{{ site.url }}/assets/downloads/practitioner_bundle.json" target="_blank" rel=noopener class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>Sample practitoner_bundle.json</a>
@@ -884,7 +886,7 @@ Since there is not any preloaded data in DPC’s sandbox, the Beneficiary FHIR D
 ### Add a patient
 To register a patient at your organization, you must create a <a href="https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html" target="_blank" and rel=noopener>Patient</a> Resource as a JSON file in FHIR format. The JSON file must be in the BODY of your request with no encoding (raw) when uploading via a POST request to the /Patient endpoint.
 
-To create the Patient Resource, the JSON file may include additional attributes detailed in the FHIR Implementation Guide within the <a href="https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html" target="_blank" and rel=noopener>DPC Practitioner Profile</a>, but at a minimum must include the Patient’s:
+To create the Patient Resource, the JSON file may include additional attributes detailed in the FHIR Implementation Guide within the <a href="https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html" target="_blank" and rel=noopener>DPC Practitioner Profile</a>, but at a minimum must include the patient’s:
 
 - First and last name
 - Birth date in YYYY-MM-DD
@@ -987,7 +989,7 @@ POST /api/v1/Patient
 ### Add multiple patients
 The Patient endpoint supports a $submit operation, which allows you to upload a bundle of resources for registration in a single batch operation.
 
-Each Patient Resource in your bundle may include additional attributes detailed in the FHIR Implementation Guide within the <a href="https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html" target="_blank" and rel=noopener>DPC Patient Profile</a>, but at a minimum must satisfy the requirements on how to add a [Patient Resource](#add-a-patient), otherwise a 422 - Unprocessable Entity error will be returned.
+Each Patient Resource in your bundle may include additional attributes detailed in the FHIR Implementation Guide within the <a href="https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html" target="_blank" and rel=noopener>DPC Patient Profile</a>, but at a minimum must satisfy the requirements on how to add a [Patient Resource](#add-a-patient); otherwise, a 422 - Unprocessable Entity error will be returned.
 
 <div class="download_btn--container">
   <a href="{{ site.url }}/assets/downloads/patient_bundle.json" target="_blank" rel=noopener class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" download>Sample patient_bundle.json</a>
@@ -1097,7 +1099,7 @@ Details on Provenance Resources are given in the <a href="https://www.hl7.org/fh
 - **Practitioner ID:** The practitioner attached to the attestation referenced by their Practitioner ID.
   - _Your Practitioner ID can be found by referencing the {id} variable in the resource object of your practitioner._
 
-The attestation is then included in the X-Provenance header as part of any operations which add patients to the Group resource.
+The attestation is then included in the X-Provenance header as part of any operations which add patients to the Group Resource.
 
 ### Example attestation for X-Provenance header
 
@@ -1353,7 +1355,7 @@ Group IDs can be found either at creation or as the result of [locating your Gr
 <pre class="highlight"><code>200 - Group was removed</code></pre>
 
 ### Removing patients from a group
-Removals are handled through a custom remove operation on the /Group endpoint. This takes the members listed into a given resource and removes them from the existing Group.
+Removals are handled through a custom remove operation on the /Group endpoint. This takes the members listed into a given resource and removes them from the existing group.
 
 <div class="ds-c-alert ds-c-alert--warn">
   <div class="ds-c-alert__body">
@@ -1555,7 +1557,7 @@ The response will return a <a href="https://www.hl7.org/fhir/STU3/bundle.html" t
 
 # Export Data
 ------------
-The primary interaction with the DPC pilot API is via the FHIR /Group/$export operation.This allows an organization to export Patient. Coverage, and Explanation of Benefit data in an asynchronous and bulk manner. Details on the FHIR bulk data operations can be found in the <a href="https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-group-export.html" target="_blank" and rel=noopener>FHIR Bulk Data Specification</a>.
+The primary interaction with the DPC pilot API is via the FHIR /Group/$export operation. This allows an organization to export Patient, Coverage, and Explanation of Benefit data in an asynchronous and bulk manner. Details on the FHIR bulk data operations can be found in the <a href="https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-group-export.html" target="_blank" and rel=noopener>FHIR Bulk Data Specification</a>.
 
 ## Initiate an export job
 In order to start a patient data export job, you will need to locate your Group.id. Locate your Group.id by referencing the {id} variable in the resource object of your group.
@@ -1585,7 +1587,7 @@ The dollar sign (‘$’) before the word “export” in the URL indicates that
      -H 'Prefer: respond-async'</code></pre>
 
 ### Response:
-If the request was successful, a 202 Accepted response code will be returned with a Content-Location header. The value of this header indicates the location to monitor your job status and outcomes. The value of the header also contains the Export Job ID of the Job. There is no BODY to the Response, only headers.
+If the request was successful, a 202 Accepted response code will be returned with a Content-Location header. The value of this header indicates the location to monitor your job status and outcomes. The value of the header also contains the Export Job ID of the Job. There is no BODY to the response, only headers.
 
 **Example:**
 <pre class="highlight"><code>Content-Location: https://sandbox.dpc.cms.gov/api/v1/Jobs/<span style="color: #045E87;">{unique ID of export job}</span></code></pre>
@@ -1621,17 +1623,17 @@ You can filter data using the _since parameter with either the /Patient or /Grou
 
 
 **You can make two types of filtered requests for data:**
-1. Request the most recent data for all beneficiaries: [Use _since within the /Group endpoint](#requesting-data-using-_since-with-the-group-endpoint)
-2. Request data synchronously for an individual patient: [Use _since within the /Patient endpoint](#requesting-data-using-_since-with-the-patient-endpoint)
+1. Request the most recent data for all beneficiaries: [Use _since within the /Group endpoint](#requesting-data-using-_since-with-the-group-endpoint).
+2. Request data synchronously for an individual patient: [Use _since within the /Patient endpoint](#requesting-data-using-_since-with-the-patient-endpoint).
 
 ### Steps
 
 Each request will follow the same four-step process as an unfiltered request:
 
-1. Obtain an access token
-2. Start a job to acquire data (you will input the _since parameter here)
-3. Check the job status
-4. Download the data
+1. Obtain an access token.
+2. Start a job to acquire data (you will input the _since parameter here).
+3. Check the job status.
+4. Download the data.
 
 The only difference appears in the request of step 2: "start a job to acquire data". We show examples of this step below.
 
@@ -2070,11 +2072,9 @@ This collection contains example requests to public endpoints for the DPC API. T
 1. Select the environment (top right): Data at the Point of Care Sandbox
 2. Please fill in the following values:
     - client_token: Your [client token](#step-two-client-tokens) is generated through the DPC Portal. Be sure to save a copy of your token in a safe place.
-    - PRIVATE_KEY: Paste the contents of your private key in the `PRIVATE_KEY` field of your local Postman sandbox environment. Do not share your private key otherwise. If you do not already have your public and private keys, please generate your [public/private](#step-three-public-keys) key pair through the DPC portal.
+    - PRIVATE_KEY: Paste the contents of your private key in the `PRIVATE_KEY` field of your local Postman sandbox environment. Do not share your private key otherwise. If you do not already have your public and private keys, please generate your [public/private](#step-three-public-keys) key pair through the DPC Portal.
     - key-id: This is the DPC ID of your public key, which is returned to you when the public key is uploaded to the DPC Portal. You need this to generate a JWT, which will be exchanged for an access token.
 3. With these three values in place, the JWT and a fresh access token are automatically generated for you before each request in this Postman collection to prevent you from having to manually refresh the access token every five minutes while using the collection. You may occasionally receive a 401 error message regarding invalid credentials. If this happens, please try your request a second time.
-
-With these 3 values in place, the JWT and a fresh access token are automatically generated for you before each request in this Postman collection to prevent you from having to manually refresh the access token every 5 minutes while using the collection. You may occasionally  receive a 401 error message regarding invalid credentials. If this happens, please try your request a second time.
 
 Additional instructions and details can be found within the description of each request in the Postman collection. These can be viewed by clicking the drop-down arrow next to each request title.
 
