@@ -613,7 +613,7 @@ You will need to register practitioners in your organization, register patien
 ## Load sample data
 The DPC Team has created a collection of sample Practitioner, Patient, and Group Resources which can be used to get started in the sandbox environment. These resources can be found in our public <a href="https://github.com/CMSgov/dpc-app/tree/master/src/main/resources" target="_blank" and rel=noopener>GitHub repository</a> as JSON files. More details included in this <a href="https://github.com/CMSgov/dpc-app/blob/master/src/main/resources/README.md" target="_blank" and rel=noopener>README</a> file.
 
-**Uploading Practitioners:** We have included four Practitioner Resources that represent fictitious Practitioners that you can add to your Organization.
+**Uploading Practitioners:** We have included four Practitioner Resources that represent fictitious practitioners that you can add to your organization.
 
 **Uploading Patients:** The Beneficiary FHIR Data Server (BFD) maintains a list of 101 patients, along with their MBIs, that can be used for matching existing synthetic data in the sandbox environment. More details and the corresponding data files can be found on the Blue Button 2.0 API’s documentation under <a href="https://bluebutton.cms.gov/developers/#sample-beneficiaries" target="_blank" and rel=noopener>Sample Beneficiaries</a>.
 
