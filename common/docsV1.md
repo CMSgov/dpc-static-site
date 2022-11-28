@@ -2,7 +2,7 @@
 layout: page-sidenav
 title: DPC Documentation
 banner_title: Documentation
-permalink: /docsV1
+permalink: /docsV1.html
 id: docsV1
 side_nav_items: guide1_nav
 ---
