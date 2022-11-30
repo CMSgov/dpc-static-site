@@ -1,7 +1,7 @@
 ---
 layout: page-tos
 title: Terms of service
-permalink: /terms-of-service
+permalink: /terms-of-service.html
 id: tos
 ---
 *Last updated: 8/19/21*
