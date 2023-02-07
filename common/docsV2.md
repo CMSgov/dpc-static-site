@@ -2,7 +2,7 @@
 layout: page-sidenav
 title: DPC Documentation
 banner_title: Documentation
-permalink: /docsV2
+permalink: /docsV2.html
 id: docsV2
 button: Sign Up for Sandbox
 button_url: https://sandbox.dpc.cms.gov/users/sign_in
