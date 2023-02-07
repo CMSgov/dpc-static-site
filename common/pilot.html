@@ -2,7 +2,7 @@
 layout: page-sidenav
 title: About the Pilot
 banner_title: About the Pilot
-permalink: /pilot
+permalink: /pilot.html
 id: pilot
 button: Email DPC to Request Production Access
 button_url: mailto:DPCINFO@cms.hhs.gov
@@ -12,11 +12,11 @@ side_nav_items: pilot_nav
 <h1 id="about-the-pilot">About the DPC Pilot</h1>
 
 <div>
-  The Centers for Medicare and Medicaid Services (CMS) Data at the Point of Care (DPC) API is currently in a pilot phase in which a limited number of users can access Medicare Fee-For-Service claims data through the API once their solution has been approved for production. This pilot program promotes the industry-standard HL7 Fast Healthcare Interoperability Resources (FHIR), specifically the Bulk FHIR specification.
+  The Centers for Medicare & Medicaid Services (CMS) Data at the Point of Care (DPC) API is currently in a pilot phase in which a limited number of customers can access Medicare Fee-For-Service claims data through the API once their solution has been approved for production. This pilot program promotes the industry-standard HL7 Fast Healthcare Interoperability Resources (FHIR), specifically the Bulk FHIR specification.
 </div>
 
 <div>
-  Since the pilot is a learning experience for both CMS and users, participants in the pilot program may encounter breaking changes to code, iterations to regulations, and will be asked to participate in research sessions with CMS as the program continues to grow and evolve. 
+  Since the pilot is a learning experience for both CMS and customers, participants in the pilot program may encounter breaking changes to code, iterations to regulations, and will be asked to participate in research sessions with CMS as the program continues to grow and evolve. 
 </div>
 
 <div>
@@ -29,60 +29,56 @@ side_nav_items: pilot_nav
   If interested in implementing DPC on behalf of healthcare organizations, please begin by following the steps below.
 </div>
 
-<h2 class="pilot-page-header" id="test-api">1. Test the API</h2>
-
-<div>
-  Health IT implementers are asked to test and develop a solution in the sandbox environment using synthetic data before applying for production credentials.
-</div>
-
-<div class="banner-btn__container">
-  <a href="{{ site.sbx_sign_in }}" class="banner-btn">Sandbox Sign Up / Login</a>
-</div>
+<h1 id="test-api">Test the API</h1>
 
 <ol>
   <li>
-    Review and agree to the <a href="https://dpc.cms.gov/terms-of-service">Terms of Service</a>.
+    Request access to the DPC Sandbox Environment through <a href="https://sandbox.dpc.cms.gov/users/sign_in" target="_blank" rel=noopener>Sandbox Sign Up / Login.</a>
   </li>
   <li>
-    Upload synthetic data from DPC’s public <a href="https://github.com/CMSgov/dpc-app/tree/master/src/main/resources">GitHub repository</a>. More details included in this <a href="https://github.com/CMSgov/dpc-app/blob/master/src/main/resources/README.md">README</a> file.
+    Upload synthetic data from DPC’s public <a href="https://github.com/CMSgov/dpc-app/tree/master/src/main/resources" target="_blank" rel=noopener>GitHub repository</a>. More details included in this <a href="https://github.com/CMSgov/dpc-app/blob/master/src/main/resources/README.md">README</a> file.
   </li>
   <li>
-    Reference the following guides to get started:
-      <ol>
-        <li>
-          <a href="https://dpc.cms.gov/docs">DPC Documentation</a>
-        </li>
-        <li>
-          <a href="https://www.hl7.org/fhir/">HL7 FHIR Standards</a>
-        </li>
-        <li>
-          <a href="https://bluebutton.cms.gov/assets/ig/index.html">BB2.0 Implementation Guide</a>
-        </li>
-      </ol>
+    Develop and test a solution in the sandbox environment using synthetic data.
+  </li>
+</ol>
+Reference the following guides to get started:
+<ol>
+  <li>
+    <a href="https://dpc.cms.gov/docsV1" target="_blank" rel=noopener>DPC Documentation</a>
+  </li>
+  <li>
+    <a href="https://www.hl7.org/fhir/" target="_blank" rel=noopener>HL7 FHIR Standards</a>
+  </li>
+  <li>
+    <a href="https://bluebutton.cms.gov/assets/ig/index.html" target="_blank" rel=noopener>BB2.0 Implementation Guide</a>
   </li>
 </ol>
 
 
-<h2 class="pilot-page-header" id="apply-for-production">2. Apply for Production Credentials</h2>
+<h1 id="apply-for-production">Apply for Production Credentials</h1>
 
-After testing and developing a DPC solution in the sandbox environment:
+After developing and testing a DPC solution in the sandbox environment, complete the steps below.
 
-<h3 id="join-prod-queue">a. Join the Production Pilot Queue</h3>
+<h2 id="join-prod-queue">1. Request to Join the Production Pilot Queue</h2>
 
-When you're ready to request production access, please <a href={{ site.email_register }} target="_blank" rel=noopener>email</a> the DPC team. You will receive a follow-up email from the DPC team when it is your turn to onboard. Depending on the backlog of organizations, this may mean that your organization will sit in the queue for a few weeks before it is your turn to onboard.
+When you're ready to request production access, please <a href={{ site.email_register }} target="_blank" rel=noopener>email</a> the DPC Team. You will receive a follow-up email from the DPC Team when it is your turn to onboard.
 
 
-<div class="ds-c-alert ds-u-margin-bottom--5 ds-c-alert--warn">
+<div class="ds-c-alert ds-c-alert--warn" role="region">
   <div class="ds-c-alert__body">
+    <span class="ds-c-alert__a11y-label ds-u-visibility--screen-reader">
+      Warning:
+    </span>
     <p class="ds-c-alert__text">
-      Please do not plan to fill out the application unless your organization has tested your solution in sandbox and is able to share security documentation with CMS.
+      Please do not fill out the application unless your organization has tested your solution in sandbox and is able to share security documentation with CMS.
     </p>
   </div>
 </div>
 
-<h3 id="demo-dpc">b. Schedule a Demonstration with the DPC team</h3>
+<h2 id="demo-dpc">2. Schedule a Demonstration with the DPC Team</h2>
 
-In the email following up on your application to the pilot program, you will receive a link to schedule a demonstration of your DPC solution with the DPC team.
+After you request production access, you will receive an email about scheduling a demonstration of your DPC solution with the DPC Team.
 
 <div class="usa-accordion usa-accordion--bordered" id="how-to-prepare-for-demo">
   <h2 class="usa-accordion__heading" id="accordion__demo-prep">
@@ -94,7 +90,15 @@ In the email following up on your application to the pilot program, you will rec
     Please be prepared to answer the following questions:
     <ul>
       <li>
-        Walk us through the end-to-end workflow. How will practitioners see the data in your system?
+        Walk us through the end-to-end workflow.
+        <ul>
+          <li>
+            How do you attribute patients to practitioners?
+          </li>
+          <li>
+            How will practitioners see the data in your system?
+          </li>
+        </ul>
       </li>
       <li>
         How frequently will your organization make requests to the API? How quickly will you need the data returned?
@@ -103,19 +107,19 @@ In the email following up on your application to the pilot program, you will rec
         What is your retry logic for requests that fail?
       </li>
       <li>
-        What will you do if you do not receive data back for some of the requested patients? 
+        What will you do if you do not receive data back for some of the requested patients? For example, data for patients outside of the 18-month lookback period for a given provider will not be returned during early phases of the pilot.
       </li>
       <li>
-        How will the data be used? For example, are you using the data for aggregate population reporting, or for insights into the needs of an individual patient? or both?
+        How will the data be used? For example, are you using the data for aggregate population reporting, or for insights into the needs of an individual patient? Or both?
       </li>
       <li>
         Where does the application live? 
       </li>
       <li>
-        Would there be a separate instance if you bring on another practice during pilot or MVP?
+        Would there be a separate instance if you bring on another practice during the pilot?
       </li>
       <li>
-        During onboarding in the early phases of the pilot program, we'll be providing keys directly to the practitioner organization to grant access to production via secure email - we will not be using the same web portal as our sandbox environment. Please consider how to best communicate with the practitioner to securely transfer secrets if necessary.
+        During onboarding, we'll be providing keys directly to the practitioner organization to grant access to production via secure email - we will not be using the same web portal as our sandbox environment. Please consider how to best communicate with the practitioner to securely transfer secrets if necessary.
       </li>
       <li>
         Are you ready for breaking changes during the pilot program?
@@ -133,10 +137,10 @@ In the email following up on your application to the pilot program, you will rec
   </div>
 </div>
 
-<h3 id="upload-security-cred">c. Provide Security Certification</h3>
+<h2 id="upload-security-cred">3. Provide Security Certification</h2>
 
 <div>
-  Health IT implementers preparing to onboard the production environment must provide one of the accepted security certifications below:
+  Prior to onboarding to the production environment, you must provide one of the accepted security certifications below:
 </div>
 
 <div class="usa-accordion usa-accordion--bordered" id="accepted-certifications">
@@ -226,7 +230,7 @@ In the email following up on your application to the pilot program, you will rec
   </div>
 </div>
 
-<h2 class="pilot-page-header" id="onboard-with-dpc">3. Onboard with DPC</h2>
+<h1 id="onboard-with-dpc">Onboard with DPC</h1>
 
 <div>
   The onboarding session will test your DPC solution with production Medicare Fee-For-Service claims data. 
@@ -235,34 +239,34 @@ In the email following up on your application to the pilot program, you will rec
 <div>
   <ol>
     <li>
-      Approximately 2-3 weeks after your successful DPC solution demonstration in the sandbox environment, you will receive an email with information and a link to schedule an onboarding session. In the same email, you will also receive further instructions on production requirements prior to the onboarding date.
+      After your successful DPC solution demonstration in the sandbox environment with the DPC Team, you will receive an email with information about the onboarding session. In the same email, you will also receive further instructions on production requirements prior to the onboarding date.
     </li>
     <li>
       After completing production requirements, you will receive production credentials for the healthcare organization for which you are implementing the DPC solution.
     </li>
     <li>
-      During the live onboarding session, you will receive real-time support from DPC engineers as you demonstrate the following:
-      <ol>
+      During the live onboarding session with the DPC Team, you will receive real-time support from DPC engineers as you demonstrate the following:
+      <ol  type="a">
         <li>
-          Submit a request for data
+          Submit a request for data.
         </li>
         <li>
-          Receive requested data from DPC
+          Receive requested data from DPC.
         </li>
       </ol>
     </li>
   </ol>
 </div>
 
-<h2 id="share-feedback">Share Your Feedback</h2>
+<h1 id="share-feedback">Share Your Feedback</h1>
 
 <div>
   <ol>
     <li>
-      The DPC team is always seeking feedback! Pilot partners will be requested to participate in research sessions where Health IT implementers and healthcare organizations will be asked, together or separately, to share their experiences, challenges, and recommendations regarding the design of the DPC API and its features. 
+      The DPC Team is always seeking feedback! Pilot partners will be requested to participate in research sessions where Health IT implementers and healthcare organizations will be asked, together or separately, to share their experiences, challenges, and recommendations regarding the design of the DPC API and its features. 
     </li>
     <li>
-      <a href="https://groups.google.com/g/dpc-api">Join the DPC Google Group</a> community to ask questions, share your thoughts, and hear about updates and upcoming events related to DPC.
+      <a href="https://groups.google.com/g/dpc-api" target="_blank" rel=noopener>Join the DPC Google Group</a> community to ask questions, share your thoughts, and hear about updates and upcoming events related to DPC.
     </li>
   </ol>
 </div>
