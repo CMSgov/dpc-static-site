@@ -2,7 +2,7 @@
 layout: page-info
 title: Updates
 banner_title: Updates
-permalink: /updates
+permalink: /updates.html
 id: updates
 button: DPC Google Group
 button_url: "https://groups.google.com/d/forum/dpc-api"
