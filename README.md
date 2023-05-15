@@ -10,6 +10,31 @@ It is assumed that the environment already has these installed:
 - [npm](https://www.npmjs.com/) currently using 6.13.4
 - [Docker](https://docs.docker.com/install/) to standardize builds across all contributors' local machines
 - [Docker Compose](https://docs.docker.com/compose/install/) to define and run multi-container Docker applications
+- [Pre-commit](https://pre-commit.com/) and [Gitleaks](https://github.com/gitleaks/gitleaks) to prevent adding unencrypted secrets to the repo.
+
+## Installing and Using Pre-commit
+
+Anyone committing to this repo must use the pre-commit hook to lower the likelihood that secrets will be exposed.
+
+### Step 1: Install pre-commit
+
+You can install pre-commit using the MacOS package manager Homebrew:
+
+```sh
+brew install pre-commit
+```
+
+Other installation options can be found in the [pre-commit documentation](https://pre-commit.com/#install).
+
+### Step 2: Install the hooks
+
+Run the following command to install the gitleaks hook:
+
+```sh
+pre-commit install
+```
+
+This will download and install the pre-commit hooks specified in `.pre-commit-config.yaml`.
 
 ## Installation
 Navigate to the repository and install the appropriate Gem file and `package.json` file.
