@@ -819,7 +819,7 @@ GET /api/v1/Practitioner
      -X GET</code></pre>
 
 ### List a specific practitioner
-The Practitioner endpoint also supports a GET /Practitioner operation where you can supply an NPI number and receive the Practitioner Resource. You will use this to identify a Practitioners’ DPC ID based off of an NPI when adding a practitioner and/or creating a group.
+The Practitioner endpoint also supports a GET /Practitioner operation where you can supply an NPI number and receive the Practitioner Resource. You will use this to identify a Practitioners’ DPC ID based off of an NPI when adding a practitioner and/or creating a group.
 
 #### Request:
 
@@ -1027,7 +1027,7 @@ GET /api/v1/Patient
      -X GET</code></pre>
 
 ### List a specific patient
-The Patient endpoint also supports a GET /Patient operation where you can supply the Patient MBI and receive the Patient Resource. You may use this to identify a Patient’s DPC ID based off of an MBI.
+The Patient endpoint also supports a GET /Patient operation where you can supply the Patient MBI and receive the Patient Resource. You may use this to identify a Patient’s DPC ID based off of an MBI.
 
 #### Request:
 <pre class="highlight"><code>GET /api/v1/Patient?identifier=<span style="color: #045E87;">{{Patient MBI}}</span></code></pre>
