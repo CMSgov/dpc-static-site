@@ -16,10 +16,9 @@ test() {
     docker-compose run -u "$(id -u "${USER}")":"$(id -g "${USER}")" --publish 4000:4000 --rm --entrypoint "bundle exec jekyll serve -H 0.0.0.0" --name static_site -d static_site
     sleep 20
     docker logs static_site
-    search_str="Failure string"
-    curl localhost:4000 | grep $search_str
+    curl localhost:4000 | grep "Failure string"
     if [$? -eq 0]; then
-      echo "String not found: $search_str"
+      echo "Update page title not found"
       exit 1
     fi
 
