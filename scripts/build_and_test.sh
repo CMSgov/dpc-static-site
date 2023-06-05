@@ -16,7 +16,12 @@ test() {
     docker-compose run -u "$(id -u "${USER}")":"$(id -g "${USER}")" --publish 4000:4000 --rm --entrypoint "bundle exec jekyll serve -H 0.0.0.0" --name static_site -d static_site
     sleep 20
     docker logs static_site
-    curl localhost:4000 | grep "DPC Pilot Onboarding Update"
+    search_str="Failure string"
+    curl localhost:4000 | grep $search_str
+    if [$? -eq 0]; then
+      echo "String not found: $search_str"
+      exit 1
+    fi
 
     # Perform accessibility scan
     TARGET_TEST_ENV=http://host.docker.internal:4000
