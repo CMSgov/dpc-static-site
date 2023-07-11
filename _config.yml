@@ -43,8 +43,8 @@ global_nav:
     id: home
   - title: DPC Data
     id: data
-  - title: About the Pilot
-    id: pilot
+#  - title: About the Pilot
+#    id: pilot
   - title: Documentation
     id: docsV1
   - title: Frequently Asked Questions
