@@ -41,7 +41,6 @@ The DPC pilot has revealed ways to improve the onboarding experience and enhance
 - Adding automation to make onboarding faster and easier
 
 Onboarding and new applications can start up again when this work is complete. We'll provide future updates here and in the [Data at the Point of Care community](https://groups.google.com/g/dpc-api).
--The DPC team
 
 **How to get involved while onboarding and applications are paused**
 - [Request access to the sandbox](https://sandbox.dpc.cms.gov/users/sign_up)
