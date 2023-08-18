@@ -8,6 +8,22 @@ button: DPC Google Group
 button_url: "https://groups.google.com/d/forum/dpc-api"
 ---
 
+## What we're working on: Enhanced authentication and user experience
+
+<span style="color:#767676">July 2023</span>
+
+The DPC pilot has revealed ways to improve the onboarding experience and enhance the verification of organizations accessing Medicare enrollees' data. We've also identified ways to automate steps that are currently manual. While onboarding is paused, we're addressing these needs by:
+
+- Adding additional security by changing the way credentials are assigned
+- Improving validation with the [Provider Enrollment, Chain, and Ownership System](https://pecos.cms.hhs.gov/pecos/login.do#headingLv1) (PECOS)
+- Adding automation to make onboarding faster and easier
+
+Onboarding and new applications can start up again when this work is complete. We'll provide future updates here and in the [Data at the Point of Care community](https://groups.google.com/g/dpc-api).
+
+**How to get involved while onboarding and applications are paused**
+- [Request access to the sandbox](https://sandbox.dpc.cms.gov/users/sign_up)
+- [Join the DPC community](https://groups.google.com/g/dpc-api)
+
 ## Temporary pause in onboarding and new applications for production data
 
 <span style="color:#767676">May 2023</span>
@@ -29,19 +45,3 @@ We really appreciate your patience and can't wait to onboard you into the pilot.
 You can continue using the DPC API. We'll let you know if any re-authorization steps are required.
 
 Thanks to all of you for your participation, patience, and interest!
-
-## What we're working on: Enhanced authentication and user experience
-
-<span style="color:#767676">July 2023</span>
-
-The DPC pilot has revealed ways to improve the onboarding experience and enhance the verification of organizations accessing Medicare enrollees' data. We've also identified ways to automate steps that are currently manual. While onboarding is paused, we're addressing these needs by:
-
-- Adding additional security by changing the way credentials are assigned
-- Improving validation with the [Provider Enrollment, Chain, and Ownership System](https://pecos.cms.hhs.gov/pecos/login.do#headingLv1) (PECOS)
-- Adding automation to make onboarding faster and easier
-
-Onboarding and new applications can start up again when this work is complete. We'll provide future updates here and in the [Data at the Point of Care community](https://groups.google.com/g/dpc-api).
-
-**How to get involved while onboarding and applications are paused**
-- [Request access to the sandbox](https://sandbox.dpc.cms.gov/users/sign_up)
-- [Join the DPC community](https://groups.google.com/g/dpc-api)
