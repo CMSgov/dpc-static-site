@@ -1,4 +1,4 @@
-FROM jekyll/builder:4.2.0
+FROM jekyll/builder:4.2.2
 
 ENV BUNDLE_PATH=$GEM_HOME
 WORKDIR /dpc-site-static
