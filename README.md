@@ -1,18 +1,10 @@
 # Data at the Point of Care
+
 A static Jekyll site for the DPC welcome, FAQ, and documentation pages.
 
-## Requirements
-It is assumed that the environment already has these installed:
+[https://dpc.cms.gov](https://dpc.cms.gov)
 
-- [rbenv](https://github.com/rbenv/rbenv) or [rvm](https://rvm.io/) to install versioned ruby.
-- [ruby](https://www.ruby-lang.org/en/) currently using 2.7.1
-- [jekyll](https://jekyllrb.com/) currently using 4.2.0
-- [npm](https://www.npmjs.com/) currently using 6.13.4
-- [Docker](https://docs.docker.com/install/) to standardize builds across all contributors' local machines
-- [Docker Compose](https://docs.docker.com/compose/install/) to define and run multi-container Docker applications
-- [Pre-commit](https://pre-commit.com/) and [Gitleaks](https://github.com/gitleaks/gitleaks) to prevent adding unencrypted secrets to the repo.
-
-## Installing and Using Pre-commit
+## Pre-requisite: Installing and Using Pre-commit
 
 Anyone committing to this repo must use the pre-commit hook to lower the likelihood that secrets will be exposed.
 
@@ -36,34 +28,49 @@ pre-commit install
 
 This will download and install the pre-commit hooks specified in `.pre-commit-config.yaml`.
 
-## Installation
-Navigate to the repository and install the appropriate Gem file and `package.json` file.
+## Development
 
-(A Gem file includes the dependencies for Ruby apps.)
+### Docker Development
+
+It is recommended to run the site using Docker. This standardizes the build process for all developers and avoids complex conflicts with library versioning.
+
+- [Docker](https://docs.docker.com/install/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+To run the website with file updates reflected automatically at `http://localhost:4001/`:
+
+```
+make serve
+```
+
+### Static Site Builds
+
+To generate the static website files directly into the `_site` directory:
+
+```
+make build
+```
+
+## Native Installation
+
+If you'd like to run the site natively without Docker, follow the instructions below.
+
+### Requirements
+
+It is assumed that the environment already has these installed:
+
+- [ruby](https://www.ruby-lang.org/en/) currently using 2.7.1
+  - Recommend managing this using [rbenv](https://github.com/rbenv/rbenv), [rvm](https://rvm.io/), or [asdf](https://asdf.sh)
+- [jekyll](https://jekyllrb.com/) currently using 4.2.0
+- [npm](https://www.npmjs.com/) currently using 6.13.4
+
+Navigate to the repository and install the appropriate Gem file and `package.json` file.
 
 1. `gem install bundler` <— install Gem bundler
 2. `bundle install` <— install Gem bundles
 3. `npm install` <— install `package.json` dependencies
 4. `make install-git-hooks` <— install git-hook(s)
 
-## Local builds
+### Running or Building the Application
+
 Jekyll builds the CSS and HTML pages. Run `bundle exec jekyll serve` from the project root for a local build. By default, the site will run in `http://localhost:4000/`. You can also run `bundle exec jekyll build` to compile the site files into the `_site` directory.
-
-### Using Docker for distributed builds
-Every contributor that uses Docker will have the exact same build as every other contributor. The command for a consistent and simple build process is:
-
-```
-docker-compose -f docker-compose.yml build static_site
-docker-compose -f docker-compose.yml run --rm static_site
-```
-
-This process uses a Docker container to execute `bundle exec jekyll build`, compiling site files into the same `_site` directory used when executing this command on the Docker host. The advantage here is that there's no need to install ruby or any dependencies on the machine building the static site—Docker takes care of all that.
-
-### Using Docker for serving
-To host the site in Docker, accessible at `http://localhost:4001/`:
-
-```
-docker-compose run --publish 4001:4000 --rm --entrypoint "bundle exec jekyll serve -H 0.0.0.0" static_site
-```
-
-This is a convenience meant to ease integration of static site builds with the larger DPC CI/CD pipeline.

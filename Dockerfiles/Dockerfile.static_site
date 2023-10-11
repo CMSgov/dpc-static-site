@@ -2,7 +2,11 @@ FROM jekyll/builder:4.2.0
 
 ENV BUNDLE_PATH=$GEM_HOME
 WORKDIR /dpc-site-static
-COPY . .
+COPY ./Gemfile Gemfile
+COPY ./Gemfile.lock Gemfile.lock
+COPY ./package.json package.json
+COPY ./package-lock.json package-lock.json
 RUN bundle install
 RUN npm install
+COPY . .
 ENTRYPOINT ["bundle", "exec", "jekyll", "build", "--config", "_config.yml,_version_config.yml"]
