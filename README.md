@@ -69,7 +69,6 @@ Navigate to the repository and install the appropriate Gem file and `package.jso
 1. `gem install bundler` <— install Gem bundler
 2. `bundle install` <— install Gem bundles
 3. `npm install` <— install `package.json` dependencies
-4. `make install-git-hooks` <— install git-hook(s)
 
 ### Running or Building the Application
 
