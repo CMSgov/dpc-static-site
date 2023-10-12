@@ -55,7 +55,7 @@ global_nav:
 footer_nav:
   - title: Documentation
     id: docs
-  - title: Frequently asked questions
+  - title: Frequently Asked Questions
     id: faq
   - title: Terms of Service
     id: tos
