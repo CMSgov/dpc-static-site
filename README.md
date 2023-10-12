@@ -34,6 +34,8 @@ This will download and install the pre-commit hooks specified in `.pre-commit-co
 
 It is recommended to run the site using Docker. This standardizes the build process for all developers and avoids complex conflicts with library versioning.
 
+Prerequisites:
+
 - [Docker](https://docs.docker.com/install/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
@@ -43,9 +45,7 @@ To run the website with file updates reflected automatically at `http://localhos
 make serve
 ```
 
-### Static Site Builds
-
-To generate the static website files directly into the `_site` directory:
+To do a one-time build of the static website files directly into the `_site` directory:
 
 ```
 make build
