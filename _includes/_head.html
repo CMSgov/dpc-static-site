@@ -13,18 +13,14 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
   <link rel="stylesheet" href="{{ site.cssurl | relative_url }}" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
 
   <!-- Tealium Tag Manager - SYNC -->
-  <script src="https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/prod/utag.sync.js"></script>
-
-  <!-- Tealium Tag Manager - ASYNC -->
-  <script type="text/javascript">
-    (function(a,b,c,d){
-    a='https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/prod/utag.js';
-    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
-    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
-    })();
-  </script>
+  {% if jekyll.environment == 'prod' %}
+    <script src="https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/prod/utag.sync.js"></script>
+  {% elsif jekyll.environment == 'stage' %}
+    <script src="https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/qa/utag.sync.js"></script>
+  {% else %}
+    <script src="https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/dev/utag.sync.js"></script>
+  {% endif %}
 
 </head>

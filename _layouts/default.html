@@ -2,7 +2,32 @@
 <html lang="en">
   {% include _head.html %}
   <body>
-    {% include _usa-banner.html %}
+
+  <!-- Tealium Tag Manager - DataLayer -->
+  <script type="text/javascript">
+    var utag_data = {
+      "content_language": "en",
+      "page_name": "{{ page.title }}",
+      "page_path": "{{ page.url }}",
+      "site_domain": "https://dpc.cms.gov",
+      "site_environment": "{{ jekyll.environment }}",
+    }
+  </script>
+
+  <!-- Tealium Tag Manager - ASYNC -->
+  <script>(function (t, e, a, l, i, u, m) {
+    t = 'cmsgov/cms-dpc' + profile;
+    e = "{{ jekyll.environment }}";
+    a = '/' + t + '/' + e + '/utag.js';
+    l = '//tags.tiqcdn.com/utag' + a;
+    i = document;
+    u = 'script';
+    m = i.createElement(u); m.src = l; m.type = 'text/java' + u; m.async = true;
+    l = i.getElementsByTagName(u)[0]; l.parentNode.insertBefore(m, l);
+  })();
+  </script>
+
+  {% include _usa-banner.html %}
     {{ content }}
 
     {% include _footer.html %}
