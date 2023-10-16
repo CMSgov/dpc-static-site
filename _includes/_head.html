@@ -4,6 +4,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="version" content="{{ site.version }}">
 
+  <!-- Tealium Tag Manager - SYNC -->
+  {% if jekyll.environment == 'production' %}
+  <script src="https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/prod/utag.sync.js"></script>
+  {% elsif jekyll.environment == 'stage' %}
+  <script src="https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/qa/utag.sync.js"></script>
+  {% else %}
+  <script src="https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/dev/utag.sync.js"></script>
+  {% endif %}
 
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
@@ -13,14 +21,5 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
   <link rel="stylesheet" href="{{ site.cssurl | relative_url }}" />
-
-  <!-- Tealium Tag Manager - SYNC -->
-  {% if jekyll.environment == 'prod' %}
-    <script src="https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/prod/utag.sync.js"></script>
-  {% elsif jekyll.environment == 'stage' %}
-    <script src="https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/qa/utag.sync.js"></script>
-  {% else %}
-    <script src="https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/dev/utag.sync.js"></script>
-  {% endif %}
 
 </head>

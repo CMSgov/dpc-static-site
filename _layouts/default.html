@@ -15,16 +15,20 @@
   </script>
 
   <!-- Tealium Tag Manager - ASYNC -->
-  <script>(function (t, e, a, l, i, u, m) {
-    t = 'cmsgov/cms-dpc' + profile;
-    e = "{{ jekyll.environment }}";
-    a = '/' + t + '/' + e + '/utag.js';
-    l = '//tags.tiqcdn.com/utag' + a;
-    i = document;
-    u = 'script';
-    m = i.createElement(u); m.src = l; m.type = 'text/java' + u; m.async = true;
-    l = i.getElementsByTagName(u)[0]; l.parentNode.insertBefore(m, l);
-  })();
+  <script type="text/javascript">
+    (function(a,b,c,d){
+    var src_url = '';
+    {% if jekyll.environment == 'production' %}
+    src_url = 'https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/prod/utag.js';
+    {% elsif jekyll.environment == 'stage' %}
+    src_url = 'https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/qa/utag.js';
+    {% else %}
+    src_url = 'https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/dev/utag.js';
+    {% endif %}
+    a=src_url;b=document;c='script';d=b.createElement(c);
+    d.src=a;d.type='text/java'+c;d.async=true;
+    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+    })();
   </script>
 
   {% include _usa-banner.html %}
