@@ -3,3 +3,9 @@ repos:
     rev: v8.16.1
     hooks:
       - id: gitleaks
+  - repo: local
+    hooks:
+      - id: check-postman-secrets
+        name: check-postman-secrets
+        entry: scripts/check_postman_secrets.sh
+        language: script
