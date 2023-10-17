@@ -2,7 +2,35 @@
 <html lang="en">
   {% include _head.html %}
   <body>
-    {% include _usa-banner.html %}
+  <!-- Tealium Tag Manager - DataLayer -->
+  <script type="text/javascript">
+    var utag_data = {
+      "content_language": "en",
+      "page_name": "{{ page.title }}",
+      "page_path": "{{ page.url }}",
+      "site_domain": "https://dpc.cms.gov",
+      "site_environment": "{{ jekyll.environment }}",
+    }
+  </script>
+
+  <!-- Tealium Tag Manager - ASYNC -->
+  <script type="text/javascript">
+    (function(a,b,c,d){
+    var src_url = '';
+    {% if jekyll.environment == 'prod' %}
+    src_url = 'https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/prod/utag.js';
+    {% elsif jekyll.environment == 'stage' %}
+    src_url = 'https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/qa/utag.js';
+    {% else %}
+    src_url = 'https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/dev/utag.js';
+    {% endif %}
+    a=src_url;b=document;c='script';d=b.createElement(c);
+    d.src=a;d.type='text/java'+c;d.async=true;
+    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+    })();
+  </script>
+
+  {% include _usa-banner.html %}
     {{ content }}
 
     {% include _footer.html %}
