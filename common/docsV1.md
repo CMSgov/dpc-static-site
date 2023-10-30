@@ -1776,12 +1776,12 @@ Claims data can be found at the URLs within the output field.
 
 The output includes file integrity information in an extension array. It contains https://dpc.cms.gov/checksum (a checksum in the format algorithm:checksum) and https://dpc.cms.gov/file_length (the file length in bytes).
 
-The number 42 in the example data file URLs is the same job ID from the Content-Location header URL when you initiate an export job. If some of the data cannot be exported due to errors, details of the errors can be found at the URLs in the error field. The errors are provided in <a href="http://ndjson.org/" target="_blank" and rel=noopener>NDJSON</a> files as FHIR <a href="http://hl7.org/fhir/STU3/operationoutcome.html" target="_blank" and rel=noopener>OperationOutcome</a> resources.
+The number 42 in the example data file URLs is the same job ID from the Content-Location header URL when you initiate an export job. If some of the data cannot be exported due to errors, details of the errors can be found at the URLs in the error field. The errors are provided in <a href="https://github.com/ndjson/ndjson-spec" target="_blank" and rel=noopener>NDJSON</a> files as FHIR <a href="http://hl7.org/fhir/STU3/operationoutcome.html" target="_blank" and rel=noopener>OperationOutcome</a> resources.
 
 
 
 ## Retrieve the NDJSON output file(s)
-To obtain the exported explanation of benefit data, a GET request is made to the output URLs in the job status response when the job reaches the Completed state. The data will be presented as an <a href="http://ndjson.org/" target="_blank" and rel=noopener>NDJSON</a> file of ExplanationOfBenefit Resources.
+To obtain the exported explanation of benefit data, a GET request is made to the output URLs in the job status response when the job reaches the Completed state. The data will be presented as an <a href="https://github.com/ndjson/ndjson-spec" target="_blank" and rel=noopener>NDJSON</a> file of ExplanationOfBenefit Resources.
 
 <div class="ds-c-alert ds-c-alert--warn">
   <div class="ds-c-alert__body">
