@@ -58,15 +58,3 @@ site_logo.addEventListener("click", function(e) {
   });
 });
 
-
-for (anchor of document.getElementById("static-site-links").getElementsByTagName("a")) {
-  anchor.addEventListener("click", function(e) {
-    utag.link({
-      "event_name": "internal_link_clicked",
-      "text": anchor.text,
-      "link_url": anchor.href,
-      "link_type": "link_other"
-    });
-  });
-}
-
