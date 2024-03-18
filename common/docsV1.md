@@ -823,7 +823,7 @@ The Practitioner endpoint also supports a GET /Practitioner operation where you
 
 #### Request:
 
-<pre class="highlight"><code>GET /api/v1/Practitioner?identifier=<span style="color: #045E87;">{{Practitioner NPI}}</span></code></pre>
+<pre class="highlight"><code>GET /api/v1/Practitioner?identifier=<span style="color: #045E87;">{Practitioner NPI}</span></code></pre>
 
 #### cURL command:
 
@@ -1030,7 +1030,7 @@ GET /api/v1/Patient
 The Patient endpoint also supports a GET /Patient operation where you can supply the Patient MBI and receive the Patient Resource. You may use this to identify a Patient’s DPC ID based off of an MBI.
 
 #### Request:
-<pre class="highlight"><code>GET /api/v1/Patient?identifier=<span style="color: #045E87;">{{Patient MBI}}</span></code></pre>
+<pre class="highlight"><code>GET /api/v1/Patient?identifier=<span style="color: #045E87;">{Patient MBI}</span></code></pre>
 
 #### cURL command:
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Patient
