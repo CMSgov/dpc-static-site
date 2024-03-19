@@ -1,4 +1,4 @@
-function navigation_link (anchor, navigation_type) {
+function navigation_clicked (anchor, navigation_type) {
   anchor.addEventListener("click", function(e) {
     utag.link({
       "event_name": "navigation_clicked",
@@ -9,25 +9,15 @@ function navigation_link (anchor, navigation_type) {
     });
   });
 }
-function contact_link (anchor, contact_method) {
+
+function button_engagement (anchor) {
   anchor.addEventListener("click", function(e) {
     utag.link({
-      "event_name": "contact_clicked",
-      "event_type": "ui interaction",
+      "event_name": "button_engagement",
       "text": anchor.text,
       "link_url": anchor.href,
-      "contact_method": contact_method
-    });
-  });
-}
-
-function external_link_click (anchor) {
-  anchor.addEventListener("click", function(e) {
-    utag.link({
-      "event_name": "external_link_click",
-      "link_type": "link_external",
-      "text": anchor.text,
-      "link_url": anchor.href
+      "button_type": anchor.className,
+      "link_type": "link_other"
     });
   });
 }
@@ -43,7 +33,6 @@ function internal_link_click (anchor) {
   });
 }
 
-const download_extensions = ['pdf', 'js', 'zip', 'json'];
 function file_download (anchor, file_name, extension) {
   anchor.addEventListener("click", function(e) {
     utag.link({
@@ -51,7 +40,7 @@ function file_download (anchor, file_name, extension) {
       "text": anchor.text,
       "file_name": file_name,
       "file_extension": extension,
-      "link_type": "link_download"
+      "link_url": anchor.href
     });
   });
 }
@@ -70,6 +59,31 @@ function accordion_opened (button) {
   }
 }
 
+function external_link_click (anchor) {
+  anchor.addEventListener("click", function(e) {
+    utag.link({
+      "event_name": "external_link_click",
+      "text": anchor.text,
+      "link_type": "link_external",
+      "link_url": anchor.href
+    });
+  });
+}
+
+function contact_link (anchor, contact_method) {
+  anchor.addEventListener("click", function(e) {
+    utag.link({
+      "event_name": "contact_clicked",
+      "event_type": "ui interaction",
+      "text": anchor.text,
+      "link_url": anchor.href,
+      "contact_method": contact_method
+    });
+  });
+}
+
+
+const download_extensions = ['pdf', 'js', 'zip', 'json'];
 function content_link (anchor) {
   const extension = anchor.href.split('.').pop();
   const file_name = anchor.href.split('/').pop();
@@ -84,24 +98,12 @@ function content_link (anchor) {
   }
 }
 
-function button_engagement (anchor) {
-  anchor.addEventListener("click", function(e) {
-    utag.link({
-      "event_name": "button_engagement",
-      "button_type": anchor.className,
-      "text": anchor.text,
-      "link_url": anchor.href,
-      "link_type": "link_other"
-    });
-  });
-}
-
 if (document.querySelector('ul.topnav')) {
   for (anchor of document.querySelector('ul.topnav').getElementsByTagName("a")) {
     if (anchor.classList && anchor.classList.contains('ds-c-button')) {
       button_engagement(anchor);
     } else {
-      navigation_link(anchor, "main nav");
+      navigation_clicked(anchor, "main nav");
     }
   }
 }
@@ -116,26 +118,29 @@ if (document.querySelector('section.page__banner')) {
   }
 }
 
+for (button of document.getElementsByTagName('button')) {
+  accordion_opened(button);
+}
+
 if (document.querySelector('footer')) {
   for (anchor of document.querySelector('footer').getElementsByTagName("a")) {
     content_link(anchor);
   }
 }
 
+// These pages do not have side navigation nor page content sections
 if (window.location.pathname == '/' || window.location.pathname == '/faq.html') {
   for (anchor of document.querySelector('#main').getElementsByTagName("a")) {
+    content_link(anchor);
+  }
+} else if (document.querySelector('#tos')) {
+  for (anchor of document.querySelector('#tos').getElementsByTagName("a")) {
     content_link(anchor);
   }
 } else {
   if (document.querySelector('[aria-label="Side NavBar"]')) {
     for (anchor of document.querySelector('[aria-label="Side NavBar"]').getElementsByTagName("a")) {
-      navigation_link(anchor, "side nav");
-    }
-  }
-
-  if (document.querySelector('#tos')) {
-    for (anchor of document.querySelector('#tos').getElementsByTagName("a")) {
-      content_link(anchor);
+      navigation_clicked(anchor, "side nav");
     }
   }
 
@@ -144,8 +149,4 @@ if (window.location.pathname == '/' || window.location.pathname == '/faq.html') 
       content_link(anchor);
     }
   }
-}
-
-for (button of document.getElementsByTagName('button')) {
-  accordion_opened(button);
 }
