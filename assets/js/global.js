@@ -3,7 +3,6 @@ function navigation_link (anchor, navigation_type) {
     utag.link({
       "event_name": "navigation_clicked",
       "event_type": "ui interaction",
-      "heading": "",
       "text": anchor.text,
       "link_url": anchor.href,
       "navigation_type": navigation_type
@@ -45,12 +44,12 @@ function internal_link_click (anchor) {
 }
 
 const download_extensions = ['pdf', 'js', 'zip', 'json'];
-function file_download (anchor, extension) {
+function file_download (anchor, file_name, extension) {
   anchor.addEventListener("click", function(e) {
     utag.link({
       "event_name": "file_download",
       "text": anchor.text,
-      "file_name": anchor.href.split('/').pop(),
+      "file_name": file_name,
       "file_extension": extension,
       "link_type": "link_download"
     });
@@ -58,7 +57,7 @@ function file_download (anchor, extension) {
 }
 
 function accordion_opened (button) {
-  if (button.classList.contains('usa-accordion__button')) {
+  if (button.classList.contains('usa-accordion__button') || button.classList.contains('ds-c-usa-banner__button')) {
     button.addEventListener("click", function(e) {
       if (button.ariaExpanded == 'false') {
 	utag.link({
@@ -73,10 +72,11 @@ function accordion_opened (button) {
 
 function content_link (anchor) {
   const extension = anchor.href.split('.').pop();
+  const file_name = anchor.href.split('/').pop();
   if (anchor.href.startsWith('mailto:')) {
     contact_link(anchor, "email");
-  } else if (download_extensions.includes(extension)) {
-    file_download(anchor, extension);
+  } else if (download_extensions.includes(extension) || file_name == 'jwt.html') {
+    file_download(anchor, file_name, extension);
   } else if (!anchor.href.includes(window.location.host) && !anchor.href.includes('dpc.cms.gov')) {
     external_link_click(anchor);
   } else {
@@ -84,23 +84,35 @@ function content_link (anchor) {
   }
 }
 
-const sandbox_button = document.querySelector('a.sandbox-btn');
-if (sandbox_button) {
-  sandbox_button.addEventListener("click", function(e) {
+function button_engagement (anchor) {
+  anchor.addEventListener("click", function(e) {
     utag.link({
       "event_name": "button_engagement",
-      "event_type": "ui interaction",
-      "heading": "",
+      "button_type": anchor.className,
       "text": anchor.text,
       "link_url": anchor.href,
-      "navigation_type": navigation_type
+      "link_type": "link_other"
     });
   });
 }
 
-if (document.getElementById("static-site-links")) {
-  for (anchor of document.getElementById("static-site-links").getElementsByTagName("a")) {
-    navigation_link(anchor, "main nav");
+if (document.querySelector('ul.topnav')) {
+  for (anchor of document.querySelector('ul.topnav').getElementsByTagName("a")) {
+    if (anchor.classList && anchor.classList.contains('ds-c-button')) {
+      button_engagement(anchor);
+    } else {
+      navigation_link(anchor, "main nav");
+    }
+  }
+}
+
+if (document.querySelector('section.page__banner')) {
+  for (anchor of document.querySelector('section.page__banner').getElementsByTagName("a")) {
+    if (anchor.classList && anchor.classList.contains('banner-btn')) {
+      button_engagement(anchor);
+    } else {
+      internal_link_click(anchor);
+    }
   }
 }
 
