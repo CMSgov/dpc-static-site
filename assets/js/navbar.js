@@ -10,7 +10,7 @@ var close_mobile_nav_button = document.getElementById("topnav__close-button"),
 function removeElementsByClass(className){
   var elements = document.getElementsByClassName(className);
   while(elements.length > 0){
-      elements[0].parentNode.removeChild(elements[0]);
+    elements[0].parentNode.removeChild(elements[0]);
   }
 }
 
@@ -45,3 +45,16 @@ if(typeof(open_mobile_nav_button) != 'undefined' && open_mobile_nav_button != nu
     trapFocus(mobile_nav);
   })
 }
+
+const site_logo =  document.querySelector("a.site-logo");
+
+site_logo.addEventListener("click", function(e) {
+  utag.link({
+    "event_name": "header_clicked",
+    "event_type": "ui interaction",
+    "text": site_logo.text,
+    "link_url": site_logo.href,
+    "category": "page header"
+  });
+});
+
