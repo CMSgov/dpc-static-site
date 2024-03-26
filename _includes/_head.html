@@ -5,8 +5,10 @@
   <meta name="version" content="{{ site.version }}">
 
   <!-- Tealium Tag Manager - SYNC -->
-  {% if jekyll.environment == 'prod' or jekyll.environment == 'stage' %}
+  {% if jekyll.environment == 'prod' %}
   <script src="https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/prod/utag.sync.js"></script>
+  {% elsif jekyll.environment == 'stage' %}
+  <script src="https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/qa/utag.sync.js"></script>
   {% else %}
   <script src="https://tags.tiqcdn.com/utag/cmsgov/cms-dpc/dev/utag.sync.js"></script>
   {% endif %}
