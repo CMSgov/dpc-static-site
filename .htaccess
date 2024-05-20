@@ -1,5 +1,0 @@
-RewriteEngine on
-RewriteBase /
-
-# redirect links with .html extension
-RewriteRule ^(.+)\.html$ $1 [R=301,L,NC]
