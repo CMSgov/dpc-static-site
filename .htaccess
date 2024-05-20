@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /
+
+# hide .html extension
+RewriteRule ^(.*)$ $1.html [R=301,L,NC]
