@@ -38,7 +38,7 @@ sbx_register: "https://sandbox.dpc.cms.gov/users/sign_up"
 sbx_sign_in: "https://sandbox.dpc.cms.gov/users/sign_in"
 email_register: "mailto:DPCINFO@cms.hhs.gov"
 #
-# hide .html extension in URLS
+# hide .html extension in URLs
 permalink: pretty
 
 global_nav:
