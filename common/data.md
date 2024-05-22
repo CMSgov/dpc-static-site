@@ -2,7 +2,6 @@
 layout: page-sidenav
 title: DPC Data
 banner_title: Understanding DPC Data
-permalink: pretty
 redirect_from: /data.html
 id: data
 button: Data Dictionary
