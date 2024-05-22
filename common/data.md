@@ -3,6 +3,7 @@ layout: page-sidenav
 title: DPC Data
 banner_title: Understanding DPC Data
 permalink: /data
+redirect_from: /data.html
 id: data
 button: Data Dictionary
 coming_soon: true
