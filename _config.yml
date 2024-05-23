@@ -37,9 +37,6 @@ logourl: /assets/images/top-nav-heart.svg
 sbx_register: "https://sandbox.dpc.cms.gov/users/sign_up"
 sbx_sign_in: "https://sandbox.dpc.cms.gov/users/sign_in"
 email_register: "mailto:DPCINFO@cms.hhs.gov"
-#
-# set default link style
-permalink: /:title
 
 global_nav:
   - title: Home
