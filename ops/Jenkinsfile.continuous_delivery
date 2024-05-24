@@ -37,7 +37,7 @@ pipeline {
       steps {
         checkout([
           $class: 'GitSCM',
-          branches: [[name: "master"]],
+          branches: [[name: "main"]],
           doGenerateSubmoduleConfigurations: false,
           extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'dpc-static-site']],
           userRemoteConfigs: [[url: 'https://github.com/CMSgov/dpc-static-site.git', credentialsId: github_creds]]
@@ -48,7 +48,7 @@ pipeline {
     stage('Deploy Static Site') {
       steps {
         build job: 'DPC - Deploy - Static Site',
-        parameters: [string(name: 'DPC_STATIC_SITE_BRANCH', value: "master"), string(name: 'ENV', value: "stage")],
+        parameters: [string(name: 'DPC_STATIC_SITE_BRANCH', value: "main"), string(name: 'ENV', value: "stage")],
         wait: true,
         propagate: true
       }
