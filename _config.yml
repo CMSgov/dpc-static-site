@@ -32,6 +32,7 @@ baseurl: ""
 #
 # the base hostname, e.g. http://example.com
 url: "https://dpc.cms.gov"
+permalink: pretty
 cssurl: /assets/css/static-main.css
 logourl: /assets/images/top-nav-heart.svg
 sbx_register: "https://sandbox.dpc.cms.gov/users/sign_up"
