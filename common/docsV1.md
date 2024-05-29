@@ -233,7 +233,7 @@ Public keys verify that client token requests are coming from an authorized appl
 - If you are unable to download the snippet.txt file with a GUI, you can download the file using the command invocation below:
 
   ~~~
-  curl -JLO https://raw.githubusercontent.com/CMSgov/dpc-app/master/dpc-web/public/snippet.txt 
+  curl -JLO https://raw.githubusercontent.com/CMSgov/dpc-app/main/dpc-web/public/snippet.txt 
   ~~~
 
 **1a. Verify the type of file.**
@@ -611,7 +611,7 @@ You will need to register practitioners in your organization, register patien
 </div>
 
 ## Load sample data
-The DPC Team has created a collection of sample Practitioner, Patient, and Group Resources which can be used to get started in the sandbox environment. These resources can be found in our public <a href="https://github.com/CMSgov/dpc-app/tree/master/src/main/resources" target="_blank" and rel=noopener>GitHub repository</a> as JSON files. More details included in this <a href="https://github.com/CMSgov/dpc-app/blob/master/src/main/resources/README.md" target="_blank" and rel=noopener>README</a> file.
+The DPC Team has created a collection of sample Practitioner, Patient, and Group Resources which can be used to get started in the sandbox environment. These resources can be found in our public <a href="https://github.com/CMSgov/dpc-app/tree/main/src/main/resources" target="_blank" and rel=noopener>GitHub repository</a> as JSON files. More details included in this <a href="https://github.com/CMSgov/dpc-app/blob/main/src/main/resources/README.md" target="_blank" and rel=noopener>README</a> file.
 
 **Uploading Practitioners:** We have included four Practitioner Resources that represent fictitious practitioners that you can add to your organization.
 
