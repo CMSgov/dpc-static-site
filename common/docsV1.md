@@ -1145,7 +1145,7 @@ The attestation is then included in the X-Provenance header as part of any opera
 <a href="#create-a-group" class="ds-u-padding-left--3 guide_sub-link">Create a group</a><br />
 <a href="#update-a-group" class="ds-u-padding-left--3 guide_sub-link">Update a group</a><br />
 <a href="#add-patients-to-group" class="ds-u-padding-left--3 guide_sub-link">Add patients to group</a><br />
-<a href="#delete-a-group" class="ds-u-padding-left--3 guide_sub-link">delete a group</a><br />
+<a href="#delete-a-group" class="ds-u-padding-left--3 guide_sub-link">Delete a group</a><br />
 <a href="#removing-patients-from-a-group" class="ds-u-padding-left--3 guide_sub-link">Removing patients from a group</a><br />
 <a href="#overwrite-a-group-membership" class="ds-u-padding-left--3 guide_sub-link">Overwrite a group membership</a><br />
 <a href="#locate-your-groupid" class="ds-u-padding-left--3 guide_sub-link">Locate your group.id</a>
