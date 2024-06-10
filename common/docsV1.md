@@ -273,7 +273,7 @@ Public keys verify that client token requests are coming from an authorized appl
   openssl base64 -in snippet.txt.sig -out signature.sig
   ~~~
 
-**5. Paste the contents** of your verified public key signature (signature.txt file) into the ‘Public Key Signature’ field in your DPC Account.
+**5. Paste the contents** of your verified public key signature (signature.sig file) into the ‘Public Key Signature’ field in your DPC Account.
 
 **6. Click "Add Key"** to upload your public key.
 
@@ -1094,7 +1094,7 @@ Details on Provenance Resources are given in the <a href="https://www.hl7.org/fh
 - **Timestamp:** Time when attestation was made.
 - **Reason:** Reason for the attestation (currently only: http://hl7.org/fhir/v3/ActReason#TREAT is supported).
 - **Organization ID:** The agent making the attestation referenced by their Organization Resource ID. 
-  - _Your Organization ID can be found by referencing the {id} variable in the resource object of your practitioner._
+  - _Your Organization ID can be found on the Organization page in the DPC Portal._
 - **Practitioner ID:** The practitioner attached to the attestation referenced by their Practitioner ID.
   - _Your Practitioner ID can be found by referencing the {id} variable in the resource object of your practitioner._
 
@@ -1341,16 +1341,16 @@ You may want to delete a group if you no longer require data for the patients wi
 Group IDs can be found either at creation or as the result of [locating your Group ID](#locate-your-groupid).
 
 #### Request:
-<pre class="highlight"><code>api/v1/Group?characteristic-value=attributed-to$<span style="color: #045E87;">{Group.id}</span></code></pre>
+<pre class="highlight"><code>api/v1/Group/$<span style="color: #045E87;">{Group.id}</span></code></pre>
 
 #### cURL command:
 <pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Group?characteristic-value=attributed-to${Group ID} \
      -H 'Authorization: Bearer {access_token}' \
-     -H 'Accept: application/json' \
-     -H 'Content-Type: application/json' \
+     -H 'Accept: application/fhir+json' \
+     -H 'Content-Type: application/fhir+json' \
      -X DELETE</code></pre>
 
-### Reponse:
+### Response:
 <pre class="highlight"><code>200 - Group was removed</code></pre>
 
 ### Removing patients from a group
