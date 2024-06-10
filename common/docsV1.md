@@ -1344,7 +1344,7 @@ Group IDs can be found either at creation or as the result of [locating your Gr
 <pre class="highlight"><code>api/v1/Group/$<span style="color: #045E87;">{Group.id}</span></code></pre>
 
 #### cURL command:
-<pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Group?characteristic-value=attributed-to${Group ID} \
+<pre class="highlight"><code>curl -v https://sandbox.dpc.cms.gov/api/v1/Group/${Group.id} \
      -H 'Authorization: Bearer {access_token}' \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
