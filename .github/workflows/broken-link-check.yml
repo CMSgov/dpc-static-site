@@ -12,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Broken Link Check
-        uses: actions/broken-link-checker-action@v2
+        uses: technote-space/broken-link-checker-action@v2
