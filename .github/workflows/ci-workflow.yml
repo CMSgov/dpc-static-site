@@ -14,3 +14,5 @@ jobs:
           mkdir -p _site
           mkdir -p .jekyll-cache
           ./scripts/build_and_test.sh
+      - name: "Check for broken links"
+        uses: lycheeverse/lychee-action@v1
