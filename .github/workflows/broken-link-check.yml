@@ -15,4 +15,5 @@ jobs:
         id: link-report
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
+          url: https://dpc.cms.gov
           pages_path: ./_site/
