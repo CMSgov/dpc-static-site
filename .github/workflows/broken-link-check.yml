@@ -14,3 +14,4 @@ jobs:
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
           url: https://dpc.cms.gov/
+          cmd_params: "--color=always --exclude=hl7.org"
