@@ -12,9 +12,10 @@ jobs:
     steps:
       - name: "Checkout code"
         uses: actions/checkout@v2
+      - name: "Build static site"
+        run: docker-compose -f docker-compose.yml build static_site
       - name: "Check for broken links"
         uses: lycheeverse/lychee-action@v1
         with:
-          args: --no-progress --accept '200..=299, 401' .
           fail: true
           jobSummary: true

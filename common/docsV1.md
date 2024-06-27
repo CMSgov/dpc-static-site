@@ -952,7 +952,7 @@ POST /api/v1/Patient
                "versionId": "MTU1NDgxMjczNTM5MjYwMDAwMA",
                "lastUpdated": "2019-04-09T12:25:35.392600+00:00",
                "profile": [
-                 "https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html"
+                 "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
                ]
              },
  
@@ -1054,7 +1054,7 @@ The Patient endpoint also supports a GET /Patient operation where you can suppl
         "meta": {
           "lastUpdated": "2020-06-12T15:39:42.834+00:00",
           "profile": [
-            "https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html"
+            "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
           ]
         },
         "identifier": [
@@ -1107,7 +1107,7 @@ The attestation is then included in the X-Provenance header as part of any opera
  "resourceType":"Provenance",
  "meta":{
    "profile":[
-     "https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-attestation.html"
+     "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation"
    ]
  },
  "recorded":"1990-01-01T00:00:00.000-05:00",
