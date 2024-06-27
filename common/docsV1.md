@@ -903,7 +903,7 @@ To create the Patient Resource, the JSON file may include additional attributes 
   OR
   ~~~
   {
-    "system": "http://hl7.org/fhir/sid/us-mbi",
+    "system": "http://terminology.hl7.org/NamingSystem/cmsMBI",
     "value": "Value of the MBI number"
   }
   ~~~
@@ -1059,7 +1059,7 @@ The Patient endpoint also supports a GET /Patient operation where you can suppl
         },
         "identifier": [
           {
-            "system": "http://hl7.org/fhir/sid/us-mbi",
+            "system": "http://terminology.hl7.org/NamingSystem/cmsMBI",
             "value": "5S41C00AA00"
           }
         ],
