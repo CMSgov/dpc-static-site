@@ -17,5 +17,6 @@ jobs:
       - name: "Check for broken links"
         uses: lycheeverse/lychee-action@v1
         with:
+          args: --verbose --no-progress './**/*.md' './**/*.html'
           fail: true
           jobSummary: true
