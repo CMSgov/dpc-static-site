@@ -23,4 +23,4 @@ active: profiles
 
 The DPC application makes use of the SMART Backend Services Authorization Spec, which is outlined [here](https://hl7.org/fhir/us/bulkdata/2019May/authorization/index.html).
 
-The DPC specific implementation is detailed on the Project [website](https://dpc.cms.gov/docs#authentication-and-authorization).
+The DPC specific implementation is detailed on the Project [website](https://dpc.cms.gov/docsV1#authentication-and-authorization).

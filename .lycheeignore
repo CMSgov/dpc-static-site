@@ -2,4 +2,6 @@
 file://*
 https://dpc.cms.gov/checksum
 https://dpc.cms.gov/file_length
-https://dpc.cms.gov/api/v1/*
+https://dpc.cms.gov/api/v1/CapabilityStatement/*
+https://dpc.cms.gov/api/v1/StructureDefinition/*
+http://hl7.org/fhir/StructureDefinition/*
