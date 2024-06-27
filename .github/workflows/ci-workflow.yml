@@ -17,6 +17,6 @@ jobs:
       - name: "Check for broken links"
         uses: lycheeverse/lychee-action@v1
         with:
-          args: --insecure --no-progress --exclude file://* ./common
+          args: --no-progress --accept '200..=299, 401' --exclude '.*\.ndjson' --exclude 'file://*' ./common # ignore Unauthorized errors
           fail: true
           jobSummary: true
