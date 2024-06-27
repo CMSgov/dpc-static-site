@@ -1,7 +1,8 @@
 .*\.ndjson
 file://*
-http://.*\.org/StructureDefinition/.*
+http://www.acme.com/*
+http://hl7.org/fhir/StructureDefinition/*
 https://dpc.cms.gov/checksum
 https://dpc.cms.gov/file_length
-https://dpc.cms.gov/api/v1/.*
-https://pacs.hospital.org/.*
+https://dpc.cms.gov/api/v1*
+https://pacs.hospital.org/*
