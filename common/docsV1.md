@@ -657,7 +657,7 @@ Prefer: respond-async
                 "id": "351fbb5f-f2f9-4094-bc6f-2b3600bb56e9",
                 "identifier": [
                     {
-                        "system": "http://hl7.org/fhir/sid/us-npi",
+                        "system": "http://terminology.hl7.org/NamingSystem/npi",
                         "value": "3905293015"
                     }
                 ],
@@ -713,7 +713,7 @@ Prefer: respond-async
   "id": "351fbb5f-f2f9-4094-bc6f-2b3600bb56e9",
   "identifier": [
     {
-      "system": "http://hl7.org/fhir/sid/us-npi",
+      "system": "http://terminology.hl7.org/NamingSystem/npi",
       "value": "3905293015"
     }
   ],
@@ -853,7 +853,7 @@ The Practitioner endpoint also supports a GET /Practitioner operation where you
         },
         "identifier": [
           {
-            "system": "http://hl7.org/fhir/sid/us-npi",
+            "system": "http://terminology.hl7.org/NamingSystem/npi",
             "value": "2323232225"
           }
         ],
@@ -952,7 +952,7 @@ POST /api/v1/Patient
                "versionId": "MTU1NDgxMjczNTM5MjYwMDAwMA",
                "lastUpdated": "2019-04-09T12:25:35.392600+00:00",
                "profile": [
-                 "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                 "https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html"
                ]
              },
  
@@ -1054,7 +1054,7 @@ The Patient endpoint also supports a GET /Patient operation where you can suppl
         "meta": {
           "lastUpdated": "2020-06-12T15:39:42.834+00:00",
           "profile": [
-            "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+            "https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-patient.html"
           ]
         },
         "identifier": [
@@ -1092,7 +1092,7 @@ CMS requires practitioners to attest that they have a treatment related purpose
 Details on Provenance Resources are given in the <a href="https://www.hl7.org/fhir/implementationguide.html" target="_blank" and rel=noopener>FHIR implementation guide</a>, but at a minimum, each attestation must include:
 
 - **Timestamp:** Time when attestation was made.
-- **Reason:** Reason for the attestation (currently only: http://hl7.org/fhir/v3/ActReason#TREAT is supported).
+- **Reason:** Reason for the attestation (currently only: http://terminology.hl7.org/ValueSet/v3-ActReason#TREAT is supported).
 - **Organization ID:** The agent making the attestation referenced by their Organization Resource ID. 
   - _Your Organization ID can be found in the DPC Portal by following <a href="#find-organization-id"> these instructions</a>._
 - **Practitioner ID:** The practitioner attached to the attestation referenced by their Practitioner ID.
@@ -1107,13 +1107,13 @@ The attestation is then included in the X-Provenance header as part of any opera
  "resourceType":"Provenance",
  "meta":{
    "profile":[
-     "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation"
+     "https://dpc.cms.gov/ig/StructureDefinition-dpc-profile-attestation.html"
    ]
  },
  "recorded":"1990-01-01T00:00:00.000-05:00",
  "reason":[
    {
-     "system":"http://hl7.org/fhir/v3/ActReason",
+     "system":"http://terminology.hl7.org/ValueSet/v3-ActReason",
      "code":"TREAT"
    }
  ],
@@ -1123,7 +1123,7 @@ The attestation is then included in the X-Provenance header as part of any opera
        {
          "coding":[
            {
-             "system":"http://hl7.org/fhir/v3/RoleClass",
+             "system":"http://terminology.hl7.org/CodeSystem/v3-RoleClass",
              "code":"AGNT"
            }
          ]
@@ -1217,7 +1217,7 @@ POST /api/v1/Group
      "valueCodeableConcept": {
        "coding": [
          {
-           "system": "http://hl7.org/fhir/sid/us-npi",
+           "system": "http://terminology.hl7.org/NamingSystem/npi",
            "code": "110001029483"
          }
        ]
@@ -1276,7 +1276,7 @@ After 90 days, patient attributions expire and must be renewed. You can identify
      "valueCodeableConcept": {
        "coding": [
          {
-           "system": "http://hl7.org/fhir/sid/us-npi",
+           "system": "http://terminology.hl7.org/NamingSystem/npi",
            "code": "110001029483"
          }
        ]
@@ -1393,7 +1393,7 @@ Removals are handled through a custom remove operation on the /Group endpoint. T
      "valueCodeableConcept": {
        "coding": [
          {
-           "system": "http://hl7.org/fhir/sid/us-npi",
+           "system": "http://terminology.hl7.org/NamingSystem/npi",
            "code": "110001029483"
          }
        ]
@@ -1450,7 +1450,7 @@ Users can also submit a Group Resource which completely overwrites the existing 
      "valueCodeableConcept": {
        "coding": [
          {
-           "system": "http://hl7.org/fhir/sid/us-npi",
+           "system": "http://terminology.hl7.org/NamingSystem/npi",
            "code": "110001029483"
          }
        ]
@@ -1529,7 +1529,7 @@ The response will return a <a href="https://www.hl7.org/fhir/STU3/bundle.html" t
          "valueCodeableConcept": {
            "coding": [
              {
-               "system": "http://hl7.org/fhir/sid/us-npi",
+               "system": "http://terminology.hl7.org/NamingSystem/npi",
                "code": "{Practitioner NPI}"
              }
            ]
@@ -1810,7 +1810,7 @@ To obtain the exported explanation of benefit data, a GET request is made to the
     "diagnosisCodeableConcept":{
        "coding":[
          {
-           "system":"http://hl7.org/fhir/sid/icd-9-cm",
+           "system":"http://terminology.hl7.org/CodeSystem/icd9cm",
            "code":"2113"
          }
        ]
@@ -1879,7 +1879,7 @@ To obtain the exported explanation of benefit data, a GET request is made to the
        "code":"CARRIER"
      },
      {
-       "system":"http://hl7.org/fhir/ex-claimtype",
+       "system":"http://terminology.hl7.org/CodeSystem/claim-type",
        "code":"professional",
        "display":"Professional"
      },
