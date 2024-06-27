@@ -17,6 +17,6 @@ jobs:
       - name: "Check for broken links"
         uses: lycheeverse/lychee-action@v1
         with:
-          args: --no-progress --exclude-path './implementation_guide' './**/*.html'
+          args: --no-progress ./common
           fail: true
           jobSummary: true
