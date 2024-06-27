@@ -17,6 +17,5 @@ jobs:
       - name: "Check for broken links"
         uses: lycheeverse/lychee-action@v1
         with:
-          args: --base ./_site/
           fail: true
           jobSummary: true
