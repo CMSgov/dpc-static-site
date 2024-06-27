@@ -10,6 +10,8 @@ jobs:
     name: "Check for broken links"
     runs-on: ubuntu-latest
     steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v2
       - name: "Check for broken links"
         uses: lycheeverse/lychee-action@v1
         with:
