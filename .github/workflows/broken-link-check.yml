@@ -1,14 +1,18 @@
+name: "Broken Link Check"
+
 on:
   push:
   schedule:
     - cron: 0 0 * * * # run daily at midnight
 
-name: Broken Link Check
 jobs:
   check:
     name: "Check for broken links"
-    uses: lycheeverse/lychee-action@v1
-    with:
-      args: --no-progress --accept '200..=299, 401' --exclude '.*\.ndjson' --exclude 'file://*' ./common # ignore Unauthorized errors
-      fail: true
-      jobSummary: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Check for broken links"
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: --no-progress --accept '200..=299, 401' --exclude '.*\.ndjson' --exclude 'file://*' ./common # ignore Unauthorized errors
+          fail: true
+          jobSummary: true
