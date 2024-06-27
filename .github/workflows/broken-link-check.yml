@@ -8,10 +8,9 @@ on:
 name: Broken Link Check
 jobs:
   check:
-    name: Broken Link Check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Link Checker
-        uses: lycheeverse/lychee-action@v1
+      - name: Broken Link Check
+        uses: ruzickap/action-my-broken-link-checker@v2
+        with:
+          url: https://www.dpc.cms.gov
