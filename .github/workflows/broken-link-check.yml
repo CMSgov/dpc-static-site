@@ -13,9 +13,6 @@ jobs:
     steps:
       - name: Check for broken links
         id: link-report
-        uses: celinekurpershoek/link-checker@v1.0.2
+        uses: ruzickap/action-my-broken-link-checker@v2
         with:
-          ignorePatterns: "github,google"
-          recursiveLinks: false
-      - name: Get result
-        run: echo "${{steps.link-report.outputs.result}}"
+          pages_path: ./_site/
