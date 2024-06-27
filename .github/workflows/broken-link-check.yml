@@ -5,7 +5,8 @@ on:
 
 name: Broken Link Check
 jobs:
-  - name: "Check for broken links"
+  check:
+    name: "Check for broken links"
     uses: lycheeverse/lychee-action@v1
     with:
       args: --no-progress --accept '200..=299, 401' --exclude '.*\.ndjson' --exclude 'file://*' ./common # ignore Unauthorized errors
