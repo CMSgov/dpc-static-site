@@ -11,5 +11,11 @@ jobs:
     name: Broken Link Check
     runs-on: ubuntu-latest
     steps:
-      - name: Broken Link Check
-        uses: technote-space/broken-link-checker-action@v2
+      - name: Check for broken links
+        id: link-report
+        uses: celinekurpershoek/link-checker@v1.0.2
+        with:
+          ignorePatterns: "github,google"
+          recursiveLinks: false
+      - name: Get result
+        run: echo "${{steps.link-report.outputs.result}}"
