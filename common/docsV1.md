@@ -17,7 +17,7 @@ Any Fee-for-Service provider organization or Health IT implementer may <a href="
 
 Once your account has been assigned to an organization, you will be notified with a second email, which will include next steps and an invite to join our <a href="https://groups.google.com/g/dpc-api" target="_blank" and rel=noopener>Google Group</a> community. At this time, you may log in to the DPC Portal at <a href="https://dpc.cms.gov" target="_blank" and rel=noopener>https://dpc.cms.gov</a> to create your first client token and start your journey with the DPC pilot API!
 
-This is a <a href="https://broken.link">broken link</a>.
+This is a <a href="https://dpc.cms.gov/foo/bar">broken link</a>.
 
 ## Step Two: Client Tokens
 
