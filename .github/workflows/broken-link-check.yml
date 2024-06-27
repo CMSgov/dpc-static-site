@@ -13,4 +13,4 @@ jobs:
       - name: Broken Link Check
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
-          url: https://www.dpc.cms.gov
+          url: https://dpc.cms.gov/
