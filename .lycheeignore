@@ -16,4 +16,6 @@ https://dpc.cms.gov/assets/.*\.svg$
 https://dpc.cms.gov/checksum
 https://dpc.cms.gov/file_length
 https://dpc.cms.gov/api/v1*
+https://dpc.cms.gov/users/password/edit
+https://dpc.cms.gov/users/confirmation
 https://pacs.hospital.org/*
