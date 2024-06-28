@@ -26,4 +26,6 @@ jobs:
           SLACK_WEBHOOK_URL: "https://hooks.slack.com/triggers/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" # TODO: set as secret
         with:
           payload: |
-            ${{ steps.lychee.outputs }}
+            {
+              "Errors": "${{ steps.lychee.outputs.errors }}"
+            }
