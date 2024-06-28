@@ -13,6 +13,8 @@ The Centers for Medicare and Medicaid Services (CMS) Data at the Point of Care (
 
 # What is FHIR?
 
+This is a broken link: https://dpc.cms.gov/foo/bar
+
 FHIR (Fast Healthcare Interoperability Resources) is a specification for exchanging healthcare data electronically. DPC sends adjudicated Medicare FFS claims data acquired through the Beneficiary FHIR Data Server (BFD) API and structured using the FHIR standard, making it more available, discoverable, and easy to consume. The FHIR standard is developed by HL7, a group dedicated to creating standardized ways of sharing and structuring health care data.
 
 In FHIR, standardized data is structured using a basic building block called a “Resource.” All “exchangeable” data is defined as a resource. Resources are structured containers of data that systems and computers can easily understand. DPC uses both the FHIR specification and the DPC Bulk FHIR specification. The Bulk FHIR specification allows DPC to send back records on all of a provider's patients.
