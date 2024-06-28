@@ -19,6 +19,7 @@ jobs:
           fail: true
           jobSummary: true
           args: --no-progress --accept '200..=299, 401, 405' .
+        continue-on-error: true
       - name: "Send Slack alert if failing"
         if: env.lychee_exit_code != 0 # && github.ref == 'refs/heads/main'
         uses: slackapi/slack-github-action@v1.26.0
