@@ -27,5 +27,6 @@ jobs:
         with:
           payload: |
             {
-              "Errors": "${{ steps.lychee.outputs.errors }}"
+              "Errors": "${{ steps.lychee.outputs.errors }}",
+              "Details": "${{ steps.lychee.outputs.fail_map }}"
             }
