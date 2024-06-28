@@ -1,7 +1,6 @@
 name: "Broken Link Check"
 
 on:
-  push: # TODO: for testing
   schedule:
     - cron: 0 0 * * 0 # run every Sunday at midnight
 
@@ -23,7 +22,7 @@ jobs:
         if: always() && env.lychee_exit_code != 0
         uses: slackapi/slack-github-action@v1.26.0
         env:
-          SLACK_WEBHOOK_URL: "https://hooks.slack.com/triggers/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" # TODO: set as secret
+          SLACK_WEBHOOK_URL: "https://hooks.slack.com/triggers/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" # TODO: set as env var?
         with:
           payload: |
             {
