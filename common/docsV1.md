@@ -1714,7 +1714,7 @@ X-Provenance: <a href="#attestation">{provenance header}</a>
 <pre class="highlight"><code>curl -X GET 'https://sandbox.dpc.cms.gov/api/v1/Patient/{id}/$everything?_since=2021-05-13T08:00:00.000-05:00' \
 	-H "Accept: application/fhir+json" \
 	-H "X-Provenance: <a href="#attestation">{provenance header}</a>" \
-	-H "Authorization: Bearer <a href="https://dpc.cms.gov/docs#obtain-an-access_token">{access token}</a>"
+	-H "Authorization: Bearer <a href="https://dpc.cms.gov/docsV1#obtain-an-access_token">{access token}</a>"
 </code></pre>
 
 #### Response example: successful request
