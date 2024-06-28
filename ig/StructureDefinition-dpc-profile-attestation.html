@@ -48,9 +48,9 @@
 
       <div id="project-status" class="project-status">
 
-      
+
       <strong> Implementation Guide CI Build</strong>
-      
+
 
     </div> -->
 
@@ -82,7 +82,7 @@
         <a href="http://hl7.org/fhir/STU3/index.html" class="navbar-brand hidden">FHIR</a>
         <div class="nav-collapse collapse navbar-inverse-collapse">
 
-         <!-- don't remove the line above - choose what you want  
+         <!-- don't remove the line above - choose what you want
 - [Home](index.html)
 - [General Guidance](guidance.html)
 - [Profiles and Logical Models](profiles.html)
@@ -183,22 +183,22 @@
   <!-- ============BreadCrumb=============== -->
 
 <nav class="breadcrumb">
-  
-    
-    
-      
+
+
+
+
         <a href="toc.html" class="breadcrumb-item btn btn-link btn-sm">TOC</a><a href="index.html" class="breadcrumb-item">Home</a>
         /
         <a href="profiles.html" class="breadcrumb-item">Profiles</a>
         /
         <span class="breadcrumb-item active">StructureDefinition-dpc-profile-attestation</span>
-      
-      
-      
-      
-      
-      
-    
+
+
+
+
+
+
+
 
 
 </nav>
@@ -212,26 +212,26 @@
 
 <ul class="nav nav-tabs">
     <!-- Content -->
-  
+
   	<li class="active"><a href="#">Content</a></li>
-  
-    
 
 
 
 
- 
+
+
+
     <!-- XML -->
-  
+
     <li><a href="StructureDefinition-dpc-profile-attestation.xml.html">XML</a></li>
-  
-    
+
+
       <!-- JSON -->
-  
+
     <li><a href="StructureDefinition-dpc-profile-attestation.json.html">JSON</a></li>
-  
- 
- 
+
+
+
 </ul>
 
 
@@ -267,18 +267,18 @@ It identifies which core elements, extensions, vocabularies and value sets <stro
 <h4 id="mandatory-data-elements-and-terminology">Mandatory Data Elements and Terminology</h4>
 
 <p>The following data-elements are mandatory (i.e data MUST be present).
-These are presented below in a simple human-readable explanation. 
-Profile specific guidance and examples are provided as well. 
+These are presented below in a simple human-readable explanation.
+Profile specific guidance and examples are provided as well.
 The <a href="#profile">Formal Profile Definition</a> below provides the formal summary, definitions, and terminology requirements.</p>
 
 <p><strong>Each Group resource must have:</strong></p>
 
 <ol>
-  <li>A <code class="language-plaintext highlighter-rouge">Provenance.reason</code> to have the code <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/v3/ActReason#TREAT</code></li>
+  <li>A <code class="language-plaintext highlighter-rouge">Provenance.reason</code> to have the code <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/ValueSet/v3-ActReason#TREAT</code></li>
   <li>A <code class="language-plaintext highlighter-rouge">Provenance.recorded</code> with the current date</li>
   <li>At least 1 <code class="language-plaintext highlighter-rouge">Provenance.agent</code> with the following properties:
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">Provenance.agent.role</code> with the code <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/v3/RoleClass#AGNT</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Provenance.agent.role</code> with the code <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/v3-RoleClass#AGNT</code></li>
       <li><code class="language-plaintext highlighter-rouge">Provenance.agent.who</code> with a reference to the <code class="language-plaintext highlighter-rouge">Organization</code> making the attribution request</li>
       <li><code class="language-plaintext highlighter-rouge">Provenance.agent.onBehalfOf</code> with a reference to the <code class="language-plaintext highlighter-rouge">Practitioner</code> on which the attribution request is being made for</li>
     </ul>
@@ -354,7 +354,7 @@ Summary
    </div>
 
   </div>
-  
+
 
  <div id="all-tbl-diff">
    <p><b>Differential View</b></p>
@@ -555,7 +555,7 @@ $( '#tabs' ).tabs({
       Data @ the Point of Care Implementation Guide Version:   &reg;&copy; <a href="http://hl7.org/fhir/STU3/">FHIR Version: 3.0.2</a> (IG Publisher v3.0.2-11200) generated on Wed, Apr 21, 2021 11:33-0400.
       |
         <a rel="license" href="http://hl7.org/fhir/STU3/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
-        
+
         </p>
    </div>    <!-- /inner-wrapper -->
   </div>    <!-- /container -->
@@ -579,7 +579,7 @@ $( '#tabs' ).tabs({
 <script src="./assets/js/anchor.min.js"> </script>
 <script src="./assets/js/fhir.js"> </script>
 
-  
+
   <!-- add acnhors before the closing body tag. -->
 <script> anchors.add()</script>
 

@@ -48,9 +48,9 @@
 
       <div id="project-status" class="project-status">
 
-      
+
       <strong> Implementation Guide CI Build</strong>
-      
+
 
     </div> -->
 
@@ -82,7 +82,7 @@
         <a href="http://hl7.org/fhir/STU3/index.html" class="navbar-brand hidden">FHIR</a>
         <div class="nav-collapse collapse navbar-inverse-collapse">
 
-         <!-- don't remove the line above - choose what you want  
+         <!-- don't remove the line above - choose what you want
 - [Home](index.html)
 - [General Guidance](guidance.html)
 - [Profiles and Logical Models](profiles.html)
@@ -183,22 +183,22 @@
   <!-- ============BreadCrumb=============== -->
 
 <nav class="breadcrumb">
-  
-    
-    
-      
+
+
+
+
         <a href="toc.html" class="breadcrumb-item btn btn-link btn-sm">TOC</a><a href="index.html" class="breadcrumb-item">Home</a>
         /
         <a href="profiles.html" class="breadcrumb-item">Profiles</a>
         /
         <span class="breadcrumb-item active">StructureDefinition-dpc-profile-attestation-definitions</span>
-      
-      
-      
-      
-      
-      
-    
+
+
+
+
+
+
+
 
 
 </nav>
@@ -212,29 +212,29 @@
 
 <ul class="nav nav-tabs">
     <!-- Content -->
-  
+
   	<li><a href="StructureDefinition-dpc-profile-attestation.html">Content</a></li>
-  
-    
 
 
 
 
- 
+
+
+
     <!-- XML -->
-  
+
     <li><a href="StructureDefinition-dpc-profile-attestation.xml.html">XML</a></li>
-  
-    
+
+
       <!-- JSON -->
-  
+
     <li><a href="StructureDefinition-dpc-profile-attestation.json.html">JSON</a></li>
-  
- 
- 
+
+
+
 </ul>
 
-  
+
 
 
     <!-- ============CONTENT CONTENT=============== -->
@@ -386,7 +386,7 @@
 </td></tr>
   <tr><td>Comments</td><td><p>The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously.</p>
 </td></tr>
-  <tr><td>Fixed Value</td><td>http://hl7.org/fhir/v3/ActReason</td></tr>
+  <tr><td>Fixed Value</td><td>http://terminology.hl7.org/ValueSet/v3-ActReason</td></tr>
   <tr><td colspan="2" class="structure"><span class="self-link-parent"><a name="Provenance.reason:provenance-reason.version"> </a><span style="color: grey">20.</span> <b>Provenance.reason:provenance-reason.version</b><a href="#Provenance.reason:provenance-reason.version" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="16" class="self-link" height="16"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></span></td></tr>
   <tr><td>Definition</td><td><p>The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.</p>
 </td></tr>
@@ -527,7 +527,7 @@
   <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
   <tr><td>Comments</td><td><p>For example: author, performer, enterer, attester, doctor, nurse, clerk, etc.</p>
 </td></tr>
-  <tr><td>Pattern Value</td><td>&lt;valueCodeableConcept&nbsp;xmlns="http://hl7.org/fhir"&gt;<br/>&nbsp;&nbsp;&lt;coding&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;system&nbsp;value="http://hl7.org/fhir/v3/RoleClass"/&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;code&nbsp;value="AGNT"/&gt;<br/>&nbsp;&nbsp;&lt;/coding&gt;<br/>&lt;/valueCodeableConcept&gt;<br/></td></tr>
+  <tr><td>Pattern Value</td><td>&lt;valueCodeableConcept&nbsp;xmlns="http://hl7.org/fhir"&gt;<br/>&nbsp;&nbsp;&lt;coding&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;system&nbsp;value="http://terminology.hl7.org/CodeSystem/v3-RoleClass"/&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;code&nbsp;value="AGNT"/&gt;<br/>&nbsp;&nbsp;&lt;/coding&gt;<br/>&lt;/valueCodeableConcept&gt;<br/></td></tr>
   <tr><td colspan="2" class="structure"><span class="self-link-parent"><a name="Provenance.agent:performer.who[x]"> </a><a name="Provenance.agent:performer.whoReference"> </a><a name="Provenance.agent.whoReference"> </a><span style="color: grey">38.</span> <b>Provenance.agent:performer.who[x]</b><a href="#Provenance.agent:performer.who[x]" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="16" class="self-link" height="16"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></span></td></tr>
   <tr><td>Definition</td><td><p>The individual, device or organization that participated in the event.</p>
 </td></tr>
@@ -641,7 +641,7 @@
       Data @ the Point of Care Implementation Guide Version:   &reg;&copy; <a href="http://hl7.org/fhir/STU3/">FHIR Version: 3.0.2</a> (IG Publisher v3.0.2-11200) generated on Wed, Apr 21, 2021 11:33-0400.
       |
         <a rel="license" href="http://hl7.org/fhir/STU3/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
-        
+
         </p>
    </div>    <!-- /inner-wrapper -->
   </div>    <!-- /container -->
@@ -665,7 +665,7 @@
 <script src="./assets/js/anchor.min.js"> </script>
 <script src="./assets/js/fhir.js"> </script>
 
-  
+
   <!-- add acnhors before the closing body tag. -->
 <script> anchors.add()</script>
 </body>
