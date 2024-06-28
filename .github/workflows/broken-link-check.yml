@@ -1,7 +1,7 @@
 name: "Broken Link Check"
 
 on:
-  push:
+  push: # TODO: for testing
   schedule:
     - cron: 0 0 * * 0 # run every Sunday at midnight
 
@@ -9,6 +9,7 @@ jobs:
   check:
     name: "Check for broken links"
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: "Checkout code"
         uses: actions/checkout@v2
@@ -17,16 +18,12 @@ jobs:
         id: lychee
         with:
           fail: true
-          jobSummary: true
+          format: json
           args: --no-progress --accept '200..=299, 401, 405' .
-        continue-on-error: true
       - name: "Send Slack alert if failing"
         if: env.lychee_exit_code != 0 # && github.ref == 'refs/heads/main'
         uses: slackapi/slack-github-action@v1.26.0
         env:
           SLACK_WEBHOOK_URL: "https://hooks.slack.com/triggers/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" # TODO: set as secret
         with:
-          payload: |
-            {
-              "Output": "${{ steps.lychee.outputs }}"
-            }
+          payload: ${{ steps.lychee.outputs }}
