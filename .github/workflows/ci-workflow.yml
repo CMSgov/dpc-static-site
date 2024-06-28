@@ -14,3 +14,10 @@ jobs:
           mkdir -p _site
           mkdir -p .jekyll-cache
           ./scripts/build_and_test.sh
+      - name: "Check for broken links"
+        uses: lycheeverse/lychee-action@v1
+        id: lychee
+        with:
+          fail: true
+          jobSummary: true
+          args: --no-progress --accept '200..=299, 401, 405' .
