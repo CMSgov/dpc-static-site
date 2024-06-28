@@ -16,7 +16,6 @@ jobs:
           ./scripts/build_and_test.sh
       - name: "Check for broken links"
         uses: lycheeverse/lychee-action@v1
-        id: lychee
         with:
           fail: true
           jobSummary: true
