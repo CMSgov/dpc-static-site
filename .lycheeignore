@@ -1,7 +1,10 @@
-.*\.ndjson
+.*\.ndjson$
 file://*
 http://www.acme.com/*
+http://www.omg.org/*
+http://hl7.org/fhir/STU3/null.html
 http://hl7.org/fhir/StructureDefinition/*
+https://dpc.cms.gov/assets/.*\.svg$
 https://dpc.cms.gov/checksum
 https://dpc.cms.gov/file_length
 https://dpc.cms.gov/api/v1*
