@@ -17,7 +17,7 @@ jobs:
         id: lychee
         with:
           fail: true
-          format: json
+          jobSummary: true
           args: --no-progress --accept '200..=299, 401, 405' .
       - name: "Send Slack alert if failing"
         if: always() && env.lychee_exit_code != 0
