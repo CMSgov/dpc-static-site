@@ -27,5 +27,5 @@ jobs:
         with:
           payload: |
             {
-              "Errors": "${{ steps.lychee.outputs.errors }}"
+              "Details": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
             }
