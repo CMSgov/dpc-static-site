@@ -1,0 +1,17 @@
+.*\.ndjson$
+file://*
+http://www.acme.com/*
+http://www.omg.org/*
+http://w3.org/vcard
+http://hl7.org/v2
+http://hl7.org/v3
+http://hl7.org/fhir/*
+http://terminology.hl7.org/*
+http://fhir-registry.smarthealthit.org/StructureDefinition/oauth-uris
+https://dpc.cms.gov/assets/.*\.svg$
+https://dpc.cms.gov/checksum
+https://dpc.cms.gov/file_length
+https://dpc.cms.gov/api/v1*
+https://dpc.cms.gov/users/password/edit
+https://dpc.cms.gov/users/confirmation
+https://pacs.hospital.org/*
