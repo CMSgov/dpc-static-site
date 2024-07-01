@@ -32,4 +32,4 @@ jobs:
             }
       - name: "Fail workflow"
         if: ${{ failure() }}
-        run: exit 1
+        run: exit ${{ env.lychee_exit_code }}
