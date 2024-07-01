@@ -1,6 +1,7 @@
 name: "Broken Link Check"
 
 on:
+  push:
   schedule:
     - cron: 0 0 * * 0 # run every Sunday at midnight
 
@@ -19,7 +20,7 @@ jobs:
           fail: true
           jobSummary: true
           args: --no-progress --accept '200..=299, 401, 405' .
-      - name: "Send Slack alert if failing"
+      - name: "Send Slack alert"
         if: ${{ failure() }}
         uses: slackapi/slack-github-action@v1.26.0
         env:
@@ -29,3 +30,6 @@ jobs:
             {
               "Details": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
             }
+      - name: "Fail workflow"
+        if: ${{ failure() }}
+        run: exit 1
