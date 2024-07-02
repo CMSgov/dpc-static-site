@@ -16,10 +16,8 @@ jobs:
         uses: lycheeverse/lychee-action@v1
         id: lychee
         with:
-          fail: true
           jobSummary: true
           args: --no-progress --accept '200..=299, 401, 405' .
-        continue-on-error: true
       - name: "Send Slack alert"
         if: ${{ env.lychee_exit_code }} != 0
         uses: slackapi/slack-github-action@v1.26.0
