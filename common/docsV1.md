@@ -8,7 +8,7 @@ side_nav_items: guide1_nav
 ---
 
 Welcome to the Data at the Point of Care (DPC) pilot API program! This documentation covers using the API in the sandbox environment with synthetic data.
-
+Broken link: https://dpc.cms.gov/foo/bar
 # Authorization
 ------------------
 
