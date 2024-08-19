@@ -11,7 +11,7 @@ ig/publish: ${IG_PUBLISHER}
 
 build:
 	docker compose -f docker-compose.yml build static_site
-	docker compose -f docker-compose.yml run -f static_site
+	docker compose -f docker-compose.yml run static_site
 
 serve:
 	@docker compose run --publish 4001:4000 --rm --entrypoint "bundle exec jekyll serve -H 0.0.0.0" --volume "./:/dpc-site-static/" static_site
