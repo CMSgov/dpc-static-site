@@ -60,7 +60,7 @@ If you'd like to run the site natively without Docker, follow the instructions b
 It is assumed that the environment already has these installed:
 
 - [ruby](https://www.ruby-lang.org/en/) currently using 2.7.1
-  - Recommend managing this using [rbenv](https://github.com/rbenv/rbenv), [rvm](https://rvm.io/), or [asdf](https://asdf.sh)
+  - Recommend managing this using [rbenv](https://github.com/rbenv/rbenv), [rvm](https://rvm.io/), or [asdf](https://asdf-vm.com/)
 - [jekyll](https://jekyllrb.com/) currently using 4.2.0
 - [npm](https://www.npmjs.com/) currently using 6.13.4
 
