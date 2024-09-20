@@ -42,7 +42,7 @@ In order to aid in users' understanding of DPC file data and structure, we provi
 ## Additional Resources
 
 1. [FHIR/HL7](https://www.hl7.org/fhir/)
-2. [Bulk FHIR specification](http://build.fhir.org/ig/HL7/VhDir/bulk-data.html)
+2. [Bulk FHIR specification](https://hl7.org/fhir/uv/bulkdata/)
 3. [Beneficiary FHIR Data Server (BFD)/ Blue Button API](https://bluebutton.cms.gov/developers/)
 4. [Beneficiary FHIR Data Server (BFD)/ Blue Button Implementation Guide](https://bluebutton.cms.gov/assets/ig/index.html)
 5. [Intro to JSON Format](https://www.json.org/json-en.html) and [NDJSON](https://github.com/ndjson/ndjson-spec)
