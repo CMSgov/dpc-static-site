@@ -9,15 +9,15 @@ side_nav_items: guide1_nav
 
 Welcome to the Data at the Point of Care (DPC) pilot API program! This documentation covers using the API in the sandbox environment with synthetic data.
 
-# I: Authorization
+# I. Authorization
 ------------------
 
-## 1: Request Access
+## 1. Request Access
 Any Fee-for-Service provider organization or Health IT implementer may <a href="https://sandbox.dpc.cms.gov/users/sign_up" target="_blank" and rel=noopener>request access</a> to the sandbox environment and obtain synthetic data by signing-up for an account through the <a href="https://sandbox.dpc.cms.gov/users/sign_in" target="_blank" and rel=noopener>Sandbox Sign Up / Login</a> page. You will receive a confirmation email from CMS upon account creation.
 
 Once your account has been assigned to an organization, you will be notified with a second email, which will include next steps and an invite to join our <a href="https://groups.google.com/g/dpc-api" target="_blank" and rel=noopener>Google Group</a> community. At this time, you may log in to the DPC Portal at <a href="https://dpc.cms.gov" target="_blank" and rel=noopener>https://dpc.cms.gov</a> to create your first client token and start your journey with the DPC pilot API!
 
-## 2: Client Tokens
+## 2. Client Tokens
 
 <a href="#create-client-token" class="ds-u-padding-left--3 guide_sub-link">Create client token</a><br />
 <a href="#create-multiple-client-tokens" class="ds-u-padding-left--3 guide_sub-link">Create multiple client tokens</a><br />
@@ -180,7 +180,7 @@ Client_token IDs can be found either at creation or as the result of [listing cl
 200 - Token was removed
 ~~~
 
-## 3: Public Keys
+## 3. Public Keys
 
 <a href="#upload-your-first-public-key" class="ds-u-padding-left--3 guide_sub-link">Upload your first public key</a><br />
 <a href="#create-a-public-key-signature" class="ds-u-padding-left--3 guide_sub-link">Create a public key signature</a><br />
@@ -370,7 +370,7 @@ The response from the API will include the client_token in the token field.
 200 - Key was removed
 ~~~
 
-## 4: IP Addresses
+## 4. IP Addresses
 
 Note: This step is required only for access to production data. You complete this step in the <a href="https://dpc.cms.gov">DPC Portal</a>.
 
@@ -378,7 +378,7 @@ You'll need to provide a public IP address for your organization. This address i
 
 Note: You can use a maximum of 8 IP addresses. Only IPv4 addresses are allowed. DPC doesn't support IP address ranges.
 
-## 5: JSON Web Tokens
+## 5. JSON Web Tokens
 
 <a href="#validate-a-json-web-token-for-dpc" class="ds-u-padding-left--3 guide_sub-link">Validate a JSON web token for DPC</a>
 
@@ -456,7 +456,7 @@ POST /api/v1/Token/validate
 #### Response:
 The response from the API will return with a HTTP 200 if the JWT is valid; otherwise, an error message will be returned.
 
-## 6: Access/Bearer Token
+## 6. Access/Bearer Token
 
 <a href="#obtain-an-access_token" class="ds-u-padding-left--3 guide_sub-link">Obtain an access_token</a><br />
 <a href="#obtain-a-bearer_token" class="ds-u-padding-left--3 guide_sub-link">Obtain a bearer_token</a>

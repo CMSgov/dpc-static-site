@@ -71,23 +71,23 @@ data_nav:
     id: additional-resources
 
 guide1_nav:
-  - title: Authorization
-    id: authorization
+  - title: I. Authorization
+    id: i-authorization
     subnav:
-      - title: Step One&#x3a; Request Access
-        id: step-one-request-access
-      - title: Step Two&#x3a; Client Tokens
-        id: step-two-client-tokens
-      - title: Step Three&#x3a; Public Keys
-        id: step-three-public-keys
-      - title: Step Four&#x3a; IP Addresses (production only)
-        id: step-four-ip-addresses-prod
-      - title: Step Five&#x3a; JSON Web Tokens
-        id: step-five-json-web-tokens
-      - title: Step Six&#x3a; Access/Bearer Token
-        id: step-six-accessbearer-token
-  - title: Attestation & Attribution
-    id: attestation--attribution
+      - title: 1. Request Access
+        id: 1-request-access
+      - title: 2. Client Tokens
+        id: 2-client-tokens
+      - title: 3. Public Keys
+        id: 3-public-keys
+      - title: 4. IP Addresses (production only)
+        id: 4-ip-addresses
+      - title: 5. JSON Web Tokens
+        id: 5-json-web-tokens
+      - title: 6. Access/Bearer Token
+        id: 6-accessbearer-token
+  - title: II. Attestation & Attribution
+    id: ii-attestation--attribution
     subnav:
       - title: Load Sample Data
         id: load-sample-data
@@ -99,8 +99,8 @@ guide1_nav:
         id: attestation
       - title: Groups (Attribution)
         id: groups-attribution
-  - title: Export Data
-    id: export-data
+  - title: III. Export Data
+    id: iii-export-data
     subnav:
       - title: Initiate an Export Job
         id: initiate-an-export-job
@@ -112,8 +112,8 @@ guide1_nav:
         id: check-status-of-the-export-job
       - title: Retrieve NDJSON Output
         id: retrieve-the-ndjson-output-files
-  - title: Postman Collection
-    id: postman-collection
+  - title: IV. Postman Collection
+    id: iv-postman-collection
     subnav:
       - title: Patient/$everything
         id: patienteverything
