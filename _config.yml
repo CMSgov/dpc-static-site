@@ -80,10 +80,12 @@ guide1_nav:
         id: step-two-client-tokens
       - title: Step Three&#x3a; Public Keys
         id: step-three-public-keys
-      - title: Step Four&#x3a; JSON Web Tokens
-        id: step-four-json-web-tokens
-      - title: Step Five&#x3a; Access/Bearer Token
-        id: step-five-accessbearer-token
+      - title: Step Four&#x3a; IP Addresses (production only)
+        id: step-four-ip-addresses-prod
+      - title: Step Five&#x3a; JSON Web Tokens
+        id: step-five-json-web-tokens
+      - title: Step Six&#x3a; Access/Bearer Token
+        id: step-six-accessbearer-token
   - title: Attestation & Attribution
     id: attestation--attribution
     subnav:
