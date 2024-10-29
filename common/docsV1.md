@@ -9,15 +9,15 @@ side_nav_items: guide1_nav
 
 Welcome to the Data at the Point of Care (DPC) pilot API program! This documentation covers using the API in the sandbox environment with synthetic data.
 
-# Authorization
+# I. Authorization
 ------------------
 
-## Step One: Request Access
+## 1. Request Access
 Any Fee-for-Service provider organization or Health IT implementer may <a href="https://sandbox.dpc.cms.gov/users/sign_up" target="_blank" and rel=noopener>request access</a> to the sandbox environment and obtain synthetic data by signing-up for an account through the <a href="https://sandbox.dpc.cms.gov/users/sign_in" target="_blank" and rel=noopener>Sandbox Sign Up / Login</a> page. You will receive a confirmation email from CMS upon account creation.
 
 Once your account has been assigned to an organization, you will be notified with a second email, which will include next steps and an invite to join our <a href="https://groups.google.com/g/dpc-api" target="_blank" and rel=noopener>Google Group</a> community. At this time, you may log in to the DPC Portal at <a href="https://dpc.cms.gov" target="_blank" and rel=noopener>https://dpc.cms.gov</a> to create your first client token and start your journey with the DPC pilot API!
 
-## Step Two: Client Tokens
+## 2. Client Tokens
 
 <a href="#create-client-token" class="ds-u-padding-left--3 guide_sub-link">Create client token</a><br />
 <a href="#create-multiple-client-tokens" class="ds-u-padding-left--3 guide_sub-link">Create multiple client tokens</a><br />
@@ -180,7 +180,7 @@ Client_token IDs can be found either at creation or as the result of [listing cl
 200 - Token was removed
 ~~~
 
-## Step Three: Public Keys
+## 3. Public Keys
 
 <a href="#upload-your-first-public-key" class="ds-u-padding-left--3 guide_sub-link">Upload your first public key</a><br />
 <a href="#create-a-public-key-signature" class="ds-u-padding-left--3 guide_sub-link">Create a public key signature</a><br />
@@ -370,7 +370,15 @@ The response from the API will include the client_token in the token field.
 200 - Key was removed
 ~~~
 
-## Step Four: JSON Web Tokens
+## 4. IP Addresses
+
+Note: This step is required only for access to production data. You complete this step in the <a href="https://dpc.cms.gov">DPC Portal</a>.
+
+You'll need to provide a public IP address for your organization. This address is associated with the systems that will be accessing production data. You'll choose a descriptive name for your address and enter it in the Portal in the form XXX.XXX.XX.XX.
+
+Note: You can use a maximum of 8 IP addresses. Only IPv4 addresses are allowed. DPC doesn't support IP address ranges.
+
+## 5. JSON Web Tokens
 
 <a href="#validate-a-json-web-token-for-dpc" class="ds-u-padding-left--3 guide_sub-link">Validate a JSON web token for DPC</a>
 
@@ -448,7 +456,7 @@ POST /api/v1/Token/validate
 #### Response:
 The response from the API will return with a HTTP 200 if the JWT is valid; otherwise, an error message will be returned.
 
-## Step Five: Access/Bearer Token
+## 6. Access/Bearer Token
 
 <a href="#obtain-an-access_token" class="ds-u-padding-left--3 guide_sub-link">Obtain an access_token</a><br />
 <a href="#obtain-a-bearer_token" class="ds-u-padding-left--3 guide_sub-link">Obtain a bearer_token</a>
@@ -596,7 +604,7 @@ fetch('https://sandbox.dpc.cms.gov/api/v1/Token/auth', {
 <a class="guide_top_link" href="#authorization">Back to Start of Section</a><br />
 <a class="guide_top_link" href="#">Back to Top of Page</a>
 
-# Attestation & Attribution
+# II. Attestation & Attribution
 ------------------
 Before accessing patient data, DPC must establish that you have a valid patient-practitioner relationship with CMS Medicare and Medicaid Beneficiaries. This process is referred to as Attestation/Attribution in the DPC API.
 
@@ -1554,7 +1562,7 @@ The response will return a <a href="https://www.hl7.org/fhir/STU3/bundle.html" t
 <a class="guide_top_link" href="#attestation--attribution">Back to Start of Section</a><br />
 <a class="guide_top_link" href="#">Back to Top of Page</a>
 
-# Export Data
+# III. Export Data
 ------------
 The primary interaction with the DPC pilot API is via the FHIR /Group/$export operation. This allows an organization to export Patient, Coverage, and Explanation of Benefit data in an asynchronous and bulk manner. Details on the FHIR bulk data operations can be found in the <a href="https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-group-export.html" target="_blank" and rel=noopener>FHIR Bulk Data Specification</a>.
 
@@ -2060,7 +2068,7 @@ To obtain the exported explanation of benefit data, a GET request is made to the
 <a class="guide_top_link" href="#export-data">Back to Start of Section</a><br />
 <a class="guide_top_link" href="#">Back to Top of Page</a>
 
-# Postman Collection
+# IV. Postman Collection
 
 This collection contains example requests to public endpoints for the DPC API. To use this collection, you must have the Postman App downloaded onto your computer. This will include the collection of requests, the sandbox environment, and global variables to be imported into your Postman App.
 
