@@ -1,0 +1,14 @@
+name: deploy static site
+
+on:
+  push:
+    paths:
+      - .github/worflows/deploy.yml
+
+jobs:
+  first_thing:
+    runs-on: ubuntu-latest
+    steps:
+      run: echo 'works'
+
+  
