@@ -1,4 +1,4 @@
-name: deploy static site
+name: 'deploy static site'
 
 on:
   workflow_dispatch:
