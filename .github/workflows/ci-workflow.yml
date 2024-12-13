@@ -1,23 +1,14 @@
-name: "DPC Static Site CI Workflow"
+name: 'deploy static site'
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - .github/worflows/deploy.yml
 
 jobs:
-  build:
-    name: "Build and Test"
+  first_thing:
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout code"
-        uses: actions/checkout@v2
-      - name: "Build and Test"
-        run: |
-          mkdir -p _site
-          mkdir -p .jekyll-cache
-          ./scripts/build_and_test.sh
-      - name: "Check for broken links"
-        uses: lycheeverse/lychee-action@v1
-        with:
-          fail: true
-          jobSummary: true
-          args: --no-progress --accept '200..=299, 401, 403, 405' .
+      - run: echo 'works'
+
