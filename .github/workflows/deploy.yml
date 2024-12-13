@@ -17,7 +17,7 @@ jobs:
       - name: "Checkout code"
         uses: actions/checkout@v4
       - name: "Add dirs"
-        run: mkdir -p _site && mdkir -p .jekyll-cache
+        run: mkdir -p _site && mkdir -p .jekyll-cache
       - name: "List directory pre build"
         run: ls _site  
       - name: 'Build Image'
