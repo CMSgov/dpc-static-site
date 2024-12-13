@@ -9,6 +9,6 @@ jobs:
   first_thing:
     runs-on: ubuntu-latest
     steps:
-      run: echo 'works'
+      - run: echo 'works'
 
   
