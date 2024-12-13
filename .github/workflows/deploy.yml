@@ -16,6 +16,9 @@ jobs:
     steps:
       - name: "Checkout code"
         uses: actions/checkout@v4
+        with:
+          repository: 'CMSgov/dpc-static-site'
+          ref: 'jd/dpc-4433-gha-deploy-static'
       - name: "Add dirs"
         run: mkdir -p _site && mkdir -p .jekyll-cache
       - name: 'Build Image'
@@ -30,6 +33,10 @@ jobs:
           params: |
             SONAR_HOST_URL=/sonarqube/url
             SONAR_TOKEN=/sonarqube/token
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ secrets.ACCOUNT_ID }}:role/delegatedadmin/developer/dpc-dev-github-actions
       - name: Run quality gate scan
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
         uses: sonarsource/sonarqube-scan-action@master
