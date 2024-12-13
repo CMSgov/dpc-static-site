@@ -1,6 +1,7 @@
 name: deploy static site
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - .github/worflows/deploy.yml
@@ -11,4 +12,3 @@ jobs:
     steps:
       - run: echo 'works'
 
-  
