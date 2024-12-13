@@ -30,8 +30,6 @@ jobs:
           params: |
             SONAR_HOST_URL=/sonarqube/url
             SONAR_TOKEN=/sonarqube/token
-      - name: Test aws connection
-        run: aws s3 ls s3://stage.dpc.cms.gov/
       - name: Run quality gate scan
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
         uses: sonarsource/sonarqube-scan-action@master
@@ -43,5 +41,14 @@ jobs:
             -Dsonar.branch.name=${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
             -Dsonar.projectVersion=${{ github.ref_name == 'main' && github.sha || 'branch' }}
             -Dsonar.qualitygate.wait=true
-      - name: "List directory pre build"
-        run: ls _site  
+      - name: List Bucket before sync
+        run: aws s3 ls s3://stage.dpc.cms.gov/
+      - name: "Sync _site"
+        run: aws s3 sync _site/ s3://stage.dpc.cms.gov/ --delete
+      - name: Upload html files without suffix with content-language set
+        run: |
+          for file in _site/*.html; do
+            aws s3 cp ${file} s3://stage.dpc.cms.gov/${file/.html} --content-language text/html
+          done
+      - name: List Bucket after sync
+        run: aws s3 ls s3://stage.dpc.cms.gov/
