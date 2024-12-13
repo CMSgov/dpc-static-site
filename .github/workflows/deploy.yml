@@ -7,7 +7,7 @@ on:
       - .github/workflows/deploy.yml
 
 jobs:
-  sonar-quality-gate:
+  deploy_static_site:
     name: Sonarqube Quality Gate
     runs-on: self-hosted
     env:
@@ -24,6 +24,10 @@ jobs:
         run: docker build . -f Dockerfiles/Dockerfile.static_site -t static_site
       - name: 'Build Site'
         run: docker run -v ./_site:/dpc-site-static/_site -v ./.jekyll-cache:/dpc-site-static/.jekyll-cache --rm static_site
+      - name: "List directory pre copy"
+        run: ls _site  
+      - name: 'Copy html files without suffix'
+        run: find _site -name '*html' | awk '{ c=$0; gsub(".html", "", c) ; system( "cp -n " $0 " " c )}'
       - name: "List directory post build"
         run: ls _site  
       - name: Set env vars from AWS params
@@ -45,3 +49,5 @@ jobs:
             -Dsonar.branch.name=${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
             -Dsonar.projectVersion=${{ github.ref_name == 'main' && github.sha || 'branch' }}
             -Dsonar.qualitygate.wait=true
+      - name: "List directory pre build"
+        run: ls _site  
