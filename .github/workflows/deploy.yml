@@ -35,7 +35,7 @@ jobs:
             SONAR_TOKEN=/sonarqube/token
       - uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-region: ${{ AWS_REGION }}
+          aws-region: us-east-1
           role-to-assume: arn:aws:iam::${{ secrets.ACCOUNT_ID }}:role/delegatedadmin/developer/dpc-dev-github-actions
       - name: Run quality gate scan
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
