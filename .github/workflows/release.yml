@@ -25,7 +25,7 @@ jobs:
   deploy:
     name: Deploy to staging
     needs: tag_site
-    uses: ./.github/workflows/fake_deploy.yml@jd/dpc-4433-gha-deploy-static
+    uses: ./.github/workflows/fake_deploy.yml
     with:
       target_environment: staging
       static_repo_ref: ${{ needs.tag_site.outputs.next_rev }}
