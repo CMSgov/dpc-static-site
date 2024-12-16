@@ -21,7 +21,8 @@ jobs:
       - name: Verify output
         env:
           OUTPUT: ${{ needs.tag_site.outputs.next_rev }}
-        run: echo $OUTPUT
+        run: |
+          echo $OUTPUT
   deploy:
     name: Deploy to staging
     needs: tag_site
