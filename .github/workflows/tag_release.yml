@@ -1,10 +1,6 @@
 name: 'Tag Repo'
 
 on:
-  push:
-    paths:
-      - .github/workflows/tag_release.yml
-    
   workflow_call:
     inputs:
       repo_ref:
@@ -12,14 +8,16 @@ on:
         required: false
         default: 'main'
         type: 'string'
+    outputs:
+      tag:
+        description: the release tag
+        value: ${{ jobs.tag_repo.outputs.next_rev }}
 jobs:
   tag_repo:
     name: Tag Repository
     runs-on: ubuntu-latest
     outputs:
       next_rev: ${{ steps.set_revs.outputs.next_rev }}
-      test_one: test_one
-      test_two: test_three=bar
     steps:
       - name: "Checkout code"
         uses: actions/checkout@v4
@@ -50,19 +48,3 @@ jobs:
         with:
           body: ${{ steps.set_body.outputs.body }}
           tag_name: ${{ steps.set_revs.outputs.next_rev }}
-  test_output:
-    name: Verifying Output
-    runs-on: ubuntu-latest
-    needs: tag_repo
-    steps:
-      - name: Verify output
-        env:
-          OUTPUT: ${{ needs.tag_repo.outputs.next_rev }}
-          TEST_ONE:  ${{ needs.tag_repo.outputs.test_one }}
-          TEST_TWO:  ${{ needs.tag_repo.outputs.test_two }}
-          TEST_THREE:  ${{ needs.tag_repo.outputs.test_three }}
-        run: |
-          echo $OUTPUT
-          echo $TEST_ONE
-          echo $TEST_TWO
-          echo $TEST_THREE
