@@ -19,7 +19,7 @@ jobs:
       TARGET: ${{ inputs.target_environment }}
       REF: ${{ inputs.static_repo_ref }}
     steps:
-      name: Print inputs
-      run: |
-        echo $TARGET
-        echo $REF
+      - name: Print inputs
+        run: |
+          echo $TARGET
+          echo $REF
