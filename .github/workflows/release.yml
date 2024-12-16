@@ -13,13 +13,10 @@ jobs:
     with:
       repo_ref: main
     secrets: inherit
-  test_outputs:
-    name: Verifying Output
-    runs-on: ubuntu-latest
+  deploy:
+    name: Deploy to staging
     needs: tag_site
-    steps:
-      - name: Verify output
-        env:
-          OUTPUT: ${{ needs.tag_site.outputs.tag }}
-        run: |
-          echo $OUTPUT
+    uses: .github/workflows/fake_deploy.yml
+    with:
+      target_environment: staging
+      static_repo_ref: ${{ needs.tag_site.outputs.tag }}
