@@ -13,7 +13,7 @@ jobs:
       repo_ref: main
     secrets: inherit
   deploy:
-    name: Deploy to staging
+    name: Deploy to Staging
     needs: tag_site
     uses: ./.github/workflows/deploy.yml
     with:

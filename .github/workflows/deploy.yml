@@ -16,12 +16,13 @@ on:
         required: true
         default: 'main'
         type: 'string'
-
-    workflow_call:
+  workflow_call:
+    inputs:
       target_environment:
         description: Deploy where?
         required: false
         default: 'staging'
+        type: 'string'
       static_repo_ref:
         description: Which branch or tag?
         required: true
