@@ -16,7 +16,7 @@ jobs:
   deploy:
     name: Deploy to staging
     needs: tag_site
-    uses: ./.github/workflows/fake_deploy.yml
+    uses: ./.github/workflows/deploy.yml
     with:
       target_environment: staging
       static_repo_ref: ${{ needs.tag_site.outputs.tag }}

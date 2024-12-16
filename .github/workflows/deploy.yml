@@ -39,6 +39,10 @@ jobs:
         with:
           repository: 'CMSgov/dpc-static-site'
           ref: ${{ inputs.static_repo_ref }}
+      - name: "Set Version"
+        env:
+          STATIC_REPO_REF: ${{ inputs.static_repo_ref }}
+        run: echo "version: $STATIC_REPO_REF" >> _version_config.yml
       - name: "Add dirs"
         run: mkdir -p _site && mkdir -p .jekyll-cache
       - name: 'Build Image'
