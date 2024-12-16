@@ -13,3 +13,19 @@ jobs:
     with:
       repo_ref: main
     secrets: inherit
+  test_outputs:
+    name: Verifying Output
+    runs-on: ubuntu-latest
+    needs: tag_site
+    steps:
+      name: Verify output
+      env:
+        OUTPUT: ${{ needs.tag_site.outputs.next_rev }}
+      run: echo $OUTPUT
+  deploy:
+    name: Deploy to staging
+    needs: tag_site
+    uses: .github/workflows/fake_deploy.yml@jd/dpc-4433-gha-deploy-static
+    with:
+      target_environment: staging
+      static_repo_ref: ${{ needs.tag_site.outputs.next_rev }}

@@ -17,7 +17,7 @@ on:
         default: 'main'
         type: 'string'
 
-    workflow_on:
+    workflow_call:
       target_environment:
         description: Deploy where?
         required: false
