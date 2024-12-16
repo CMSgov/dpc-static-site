@@ -34,7 +34,7 @@ jobs:
           prev_rev_num=${prev_rev/r}
           next_rev_num=$((prev_rev_num + 1))
           next_rev=r$next_rev_num
-          echo "next_rev=$next_rev" >> "$GITHUB_OUTPUT"
+          echo "next_rev=prev_rev" >> "$GITHUB_OUTPUT"
       - name: "Set Body"
         id: set_body
         env:
