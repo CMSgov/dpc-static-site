@@ -1,0 +1,15 @@
+name: 'Tag and Deploy Site'
+
+on:
+  push:
+    paths:
+      - .github/workflows/release.yml
+
+
+jobs:
+  tag_site:
+    name: Tag Site
+    uses: CMSGov/dpc-app/.github/workflows/tag_release.yml@jd/dpc-4433-gha-deploy-static
+    with:
+      repo_ref: main
+    secrets: inherit
