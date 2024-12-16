@@ -9,7 +9,7 @@ on:
 jobs:
   tag_site:
     name: Tag Site
-    uses: CMSGov/dpc-app/.github/workflows/tag_release.yml@jd/dpc-4433-gha-deploy-static
+    uses: ./.github/workflows/tag_release.yml
     with:
       repo_ref: main
     secrets: inherit
@@ -21,12 +21,11 @@ jobs:
       - name: Verify output
         env:
           OUTPUT: ${{ needs.tag_site.outputs.next_rev }}
+          TEST_ONE:  ${{ needs.tag_site.outputs.test_one }}
+          TEST_TWO:  ${{ needs.tag_site.outputs.test_two }}
+          TEST_THREE:  ${{ needs.tag_site.outputs.test_three }}
         run: |
           echo $OUTPUT
-  deploy:
-    name: Deploy to staging
-    needs: tag_site
-    uses: ./.github/workflows/fake_deploy.yml
-    with:
-      target_environment: staging
-      static_repo_ref: ${{ needs.tag_site.outputs.next_rev }}
+          echo $TEST_ONE
+          echo $TEST_TWO
+          echo $TEST_THREE
