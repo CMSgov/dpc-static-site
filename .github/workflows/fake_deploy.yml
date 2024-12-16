@@ -1,7 +1,8 @@
 name: 'Deploy Static Site'
 
 on:
-    workflow_call:
+  workflow_call:
+    inputs:
       target_environment:
         description: Deploy where?
         required: false
