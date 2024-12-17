@@ -6,17 +6,17 @@ on:
       - .github/workflows/release.yml
 
 jobs:
-  tag_site:
-    name: Tag Site
+  tag_repo:
+    name: Tag Repo
     uses: ./.github/workflows/tag_release.yml
     with:
       repo_ref: main
     secrets: inherit
   deploy:
     name: Deploy to Staging
-    needs: tag_site
+    needs: tag_repo
     uses: ./.github/workflows/deploy.yml
     with:
       target_environment: staging
-      static_repo_ref: ${{ needs.tag_site.outputs.tag }}
+      static_repo_ref: ${{ needs.tag_repo.outputs.tag }}
     secrets: inherit

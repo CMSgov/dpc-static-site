@@ -33,8 +33,8 @@ jobs:
           echo "prev_rev=$prev_rev" >> "$GITHUB_OUTPUT"
           prev_rev_num=${prev_rev/r}
           next_rev_num=$((prev_rev_num + 1))
-          next_rev=r$next_rev_num
-          echo "next_rev=$prev_rev" >> "$GITHUB_OUTPUT"
+          next_rev=t$next_rev_num
+          echo "next_rev=$next_rev" >> "$GITHUB_OUTPUT"
       - name: "Set Body"
         id: set_body
         env:
@@ -43,7 +43,6 @@ jobs:
           BODY=`git log --pretty=format:"- %s" $PREV_REV..HEAD`
           echo "body=$BODY" >> "$GITHUB_OUTPUT"
       - name: Release
-        if: ${{ env.NEXT_REV == 'dont run' }}
         uses: softprops/action-gh-release@v2
         with:
           body: ${{ steps.set_body.outputs.body }}
