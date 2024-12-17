@@ -10,13 +10,9 @@ jobs:
     name: Compliance Check
     runs-on: ubuntu-latest
     steps:
-      - name: Sanity check
-        run: |
-          curl -v https://stage.dpc.cms.gov
       - name: Run Axe Check
-        if: ${{ 'foo' == 'bar' }}
         env:
-          TARGET_BASE_URL: 'https://stage.dpc.cms.gov'
+          TARGET_BASE_URL: 'https://dpc.cms.gov'
         run: |
           TARGETS_TO_SCAN="${TARGET_BASE_URL}"
           TARGETS_TO_SCAN="${TARGETS_TO_SCAN} ${TARGET_BASE_URL}/faq.html"
