@@ -7,6 +7,8 @@ on:
 
 jobs:
   compliance_check:
+    name: Compliance Check
+    runs-on: ubuntu-latest
     steps:
       - name: Run Axe Check
         env:
