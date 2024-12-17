@@ -13,7 +13,7 @@ jobs:
       repo_ref: main
     secrets: inherit
   deploy:
-    if: {{ env.FOO == 'bar' }}
+    if: ${{ env.FOO == 'bar' }}
     name: Deploy to Staging
     needs: tag_repo
     uses: ./.github/workflows/deploy.yml
