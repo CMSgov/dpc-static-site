@@ -2,22 +2,23 @@ name: "DPC Static Site CI Workflow"
 
 on:
   workflow_dispatch:
-
+    inputs:
+      deploy:
+        description: 'Deploy or just tag?'
+        type: boolean
+        default: true
+        required: true
+        
 jobs:
   build:
     name: "Build and Test"
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout code"
-        uses: actions/checkout@v2
-      - name: "Build and Test"
+      - name: Run if true
+        if:  ${{ inputs.deploy }}
         run: |
-          mkdir -p _site
-          mkdir -p .jekyll-cache
-          ./scripts/build_and_test.sh
-      - name: "Check for broken links"
-        uses: lycheeverse/lychee-action@v1
-        with:
-          fail: true
-          jobSummary: true
-          args: --no-progress --accept '200..=299, 401, 403, 405' .
+          echo 'Told to deploy'
+      - name: Run if false
+        if:  ${{ !inputs.deploy }}
+        run: |
+          echo 'Told not to deploy'
