@@ -19,11 +19,12 @@ on:
 jobs:
   tag_repo:
     name: Tag Repo
-    uses: CMSgov/dpc-app/.github/workflows/tag_release.yml@jd/dpc-4433-gha-deploy-static
+    uses: CMSgov/dpc-app/.github/workflows/tag_release.yml@main
     with:
-      repo_ref: ${{ inputs.repo_ref || 'main' }}
+      repo_ref: ${{ inputs.repo_ref }}
     secrets: inherit
   deploy:
+    if: ${{ inputs.deploy }}
     name: Deploy to Staging
     needs: tag_repo
     uses: ./.github/workflows/deploy.yml
