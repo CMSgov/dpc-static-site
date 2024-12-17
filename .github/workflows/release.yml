@@ -19,3 +19,4 @@ jobs:
     with:
       target_environment: staging
       static_repo_ref: ${{ needs.tag_site.outputs.tag }}
+    secrets: inherit
