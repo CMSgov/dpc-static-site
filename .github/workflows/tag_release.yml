@@ -30,7 +30,7 @@ jobs:
         id: set_revs
         run: |
           prev_rev=`git tag -l 'r*' --sort=v:refname | tail -n 1`
-          echo "prev_rev=$prev_rev" >> "$GITHUB_OUTPUT"
+          echo "prev_rev=r46" >> "$GITHUB_OUTPUT"
           prev_rev_num=${prev_rev/r}
           next_rev_num=$((prev_rev_num + 1))
           next_rev=t$next_rev_num
