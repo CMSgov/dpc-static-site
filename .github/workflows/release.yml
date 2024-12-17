@@ -1,9 +1,13 @@
 name: 'Tag and Deploy Site'
 
 on:
-  push:
-    paths:
-      - .github/workflows/release.yml
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: 'Also deploy to staging?'
+        type: boolean
+        default: true
+        required: true
 
 jobs:
   tag_repo:
@@ -13,6 +17,7 @@ jobs:
       repo_ref: main
     secrets: inherit
   deploy:
+    if:  ${{ inputs.deploy }}
     name: Deploy to Staging
     needs: tag_repo
     uses: ./.github/workflows/deploy.yml
