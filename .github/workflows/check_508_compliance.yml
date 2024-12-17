@@ -3,12 +3,12 @@ name: Check 508 Compliance
 on:
   push:
     paths:
-      - .github/worflows/check_508_compliance.yml
+      - .github/workflows/check_508_compliance.yml
 
 jobs:
   compliance_check:
     steps:
-      - name: Run Axe
+      - name: Run Axe Check
         env:
           TARGET_BASE_URL: 'https://stage.dpc.cms.gov'
         run: |
