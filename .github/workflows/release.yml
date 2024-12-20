@@ -13,9 +13,7 @@ on:
         required: true
         default: 'main'
         type: 'string'
-  push:
-    paths:
-      - .github/workflows/release.yml
+
 jobs:
   tag_repo:
     name: Tag Repo
