@@ -1,0 +1,32 @@
+name: 'Tag and Deploy Site'
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: 'Also deploy to staging?'
+        type: boolean
+        default: true
+        required: true
+      repo_ref:
+        description: 'Which branch or tag?'
+        required: true
+        default: 'main'
+        type: 'string'
+
+jobs:
+  tag_repo:
+    name: Tag Repo
+    uses: CMSgov/dpc-app/.github/workflows/tag_release.yml@main
+    with:
+      repo_ref: ${{ inputs.repo_ref }}
+    secrets: inherit
+  deploy:
+    if: ${{ inputs.deploy }}
+    name: Deploy to Staging
+    needs: tag_repo
+    uses: ./.github/workflows/deploy.yml
+    with:
+      target_environment: staging
+      static_repo_ref: ${{ needs.tag_repo.outputs.tag }}
+    secrets: inherit
