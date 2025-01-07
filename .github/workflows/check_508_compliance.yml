@@ -41,7 +41,7 @@ jobs:
             channel: "CMC1E4AEQ"
             attachments:
               - color: good
-                text: SUCCESS: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|Static Site 508 Compliance> completed against `${{ inputs.target_host }}`"
+                text: "SUCCESS: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|Static Site 508 Compliance> completed against `${{ inputs.target_host }}`"
                 mrkdown_in:
                   - text
       - uses: slackapi/slack-github-action@v2.0.0
