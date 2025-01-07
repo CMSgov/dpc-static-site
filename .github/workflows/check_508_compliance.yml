@@ -46,7 +46,7 @@ jobs:
                   - text
       - uses: slackapi/slack-github-action@v2.0.0
         name: Slack failure
-        if: ${{ falure() }}
+        if: ${{ failure() }}
         with:
           method: chat.postMessage
           token: ${{ secrets.SLACK_BOT_TOKEN }}
