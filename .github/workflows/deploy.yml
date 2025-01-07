@@ -96,7 +96,7 @@ jobs:
             channel: "CMC1E4AEQ"
             attachments:
               - color: good
-                text: "SUCCESS: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|static site version> `${{ inputs.static_repo_ref }} deployed to ${{ inputs.target_environment }} environment."
+                text: "SUCCESS: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|static site version> `${{ inputs.static_repo_ref }}` deployed to ${{ inputs.target_environment }} environment."
                 mrkdown_in:
                   - text
       - uses: slackapi/slack-github-action@v2.0.0
@@ -110,6 +110,6 @@ jobs:
             channel: "CMC1E4AEQ"
             attachments:
               - color: danger
-                text: "FAILURE: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|static site version> `${{ inputs.static_repo_ref }} deployed to ${{ inputs.target_environment }} environment."
+                text: "FAILURE: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|static site version> `${{ inputs.static_repo_ref }}` deployed to ${{ inputs.target_environment }} environment."
                 mrkdown_in:
                   - text
