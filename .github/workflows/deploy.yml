@@ -86,3 +86,30 @@ jobs:
         run: |
           DISTRIBUTION_ID=`aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id, OriginDomainName: Origins.Items[0].DomainName}[?starts_with(OriginDomainName, '$TARGET_BUCKET')].Id" --output text`
           aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*'
+      - uses: slackapi/slack-github-action@v2.0.0
+        name: Slack Success
+        with:
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
+          # Sends to dpc-deploys
+          payload: |
+            channel: "CMC1E4AEQ"
+            attachments:
+              - color: good
+                text: "SUCCESS: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|static site version> `${{ inputs.static_repo_ref }}` deployed to ${{ inputs.target_environment }} environment."
+                mrkdown_in:
+                  - text
+      - uses: slackapi/slack-github-action@v2.0.0
+        name: Slack failure
+        if: ${{ failure() }}
+        with:
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
+          # Sends to dpc-deploys
+          payload: |
+            channel: "CMC1E4AEQ"
+            attachments:
+              - color: danger
+                text: "FAILURE: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|static site version> `${{ inputs.static_repo_ref }}` deployed to ${{ inputs.target_environment }} environment."
+                mrkdown_in:
+                  - text
