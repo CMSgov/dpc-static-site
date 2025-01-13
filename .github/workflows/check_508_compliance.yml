@@ -19,9 +19,13 @@ jobs:
     name: Compliance Check
     runs-on: self-hosted
     steps:
+      - name: Set Target Base
+        -id: target-base
+        run: |
+          echo "${{ inputs.target_host || 'https://stage.dpc.cms.gov' }}=TARGET_BASE_URL" >> "$GITHUB_OUTPUT"
       - name: Run Axe Check
         env:
-          TARGET_BASE_URL: ${{ inputs.target_host || 'https://stage.dpc.cms.gov' }}
+          TARGET_BASE_URL: ${{ steps.target-base.outputs.target-base }}
         run: |
           TARGETS_TO_SCAN="${TARGET_BASE_URL}"
           TARGETS_TO_SCAN="${TARGETS_TO_SCAN} ${TARGET_BASE_URL}/faq.html"
@@ -41,7 +45,7 @@ jobs:
             channel: "CMC1E4AEQ"
             attachments:
               - color: good
-                text: "SUCCESS: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|Static Site 508 Compliance> completed against `${{ inputs.target_host }}`"
+                text: "SUCCESS: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|Static Site 508 Compliance> completed against `${{ steps.target-base.outputs.target-base }}`"
                 mrkdown_in:
                   - text
       - uses: slackapi/slack-github-action@v2.0.0
@@ -55,6 +59,6 @@ jobs:
             channel: "CMC1E4AEQ"
             attachments:
               - color: danger
-                text: "FAILURE: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|Static Site 508 Compliance> completed against `${{ inputs.target_host }}`"
+                text: "FAILURE: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|Static Site 508 Compliance> completed against `${{ steps.target-base.outputs.target-base }}`"
                 mrkdown_in:
                   - text
