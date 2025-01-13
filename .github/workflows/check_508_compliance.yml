@@ -20,7 +20,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Set Target Base
-        -id: target-base
+        id: target-base
         run: |
           echo "${{ inputs.target_host || 'https://stage.dpc.cms.gov' }}=TARGET_BASE_URL" >> "$GITHUB_OUTPUT"
       - name: Run Axe Check
