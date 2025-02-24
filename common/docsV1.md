@@ -2070,18 +2070,20 @@ To obtain the exported explanation of benefit data, a GET request is made to the
 
 # IV. Postman Collection
 
-This collection contains example requests to public endpoints for the DPC API. To use this collection, you must have the Postman App downloaded onto your computer. This will include the collection of requests, the sandbox environment, and global variables to be imported into your Postman App.
+This collection contains example requests to public endpoints for the DPC API. To use this collection, you must have the Postman App downloaded onto your computer and have setup your local vault as described <a href="https://learning.postman.com/docs/sending-requests/postman-vault/postman-vault-secrets/">here</a>. This will include the collection of requests, the sandbox environment, and global variables to be imported into your Postman App.
 
 <div class="download_btn--container">
   <a href="{{ site.url }}/assets/downloads/postman.zip" class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" target="_blank" rel=noopener download>Postman Collection Download</a>
 </div>
 
 1. Select the environment (top right): Data at the Point of Care Sandbox
-2. Please fill in the following values:
+2. Fill in your key-id: This is the DPC ID of your public key, which is returned to you when the public key is uploaded to the DPC Portal. You need this to generate a JWT, which will be exchanged for an access token.
+3. Add the following values to your vault
     - client_token: Your [client token](#step-two-client-tokens) is generated through the DPC Portal. Be sure to save a copy of your token in a safe place.
-    - PRIVATE_KEY: Paste the contents of your private key in the `PRIVATE_KEY` field of your local Postman sandbox environment. Do not share your private key otherwise. If you do not already have your public and private keys, please generate your [public/private](#step-three-public-keys) key pair through the DPC Portal.
-    - key-id: This is the DPC ID of your public key, which is returned to you when the public key is uploaded to the DPC Portal. You need this to generate a JWT, which will be exchanged for an access token.
-3. With these three values in place, the JWT and a fresh access token are automatically generated for you before each request in this Postman collection to prevent you from having to manually refresh the access token every five minutes while using the collection. You may occasionally receive a 401 error message regarding invalid credentials. If this happens, please try your request a second time.
+    - PRIVATE_KEY: Do not share your private key otherwise. If you do not already have your public and private keys, please generate your [public/private](#step-three-public-keys) key pair through the DPC Portal.
+4. Within your vault, go to settings and turn on "Enable support in scripts".
+
+With these three values in place, the JWT and a fresh access token are automatically generated for you before each request in this Postman collection to prevent you from having to manually refresh the access token every five minutes while using the collection.
 
 Additional instructions and details can be found within the description of each request in the Postman collection. These can be viewed by clicking the drop-down arrow next to each request title.
 
