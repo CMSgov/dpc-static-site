@@ -2080,7 +2080,7 @@ This collection contains example requests to public endpoints for the DPC API. T
 2. Fill in your key-id: This is the DPC ID of your public key, which is returned to you when the public key is uploaded to the DPC Portal. You need this to generate a JWT, which will be exchanged for an access token.
 3. Add the following values to your vault
     - client_token: Your [client token](#step-two-client-tokens) is generated through the DPC Portal. Be sure to save a copy of your token in a safe place.
-    - PRIVATE_KEY: Do not share your private key otherwise. If you do not already have your public and private keys, please generate your [public/private](#step-three-public-keys) key pair through the DPC Portal.
+    - PRIVATE_KEY: If you do not already have your public and private keys, please generate your [public/private](#step-three-public-keys) key pair through the DPC Portal.
 4. Within your vault, go to settings and turn on "Enable support in scripts".
 
 With these three values in place, the JWT and a fresh access token are automatically generated for you before each request in this Postman collection to prevent you from having to manually refresh the access token every five minutes while using the collection.
