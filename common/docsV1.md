@@ -2070,7 +2070,7 @@ To obtain the exported explanation of benefit data, a GET request is made to the
 
 # IV. Postman Collection
 
-This collection contains example requests to public endpoints for the DPC API. This includes the collection of requests, the sandbox environment, and global variables to be imported into your Postman app.  To use this collection, you must have the Postman app downloaded onto your computer and have setup your local vault as described <a href="https://learning.postman.com/docs/sending-requests/postman-vault/postman-vault-secrets/">here</a>.
+This collection contains example requests to public endpoints for the DPC API. This includes the collection of requests, the sandbox environment, and global variables to be imported into your Postman app.  To use this collection, you must have the Postman app downloaded onto your computer and have setup your local vault as described <a href="https://learning.postman.com/docs/sending-requests/postman-vault/postman-vault-secrets/">here</a>.  Use the vault to ensure private information isn't synced to the cloud.
 
 <div class="download_btn--container">
   <a href="{{ site.url }}/assets/downloads/postman.zip" class="ds-u-padding-x--3 ds-u-padding-y--1 ds-c-button--primary ds-u-font-weight--bold download_btn" target="_blank" rel=noopener download>Postman Collection Download</a>
