@@ -42,6 +42,11 @@ jobs:
         with:
           repository: 'CMSgov/dpc-static-site'
           ref: ${{ inputs.static_repo_ref }}
+      - name: "list"
+        run: |
+          ls -l
+      - name: Assert Ownership
+        run: sudo chmod -R 777 .
       - name: "Set Version"
         env:
           STATIC_REPO_REF: ${{ inputs.static_repo_ref }}
