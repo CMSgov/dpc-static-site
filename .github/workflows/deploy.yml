@@ -35,6 +35,8 @@ jobs:
     env:
       TARGET_BUCKET: ${{ inputs.target_environment == 'prod' && 'dpc.cms.gov' || 'stage.dpc.cms.gov' }}
     steps:
+      - name: Assert Ownership
+        run: sudo chmod -R 777 .
       - name: "Checkout code"
         uses: actions/checkout@v4
         with:
