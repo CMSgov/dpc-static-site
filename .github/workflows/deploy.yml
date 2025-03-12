@@ -35,18 +35,11 @@ jobs:
     env:
       TARGET_BUCKET: ${{ inputs.target_environment == 'prod' && 'dpc.cms.gov' || 'stage.dpc.cms.gov' }}
     steps:
-      - name: Assert Ownership
-        run: sudo chmod -R 777 .
       - name: "Checkout code"
         uses: actions/checkout@v4
         with:
           repository: 'CMSgov/dpc-static-site'
           ref: ${{ inputs.static_repo_ref }}
-      - name: "list"
-        run: |
-          ls -l
-      - name: Assert Ownership
-        run: sudo chmod -R 777 .
       - name: "Set Version"
         env:
           STATIC_REPO_REF: ${{ inputs.static_repo_ref }}
@@ -54,6 +47,8 @@ jobs:
           echo "version: $STATIC_REPO_REF" >> _version_config.yml
       - name: "Add dirs"
         run: mkdir -p _site && mkdir -p .jekyll-cache
+      - name: Assert Ownership
+        run: sudo chmod -R 777 .
       - name: 'Build Image'
         run: docker build . -f Dockerfiles/Dockerfile.static_site -t static_site
       - name: 'Build Site'
