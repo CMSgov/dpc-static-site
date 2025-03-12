@@ -62,7 +62,7 @@ This is the auto-generated file specified in the `base` field of the `ig.json` f
 
 ## Build the IG
 
-The FHIR group has created an [IG Publisher](http://wiki.hl7.org/index.php?title=IG_Publisher_Documentation) which automates the process of generating the HTML files and documents in the layout expected by FHIR developers.
+The FHIR group has created an [IG Publisher](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation) which automates the process of generating the HTML files and documents in the layout expected by FHIR developers.
 
 The IG publisher is a Java application that can be downloaded from the HL7 (link above), or automatically when running the `make ig/publish` command.
 
