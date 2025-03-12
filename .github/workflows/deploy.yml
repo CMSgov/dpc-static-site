@@ -47,6 +47,8 @@ jobs:
           echo "version: $STATIC_REPO_REF" >> _version_config.yml
       - name: "Add dirs"
         run: mkdir -p _site && mkdir -p .jekyll-cache
+      - name: Assert Ownership
+        run: sudo chmod -R 777 .
       - name: 'Build Image'
         run: docker build . -f Dockerfiles/Dockerfile.static_site -t static_site
       - name: 'Build Site'
