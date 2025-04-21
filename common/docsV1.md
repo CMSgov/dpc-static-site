@@ -898,6 +898,7 @@ To create the Patient Resource, the JSON file may include additional attributes 
 - First and last name
 - Birth date in YYYY-MM-DD
 - Gender
+  - Note: The gender attribute reflects the sex of the beneficiary as CMS has on record and is stored in upstream data repositories.
 - Medicare Beneficiary Identifier (MBI)
   - Note: If an existing patient is found with the same MBI, the /patient endpoint will return that same patient and not return a new one.
   - For example:
