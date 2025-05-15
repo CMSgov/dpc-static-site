@@ -1,4 +1,4 @@
-name: 'Deploy Static Site'
+name: 'Deploy Static Site (Greenfield)'
 
 on:
   workflow_dispatch:
