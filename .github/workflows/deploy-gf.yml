@@ -1,6 +1,7 @@
 name: 'Deploy Static Site (Greenfield)'
 
 on:
+  pull_request:
   workflow_dispatch:
     inputs:
       target_environment:
