@@ -1,0 +1,119 @@
+name: 'Deploy Static Site'
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_environment:
+        description: Deploy where?
+        required: false
+        default: 'staging'
+        type: choice
+        options:
+          - dev
+          - staging
+          - prod
+      static_repo_ref:
+        description: Which branch or tag?
+        required: true
+        default: 'main'
+        type: 'string'
+  workflow_call:
+    inputs:
+      target_environment:
+        description: Deploy where?
+        required: false
+        default: 'staging'
+        type: 'string'
+      static_repo_ref:
+        description: Which branch or tag?
+        required: true
+        default: 'main'
+        type: 'string'
+jobs:
+  deploy_static_site:
+    name: Deploy Static Site
+    runs-on: codebuild-dpc-app-${{github.run_id}}-${{github.run_attempt}}
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v4
+        with:
+          repository: 'CMSgov/dpc-static-site'
+          ref: ${{ inputs.static_repo_ref }}
+      - name: "Set Version"
+        env:
+          STATIC_REPO_REF: ${{ inputs.static_repo_ref }}
+        run: |
+          echo "version: $STATIC_REPO_REF" >> _version_config.yml
+      - name: "Add dirs"
+        run: mkdir -p _site && mkdir -p .jekyll-cache
+      - name: Assert Ownership
+        run: sudo chmod -R 777 .
+      - name: 'Build Image'
+        run: docker build . -f Dockerfiles/Dockerfile.static_site -t static_site
+      - name: 'Build Site'
+        run: docker run -v ./_site:/dpc-site-static/_site -v ./.jekyll-cache:/dpc-site-static/.jekyll-cache --rm static_site
+      - name: Set env vars from AWS params
+        uses: cmsgov/ab2d-bcda-dpc-platform/actions/aws-params-env-action@main
+        env:
+          AWS_REGION: ${{ vars.AWS_REGION }}
+          BUCKET_PARAMETER: ${{ inputs.target_environment == 'staging' && 'prod-sbx' || inputs.target_environment }}
+        with:
+          params: |
+            SONAR_HOST_URL=/sonarqube/url
+            SONAR_TOKEN=/sonarqube/token
+            TARGET_BUCKET=$BUCKET_PARAMETER
+      - name: Run quality gate scan
+        if: ${{ inputs.target_environment == 'staging' }}
+        uses: sonarsource/sonarqube-scan-action@master
+        with:
+          args:
+            -Dsonar.projectKey=bcda-dpc-static-site
+            -Dsonar.sources=.
+            -Dsonar.working.directory=./sonar_workspace
+            -Dsonar.branch.name=${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
+            -Dsonar.projectVersion=${{ github.ref_name == 'main' && github.sha || 'branch' }}
+            -Dsonar.qualitygate.wait=true
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ secrets.ACCOUNT_ID }}:role/delegatedadmin/developer/dpc-${{ inputs.target_environment == 'prod' && 'prod' || 'dev' }}-github-actions
+      - name: "Sync _site"
+        run: aws s3 sync _site/ s3://$TARGET_BUCKET/ --delete
+      - name: Upload html files without suffix with content-language set
+        run: |
+          for file in _site/*.html; do
+            suffixless=`basename ${file/.html}`
+            aws s3 cp $file s3://$TARGET_BUCKET/$suffixless --content-language text/html
+          done
+      # TODO: Re-enable this when Cloudfront is configured in GF
+      #- name: Invalidate Cloudfront cache
+      #  run: |
+      #    DISTRIBUTION_ID=`aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id, OriginDomainName: Origins.Items[0].DomainName}[?starts_with(OriginDomainName, '$TARGET_BUCKET')].Id" --output text`
+      #    aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*'
+      - uses: slackapi/slack-github-action@v2.0.0
+        name: Slack Success
+        with:
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
+          # Sends to dpc-deploys
+          payload: |
+            channel: "CMC1E4AEQ"
+            attachments:
+              - color: good
+                text: "SUCCESS: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|static site version> `${{ inputs.static_repo_ref }}` deployed to ${{ inputs.target_environment }} environment."
+                mrkdown_in:
+                  - text
+      - uses: slackapi/slack-github-action@v2.0.0
+        name: Slack failure
+        if: ${{ failure() }}
+        with:
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
+          # Sends to dpc-deploys
+          payload: |
+            channel: "CMC1E4AEQ"
+            attachments:
+              - color: danger
+                text: "FAILURE: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|static site version> `${{ inputs.static_repo_ref }}` deployed to ${{ inputs.target_environment }} environment."
+                mrkdown_in:
+                  - text
