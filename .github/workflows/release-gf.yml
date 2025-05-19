@@ -1,6 +1,7 @@
 name: 'Tag and Deploy Site (Greenfield)'
 
 on:
+  push:
   workflow_dispatch:
     inputs:
       deploy:
