@@ -2,6 +2,7 @@ name: 'Tag and Deploy Site (Greenfield)'
 
 on:
   workflow_dispatch:
+    push:
     inputs:
       deploy:
         description: 'Also deploy to staging?'
