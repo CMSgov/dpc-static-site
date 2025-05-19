@@ -17,16 +17,18 @@ on:
 jobs:
   tag_repo:
     name: Tag Repo
+    runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
     uses: CMSgov/dpc-app/.github/workflows/tag_release.yml@main
     with:
       repo_ref: ${{ inputs.repo_ref }}
     secrets: inherit
   deploy:
+    name: Deploy to Staging
+    runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
     permissions:
       contents: read
       id-token: write
     if: ${{ inputs.deploy }}
-    name: Deploy to Staging
     needs: tag_repo
     uses: ./.github/workflows/deploy-gf.yml
     with:
