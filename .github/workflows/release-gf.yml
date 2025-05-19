@@ -1,4 +1,4 @@
-name: 'Tag and Deploy Site (GF)'
+name: 'Tag and Deploy Site (Greenfield)'
 
 on:
   workflow_dispatch:
@@ -17,24 +17,16 @@ on:
 jobs:
   tag_repo:
     name: Tag Repo
-    runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
-    steps:
-      - uses: CMSgov/dpc-app/.github/workflows/tag_release.yml@main
-        with:
-          repo_ref: ${{ inputs.repo_ref }}
-          secrets: inherit
+    uses: CMSgov/dpc-app/.github/workflows/tag_release.yml@main
+    with:
+      repo_ref: ${{ inputs.repo_ref }}
+    secrets: inherit
   deploy:
+    if: ${{ inputs.deploy }}
     name: Deploy to Staging
-    runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
-    permissions:
-      contents: read
-      id-token: write
     needs: tag_repo
-    steps:
-      - if: ${{ inputs.deploy }}
-        uses: ./.github/workflows/deploy-gf.yml
-        with:
-          env: staging
-          static_repo_ref: ${{ needs.tag_repo.outputs.tag }}
-          secrets: inherit
-
+    uses: ./.github/workflows/deploy-gf.yml
+    with:
+      target_environment: staging
+      static_repo_ref: ${{ needs.tag_repo.outputs.tag }}
+    secrets: inherit
