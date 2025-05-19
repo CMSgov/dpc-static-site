@@ -27,6 +27,6 @@ jobs:
     needs: tag_repo
     uses: ./.github/workflows/deploy-gf.yml
     with:
-      target_environment: staging
+      env: staging
       static_repo_ref: ${{ needs.tag_repo.outputs.tag }}
     secrets: inherit
