@@ -1,7 +1,6 @@
-name: 'Tag and Deploy Site (Greenfield)'
+name: 'Tag and Deploy Site (GF)'
 
 on:
-  push:
   workflow_dispatch:
     inputs:
       deploy:
