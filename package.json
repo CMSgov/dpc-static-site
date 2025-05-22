@@ -4,7 +4,7 @@
   "description": "A static Jekyll site for the DPC splash page: [https://dpc.cms.gov](https://dpc.cms.gov/)",
   "main": "index.js",
   "dependencies": {
-    "@cmsgov/design-system-core": "^3.7.0",
+    "@cmsgov/design-system-core": "^3.7.2",
     "@cmsgov/design-system-layout": "^3.7.2",
     "normalize.css": "^8.0.1",
     "svg4everybody": "^2.1.9"
