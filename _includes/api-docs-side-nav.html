@@ -1,0 +1,46 @@
+<nav aria-label="Side navigation">
+  <ul class="usa-sidenav">
+    <!--api docs pages-->
+    {% for item in site.data.api-docs-nav %}
+    <li class="usa-sidenav__item">
+      <a href="{{ item.url | relative_url }}"
+        class="{% if page.url == item.url %}{{ 'usa-current' }}{% endif %}"
+        data-tealium="left-rail"
+      >
+        {%- if item.icon -%}
+          {%- include sprite.html icon=item.icon size="3" class="margin-right-05 text-middle" -%}
+        {%- endif -%}
+        {{- item.name -}}
+      </a>
+      <ul class="usa-sidenav__sublist">
+        {% for child in item.children %}
+        <li class="usa-sidenav__item">
+          <a href="{{ child.url | relative_url }}"
+            class="{% if page.url == child.url %}{{ 'usa-current' }}{% endif %}"
+            data-tealium="left-rail"
+          >{{ child.name }}</a>
+          <ul class="usa-sidenav__sublist">
+            {% for grandchild in child.children %}
+            <li class="usa-sidenav__item">
+              <a href="{{ grandchild.url | relative_url }}"
+                class="{% if page.url == grandchild.url %}{{ 'usa-current' }}{% endif %}"
+                data-tealium="left-rail"
+              >{{ grandchild.name }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+    <li class="usa-sidenav__item">
+      <a href="" class="usa-nav-link" data-tealium="left-rail">
+        <span>    
+          {% include sprite.html icon="github" size="3" class="margin-right-05 text-middle" %}
+          GitHub repo
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>

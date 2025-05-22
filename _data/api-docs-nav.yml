@@ -1,0 +1,24 @@
+- name: API Documentation
+  url: /api-documentation.html
+  children:
+
+    - name: How to Get a Bearer Token
+      url: /get-a-bearer-token.html
+      
+    - name: How to Access Claims Data
+      url: /access-claims-data.html
+
+- name: BCDA Data 
+  url: /bcda-data.html
+  children:
+
+    - name: Guide to Partially Adjudicated Claims Data
+      url: /partially-adjudicated-claims-data.html
+
+    - name: Comparison of BCDA and CCLF
+      url: /comparison-bcda-cclf-files.html
+
+    - name: How to Filter Claims Data
+      url: /filter-claims-data.html
+
+    

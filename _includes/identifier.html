@@ -1,0 +1,67 @@
+<div class="usa-identifier">
+    <section
+      class="usa-identifier__section usa-identifier__section--masthead"
+      aria-label="Agency identifier"
+    >
+      <div class="usa-identifier__container">
+        <div class="usa-identifier__logos">
+          <a href="https://www.hhs.gov/" class="usa-identifier__logo" data-tealium="identifier"
+            ><img
+              class="usa-identifier__logo-img"
+              src="{{ '/assets/img/HHS-logo.svg' | relative_url }}"
+              alt="HHS logo"
+              role="img"
+          /></a>
+          <a href="https://www.cms.gov/" class="usa-identifier__logo" data-tealium="identifier"
+            ><img
+              class="usa-identifier__logo-img padding-x-2"
+              src="{{ '/assets/img/CMS-logo.svg' | relative_url }}"
+              alt="CMS logo"
+              role="img"
+          /></a>
+        </div>
+        <section
+          class="usa-identifier__identity"
+          aria-label="Agency description,"
+        >
+          <p class="usa-identifier__identity-domain">cms.gov</p>
+          <p class="usa-identifier__identity-disclaimer">
+            <span aria-hidden="true">An </span>official website of the
+            <a href="https://www.hhs.gov/" class="usa-link--external" data-tealium="identifier">U.S. Department of Health and Human Services</a> and the
+            <a href="https://www.cms.gov/" class="usa-link--external" data-tealium="identifier">Centers for Medicare & Medicaid Services</a>.
+          </p>
+        </section>
+      </div>
+    </section>
+    <nav
+      class="usa-identifier__section usa-identifier__section--required-links"
+      aria-label="Important links,"
+    >
+      <div class="usa-identifier__container">
+        <ul class="usa-identifier__required-links-list">
+          {% for item in site.data.identifier-links %}
+          <li class="usa-identifier__required-links-item">
+            <a
+              href="{{ item.url }}" target="_blank" rel="noopener noreferrer"
+              class="usa-identifier__required-link usa-link usa-link--external"
+              data-tealium="identifier"
+              >{{ item.text }}</a
+            >
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+    <section
+      class="usa-identifier__section usa-identifier__section--usagov"
+      aria-label="U.S. government information and services,"
+    >
+      <div class="usa-identifier__container">
+        <div class="usa-identifier__usagov-description">
+          Looking for U.S. government information and services?
+        </div>
+        <a href="https://www.usa.gov/" class="usa-link usa-link--external">Visit USA.gov</a> data-tealium="identifier"
+      </div>
+    </section>
+  </div>
+</footer>

@@ -1,0 +1,51 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page.description }}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        {% if page.seo_title and page.seo_title != '' %}
+        {{ page.seo_title }}
+        {% elsif page.page_title and page.page_title != '' %}
+        {{ page.page_title }}
+        {% else %}
+        {{ site.title }}
+        {% endif %}
+    </title>
+    <link rel="icon" type="image/png" href="assets/img/logo-bcda.svg">
+    <link rel="sitemap" href="/sitemap.xml">
+
+    <!-- USWDS & theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <script src="{{ '/assets/uswds/js/uswds-init.min.js' | relative_url }}"></script>
+    <link href="{{ '/assets/uswds/css/styles.css' | relative_url }}?{{site.time | pubDate: '%s'}}" rel="stylesheet">
+
+    <!-- CMS Tealium/Google Analytics BEGIN -->
+    <!-- 
+    * PII ALERT: Please be careful not to pass any dynamic values that could
+    * contain any personal information such as first name, last name, email
+    * or address. In these cases, you may use a link descriptor instead.
+    -->
+
+    <!--DataLayer (utag_data) Snippet
+    Within <head> of document at the highest possible point.-->
+    <script type="text/javascript">
+        var utag_data = {}
+    </script>
+
+
+    <!-- Within <head> of document below DataLayer snippet .
+    The utag.sync.js script should run as early as possible -->
+    <script src="https://tealium-tags.cms.gov/cms-bcda/dev/utag.sync.js"></script>
+
+    <!-- Loading utag.js script asynchronously -->
+    <script type="text/javascript">
+            (function (a, b, c, d) {
+                a = 'https://tealium-tags.cms.gov/cms-bcda/dev/utag.js'; b = document; c = 'script'; d = b.createElement(c); d.src = a; d.type = 'text/java' + c; d.async = true; a = b.getElementsByTagName(c)[0]; a.parentNode.insertBefore(d, a);
+            })();
+    </script>
+</head>

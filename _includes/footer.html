@@ -1,0 +1,62 @@
+<footer class="usa-footer usa-footer--big">
+
+  <div class="grid-container usa-footer__return-to-top padding-top-6">
+    <a href="#">Return to top</a>
+  </div>
+
+  <div class="usa-footer__primary-section">
+    <h2 class="usa-sr-only">Site footer</h2>
+    <div> {%  comment  %} this empty div is intentional to avoid the specificity of ".usa-footer__secondary-section>.grid-container", which prevents certain utilities from working like the class in the dive below  {% endcomment %}
+      <div class="grid-container tablet:padding-x-3">
+        <div class="grid-row grid-gap tablet:grid-gap-6">
+          <div class="usa-footer__logo grid-row desktop:grid-col-fill">
+            <div class="mobile-lg:grid-col-auto">
+              <div class="padding-y-2">
+                <a href="https://groups.google.com/g/bc-api" target="_blank" rel="noreferrer" class="usa-button" data-tealium="footer">
+                  Join the Google Group
+                  {% include sprite.html icon="launch" size="2" %}
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="desktop:grid-col-auto tablet:padding-x-3">
+            <div class="grid-row tablet:grid-gap-6">
+              <div class="tablet:grid-col-fill desktop:grid-col-auto margin-y-2">
+                <a href="https://dpc.cms.gov/" class="grid-row grid-gap-1 flex-align-center text-no-underline" data-tealium="footer">
+                  <span class="grid-col-auto"><img
+                    class="usa-icon usa-icon--size-5 display-block"
+                    src="{{ '/assets/img/logo-dpc.svg' | relative_url }}"
+                    alt="DPC logo"
+                  /></span>
+                  <p class="grid-col-fill font-sans-2xs text-bold text-black line-height-sans-2">Data at the Point of Care</p>
+                </a>
+              </div>
+              <div class="tablet:grid-col-fill desktop:grid-col-auto margin-y-2">
+                <a href="https://bluebutton.cms.gov/" class="grid-row grid-gap-1 flex-align-center text-no-underline" data-tealium="footer">
+                  <span class="grid-col-auto"><img
+                    class="usa-icon usa-icon--size-5 display-block"
+                    src="{{ '/assets/img/logo-bluebutton.svg' | relative_url }}"
+                    alt="Blue Button 2.0 logo"
+                  /></span>
+                  <p class="grid-col-fill font-sans-2xs text-bold text-black line-height-sans-2">Blue Button 2.0</p>
+                </a>
+              </div>
+              <div class="tablet:grid-col-fill desktop:grid-col-auto margin-y-2">
+                <a href="https://ab2d.cms.gov/" class="grid-row grid-gap-1 flex-align-center text-no-underline" data-tealium="footer">
+                  <span class="grid-col-auto"><img
+                    class="usa-icon usa-icon--size-5 display-block"
+                    src="{{ '/assets/img/logo-ab2d-sm.svg' | relative_url }}"
+                    alt="AB2D logo"
+                  /></span>
+                  <p class="grid-col-fill font-sans-2xs text-bold text-black line-height-sans-2">Claims Data to Part D Sponsors API</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+

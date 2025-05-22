@@ -1,42 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-  {% include _head.html %}
-  <body>
-  <!-- Tealium Tag Manager - DataLayer -->
-  <script type="text/javascript">
-    var utag_data = {
-      "content_language": "en",
-      "page_name": "{{ page.title }}",
-      "page_path": "{{ page.url }}",
-      "site_domain": "https://dpc.cms.gov",
-      "site_environment": "{{ jekyll.environment }}",
-    }
-  </script>
+---
+layout: base
+---
 
-  <!-- Tealium Tag Manager - ASYNC -->
-  <script type="text/javascript">
-    (function(a,b,c,d){
-    var src_url = '';
-    {% if jekyll.environment == 'prod' %}
-    src_url = 'https://tealium-tags.cms.gov/cms-dpc/prod/utag.js';
-    {% elsif jekyll.environment == 'stage' %}
-    src_url = 'https://tealium-tags.cms.gov/cms-dpc/qa/utag.js';
-    {% else %}
-    src_url = 'https://tealium-tags.cms.gov/cms-dpc/dev/utag.js';
+<div class="grid-container padding-y-4">
+  <div class="grid-row flex-align-start">
+    {% if page.show-side-nav != false %}
+      <div class="display-none position-sticky tablet:display-block tablet:grid-col-auto overflow-y-auto overflow-x-hidden padding-y-6 tablet:padding-right-3 padding-left-05 margin-left-neg-05" style="top: 8rem; height: calc(100vh - 6rem);">
+        <div class="width-card-lg">
+          {% include api-docs-side-nav.html %}
+        </div>
+      </div>
     {% endif %}
-    a=src_url;b=document;c='script';d=b.createElement(c);
-    d.src=a;d.type='text/java'+c;d.async=true;
-    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
-    })();
-  </script>
-
-  {% include _usa-banner.html %}
-    {{ content }}
-
-    {% include _footer.html %}
-  </body>
-  <script src="/assets/js/accordions.js"></script>
-  <script src="/assets/js/modals.js"></script>
-  <script src="/assets/js/navbar.js"></script>
-  <script src="/assets/js/global.js"></script>
-</html>
+    
+    <main id="main-content" class="grid-col-fill">
+      {{ content }}
+    </main>
+  </div>
+</div>

@@ -1,114 +1,194 @@
 ---
-layout: default
-title:  "Data at the Point of Care"
-date:   2019-09-03 09:21:12 -0500
-description: Data at the Point of Care is a pilot CMS API program that enables healthcare providers to deliver high quality care to Medicare beneficiaries by sharing their patients' Medicare claims data for treatment needs.
-landing-page: live
-nav_link: home
-id: home
+layout: base
+page_title: "BCDA API"
+show-side-nav: false
 ---
-<div id="main" role="main">
-{% include _hero.html %}
 
-  <div class="site-block site-block--alt">
-    <div class="site-block-content" id="home-checklist">
-      <div>
-        As patients move throughout the healthcare system, providers often struggle to gain and maintain a complete picture of their patients’ medical history.  Data at the Point of Care (DPC) aims to fill these gaps in care by providing Medicare Fee-For-Service claims data to providers in a structured and standardized format.
+<main id="main-content">
+  <div class="usa-section--dark bg-primary bg-primary-gradient">
+    <div class="grid-container padding-y-8">
+      <h1 class="hero-title font-body-3xl measure-1 margin-bottom-0 line-height-sans-2 text-semibold text-balance">
+        Improve Care Coordination with Medicare Claims Data
+      </h1>
+      <p class="hero-paragraph line-height-sans-4 measure-5">
+        Beneficiary Claims Data Application Programming Interface (BCDA) gives eligible model entities access to their
+        attributed enrollees’ Medicare Parts A, B, and D claims data, including data from any care received outside
+        their organization.
+      </p>
+      <div class="grid-row grid-gap margin-top-2">
+        <div class="tablet:grid-col-auto margin-top-2">
+          <a href="{{ '/api-documentation.html' | relative_url }}"
+            class="hero-button usa-button usa-button--inverse usa-button--outline width-full">
+            Get started
+            {% include sprite.html icon="arrow_forward" size="3" %}
+          </a>
+        </div>
+        <div class="tablet:grid-col-auto margin-top-2">
+          <a href="https://github.com/CMSgov/bcda-app" target="_blank" rel="noopener"
+            class="hero-button usa-button usa-button--inverse usa-button--outline width-full">
+            Code repo
+            {% include sprite.html icon="github" size="3" %}
+          </a>
+        </div>
       </div>
-      <div class="checklist-container">
-        <div id="checklist">
+    </div>
+  </div>
+
+  <div class="minw-15 padding-y-6 padding-x-3 grid-container">
+    <div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-7">
+      <div class="tablet:grid-col display-flex flex-align-center tablet:flex-justify-center">
+        <img class="width-auto height-full" src="{{ '/assets/img/support-home.svg' | relative_url }}"
+          alt="Illustration of 3 people helping each other climb to the top of increasingly taller platforms" />
+      </div>
+      <div class="tablet:grid-col padding-top-4 tablet:padding-top-0 display-flex flex-align-center">
+        <div>
+          <h2>Eligible model entities</h2>
+          <p>BCDA supports organizations participating in the following
+            <a href="https://www.cms.gov/priorities/innovation/about/alternative-payment-models" target="_blank"
+              rel="noopener">Alternative Payment Models</a>:
+          </p>
           <ul>
-            <li>
-              <h1 class="ds-text-heading--2xl">
-                Get More Data
-              </h1>
-              <div>
-                Learn about new diagnoses, medications, completed procedures, and preventive items on your patients' visits to other clinics, including urgent care, hospitals, and ER visits.
-              </div>
-            </li>
-            <li>
-              <h1 class="ds-text-heading--2xl">
-                Manage Less Paperwork
-              </h1>
-              <div>
-                Facilitate seamless transitions of care across provider teams by sharing a fuller picture of the patient's care.
-              </div>
-            </li>
-            <li>
-              <h1 class="ds-text-heading--2xl">
-                Improve quality of Care
-              </h1>
-              <div>
-                Spend less time tracking down patient records or relying on the patient's memory for their medical history. Spend more time delivering better care and addressing patient needs during the visit.
-              </div>
-            </li>
+            <li><a href="https://www.cms.gov/medicare/payment/fee-for-service-providers/shared-savings-program-ssp-acos"
+                target="_blank" rel="noopener">Medicare Shared Savings Program (SSP)</a></li>
+            <li><a href="https://www.cms.gov/priorities/innovation/innovation-models/kidney-care-choices-kcc-model"
+                target="_blank" rel="noopener">Kidney Care Choices (KCC) Model</a></li>
+            <li><a href="https://www.cms.gov/priorities/innovation/innovation-models/aco-reach" target="_blank"
+                rel="noopener">Accountable Care Organizations Realizing Equity, Access, and Community Health (ACO REACH)
+                Model</a></li>
           </ul>
         </div>
-        <div id="hero-heart-container">
-          <img src="/assets/images/hero-heart.svg" alt="Image with a heart and a silhouette of a stick figure woman with her arms open in the center.">
-        </div>
       </div>
     </div>
-  </div>
-
-  <div class="site-block">
-    <div class="site-block-content" id="use-cases">
-      <div class="use-case">
-        <div class="img-container">
-          <img src="/assets/images/use-case-wellness.svg" alt="Icon of a calendar with a date checked off.">
+    <!--
+    -->
+    <div class="padding-y-7">
+      <h2>Use cases for BCDA</h2>
+      <div class="usa-graphic-list__row grid-row tablet:grid-gap-6 padding-y-2">
+        <div class="tablet:grid-col-6 padding-y-3 tablet:display-flex">
+          <div>{% include sprite.html icon="insights" size="8" %}</div>
+          <div class="tablet:margin-left-2">
+            <h3 class="margin-y-1">
+              Boost data insights
+            </h3>
+            <p>
+              Leverage claims data for quantitative insights into your enrollee populations.
+            </p>
+          </div>
         </div>
-        <div class="use-case-descr">
-          <h1>Wellness Checks</h1>
-          <div>
-            Maria, a 68-year-old Medicare beneficiary, recalls getting the first dose of her shingles vaccine at her local pharmacy earlier this year, but she can't  remember when she went. Her provider uses data from DPC to see when Maria got her shot, and if she's ready for her second dose.
+        <div class="tablet:grid-col-6 padding-y-3 tablet:display-flex">
+          <div>{% include sprite.html icon="autorenew" size="8" %}</div>
+          <div class="tablet:margin-left-2">
+            <h3 class="margin-y-1">
+              Get claims data faster
+            </h3>
+            <p>
+              Model entities eligible for
+              <a href="{{ '/partially-adjudicated-claims-data.html' | relative_url }}">partially adjudicated claims
+                data</a>
+              have early access to claims as soon as 2-4 days after Medicare submission.
+            </p>
+          </div>
+        </div>
+        <div class="tablet:grid-col-6 padding-y-3 tablet:display-flex">
+          <div>{% include sprite.html icon="medical_services" size="7" %}</div>
+          <div class="tablet:margin-left-2">
+            <h3 class="margin-y-1">Provide value-based care</h3>
+            <p>
+              Get a holistic overview of your enrollees' health histories for more effective and high-quality care.
+            </p>
+          </div>
+        </div>
+        <div class="tablet:grid-col-6 padding-y-3 tablet:display-flex">
+          <div>{% include sprite.html icon="identification" size="7" %}</div>
+          <div class="tablet:margin-left-2">
+            <h3 class="margin-y-1">Receive standardized claims data</h3>
+            <p>
+              Get claims data that follows the
+              <a href="https://hl7.org/fhir/R4/overview.html">HL7 Healthcare Interoperability Standard</a>
+              required by Centers for Medicare & Medicaid Services (CMS).
+            </p>
           </div>
         </div>
       </div>
-      <div class="use-case">
-        <div class="img-container">
-          <img src="/assets/images/use-case-care.svg" alt="">
+    </div>
+    <!--
+    -->
+    <div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-7">
+      <div class="tablet:order-last tablet:grid-col display-flex flex-align-center tablet:flex-justify-center">
+        <img class="width-auto height-full" style="object-fit: contain;"
+          src="{{ '/assets/img/understanding-the-data.svg' | relative_url }}"
+          alt="Illustration of two people collaborating using a laptop and discussing data, charts, and communication." />
+      </div>
+      <div class="tablet:grid-col padding-top-4 tablet:padding-top-0 display-flex flex-align-center">
+        <div>
+          <h2>Using the data</h2>
+          <p>BCDA is an Application Programming Interface (API) that updates enrollee claims data at least once a week.
+            Data is provided in NDJSON format and includes:</p>
+          <ul>
+            <li>Medicare enrollee identifiers</li>
+            <li>diagnosis codes</li>
+            <li>dates and times of service</li>
+          </ul>
+          <p>
+            <a href="{{ '/bcda-data.html' | relative_url }}" class="usa-button usa-button--unstyled">Learn about the
+              data {% include sprite.html icon="arrow_forward" %}</a>
+          </p>
         </div>
-        <div class="use-case-descr">
-          <h1>Population Analytics</h1>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="grid-row">
+      <div class="bg-primary grid-col-12 desktop:grid-col-6">
+        <div style="max-width: calc(75rem / 2);"
+          class="desktop:margin-left-auto padding-x-3 desktop:padding-right-6 height-full padding-y-8 text-white display-flex flex-column">
+          <div class="border-bottom border-white">
+            <h2 class="margin-bottom-2">Featured</h2>
+          </div>
+          <h3 class="font-sans-lg" style="line-height: 1.4;">Get claims data sooner with partially adjudicated
+            claims</h3>
           <div>
-            Elena, a diabetes care coordinator, manages the care of dozens of patients with chronic conditions. She uses DPC data to stay informed and perform analytics on recent clinic visits, hospital admissions, procedures, and medication refills for her entire population of patients.
+            <p class="margin-bottom-0">Through BCDA, health care organizations can access claims 2 to 4 days after
+              they’re submitted instead
+              of 14 or more. These “partially adjudicated” claims have valuable data but haven’t been fully
+              processed and paid by Medicare systems.</p>
+          </div>
+          <div class="margin-top-auto">
+            <div class="margin-top-5">
+              <a href="{{ '/partially-adjudicated-claims-data.html' | relative_url }}"
+                class="usa-button usa-button--outline usa-button--inverse">
+                Learn more about partially adjudicated claims data
+                {% include sprite.html icon="arrow_forward" size="3" %}
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="site-block site-block--mint">
-    <div class="site-block-content ds-u-padding-y--4 ds-u-padding-x--7" id="about-pilot">
-      <h1 class="ds-text-heading--lgds-u-padding-top--0 ds-u-padding-bottom--1">About the DPC Pilot</h1>
-      <div class="ds-u-padding-bottom--3">
-        The DPC Pilot starts with Health IT implementers, who are asked to test and develop a solution using synthetic data in the sandbox environment before applying for access to Medicare Fee-For-Service claims data in production. The DPC Sandbox and Production environments are subject to breaking changes throughout the pilot phase as DPC incorporates research findings and user feedback.
-      </div>
-      <div>
-        The DPC API leverages the industry-standard <a href="https://www.hl7.org/fhir/overview.html" target="_blank" rel=noopener>HL7 Fast Healthcare Interoperability Resources (FHIR)</a>, which allows providers and implementers to incorporate Medicare claims data into the Health IT software and clinical workflow. This allows a timely and standardized reference of data that is accessible to all who are involved in a beneficiary’s care.
-      </div>
-      <h2 class="ds-text-heading--md">Interested in learning more <a href="/pilot">About the DPC Pilot</a>?</h2>
-    </div>
-  </div>
-
-  <div class="site-block">
-    <div class="site-block-content" id="get-involved">
-      <h1>
-        How can I get my healthcare organization involved?
-      </h1>
-      <div class="get-involved-info">
-        Providers at healthcare organizations can get involved by using the provided resources below. In order to receive claims data for Medicare beneficiaries, the DPC API requires a partnership between providers and their Health IT team to develop and design a solution that seamlessly integrates with  the Health IT software. This capability empowers providers to request claims data directly through the Health IT software and gain insight into patient records within the existing workflows utilized at the point of care.
-      </div>
-      <div class="flex--row ds-u-padding-bottom--2" id="pagers">
-        <div class="pagers-container">
+      <div class="bg-gray-10 grid-col-12 desktop:grid-col-6">
+        <div style="max-width: calc(75rem / 2);"
+          class="desktop:margin-right-auto padding-x-3 desktop:padding-left-6 height-full padding-y-8 display-flex flex-column">
+          <div class="border-bottom border-black">
+            <h2 class="margin-bottom-2">Announcements</h2>
+          </div>
+          <h3 class="font-sans-lg" style="line-height: 1.4;">What's new on AB2D.cms.gov</h3>
           <div>
-            <h2>DPC One-Pager</h2>
-            <div class="download_btn--container">
-              <a href="{{ site.url }}/assets/downloads/dpc-one-pager.pdf" class="ds-c-button ds-c-button--primary download_btn" download>
-                <svg class="ds-u-margin-right--1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <use xlink:href="/assets/images/solid.svg#file-download"></use>
-              </svg>
-                DPC One-Pager
+            <p>We've updated our site with new content, design, and navigation. The new site makes it faster and
+              easier to:</p>
+            <ul>
+              <li>Find documentation</li>
+              <li>Access sandbox data</li>
+              <li>Understand the steps for production access</li>
+              <li>Learn about business use cases for AB2D data</li>
+              <li>Explore Medicare Parts A and B data</li>
+            </ul>
+          </div>
+          <div class="margin-top-auto">
+            <div class="margin-top-5">
+              <a href="{{ '/announcements/whats-new-on-bcda-cms-gov.html' | relative_url }}"
+                class="usa-button usa-button--outline">
+                View highlights
+                {% include sprite.html icon="arrow_forward" size="3" %}
               </a>
             </div>
           </div>
@@ -116,49 +196,4 @@ id: home
       </div>
     </div>
   </div>
-
-  <div class="site-block site-block--alt">
-    <div class="site-block-content" id="fhir-apis">
-      <h2>Other CMS FHIR-based APIs</h2>
-      <div class="ds-u-padding-x--6">
-        <strong>DPC is one of several CMS APIs that offer Medicare claims data sharing in FHIR format.</strong><br /><br />
-        Check out these other CMS APIs for more information:
-      </div>
-      <div id="api-cards">
-        <div class="api-card api-card--blue">
-          <div class="logo-container">
-            <img src="/assets/images/bcda_logo.svg" class="logo" alt="BCDA Logo depicting a heart with five circles around it.">
-          </div>
-          <div class="api-descript">
-            The Beneficiary Claims Data API helps Alternative Payment Model participants working to provide high quality, coordinated care by simplifying their access to bulk Medicare Part A, B, and D claims.
-          </div>
-          <div class="api-btn-container">
-            <a href="https://bcda.cms.gov/" target="_blank" rel=noopener class="api-btn">BCDA</a>
-          </div>
-        </div>
-        <div class="api-card api-card--white">
-          <div class="logo-container">
-            <img src="/assets/images/bb2_logo.svg" class="logo" alt="Blue Button 2.0 logo depicting a download file button with an arrow pointing down.">
-          </div>
-          <div class="api-descript">
-            Blue Button 2.0 API enables Medicare beneficiaries to connect their data through applications, services, and research programs they trust.
-          </div>
-          <div class="api-btn-container">
-            <a href="https://bluebutton.cms.gov/" target="_blank" rel=noopener class="api-btn">BB 2.0</a>
-          </div>
-        </div>
-        <div class="api-card api-card--yellow">
-          <div class="logo-container">
-            <img src="/assets/images/ab2d_logo.svg" alt="AB2D Logo that reads a AB2D where the 2 is one half of a heart.">
-          </div>
-          <div class="api-descript">
-            The AB2D API provides stand-alone Prescription Drug Plan (PDP) sponsors with claims data to enhance the use of medications and improve long term health of beneficiaries.
-          </div>
-          <div class="api-btn-container">
-            <a href="https://ab2d.cms.gov/" target="_blank" rel=noopener class="api-btn">AB2D</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+</main>
