@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<div class="grid-row">
+  {% if page.in-page-nav == true %}
+    <div class="grid-col-auto order-last">
+      <aside
+        class="usa-in-page-nav margin-top-0 overflow-y-auto padding-y-2"
+        style="top: 8rem; height: calc(100vh - 6rem);"
+        data-main-content-selector="#page-content"
+        data-title-text="{{ page.in-page-nav-title }}"
+        data-heading-elements="{{ page.in-page-nav-levels }}"
+        data-scroll-offset="100"
+        data-tealium="toc"
+      ></aside>
+    </div>
+  {% endif %}
+  <div id="page-content" class="grid-col-fill padding-y-4">
+    {{ content }}
+  </div>
+</div>

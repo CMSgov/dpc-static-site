@@ -1,0 +1,17 @@
+{% capture tableComponent %}
+<table class="usa-table {% if include.borderless %}usa-table--borderless{% endif %} {% if include.striped %}usa-table--striped{% endif %} {% if include.stacked %}usa-table--stacked{% endif %}">
+    {% if include.captionContent %}
+    <caption class="{% if include.captionSrOnly %}usa-sr-only{% endif %}">{{include.captionContent}}</caption>
+    {% endif %}
+    <thead>{{include.headContent}}</thead>
+    <tbody>{{include.bodyContent}}</tbody>
+</table>
+{% endcapture %}
+
+{% if include.scrollable %}
+<div class="usa-table-container--scrollable" tabindex="0">
+{{ tableComponent }}
+</div>
+{% else %}
+{{ tableComponent }}
+{% endif %}

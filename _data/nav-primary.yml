@@ -1,0 +1,19 @@
+- text: About
+  children: 
+    - text: About BCDA
+      url: /about.html
+    
+    - text: Announcements
+      url: /announcements.html
+
+- text: API Documentation
+  url: /api-documentation.html
+  
+- text: BCDA Data
+  url: /bcda-data.html
+
+- text: Production Access
+  url: /production-access.html
+
+- text: Support
+  url: /support.html

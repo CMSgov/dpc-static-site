@@ -1,0 +1,59 @@
+<div class="position-sticky top-0 bg-white shadow-1 z-500">
+  <div class="usa-overlay"></div>
+  <header class="usa-header usa-header--basic">
+    <div class="usa-nav-container">
+      <div class="usa-navbar">
+        <div class="usa-logo">
+          <a href="{{ '/index.html' | relative_url }}" title="BCDA" data-tealium="main-nav" class="display-flex flex-align-center height-6 maxw-card-lg" style="gap: 0.5rem;">
+            <img src="{{ '/assets/img/logo-bcda.svg' | relative_url }}" alt="BCDA logo" class="width-6 height-6" style="object-fit:contain;" />
+            <span class="font-sans-md text-bold text-black text-balance line-height-sans-2">Beneficiary Claims Data API</span>
+          </a>
+        </div>
+        <button type="button" class="usa-menu-btn">Menu</button>
+      </div>
+      <nav aria-label="Primary navigation" class="usa-nav">
+        <button type="button" class="usa-nav__close">
+          <img src="{{ '/assets/uswds/img/usa-icons/close.svg' | relative_url }}" role="img" alt="Close" />
+        </button>
+        <ul class="usa-nav__primary usa-accordion">
+          {% for item in site.data.nav-primary %}
+            {% if item.children %}
+              <li class="usa-nav__primary-item">
+                <button type="button" class="usa-accordion__button usa-nav__link usa-current" aria-expanded="false" aria-controls="basic-nav-section-one">
+                  <span>{{- item.text -}}</span>
+                </button>
+                <ul id="basic-nav-section-one" class="usa-nav__submenu" hidden>    
+                  {% for child in item.children %}
+                    <li class="usa-nav__submenu-item">
+                      <a href="{{- child.url | relative_url -}}">
+                        <span>{{- child.text -}}</span>
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% else %}
+              <li class="usa-nav__primary-item">
+                <a
+                  href="{{- item.url | relative_url -}}"
+                  class="usa-nav-link {% if page.permalink == item.url %}{{ 'usa-current' }}{% endif %}"
+                  data-tealium="navigation"
+                ><span>{{- item.text -}}</span>
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+
+        <div class="padding-left-1">
+           <a 
+              href="{{ '/api-documentation.html' | relative_url }}" 
+              class="usa-button" 
+              data-tealium="main-nav"
+              >Get Started
+            </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+</div>
