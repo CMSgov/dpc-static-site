@@ -88,6 +88,7 @@ jobs:
             -Dsonar.branch.name=${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
             -Dsonar.projectVersion=${{ github.ref_name == 'main' && github.sha || 'branch' }}
             -Dsonar.qualitygate.wait=true
+            -Dsonar.ci.autoconfig.disabled=true
 
       - name: "Sync _site"
         run: aws s3 sync _site/ s3://"$TARGET_BUCKET"/ --delete
@@ -98,11 +99,10 @@ jobs:
             aws s3 cp $file s3://"$TARGET_BUCKET"/$suffixless --content-language text/html
           done
 
-      # TODO: Re-enable this when Cloudfront is configured in GF
-      #- name: Invalidate Cloudfront cache
-      #  run: |
-      #    DISTRIBUTION_ID=`aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id, OriginDomainName: Origins.Items[0].DomainName}[?starts_with(OriginDomainName, '$TARGET_BUCKET')].Id" --output text`
-      #    aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*'
+      - name: Invalidate Cloudfront cache
+        run: |
+          DISTRIBUTION_ID=`aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id, OriginDomainName: Origins.Items[0].DomainName}[?starts_with(OriginDomainName, '$TARGET_BUCKET')].Id" --output text`
+          aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*'
 
       - uses: slackapi/slack-github-action@v2.0.0
         name: Slack Success
