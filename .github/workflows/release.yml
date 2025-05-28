@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       deploy:
-        description: 'Also deploy to staging?'
+        description: 'Also deploy to staging (legacy only)?'
         type: boolean
         default: true
         required: true
