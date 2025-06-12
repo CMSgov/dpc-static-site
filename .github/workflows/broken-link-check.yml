@@ -21,7 +21,7 @@ jobs:
         if: env.lychee_exit_code != 0
         uses: slackapi/slack-github-action@v1.26.0
         env:
-          SLACK_WEBHOOK_URL: "https://hooks.slack.com/triggers/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" # TODO: set as env var?
+          SLACK_WEBHOOK_URL: ${{secrets.LINK_CHECK_SLACK_WEBHOOK_URL}}
         with:
           payload: |
             {
