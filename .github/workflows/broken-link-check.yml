@@ -26,14 +26,12 @@ jobs:
           args: --no-progress --accept '200..=299, 401, 403, 405' .
       - name: "Send Slack alert"
         if: env.lychee_exit_code != 0
-        uses: slackapi/slack-github-action@v1.26.0
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.LINK_CHECK_SLACK_WEBHOOK_URL }}
+        uses: slackapi/slack-github-action@v2.1.0
         with:
+          webhook: ${{ secrets.LINK_CHECK_SLACK_WEBHOOK_URL }}
+          webhook-type: webhook-trigger
           payload: |
-            {
-              "Details": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-            }
+            "Details": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
       - name: "Fail workflow"
         if: env.lychee_exit_code != 0
         run: exit ${{ env.lychee_exit_code }}
