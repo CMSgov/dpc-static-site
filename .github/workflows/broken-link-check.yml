@@ -3,6 +3,13 @@ name: "Broken Link Check"
 on:
   schedule:
     - cron: 0 0 * * 0 # run every Sunday at midnight
+  push:
+    branches:
+      - cr/dpc-4709
+  pull_request: 
+    paths:
+      - .github/workflows/**
+  
 
 jobs:
   check:
