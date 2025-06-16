@@ -31,4 +31,4 @@ jobs:
             "Details": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
       - name: "Fail workflow"
         if: steps.lychee.outputs.exit_code != 0
-        run: exit ${{ env.lychee_exit_code }}
+        run: exit ${{ steps.lychee.outputs.exit_code }}
