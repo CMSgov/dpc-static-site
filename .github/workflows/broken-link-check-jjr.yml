@@ -1,11 +1,10 @@
 name: "Broken Link Check"
 
-on:
-  push: null
+on: [push]
 jobs:
   check:
     name: "Check for broken links"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: "Checkout code"
         uses: actions/checkout@v2
