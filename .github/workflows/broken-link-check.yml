@@ -28,7 +28,7 @@ jobs:
           webhook: ${{ secrets.LINK_CHECK_SLACK_WEBHOOK_URL }}
           webhook-type: webhook-trigger
           payload: |
-            text: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            details: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
       - name: "Fail workflow"
         if: ${{ failure() }}
         run: exit ${{ steps.lychee.outputs.exit_code }}
