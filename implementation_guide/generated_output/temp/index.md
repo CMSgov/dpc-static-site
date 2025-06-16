@@ -30,4 +30,3 @@ More information can be found on the Project [website](https://dpc.cms.gov).
 The primary source of data for the DPC project is the [Blue Button 2.0](https://bluebutton.cms.gov/) project.
 We make the underlying FHIR resources available to providers through an efficient bulk access model that complies with the [FHIR Bulk Data Specification](http://hl7.org/fhir/us/bulkdata/2019May/index.html).
 
-Information regarding the Blue Button Data Profiles can be found in the corresponding [Implementation Guide](https://bluebutton.cms.gov/assets/ig/index.html).
