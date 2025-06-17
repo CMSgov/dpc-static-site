@@ -898,6 +898,7 @@ To create the Patient Resource, the JSON file may include additional attributes 
 - First and last name
 - Birth date in YYYY-MM-DD
 - Gender
+  - When sharing data, DPC uses the Patient.gender property to represent the sex of the patient as maintained on record at CMS. When registering a patient to your organization, DPC will require the Patient.gender property to be submitted following the corresponding value set. The input provided may be used by DPC to match and validate the patient against CMS records.
 - Medicare Beneficiary Identifier (MBI)
   - Note: If an existing patient is found with the same MBI, the /patient endpoint will return that same patient and not return a new one.
   - For example:
