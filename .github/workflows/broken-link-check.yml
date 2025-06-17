@@ -12,21 +12,19 @@ jobs:
       - name: "Checkout code"
         uses: actions/checkout@v2
       - name: "Check for broken links"
-        uses: lycheeverse/lychee-action@v1
+        uses: lycheeverse/lychee-action@82202e5e9c2f4ef1a55a3d02563e1cb6041e5332 # v2.4.1
         id: lychee
         with:
           jobSummary: true
           args: --no-progress --accept '200..=299, 401, 403, 405' .
       - name: "Send Slack alert"
-        if: env.lychee_exit_code != 0
-        uses: slackapi/slack-github-action@v1.26.0
-        env:
-          SLACK_WEBHOOK_URL: "https://hooks.slack.com/triggers/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" # TODO: set as env var?
+        if: ${{ failure() }}
+        uses: slackapi/slack-github-action@v2.1.0
         with:
+          webhook: ${{ secrets.LINK_CHECK_SLACK_WEBHOOK_URL }}
+          webhook-type: webhook-trigger
           payload: |
-            {
-              "Details": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-            }
+            details: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
       - name: "Fail workflow"
-        if: env.lychee_exit_code != 0
-        run: exit ${{ env.lychee_exit_code }}
+        if: ${{ failure() }}
+        run: exit ${{ steps.lychee.outputs.exit_code }}
