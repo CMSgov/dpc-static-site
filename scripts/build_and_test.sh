@@ -4,7 +4,7 @@ set -eo pipefail
 
 docker_cleanup()
 {
-    docker compose down
+    docker compose down --remove-orphans
 }
 
 build() {
@@ -13,7 +13,7 @@ build() {
 
 test() {
     trap docker_cleanup EXIT
-    docker compose run --publish 4000:4000 --rm --entrypoint "bundle exec jekyll serve -H 0.0.0.0" --name static_site -d static_site
+    docker compose run --publish 4000:4000 --entrypoint "bundle exec jekyll serve -H 0.0.0.0" --name static_site -d static_site
     sleep 20
     docker logs static_site
     curl localhost:4000 | grep "Update: what we're working on" || { echo "ERROR: Updates page not found"; exit 1; }
