@@ -14,8 +14,10 @@ build() {
 test() {
     trap docker_cleanup EXIT
     docker compose run --publish 4000:4000 --entrypoint "bundle exec jekyll serve -H 0.0.0.0" --name static_site -d static_site
-    sleep 20
+    sleep 30
     docker logs static_site
+    ls
+    find _site -type f
     curl localhost:4000 | grep "Update: what we're working on" || { echo "ERROR: Updates page not found"; exit 1; }
 
     # Perform accessibility scan
