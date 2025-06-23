@@ -5,6 +5,3 @@ services:
       dockerfile: Dockerfiles/Dockerfile.static_site
     environment:
       JEKYLL_ENV: ${JEKYLL_ENV:-dev}
-    volumes:
-      - ./_site:/dpc-site-static/_site
-      - ./.jekyll-cache:/dpc-site-static/.jekyll-cache
