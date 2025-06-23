@@ -14,4 +14,4 @@ build:
 	docker compose -f docker-compose.yml run static_site
 
 serve:
-	@docker compose run --publish 4001:4000 --rm --entrypoint "bundle exec jekyll serve -H 0.0.0.0" --volume "${PWD}:/dpc-site-static/" static_site
+	@docker compose run --publish 4001:4000 --rm --entrypoint "bundle exec jekyll serve -H 0.0.0.0" static_site
