@@ -3,6 +3,8 @@ name: Check 508 Compliance
 on:
   schedule:
     - cron: 17 8 * * 1
+  paths:
+    - .github/workflows/check_508_compliance.yml
   workflow_dispatch:
     inputs:
       target_host:
@@ -17,7 +19,7 @@ on:
 jobs:
   compliance_check:
     name: Compliance Check
-    runs-on: self-hosted
+    runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
     steps:
       - name: Set Target Base
         id: target-base
