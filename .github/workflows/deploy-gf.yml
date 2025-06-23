@@ -3,9 +3,9 @@ name: 'Test codebuilds'
 on:
   push:
     paths:
-      - ./.github/workflows/testem.yml
+      - ./.github/workflows/deploy-gf.yml
       - ./.github/workflows/broken-link-check.yml
-
+  workflow_dispatch:
 
 jobs:
   test_broken_links:
