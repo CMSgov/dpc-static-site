@@ -1,0 +1,13 @@
+name: 'Test codebuilds'
+
+on:
+  push:
+    paths:
+      - ./.github/workflows/testem.yml
+      - ./.github/workflows/broken-link-check.yml
+
+
+jobs:
+  test_broken_links:
+    uses: ./.github/workflows/broken-link-check.yml
+    secrets: inherit
