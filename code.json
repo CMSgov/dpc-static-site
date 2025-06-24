@@ -59,8 +59,6 @@
   "systems": [],
   "upstream": [],
   "subsetInHealthcare": [
-    "Policy",
-    "Operational",
     "Medicare",
     "Medicaid"
   ],
