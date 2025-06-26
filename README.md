@@ -4,6 +4,10 @@ A static Jekyll site for the DPC welcome, FAQ, and documentation pages.
 
 [https://dpc.cms.gov](https://dpc.cms.gov)
 
+## About the Project
+
+This project dynamically generates static pages for use in the DPC informational website.
+
 ## Pre-requisite: Installing and Using Pre-commit
 
 Anyone committing to this repo must use the pre-commit hook to lower the likelihood that secrets will be exposed.
@@ -73,3 +77,30 @@ Navigate to the repository and install the appropriate Gem file and `package.jso
 ### Running or Building the Application
 
 Jekyll builds the CSS and HTML pages. Run `bundle exec jekyll serve` from the project root for a local build. By default, the site will run in `http://localhost:4000/`. You can also run `bundle exec jekyll build` to compile the site files into the `_site` directory.
+
+# About the project
+## Project Vision
+The project vision is available at [https://dpc.cms.gov](https://dpc.cms.gov).
+
+## Agency Mission
+
+See [https://www.cms.gov](https://www.cms.gov) for this project's agency's mission.
+
+## Team Mission
+
+DPC operates under the [Data Analytics and Systems Group](https://www.cms.gov/research-statistics-data-and-systems/data-analytics-and-systems-group).
+
+## Core Team
+Team members are listed on our [community page](./COMMUNITY.md).
+
+## Contributing
+Contributions should follow [our policy](./CONTRIBUTING.md).
+
+## Community Guidelines
+See the [Code of Conduct](./CODE_OF_CONDUCT.md) for community guidelines.
+
+## Policies
+Contributions to this project must comply with [Section 508](https://www.section508.gov/) accessibility standards.
+
+## Public Domain
+This project is subject to the [Creative Commons Zero 1.0 International License](./LICENSE).
