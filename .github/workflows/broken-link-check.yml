@@ -3,11 +3,12 @@ name: "Broken Link Check"
 on:
   schedule:
     - cron: 0 0 * * 0 # run every Sunday at midnight
+  workflow_dispatch:
 
 jobs:
   check:
     name: "Check for broken links"
-    runs-on: ubuntu-latest
+    runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
     steps:
       - name: "Checkout code"
         uses: actions/checkout@v2

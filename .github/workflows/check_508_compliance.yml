@@ -17,7 +17,7 @@ on:
 jobs:
   compliance_check:
     name: Compliance Check
-    runs-on: self-hosted
+    runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
     steps:
       - name: Set Target Base
         id: target-base

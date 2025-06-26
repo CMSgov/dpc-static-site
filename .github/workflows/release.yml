@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       deploy:
-        description: 'Also deploy to staging (legacy only)?'
+        description: 'Also deploy to staging?'
         type: boolean
         default: true
         required: true
@@ -16,17 +16,23 @@ on:
 
 jobs:
   tag_repo:
+    permissions:
+      contents: write
     name: Tag Repo
     uses: CMSgov/dpc-app/.github/workflows/tag_release.yml@main
     with:
       repo_ref: ${{ inputs.repo_ref }}
+      runner: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
     secrets: inherit
   deploy:
+    permissions:
+      contents: read
+      id-token: write
     if: ${{ inputs.deploy }}
     name: Deploy to Staging
     needs: tag_repo
     uses: ./.github/workflows/deploy.yml
     with:
-      target_environment: staging
+      env: sandbox
       static_repo_ref: ${{ needs.tag_repo.outputs.tag }}
     secrets: inherit
