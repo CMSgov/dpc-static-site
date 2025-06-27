@@ -10,17 +10,26 @@ jobs:
     name: "Check for broken links"
     runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
     steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v2
+      - name: "Check for broken links"
+        uses: lycheeverse/lychee-action@82202e5e9c2f4ef1a55a3d02563e1cb6041e5332 # v2.4.1
+        id: lychee
+        with:
+          jobSummary: true
+          args: --no-progress --accept '200..=299, 401, 403, 405' .
       - name: "Send Slack alert"
+        if: ${{ failure() }}
         uses: slackapi/slack-github-action@v2.1.0
         with:
           method: chat.postMessage
           token: ${{ secrets.SLACK_BOT_TOKEN }}
-          # Sends to dpc-deploys
+          # Sends to dpc-alerts
           payload: |
             channel: "CUY7H43DY"
-            text:  "TESTING IGNORE"
+            text:  "Broken Link Check"
             attachments:
               - color: danger
                 fields:
-                  - title: Broken link(s) found
+                  - title: Broken link(s) found!
                     value: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
