@@ -22,10 +22,15 @@ jobs:
         if: ${{ failure() }}
         uses: slackapi/slack-github-action@v2.1.0
         with:
-          webhook: ${{ secrets.LINK_CHECK_SLACK_WEBHOOK_URL }}
-          webhook-type: webhook-trigger
+        with:
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
+          # Sends to dpc-deploys
           payload: |
-            details: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-      - name: "Fail workflow"
-        if: ${{ failure() }}
-        run: exit ${{ steps.lychee.outputs.exit_code }}
+            channel: CUY7H43DY"
+            text:  "TESTING IGNORE"
+            attachments:
+              - color: danger
+                fields:
+                  - title: Broken link(s) found
+                    value: ${{ steps.image-tag.outputs.image_tag }}
