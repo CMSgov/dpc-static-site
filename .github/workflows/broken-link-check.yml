@@ -26,10 +26,10 @@ jobs:
           token: ${{ secrets.SLACK_BOT_TOKEN }}
           # Sends to dpc-deploys
           payload: |
-            channel: CUY7H43DY"
+            channel: "CMC1E4AEQ"
             text:  "TESTING IGNORE"
             attachments:
               - color: danger
                 fields:
                   - title: Broken link(s) found
-                    value: ${{ steps.image-tag.outputs.image_tag }}
+                    value: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
