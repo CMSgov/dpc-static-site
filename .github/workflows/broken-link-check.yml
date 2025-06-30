@@ -32,4 +32,4 @@ jobs:
               - color: danger
                 fields:
                   - title: Broken link(s) found!
-                    value: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                    value: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
