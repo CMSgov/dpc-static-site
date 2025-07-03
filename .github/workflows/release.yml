@@ -18,6 +18,7 @@ jobs:
   tag_repo:
     permissions:
       contents: write
+      id-token: write
     name: Tag Repo
     uses: CMSgov/dpc-app/.github/workflows/tag_release.yml@main
     with:
