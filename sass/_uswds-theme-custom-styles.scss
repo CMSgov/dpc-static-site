@@ -107,10 +107,10 @@ main {
 
 // Landing page hero background
 .bg-primary-gradient {
-  background: linear-gradient(30deg, color('primary') 60%, #0078a5, #00a488, #8abc4a, color('gold-20v'));
+  background: linear-gradient(30deg, color('blue-warm-70v') 60%, #534b97, #85519f, #b55996, #dd677f, #f97f5b, #ffa328, color('yellow-20v'));
 
   @include at-media($theme-site-margins-breakpoint) {
-    background: linear-gradient(90deg, color('primary') 60%, #0078a5, #00a488, #8abc4a, color('gold-20v'));
+    background: linear-gradient(90deg, color('blue-warm-70v') 60%, #534b97, #85519f, #b55996, #dd677f, #f97f5b, #ffa328, color('yellow-20v'));
   }
 }
 
@@ -611,7 +611,7 @@ a {
 }
 
 // external links automatically styled with an icon
-$external-href: '[href^="https"]:not([href*="bcda.cms.gov"]):not([href*="github.com/CMSgov/bcda-app"]):not(.usa-footer a):not(.usa-identifier a)';
+$external-href: '[href^="https"]:not([href*="dpc.cms.gov"]):not([href*="github.com/CMSgov/dpc-app"]):not(.usa-footer a):not(.usa-identifier a)';
 
 #{$external-href} {
   @include external-link;

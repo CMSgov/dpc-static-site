@@ -1,6 +1,6 @@
 ---
 layout: default
-page_title: "About BCDA"
+page_title: "About DPC"
 seo_title: ""
 description: ""
 show-side-nav: false
@@ -8,76 +8,47 @@ show-side-nav: false
 
 <div class="grid-row grid-gap-4 flex-align-center">
   <div class="tablet:grid-col-5 tablet:order-2 margin-y-2">
-    <img src="{{ '/assets/img/data-consult.svg' | relative_url }}" alt="data consult illustration" class="padding-x-4"/>
+    <img src="{{ '/assets/img/hero-heart.svg' | relative_url }}" alt="data consult illustration" class="padding-x-4"/>
   </div>
   <div class="tablet:grid-col tablet:order-1" >
     <h1>{{ page.page_title }}</h1>
     <p>
-        Beneficiary Claims Data API (BCDA) was released in February 2019 to share Medicare Parts A, B, and D data, including from <a href="{{ '/partially-adjudicated-claims-data.html' | relative_url }}">partially adjudicated claims</a>.
-    </p>
-    <p>
-        BCDA allows <a href="{{ '/index.html#eligible-model-entities' | relative_url }}">eligible model entities</a> to track performance metrics, identify high-risk patients sooner, and improve transition of care.
+       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in lectus leo. Mauris non vehicula risus, vitae pretium ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tortor lectus, luctus id nulla id, gravida porta mi. Fusce vel cursus purus, quis cursus risus.
     </p>
   </div>
 </div>
 
-<table class="usa-table usa-table--borderless usa-table--stacked">
-  <caption class="usa-sr-only">Definitions of Part A, Part B, and Part D claims data</caption>
-  <thead>
-    <tr>
-      <th scope="col">Data type</th>
-      <th scope="col">Definition</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Medicare Part A claims data</th>
-      <td>
-        Inpatient hospital stays, care in skilled nursing facilities, and hospice care
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Medicare Part B claims data</th>
-      <td>
-        Various doctors' services, outpatient care, medical supplies, and preventive services
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Medicare Part D claims data</th>
-      <td>
-        Prescription drugs prescribed by healthcare providers          
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-## Claims data process
-
-  <ol class="usa-process-list margin-top-2 about-process-list">
-      <li class="usa-process-list__item about-connector">
-          <h4 class="usa-process-list__heading">Medicare enrollee receives care</h4>
-      </li>
-      <li class="usa-process-list__item">
-          <h4 class="usa-process-list__heading">Provider submits Medicare claim</h4>
-      </li>
-      <li class="usa-process-list__item">
-          <h4 class="usa-process-list__heading">BCDA shares partially adjudicated claims data </h4>
-          <p class="usa-intro font-ui-md text-bold text-italic text-base margin-top-1">2-4 days after submission</p>
-          <p>
-            Partially adjudicated claims haven’t been fully processed and approved yet. BCDA updates this data daily from the Fiscal Intermediary Standard System (FISS) and Multi-Carrier System (MCS). 
-          </p>
-      </li>
-      <li class="usa-process-list__item">
-          <h4 class="usa-process-list__heading">Medicare approves the claims</h4>
-      </li>
-        <li class="usa-process-list__item about-final-item">
-          <h4 class="usa-process-list__heading">BCDA shares adjudicated claims data </h4>
-          <p class="usa-intro font-ui-md text-bold text-italic text-base margin-top-1">14 days after submission typically</p>
-          <p>
-            BCDA updates adjudicated claims data weekly from the <a href="https://www2.ccwdata.org/web/guest/home" target="_blank" rel="noopener noreferrer">Chronic Conditions Data Warehouse (CCW)</a>.
-          </p>
-      </li> 
-  </ol>
+<div class="padding-y-4">
+  <table class="usa-table usa-table--borderless usa-table--stacked">
+    <caption class="usa-sr-only">Definitions of Part A, Part B, and Part D claims data</caption>
+    <thead>
+      <tr>
+        <th scope="col">Data type</th>
+        <th scope="col">Definition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Medicare Part A claims data</th>
+        <td>
+          Inpatient hospital stays, care in skilled nursing facilities, and hospice care
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Medicare Part B claims data</th>
+        <td>
+          Various doctors' services, outpatient care, medical supplies, and preventive services
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Medicare Part D claims data</th>
+        <td>
+          Prescription drugs prescribed by healthcare providers
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 ## What are the other CMS claims-based FHIR APIs?
 

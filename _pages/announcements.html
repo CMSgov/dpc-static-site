@@ -1,0 +1,40 @@
+---
+layout: api-docs
+page_title: "Announcements"
+seo_title: ""
+description: "Get updates, release information, and other important news from the DPC team."
+show-side-nav: false
+---
+
+<h1>{{ page.page_title }}</h1>
+
+<div class="grid-row">
+  <div class="desktop:grid-col-8 grid-col-12">
+    <div class="padding-top-4">
+      {% for post in posts %}
+      <article class="padding-y-5 border-top position-relative">
+        <h2 class="font-sans-lg">
+          <a
+            href="{{ post.url | relative_url }}"
+            class="stretched-link text-no-underline"
+            style="color: black;"
+          >
+            {{- post.page_title -}}
+          </a>
+        </h2>
+        <p class="margin-top-1 text-base">{{ post.published_date | date_to_string: "ordinal", "US" }}</p>
+        {% if post.custom_excerpt or post.description %}
+        <p>{{ post.custom_excerpt | default: post.description }}</p>
+        {% endif %}
+        <div class="margin-top-4">
+          <div class="usa-button usa-button--outline">
+            <span>Read announcement</span>
+            {% include sprite.html icon="arrow_forward" size="2" %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+

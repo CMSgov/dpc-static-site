@@ -4,11 +4,21 @@ layout: api-docs
 
 <!-- {% comment %} We use this seperate layout to control content outside of the pure "post content", like the title and lead paragraphs  {% endcomment %} -->
 
-<a class="display-inline-flex flex-align-center" href="{{ '/announcements.html' | relative_url }}">
+<a
+  class="display-inline-flex flex-align-center"
+  href="{{ '/announcements.html' | relative_url }}"
+>
   {% include sprite.html icon="arrow_back" size="2" %}
   <span class="padding-left-05">Back to announcements</span>
 </a>
 
-<h1 class="margin-top-3">{{ page.page_title }}</h1>
+<div>
+  <h1 class="margin-top-3">{{ page.page_title }}</h1>
+  <p class="margin-top-105 text-base">{{ page.published_date | date_to_string: "ordinal", "US" }}</p>
+  {% if page.lead_paragraph %}
+  <p class="usa-intro">{{page.lead_paragraph}}</p>
+  {% endif %}
+</div>
+
 
 <div class="usa-prose margin-top-5">{{ content }}</div>

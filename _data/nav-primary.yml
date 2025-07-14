@@ -1,19 +1,38 @@
-- text: About
+- name: About
   children: 
-    - text: About BCDA
-      url: /about.html
+    - name: About DPC
+      url: /about
     
-    - text: Announcements
-      url: /announcements.html
+    - name: Announcements
+      url: /announcements
 
-- text: API Documentation
-  url: /api-documentation.html
+- name: API Documentation
+  children:
+    - name: Get Started
+      url: /api-documentation
+
+    - name: Child Page TBD 1
+      url: /tbd1
+      
+    - name: Child Page TBD 2
+      url: /tbd2
   
-- text: BCDA Data
-  url: /bcda-data.html
+- name: DPC Data 
+  children:
+    - name: DPC Data
+      url: /dpc-data
 
-- text: Production Access
-  url: /production-access.html
+    - name: Child Page TBD 3
+      url: /tbd3
 
-- text: Support
-  url: /support.html
+    - name: Child Page TBD 4
+      url: /tbd4
+
+    - name: Child Page TBD 5
+      url: /tbd5
+
+- name: Production Access
+  url: /production-access
+
+- name: Support
+  url: /support

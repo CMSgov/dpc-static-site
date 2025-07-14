@@ -1,24 +1,22 @@
 - name: API Documentation
-  url: /api-documentation.html
+  url: /api-documentation
   children:
 
-    - name: How to Get a Bearer Token
-      url: /get-a-bearer-token.html
+    - name: Child Page TBD 1
+      url: /tbd1
       
-    - name: How to Access Claims Data
-      url: /access-claims-data.html
+    - name: Child Page TBD 2
+      url: /tbd2
 
-- name: BCDA Data 
-  url: /bcda-data.html
+- name: DPC Data 
+  url: /DPC-data
   children:
 
-    - name: Guide to Partially Adjudicated Claims Data
-      url: /partially-adjudicated-claims-data.html
+    - name: Child Page TBD 3
+      url: /tbd3
 
-    - name: Comparison of BCDA and CCLF
-      url: /comparison-bcda-cclf-files.html
+    - name: Child Page TBD 4
+      url: /tbd4
 
-    - name: How to Filter Claims Data
-      url: /filter-claims-data.html
-
-    
+    - name: Child Page TBD 5
+      url: /tbd5
