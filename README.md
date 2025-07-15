@@ -2,32 +2,6 @@
 
 This Ruby program builds the [dpc.cms.gov](https://dpc.cms.gov/) website via [Jekyll](https://jekyllrb.com/) and [U.S. Web Design System (USWDS)](https://designsystem.digital.gov/).
 
-## About the Project
-
-### Project Vision
-The project vision is available at [https://dpc.cms.gov](https://dpc.cms.gov).
-
-### Agency Mission
-See [https://www.cms.gov](https://www.cms.gov) for this project's agency's mission.
-
-### Team Mission
-DPC operates under the [Data Analytics and Systems Group](https://www.cms.gov/research-statistics-data-and-systems/data-analytics-and-systems-group).
-
-### Core Team
-Team members are listed on our [community page](./COMMUNITY.md).
-
-### Contributing
-Contributions should follow [our policy](./CONTRIBUTING.md).
-
-### Community Guidelines
-See the [Code of Conduct](./CODE_OF_CONDUCT.md) for community guidelines.
-
-### Policies
-Contributions to this project must comply with [Section 508](https://www.section508.gov/) accessibility standards.
-
-### Public Domain
-This project is subject to the [Creative Commons Zero 1.0 International License](./LICENSE).
-
 ## Requirements
 > [!NOTE]
 > This repository assumes development on MacOS. If you're using Windows, some installation steps may be different.
@@ -269,3 +243,29 @@ Per [USWDS guidance](https://designsystem.digital.gov/documentation/settings/), 
 For specific customizations that cannot be achieved at the theme level, USWDS includes a versatile set of [utility classes](https://designsystem.digital.gov/utilities/) that can be used to style elements (e.g. `border-style`, `background-color`, etc). Most designs are achievable with utility classes, and they are preferred over custom CSS rules whenever possible.
 
 If custom styles must be written, they should added to `_uswds-theme-custom-styles.scss`, where you can leverage [USWDS design tokens](https://designsystem.digital.gov/design-tokens/), variables, mixins, and functions.
+
+## About the Project
+
+### Project Vision
+The project vision is available at [https://dpc.cms.gov](https://dpc.cms.gov).
+
+### Agency Mission
+See [https://www.cms.gov](https://www.cms.gov) for this project's agency's mission.
+
+### Team Mission
+DPC operates under the [Data Analytics and Systems Group](https://www.cms.gov/research-statistics-data-and-systems/data-analytics-and-systems-group).
+
+### Core Team
+Team members are listed on our [community page](./COMMUNITY.md).
+
+### Contributing
+Contributions should follow [our policy](./CONTRIBUTING.md).
+
+### Community Guidelines
+See the [Code of Conduct](./CODE_OF_CONDUCT.md) for community guidelines.
+
+### Policies
+Contributions to this project must comply with [Section 508](https://www.section508.gov/) accessibility standards.
+
+### Public Domain
+This project is subject to the [Creative Commons Zero 1.0 International License](./LICENSE).
