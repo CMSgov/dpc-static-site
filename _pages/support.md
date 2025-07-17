@@ -14,36 +14,139 @@ show-side-nav: false
   </div>
   <div class="tablet:grid-col tablet:order-1 padding-top-2">
     <h2>We're here to help</h2>
-    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in lectus leo. Mauris non vehicula risus, vitae pretium ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tortor lectus, luctus id nulla id, gravida porta mi. 
+    <p> As CMS continues to gather feedback from users on the Data at the Point of Care (DPC) pilot, we will likely add more FAQs to this page. If you have a question that is not listed below, please reach out through the [DPC Google Group](https://groups.google.com/d/forum/dpc-api).
     </p>
-    <a href="https://groups.google.com/g/bc-api" target="_blank" rel="noopener noreferrer" class="usa-button margin-top-2">Join the Google Group</a>
+    <a href="https://groups.google.com/g/dpc" target="_blank" rel="noopener noreferrer" class="usa-button margin-top-2">Join the Google Group</a>
   </div>
 </div>
 
-## Fusce vel cursus purus
 
-Vestibulum luctus, justo ut rutrum interdum, mi dui vulputate purus, vel placerat magna justo id nulla. Pellentesque condimentum viverra odio, vitae feugiat neque gravida et. Phasellus vel risus non arcu bibendum faucibus. Nulla commodo eu tortor et mattis. Maecenas ullamcorper vitae magna et tempus.
-- Quis cursus risus
-- Integer libero turpis
-- Pretium ut iaculis in
-- Porta non magna.
+## About DPC
 
-Cras sit amet magna dapibus, semper urna ac, varius arcu. Nullam tincidunt lorem enim, at venenatis lacus bibendum vitae. Proin rutrum nulla vel orci vestibulum porta. Integer libero turpis, pretium ut iaculis in, porta non magna.
+{% capture a1AccordionContent %}
+<p>
+  We've paused on taking applications for production data and onboarding existing applicants. This is temporary while we make improvements to our ID verification and onboarding process. We'll refresh our [updates page](/updates) when onboarding and applications resume. We'll also post an announcement in our Google Group. In the meantime, the <a href="https://sandbox.dpc.cms.gov/users/sign_in">sandbox environment</a> is still available for testing.
+</p>
+{% endcapture %}
 
-## Suspendisse vitae ex 
+{% include accordion.html
+    id="a1"
+    expanded=true
+    heading="When will onboarding and new applications start again?"
+    accordionContent=a1AccordionContent
+%}
 
-### Tempus turpis sodales accumsan
+{% capture a2AccordionContent %}
+<p>
+  <ul>
+    <li>Technical documentation is available in the <a href="/docsV1">API Documentation</a>.</li>
+    <li>A DPC Google Group has been created to provide answers to questions and to support providers and developers who are implementing Data at the Point of Care.</li>
+  </ul></p>
+{% endcapture %}
 
-Fusce in rutrum justo, eget condimentum dui. Cras quis facilisis risus, eget porta lectus. Praesent accumsan velit tellus, in fermentum orci finibus eget. Nullam bibendum lectus in molestie tempus. 
+{% include accordion.html
+    id="a2"
+    expanded=false
+    heading="How can I get more information?"
+    accordionContent=a2AccordionContent
+%}
 
-### Curabitur vel purus urna
+{% capture a3AccordionContent %}
+<p>
+  <ul>
+    <li>Blue Button 2.0 provides FHIR-formatted data for one individual Medicare beneficiary at a time, to registered applications with beneficiary authorization. See <a href="https://bluebutton.cms.gov/">https://bluebutton.cms.gov/</a>.</li>
+    <li>BCDA provides FHIR-formatted bulk data files to Medicare Shared Savings Program Accountable Care Organizations (MSSP ACOs) for all of the beneficiaries assigned to a given ACO. See <a href="https://bcda.cms.gov/">https://bcda.cms.gov/</a>.</li>
+    <li>Data at the Point of Care provides FHIR-formatted bulk data files to fee-for-service providers for their active patients as needed for treatment purposes under HIPAA. With DPC, providers identify their own rosters of patients to track, and no action is required from the beneficiary to authorize sharing of data. Data is shared between covered entities for treatment purposes as defined under HIPAA.</li>
+  </ul>
+</p>
+{% endcapture %}
 
-Pellentesque blandit sodales erat nec vulputate. Aenean eget consectetur nunc. Praesent interdum hendrerit mi, eu posuere lorem pretium a. Mauris maximus condimentum tortor suscipit semper. Proin consequat eros quis quam hendrerit, eu pharetra sapien lobortis. Nunc nec odio ac velit dignissim aliquam. Nunc a ornare nunc. Praesent at nisl dui. Ut auctor augue nec urna posuere finibus.
+{% include accordion.html
+    id="a3"
+    expanded=false
+    heading="How is the Data at the Point of Care pilot program different from Blue Button 2.0 and Beneficiary Claims Data API (BCDA)?"
+    accordionContent=a3AccordionContent
+%}
 
-### Fusce ornare posuere diam
 
-Vitae pulvinar neque efficitur a. Sed auctor, diam quis porta dictum, leo nisi bibendum magna, quis faucibus nisl odio et nunc. Cras et enim est. Maecenas euismod dignissim eros in fermentum. Phasellus porta dignissim enim, in ultrices magna consectetur vel. Cras mattis arcu a elementum viverra. Pellentesque gravida semper vulputate. Donec nec nisl porta, volutpat est at, scelerisque velit. Nunc rhoncus, enim at luctus imperdiet, odio elit interdum massa, a pulvinar sem odio sit amet erat. Donec sit amet elit ac neque varius rhoncus. Mauris vitae sem a orci porttitor elementum eget eu enim. Fusce laoreet luctus magna, ac posuere eros pellentesque sit amet. Cras sit amet magna dapibus, semper urna ac, varius arcu. 
+{% capture a4AccordionContent %}
+<p>
+  <ul>
+    <li>Usefulness of the data to evaluate how helpful CMS claims data is for impacting treatment, provider burden, and quality of care for Fee-for-Service (FFS) providers at the point of care</li>
+    <li>Ease of implementation for vendors and providers to evaluate how easy it is to configure and get started with requesting and receiving claims data</li>
+    <li>Practicality and effectiveness of attribution logic that determines which providers can request and receive claims data for which patients and for how long</li>
+    <li>Ease and effectiveness of ways that vendors and providers can collaborate to access the data</li>
+    <li>Measure of the frequency of use and an evaluation of performance in different use cases to determine infrastructure decisions</li>
+    <li>Any other feedback, additions, or changes</li>
+</ul>
+</p>
+{% endcapture %}
 
-## Nullam tincidunt lorem enim
+{% include accordion.html
+    id="a4"
+    expanded=false
+    heading="What type of information does CMS want as feedback?"
+    accordionContent=a4AccordionContent
+%}
 
-At venenatis lacus bibendum vitae. Proin rutrum nulla vel orci vestibulum porta. Integer libero turpis, pretium ut iaculis in, porta non magna.
+{% capture a5AccordionContent %}
+<p>
+  <ul>
+    <li>Data at the Point of Care secures Protected Health Information (PHI) and Personally Identifiable Information (PII) and has multiple layers of protection, such as encryption in transit and at rest, security certification requirements of connecting vendors, auditing and analytics to look for suspicious activity, terms of service restrictions, public and private security keys, and IP address restriction.</li>
+    <li>Data at the Point of Care is built based on privacy requirements defined by HIPAA.</li>
+  </ul>
+</p>
+{% endcapture %}
+
+{% include accordion.html
+    id="a5"
+    expanded=false
+    heading="How will CMS make sure that the data is secure and protected?"
+    accordionContent=a5AccordionContent
+%}
+
+{% capture a6AccordionContent %}
+<p>There is no cost for the data.</p>
+{% endcapture %}
+
+{% include accordion.html
+    id="a6"
+    expanded=false
+    heading="Is there a cost to get the claims information in the Data at the Point of Care pilot?"
+    accordionContent=a6AccordionContent
+%}
+
+### About Sandbox 
+
+{% capture a7AccordionContent %}
+<p>
+  <ul>
+    <li>Fee-for-Service (FFS) providers who treat Medicare patients</li>
+    <li>Providers who already receive claims from other payers and who have successfully integrated the information into existing clinical workflows</li>
+    <li>Providers who have experience using Blue Button 2.0 or the Beneficiary Claims Data API project</li>
+    <li>Providers who already use or test with FHIR, especially Bulk FHIR</li>
+  </ul>
+</p>
+{% endcapture %}
+
+{% include accordion.html
+    id="a7"
+    expanded=false
+    heading="What types of providers is CMS looking for to join the synthetic sandbox?"
+    accordionContent=a7AccordionContent
+%}
+
+{% capture a8AccordionContent %}
+<p>
+  <ul>
+    <li>Any Fee-for-Service provider or Health IT vendor can request access to synthetic data via <a href="{{ site.sbx_register }}">our sandbox</a></li>
+  </ul>
+</p>
+{% endcapture %}
+
+{% include accordion.html
+    id="a8"
+    expanded=false
+    heading="How can I access the synthetic sandbox and begin testing workflows?"
+    accordionContent=a8AccordionContent
+%}

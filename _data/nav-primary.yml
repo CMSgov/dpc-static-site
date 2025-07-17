@@ -11,25 +11,25 @@
     - name: Get Started
       url: /api-documentation
 
-    - name: Child Page TBD 1
-      url: /tbd1
+    - name: Authorization
+      url: /authorization
       
-    - name: Child Page TBD 2
-      url: /tbd2
+    - name: Attestation & Attribution
+      url: /attestation-attribution
+
+    - name: Export Data
+      url: /export-data
+
+    - name: Postman Collection
+      url: /postman-collection
   
 - name: DPC Data 
   children:
     - name: DPC Data
       url: /dpc-data
-
-    - name: Child Page TBD 3
-      url: /tbd3
-
-    - name: Child Page TBD 4
-      url: /tbd4
-
-    - name: Child Page TBD 5
-      url: /tbd5
+    
+    - name: Export Data
+      url: /export-data
 
 - name: Production Access
   url: /production-access

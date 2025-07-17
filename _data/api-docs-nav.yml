@@ -2,21 +2,18 @@
   url: /api-documentation
   children:
 
-    - name: Child Page TBD 1
-      url: /tbd1
+    - name: Authorization
+      url: /authorization
       
-    - name: Child Page TBD 2
-      url: /tbd2
+    - name: Attestation & Attribution
+      url: /attestation-attribution
+
+    - name: Postman Collection
+      url: /postman-collection
 
 - name: DPC Data 
   url: /DPC-data
   children:
-
-    - name: Child Page TBD 3
-      url: /tbd3
-
-    - name: Child Page TBD 4
-      url: /tbd4
-
-    - name: Child Page TBD 5
-      url: /tbd5
+    
+    - name: Export Data
+      url: /export-data
