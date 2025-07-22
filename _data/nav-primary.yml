@@ -6,7 +6,10 @@
     - name: Announcements
       url: /announcements
 
-- name: API Documentation
+    - name: Support 
+      url: /support
+
+- name: Documentation
   children:
     - name: Get Started
       url: /api-documentation
@@ -23,7 +26,7 @@
     - name: Postman Collection
       url: /postman-collection
   
-- name: DPC Data 
+- name: Data 
   children:
     - name: DPC Data
       url: /dpc-data
@@ -33,6 +36,3 @@
 
 - name: Production Access
   url: /production-access
-
-- name: Support
-  url: /support

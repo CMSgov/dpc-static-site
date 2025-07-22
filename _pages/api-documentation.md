@@ -39,7 +39,7 @@ Welcome to the Data at the Point of Care (DPC) pilot API program! This documenta
   <li class="usa-process-list__item">
     <p class="usa-process-list__heading">Use the sandbox</p>
     <p>
-     The <a href="https://sandbox.dpc.cms.gov/users/sign_in">sandbox</a> environment allows anyone to try the API and download test claims data. You'll need to uplaod sythetic data. 
+     The <a href="https://sandbox.dpc.cms.gov/users/sign_in">sandbox</a> environment allows anyone to try the API and download test claims data. You'll need to <a href="{{ '/api-documentation#upload-synthetic-data' | relative_url }}">upload sythetic data. </a>
     </p>
   </li>
   <li class="usa-process-list__item docs-final-item">
