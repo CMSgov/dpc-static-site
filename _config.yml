@@ -62,140 +62,43 @@ webrick:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
+
 exclude:
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
-  - Gemfile
-  - Gemfile.lock
-  - node_modules/
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - assets/uswds/img/favicons
+  - assets/uswds/img/material-icons
+  - assets/uswds/img/material-icons-deprecated
+  - assets/uswds/img/usa-icons/*
+  - assets/uswds/img/usa-icons-bg/*
+  - assets/uswds/img/uswds-icons/*
   - package.json
   - package-lock.json
-  - ops/
-  - scripts/
+  - gulpfile.js
+  - pa11yci.ci.json
+  - pa11yci.local.json
   - README.md
-  - Dockerfiles/
-  - docker-compose.yml
-  - Makefile
-  - implementation_guide/
+  - Dockerfile
+  - feed.xml
 
-
+include:
+  - assets/uswds/img/usa-icons/add.svg
+  - assets/uswds/img/usa-icons/check_circle.svg
+  - assets/uswds/img/usa-icons/close.svg
+  - assets/uswds/img/usa-icons/error.svg
+  - assets/uswds/img/usa-icons/error--white.svg
+  - assets/uswds/img/usa-icons/expand_more.svg
+  - assets/uswds/img/usa-icons/expand_less.svg
+  - assets/uswds/img/usa-icons/info.svg
+  - assets/uswds/img/usa-icons/launch.svg
+  - assets/uswds/img/usa-icons/launch--white.svg
+  - assets/uswds/img/usa-icons/remove.svg
+  - assets/uswds/img/usa-icons/warning.svg
+   
 collections:
   pages:
     output: true
-    permalink: /:title:output_ext
-
-
-global_nav:
-  - title: Home
-    id: home
-  - title: DPC Data
-    id: data
-  - title: About the Pilot
-    id: pilot
-  - title: Documentation
-    id: docsV1
-  - title: Frequently Asked Questions
-    id: faq
-  - title: Updates
-    id: updates
-
-footer_nav:
-  - title: Documentation
-    id: docs
-  - title: Frequently Asked Questions
-    id: faq
-  - title: Terms of Service
-    id: tos
-
-data_nav:
-  - title: What is FHIR
-    id: what-is-fhir
-  - title: What is in DPC data?
-    id: what-is-in-dpc-data
-  - title: Sample DPC Files
-    id: sample-dpc-files
-  - title: Additional Resources
-    id: additional-resources
-
-guide1_nav:
-  - title: I. Authorization
-    id: i-authorization
-    subnav:
-      - title: 1. Request Access
-        id: 1-request-access
-      - title: 2. Client Tokens
-        id: 2-client-tokens
-      - title: 3. Public Keys
-        id: 3-public-keys
-      - title: 4. IP Addresses (production only)
-        id: 4-ip-addresses
-      - title: 5. JSON Web Tokens
-        id: 5-json-web-tokens
-      - title: 6. Access/Bearer Token
-        id: 6-accessbearer-token
-  - title: II. Attestation & Attribution
-    id: ii-attestation--attribution
-    subnav:
-      - title: Load Sample Data
-        id: load-sample-data
-      - title: Practitioners
-        id: practitioners
-      - title: Patients
-        id: patients
-      - title: Attestation
-        id: attestation
-      - title: Groups (Attribution)
-        id: groups-attribution
-  - title: III. Export Data
-    id: iii-export-data
-    subnav:
-      - title: Initiate an Export Job
-        id: initiate-an-export-job
-      - title: Specify Resources
-        id: specify-which-resources-to-download
-      - title: Requesting filtered data
-        id: requesting-filtered-data
-      - title: Check Status of Export Job
-        id: check-status-of-the-export-job
-      - title: Retrieve NDJSON Output
-        id: retrieve-the-ndjson-output-files
-  - title: IV. Postman Collection
-    id: iv-postman-collection
-    subnav:
-      - title: Patient/$everything
-        id: patienteverything
-
-guide2_nav:
-  - title: Attestation & Attribution
-    id: attestation--attribution
-    subnav:
-      - title: Load Sample Data
-        id: load-sample-data
-      - title: Find Organization ID
-        id: find-organization-id
-      - title: Groups
-        id: groups
-
-pilot_nav:
-  - title: About the DPC Pilot
-    id: about-the-pilot
-  - title: Test the API
-    id: test-api
-  - title: Apply for Production Credentials
-    id: apply-for-production
-    subnav:
-      - title: Join the Production
-        id: join-prod-queue
-      - title: Schedule a Demonstration
-        id: demo-dpc
-      - title: Provide Security Certification
-        id: upload-security-cred
-  - title: Onboard with DPC
-    id: onboard-with-dpc
-  - title: Share Your Feedback
-    id: share-feedback
+    categories: true
+    permalink: /:path:output_ext
+  announcements:
+      output: true
+  features:
+    output: true

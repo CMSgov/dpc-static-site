@@ -6,6 +6,8 @@ description: "Get updates, release information, and other important news from th
 show-side-nav: false
 ---
 
+{% assign posts = site.announcements | sort: 'published_date' | reverse %}
+
 <h1>{{ page.page_title }}</h1>
 
 <div class="grid-row">
