@@ -21,7 +21,9 @@ show-side-nav: false
 </div>
 
 
-## About DPC
+### About DPC
+
+<div class="margin-y-2"></div>
 
 {% capture a1AccordionContent %}
 <p>
@@ -116,7 +118,9 @@ show-side-nav: false
     accordionContent=a6AccordionContent
 %}
 
-### About Sandbox 
+### About the Sandbox 
+
+<div class="margin-y-2"></div>
 
 {% capture a7AccordionContent %}
 <p>

@@ -6,9 +6,6 @@
     - name: Announcements
       url: /announcements
 
-    - name: Support 
-      url: /support
-
 - name: Documentation
   children:
     - name: Get Started
@@ -36,3 +33,6 @@
 
 - name: Production Access
   url: /production-access
+
+- name: Support
+  url: /support
