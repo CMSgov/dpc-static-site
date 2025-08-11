@@ -6,5 +6,6 @@ services:
     environment:
       JEKYLL_ENV: ${JEKYLL_ENV:-dev}
     volumes:
+      - ./common:/dpc-site-static/common
       - ./_site:/dpc-site-static/_site
       - ./.jekyll-cache:/dpc-site-static/.jekyll-cache
