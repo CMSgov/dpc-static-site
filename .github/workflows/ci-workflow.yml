@@ -5,7 +5,7 @@ on: [push]
 
 jobs:
   build:
-    name: "build and test"
+    name: "Build and Test"
     runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
     steps:
       - name: "Checkout code"
