@@ -1,11 +1,11 @@
 name: "DPC Static Site CI Workflow"
 
-on:
-  workflow_dispatch:
+on: [push]
+
 
 jobs:
   build:
-    name: "Build and Test"
+    name: "build and test"
     runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
     steps:
       - name: "Checkout code"
