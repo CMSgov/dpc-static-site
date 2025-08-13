@@ -1,6 +1,7 @@
 name: "DPC Static Site CI Workflow"
 
-on: [push]
+on:
+  workflow_dispatch:
 
 jobs:
   build:
