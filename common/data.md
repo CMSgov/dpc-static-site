@@ -35,9 +35,9 @@ For the appropriate beneficiaries, the data provided to providers through DPC in
 ## Sample DPC Files 
 In order to aid in users' understanding of DPC file data and structure, we provide sample Explanation of Benefit (EoB), Patient, and Coverage files to download and view. These files contain synthetic data, but the structure of the files is similar to production data provided by DPC.
 
-1. [Explanation of Benefit](https://bcda.cms.gov/assets/data/ExplanationOfBenefit.ndjson)
-2. [Patient](https://bcda.cms.gov/assets/data/Patient.ndjson)
-3. [Coverage](https://bcda.cms.gov/assets/data/Coverage.ndjson)
+1. [Explanation of Benefit](/assets/downloads/ExplanationOfBenefit.ndjson)
+2. [Patient](/assets/downloads/Patient.ndjson)
+3. [Coverage](/assets/downloads/Coverage.ndjson)
 
 ## Additional Resources
 
