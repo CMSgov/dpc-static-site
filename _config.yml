@@ -134,10 +134,6 @@ pilot_nav:
     id: about-the-pilot
   - title: Test the API
     id: test-api
-  - title: Onboard with DPC
-    id: onboard-with-dpc
-  - title: Share Your Feedback
-    id: share-feedback
 
 # Build settings
 markdown: kramdown
