@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "376fcb3a-4ac8-4541-9d3a-581db6c091ea",
+		"_postman_id": "77aeee20-2922-484a-838e-c9922571d1dc",
 		"name": "Centers for Medicare & Medicaid Services  (CMS) - Data at the Point of Care (DPC) API - App Developer",
 		"description": "This collection contains example requests for the public endpoints for the Data at the Point of Care (DPC) API. In order to use it, you must first create a Postman vault if you haven't already, and allow script access to this collection. Then create public and private keys and create the following values in your vault:\n\n1) `client_token`: This is sometimes also referred to as a `macaroon` and can be created on the DPC portal. Be sure to save a copy of your token in a safe place.\n\n2) `PRIVATE_KEY`: Follow the steps found here to create public and private keys: [https://dpc.cms.gov/docsV1#upload-your-first-public-key](https://dpc.cms.gov/docsV1#upload-your-first-public-key) and paste the contents of your private key in the `PRIVATE_KEY` field of your local Postman sandbox environment. Do not share your private key otherwise.\n\nThe following values must be updated in your local Postman sandbox environment:\n\n`key-id`: This is the system id of your public key, which is returned to you when the public key is uploaded to the DPC portal. You need this to generate a JWT, which you will exchange for an access token.\n\nWith these 3 values in place, the JWT and a fresh access token are automatically generated for you before each request in this Postman collection to prevent you from having to manually refresh the access token every 5 minutes while using the collection.\n\nUnder `Security/Authentication`, in the `Public Keys`, you will find a request to add a public key to DPC without using the portal. This request requires auth and is not required in order to use the other requests in this collection. If you would like to create a new public key, first generate the keys locally, then follow the directions in the `Add/Register Public Key on DPC Sandbox` description. You do not need to update the `PUBLIC_KEY`, `public-key-label`, and `public-key-signature` values in the environment otherwise.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
@@ -994,6 +994,32 @@
 							"response": []
 						},
 						{
+							"name": "Request Paged Data on All Patients in Organization",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/Patient?_count=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Patient"
+									],
+									"query": [
+										{
+											"key": "_count",
+											"value": "10"
+										}
+									]
+								},
+								"description": "FHIR endpoint for searching for Patient resources.\n\nSimilar to the `Request Data on All Patients in Organization` request, it returns all Patient resources associated with the given Organization, based on auth, but does so using FHIR paging and the `_count` parameter."
+							},
+							"response": []
+						},
+						{
 							"name": "Remove Patient from Organization",
 							"request": {
 								"method": "DELETE",
@@ -1701,7 +1727,7 @@
 					"response": []
 				},
 				{
-					"name": "Start Patient Data Export: Single Patient: Export by Patient ID",
+					"name": "Start Patient Data Export: Single Patient: Export by Patient ID: Asynchronous",
 					"event": [
 						{
 							"listen": "test",
@@ -1776,6 +1802,95 @@
 							]
 						},
 						"description": "If you only need claims data on a single patient, it is possible to get that data without going through all the steps of starting a data export job, checking the status to get the file name, and then fetching the data from that file. This is a synchronous shortcut to the data for a specific patient based on `patient-id`.\n\nTo use this endpoint, you must have the system id of a patient in an existing attribution group. You can set this up multiple ways in this Postman collection, but the easiest way is probably to do the following:\n\n1) Run `Register Single Patient to Organization` (saves `patient-id` to the env)\n2) Run `Submit New Practitioner:Patient Attribution Group` (ensures Practitioner/Patient relationship exists)\n3) Run this request which uses the `patient_id` to fetch the data\n\nPREREQUESITES:\n- Existing Attribution Group connecting patient and practitioner\n- `organization-id`\n- `practitioner-id`\n- `patient-id`"
+					},
+					"response": []
+				},
+				{
+					"name": "Start Patient Data Export: Single Patient: Export by Patient ID: Synchronous",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Status should be 200",
+									"pm.test(\"Status is 202\", function () {",
+									"    pm.response.to.have.status(202);",
+									"});",
+									"",
+									"// Save job id",
+									"postman.setEnvironmentVariable(\"job-id\", postman.getResponseHeader(\"Content-Location\").substr(postman.getResponseHeader(\"Content-Location\").indexOf(\"Jobs/\")+5));",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var recorded_at = new Date().toJSON();",
+									"",
+									"var provenance = { ",
+									"    \"resourceType\": \"Provenance\",",
+									"    \"meta\": { ",
+									"        \"profile\": [ \"https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation\" ] },",
+									"        \"recorded\": recorded_at,",
+									"        \"reason\": [ { \"system\": \"http://hl7.org/fhir/v3/ActReason\", \"code\": \"TREAT\" } ],",
+									"        \"agent\": [ ",
+									"            { ",
+									"                \"role\": [ { \"coding\": [ { \"system\": \"http://hl7.org/fhir/v3/RoleClass\", \"code\": \"AGNT\" } ] } ],",
+									"                \"whoReference\": { \"reference\": \"Organization/{{organization-id}}\" },",
+									"                \"onBehalfOfReference\": { \"reference\": \"Practitioner/{{practitioner-id}}\" } ",
+									"            }",
+									"        ]",
+									"}",
+									"",
+									"pm.environment.set(\"x-provenance\", JSON.stringify(provenance));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/fhir+json",
+								"type": "text"
+							},
+							{
+								"key": "X-Provenance",
+								"value": "{{x-provenance}}",
+								"type": "text"
+							},
+							{
+								"key": "Prefer",
+								"value": "respond-async",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/Patient/{{patient-id}}/$everything",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Patient",
+								"{{patient-id}}",
+								"$everything"
+							]
+						},
+						"description": "This behaves just like the `Start Patient Data Export: Single Patient: Export by Patient ID: Asynchronous` request, except instead of waiting for data to return immediately it places a job on the queue similar to a group export.\n\nA url to query the status of the job is returned in the `Content-Location` header and a `202` is returned when the request is successful."
 					},
 					"response": []
 				}
