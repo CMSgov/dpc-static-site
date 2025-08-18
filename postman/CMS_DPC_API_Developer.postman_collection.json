@@ -1890,7 +1890,7 @@
 								"$everything"
 							]
 						},
-						"description": "This behaves just like the `Start Patient Data Export: Single Patient: Export by Patient ID: Asynchronous` request, except instead of waiting for data to return immediately it places a job on the queue similar to a group export.\n\nA url to query the status of the job is returned in the `Content-Location` header and a `202` is returned when the request is successful."
+						"description": "This behaves just like the `Start Patient Data Export: Single Patient: Export by Patient ID: Synchronous` request, except instead of waiting for data to return immediately it places a job on the queue similar to a group export.\n\nA url to query the status of the job is returned in the `Content-Location` header and a `202` is returned when the request is successful."
 					},
 					"response": []
 				}
