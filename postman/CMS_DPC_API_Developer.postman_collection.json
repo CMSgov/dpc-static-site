@@ -1801,7 +1801,7 @@
 								"$everything"
 							]
 						},
-						"description": "If you only need claims data on a single patient, it is possible to get that data without going through all the steps of starting a data export job, checking the status to get the file name, and then fetching the data from that file. This is a synchronous shortcut to the data for a specific patient based on `patient-id`.\n\nTo use this endpoint, you must have the system id of a patient in an existing attribution group. You can set this up multiple ways in this Postman collection, but the easiest way is probably to do the following:\n\n1) Run `Register Single Patient to Organization` (saves `patient-id` to the env)  \n2) Run `Submit New Practitioner:Patient Attribution Group` (ensures Practitioner/Patient relationship exists)  \n3) Run this request which uses the `patient_id` to fetch the data\n\nPREREQUESITES:\n\n- Existing Attribution Group connecting patient and practitioner\n    \n- `organization-id`\n    \n- `practitioner-id`\n    \n- `patient-id`\n    \n\nUse the `Status/URL of Data Export Job: Group of Patients: Get Status By Job ID` request to get the status of the submitted job."
+						"description": "If you only need claims data on a single patient, it is possible to get that data without going through all the steps of starting a data export job, checking the status to get the file name, and then fetching the data from that file. This is a synchronous shortcut to the data for a specific patient based on `patient-id`.\n\nTo use this endpoint, you must have the system id of a patient in an existing attribution group. You can set this up multiple ways in this Postman collection, but the easiest way is probably to do the following:\n\n1) Run `Register Single Patient to Organization` (saves `patient-id` to the env)  \n2) Run `Submit New Practitioner:Patient Attribution Group` (ensures Practitioner/Patient relationship exists)  \n3) Run this request which uses the `patient_id` to fetch the data\n\nPREREQUISITES:\n\n- Existing Attribution Group connecting patient and practitioner\n    \n- `organization-id`\n    \n- `practitioner-id`\n    \n- `patient-id`"
 					},
 					"response": []
 				},
@@ -1890,7 +1890,7 @@
 								"$everything"
 							]
 						},
-						"description": "This behaves just like the `Start Patient Data Export: Single Patient: Export by Patient ID: Synchronous` request, except instead of waiting for data to return immediately it places a job on the queue similar to a group export.\n\nA url to query the status of the job is returned in the `Content-Location` header and a `202` is returned when the request is successful.\n\nUse the `Status/URL of Data Export Job: Group of Patients: Get Status By Job ID` request to get the status of the submitted job."
+						"description": "This behaves similarly to the `Start Patient Data Export: Single Patient: Export by Patient ID: Synchronous` request. Instead of returning the data as soon as it is ready, it returns a URL to query the status of the job.\n\nThis URL is in the `Content-Location` header, and a `202` is returned when the request is successful.\n\nUse the `Status/URL of Data Export Job: Group of Patients: Get Status By Job ID` request to get the status of the submitted job."
 					},
 					"response": []
 				}
