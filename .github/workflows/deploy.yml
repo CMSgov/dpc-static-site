@@ -1,134 +1,76 @@
-name: 'Deploy Static Site'
+name: "deploy"
 
 on:
   workflow_dispatch:
     inputs:
-      env:
-        description: Deploy where?
-        required: false
-        default: 'sandbox'
-        type: choice
-        options:
-          - sandbox
-          - prod
-      static_repo_ref:
-        description: Which branch or tag?
-        required: true
-        default: 'main'
-        type: 'string'
+      deploy_path:
+        description: "S3 directory deployment location"
+        default: "uswds-redesign"
   workflow_call:
     inputs:
-      env:
-        description: Deploy where?
+      deploy_path:
         required: false
-        default: 'sandbox'
-        type: 'string'
-      static_repo_ref:
-        description: Which branch or tag?
-        required: true
-        default: 'main'
-        type: 'string'
+        type: string
 
 jobs:
-  deploy_static_site:
-    name: Deploy Static Site
+  deploy-dev:
+    if: github.actor != 'dependabot[bot]'
     permissions:
       contents: read
       id-token: write
     runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
+
     steps:
-      - name: "Checkout code"
+      - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          repository: 'CMSgov/dpc-static-site'
-          ref: ${{ inputs.static_repo_ref }}
-
-      - name: "Set Version"
-        env:
-          STATIC_REPO_REF: ${{ inputs.static_repo_ref }}
+          cache: 'npm'
+          node-version-file: '.nvmrc'
+          # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
+     
+      - name: Install jekyll and bundler
         run: |
-          echo "version: $STATIC_REPO_REF" >> _version_config.yml
+          gem install bundler
+          bundle install
+  
+      - name: Install npm dependencies
+        run: |
+          npm ci
 
-      - name: "Add dirs"
-        run: mkdir -p _site && mkdir -p .jekyll-cache
+      - name: Compile assets with Gulp
+        run: |
+          npm run assets:build
 
-      - name: Assert Ownership
-        run: sudo chmod -R 777 .
+      - name: Build the site
+        env:
+          # This is redundant but keeping for posterity
+          JEKYLL_ENV: "production"
+        run: |
+          bundle exec jekyll build --baseurl ${{ inputs.deploy_path && format('/{0}', inputs.deploy_path) || ''}}
 
-      - name: 'Build Image'
-        run: docker build . -f Dockerfiles/Dockerfile.static_site -t static_site
-
-      - name: 'Build Site'
-        run: docker run -v ./_site:/dpc-site-static/_site -v ./.jekyll-cache:/dpc-site-static/.jekyll-cache --rm static_site
-
-      - name: AWS Credentials
+      - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-         aws-region: ${{ vars.AWS_REGION }}
-         role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/dpc-${{ inputs.env }}-github-actions
-
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ secrets.NON_PROD_ACCOUNT }}:role/delegatedadmin/developer/dpc-dev-github-actions
+      
       - name: Set env vars from AWS params
         uses: cmsgov/cdap/actions/aws-params-env-action@main
         env:
           AWS_REGION: ${{ vars.AWS_REGION }}
         with:
           params: |
-            SONAR_HOST_URL=/sonarqube/url
-            SONAR_TOKEN=/sonarqube/token
-            TARGET_BUCKET=/dpc/${{ inputs.env }}/static_site
+            TARGET_BUCKET=/dpc/stage/static_site
 
-      - name: Run quality gate scan
-        if: ${{ inputs.env == 'sandbox' }}
-        uses: sonarsource/sonarqube-scan-action@master
-        with:
-          args:
-            -Dsonar.projectKey=bcda-dpc-static-site
-            -Dsonar.sources=.
-            -Dsonar.working.directory=./sonar_workspace
-            -Dsonar.branch.name=${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
-            -Dsonar.projectVersion=${{ github.ref_name == 'main' && github.sha || 'branch' }}
-            -Dsonar.qualitygate.wait=true
-            -Dsonar.ci.autoconfig.disabled=true
-
-      - name: "Sync _site"
-        run: aws s3 sync _site/ s3://"$TARGET_BUCKET"/ --delete
-      - name: Upload html files without suffix with content-language set
+      - name: Deploy the site
+        # This $TARGET_BUCKET comes from the step above, cmsgov/cdap/actions/aws-params-env-action@main
         run: |
-          for file in _site/*.html; do
-            suffixless=`basename ${file/.html}`
-            aws s3 cp $file s3://"$TARGET_BUCKET"/$suffixless --content-language text/html
-          done
-
+          aws s3 sync _site/ s3://$TARGET_BUCKET/${{ inputs.deploy_path }}/ --delete
+      
       - name: Invalidate Cloudfront cache
         run: |
           DISTRIBUTION_ID=`aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id, OriginId: Origins.Items[0].Id}[?OriginId=='$TARGET_BUCKET'].Id" --output text`
-          aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*'
-
-      - uses: slackapi/slack-github-action@v2.0.0
-        name: Slack Success
-        with:
-          method: chat.postMessage
-          token: ${{ secrets.SLACK_BOT_TOKEN }}
-          # Sends to dpc-deploys
-          payload: |
-            channel: "CMC1E4AEQ"
-            attachments:
-              - color: good
-                text: "SUCCESS: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|static site version> `${{ inputs.static_repo_ref }}` deployed to ${{ inputs.env }} environment."
-                mrkdown_in:
-                  - text
-
-      - uses: slackapi/slack-github-action@v2.0.0
-        name: Slack failure
-        if: ${{ failure() }}
-        with:
-          method: chat.postMessage
-          token: ${{ secrets.SLACK_BOT_TOKEN }}
-          # Sends to dpc-deploys
-          payload: |
-            channel: "CMC1E4AEQ"
-            attachments:
-              - color: danger
-                text: "FAILURE: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|static site version> `${{ inputs.static_repo_ref }}` deployed to ${{ inputs.env }} environment."
-                mrkdown_in:
-                  - text
+          aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" --paths "/*"

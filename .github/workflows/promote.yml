@@ -1,0 +1,59 @@
+name: "promote"
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy_path:
+        description: "S3 directory deployment location (e.g. s3://s3_bucket/deploy_path/)"
+        default: "uswds-redesign"
+  workflow_call:
+    inputs:
+      deploy_path:
+        required: false
+        type: string
+
+jobs:
+  promote:
+    # environment: 'prod'
+    permissions:
+      contents: read
+      id-token: write
+    runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
+    
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ secrets.NON_PROD_ACCOUNT }}:role/delegatedadmin/developer/dpc-dev-github-actions
+
+      - name: Fetch Non-Production AWS Parameters
+        uses: cmsgov/cdap/actions/aws-params-env-action@main
+        with:
+          params: |
+            TARGET_BUCKET=/dpc/stage/static_site
+
+      - name: Download Dev Bucket
+        run: |
+          aws s3 sync s3://${TARGET_BUCKET}/${{ inputs.deploy_path }}/ ./temp-site/
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/dpc-prod-github-actions
+
+      - name: Fetch Production AWS Parameters
+        uses: cmsgov/cdap/actions/aws-params-env-action@main
+        with:
+          params: |
+            TARGET_BUCKET=/dpc/prod/static_site
+
+      - name: Copy site to Prod Bucket
+        run: |
+          aws s3 sync ./temp-site/ s3://${TARGET_BUCKET}/ --delete
+
+      - name: Invalidate Prod Distribution
+        run: |
+          DISTRIBUTION_ID=`aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id, OriginId: Origins.Items[0].Id}[?OriginId=='$TARGET_BUCKET'].Id" --output text`
+          aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" --paths "/*"
