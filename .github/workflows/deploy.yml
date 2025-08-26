@@ -91,7 +91,7 @@ jobs:
             -Dsonar.ci.autoconfig.disabled=true
 
       - name: "Sync _site"
-        run: aws s3 sync _site/ s3://"$TARGET_BUCKET"/ --delete
+        run: aws s3 sync _site/ s3://"$TARGET_BUCKET"/ $(["${{ inputs.target_environment }}" == 'prod'] && echo "--delete")
       - name: Upload html files without suffix with content-language set
         run: |
           for file in _site/*.html; do
