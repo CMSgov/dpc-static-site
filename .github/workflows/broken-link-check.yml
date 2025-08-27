@@ -34,14 +34,14 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ${{ vars.AWS_REGION }}
-          role-to-assume: arn:aws:iam::${{ secrets.NON_PROD_ACCOUNT }}:role/delegatedadmin/developer/dpc-dev-github-actions
+          role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/dpc-sandbox-github-actions
 
       - name: Fetch Production AWS Parameters
         if: ${{ inputs.deploy_path != '' }}
         uses: cmsgov/cdap/actions/aws-params-env-action@main
         with:
           params: |
-            TARGET_BUCKET=/dpc/stage/static_site
+            TARGET_BUCKET=/dpc/sandbox/static_site
 
       - name: Download Dev Bucket
         run: |
