@@ -1,38 +1,38 @@
 - name: About
   children: 
     - name: About DPC
-      url: /about
+      url: /about.html
     
     - name: Announcements
-      url: /announcements
+      url: /announcements.html
 
 - name: Documentation
   children:
     - name: Get Started
-      url: /api-documentation
+      url: /api-documentation.html
 
     - name: Authorization
-      url: /authorization
+      url: /authorization.html
       
     - name: Attestation & Attribution
-      url: /attestation-attribution
+      url: /attestation-attribution.html
 
     - name: Export Data
-      url: /export-data
+      url: /export-data.html
 
     - name: Postman Collection
-      url: /postman-collection
+      url: /postman-collection.html
   
 - name: Data 
   children:
     - name: DPC Data
-      url: /dpc-data
+      url: /dpc-data.html
     
     - name: Export Data
-      url: /export-data
+      url: /export-data.html
 
 - name: Production Access
-  url: /production-access
+  url: /production-access.html
 
 - name: Support
-  url: /support
+  url: /support.html
