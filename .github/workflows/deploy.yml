@@ -63,7 +63,7 @@ jobs:
           AWS_REGION: ${{ vars.AWS_REGION }}
         with:
           params: |
-            TARGET_BUCKET=/dpc/stage/static_site
+            TARGET_BUCKET=/dpc/sandbox/static_site
 
       - name: Deploy the site
         # This $TARGET_BUCKET comes from the step above, cmsgov/cdap/actions/aws-params-env-action@main
