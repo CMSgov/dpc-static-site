@@ -1,0 +1,22 @@
+name: push to dev
+
+on:
+  push:
+    branches:
+      - uswds-redesign
+
+concurrency:
+  group: ${{ github.workflow }}-${{  github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    with:
+      deploy_path: "uswds-redesign"
+    uses: ./.github/workflows/deploy.yml
+    secrets: inherit
+
+  a11y-check:
+    needs: deploy
+    uses: ./.github/workflows/a11y-check.yml
+    secrets: inherit

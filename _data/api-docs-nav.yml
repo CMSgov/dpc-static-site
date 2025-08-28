@@ -1,19 +1,19 @@
 - name: API Documentation
-  url: /api-documentation
+  url: /api-documentation.html
   children:
 
     - name: Authorization
-      url: /authorization
+      url: /authorization.html
       
     - name: Attestation & Attribution
-      url: /attestation-attribution
+      url: /attestation-attribution.html
 
     - name: Postman Collection
-      url: /postman-collection
+      url: /postman-collection.html
 
 - name: DPC Data 
-  url: /DPC-data
+  url: /DPC-data.html
   children:
     
     - name: Export Data
-      url: /export-data
+      url: /export-data.html

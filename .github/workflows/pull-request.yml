@@ -1,0 +1,41 @@
+name: "pull request"
+
+on:
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{  github.event.number }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    permissions:
+      contents: read
+      id-token: write
+    if: ${{ !startsWith(github.actor, 'bot-') }}
+    with:
+      deploy_path: ${{ github.event.number }}
+    uses: ./.github/workflows/deploy.yml
+    secrets: inherit
+
+  comment-pr:
+    needs: deploy
+    permissions:
+      contents: read
+      id-token: write
+      pull-requests: write
+    uses: ./.github/workflows/comment-pr.yml
+
+  a11y-check:
+    needs: deploy
+    uses: ./.github/workflows/a11y-check.yml
+    secrets: inherit
+
+  broken-link-check:
+    needs: deploy
+    permissions:
+      id-token: write
+    with:
+      deploy_path: ${{ github.event.number }}
+    uses: ./.github/workflows/broken-link-check.yml
+    secrets: inherit

@@ -2,34 +2,55 @@ name: "Broken Link Check"
 
 on:
   schedule:
-    - cron: 0 0 * * 0 # run every Sunday at midnight
+    - cron: 0 0 * * 0 # every Sunday at midnight
   workflow_dispatch:
+  workflow_call:
+     inputs:
+      deploy_path:
+        required: false
+        type: string
 
 jobs:
-  check:
-    name: "Check for broken links"
+  broken-link-check:
     runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
+
     steps:
-      - name: "Checkout code"
-        uses: actions/checkout@v2
+      - name: Configure AWS Credentials
+        if: ${{ inputs.deploy_path == '' }}
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/dpc-prod-github-actions
+
+      - name: Fetch Production AWS Parameters
+        if: ${{ inputs.deploy_path == '' }}
+        uses: cmsgov/cdap/actions/aws-params-env-action@main
+        with:
+          params: |
+            TARGET_BUCKET=/dpc/prod/static_site
+
+      - name: Configure AWS Credentials
+        if: ${{ inputs.deploy_path != '' }}
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/dpc-sandbox-github-actions
+
+      - name: Fetch Production AWS Parameters
+        if: ${{ inputs.deploy_path != '' }}
+        uses: cmsgov/cdap/actions/aws-params-env-action@main
+        with:
+          params: |
+            TARGET_BUCKET=/dpc/sandbox/static_site
+
+      - name: Download Dev Bucket
+        run: |
+          aws s3 sync s3://${TARGET_BUCKET}/${{ inputs.deploy_path && format('/{0}', inputs.deploy_path) || ''}} .
+
       - name: "Check for broken links"
-        uses: lycheeverse/lychee-action@82202e5e9c2f4ef1a55a3d02563e1cb6041e5332 # v2.4.1
+        uses: lycheeverse/lychee-action@v2
         id: lychee
         with:
           jobSummary: true
-          args: --no-progress --accept '200..=299, 401, 403, 405' .
-      - name: "Send Slack alert"
-        if: ${{ failure() }}
-        uses: slackapi/slack-github-action@v2.1.0
-        with:
-          method: chat.postMessage
-          token: ${{ secrets.SLACK_BOT_TOKEN }}
-          # Sends to dpc-alerts
-          payload: |
-            channel: "CUY7H43DY"
-            text:  "Broken Link Check"
-            attachments:
-              - color: danger
-                fields:
-                  - title: Broken link(s) found!
-                    value: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          fail: true
+          args: --no-progress --accept '200..=299, 401, 403, 405' './**/*.html'

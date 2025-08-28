@@ -1,39 +1,14 @@
-name: 'Tag and Deploy Site'
+name: release
 
 on:
-  workflow_dispatch:
-    inputs:
-      deploy:
-        description: 'Also deploy to staging?'
-        type: boolean
-        default: true
-        required: true
-      repo_ref:
-        description: 'Which branch or tag?'
-        required: true
-        default: 'main'
-        type: 'string'
+  release:
+    types: ['released']
 
 jobs:
-  tag_repo:
-    permissions:
-      contents: write
-      id-token: write
-    name: Tag Repo
-    uses: CMSgov/dpc-app/.github/workflows/tag_release.yml@main
-    with:
-      repo_ref: ${{ inputs.repo_ref }}
-      runner: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
-    secrets: inherit
   deploy:
     permissions:
-      contents: read
       id-token: write
-    if: ${{ inputs.deploy }}
-    name: Deploy to Staging
-    needs: tag_repo
-    uses: ./.github/workflows/deploy.yml
     with:
-      env: sandbox
-      static_repo_ref: ${{ needs.tag_repo.outputs.tag }}
+      deploy_path: "uswds-redesign"
+    uses: ./.github/workflows/promote.yml
     secrets: inherit
