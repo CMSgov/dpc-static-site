@@ -14,7 +14,7 @@ show-side-nav: false
   </div>
   <div class="tablet:grid-col-8 tablet:order-1 padding-top-2">
     <h2>We're here to help</h2>
-    <p>The Data at the Point of Care (DPC) team is here for feedback, troubleshooting, and general questions. If you can’t find answers in our documentation or API data page, start with our <a href="https://groups.google.com/g/dpc-api" target="_blank" target="_blank" rel="noopener noreferrer">Google Group</a>. You can also email <a href="mailto:dpcinfo@cms.hhs.gov">dpcinfo@cms.hhs.gov</a>. We check this mailbox frequently and respond as soon as we can. 
+    <p>The Data at the Point of Care (DPC) team is here for feedback, troubleshooting, and general questions. If you can’t find answers in our documentation or API data page, start with our <a href="https://groups.google.com/g/dpc-api" target="_blank" rel="noopener noreferrer">Google Group</a>. You can also email <a href="mailto:dpcinfo@cms.hhs.gov">dpcinfo@cms.hhs.gov</a>. We check this mailbox frequently and respond as soon as we can. 
     </p>
   </div>
 </div>
