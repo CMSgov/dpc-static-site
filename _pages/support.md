@@ -14,9 +14,8 @@ show-side-nav: false
   </div>
   <div class="tablet:grid-col tablet:order-1 padding-top-2">
     <h2>We're here to help</h2>
-    <p> As CMS continues to gather feedback from users on the Data at the Point of Care (DPC) pilot, we will likely add more FAQs to this page. If you have a question that is not listed below, please reach out through the [DPC Google Group](https://groups.google.com/d/forum/dpc-api).
+    <p>The Data at the Point of Care (DPC) team is here for feedback, troubleshooting, and general questions. If you can’t find answers in our documentation or API data page, start with our [Google Group](https://groups.google.com/g/dpc-api). You can also email [dpcinfo@cms.hhs.gov](mailto:dpcinfo@cms.hhs.gov). We check this mailbox frequently and respond as soon as we can. 
     </p>
-    <a href="https://groups.google.com/g/dpc" target="_blank" rel="noopener noreferrer" class="usa-button margin-top-2">Join the Google Group</a>
   </div>
 </div>
 
