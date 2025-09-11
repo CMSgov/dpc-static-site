@@ -33,6 +33,7 @@ jobs:
      
       - name: Install jekyll and bundler
         run: |
+          rbenv install
           gem install bundler
           bundle install
   
