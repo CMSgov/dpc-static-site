@@ -35,7 +35,7 @@ jobs:
           TARGETS_TO_SCAN="${TARGETS_TO_SCAN} ${TARGET_BASE_URL}/docsV2.html" 
           TARGETS_TO_SCAN="${TARGETS_TO_SCAN} ${TARGET_BASE_URL}/updates.html"
           docker run --init --rm --cap-add=SYS_ADMIN orenfromberg/axe-puppeteer-ci:1.0.0@sha256:f83527a3ae8ab74088c001abfe44836946ba73f0afbbf460447f8a0c40281e70 $TARGETS_TO_SCAN
-      - uses: slackapi/slack-github-action@v2.0.0
+      - uses: slackapi/slack-github-action@b0fa283ad8fea605de13dc3f449259339835fc52 # v2.1.0
         name: Slack Success
         with:
           method: chat.postMessage
@@ -48,7 +48,7 @@ jobs:
                 text: "SUCCESS: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|Static Site 508 Compliance> completed against `${{ steps.target-base.outputs.TARGET_BASE_URL }}`"
                 mrkdown_in:
                   - text
-      - uses: slackapi/slack-github-action@v2.0.0
+      - uses: slackapi/slack-github-action@b0fa283ad8fea605de13dc3f449259339835fc52 # v2.1.0
         name: Slack failure
         if: ${{ failure() }}
         with:
