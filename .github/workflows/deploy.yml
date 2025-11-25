@@ -59,7 +59,14 @@ jobs:
         run: docker build . -f Dockerfiles/Dockerfile.static_site -t static_site
 
       - name: 'Build Site'
-        run: docker run -v ./_site:/dpc-site-static/_site -v ./.jekyll-cache:/dpc-site-static/.jekyll-cache --rm static_site
+        env:
+          JEKYLL_ENV: ${{ inputs.env }}
+        run: |
+          docker run \
+          -e JEKYLL_ENV=$JEKYLL_ENV \
+          -v ./_site:/dpc-site-static/_site \
+          -v ./.jekyll-cache:/dpc-site-static/.jekyll-cache \
+          --rm static_site
 
       - name: AWS Credentials
         uses: aws-actions/configure-aws-credentials@b47578312673ae6fa5b5096b330d9fbac3d116df # v4.2.1
