@@ -19,7 +19,7 @@
     var src_url = '';
     {% if jekyll.environment == 'prod' %}
     src_url = 'https://tealium-tags.cms.gov/cms-dpc/prod/utag.js';
-    {% elsif jekyll.environment == 'stage' %}
+    {% elsif jekyll.environment == 'sandbox' %}
     src_url = 'https://tealium-tags.cms.gov/cms-dpc/qa/utag.js';
     {% else %}
     src_url = 'https://tealium-tags.cms.gov/cms-dpc/dev/utag.js';
