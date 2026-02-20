@@ -8,7 +8,7 @@ This Ruby program builds the [dpc.cms.gov](https://dpc.cms.gov/) website via [Je
 
 - [Homebrew](https://brew.sh/)
 - [Ruby](https://www.ruby-lang.org/en/) 
-- [Node.js](https://nodejs.org/en/download/) (v20 or higher required)
+- [Node.js](https://nodejs.org/en/download/) (v24 or higher required)
 - [npm](https://www.npmjs.com/get-npm)
 
 ## Installation
