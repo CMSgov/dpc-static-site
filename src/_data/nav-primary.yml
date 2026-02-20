@@ -12,16 +12,13 @@
       url: /api-documentation.html
 
     - name: Authorization
-      url: /authorization.html
+      url: /api-documentation/authorization.html
       
     - name: Attestation & Attribution
-      url: /attestation-attribution.html
-
-    - name: Export Data
-      url: /export-data.html
+      url: /api-documentation/attestation-attribution.html
 
     - name: Postman Collection
-      url: /postman-collection.html
+      url: /api-documentation/postman-collection.html
   
 - name: Data 
   children:
@@ -29,7 +26,7 @@
       url: /dpc-data.html
     
     - name: Export Data
-      url: /export-data.html
+      url: /dpc-data/export-data.html
 
 - name: Production Access
   url: /production-access.html

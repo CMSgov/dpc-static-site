@@ -1,22 +1,22 @@
 ---
 layout: default
-page_title: "About DPC"
+page_title: "About Data at the Point of Care"
 seo_title: ""
 description: ""
 show-side-nav: false
 ---
 
 <div class="grid-row grid-gap-4 flex-align-center">
-  <div class="tablet:grid-col-5 tablet:order-2 margin-y-2">
-    <img src="{{ '/assets/img/hero-heart.svg' | relative_url }}" alt="data consult illustration" class="padding-x-4"/>
-  </div>
   <div class="tablet:grid-col tablet:order-1" >
     <h1>{{ page.page_title }}</h1>
     <h2>Medicare beneficiaries: at the center of a complex healthcare ecosystem</h2>
-    <p>Medicare patients move through a landscape of separate health systems without a continuous record of their care. The Data at the Point of Care (DPC) pilot program puts patients at the center of this system, using a secure, standardized method to share health information across providers. </p>
+  </div>
+  <div class="tablet:grid-col-5 tablet:order-2 margin-y-2">
+    [placeholder]
   </div>
 </div>
 
+Medicare patients move through a landscape of separate health systems without a continuous record of their care. The Data at the Point of Care (DPC) pilot program puts patients at the center of this system, using a secure, standardized method to share health information across providers. 
 
 ## Missing information: a burden on patients and providers
 
@@ -28,11 +28,11 @@ Providers are equally burdened with finding missing moments in their patients’
 
 Provider claims submitted to Medicare contain valuable historical health information. In 2010, Centers for Medicare & Medicaid Services (CMS) created [Blue Button](https://bluebutton.cms.gov/) as a way for beneficiaries to access their own health information. In 2019, CMS expanded this tool to create DPC, a new application programming interface (API) that extends this information to Medicare fee-for-service (FFS) providers. DPC:
 
-- Informs providers of a new patient’s past medical history.
-- Removes the burden on patients to remember every detail in these histories.
-- Updates providers on new procedures, prescriptions, and other services offered to their patients by other providers between visits. 
-- Gives providers medication insights including prescription changes and adherence.
-- Tracks preventive services such as flu and shingles vaccines.
+- **Informs providers** of a new patient’s past medical history.
+- **Removes the burden on patients** to remember every detail in these histories.
+- **Updates providers** on new procedures, prescriptions, and other services offered to their patients by other providers between visits.
+- **Gives providers medication insights** including prescription changes and adherence.
+- **Tracks preventive services** such as flu and shingles vaccines.
 
 ## DPC is currently a pilot program
 
@@ -44,7 +44,7 @@ The pilot promotes the industry-standard HL7 Fast Healthcare Interoperability Re
 
 CMS is not currently bringing new users into the pilot. 
 
-We will update the community on our [Announcements](/announcements.html) page when that changes. We’ll also be excited to announce general availability of DPC once the pilot is complete.
+We will update the community on our [announcements](/announcements.html) page when that changes. We’ll also be excited to announce general availability of DPC once the pilot is complete.
 
 ## Frequently asked questions
 

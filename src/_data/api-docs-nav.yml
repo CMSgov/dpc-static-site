@@ -3,17 +3,17 @@
   children:
 
     - name: Authorization
-      url: /authorization.html
+      url: /api-documentation/authorization.html
       
     - name: Attestation & Attribution
-      url: /attestation-attribution.html
+      url: /api-documentation/attestation-attribution.html
 
     - name: Postman Collection
-      url: /postman-collection.html
+      url: /api-documentation/postman-collection.html
 
 - name: DPC Data 
-  url: /DPC-data.html
+  url: /dpc-data.html
   children:
     
     - name: Export Data
-      url: /export-data.html
+      url: /dpc-data/export-data.html
