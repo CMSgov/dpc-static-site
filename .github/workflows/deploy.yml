@@ -3,14 +3,19 @@ name: "deploy"
 on:
   workflow_dispatch:
     inputs:
-      deploy_path:
-        description: "S3 directory deployment location"
-        default: "uswds-redesign"
-  workflow_call:
-    inputs:
-      deploy_path:
+      feature_path:
+        description: "Feature path to deploy (e.g. 123 -> feature/123/); if omitted, deploys to base url"
         required: false
         type: string
+  workflow_call:
+    inputs:
+      feature_path:
+        description: "Feature path to deploy (e.g. 123 -> feature/123/); if omitted, deploys to base url"
+        required: false
+        type: string
+
+env:
+  BASE_PATH: ${{ inputs.feature_path && format('feature/{0}/', inputs.feature_path) || '' }}
 
 jobs:
   deploy-dev:
@@ -18,7 +23,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
+    runs-on: codebuild-bcda-static-site-${{github.run_id}}-${{github.run_attempt}}
 
     steps:
       - name: Checkout
@@ -29,7 +34,7 @@ jobs:
         with:
           cache: 'npm'
           node-version-file: '.nvmrc'
-          # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
+          # node-version: 24 ## Using a .nvmrc file to stay in sync with the repo
      
       - name: Install jekyll and bundler
         run: |
@@ -50,7 +55,7 @@ jobs:
           # This is redundant but keeping for posterity
           JEKYLL_ENV: "production"
         run: |
-          bundle exec jekyll build --baseurl ${{ inputs.deploy_path && format('/{0}', inputs.deploy_path) || ''}}
+          bundle exec jekyll build --source ./src ${{ env.BASE_PATH && format('--baseurl {0}', env.BASE_PATH) || '' }}
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -66,10 +71,17 @@ jobs:
           params: |
             TARGET_BUCKET=/dpc/sandbox/static_site
 
-      - name: Deploy the site
-        # This $TARGET_BUCKET comes from the step above, cmsgov/cdap/actions/aws-params-env-action@main
+      - name: Deploy the site to root url/directory
+        if: ${{ !env.BASE_PATH }}
+        # This $TARGET_BUCKET comes from a previous step, cmsgov/cdap/actions/aws-params-env-action@main
         run: |
-          aws s3 sync _site/ s3://$TARGET_BUCKET/${{ inputs.deploy_path }}/ --delete
+          aws s3 sync _site/ s3://$TARGET_BUCKET/ --delete --exclude 'feature/*' --metadata-directive REPLACE --metadata "lifecycle-transition=ia"
+
+      - name: Deploy the site to feature url/directory
+        if: ${{ env.BASE_PATH }}
+        # This $TARGET_BUCKET comes from a previous step, cmsgov/cdap/actions/aws-params-env-action@main
+        run: |
+          aws s3 sync _site/ s3://$TARGET_BUCKET/${{ env.BASE_PATH }} --delete --metadata-directive REPLACE --metadata "lifecycle-transition=ia"
       
       - name: Invalidate Cloudfront cache
         run: |

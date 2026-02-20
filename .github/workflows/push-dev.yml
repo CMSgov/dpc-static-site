@@ -14,8 +14,6 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    with:
-      deploy_path: "uswds-redesign"
     uses: ./.github/workflows/deploy.yml
     secrets: inherit
 
