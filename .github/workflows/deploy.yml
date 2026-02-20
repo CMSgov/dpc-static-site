@@ -29,33 +29,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          cache: 'npm'
-          node-version-file: '.nvmrc'
-          # node-version: 24 ## Using a .nvmrc file to stay in sync with the repo
-     
-      - name: Install jekyll and bundler
-        run: |
-          rbenv install
-          gem install bundler
-          bundle install
-  
-      - name: Install npm dependencies
-        run: |
-          npm ci
-
-      - name: Compile assets with Gulp
-        run: |
-          npm run assets:build
-
-      - name: Build the site
-        env:
-          # This is redundant but keeping for posterity
-          JEKYLL_ENV: "production"
-        run: |
-          bundle exec jekyll build --source ./src ${{ env.BASE_PATH && format('--baseurl {0}', env.BASE_PATH) || '' }}
+      - name: Build site
+        run: docker build --build-arg BASE_PATH=${{ env.BASE_PATH }} --target export -o _site .
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
