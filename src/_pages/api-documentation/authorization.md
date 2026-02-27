@@ -39,54 +39,61 @@ You may create as many tokens as you like via your account in the DPC Portal usi
 The /Token endpoint accepts two (optional) query parameters: `label` (sets a human-readable label for the token) and `expiration` (sets a custom expiration for the client_token).
 
 Example request:
-```
+{% capture snippet %}
 POST /api/v1/Token
-```
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" %}
 
 Example cURL:
-```
+
+{% capture snippet %}
 curl -d '' -v https://sandbox.dpc.cms.gov/api/v1/Token?label={token label}&expiration={ISO formatted dateTime} \
-     -H 'Authorization: Bearer {access_token}' \
-     -H 'Accept: application/json' \
-     -H 'Content-Type: application/json' \
-     -X POST
-```
+   -H 'Authorization: Bearer {access_token}' \
+   -H 'Accept: application/json' \
+   -H 'Content-Type: application/json' \
+   -X POST
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
 ### List all client tokens
 
 All client tokens registered by your organization for a given environment can be listed by making a GET request to the /Token endpoint.
 
 Example request:
-```
+{% capture snippet %}
 GET /api/v1/Token
-```
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" %}
 
 Example cURL:
-```
+{% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Token \
-     -H 'Authorization: Bearer {access_token}' \
-     -H 'Accept: application/json' \
-     -H 'Content-Type: application/json' \
-     -X GET
-```
+   -H 'Authorization: Bearer {access_token}' \
+   -H 'Accept: application/json' \
+   -H 'Content-Type: application/json' \
+   -X GET
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
 ### Delete client tokens
 
 You may want to delete a client token from the sandbox environment if a Health IT implementer no longer exists or needs access to the API. This can be done by clicking the “x” on the right side of each client token listed in the DPC Portal or by sending a DELETE request to the /Token endpoint using the unique ID of the client_token.
 
 Example request:
-```
+{% capture snippet %}
 DELETE /api/v1/Token/{client_token id}
-```
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" %}
 
 Example cURL:
-```
+{% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Token/{client_token id} \
-     -H 'Authorization: Bearer {access_token}' \
-     -H 'Accept: application/json' \
-     -H 'Content-Type: application/json' \
-     -X DELETE
-```
+   -H 'Authorization: Bearer {access_token}' \
+   -H 'Accept: application/json' \
+   -H 'Content-Type: application/json' \
+   -X DELETE
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
 ## 3. Public Keys
 
@@ -96,110 +103,117 @@ Public keys verify that client token requests are coming from an authorized appl
 
 ### Upload your first public key
 
-1. Generate a private key:
-   ```
-   openssl genrsa -out private.pem 4096
-   ```
-
-2. Generate a public key:
-   ```
-   openssl rsa -in private.pem -outform PEM -pubout -out public.pem
-   ```
-
-3. Paste the contents of your public key (public.pem file) into the ‘Public Key’ field in the DPC Portal. You must include the “BEGIN PUBLIC KEY” and “END PUBLIC KEY” tags before and after your key.
-
-4. Title your public key with a descriptive name that can be easily recognized for future purposes.
-
-5. Proceed to creating your public key signature.
+<ol>
+   <li>Generate a private key:
+      {% capture snippet %}openssl genrsa -out private.pem 4096{% endcapture %}
+      {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
+   </li>
+   <li>Generate a public key:
+      {% capture snippet %}openssl rsa -in private.pem -outform PEM -pubout -out public.pem{% endcapture %}
+      {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
+   </li>
+   <li>Paste the contents of your public key (public.pem file) into the ‘Public Key’ field in the DPC Portal. You must include the “BEGIN PUBLIC KEY” and “END PUBLIC KEY” tags before and after your key.</li>
+   <li>Title your public key with a descriptive name that can be easily recognized for future purposes.</li>
+   <li>Proceed to creating your public key signature.</li>
+</ol>
 
 ### Create a public key signature
+<ol>
+   <li>
+      Download the snippet.txt file located in the DPC Portal to create a signature.
+      {% capture snippet %}curl -JLO https://raw.githubusercontent.com/CMSgov/dpc-app/main/dpc-web/public/snippet.txt {% endcapture %}
+      {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
+   </li>
+   <li>
+      Verify the type of file (Mac/Linux):
+      {% capture snippet %}file snippet.txt {% endcapture %}
+      {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-1. Download the snippet.txt file located in the DPC Portal to create a signature.
-   ```
-   curl -JLO https://raw.githubusercontent.com/CMSgov/dpc-app/main/dpc-web/public/snippet.txt 
-   ```
+      <p>Response must yield: <code>snippet.txt: ASCII text, with no line terminators</code></p>
+   </li>
+   <li>
+      Create your public key snippet:
+      {% capture snippet %}openssl dgst -sign private.pem -sha256 -out snippet.txt.sig snippet.txt{% endcapture %}
+      {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
+   </li>
+   <li>
+      Verify your public key snippet:
+      {% capture snippet %}openssl dgst -verify public.pem -sha256 -signature snippet.txt.sig snippet.txt{% endcapture %}
+      {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-2. Verify the type of file (Mac/Linux):
-   ```
-   file snippet.txt 
-   ```
-   Response must yield: `snippet.txt: ASCII text, with no line terminators`
+      <p>Response must yield: <code>Verified Ok</code></p>
+   </li>
+   <li>
+      Generate a verified public key signature:
+      {% capture snippet %}openssl base64 -in snippet.txt.sig -out signature.sig{% endcapture %}
+      {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
+   </li>
+   <li>Paste the contents of your verified public key signature (<code>signature.sig</code> file) into the <b>Public Key Signature</b> field in your DPC Account.</li>
+   <li>Click "Add Key" to upload your public key.</li>
+</ol>
 
-3. Create your public key snippet:
-   ```
-   openssl dgst -sign private.pem -sha256 -out snippet.txt.sig snippet.txt
-   ```
-
-4. Verify your public key snippet:
-   ```
-   openssl dgst -verify public.pem -sha256 -signature snippet.txt.sig snippet.txt
-   ```
-   Response must yield: `Verified Ok`
-
-5. Generate a verified public key signature:
-   ```
-   openssl base64 -in snippet.txt.sig -out signature.sig
-   ```
-
-6. Paste the contents of your verified public key signature (signature.sig file) into the ‘Public Key Signature’ field in your DPC Account.
-
-7. Click "Add Key" to upload your public key.
-
-If you see the error message stating, "Unable to verify your public key" after uploading your public key, re-download the snippet.txt file and re-generate your public key and signature pair.
+If you see the error message stating, "Unable to verify your public key" after uploading your public key, re-download the <code>snippet.txt</code> file and re-generate your public key and signature pair.
 
 ### List all public keys
 
 All public keys registered by your organization for an environment can be listed by making a GET request to the /Key endpoint.
 
 Example request:
-```
+{% capture snippet %}
 GET /api/v1/Key
-```
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" %}
 
 Example cURL:
-```
+{% capture snippet %}
 curl -v http://localhost:3002/v1/Key \
      -H 'Authorization: Bearer {access_token}' \
      -H 'Accept: application/json' \
      -H 'Content-Type: application/json' \
      -X GET
-```
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
 ### List a specific public key
 
 Specific public keys can be listed by making a GET request to the /Key endpoint using the unique id of the public key.
 
 Example request:
-```
+{% capture snippet %}
 GET /api/v1/Key/{public key id}
-```
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" %}
 
 Example cURL:
-```
+{% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{public key id} \
      -H 'Authorization: Bearer {access_token}' \
      -H 'Accept: application/json' \
      -H 'Content-Type: application/json' \
      -X GET
-```
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
 ### Delete public keys
 
 Public keys can be removed by sending a DELETE request to the /Key endpoint using the unique ID of the public key.
 
 Example request:
-```
+{% capture snippet %}
 DELETE /api/v1/Key/{public key ID}
-```
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" %}
+
 
 Example cURL:
-```
+{% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{public key id} \
      -H 'Authorization: Bearer {access_token}' \
      -H 'Accept: application/json' \
      -H 'Content-Type: application/json' \
      -X DELETE
-```
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
 ## 4. IP Addresses
 
@@ -224,7 +238,7 @@ Complete the following steps to generate your JWT via the JWT Tool.
 To generate your own JWT:
 
 1. Generate your JWT payload:
-   ```
+{% capture snippet %}
    {
      "iss": {client_token},
      "sub": {client_token},
@@ -232,14 +246,18 @@ To generate your own JWT:
      "exp": {current datetime + 5 minutes},
      "jti": {JWT_unique_id}
    }
-   ```
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="json" %}
+
 2. Generate your JWT header:
-   ```
+   {% capture snippet %}
    {
      "alg": "RS384",
      "kid": "{public_key_id}"
    }
-   ```
+   {% endcapture %}
+   {% include copy_snippet.html code=snippet language="json" %}
+
 3. Sign your JWT with your header and private key.
 
 ### Validate a JSON web token for DPC
@@ -247,40 +265,45 @@ To generate your own JWT:
 The DPC API supports a /Token/validate endpoint, which allows you to submit your signed JWT for DPC validation.
 
 Example request:
-```
+{% capture snippet %}
 POST /api/v1/Token/validate
-```
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" %}
 
 Example cURL:
-```
+{% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Token/validate \
      -H 'Accept: application/json' \
      -H 'Content-Type: text/plain' \
      -X POST \
      -d "{Signed JWT}"
-```
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
+
 
 ## 6. Access/Bearer Token
 
 Obtaining an access token is the final step in connecting to the DPC API. **The access token must be set in the Authorization header in EVERY API request and has a maximum expiration time of 5 MINUTES.**
 
 Example header:
-```
+{% capture snippet %}
 Authorization: Bearer {access_token}
-```
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" %}
 
 ### Obtain an access_token
 
 To receive an access token, the valid JWT must be submitted to the /Token/auth endpoint via a POST request.
 
 Example cURL:
-```
+{% capture snippet %}
 curl -v "https://sandbox.dpc.cms.gov/api/v1/Token/auth" \
      -H 'Content-Type: application/x-www-form-urlencoded' \
      -H 'Accept: application/json' \
      -X POST \
      -d "grant_type=client_credentials&scope=system%2F*.*&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer&client_assertion={self-signed JWT}"
-```
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
 ### Obtain a bearer_token
 
