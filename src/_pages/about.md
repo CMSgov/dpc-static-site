@@ -1,9 +1,10 @@
 ---
-layout: default
+layout: api-docs
 page_title: "About Data at the Point of Care"
 seo_title: ""
 description: ""
 show-side-nav: false
+in-page-nav: true
 ---
 
 <div class="grid-row grid-gap-4 flex-align-center">
