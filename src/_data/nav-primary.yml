@@ -28,8 +28,5 @@
     - name: Export Data
       url: /dpc-data/export-data.html
 
-- name: Production Access
-  url: /production-access.html
-
 - name: Support
   url: /support.html
