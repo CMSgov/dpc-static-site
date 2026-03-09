@@ -1,8 +1,5 @@
 name: push to dev
-on:
-  push:
-    branches:
-      - '*'
+on: [push]
 
 concurrency:
   group: ${{ github.workflow }}-${{  github.ref }}
