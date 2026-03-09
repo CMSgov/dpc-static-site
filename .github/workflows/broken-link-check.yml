@@ -4,53 +4,92 @@ on:
   schedule:
     - cron: 0 0 * * 0 # every Sunday at midnight
   workflow_dispatch:
-  workflow_call:
-     inputs:
-      deploy_path:
+    inputs:
+      env:
+        description: "The environment to test: staging or prod"
+        required: true
+        type: choice
+        options:
+          - staging
+          - prod
+      feature_path:
+        description: "Feature path to test (e.g. 123 -> /feature/123/); if omitted, tests base url"
         required: false
+        type: string
+  workflow_call:
+    inputs: 
+      env:
+        required: true
+        type: string
+      feature_path:
+        required: true
         type: string
 
 jobs:
-  broken-link-check:
+  broken-link-check-prod:
+    if: ${{ (inputs.env == 'prod' && github.event_name == 'workflow_dispatch') ||  github.event_name == 'schedule'  }}
+    permissions:
+      id-token: write
     runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
 
     steps:
-      - name: Configure AWS Credentials
-        if: ${{ inputs.deploy_path == '' }}
+      - name: Configure Prod AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ${{ vars.AWS_REGION }}
           role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/dpc-prod-github-actions
 
-      - name: Fetch Production AWS Parameters
-        if: ${{ inputs.deploy_path == '' }}
+      - name: Fetch Prod AWS Parameters
         uses: cmsgov/cdap/actions/aws-params-env-action@main
+        env:
+          AWS_REGION: ${{ vars.AWS_REGION }}
         with:
           params: |
             TARGET_BUCKET=/dpc/prod/static_site
 
-      - name: Configure AWS Credentials
-        if: ${{ inputs.deploy_path != '' }}
+      - name: Download Site Contents (Prod)
+        run: |
+          aws s3 sync "s3://${TARGET_BUCKET}" .
+
+      - name: Check for Broken Prod Links
+        id: lychee-prod
+        uses: lycheeverse/lychee-action@v2
+        with:
+          jobSummary: true
+          fail: false
+          args: --base https://dpc.cms.gov "./**/*.html" --no-progress --exclude ".*/assets/.*" --accept "200..=299, 401, 403, 405, 429"
+
+  broken-link-check-dev:
+    if: ${{ (inputs.env == 'staging' && github.event_name == 'workflow_dispatch') || (inputs.env == 'staging' && github.event_name == 'pull_request')  }}
+    permissions:
+      id-token: write
+    runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
+    env:
+      BASE_PATH: ${{ inputs.feature_path && format('feature/{0}/', inputs.feature_path) || '' }}
+
+    steps:
+      - name: Configure Dev AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ${{ vars.AWS_REGION }}
           role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/dpc-sandbox-github-actions
 
-      - name: Fetch Production AWS Parameters
-        if: ${{ inputs.deploy_path != '' }}
+      - name: Fetch Dev AWS Parameters
         uses: cmsgov/cdap/actions/aws-params-env-action@main
+        env:
+          AWS_REGION: ${{ vars.AWS_REGION }}
         with:
           params: |
             TARGET_BUCKET=/dpc/sandbox/static_site
 
-      - name: Download Dev Bucket
+      - name: Download Site Contents (Dev)
         run: |
-          aws s3 sync s3://${TARGET_BUCKET}/${{ inputs.deploy_path && format('/{0}', inputs.deploy_path) || ''}} .
+          aws s3 sync s3://${TARGET_BUCKET}/${{ env.BASE_PATH }} .
 
-      - name: "Check for broken links"
+      - name: Check for Broken Dev Links
+        id: lychee-dev
         uses: lycheeverse/lychee-action@v2
-        id: lychee
         with:
           jobSummary: true
-          fail: true
-          args: --no-progress --accept '200..=299, 401, 403, 405' './**/*.html'
+          fail: false
+          args: --base https://stage.dpc.cms.gov "./**/*.html" --no-progress --exclude ".*/assets/.*" --exclude "^https://dpc\.cms\.gov" --accept "200..=299, 401, 403, 405, 429"

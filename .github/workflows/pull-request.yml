@@ -9,9 +9,6 @@ concurrency:
 
 jobs:
   deploy:
-    permissions:
-      contents: read
-      id-token: write
     if: ${{ !startsWith(github.actor, 'bot-') }}
     with:
       feature_path: ${{ github.event.number }}
@@ -21,21 +18,20 @@ jobs:
   comment-pr:
     needs: deploy
     permissions:
-      contents: read
-      id-token: write
-      pull-requests: write
+      pull-requests: 'write'
     uses: ./.github/workflows/comment-pr.yml
 
   a11y-check:
     needs: deploy
+    with: 
+      feature_path: ${{ github.event.number }}
     uses: ./.github/workflows/a11y-check.yml
     secrets: inherit
 
   broken-link-check:
     needs: deploy
-    permissions:
-      id-token: write
     with:
-      deploy_path: ${{ github.event.number }}
+      env: "staging"
+      feature_path: ${{ github.event.number }}
     uses: ./.github/workflows/broken-link-check.yml
     secrets: inherit

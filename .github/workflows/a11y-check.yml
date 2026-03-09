@@ -1,7 +1,14 @@
 name: "Accessibility Check"
 
 on:
-  workflow_call
+  workflow_call:
+    inputs: 
+      feature_path:
+        required: true
+        type: string
+
+env:
+  BASE_PATH: ${{ inputs.feature_path && format('feature/{0}/', inputs.feature_path) || '' }}
 
 jobs:
   a11y-check:
@@ -18,20 +25,13 @@ jobs:
           node-version-file: '.nvmrc'
           # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
 
-      - name: Set Deployment Path
-        run: |
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            echo "DEPLOY_PATH=${{ github.event.number }}" >> $GITHUB_ENV
-          else
-            echo "DEPLOY_PATH=${{ github.ref_name }}" >> $GITHUB_ENV
-          fi
-
       - name: Run pa11y
-        run: npx pa11y-ci --config pa11yci.ci.json --sitemap https://stage.dpc.cms.gov/${{ env.DEPLOY_PATH }}/sitemap.xml --sitemap-exclude "/*.pdf" --sitemap-find https://dpc.cms.gov/ --sitemap-replace https://stage.dpc.cms.gov/ --json > pa11y-results.json || echo "EXIT_CODE=$?" >> $GITHUB_ENV
+        run: npx pa11y-ci --config pa11yci.ci.json --sitemap ${{ format('https://stage.dpc.cms.gov/{0}sitemap.xml', env.BASE_PATH) }} --sitemap-exclude "/*.pdf" --sitemap-find https://dpc.cms.gov/ --sitemap-replace https://stage.dpc.cms.gov/ --json > pa11y-results.json
 
       - name: Save Report to Action Summary
         uses: actions/github-script@v7
-        if: env.EXIT_CODE == 0 || env.EXIT_CODE == 2
+        # Always return pa11y output, regardless if all pages pass/fail. Job will now fail if errors are found, which is intentional
+        if: always() 
         with:
           script: |
             const fs = require('fs');
@@ -58,6 +58,6 @@ jobs:
       #     payload: |
       #       channel: "C03S23MJFJS"
       #       attachments:
-      #         - text: "Pa11y Results (/${{env.DEPLOY_PATH}}): <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|Pa11y Action Summary>"
+      #         - text: "Pa11y Results (/${{env.BASE_PATH}}): <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|Pa11y Action Summary>"
       #           mrkdown_in:
       #             - text
