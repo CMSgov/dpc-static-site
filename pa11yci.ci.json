@@ -10,6 +10,9 @@
     ],
     "standard": "WCAG2AA",
     "chromeLaunchConfig": {
+      "args": [
+        "--no-sandbox"
+      ],
       "executablePath": "/usr/bin/google-chrome"
     }
   },
