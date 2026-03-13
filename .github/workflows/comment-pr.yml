@@ -15,7 +15,7 @@ jobs:
             const commentIdentifier = '## Deploy Preview';
             const commitSha = context.payload.pull_request.head.sha;
             const commitUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/commit/${commitSha}`;
-            const previewUrl = `https://stage.dpc.cms.gov/${context.issue.number}/index.html`
+            const previewUrl = `https://d16450h30z080t.cloudfront.net/feature/${context.issue.number}/index.html`
 
             const body = `${commentIdentifier}
 

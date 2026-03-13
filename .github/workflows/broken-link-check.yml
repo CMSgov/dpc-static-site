@@ -92,4 +92,4 @@ jobs:
         with:
           jobSummary: true
           fail: false
-          args: --base https://stage.dpc.cms.gov "./**/*.html" --no-progress --exclude ".*/assets/.*" --exclude "^https://dpc\.cms\.gov" --accept "200..=299, 401, 403, 405, 429"
+          args: --base https://d16450h30z080t.cloudfront.net "./**/*.html" --no-progress --exclude ".*/assets/.*" --exclude "^https://dpc\.cms\.gov" --accept "200..=299, 401, 403, 405, 429"
