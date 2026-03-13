@@ -27,15 +27,38 @@
   {% endif %}
 
   <title>{{ seo_title }}</title>
-  <link
-    rel="canonical"
-    href="{{ page.url | absolute_url }}"
+  link
+  rel="canonical"
+  href="{{ page.url | absolute_url }}"
   />
   <link
     rel="icon"
     type="image/png"
-    href="{{ '/assets/img/logo-bcda.svg' | relative_url }}"
-  >
+    href="{{ '/assets/meta/favicon-96x96.png' | relative_url }}"
+    sizes="96x96"
+  />
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="{{ '/assets/meta/favicon.svg' | relative_url }}"
+  />
+  <link
+    rel="shortcut icon"
+    href="{{ '/favicon.ico' | relative_url }}"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="{{ '/assets/meta/apple-touch-icon.png' | relative_url }}"
+  />
+  <meta
+    name="apple-mobile-web-app-title"
+    content="DPC"
+  />
+  <link
+    rel="manifest"
+    href="{{ '/assets/meta/site.webmanifest' | relative_url }}"
+  />
   <link
     rel="sitemap"
     href="{{ '/sitemap.xml' | relative_url }}"
