@@ -8,16 +8,15 @@ show-side-nav: false
   <div class="usa-section--dark bg-primary bg-primary-gradient">
     <div class="grid-container padding-y-8">
       <h1 class="hero-title font-body-3xl measure-1 margin-bottom-0 line-height-sans-2 text-semibold text-balance">
-        Fill gaps in patients' histories for timely, coordinated care
+        Get the full story on every patient
       </h1>
       <p class="hero-paragraph line-height-sans-4 measure-5">
-        Data at the Point of Care (DPC) gives providers access to events in their patients’ histories that may be
-        unavailable through current records. An application programming interface (API), DPC captures data from Medicare
-        claims and shares it with providers. DPC data is standardized to meet Centers for Medicare & Medicaid Services
-        (CMS) requirements and integrates easily with different systems.
+        Data at the Point of Care (DPC) fills gaps in your patient's health histories to support high quality care.
+        Medicare claims contain valuable patient data. Centers for Medicare & Medicaid Services (CMS) shares this data
+        across providers for personalized, coordinated care.
       </p>
       <div class="grid-row grid-gap margin-top-2">
-        <div class="tablet:grid-col-auto margin-top-2">
+        <div class="desktop:grid-col-auto margin-top-2">
           <a
             href="{{ '/api-documentation.html' | relative_url }}"
             class="hero-button usa-button usa-button--inverse usa-button--outline width-full"
@@ -26,7 +25,7 @@ show-side-nav: false
             {% include sprite.html icon="arrow_forward" size="3" %}
           </a>
         </div>
-        <div class="tablet:grid-col-auto margin-top-2">
+        <div class="desktop:grid-col-auto margin-top-2">
           <a
             href="https://github.com/CMSgov/dpc-app"
             target="_blank"
@@ -41,60 +40,173 @@ show-side-nav: false
     </div>
   </div>
 
-  <div class="minw-15 padding-y-7 padding-x-3 grid-container">
-    <div class="padding-y-7">
-      <h2>Unlock the value of Medicare claims</h2>
-      <p>
-        Access data including:
-      <ul>
-        <li>New diagnoses</li>
-        <li>Medications</li>
-        <li>Completed procedures</li>
-        <li>Preventative care</li>
-        <li>External encounters</li>
-      </ul>
-      </p>
+  <div class="padding-y-8 grid-container">
+    <div class="grid-row usa-sr-only">
+      <div class="grid-col-12">
+        <h2 class="margin-bottom-4">DPC data in action</h2>
+      </div>
     </div>
 
-    <div class="padding-y-7">
-      <h3>Easily integrate data with health records</h3>
-      <p>
-        DPC shares Medicare A, B, and D <a href="/dpc-data.index">claims data</a> in HL7 <a href="">Fast Healthcare
-          Interoperability Resources</a> (FHIR) format. FHIR complies with Centers for Medicare & Medicaid Services
-        (CMS) and integrates with existing health records.
-      </p>
+    <div class="grid-row margin-bottom-8 desktop:margin-bottom-2">
+      <div
+        class="grid-col-auto desktop:grid-col-6 display-flex flex-align-center desktop:flex-justify-center desktop:margin-bottom-0"
+      >
+        <div class="position-absolute display-flex flex-align-center flex-justify-center width-full">
+          <img
+            src="{{ '/assets/img/blob-2.svg' | relative_url }}"
+            aria-hidden="true"
+            alt=""
+            style="width: 360px;margin-top: 50px;margin-right: 12px;"
+          />
+        </div>
+        <img
+          class="position-relative"
+          src="{{ '/assets/img/person-1.png' | relative_url }}"
+          aria-hidden="true"
+          alt=""
+          style="height:370px"
+        />
+      </div>
+      <div class="grid-col-12 desktop:grid-col-6 display-flex flex-align-center">
+        <div class="margin-top-5 desktop:margin-top-0">
+          <h3 class="font-sans-xl">Personalized care</h3>
+          <p>
+            Thanks to DPC data, Sarah, a primary care doctor, spends less time asking questions and more time listening
+            to her patients. She sees more of what she needs to know about every beneficiary in the same health record
+            system she uses every day.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <div class="padding-y-7">
-      <h3>Get the whole story of each patient’s journey</h3>
-      <p>
-        Medicare claims data bridges gaps across provider networks. Get information about visits, diagnoses, treatments,
-        and medications for smoother transitions, less paperwork, and more coordinated care.
-      </p>
+    <div class="grid-row margin-bottom-8 desktop:margin-bottom-2">
+      <div
+        class="grid-col-auto desktop:grid-col-6 display-flex flex-align-center desktop:flex-justify-center desktop:margin-bottom-0 desktop:order-2"
+      >
+        <div class="position-absolute display-flex flex-align-center flex-justify-center width-full">
+          <img
+            src="{{ '/assets/img/blob-1.svg' | relative_url }}"
+            aria-hidden="true"
+            alt=""
+          />
+        </div>
+        <img
+          class="position-relative"
+          src="{{ '/assets/img/person-2.png' | relative_url }}"
+          aria-hidden="true"
+          alt=""
+          style="height:400px;padding: 0 40px;"
+        />
+      </div>
+      <div class="grid-col-12 desktop:grid-col-6 display-flex flex-align-center desktop:order-1">
+        <div class="margin-top-5 desktop:margin-top-0">
+          <h3 class="font-sans-xl">Patient wellness checks</h3>
+          <p>
+            Maria, 68 years old, knows she got the first dose of her shingles vaccine at her local pharmacy, but can’t
+            remember when. With DPC data, her doctor sees the vaccination date along with her other records and can tell
+            her if she needs her next dose.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <div class="padding-y-7">
-      <h3>Remove patient burden and personalize care</h3>
-      <p>
-        DPC makes sure Medicare beneficiaries don’t have to remember all the details in their history of care. These
-        patients appreciate when providers know who they are and can spend more time listening and interacting with
-        them.
-      </p>
+    <div class="grid-row">
+      <div
+        class="grid-col-auto desktop:grid-col-6 display-flex flex-align-center desktop:flex-justify-center desktop:margin-bottom-0"
+      >
+        <div class="position-absolute display-flex flex-align-center flex-justify-center width-full">
+          <img
+            src="{{ '/assets/img/blob-2.svg' | relative_url }}"
+            aria-hidden="true"
+            alt=""
+            style="width: 360px;margin-top: 50px;margin-right: 12px;"
+          />
+        </div>
+        <img
+          class="position-relative"
+          src="{{ '/assets/img/person-1.png' | relative_url }}"
+          aria-hidden="true"
+          alt=""
+          style="height:370px"
+        />
+      </div>
+      <div class="grid-col-12 desktop:grid-col-6 display-flex flex-align-center">
+        <div class="margin-top-5 desktop:margin-top-0">
+          <h3 class="font-sans-xl">Provider analytics</h3>
+          <p>
+            Elena, a diabetes care coordinator, manages the care of dozens of patients with chronic conditions. She uses
+            DPC data to stay informed and perform analytics on recent clinic visits, hospital admissions, procedures,
+            medication refills for her entire patient population.
+          </p>
+        </div>
+      </div>
     </div>
-
   </div>
-  <div class="minw-15 padding-y-7 padding-x-3 grid-container">
-    <div class="padding-y-7">
-      <h2>DPC data in action</h2>
-      <h3>Wellness checks - Maria</h3>
-      <p>Maria, 68 years old, knows she got the first dose of her shingles vaccine at her local pharmacy, but can't
-        remember when. With DPC data, her doctor sees the vaccination date along with her other records and can tell her
-        if she needs her next dose.</p>
 
-      <h3>Population analytics - Elena</h3>
-      <p>Elena, a diabetes care coordinator, manages the care of dozens of patients with chronic conditions. She uses
-        DPC data to stay informed and perform analytics on recent clinic visits, hospital admissions, procedures, and
-        medication refills for her entire population of patients.</p>
+
+
+  <div class="padding-y-8 grid-container">
+    <div class="grid-row grid-gap-lg">
+
+      <div class="grid-col-12">
+        <h2 class="margin-bottom-8">Unlock patient data with DPC</h2>
+      </div>
+
+      <div class="grid-col-12 desktop:grid-col-6">
+        <div class="grid-row">
+          <div class="grid-col-auto">
+            {% include sprite.html icon="lock" size=5 %}
+          </div>
+          <div class="grid-col-fill padding-left-2 margin-bottom-5">
+            <h3 class="margin-top-1">Access beneficiary data</h3>
+            <ul>
+              <li>New diagnoses</li>
+              <li>Medications</li>
+              <li>Completed procedures</li>
+              <li>Preventative care</li>
+              <li>External encounters</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="grid-col-12 desktop:grid-col-6">
+        <div class="grid-row">
+          <div class="grid-col-auto">
+            {% include sprite.html icon="folder_open" size=6 %}
+          </div>
+          <div class="grid-col-fill padding-left-2 margin-bottom-5">
+            <h3 class="margin-top-1">Integrate with health records systems</h3>
+            <p>DPC shares Medicare A, B, and D claims data in standardized, HL7 Fast Healthcare Interoperability
+              Resources
+              (FHIR) format. FHIR integrates easily with provider health records.</p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-col-12 desktop:grid-col-6">
+        <div class="grid-row">
+          <div class="grid-col-auto">
+            {% include sprite.html icon="medical_services" size=6 %}
+          </div>
+          <div class="grid-col-fill padding-left-2 margin-bottom-5">
+            <h3 class="margin-top-1">Coordinate across care teams</h3>
+            <p>Medicare claims data bridges gaps across provider networks. This means less paperwork and smoother
+              transitions between providers.</p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-col-12 desktop:grid-col-6">
+        <div class="grid-row">
+          <div class="grid-col-auto">
+            {% include sprite.html icon="identification" size=6 %}
+          </div>
+          <div class="grid-col-fill padding-left-2">
+            <h3 class="margin-top-1">Remove patient burden</h3>
+            <p>When patients no longer need to relate their health histories, providers can spend more time on
+              treatment,
+              education, and answering questions. Patients feel seen and understood.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
