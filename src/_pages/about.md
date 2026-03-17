@@ -7,12 +7,8 @@ show-side-nav: false
 ---
 
 <div class="grid-row grid-gap-4 flex-align-center">
-  <div class="tablet:grid-col tablet:order-1">
-    <h1>{{ page.page_title }}</h1>
-    <p>Medicare patients move through a landscape of separate health systems without a continuous record of their care.</p>
-    <p>The Data at the Point of Care (DPC) pilot program puts patients at the center of this system, using a secure, standardized method to share health information across providers. </p>
-  </div>
-  <div class="tablet:grid-col-auto display-flex flex-align-center desktop:flex-justify-center tablet:order-2">
+ 
+  <div class="grid-col-auto display-flex flex-align-center desktop:flex-justify-center desktop:order-2">
     <div class="position-absolute display-flex flex-align-center flex-justify-center width-full">
       <img
         src="{{ '/assets/img/blob-1.svg' | relative_url }}"
@@ -27,6 +23,11 @@ show-side-nav: false
       alt=""
       style="height:400px;padding: 0 40px;"
     />
+  </div>
+  <div class="desktop:grid-col desktop:order-1">
+    <h1 class="margin-top-5 desktop:margin-top-0">{{ page.page_title }}</h1>
+    <p>Medicare patients move through a landscape of separate health systems without a continuous record of their care.</p>
+    <p>The Data at the Point of Care (DPC) pilot program puts patients at the center of this system, using a secure, standardized method to share health information across providers. </p>
   </div>
 </div>
 
