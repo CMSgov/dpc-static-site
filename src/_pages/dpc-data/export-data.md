@@ -15,4 +15,4 @@ To initiate an export job, locate your Group.id and make a GET request to the /G
 
 You can specify which resources to download using the `_type` query parameter (e.g., `?_type=Patient,Coverage`).
 
-You can filter data using the `_since` parameter with either the /Patient or /Group endpoints. Dates and times submitted in `_since` must be listed in the FHIR [Instant](https://www.hl7.org/fhir/datatypes.html#instant) format.
+You can filter data using the `_since` parameter with either the /Patient or /Group endpoints. Dates and times submitted in `_since` must be listed in the [FHIR `instant` format](https://www.hl7.org/fhir/datatypes.html#instant).

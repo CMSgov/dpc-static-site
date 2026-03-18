@@ -17,3 +17,9 @@
     
     - name: Export Data
       url: /dpc-data/export-data.html
+
+    - name: Postman Collection
+      url: /dpc-data/postman-collection.html
+      
+    - name: /Patient/$everything
+      url: /dpc-data/patient-everything.html
