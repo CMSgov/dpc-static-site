@@ -7,34 +7,39 @@ show-side-nav: false
 <main id="main-content">
   <div class="usa-section--dark bg-primary bg-primary-gradient">
     <div class="grid-container padding-y-8">
-      <h1 class="hero-title font-body-3xl measure-1 margin-bottom-0 line-height-sans-2 text-semibold text-balance">
-        Get the full story on every patient
-      </h1>
-      <p class="hero-paragraph line-height-sans-4 measure-5">
-        Data at the Point of Care (DPC) fills gaps in your patient's health histories to support high quality care.
-        Medicare claims contain valuable patient data. Centers for Medicare & Medicaid Services (CMS) shares this data
-        across providers for personalized, coordinated care.
-      </p>
-      <div class="grid-row grid-gap margin-top-2">
-        <div class="desktop:grid-col-auto margin-top-2">
-          <a
-            href="{{ '/api-documentation.html' | relative_url }}"
-            class="hero-button usa-button usa-button--inverse usa-button--outline width-full"
-          >
-            Get started
-            {% include sprite.html icon="arrow_forward" size="3" %}
-          </a>
-        </div>
-        <div class="desktop:grid-col-auto margin-top-2">
-          <a
-            href="https://github.com/CMSgov/dpc-app"
-            target="_blank"
-            rel="noopener"
-            class="hero-button usa-button usa-button--inverse usa-button--outline width-full"
-          >
-            Code repo
-            {% include sprite.html icon="github" size="3" %}
-          </a>
+      <div class="grid-row">
+        <div class="grid-col-12 desktop:grid-col-8">
+          <h1 class="hero-title font-body-3xl measure-1 margin-bottom-0 line-height-sans-2 text-semibold text-balance">
+            Get the full patient story with DPC data
+          </h1>
+          <p class="hero-paragraph line-height-sans-4 measure-5">
+            Data at the Point of Care (DPC) fills gaps in your patient's health histories to support high quality care.
+            Medicare claims contain valuable patient data. Centers for Medicare & Medicaid Services (CMS) shares this
+            data
+            across providers for personalized, coordinated care.
+          </p>
+          <div class="grid-row grid-gap margin-top-2">
+            <div class="desktop:grid-col-auto margin-top-2">
+              <a
+                href="{{ '/api-documentation.html' | relative_url }}"
+                class="hero-button usa-button usa-button--inverse usa-button--outline width-full"
+              >
+                Get started
+                {% include sprite.html icon="arrow_forward" size="3" %}
+              </a>
+            </div>
+            <div class="desktop:grid-col-auto margin-top-2">
+              <a
+                href="https://github.com/CMSgov/dpc-app"
+                target="_blank"
+                rel="noopener"
+                class="hero-button usa-button usa-button--inverse usa-button--outline width-full"
+              >
+                Code repo
+                {% include sprite.html icon="github" size="3" %}
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -149,7 +154,7 @@ show-side-nav: false
     <div class="grid-row grid-gap-lg">
 
       <div class="grid-col-12">
-        <h2 class="margin-bottom-8">Unlock patient data with DPC</h2>
+        <h2 class="margin-bottom-5">Unlock patient data with DPC</h2>
       </div>
 
       <div class="grid-col-12 desktop:grid-col-6">
@@ -226,23 +231,24 @@ show-side-nav: false
           <h3
             class="font-sans-lg"
             style="line-height: 1.4;"
-          >What we're working on</h3>
+          >Try test data in the DPC sandbox</h3>
           <div>
-            <p class="margin-bottom-0">While new production data requests and onboarding and paused, we're working to
-              make the experience easier and more
-              secure.</p>
+            <p>Access to production data is paused while we improve our onboarding experience. Request sandbox access
+              for a realistic
+              experience downloading and using DPC data.</p>
           </div>
           <div class="margin-top-auto">
             <div class="margin-top-5">
               <a
-                href="{{ '/bcda-data/partially-adjudicated-claims-data.html' | relative_url }}"
+                href="https://sandbox.dpc.cms.gov/users/sign_up"
                 class="usa-button usa-button--outline usa-button--inverse text-left"
               >
-                Review announcement
+                Request sandbox access
                 {% include sprite.html icon="arrow_forward" size="3" %}
               </a>
             </div>
           </div>
+
         </div>
       </div>
       <div class="bg-gray-10 grid-col-12 desktop:grid-col-6">
@@ -256,19 +262,19 @@ show-side-nav: false
           <h3
             class="font-sans-lg"
             style="line-height: 1.4;"
-          >Try test data in the DPC sandbox</h3>
+          >What we're working on</h3>
           <div>
-            <p>Access to production data is paused while we improve our onboarding experience. Request sandbox access
-              for a realistic
-              experience downloading and using DPC data.</p>
+            <p class="margin-bottom-0">While new production data requests and onboarding and paused, we're working to
+              make the experience easier and more
+              secure.</p>
           </div>
           <div class="margin-top-auto">
             <div class="margin-top-5">
               <a
-                href="{{ '/announcements/open-call-for-bcda-v3-pilot-program.html' | relative_url }}"
+                href="{{ '/announcements/what-were-working-on.html' | relative_url }}"
                 class="usa-button usa-button--outline"
               >
-                Learn more and join
+                Review announcement
                 {% include sprite.html icon="arrow_forward" size="3" %}
               </a>
             </div>
