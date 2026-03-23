@@ -140,7 +140,8 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Organization/{id} \
 #### Response
 
 {% capture jsonSnippet %}{% raw %}
-    {"resourceType": "Organization",
+{
+  "resourceType": "Organization",
   "id": "351fbb5f-f2f9-4094-bc6f-2b3600bb56e9",
   "identifier": [
     {
@@ -154,7 +155,7 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Organization/{id} \
       "use": "work",
       "type": "postal",
       "line": [
-          "1 Main Street"
+        "1 Main Street"
       ],
       "city": "Baltimore",
       "state": "MD",
@@ -285,7 +286,7 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Practitioner \
   "type": "searchset",
   "total": 1,
   "entry": [
-    {         
+    {
       "resource": {
         "resourceType": "Practitioner",
         "id": "8d80925a-027e-43dd-8aed-9a501cc4cd91",
@@ -326,39 +327,39 @@ The attestation is then included in the X-Provenance header as part of any opera
 
 {% capture jsonSnippet %}{% raw %}
 {
- "resourceType":"Provenance",
- "meta":{
-   "profile":[
-     "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation"
-   ]
- },
- "recorded":"1990-01-01T00:00:00.000-05:00",
- "reason":[
-   {
-     "system":"http://hl7.org/fhir/v3/ActReason",
-     "code":"TREAT"
-   }
- ],
- "agent":[
-   {
-     "role":[
-       {
-         "coding":[
-           {
-             "system":"http://hl7.org/fhir/v3/RoleClass",
-             "code":"AGNT"
-           }
-         ]
-       }
-     ],
-     "whoReference":{
-       "reference":"Organization/{organization_id}"
-     },
-     "onBehalfOfReference":{
-       "reference":"Practitioner/{practitioner_id}"
-     }
-   }
- ]
+  "resourceType": "Provenance",
+  "meta": {
+    "profile": [
+      "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation"
+    ]
+  },
+  "recorded": "1990-01-01T00:00:00.000-05:00",
+  "reason": [
+    {
+      "system": "http://hl7.org/fhir/v3/ActReason",
+      "code": "TREAT"
+    }
+  ],
+  "agent": [
+    {
+      "role": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/RoleClass",
+              "code": "AGNT"
+            }
+          ]
+        }
+      ],
+      "whoReference": {
+        "reference": "Organization/{organization_id}"
+      },
+      "onBehalfOfReference": {
+        "reference": "Practitioner/{practitioner_id}"
+      }
+    }
+  ]
 }
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=jsonSnippet language="json" %}
@@ -391,7 +392,7 @@ Note: If an existing patient is found with the same MBI, the /patient endpoint w
 {% capture jsonSnippet %}{% raw %}
 {
   "system": "https://bluebutton.cms.gov/resources/variables/bene_id",
-  "value":  "Value of the MBI number"
+  "value": "Value of the MBI number"
 }
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=jsonSnippet language="json" %}
@@ -411,7 +412,7 @@ or
 {% capture jsonSnippet %}{% raw %}
 {
   "managingOrganization": {
-    "reference": "Organization/{ID}"
+    "reference": "Organization/{id}"
   }
 }
 {% endraw %}{% endcapture %}
@@ -610,7 +611,7 @@ Timestamp. Time when attestation was made
 Reason. Reason for the attestation (currently only: <a href="http://hl7.org/fhir/v3/ActReason#TREAT">http://hl7.org/fhir/v3/ActReason#TREAT</a> is supported)
 Organization ID. The agent making the attestation referenced by their Organization Resource ID 
  _Your Organization ID can be found in the DPC Portal by following <a href="#find-organization-id"> these instructions</a>._
-Practitioner ID. The practitioner attached to the attestation referenced by their Practitioner ID. _Your Practitioner ID can be found by referencing the {id} variable in the resource object of your practitioner._
+Practitioner ID. The practitioner attached to the attestation referenced by their Practitioner ID. _Your Practitioner ID can be found by referencing the `{id}` variable in the resource object of your practitioner._
 
 The attestation is then included in the X-Provenance header as part of any operations which add patients to the Group Resource.
 
@@ -618,39 +619,39 @@ The attestation is then included in the X-Provenance header as part of any opera
 
 {% capture jsonSnippet %}{% raw %}
 {
- "resourceType":"Provenance",
- "meta":{
-   "profile":[
-     "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation"
-   ]
- },
- "recorded":"1990-01-01T00:00:00.000-05:00",
- "reason":[
-   {
-     "system":"http://hl7.org/fhir/v3/ActReason",
-     "code":"TREAT"
-   }
- ],
- "agent":[
-   {
-     "role":[
-       {
-         "coding":[
-           {
-             "system":"http://hl7.org/fhir/v3/RoleClass",
-             "code":"AGNT"
-           }
-         ]
-       }
-     ],
-     "whoReference":{
-       "reference":"Organization/{organization_id}"
-     },
-     "onBehalfOfReference":{
-       "reference":"Practitioner/{practitioner_id}"
-     }
-   }
- ]
+  "resourceType": "Provenance",
+  "meta": {
+    "profile": [
+      "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation"
+    ]
+  },
+  "recorded": "1990-01-01T00:00:00.000-05:00",
+  "reason": [
+    {
+      "system": "http://hl7.org/fhir/v3/ActReason",
+      "code": "TREAT"
+    }
+  ],
+  "agent": [
+    {
+      "role": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/RoleClass",
+              "code": "AGNT"
+            }
+          ]
+        }
+      ],
+      "whoReference": {
+        "reference": "Organization/{organization_id}"
+      },
+      "onBehalfOfReference": {
+        "reference": "Practitioner/{practitioner_id}"
+      }
+    }
+  ]
 }
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=jsonSnippet language="json" %}
@@ -737,21 +738,21 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{group_id}/\$add
   "member": [
     {
       "entity": {
-          "reference": "Patient/871c83f5-5674-450b-a3b6-be3bbcf8a095"
+        "reference": "Patient/871c83f5-5674-450b-a3b6-be3bbcf8a095"
       },
       "period": {
-          "start": "2020-06-17T17:44:27+00:00",
-          "end": "2020-09-15T17:44:27+00:00"
+        "start": "2020-06-17T17:44:27+00:00",
+        "end": "2020-09-15T17:44:27+00:00"
       },
       "inactive": false
     },
     {
       "entity": {
-          "reference": "Patient/ef25ddf1-615e-43d5-b539-6af200ae7da4"
+        "reference": "Patient/ef25ddf1-615e-43d5-b539-6af200ae7da4"
       },
       "period": {
-          "start": "2020-06-17T17:53:42+00:00",
-          "end": "2020-09-15T17:53:42+00:00"
+        "start": "2020-06-17T17:53:42+00:00",
+        "end": "2020-09-15T17:53:42+00:00"
       },
       "inactive": false
     }
@@ -788,35 +789,35 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{group_id}/\$remove \
 
 {% capture jsonSnippet %}{% raw %}
 {
- "resourceType": "Group",
- "type": "person",
- "actual": true,
- "characteristic": [
-   {
-     "code": {
-       "coding": [
-         {
-           "code": "attributed-to"
-         }
-       ]
-     },
-     "valueCodeableConcept": {
-       "coding": [
-         {
-           "system": "http://hl7.org/fhir/sid/us-npi",
-           "code": "110001029483"
-         }
-       ]
-     }
-   }
- ],
- "member": [
-   {
-     "entity": {
-       "reference": "Patient/4d72ad76-fbc6-4525-be91-7f358f0fea9d"
-     }
-   }
- ]
+  "resourceType": "Group",
+  "type": "person",
+  "actual": true,
+  "characteristic": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "attributed-to"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "code": "110001029483"
+          }
+        ]
+      }
+    }
+  ],
+  "member": [
+    {
+      "entity": {
+        "reference": "Patient/4d72ad76-fbc6-4525-be91-7f358f0fea9d"
+      }
+    }
+  ]
 }
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=jsonSnippet language="json" %}
@@ -850,40 +851,40 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{group_id} \
 
 {% capture jsonSnippet %}{% raw %}
 {
- "resourceType": "Group",
- "type": "person",
- "actual": true,
- "characteristic": [
-   {
-     "code": {
-       "coding": [
-         {
-           "code": "attributed-to"
-         }
-       ]
-     },
-     "valueCodeableConcept": {
-       "coding": [
-         {
-           "system": "http://hl7.org/fhir/sid/us-npi",
-           "code": "110001029483"
-         }
-       ]
-     }
-   }
- ],
- "member": [
-   {
-     "entity": {
-       "reference": "Patient/4d72ad76-fbc6-4525-be91-7f358f0fea9d"
-     }
-   },
-   {
-     "entity": {
-       "reference": "Patient/bb151edf-a8b5-4f5c-9867-69794bcb48d1"
-     }
-   }
- ]
+  "resourceType": "Group",
+  "type": "person",
+  "actual": true,
+  "characteristic": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "attributed-to"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "code": "110001029483"
+          }
+        ]
+      }
+    }
+  ],
+  "member": [
+    {
+      "entity": {
+        "reference": "Patient/4d72ad76-fbc6-4525-be91-7f358f0fea9d"
+      }
+    },
+    {
+      "entity": {
+        "reference": "Patient/bb151edf-a8b5-4f5c-9867-69794bcb48d1"
+      }
+    }
+  ]
 }
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=jsonSnippet language="json" %}
@@ -903,7 +904,7 @@ DPC supports the standard <a href="https://www.hl7.org/fhir/search.html" target=
 
 The response will return a <a href="https://www.hl7.org/fhir/STU3/bundle.html" target="_blank" rel=noopener>Bundle</a> Resource which contains the Attribution Groups for the given practitioner. 
 
-You can use the Group.id value of the returned resources to initiate an export job. Find your Group ID by referencing the {id} variable in your group's resource object.
+You can use the `Group.id` value of the returned resources to initiate an export job. Find your Group ID by referencing the `{id}` variable in your group's resource object.
 
 #### Example
 
@@ -938,48 +939,48 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{group_id} \
 
 {% capture jsonSnippet %}{% raw %}
 {
-"resourceType": "Bundle",
- "type": "searchset",
- "total": 1,
- "entry": [
-   {
-     "resource": {
-       "resourceType": "Group",
-       "id": "64d0cd85-7767-425a-a3b8-dcc9bdfd5402",
-       "type": "person",
-       "actual": true,
-       "characteristic": {
-         "code": {
-           "coding": [
-             {
-               "code": "attributed-to"
-             }
-           ]
-         },
-         "valueCodeableConcept": {
-           "coding": [
-             {
-               "system": "http://hl7.org/fhir/sid/us-npi",
-               "code": "{Practitioner NPI}"
-             }
-           ]
-         }
-       },
-       "member": [
-         {
-           "entity": {
-             "reference": "Patient/4d72ad76-fbc6-4525-be91-7f358f0fea9d"
-           }
-         },
-         {
-           "entity": {
-             "reference": "Patient/74af8018-f3a1-469c-9bfa-1dfd8a646874"
-           }
-         }
-       ]
-     }
-   }
- ]
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 1,
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Group",
+        "id": "64d0cd85-7767-425a-a3b8-dcc9bdfd5402",
+        "type": "person",
+        "actual": true,
+        "characteristic": {
+          "code": {
+            "coding": [
+              {
+                "code": "attributed-to"
+              }
+            ]
+          },
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/sid/us-npi",
+                "code": "{Practitioner NPI}"
+              }
+            ]
+          }
+        },
+        "member": [
+          {
+            "entity": {
+              "reference": "Patient/4d72ad76-fbc6-4525-be91-7f358f0fea9d"
+            }
+          },
+          {
+            "entity": {
+              "reference": "Patient/74af8018-f3a1-469c-9bfa-1dfd8a646874"
+            }
+          }
+        ]
+      }
+    }
+  ]
 }
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=jsonSnippet language="json" %}
