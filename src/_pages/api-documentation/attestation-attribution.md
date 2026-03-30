@@ -610,7 +610,7 @@ Details on Provenance Resources are given in the <a href="https://www.hl7.org/fh
 Timestamp. Time when attestation was made
 Reason. Reason for the attestation (currently only: <a href="http://hl7.org/fhir/v3/ActReason#TREAT">http://hl7.org/fhir/v3/ActReason#TREAT</a> is supported)
 Organization ID. The agent making the attestation referenced by their Organization Resource ID 
- _Your Organization ID can be found in the DPC Portal by following <a href="#find-organization-id"> these instructions</a>._
+ _Your Organization ID can be found in the DPC Portal._
 Practitioner ID. The practitioner attached to the attestation referenced by their Practitioner ID. _Your Practitioner ID can be found by referencing the `{id}` variable in the resource object of your practitioner._
 
 The attestation is then included in the X-Provenance header as part of any operations which add patients to the Group Resource.
