@@ -7,27 +7,24 @@ show-side-nav: false
 <main id="main-content">
   <div class="grid-container">
     <div class="grid-row">
-      <div class="grid-col-12">
-        <h1 class="font-sans-2xl margin-top-4">JWT Generation</h1>
+      <div class="grid-col-12 desktop:grid-col-6">
+        <h1 class="font-sans-2xl margin-top-4">JWT Generation Tool</h1>
 
-        <div class="usa-prose">
-          <p>
-            The following instructions are to be completed via the JWT Tool downloaded onto your personal computer. You
-            must have internet access in order for this tool to use its cryptography library. Your information is not
-            sent over the network, in order to ensure your private key and JWT remain confidential.
-          </p>
-          <p>
-            Once completed, you may generate your JWT using the instructions below.
-          </p>
-          <div>
-            <p>You will need:</p>
-            <ul>
-              <li>Connect to the internet</li>
-              <li>Your private key</li>
-              <li>A registered client token</li>
-              <li>Your public key ID</li>
-            </ul>
+        <div class="usa-alert usa-alert--info usa-alert--slim">
+          <div class="usa-alert__body">
+            <p class="usa-alert__text">
+              In order to ensure your information remains confidential, this tool generates the JWT
+              <b>entirely within your browser</b>.
+            </p>
           </div>
+        </div>
+        <div class="usa-prose">
+          <p>You will need:</p>
+          <ul>
+            <li>Your private key</li>
+            <li>A registered client token</li>
+            <li>Your public key ID</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -36,7 +33,7 @@ show-side-nav: false
 
   <div class="grid-container">
     <div class="grid-row">
-      <div class="grid-col-6">
+      <div class="grid-col-12 desktop:grid-col-6">
 
         <form
           id="jwt-form"
