@@ -1,0 +1,284 @@
+---
+layout: base
+page_title: "DPC API"
+show-side-nav: false
+---
+
+<main id="main-content">
+  <div class="grid-container">
+    <div class="grid-row">
+      <div class="grid-col-12">
+        <h1 class="font-sans-2xl margin-top-4">JWT Generation</h1>
+
+        <div class="usa-prose">
+          <p>
+            The following instructions are to be completed via the JWT Tool downloaded onto your personal computer. You
+            must have internet access in order for this tool to use its cryptography library. Your information is not
+            sent over the network, in order to ensure your private key and JWT remain confidential.
+          </p>
+          <p>
+            Once completed, you may generate your JWT using the instructions below.
+          </p>
+          <div>
+            <p>You will need:</p>
+            <ul>
+              <li>Connect to the internet</li>
+              <li>Your private key</li>
+              <li>A registered client token</li>
+              <li>Your public key ID</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="grid-container">
+    <div class="grid-row">
+      <div class="grid-col-6">
+
+        <form
+          id="jwt-form"
+          class="usa-form width-full maxw-none"
+        >
+          <div class="usa-form-group">
+            <label
+              class="usa-label"
+              for="private-key"
+            >Please input your Private Key:</label>
+            <div
+              class="usa-hint"
+              id="private-key-hint"
+            >Generate your private key through the DPC Portal.</div>
+            <textarea
+              class="usa-textarea width-full"
+              id="private-key"
+              name="private-key"
+              aria-describedby="private-key-hint"
+              required
+            ></textarea>
+          </div>
+
+          <div class="usa-form-group">
+            <label
+              class="usa-label"
+              for="client-token"
+            >Please input your Client Token:</label>
+            <div
+              class="usa-hint"
+              id="client-token-hint"
+            >Locate your client token in the DPC Portal.</div>
+            <textarea
+              class="usa-textarea width-full"
+              id="client-token"
+              name="client-token"
+              aria-describedby="client-token-hint"
+              required
+            ></textarea>
+          </div>
+
+          <div class="usa-form-group">
+            <label
+              class="usa-label"
+              for="public-key"
+            >Please input your Public Key ID:</label>
+            <div
+              class="usa-hint"
+              id="public-key-hint"
+            >Locate your Public Key ID under “Public Keys” in the DPC Portal.</div>
+            <input
+              class="usa-input width-full"
+              id="public-key"
+              name="public-key"
+              aria-describedby="public-key-hint"
+              required
+            />
+          </div>
+
+          <div class="usa-form-group maxw-card-lg">
+            <label
+              class="usa-label"
+              for="environment"
+            >Please select the Environment for this JWT:</label>
+            <select
+              class="usa-select"
+              name="environment"
+              id="environment"
+              required
+            >
+              <option value>- Select -</option>
+              <option value="sandbox">Sandbox</option>
+              <option value="production">Production</option>
+            </select>
+          </div>
+
+          <div class="usa-form-group maxw-card-lg">
+            <label
+              class="usa-label"
+              for="api"
+            >Please select the API Version for this JWT:</label>
+            <select
+              class="usa-select"
+              name="api"
+              id="api"
+              required
+            >
+              <option value>- Select -</option>
+              <option value="v1">v1</option>
+              <option value="v2">v2</option>
+            </select>
+          </div>
+
+          <div class="usa-form-group">
+            <button
+              type="submit"
+              class="usa-button"
+            >Generate JWT</button>
+          </div>
+        </form>
+
+
+        <div class="usa-form-group">
+          <label
+            for="jwt-output"
+            class="usa-label maxw-none"
+          >Copy and submit this signed JWT to the Token/validate endpoint.</label>
+          <div class="position-relative">
+            <div class="position-absolute top-1 right-1 z-100">
+              <button
+                data-tealium="copy_button"
+                class="usa-button usa-button--outline margin-0 bg-base-lightest hover:bg-base-lightest active:bg-base-lightest"
+                id="jwt-output-copy-button"
+                aria-disabled="true"
+              >Copy</button>
+            </div>
+            <textarea
+              id="jwt-output"
+              class="usa-textarea maxw-none bg-gray-10"
+              readonly
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("jwt-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        generateJWT(event.target);
+      });
+
+      // Copy button functionality for JWT output
+      const copyButton = document.getElementById("jwt-output-copy-button");
+      copyButton.addEventListener('click', function () {
+        const copyText = document.getElementById("jwt-output");
+        if (!copyText.value) {
+          // Do nothing if no text
+          return;
+        }
+
+        if ('clipboard' in navigator) {
+          navigator.clipboard.writeText(copyText.value);
+        } else {
+          copyText.select();
+          document.execCommand('copy');
+        }
+      })
+
+    });
+
+    async function generateJWT(form) {
+      const formData = new FormData(form);
+
+      const clientToken = formData.get("client-token").trim();
+      const privateKeyPem = formData.get("private-key").trim();
+      const env = formData.get("environment").trim();
+      const version = formData.get("api").trim();
+
+      const publicKeyId = formData.get("public-key").trim();
+
+      // Create JWT header
+      const header = {
+        alg: 'RS384',
+        kid: publicKeyId,
+        typ: 'JWT'
+      }
+
+      const payload = {
+        "iss": clientToken,
+        "sub": clientToken,
+        "aud": `https://${env}.dpc.cms.gov/api/${version}/Token/auth`,
+        "exp": Math.floor(Date.now() / 1000) + 300, // 5 minutes from now
+        "jti": generateRandomBytes(16),
+      };
+
+      // Base64URL encode header and payload
+      const encodedHeader = base64urlEncode(JSON.stringify(header))
+      const encodedPayload = base64urlEncode(JSON.stringify(payload))
+      const message = `${encodedHeader}.${encodedPayload}`
+
+
+      // Import private key
+      const privateKeyBuffer = Uint8Array.from(
+        atob(privateKeyPem.replace(/-----BEGIN PRIVATE KEY-----/, '').replace(/-----END PRIVATE KEY-----/, '').replace(/\s/g, '')),
+        c => c.charCodeAt(0)
+      )
+
+      const privateKey = await crypto.subtle.importKey(
+        'pkcs8',
+        privateKeyBuffer,
+        {
+          name: 'RSASSA-PKCS1-v1_5',
+          hash: 'SHA-384'
+        },
+        false,
+        ['sign']
+      )
+
+      // Sign the message
+      const encoder = new TextEncoder()
+      const messageBytes = encoder.encode(message)
+      const signature = await crypto.subtle.sign(
+        'RSASSA-PKCS1-v1_5',
+        privateKey,
+        messageBytes
+      )
+
+      // Convert signature to base64url
+      const encodedSignature = arrayBufferToBase64url(signature)
+
+      const outputEl = document.getElementById("jwt-output");
+      outputEl.value = `${message}.${encodedSignature}`;
+
+      const copyButton = document.getElementById("jwt-output-copy-button");
+      copyButton.removeAttribute("aria-disabled");
+    }
+
+    // Base64URL encoding utilities
+    function base64urlEncode(str) {
+      return btoa(str)
+        .replace(/\+/g, '-')
+        .replace(/\//g, '_')
+        .replace(/=/g, '')
+    }
+
+    function arrayBufferToBase64url(buffer) {
+      const uint8Array = new Uint8Array(buffer)
+      const binaryString = Array.from(uint8Array, byte => String.fromCharCode(byte)).join('')
+      return base64urlEncode(binaryString)
+    }
+
+    // Generate random bytes using Web Crypto API
+    function generateRandomBytes(length) {
+      const array = new Uint8Array(length)
+      crypto.getRandomValues(array)
+      return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('')
+    }
+
+  </script>
+</main>
