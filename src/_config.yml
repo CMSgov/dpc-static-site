@@ -93,6 +93,7 @@ include:
   - assets/uswds/img/usa-icons/launch--white.svg
   - assets/uswds/img/usa-icons/remove.svg
   - assets/uswds/img/usa-icons/warning.svg
+  - assets/uswds/img/usa-icons/unfold_more.svg
    
 collections:
   pages:
