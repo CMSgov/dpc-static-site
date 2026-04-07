@@ -247,6 +247,10 @@
 
   #hero-heart-container {
     width: 33%;
+
+    img {
+        max-width: 100%;
+    }
   }
 }
 
