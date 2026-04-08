@@ -22,3 +22,28 @@ jobs:
           fail: true
           jobSummary: true
           args: --no-progress --accept '200..=299, 401, 403, 405' .
+      - name: Get AWS Credentials
+        uses: aws-actions/configure-aws-credentials@b47578312673ae6fa5b5096b330d9fbac3d116df # v4.2.1
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ secrets.NON_PROD_ACCOUNT_ID }}:role/delegatedadmin/developer/dpc-${{ inputs.env }}-github-actions
+      - name: Set env vars from AWS params
+        uses: cmsgov/cdap/actions/aws-params-env-action@main
+        env:
+          AWS_REGION: ${{ vars.AWS_REGION }}
+        with:
+          params: |
+            SONAR_HOST_URL=/sonarqube/url
+            SONAR_TOKEN=/sonarqube/token
+            TARGET_BUCKET=/dpc/stage/static_site
+      - name: Run quality gate scan
+        uses: sonarsource/sonarqube-scan-action@fd88b7d7ccbaefd23d8f36f73b59db7a3d246602 # v6.0.0
+        with:
+          args:
+            -Dsonar.projectKey=bcda-dpc-static-site
+            -Dsonar.sources=.
+            -Dsonar.working.directory=./sonar_workspace
+            -Dsonar.branch.name=${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
+            -Dsonar.projectVersion=${{ github.ref_name == 'main' && github.sha || 'branch' }}
+            -Dsonar.qualitygate.wait=true
+            -Dsonar.ci.autoconfig.disabled=true
