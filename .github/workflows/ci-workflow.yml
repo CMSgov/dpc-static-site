@@ -1,6 +1,6 @@
 name: "DPC Static Site CI Workflow"
 
-on: [pull_request]
+on: [push]
 
 permissions:
   id-token: write
