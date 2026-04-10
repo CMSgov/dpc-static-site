@@ -7,7 +7,8 @@ WORKDIR /dpc-site-static
 # separately from other application files
 COPY ./package.json package.json
 COPY ./package-lock.json package-lock.json
-RUN apt install npm && npm install
+RUN yarn install nodejs &&
+    npm install
 
 COPY ./Gemfile Gemfile
 COPY ./Gemfile.lock Gemfile.lock
