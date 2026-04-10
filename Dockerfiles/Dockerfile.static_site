@@ -1,4 +1,4 @@
-FROM daverichmond/jekyll:builder-4.2.0-arm64
+FROM daverichmond/jekyll:builder-4.2.0@sha256:88ec0c4db3136cc746afe59aa5e7d7244a2b279b16041fa4e58e0e56fbb367c2
 
 ENV BUNDLE_PATH=$GEM_HOME
 WORKDIR /dpc-site-static
