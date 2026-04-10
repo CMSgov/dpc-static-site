@@ -1,4 +1,4 @@
-FROM daverichmond/jekyll:builder-4.2.0@sha256:88ec0c4db3136cc746afe59aa5e7d7244a2b279b16041fa4e58e0e56fbb367c2
+FROM mrxder/jekyll-docker-arm64
 
 ENV BUNDLE_PATH=$GEM_HOME
 WORKDIR /dpc-site-static
@@ -7,9 +7,7 @@ WORKDIR /dpc-site-static
 # separately from other application files
 COPY ./package.json package.json
 COPY ./package-lock.json package-lock.json
-RUN apt update && \
-    apt install npm && \
-    npm install
+RUN npm install
 
 COPY ./Gemfile Gemfile
 COPY ./Gemfile.lock Gemfile.lock
