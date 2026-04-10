@@ -17,7 +17,9 @@ on:
 jobs:
   compliance_check:
     name: Compliance Check
-    runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
+    runs-on: codebuild-dpc-static-site${{
+      contains('stage', inputs.target_host) && '-non-prod' || '-prod'
+      }}-${{github.run_id}}-${{github.run_attempt}}
     steps:
       - name: Set Target Base
         id: target-base
