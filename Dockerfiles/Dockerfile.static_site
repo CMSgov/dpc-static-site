@@ -1,4 +1,4 @@
-FROM mrxder/jekyll-docker-arm64
+FROM mrxder/jekyll-docker-arm64@latest
 
 ENV BUNDLE_PATH=$GEM_HOME
 WORKDIR /dpc-site-static
