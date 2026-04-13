@@ -6,7 +6,7 @@
     "assets:build": "gulp updateUswds && gulp compile",
     "jekyll:serve": "bundle exec jekyll serve --source ./src",
     "jekyll:build": "bundle exec jekyll build --source ./src",
-    "pa11y": "pa11y-ci --config pa11yci.local.json --sitemap http://localhost:4000/sitemap.xml --sitemap-exclude /*.pdf",
+    "pa11y": "pa11y-ci --config pa11yci.local.json --sitemap https://d16450h30z080t.cloudfront.net/feature/uswds-redesign/sitemap.xml --sitemap-exclude /*.pdf --sitemap-find https://dpc.cms.gov/ --sitemap-replace https://d16450h30z080t.cloudfront.net/",
     "unlighthouse": "npx unlighthouse --site http://localhost:4000",
     "gulp": "gulp",
     "update:npm": "npx taze",
@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
-    "pa11y-ci": "^4.0.1",
+    "pa11y-ci": "^4.1.0",
     "taze": "19.8.1"
   }
 }
