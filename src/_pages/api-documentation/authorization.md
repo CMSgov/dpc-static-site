@@ -34,21 +34,23 @@ After successfully accessing the API, you may choose to add client tokens throug
 
 ### Create multiple client tokens
 
-You may create as many tokens as you like via your account in the DPC Portal using the instructions above. You can also create multiple client tokens at once by making a POST request to the /Token endpoint.
+You may create as many tokens as you like via your account in the DPC Portal using the instructions above. You can also create multiple client tokens at once by making a POST request to the `/Token` endpoint.
 
-The /Token endpoint accepts two (optional) query parameters: `label` (sets a human-readable label for the token) and `expiration` (sets a custom expiration for the client_token).
+The `/Token` endpoint accepts two (optional) query parameters: 
+- `label` (sets a human-readable label for the token) and 
+- `expiration` (sets a custom expiration for the client_token).
 
-Example request:
+**Example request**
 {% capture snippet %}
 POST /api/v1/Token
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" %}
 
-Example cURL:
+**Example cURL command**
 
 {% capture snippet %}
-curl -d '' -v https://sandbox.dpc.cms.gov/api/v1/Token?label={token label}&expiration={ISO formatted dateTime} \
-   -H 'Authorization: Bearer {access_token}' \
+curl -d '' -v https://sandbox.dpc.cms.gov/api/v1/Token?label={TOKEN_LABEL}&expiration={ISO_DATETIME} \
+   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
    -H 'Accept: application/json' \
    -H 'Content-Type: application/json' \
    -X POST
@@ -59,16 +61,16 @@ curl -d '' -v https://sandbox.dpc.cms.gov/api/v1/Token?label={token label}&expir
 
 All client tokens registered by your organization for a given environment can be listed by making a GET request to the /Token endpoint.
 
-Example request:
+**Example request**
 {% capture snippet %}
 GET /api/v1/Token
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" %}
 
-Example cURL:
+**Example cURL command**
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Token \
-   -H 'Authorization: Bearer {access_token}' \
+   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
    -H 'Accept: application/json' \
    -H 'Content-Type: application/json' \
    -X GET
@@ -79,16 +81,16 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Token \
 
 You may want to delete a client token from the sandbox environment if a Health IT implementer no longer exists or needs access to the API. This can be done by clicking the “x” on the right side of each client token listed in the DPC Portal or by sending a DELETE request to the /Token endpoint using the unique ID of the client_token.
 
-Example request:
+**Example request**
 {% capture snippet %}
-DELETE /api/v1/Token/{client_token id}
+DELETE /api/v1/Token/{CLIENT_TOKEN_ID}
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" %}
 
-Example cURL:
+**Example cURL command**
 {% capture snippet %}
-curl -v https://sandbox.dpc.cms.gov/api/v1/Token/{client_token id} \
-   -H 'Authorization: Bearer {access_token}' \
+curl -v https://sandbox.dpc.cms.gov/api/v1/Token/{CLIENT_TOKEN_ID} \
+   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
    -H 'Accept: application/json' \
    -H 'Content-Type: application/json' \
    -X DELETE
@@ -141,7 +143,7 @@ Public keys verify that client token requests are coming from an authorized appl
       {% capture snippet %}openssl dgst -verify public.pem -sha256 -signature snippet.txt.sig snippet.txt{% endcapture %}
       {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-      <p>Response must yield: <code>Verified Ok</code></p>
+      <p>Response must yield: <code>Verified OK</code></p>
    </li>
    <li>
       Generate a verified public key signature:
@@ -158,16 +160,16 @@ If you see the error message stating, "Unable to verify your public key" after u
 
 All public keys registered by your organization for an environment can be listed by making a GET request to the /Key endpoint.
 
-Example request:
+**Example request**
 {% capture snippet %}
 GET /api/v1/Key
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" %}
 
-Example cURL:
+**Example cURL command**
 {% capture snippet %}
-curl -v http://localhost:3002/v1/Key \
-     -H 'Authorization: Bearer {access_token}' \
+curl -v https://sandbox.dpc.cms.gov/api/v1/Key \
+     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
      -H 'Accept: application/json' \
      -H 'Content-Type: application/json' \
      -X GET
@@ -178,16 +180,16 @@ curl -v http://localhost:3002/v1/Key \
 
 Specific public keys can be listed by making a GET request to the /Key endpoint using the unique id of the public key.
 
-Example request:
+**Example request**
 {% capture snippet %}
-GET /api/v1/Key/{public key id}
+GET /api/v1/Key/{PUBLIC_KEY_ID}
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" %}
 
-Example cURL:
+**Example cURL command**
 {% capture snippet %}
-curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{public key id} \
-     -H 'Authorization: Bearer {access_token}' \
+curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{PUBLIC_KEY_ID} \
+     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
      -H 'Accept: application/json' \
      -H 'Content-Type: application/json' \
      -X GET
@@ -198,17 +200,17 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{public key id} \
 
 Public keys can be removed by sending a DELETE request to the /Key endpoint using the unique ID of the public key.
 
-Example request:
+**Example request**
 {% capture snippet %}
-DELETE /api/v1/Key/{public key ID}
+DELETE /api/v1/Key/{PUBLIC_KEY_ID}
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" %}
 
 
-Example cURL:
+**Example cURL command**
 {% capture snippet %}
-curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{public key id} \
-     -H 'Authorization: Bearer {access_token}' \
+curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{PUBLIC_KEY_ID} \
+     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
      -H 'Accept: application/json' \
      -H 'Content-Type: application/json' \
      -X DELETE
@@ -240,20 +242,22 @@ To generate your own JWT:
 1. Generate your JWT payload:
 {% capture snippet %}
    {
-     "iss": {client_token},
-     "sub": {client_token},
+     "iss": "{CLIENT_TOKEN}",
+     "sub": "{CLIENT_TOKEN}",
      "aud": "https://sandbox.dpc.cms.gov/api/v1/Token/auth",
-     "exp": {current datetime + 5 minutes},
-     "jti": {JWT_unique_id}
+     "exp": {EXPIRATION},
+     "jti": "{JWT_ID}"
    }
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="json" %}
+
+{% include alert.html variant="info" heading="Note" text="EXPIRATION is a Unix timestamp set to the current datetime plus 5 minutes. JWT_ID is a string that needs to be unique to this request and can only be used once." %}
 
 2. Generate your JWT header:
    {% capture snippet %}
    {
      "alg": "RS384",
-     "kid": "{public_key_id}"
+     "kid": "{PUBLIC_KEY_ID}"
    }
    {% endcapture %}
    {% include copy_snippet.html code=snippet language="json" %}
@@ -264,19 +268,19 @@ To generate your own JWT:
 
 The DPC API supports a /Token/validate endpoint, which allows you to submit your signed JWT for DPC validation.
 
-Example request:
+**Example request**
 {% capture snippet %}
 POST /api/v1/Token/validate
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" %}
 
-Example cURL:
+**Example cURL command**
 {% capture snippet %}
-curl -v https://sandbox.dpc.cms.gov/api/v1/Token/validate \
+curl -i https://sandbox.dpc.cms.gov/api/v1/Token/validate \
      -H 'Accept: application/json' \
      -H 'Content-Type: text/plain' \
      -X POST \
-     -d "{Signed JWT}"
+     -d "{SIGNED_JWT}"
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
@@ -285,9 +289,9 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Token/validate \
 
 Obtaining an access token is the final step in connecting to the DPC API. **The access token must be set in the Authorization header in EVERY API request and has a maximum expiration time of 5 MINUTES.**
 
-Example header:
+**Example header**
 {% capture snippet %}
-Authorization: Bearer {access_token}
+Authorization: Bearer {ACCESS_TOKEN}
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" %}
 
@@ -295,16 +299,16 @@ Authorization: Bearer {access_token}
 
 To receive an access token, the valid JWT must be submitted to the /Token/auth endpoint via a POST request.
 
-Example cURL:
+**Example cURL command**
 {% capture snippet %}
 curl -v "https://sandbox.dpc.cms.gov/api/v1/Token/auth" \
      -H 'Content-Type: application/x-www-form-urlencoded' \
      -H 'Accept: application/json' \
      -X POST \
-     -d "grant_type=client_credentials&scope=system%2F*.*&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer&client_assertion={self-signed JWT}"
+     -d "grant_type=client_credentials&scope=system%2F*.*&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer&client_assertion={SIGNED_JWT}"
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
 ### Obtain a bearer_token
 
-Set your access_token returned in the previous section as your bearer_token. You will need to set the "{access_token value}" from the previous response as a header in most of your API calls preceded by the word *Bearer* and a space.
+Set your access_token returned in the previous section as your bearer_token. You will need to set the `ACCESS_TOKEN` from the previous response as a header in most of your API calls preceded by the word *Bearer* and a space.

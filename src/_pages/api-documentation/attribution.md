@@ -1,0 +1,23 @@
+---
+layout: api-docs
+page_title: "Attribution"
+seo_title: ""
+description: ""
+in-page-nav: true
+---
+
+# {{ page.page_title }}
+
+Before accessing patient data, DPC must establish that you have a valid patient-practitioner relationship with CMS Medicare and Medicaid Beneficiaries. This is called attribution. You will “attribute” each patient to a practitioner in a Group Resource.
+
+DPC provides you with a set of [sample practitioners and patients](https://github.com/CMSgov/dpc-app/tree/main/dpc-web/public) to complete attribution in the DPC Sandbox.
+
+1. Upload <a href="{{ "/api-documentation/attribution/upload-practitioners" | relative_url }}">sample practitioners</a> in your organization.  
+2. Upload <a href="{{ "/api-documentation/attribution/upload-patients" | relative_url }}">sample patients</a> in your care.  
+3. Attribute patients to their practitioners by <a href="{{ "/api-documentation/attribution/attestation" | relative_url }}#create-a-patient-group-resource">creating a group</a> in the Attestation stage.
+
+**Attestation**
+
+You'll need to submit an <a href="{{ "/api-documentation/attribution/attestation" | relative_url }}">Attestation</a> each time you attribute a patient to a provider group. 
+
+{% include alert.html variant="warning" text="The DPC sandbox does not preload any test data." classNames="measure-6" %}
