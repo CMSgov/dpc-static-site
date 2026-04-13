@@ -13,18 +13,11 @@ show-side-nav: false
         <div class="usa-alert usa-alert--info usa-alert--slim">
           <div class="usa-alert__body">
             <p class="usa-alert__text">
-              In order to ensure your information remains confidential, this tool generates the JWT
-              <b>entirely within your browser</b>.
+              In order to ensure your information <b>remains private</b>, this tool generates a JWT
+              entirely <b>within your browser</b>. It does not send any of your information to a server or over the
+              network.
             </p>
           </div>
-        </div>
-        <div class="usa-prose">
-          <p>You will need:</p>
-          <ul>
-            <li>Your <b>Private Key</b></li>
-            <li>A registered <b>Client Token</b></li>
-            <li>Your <b>Public Key ID</b></li>
-          </ul>
         </div>
       </div>
     </div>
@@ -43,16 +36,11 @@ show-side-nav: false
             <label
               class="usa-label"
               for="private-key"
-            >Please input your Private Key:</label>
-            <div
-              class="usa-hint"
-              id="private-key-hint"
-            >Generate your private key through the DPC Portal.</div>
+            >Paste your <b>Private Key</b></label>
             <textarea
               class="usa-textarea width-full"
               id="private-key"
               name="private-key"
-              aria-describedby="private-key-hint"
               required
             ></textarea>
           </div>
@@ -61,16 +49,11 @@ show-side-nav: false
             <label
               class="usa-label"
               for="client-token"
-            >Please input your Client Token:</label>
-            <div
-              class="usa-hint"
-              id="client-token-hint"
-            >Locate your client token in the DPC Portal.</div>
+            >Paste your <b>Client Token</b></label>
             <textarea
               class="usa-textarea width-full"
               id="client-token"
               name="client-token"
-              aria-describedby="client-token-hint"
               required
             ></textarea>
           </div>
@@ -79,16 +62,11 @@ show-side-nav: false
             <label
               class="usa-label"
               for="public-key"
-            >Please input your Public Key ID:</label>
-            <div
-              class="usa-hint"
-              id="public-key-hint"
-            >Locate your Public Key ID under “Public Keys” in the DPC Portal.</div>
+            >Paste your <b>Public Key ID</b></label>
             <input
               class="usa-input width-full"
               id="public-key"
               name="public-key"
-              aria-describedby="public-key-hint"
               required
             />
           </div>
@@ -97,14 +75,17 @@ show-side-nav: false
             <label
               class="usa-label"
               for="environment"
-            >Please select the Environment for this JWT:</label>
+            >Select an Environment</label>
             <select
               class="usa-select maxw-card-lg"
               name="environment"
               id="environment"
               required
             >
-              <option value>- Select -</option>
+              <option
+                selected
+                disabled
+              >-- Select --</option>
               <option value="sandbox">Sandbox</option>
               <option value="production">Production</option>
             </select>
@@ -114,16 +95,19 @@ show-side-nav: false
             <label
               class="usa-label"
               for="api"
-            >Please select the API Version for this JWT:</label>
-            <select
-              class="usa-select maxw-card-lg"
+            >API Version</label>
+            <!-- {% comment %}Using a hidden value since v1 is the only option for now and select can't be readonly{% endcomment %} -->
+            <input
+              type="hidden"
               name="api"
+              value="v1"
+            />
+            <select
+              class="usa-select maxw-card-lg bg-gray-10"
               id="api"
-              required
+              disabled
             >
-              <option value>- Select -</option>
               <option value="v1">v1</option>
-              <option value="v2">v2</option>
             </select>
           </div>
 
@@ -140,7 +124,7 @@ show-side-nav: false
           <label
             for="jwt-output"
             class="usa-label maxw-none"
-          >Copy and submit this signed JWT to the Token/validate endpoint.</label>
+          >Generated JWT</label>
           <div class="position-relative">
             <div class="position-absolute top-1 right-1 z-100">
               <button
