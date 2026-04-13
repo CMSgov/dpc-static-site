@@ -1,4 +1,4 @@
-FROM travishankins/arm64-jekyll-docker:latest
+FROM bretfisher/jekyll:stable-20260315-2119a31
 
 ENV BUNDLE_PATH=$GEM_HOME
 WORKDIR /dpc-site-static
