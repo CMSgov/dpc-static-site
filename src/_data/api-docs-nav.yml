@@ -2,24 +2,45 @@
   url: /api-documentation.html
   children:
 
+    - name: Get Sandbox Credentials
+      url: /api-documentation/get-sandbox-credentials.html
+
     - name: Authorization
       url: /api-documentation/authorization.html
-      
-    - name: Attestation & Attribution
-      url: /api-documentation/attestation-attribution.html
+
+    - name: Get an Access Token
+      url: /api-documentation/get-an-access-token.html
+      children:
+
+      - name: Manage Credentials
+        url: /api-documentation/get-an-access-token/manage-credentials.html
+
+    - name: Attribution
+      url: /api-documentation/attribution.html
+      children:
+
+      - name: Attestation
+        url: /api-documentation/attribution/attestation.html
+
+      - name: Upload Practitioners
+        url: /api-documentation/attribution/upload-practitioners.html
+
+      - name: Upload Patients
+        url: /api-documentation/attribution/upload-patients.html
+
+    - name: Export Data
+      url: /api-documentation/export-data.html
+      children:
+
+      - name: /Patient/$everything
+        url: /api-documentation/export-data/patient-everything.html
 
     - name: Postman Collection
       url: /api-documentation/postman-collection.html
 
-- name: DPC Data 
+- name: DPC Data
   url: /dpc-data.html
   children:
-    
-    - name: Export Data
-      url: /dpc-data/export-data.html
 
     - name: Postman Collection
       url: /dpc-data/postman-collection.html
-      
-    - name: /Patient/$everything
-      url: /dpc-data/patient-everything.html
