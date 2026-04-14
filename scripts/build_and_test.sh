@@ -29,7 +29,7 @@ test() {
     TARGETS_TO_SCAN="${TARGETS_TO_SCAN} ${TARGET_TEST_ENV}/docsV1"
     TARGETS_TO_SCAN="${TARGETS_TO_SCAN} ${TARGET_TEST_ENV}/docsV2"
     TARGETS_TO_SCAN="${TARGETS_TO_SCAN} ${TARGET_TEST_ENV}/updates"
-    docker run --platform linux/arm64 --add-host=host.docker.internal:host-gateway --init --rm --cap-add=SYS_ADMIN ghcr.io/puppeteer/puppeteer:24.40.0 ${TARGETS_TO_SCAN}
+    docker run --platform linux/arm64 --add-host=host.docker.internal:host-gateway --init --rm --cap-add=SYS_ADMIN ghcr.io/puppeteer/puppeteer:24.40.0@sha256:c1e2bda6d92d400e900e497b743552a670a33631799c0a6478e91096e389bd27 ${TARGETS_TO_SCAN}
 }
 
 main() {
