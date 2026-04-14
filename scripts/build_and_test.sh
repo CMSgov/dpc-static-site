@@ -30,6 +30,7 @@ test() {
     TARGETS_TO_SCAN="${TARGETS_TO_SCAN} ${TARGET_TEST_ENV}/docsV2"
     TARGETS_TO_SCAN="${TARGETS_TO_SCAN} ${TARGET_TEST_ENV}/updates"
     docker run --add-host=host.docker.internal:host-gateway --init --rm --cap-add=SYS_ADMIN mcp/puppeteer:latest@sha256:11bacd79778b42ebe041a9e2fc18a8c3500bf1362e5bca5bf2ae9dd011be5847 ${TARGETS_TO_SCAN}
+    echo "Accessibility scan successful"
 }
 
 main() {
