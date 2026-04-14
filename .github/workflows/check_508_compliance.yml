@@ -18,7 +18,7 @@ jobs:
   compliance_check:
     name: Compliance Check
     runs-on: codebuild-dpc-static-site${{
-      contains('https://dpc.cms.gov', inputs.target_host) && '-prod' || '-non-prod'
+      inputs.target_host == 'https://stage.dpc.cms.gov' && '-prod' || '-non-prod'
       }}-${{github.run_id}}-${{github.run_attempt}}
     steps:
       - name: Set Target Base
