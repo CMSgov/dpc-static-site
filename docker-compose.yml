@@ -1,5 +1,6 @@
 services:
   static_site:
+    platform: linux/arm64
     build:
       context: .
       dockerfile: Dockerfiles/Dockerfile.static_site
