@@ -33,7 +33,7 @@ show-side-nav: false
 
 ## Cultivating valuable data from Medicare claims
 
-Provider claims submitted to Medicare contain valuable historical health information. In 2010, Centers for Medicare & Medicaid Services (CMS) created Blue Button as a way for beneficiaries to access their own health information. In 2019, CMS expanded this tool to create DPC, a new application programming interface (API) that extends this information to Medicare fee-for-service (FFS) providers. DPC:
+Provider claims submitted to Medicare contain valuable historical health information. In 2010, Centers for Medicare & Medicaid Services (CMS) created Blue Button as a way for beneficiaries to access their own health information. In 2019, CMS expanded this tool to create DPC, a new application programming interface (API) that extends this information to Original Medicare (OM) providers. DPC:
 
 - **Informs providers** of a new patient’s past medical history.
 - **Removes the burden on patients** to remember every detail in these histories.

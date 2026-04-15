@@ -10,7 +10,7 @@ in-page-nav: true
 
 ## 1. Request Access
 
-Any Fee-for-Service provider organization or Health IT implementer may [request access](https://sandbox.dpc.cms.gov/users/sign_up) to the sandbox environment and obtain synthetic data by signing-up for an account through the [Sandbox Sign Up / Login](https://sandbox.dpc.cms.gov/users/sign_in) page. You will receive a confirmation email from CMS upon account creation.
+Any Original Medicare provider organization or Health IT implementer may [request access](https://sandbox.dpc.cms.gov/users/sign_up) to the sandbox environment and obtain synthetic data by signing-up for an account through the [Sandbox Sign Up / Login](https://sandbox.dpc.cms.gov/users/sign_in) page. You will receive a confirmation email from CMS upon account creation.
 
 Once your account has been assigned to an organization, you will be notified with a second email, which will include next steps and an invite to join our [Google Group](https://groups.google.com/g/dpc-api) community. At this time, you may log in to the DPC Portal at [https://dpc.cms.gov](https://dpc.cms.gov) to create your first client token and start your journey with the DPC pilot API!
 

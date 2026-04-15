@@ -27,7 +27,7 @@ sidebar-links:
 
 Data at the Point of Care (DPC) is a pilot program where providers access patient data from Medicare claims.
 
-This documentation shows you how to connect to synthetic data in the <a href="https://sandbox.dpc.cms.gov/users/sign_in" target="_blank">DPC Sandbox</a>. The sandbox is available to any Fee-for-Service provider or Health IT implementer.
+This documentation shows you how to connect to synthetic data in the <a href="https://sandbox.dpc.cms.gov/users/sign_in" target="_blank">DPC Sandbox</a>. The sandbox is available to any Original Medicare provider or Health IT implementer.
 
 <ol class="usa-process-list margin-top-1 docs-process-list">
   <li class="usa-process-list__item">

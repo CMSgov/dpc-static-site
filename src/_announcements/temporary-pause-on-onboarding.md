@@ -8,7 +8,7 @@ published_date: 2023-05-01
 custom_excerpt: "Thanks to feedback from our initial pilot group, we're implementing an improved onboarding experience."
 ---
 
-Data at the Point of Care (DPC) supplements patients' health records with data from Fee-For-Service (FFS) Medicare claims. Thanks to feedback from our initial pilot group, we're implementing an improved onboarding experience. During this process, we've paused onboarding and accepting new applications for DPC production data. We'll provide an update in July of 2023 on the continuing timeframe and any changes to the onboarding process.
+Data at the Point of Care (DPC) supplements patients' health records with data from Original Medicare (OM) Medicare claims. Thanks to feedback from our initial pilot group, we're implementing an improved onboarding experience. During this process, we've paused onboarding and accepting new applications for DPC production data. We'll provide an update in July of 2023 on the continuing timeframe and any changes to the onboarding process.
 
 Here's how the temporary pause may affect you:
 
