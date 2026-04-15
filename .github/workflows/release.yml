@@ -23,7 +23,7 @@ jobs:
     uses: CMSgov/dpc-app/.github/workflows/tag_release.yml@main
     with:
       repo_ref: ${{ inputs.repo_ref }}
-      runner: codebuild-dpc-static-site-non-prod-${{github.run_id}}-${{github.run_attempt}}
+      runner: codebuild-dpc-static-site-prod-${{github.run_id}}-${{github.run_attempt}}
     secrets: inherit
   deploy:
     permissions:

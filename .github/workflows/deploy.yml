@@ -35,9 +35,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    runs-on: codebuild-dpc-static-site${{
-      inputs.env == 'prod' && '-prod' || '-non-prod'
-      }}-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: codebuild-dpc-static-site-prod-${{ github.run_id }}-${{ github.run_attempt }}
     env: # note: "sandbox" env is used for "stage" environment, "prod" is for "prod"
       AWS_ENV: ${{ inputs.env == 'prod' && 'prod' || 'sandbox' }}
     steps:
