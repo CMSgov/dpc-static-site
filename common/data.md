@@ -9,11 +9,11 @@ coming_soon: true
 side_nav_items: data_nav
 ---
 
-The Centers for Medicare and Medicaid Services (CMS) Data at the Point of Care (DPC) API is a RESTful-based web service providing Medicare Parts A, B, and D claims data using the industry-standard HL7 Fast Healthcare Interoperability Resources (FHIR) resources, specifically the Bulk FHIR specification. The DPC API only provides data records for Medicare Fee-For-Service (FFS) beneficiaries and excludes all claims with substance abuse codes (as required by the Confidentiality of Alcohol and Drug Abuse Patient Records Regulations, 42 CFR Part 2).
+The Centers for Medicare and Medicaid Services (CMS) Data at the Point of Care (DPC) API is a RESTful-based web service providing Medicare Parts A, B, and D claims data using the industry-standard HL7 Fast Healthcare Interoperability Resources (FHIR) resources, specifically the Bulk FHIR specification. The DPC API only provides data records for Original Medicare (OM) beneficiaries and excludes all claims with substance abuse codes (as required by the Confidentiality of Alcohol and Drug Abuse Patient Records Regulations, 42 CFR Part 2).
 
 # What is FHIR?
 
-FHIR (Fast Healthcare Interoperability Resources) is a specification for exchanging healthcare data electronically. DPC sends adjudicated Medicare FFS claims data acquired through the Beneficiary FHIR Data Server (BFD) API and structured using the FHIR standard, making it more available, discoverable, and easy to consume. The FHIR standard is developed by HL7, a group dedicated to creating standardized ways of sharing and structuring health care data.
+FHIR (Fast Healthcare Interoperability Resources) is a specification for exchanging healthcare data electronically. DPC sends adjudicated Original Medicare claims data acquired through the Beneficiary FHIR Data Server (BFD) API and structured using the FHIR standard, making it more available, discoverable, and easy to consume. The FHIR standard is developed by HL7, a group dedicated to creating standardized ways of sharing and structuring health care data.
 
 In FHIR, standardized data is structured using a basic building block called a “Resource.” All “exchangeable” data is defined as a resource. Resources are structured containers of data that systems and computers can easily understand. DPC uses both the FHIR specification and the DPC Bulk FHIR specification. The Bulk FHIR specification allows DPC to send back records on all of a provider's patients.
 

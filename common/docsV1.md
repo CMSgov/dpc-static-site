@@ -13,7 +13,7 @@ Welcome to the Data at the Point of Care (DPC) pilot API program! This documenta
 ------------------
 
 ## 1. Request Access
-Any Fee-for-Service provider organization or Health IT implementer may <a href="https://sandbox.dpc.cms.gov/users/sign_up" target="_blank" and rel=noopener>request access</a> to the sandbox environment and obtain synthetic data by signing-up for an account through the <a href="https://sandbox.dpc.cms.gov/users/sign_in" target="_blank" and rel=noopener>Sandbox Sign Up / Login</a> page. You will receive a confirmation email from CMS upon account creation.
+Any Original Medicare provider organization or Health IT implementer may <a href="https://sandbox.dpc.cms.gov/users/sign_up" target="_blank" and rel=noopener>request access</a> to the sandbox environment and obtain synthetic data by signing-up for an account through the <a href="https://sandbox.dpc.cms.gov/users/sign_in" target="_blank" and rel=noopener>Sandbox Sign Up / Login</a> page. You will receive a confirmation email from CMS upon account creation.
 
 Once your account has been assigned to an organization, you will be notified with a second email, which will include next steps and an invite to join our <a href="https://groups.google.com/g/dpc-api" target="_blank" and rel=noopener>Google Group</a> community. At this time, you may log in to the DPC Portal at <a href="https://dpc.cms.gov" target="_blank" and rel=noopener>https://dpc.cms.gov</a> to create your first client token and start your journey with the DPC pilot API!
 
