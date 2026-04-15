@@ -35,7 +35,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    runs-on: codebuild-dpc-static-site-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: codebuild-dpc-static-site-prod-${{ github.run_id }}-${{ github.run_attempt }}
     env: # note: "sandbox" env is used for "stage" environment, "prod" is for "prod"
       AWS_ENV: ${{ inputs.env == 'prod' && 'prod' || 'sandbox' }}
     steps:
@@ -85,6 +85,11 @@ jobs:
             SONAR_HOST_URL=/sonarqube/url
             SONAR_TOKEN=/sonarqube/token
             TARGET_BUCKET=/dpc/${{ env.AWS_ENV }}/static_site
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
 
       - name: Run quality gate scan
         if: ${{ inputs.env == 'stage' }}
