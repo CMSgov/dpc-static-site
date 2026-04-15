@@ -17,7 +17,7 @@ on:
 jobs:
   compliance_check:
     name: Compliance Check
-    runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
+    runs-on: codebuild-dpc-static-site-prod-${{github.run_id}}-${{github.run_attempt}}
     steps:
       - name: Set Target Base
         id: target-base
@@ -34,7 +34,7 @@ jobs:
           TARGETS_TO_SCAN="${TARGETS_TO_SCAN} ${TARGET_BASE_URL}/docsV1.html"
           TARGETS_TO_SCAN="${TARGETS_TO_SCAN} ${TARGET_BASE_URL}/docsV2.html" 
           TARGETS_TO_SCAN="${TARGETS_TO_SCAN} ${TARGET_BASE_URL}/updates.html"
-          docker run --init --rm --cap-add=SYS_ADMIN orenfromberg/axe-puppeteer-ci:1.0.0@sha256:f83527a3ae8ab74088c001abfe44836946ba73f0afbbf460447f8a0c40281e70 $TARGETS_TO_SCAN
+          docker run --init --rm --cap-add=SYS_ADMIN mcp/puppeteer:latest@sha256:11bacd79778b42ebe041a9e2fc18a8c3500bf1362e5bca5bf2ae9dd011be5847 $TARGETS_TO_SCAN
       - uses: slackapi/slack-github-action@b0fa283ad8fea605de13dc3f449259339835fc52 # v2.1.0
         name: Slack Success
         with:
