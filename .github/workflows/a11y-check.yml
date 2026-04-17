@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.3.0
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           cache: 'npm'
           node-version-file: '.nvmrc'
@@ -29,7 +29,7 @@ jobs:
         run: npx pa11y-ci --config pa11yci.ci.json --sitemap ${{ format('https://d16450h30z080t.cloudfront.net/{0}sitemap.xml', env.BASE_PATH) }} --sitemap-exclude "/*.pdf" --sitemap-find https://dpc.cms.gov/ --sitemap-replace https://d16450h30z080t.cloudfront.net/ --json > pa11y-results.json
 
       - name: Save Report to Action Summary
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         # Always return pa11y output, regardless if all pages pass/fail. Job will now fail if errors are found, which is intentional
         if: always() 
         with:
