@@ -48,6 +48,7 @@ jobs:
                 text: "SUCCESS: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|Static Site 508 Compliance> completed against `${{ steps.target-base.outputs.TARGET_BASE_URL }}`"
                 mrkdown_in:
                   - text
+            text: "Static site 508 compliance check successful"
       - uses: slackapi/slack-github-action@af78098f536edbc4de71162a307590698245be95 # v3.0.1
         name: Slack failure
         if: ${{ failure() }}
@@ -62,3 +63,4 @@ jobs:
                 text: "FAILURE: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|Static Site 508 Compliance> completed against `${{ steps.target-base.outputs.TARGET_BASE_URL }}`"
                 mrkdown_in:
                   - text
+            text: "Static site 508 compliance check failed"
