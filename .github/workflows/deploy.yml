@@ -93,7 +93,7 @@ jobs:
 
       - name: Run quality gate scan
         if: ${{ inputs.env == 'stage' }}
-        uses: sonarsource/sonarqube-scan-action@fd88b7d7ccbaefd23d8f36f73b59db7a3d246602 # v6.0.0
+        uses: sonarsource/sonarqube-scan-action@299e4b793aaa83bf2aba7c9c14bedbb485688ec4 # 7.1.0
         with:
           args:
             -Dsonar.projectKey=bcda-dpc-static-site
@@ -103,6 +103,7 @@ jobs:
             -Dsonar.projectVersion=${{ github.ref_name == 'main' && github.sha || 'branch' }}
             -Dsonar.qualitygate.wait=true
             -Dsonar.ci.autoconfig.disabled=true
+            -Dsonar.branch.target=${{ github.base_ref }}
 
       - name: "Sync _site"
         run: aws s3 sync _site/ s3://"$TARGET_BUCKET"/ $(["${{ inputs.target_environment }}" == 'prod'] && echo "--delete")
@@ -118,7 +119,7 @@ jobs:
           DISTRIBUTION_ID=`aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id, OriginId: Origins.Items[0].Id}[?OriginId=='$TARGET_BUCKET'].Id" --output text`
           aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*'
 
-      - uses: slackapi/slack-github-action@b0fa283ad8fea605de13dc3f449259339835fc52 # v2.1.0
+      - uses: slackapi/slack-github-action@af78098f536edbc4de71162a307590698245be95 # v3.0.1
         name: Slack Success
         with:
           method: chat.postMessage
@@ -131,8 +132,9 @@ jobs:
                 text: "SUCCESS: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|static site version> `${{ inputs.static_repo_ref }}` deployed to ${{ inputs.env }} environment."
                 mrkdown_in:
                   - text
+            text: "SUCCESS: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|static site version> `${{ inputs.static_repo_ref }}` deployed to ${{ inputs.env }} environment."
 
-      - uses: slackapi/slack-github-action@b0fa283ad8fea605de13dc3f449259339835fc52 # v2.1.0
+      - uses: slackapi/slack-github-action@af78098f536edbc4de71162a307590698245be95 # v3.0.1
         name: Slack failure
         if: ${{ failure() }}
         with:
@@ -146,3 +148,4 @@ jobs:
                 text: "FAILURE: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|static site version> `${{ inputs.static_repo_ref }}` deployed to ${{ inputs.env }} environment."
                 mrkdown_in:
                   - text
+            text: "FAILURE: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|static site version> `${{ inputs.static_repo_ref }}` deployed to ${{ inputs.env }} environment."
