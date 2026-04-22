@@ -20,7 +20,7 @@ The expiration will appear as `"expiresAt": "2020-11-04T11:49:55.095-05:00"` in 
 
 Client tokens expire after one year. We recommend you generate a new client token via the API as part of your ongoing maintenance.
 
-1. Use this method \[Client tokens \#2 on Get a Bearer Token page\].   
+1. Use [the bearer token method]({{ "/api-documentation/get-access-token#2-create-a-bearer-token" | relative_url }}).
 2. Make a `POST` request to the `/Token` endpoint.
 
 The `/Token` endpoint accepts two (optional) query parameters: 
@@ -42,7 +42,7 @@ curl -d '' -v https://sandbox.dpc.cms.gov/api/v1/Token?label={TOKEN_LABEL}&expir
      -H 'Content-Type: application/json' \
      -X POST
 {% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="shell" %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 **Example API response**
 

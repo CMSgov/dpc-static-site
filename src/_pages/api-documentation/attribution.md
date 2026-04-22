@@ -12,12 +12,12 @@ Before accessing patient data, DPC must establish that you have a valid patient-
 
 DPC provides you with a set of [sample practitioners and patients](https://github.com/CMSgov/dpc-app/tree/main/dpc-web/public) to complete attribution in the DPC Sandbox.
 
-1. Upload <a href="{{ "/api-documentation/attribution/upload-practitioners" | relative_url }}">sample practitioners</a> in your organization.  
-2. Upload <a href="{{ "/api-documentation/attribution/upload-patients" | relative_url }}">sample patients</a> in your care.  
-3. Attribute patients to their practitioners by <a href="{{ "/api-documentation/attribution/attestation" | relative_url }}#create-a-patient-group-resource">creating a group</a> in the Attestation stage.
+1. Upload [sample practitioners]({{ "/api-documentation/attribution/upload-practitioners" | relative_url }}) in your organization.  
+2. Upload [sample patients]({{ "/api-documentation/attribution/upload-patients" | relative_url }}) in your care.  
+3. Attribute patients to their practitioners by [creating a group]({{ "/api-documentation/attribution/attestation#create-a-patient-group-resource" | relative_url }}) in the Attestation stage.
 
 **Attestation**
 
-You'll need to submit an <a href="{{ "/api-documentation/attribution/attestation" | relative_url }}">Attestation</a> each time you attribute a patient to a provider group. 
+You'll need to submit an [Attestation]({{ "/api-documentation/attribution/attestation" | relative_url }}) each time you attribute a patient to a provider group. 
 
 {% include alert.html variant="warning" text="The DPC sandbox does not preload any test data." classNames="measure-6" %}

@@ -5,15 +5,15 @@
     - name: Get Sandbox Credentials
       url: /api-documentation/get-sandbox-credentials.html
 
-    - name: Get a Bearer Token
-      url: /api-documentation/get-bearer-token.html
+    - name: Get an Access Token
+      url: /api-documentation/get-access-token.html
       children:
 
-      - name: Create a Bearer Token Manually
-        url: /api-documentation/get-bearer-token/create-bearer-token-manually.html
+      - name: Create a JWT Manually
+        url: /api-documentation/get-access-token/create-jwt-manually.html
 
       - name: Manage Credentials
-        url: /api-documentation/get-bearer-token/manage-credentials.html
+        url: /api-documentation/get-access-token/manage-credentials.html
 
     - name: Attribution
       url: /api-documentation/attribution.html

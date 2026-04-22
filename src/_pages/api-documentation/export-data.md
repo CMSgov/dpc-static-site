@@ -10,26 +10,26 @@ in-page-nav: true
 
 ## The `/Group/$export` operation 
 
-The FHIR `/Group/$export` operation is the primary interaction with the DPC Sandbox API. It lets you export Patient, Coverage, and Explanation of Benefit data \[link to DPC Data page\] asynchronously and in bulk. Details on the FHIR bulk data operations can be found in the [FHIR Bulk Data Specification](https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-group-export.html). 
+The FHIR `/Group/$export` operation is the primary interaction with the DPC Sandbox API. It lets you export [Patient, Coverage, and Explanation of Benefit data]({{ "/dpc-data" | relative_url }}) asynchronously and in bulk. Details on the FHIR bulk data operations can be found in the [FHIR Bulk Data Specification](https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-group-export.html). 
 
 ### Filtering data with `_type` and `_since`
 
-Use `_type` and `_since` to [filter your results](?tab=t.h39kv99h25kn) by content, time, and range.
+Use `_type` and `_since` to [filter your results]({{ "/api-documentation/export-data/how-to-filter" | relative_url }}) by content, time, and range.
 
 #### Filter by FHIR Resource type with `_type`
 Specify which of the FHIR resources to download using the `_type` query parameter (e.g., `?_type=Patient,Coverage`).
 
 #### Exclude data before a specified date with _since
-Choose to download data obtained after a certain date by adding the `_since` parameter (e.g., only show data Patient data from January 7, 2027 to the present). 
+Choose to download data obtained after a certain date by adding the `_since` parameter (e.g., only show Patient data from January 7, 2025 to the present). 
 
 #### Get all of a patient’s data  
-Use the `/Patient/{ID}/$everything` \[link to sub-page\] for 7 years’ historical data including Patient, Coverage, and ExplanationOfBenefit Resources. 
+Use [`/Patient/{ID}/$everything`]({{ "/api-documentation/export-data/patient-everything" | relative_url }}) for 7 years’ historical data including Patient, Coverage, and ExplanationOfBenefit Resources. 
 
 ## Initiating an export job
 
 ### 1. Locate your Group ID
     
-In order to start a patient data export job, locate your <a href="{{ "/api-documentation/attribution/attestation" | relative_url }}#how-to-locate-your-group-id">Group ID</a> by referencing the `id` variable in the resource object of your group.
+In order to start a patient data export job, locate your [Group ID]({{ "/api-documentation/attribution/attestation#create-a-patient-group-resource" | relative_url }}) by referencing the `id` variable in the resource object of your group.
 
 **Example**
 
@@ -77,7 +77,7 @@ Content-Location: https://sandbox.dpc.cms.gov/api/v1/Jobs/{JOB_ID}
 
 You can check the status of your job using the {unique ID of the export job}. This is retrieved from the Content-Location header of the response as shown in the previous section. The status of the job will change from 202 Accepted to 200 OK when the export job is complete and the data is ready to be downloaded.
 
-***Example check status request***
+**Example check status request**
 
 {% capture snippet %}
 GET https://sandbox.dpc.cms.gov/api/v1/Jobs/{EXPORT_JOB_ID}

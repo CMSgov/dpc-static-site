@@ -12,7 +12,7 @@ DPC uses `_type` and `_since` parameters to filter your results by content, time
 
 ## Filter claims data by FHIR Resource with `_type`
 
-The `_type` query parameter allows you to specify which FHIR Resources you wish to export. If you do not specify a `_type` parameter in your request, all three resources will be exported: Explanation of Benefit, Patient, and Coverage [link to DPC Data]. You can specify these Resources individually or as a group using a comma delimited list and the syntax `?_type=ExplanationOfBenefit,Patient,Coverage`.
+The `_type` query parameter allows you to specify which FHIR Resources you wish to export. If you do not specify a `_type` parameter in your request, all three resources will be exported: [Explanation of Benefit, Patient, and Coverage]({{ "/dpc-data" | relative_url }}). You can specify these Resources individually or as a group using a comma delimited list and the syntax `?_type=ExplanationOfBenefit,Patient,Coverage`.
 
 The following request will export the Patient and Coverage Resources, but NOT the Explanation of Benefit Resource.
 
@@ -42,12 +42,12 @@ On subsequent calls you can begin retrieving incremental claims data for your be
 
 Two ways to use `_since`:
 
-1. Request the most recent data for all beneficiaries: [Use `_since` within the `/Group` endpoint](https://dpc.cms.gov/docsV1#requesting-data-using-_since-with-the-group-endpoint).  
-2. Request data synchronously for an individual patient: [Use `_since` within the `/Patient` endpoint](https://dpc.cms.gov/docsV1#requesting-data-using-_since-with-the-patient-endpoint).
+1. Request the most recent data for all beneficiaries: [Use `_since` within the `/Group` endpoint](#request-data-using-_since-with-the-group-endpoint).  
+2. Request data synchronously for an individual patient: [Use `_since` within the `/Patient` endpoint]({{ "/api-documentation/export-data/patient-everything#requesting-data-using-_since-with-the-patient-endpoint" | relative_url }}).
 
 ### Steps to request filtered data
 
-1. Obtain an <a href="{{ "/api-documentation/get-an-access-token" | relative_url }}">access token</a>.  
+1. Obtain an [access token]({{ "/api-documentation/get-access-token" | relative_url }}).  
 2. Start a job to acquire data (you will input the `_since` parameter here. Omit `_since` to download all data).  
 3. Check the job status.  
 4. Download the data.
@@ -60,13 +60,11 @@ Datetimes submitted using `_since` must follow the [FHIR Instant format](https:/
 
 #### The value of the `_since` parameter must be URL encoded
 
-When using the <a href="{{ "/api-documentation/postman-collection" | relative_url }}">Postman Collection</a>, you'll need to manually encode the `_since` parameter when it contains a `+` since Postman does not automatically encode this character.
+When using the [Postman Collection]({{ "/api-documentation/postman-collection" | relative_url }}), you'll need to manually encode the `_since` parameter when it contains a `+` since Postman does not automatically encode this character.
 
 You can do this either by replacing the `+` with `%2B` (e.g., 2020-01-23T04:00:00.000%2B07:00 instead of 2020-01-23T04:00:00.000+07:00), or you can select the value and choose "EncodeURIComponent" from the context menu to have Postman encode the entire parameter automatically.
 
-**TODO: Add screenshot of Postman context menu with "EncodeURIComponent" option highlighted.**
-
-The `Group/{ID}/all/$export` requires an access token as well as Accept and Prefer headers.  
+The `/Group/{ID}/$export` endpoint requires an access token as well as Accept and Prefer headers.  
 
 The Prefer header is **NOT** required for `/Patient/{ID}/$everything`, but it DOES require an X-Provenance header whereas the `/Group/{ID}/$export` endpoint does not. The format is defined by the FHIR Bulk Data Export spec. Consult the [FHIR Datatypes](https://www.hl7.org/fhir/datatypes.html#instant) page for more information.
 
@@ -84,7 +82,7 @@ If the request was successful, a `202 Accepted` response code will be returned a
 **Example**
 
 {% capture snippet %}
-GET /api/v1/Group/{ID}/$export?_type=Patient&_since=2020-02-13T08:00:00.000-05:00
+GET /api/v1/Group/{ID}/$export?_type=Patient&_since=2021-05-13T08:00:00.000-05:00
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" %}
 

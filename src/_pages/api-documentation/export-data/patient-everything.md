@@ -8,7 +8,7 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-The /Patient/{ID}/$everything endpoint lets you retrieve all resources about a patient using their DPC internal ID (UUID), represented as {id} in the request. They"ll receive a bundle with 7 years" historical data including:
+The /Patient/{ID}/$everything endpoint lets you retrieve all resources about a patient using their DPC internal ID (UUID), represented as {id} in the request. They’ll receive a bundle with 7 years’ historical data including:
 
 - Patient  
 - Coverage  
@@ -17,11 +17,11 @@ The /Patient/{ID}/$everything endpoint lets you retrieve all resources about a p
 This is a synchronous download. `/Patient/{ID}/$everything` doesn't create a job that needs to be monitored or data files to download. The response body will contain the bundle. This is how it differs from a Group $export operation.
 
 
-**Note:** A Patient record must already exist in the DPC database to complete your request. However, the patient does not need to belong to a group [link to Create a patient Group Resource under Attestation].
+**Note:** A Patient record must already exist in the DPC database to complete your request. However, the patient does not need to belong to [a group]({{ "/api-documentation/attribution/attestation#create-a-patient-group-resource" | relative_url }}).
 
 ## Find a patient’s DPC ID
 
-If you only have the patient’s Medicare Beneficiary Identifier (MBI) you can retrieve the DPC internal ID by first making a GET request for that specific patient [link to section on "Upload patients" page]. The UUID is returned in that response.
+If you only have the patient’s Medicare Beneficiary Identifier (MBI) you can retrieve the DPC internal ID by first [making a GET request for that specific patient]({{ "/api-documentation/attribution/upload-patients/add-view-list-patients#list-a-specific-patient" | relative_url }}). The UUID is returned in that response.
 
 Learn more about the HL7 FHIR Specification for:
 
@@ -40,7 +40,7 @@ This operation will return all data for the specified patient since the selected
 If the request was successful, a `200 Success` response code will be returned and the response will not include a Content-Location header. Instead, it contains the data in the body of the response.
 
 {% capture snippet %}
-GET /api/v1/Patient/{PATIENT_ID}/$everything?_since=2020-02-13T08:00:00.000-05:00
+GET /api/v1/Patient/{PATIENT_ID}/$everything?_since=2021-05-13T08:00:00.000-05:00
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" %}
 

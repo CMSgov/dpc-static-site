@@ -78,6 +78,7 @@ The `GET` `/Patient` operation lets you retrieve a bundle of Patient Resources.
 {% capture snippet %}
 GET /api/v1/Patient
 {% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" %}
 
 **Example cURL command**
 {% capture snippet %}
@@ -95,6 +96,7 @@ The GET `/Patient` operation supports FHIR search parameters `_count` (page size
 {% capture snippet %}
 GET /api/v1/Patient?_count={PAGE_SIZE}&_offset={OFFSET}
 {% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" %}
 
 **Example cURL command**
 
@@ -113,6 +115,15 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Patient?_count=100&_offset=0 \
 {
   "resourceType": "Bundle",
   "type": "searchset",
+  "total": 100,
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "995a1c0f-b6bc-4d16-b6b0-b8a6597c6e1d"
+      }
+    }
+  ]
 }
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="json" %}

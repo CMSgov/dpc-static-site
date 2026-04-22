@@ -12,7 +12,7 @@ The Beneficiary FHIR Data Server (BFD) maintains a list of fictitious patients t
 
 <a class="usa-button" href="{{ "/assets/downloads/patient_bundle.json" | relative_url }}">Download sample patients</a>
 
-Minimum patient requirements
+**Minimum patient requirements**
 
 Include the following to avoid a `422 - Unprocessable Entity` error.
 
@@ -30,13 +30,13 @@ Include the following to avoid a `422 - Unprocessable Entity` error.
 ## Add a patient bundle
 The `$submit` operation lets you upload a bundle of patients for registration in a single batch using the `/patient` endpoint.
 
-Example to add multiple patient request
+**Example to add multiple patient request**
 {% capture snippet %}
 POST /api/v1/Patient/$submit
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" %}
 
-Example cURL command
+**Example cURL command**
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Patient/\$submit \
      -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -45,4 +45,4 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Patient/\$submit \
      -X POST \
      -d @patient_bundle.json
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}

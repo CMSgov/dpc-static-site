@@ -12,14 +12,14 @@ How to view, delete, and modify existing credentials.
 
 ## Renew expired tokens 
 
-Rotate (renew) credentials before they expire every year. You have the option to create a new token via the API (link to “Create additional client tokens” on the Manage Credentials page) or in the DPC Sandbox on the Manage Credentials page.
+Rotate (renew) credentials before they expire every year. You have the option to [create a new token via the API](#create-additional-client-tokens) or in the DPC Sandbox on the Manage Credentials page.
 
-The expiration will appear as `"expiresAt": "2020-11-04T11:49:55.095-05:00"` in your token list [link to List all client tokens on the Manage Credentials page]
+The expiration will appear as `"expiresAt": "2020-11-04T11:49:55.095-05:00"` in your [token list](#list-all-client-tokens).
 
 ## Create additional client tokens
 Client tokens expire after one year. We recommend you generate a new client token via the API as part of your ongoing maintenance.
 
-1. Use this method [Client tokens #2 on Get a Bearer Token page]. 
+1. Use [the access token method]({{ "/api-documentation/get-access-token#2-create-an-access-token" | relative_url }}).
 2. Make a `POST` request to the `/Token` endpoint.
 
 The `/Token` endpoint accepts two (optional) query parameters: 
@@ -41,7 +41,7 @@ curl -d '' -v https://sandbox.dpc.cms.gov/api/v1/Token?label={TOKEN_LABEL}&expir
     -H 'Content-Type: application/json' \
     -X POST
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
 **Example API response**
 {% capture snippet %}
@@ -51,7 +51,7 @@ curl -d '' -v https://sandbox.dpc.cms.gov/api/v1/Token?label={TOKEN_LABEL}&expir
   "label": "Token for organization 46ac7ad6-7487-4dd0-baa0-6e2c8cae76a0.",
   "createdAt": "2019-11-04T11:49:55.126-05:00",
   "expiresAt": "2020-11-04T11:49:55.095-05:00",
-  "token:": "{CLIENT_TOKEN}"
+  "token": "{CLIENT_TOKEN}"
 }
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="json" %}
@@ -75,7 +75,7 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Token \
     -H 'Content-Type: application/json' \
     -X GET
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
 **API response**
 {% capture snippet %}
@@ -96,7 +96,7 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Token \
       "label": "Token for organization 46ac7ad6-7487-4dd0-baa0-6e2c8cae76a0.",
       "createdAt": "2019-11-04T11:50:06.101-05:00",
       "expiresAt": "2020-11-04T11:50:06.096-05:00"
-    },
+    }
   ]
 }
 
@@ -121,7 +121,7 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Token/{TOKEN_ID} \
     -H 'Content-Type: application/json' \
     -X DELETE
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
 ## List all public keys
 
@@ -142,7 +142,7 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Key \
     -H 'Content-Type: application/json' \
     -X GET
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
 **Example API response**
 
@@ -178,11 +178,11 @@ GET /api/v1/Key/{KEY_ID}
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{KEY_ID} \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'Accept: application/json' \    
+    -H 'Accept: application/json' \
     -H 'Content-Type: application/json' \
     -X GET
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
 **Example API response**
 
@@ -216,7 +216,7 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{KEY_ID} \
      -H 'Content-Type: application/json' \
      -X DELETE
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
 **Example API response**
 

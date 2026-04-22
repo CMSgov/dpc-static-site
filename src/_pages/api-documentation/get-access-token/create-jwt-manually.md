@@ -1,6 +1,6 @@
 ---
 layout: api-docs
-page_title: "Create a Bearer Token Manually"
+page_title: "Create a JWT Manually"
 seo_title: ""
 description: ""
 in-page-nav: true
@@ -8,7 +8,7 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-Review these steps if you’d prefer to create a bearer token manually without using the [JWT Tool](/jwt-tool)
+Review these steps if you’d prefer to create a JWT manually without using the [JWT Tool]({{ "/jwt-tool.html" | relative_url }}).
 
 **Example decoded header**
 {% capture snippet %}
@@ -26,7 +26,7 @@ Review these steps if you’d prefer to create a bearer token manually without u
 
 **Example decoded payload**
 
-The `PUBLIC_KEY_ID` shown in the example is the one you generated while setting up DPC sandbox credentials. [link to “Generate a verified public key signature”] 
+The `PUBLIC_KEY_ID` shown in the example is the one you generated while setting up DPC sandbox credentials. See [Create a public key]({{ "/api-documentation/get-sandbox-credentials#3-create-a-public-key" | relative_url }}).
 
 {% capture snippet %}
 {
@@ -36,10 +36,9 @@ The `PUBLIC_KEY_ID` shown in the example is the one you generated while setting 
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="json" %}
 
-## 2. Validate a JSON web token for DPC
+## Validate your JWT
 
 The `/Token/validate` endpoint lets you submit your Signed JWT for validation.
-
 
 **Validate request**
 {% capture snippet %}
@@ -55,7 +54,7 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Token/validate \
      -X POST \
      -d "{SIGNED_JWT}"
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
 **Response**
 

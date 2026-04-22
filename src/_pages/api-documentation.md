@@ -25,12 +25,12 @@ This documentation shows you how to connect to synthetic data in the <a href="ht
     <div class="usa-alert usa-alert--info usa-alert--slim margin-top-2">
       <div class="usa-alert__body">
         <p class="usa-alert__text">
-          DPC also offers a <a href="{{ '/dpc-data/postman-collection' }}">Postman collection</a> with sample requests to public endpoints.
+          DPC also offers a <a href="{{ '/api-documentation/postman-collection' | relative_url }}">Postman collection</a> with sample requests to public endpoints.
         </p>
       </div>
     </div>
     <ol style="margin-top: 1rem;">
-      <li>Get an  <a href="{{ '/api-documentation/get-bearer-token' | relative_url }}">access token</a>.</li>
+      <li>Get an <a href="{{ '/api-documentation/get-access-token' | relative_url }}">access token</a>.</li>
       <li>Complete <a href="{{ '/api-documentation/attribution' | relative_url }}">attribution</a> by creating patient rosters.</li>
       <li>Initiate a job to <a href="{{ '/api-documentation/export-data' | relative_url }}">export data</a>. </li>
     </ol>

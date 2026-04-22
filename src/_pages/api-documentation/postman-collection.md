@@ -14,15 +14,15 @@ DPC provides a collection of example requests to public DPC endpoints, the sandb
 
 ## Setting up the Postman collection
 
-1. Log into the DPC Sandbox and copy the `key_id`<sup><a href="#fn1">*</a></sup> you created when setting up your credentials \[Get DPC Sandbox Creds\].   
+1. Log into the DPC Sandbox and copy the `key_id`<sup><a href="#fn1">*</a></sup> you created when setting up your [DPC Sandbox credentials]({{ '/api-documentation/get-sandbox-credentials' | relative_url }}).
 2. Open the DPC collection in Postman  
 3. Paste the `key_id` into the corresponding variable in Postman  
 4. Add the following values to your vault:
-   - **client_token:** Your client token \[link to this section of Get bearer token page\] is generated through the DPC Sandbox. Be sure to save a copy of your token in a safe place.  
-   - **Private Key:** If you do not already have your public and private keys \[link to this section of Get bearer token page\], generate your public/private key pair through the DPC Sandbox.  
+   - **client_token:** Your [client token]({{ '/api-documentation/get-sandbox-credentials#2-generate-a-client-token-in-the-sandbox-site' | relative_url }}) is generated through the DPC Sandbox. Be sure to save a copy of your token in a safe place.  
+   - **Private Key:** If you do not already have your [public and private keys]({{ '/api-documentation/get-sandbox-credentials#3-create-a-public-key' | relative_url }}), generate your public/private key pair through the DPC Sandbox.  
        
 5. Within your vault, go to settings and turn on "Enable support in scripts."
 
-The JWT and a fresh bearer token are automatically generated before each request vs. having to manually refresh the bearer token every 5 minutes as described in [Get a bearer token](?tab=t.qi7ma652275p).
+The JWT and a fresh access token are automatically generated before each request vs. having to manually refresh the access token every 5 minutes as described in [Get an access token]({{ '/api-documentation/get-access-token' | relative_url }}).
 
-<sup id="fn1">*</sup>This is the DPC ID of your public key, which is returned to you when the public key is uploaded to the DPC Sandbox \[link to upload public key on Get DPC Sandbox Creds\]. You need this to generate a JSON Web Token (JWT) which will be exchanged for a bearer token.
+<sup id="fn1">*</sup>This is the DPC ID of your public key, which is returned to you when the public key is [uploaded to the DPC Sandbox]({{ '/api-documentation/get-sandbox-credentials#4-upload-your-public-key-in-the-dpc-sandbox-site' | relative_url }}). You need this to generate a JSON Web Token (JWT) which will be exchanged for an access token.

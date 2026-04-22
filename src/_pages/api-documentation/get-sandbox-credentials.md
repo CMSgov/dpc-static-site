@@ -29,7 +29,7 @@ Client tokens are issued to your organization and authenticate your access to th
    <li>Copy or download the token displayed on screen.
       {% include alert.html variant="warning" text="This is the only time this client token will be visible. You’ll want to save it for later use." slim="true" classNames="measure-6" %}
       <ul>
-         <li>Make sure to renew your token every year. [link to Renew expired tokens under Manage Credentials]</li>
+         <li>Make sure to <a href="{{ '/api-documentation/get-access-token/manage-credentials#renew-expired-tokens' | relative_url }}">renew your token</a> every year.</li>
          <li>When using production data, you’ll need to create a token for every organization that works with the API.</li>
       </ul>
    </li>
@@ -38,11 +38,11 @@ Client tokens are issued to your organization and authenticate your access to th
 
 ## 3. Create a public key
 
-{% include alert.html variant="info" text="You’ll need your public key ID to get a bearer token." slim="true" classNames="measure-6" %}
+{% include alert.html variant="info" text="You’ll need your public key ID to get an access token." slim="true" classNames="measure-6" %}
 
 ### Why we require a public key
 
-Public keys verify that bearer token requests come from an authorized application. They ensure the private key used to sign your JSON Web Token [link to Generate a JSON Web Token on the Get a Bearer Token page] (JWT) matches a public key previously uploaded to DPC. 
+Public keys verify that access token requests come from an authorized application. They ensure the private key used to sign your [JSON Web Token]({{ '/api-documentation/get-access-token#1-generate-a-json-web-token' | relative_url }}) (JWT) matches a public key previously uploaded to DPC. 
 
 {% include alert.html variant="warning" text="Store the files you’ll create in the following steps in one folder. These include a private.pem, public.pem, snippet.txt, snippet.txt.sig, and signature.sig file." slim="true" classNames="measure-6" %}
 
@@ -63,7 +63,7 @@ Select **copy** on the DPC Sandbox site or copy the command invocation here:
 {% capture snippet %}openssl genrsa -out private.pem 4096{% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-#### 2. Generate a private key
+#### 2. Generate a public key
 
 Select **copy** on the DPC Sandbox site or copy the command invocation here:
 
@@ -91,11 +91,11 @@ Select **copy** on the DPC Sandbox site or copy the command invocation below.
 
 1. Go to the **Upload Your Public Key** section on the **How to Generate a Public Key** page.
 2. Create a label for your public key. Make the label easy to recognize.
-3. Paste the `public.pem` file you created in step 3.2 into the “Public Key” field.
+3. Paste the `public.pem` file you created in step 2 into the “Public Key” field.
 4. Include “BEGIN PUBLIC KEY” and “END PUBLIC KEY” before and after your key.  
 5. Paste the contents of the `signature.sig` file you created in step 4 into the “Signature Snippet” field.
 6. Select **Add key**.
 
 ## What's Next?
 
-[Get a bearer token](/api-documentation/get-bearer-token)
+[Get an access token](/api-documentation/get-access-token)
