@@ -58,4 +58,4 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Token/validate \
 
 **Response**
 
-The API will return an `HTTP 200` if the JWT is valid. If not it will return an error message.
+The API will return `HTTP 200` if the JWT is valid. If not it will return an error message.

@@ -20,7 +20,7 @@ Use the following tool to create a JSON Web Token (JWT). A JWT authenticates you
 - A registered Client Token ([Generate a client token]({{ "/api-documentation/get-sandbox-credentials#2-generate-a-client-token-in-the-sandbox-site" | relative_url }}))
 - Your Public Key ID ([Show a specific public key]({{ "/api-documentation/get-access-token/manage-credentials#show-a-specific-public-key" | relative_url }}))
 
-<a class="usa-button" href="{{ "/jwt-tool.html" | relative_url }}">JWT Creation Tool</a>
+<a class="usa-button" href="{{ "/jwt-tool.html" | relative_url }}" target="_blank">JWT Creation Tool</a>
 
 ## 2. Create an Access Token
 An access token makes sure every request or interaction with the API can be traced back to the person who created the client token.
@@ -31,7 +31,7 @@ An access token makes sure every request or interaction with the API can be trac
 {% capture snippet %}
 Authorization: Bearer {ACCESS_TOKEN}
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="http" %}
+{% include copy_snippet.html code=snippet language="shell" %}
 
 To create an `ACCESS_TOKEN`, submit a valid JWT to the `/Token/auth` endpoint via a `POST` request. The `POST` request body’s Content Type must be `application/x-www-form-urlencoded`. The body of the request must be URL encoded.
 
@@ -39,7 +39,7 @@ To create an `ACCESS_TOKEN`, submit a valid JWT to the `/Token/auth` endpoint vi
 {% capture snippet %}
 POST /api/v1/Token/auth
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="http" %}
+{% include copy_snippet.html code=snippet language="shell" %}
 
 **Example cURL command**
 {% capture snippet %}
@@ -63,7 +63,7 @@ The endpoint response is a JSON object which contains the access token, the life
 
 {% capture snippet %}
 {
- "access_token": "{access_token value}",
+ "access_token": "{ACCESS_TOKEN}",
  "token_type": "bearer",
  "expires_in": 300,
  "scope": "system/*.*"

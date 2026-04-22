@@ -31,7 +31,7 @@ The `/Token` endpoint accepts two (optional) query parameters:
 {% capture snippet %}
 POST /api/v1/Token
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="http" %}
+{% include copy_snippet.html code=snippet language="shell" %}
 
 **Example cURL command**
 {% capture snippet %}
@@ -65,7 +65,7 @@ Make a `GET` request to the `/Token` endpoint to list all the client tokens regi
 {% capture snippet %}
 GET /api/v1/Token
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="http" %}
+{% include copy_snippet.html code=snippet language="shell" %}
 
 **Example cURL command**
 {% capture snippet %}
@@ -111,7 +111,7 @@ You may want to delete a client token if a Health IT implementer no longer exist
 {% capture snippet %}
 DELETE /api/v1/Token/{TOKEN_ID}
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="http" %}
+{% include copy_snippet.html code=snippet language="shell" %}
 
 **Example cURL command**
 {% capture snippet %}
@@ -132,7 +132,7 @@ Make a `GET` request to the `/Key` endpoint to list all the public keys register
 {% capture snippet %}
 GET /api/v1/Key
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="http" %}
+{% include copy_snippet.html code=snippet language="shell" %}
 
 **Example cURL command**
 {% capture snippet %}
@@ -164,19 +164,19 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Key \
 
 ## Show a specific public key
 
-Make a `GET` request to the `/Key/{KEY_ID}`. 
+Make a `GET` request to the `/Key/{PUBLIC_KEY_ID}`. 
 
 **Example request to show a specific public key**
 
 {% capture snippet %}
-GET /api/v1/Key/{KEY_ID}
+GET /api/v1/Key/{PUBLIC_KEY_ID}
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="http" %}
+{% include copy_snippet.html code=snippet language="shell" %}
 
 **Example cURL command**
 
 {% capture snippet %}
-curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{KEY_ID} \
+curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{PUBLIC_KEY_ID} \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'Accept: application/json' \
     -H 'Content-Type: application/json' \
@@ -198,19 +198,19 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{KEY_ID} \
 
 ## Delete public keys
 
-Public keys can be removed by sending a `DELETE` request to the `/Key/{KEY_ID}` endpoint, which is returned either at creation, or as the result of listing the public keys.
+Public keys can be removed by sending a `DELETE` request to the `/Key/{PUBLIC_KEY_ID}` endpoint, which is returned either at creation, or as the result of listing the public keys.
 
 **Example request to delete a public key**
 
 {% capture snippet %}
-DELETE /api/v1/Key/{KEY_ID}
+DELETE /api/v1/Key/{PUBLIC_KEY_ID}
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="http" %}
+{% include copy_snippet.html code=snippet language="shell" %}
 
 **Example cURL command**
 
 {% capture snippet %}
-curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{KEY_ID} \
+curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{PUBLIC_KEY_ID} \
      -H 'Authorization: Bearer {ACCESS_TOKEN}' \
      -H 'Accept: application/json' \
      -H 'Content-Type: application/json' \
@@ -226,4 +226,4 @@ On success, the API returns `HTTP 200` with an empty body.
 HTTP/2 200
 content-length: 0          
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="http" %}
+{% include copy_snippet.html code=snippet language="shell" %}
