@@ -16,11 +16,12 @@ The /Patient/{id}/$everything endpoint lets you retrieve all resources about a p
 
 This is a synchronous download. `/Patient/{id}/$everything` doesn't create a job that needs to be monitored or data files to download. The response body will contain the bundle. This is how it differs from a Group $export operation.
 
-If you only have the patient"s Medicare Beneficiary Identifier (MBI) you can retrieve the DPC internal ID by first making a GET request for that <a href=”{{ "/api-documentation/attribution/upload-patients" | relative_url }}#list-a-specific-patient”>specific patient</a> as the UUID is returned in that response.
 
-A Patient record must already exist in the DPC database to successfully complete your `/Patient/{id}/$everything` request; however, the patient doesn't need to belong to a group.
+**Note:** A Patient record must already exist in the DPC database to complete your request. However, the patient does not need to belong to a group [link to Create a patient Group Resource under Attestation].
 
-This request requires an X-Provenance header for attestation. See the <a href=”{{ "/api-documentation/attribution/attestation" | relative_url }}#example-attestation-for-x-provenance-header”>example attestation for X-Provenance header</a>.
+## Find a patient’s DPC ID
+
+If you only have the patient’s Medicare Beneficiary Identifier (MBI) you can retrieve the DPC internal ID by first making a GET request for that specific patient [link to section on "Upload patients" page]. The UUID is returned in that response.
 
 Learn more about the HL7 FHIR Specification for:
 
@@ -30,18 +31,20 @@ Learn more about the HL7 FHIR Specification for:
 
 ## Requesting data using `_since` with the /Patient endpoint
 
-Request data synchronously for an individual patient using the `_since` parameter within the `/Patient/{id}/$everything` endpoint. 
+Request data synchronously for an individual patient using the `_since` parameter within the `/Patient/{ID}/$everything` endpoint. 
 
-This operation will return all data for the specified patient since the selected date: May 13, 2021. Notice that we are seeking data from the `/Patient/{id}/$everything` endpoint. This is a synchronous request for an individual patient referenced by the internal ID (UUID) and would behave differently if it was made from the /Group endpoint as data is returned immediately.
+This operation will return all data for the specified patient since the selected date: May 13, 2021. Notice that we are seeking data from the `/Patient/{ID}/$everything` endpoint. This is a synchronous request for an individual patient referenced by the internal ID (UUID) and would behave differently if it was made from the /Group endpoint as data is returned immediately.
 
-If the request was successful, a 200 Success response code will be returned and the response will not include a Content-Location header. Instead, it contains the data in the body of the response.
+### Successful request
+
+If the request was successful, a `200 Success` response code will be returned and the response will not include a Content-Location header. Instead, it contains the data in the body of the response.
 
 {% capture snippet %}
 GET /api/v1/Patient/{PATIENT_ID}/$everything?_since=2020-02-13T08:00:00.000-05:00
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" %}
 
-### Request headers
+**Request headers**
 
 {% capture snippet %}
 Authorization: Bearer {ACCESS_TOKEN}
@@ -50,7 +53,7 @@ X-Provenance: {PROVENANCE_JSON}
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" %}
 
-### cURL command using the _since parameter within the /Patient endpoint
+**Example cURL command**
 
 {% capture snippet %}
 curl -X GET 'https://sandbox.dpc.cms.gov/api/v1/Patient/{PATIENT_ID}/$everything?_since=2021-05-13T08:00:00.000-05:00' \
@@ -60,7 +63,7 @@ curl -X GET 'https://sandbox.dpc.cms.gov/api/v1/Patient/{PATIENT_ID}/$everything
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-### Response example: successful request
+**Response example**
 
 {% capture snippet %}
 200 Success

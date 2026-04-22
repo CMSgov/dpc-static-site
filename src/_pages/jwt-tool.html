@@ -176,6 +176,8 @@ show-side-nav: false
     async function generateJWT(form) {
       const formData = new FormData(form);
 
+      console.log("Form data:", Object.fromEntries(formData.entries()));
+
       const clientToken = formData.get("client-token").trim();
       const privateKeyPem = formData.get("private-key").trim();
       const env = formData.get("environment").trim();

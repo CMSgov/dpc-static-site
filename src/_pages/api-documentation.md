@@ -4,23 +4,6 @@ page_title: "API Documentation"
 seo_title: ""
 description: ""
 in-page-nav: true
-sidebar-links: 
-  - name: API Documentation
-    url: /api-documentation.html
-    
-    children:
-    - name: Authorization
-      url: /authorization
-      
-    - name: Attestation & Attribution
-      url: /attestation-attribution
-
-    - name: Export Data
-      url: /export-data
-
-    - name: Postman Collection
-      url: /postman-collection
-
 ---
 
 # {{ page.page_title }}
@@ -32,19 +15,27 @@ This documentation shows you how to connect to synthetic data in the <a href="ht
 <ol class="usa-process-list margin-top-1 docs-process-list">
   <li class="usa-process-list__item">
     <p class="usa-process-list__heading">Sign up for the DPC Sandbox</p>
-    <p>Request access to the DPC Sandbox. Follow the steps to get <a href="{{ '/api-documentation/get-sandbox-credentials' | relative_url }}">DPC Sandbox credentials</a></p>
+    <ol style="margin-top: 1rem;">
+      <li>Request access to the DPC Sandbox. </li>
+      <li>Follow the steps to get <a href="{{ '/api-documentation/get-sandbox-credentials' | relative_url }}">DPC Sandbox credentials</a></li>
+    </ol>
   </li>
   <li class="usa-process-list__item docs-final-item">
-    <p class="usa-process-list__heading">Try the API </p>
-    <ol>    
-      <li>Get an  <a href="{{ '/api-documentation/get-an-access-token' | relative_url }}">access token</a>.</li>
+    <p class="usa-process-list__heading">Use the sandbox</p>
+    <div class="usa-alert usa-alert--info usa-alert--slim margin-top-2">
+      <div class="usa-alert__body">
+        <p class="usa-alert__text">
+          DPC also offers a <a href="{{ '/dpc-data/postman-collection' }}">Postman collection</a> with sample requests to public endpoints.
+        </p>
+      </div>
+    </div>
+    <ol style="margin-top: 1rem;">
+      <li>Get an  <a href="{{ '/api-documentation/get-bearer-token' | relative_url }}">access token</a>.</li>
       <li>Complete <a href="{{ '/api-documentation/attribution' | relative_url }}">attribution</a> by creating patient rosters.</li>
       <li>Initiate a job to <a href="{{ '/api-documentation/export-data' | relative_url }}">export data</a>. </li>
     </ol>
   </li>
 </ol>
-
-DPC also offers a Postman collection with sample requests to public endpoints.
 
 ## Requirements
 

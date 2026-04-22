@@ -1,119 +1,101 @@
 ---
 layout: api-docs
-page_title: "Get DPC sandbox credentials"
+page_title: "Get Sandbox Credentials"
 seo_title: ""
 description: ""
 in-page-nav: true
-sidebar-links: 
-  - name: API Documentation
-    url: /api-documentation.html
-    
-    children:
-    - name: Authorization
-      url: /authorization
-      
-    - name: Attestation & Attribution
-      url: /attestation-attribution
-
-    - name: Export Data
-      url: /export-data
-
-    - name: Postman Collection
-      url: /postman-collection
-
 ---
 
 # {{ page.page_title }}
 
-Welcome to the Data at the Point of Care (DPC) pilot API program! This documentation covers using the API in the sandbox environment with synthetic data.
+## 1. Request access to the DPC Sandbox
 
-## Getting started
+You’ll enter info about you and your organization and create a password. Then you’ll receive an email with a confirmation link. It may take a few minutes to receive this email.
 
-<ol class="usa-process-list margin-top-1 docs-process-list">
-  <li class="usa-process-list__item">
-    <p class="usa-process-list__heading">Request access to the DPC sandbox</p>
-    <p>
-    Enter basic contact information and create a password. You’ll receive an email with a confirmation link within a few minutes.
-    </p>
-    <a href="https://sandbox.dpc.cms.gov/users/sign_in"
-      class="usa-button usa-button--accent-warm margin-top-1"
-      type="button">
-      Visit the Sandbox {% include sprite.html icon="launch" size="2" %}
-    </a>
-  </li>
-  <li class="usa-process-list__item docs-final-item">
-    <p class="usa-process-list__heading">Create Public/Private Keys</p>
-    <p>
-    Public keys verify that access token requests come from an authorized application. They make sure the private key used to sign your <a href="{{ "/api-documentation/get-an-access-token" | relative_url }}">JSON Web Token (JWT)</a> matches a public key previously uploaded to DPC. 
-    </p>
-  </li>
-</ol>
+<a href="https://sandbox.dpc.cms.gov/users/sign_in"
+  class="usa-button usa-button--accent-warm margin-top-1"
+  type="button">
+  Visit the Sandbox {% include sprite.html icon="launch" size="2" %}
+</a>
 
-{% include alert.html variant="info" heading="Note" text="You need to store all files in this section (e.g., private.pem, public.pem, snippet.txt, snippet.txt.sig, signature.sig files) in one folder." %}
-
-### Upload your first public key
-
-<ol>
-   <li>Generate a private key using this command invocation:
-      {% capture snippet %}openssl genrsa -out private.pem 4096{% endcapture %}
-      {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
-   </li>
-   <li>Generate a public key:
-      {% capture snippet %}openssl rsa -in private.pem -outform PEM -pubout -out public.pem{% endcapture %}
-      {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
-   </li>
-   <li>Save this key. You will enter it into the DPC Sandbox site.</li>
-</ol>
-
-### Create a public key signature
-
-<ol>
-   <li>Download the snippet.txt file from the DPC Sandbox, or by using this command invocation:
-      {% capture snippet %}curl -JLO https://raw.githubusercontent.com/CMSgov/dpc-app/main/dpc-web/public/snippet.txt{% endcapture %}
-      {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
-   </li>
-   <li>Create your public key snippet:
-      {% capture snippet %}openssl dgst -sign private.pem -sha256 -out snippet.txt.sig snippet.txt{% endcapture %}
-      {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
-   </li>
-   <li>Verify your public key snippet:
-      {% capture snippet %}openssl dgst -verify public.pem -sha256 -signature snippet.txt.sig snippet.txt{% endcapture %}
-      {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
-
-      <p>Response must say <code>Verified OK</code>. If you receive an <code>Unable to verify your public key</code> message, download the snippet.txt file again and re-generate your public key and signature pair.</p>
-   </li>
-   <li>Generate a verified public key signature:
-      {% capture snippet %}openssl base64 -in snippet.txt.sig -out signature.sig{% endcapture %}
-      {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
-   </li>
-</ol>
-
-  
-## 3. Log into the DPC Sandbox
-
-You’ll complete the remaining steps on the DPC Sandbox site.
-
-## 4. Generate a client token 
+## 2. Generate a client token in the Sandbox site
 
 Client tokens are issued to your organization and authenticate your access to the API.
 
-1. Select **New token** in the DPC Sandbox.  
-2. Label your token with a recognizable name that includes the environment you’re requesting access for.  
-3. Select **Create token**.
+<ol>
+   <li>Log into the DPC Sandbox.</li>
+   <li>Select <b>New Token</b>.</li>
+   <li>Label the token with a recognizable name. Then select <b>Create token</b>.</li>
+   <li>Copy or download the token displayed on screen.
+      {% include alert.html variant="warning" text="This is the only time this client token will be visible. You’ll want to save it for later use." slim="true" classNames="measure-6" %}
+      <ul>
+         <li>Make sure to renew your token every year. [link to Renew expired tokens under Manage Credentials]</li>
+         <li>When using production data, you’ll need to create a token for every organization that works with the API.</li>
+      </ul>
+   </li>
+   <li>Choose <b>Back to portal</b> to create your public and private keys.</li>
+</ol>
 
-You need to create a token for every provider organization that works with the API.
+## 3. Create a public key
 
-{% include alert.html variant="warning" heading="Important" text="This is the only time this client token will be visible. You’ll want to save it for later use." %}
+{% include alert.html variant="info" text="You’ll need your public key ID to get a bearer token." slim="true" classNames="measure-6" %}
 
-Make sure to renew your token every year.
+### Why we require a public key
 
-## 5. Enter your public key 
+Public keys verify that bearer token requests come from an authorized application. They ensure the private key used to sign your JSON Web Token [link to Generate a JSON Web Token on the Get a Bearer Token page] (JWT) matches a public key previously uploaded to DPC. 
 
-Paste the entire contents of the public key you created earlier (`public.pem`) into the **Public key** field. Include the “BEGIN PUBLIC KEY” and “END PUBLIC KEY” tags before and after your key.    
+{% include alert.html variant="warning" text="Store the files you’ll create in the following steps in one folder. These include a private.pem, public.pem, snippet.txt, snippet.txt.sig, and signature.sig file." slim="true" classNames="measure-6" %}
 
-{% include alert.html variant="info" heading="Note" text="You’ll need your public key ID to get an access token." %}
+### Steps to creating a public key
 
-## 6. Enter your public key signature 
+1. Select “Add key” from the DPC Sandbox
+2. Follow the sequential steps on screen to:
+   1. Generate a **private** key
+   1. Generate a **public** key
+   1. Create (and verify) a public key snippet
+   1. Generate a verified public key signature 
 
-1. Paste the contents of your verified public key signature (signature.sig file) into the **Public key signature** field.  
-2. Click **Add Key**.
+
+#### 1. Generate a private key
+
+Select **copy** on the DPC Sandbox site or copy the command invocation here:
+
+{% capture snippet %}openssl genrsa -out private.pem 4096{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
+
+#### 2. Generate a private key
+
+Select **copy** on the DPC Sandbox site or copy the command invocation here:
+
+{% capture snippet %}openssl rsa -in private.pem -outform PEM -pubout -out public.pem{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
+
+#### 3a. Download the snippet.txt file
+
+{% capture snippet %}curl -JLO https://raw.githubusercontent.com/CMSgov/dpc-app/main/dpc-web/public/snippet.txt{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
+
+#### 3b. Create your public key snippet
+
+{% capture snippet %}openssl dgst -sign private.pem -sha256 -out snippet.txt.sig snippet.txt{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
+
+#### 4. Generate a verified public key signature  
+
+Select **copy** on the DPC Sandbox site or copy the command invocation below.
+
+{% capture snippet %}openssl base64 -in snippet.txt.sig -out signature.sig{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" can_copy=true %}
+
+## 4. Upload your public key in the DPC Sandbox site
+
+1. Go to the **Upload Your Public Key** section on the **How to Generate a Public Key** page.
+2. Create a label for your public key. Make the label easy to recognize.
+3. Paste the `public.pem` file you created in step 3.2 into the “Public Key” field.
+4. Include “BEGIN PUBLIC KEY” and “END PUBLIC KEY” before and after your key.  
+5. Paste the contents of the `signature.sig` file you created in step 4 into the “Signature Snippet” field.
+6. Select **Add key**.
+
+## What's Next?
+
+[Get a bearer token](/api-documentation/get-bearer-token)

@@ -10,9 +10,6 @@
   children:
     - name: Get Started
       url: /api-documentation.html
-
-    - name: Authorization
-      url: /api-documentation/authorization.html
       
     - name: Attestation & Attribution
       url: /api-documentation/attestation-attribution.html

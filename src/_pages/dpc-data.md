@@ -4,13 +4,6 @@ page_title: "DPC Data"
 seo_title: ""
 description: ""
 in-page-nav: true
-sidebar-links: 
-  - name: DPC Data
-    url: /dpc-data.html
-    
-    children:
-    - name: Export Data
-      url: /export-data
 ---
 
 # {{ page.page_title }}
