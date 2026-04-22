@@ -8,13 +8,13 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-The /Patient/{id}/$everything endpoint lets you retrieve all resources about a patient using their DPC internal ID (UUID), represented as {id} in the request. They"ll receive a bundle with 7 years" historical data including:
+The /Patient/{ID}/$everything endpoint lets you retrieve all resources about a patient using their DPC internal ID (UUID), represented as {id} in the request. They"ll receive a bundle with 7 years" historical data including:
 
 - Patient  
 - Coverage  
 - ExplanationOfBenefit 
 
-This is a synchronous download. `/Patient/{id}/$everything` doesn't create a job that needs to be monitored or data files to download. The response body will contain the bundle. This is how it differs from a Group $export operation.
+This is a synchronous download. `/Patient/{ID}/$everything` doesn't create a job that needs to be monitored or data files to download. The response body will contain the bundle. This is how it differs from a Group $export operation.
 
 
 **Note:** A Patient record must already exist in the DPC database to complete your request. However, the patient does not need to belong to a group [link to Create a patient Group Resource under Attestation].

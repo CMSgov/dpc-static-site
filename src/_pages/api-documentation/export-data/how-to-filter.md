@@ -66,9 +66,9 @@ You can do this either by replacing the `+` with `%2B` (e.g., 2020-01-23T04:00:0
 
 **TODO: Add screenshot of Postman context menu with "EncodeURIComponent" option highlighted.**
 
-The `Group/{id}/all/$export` requires an access token as well as Accept and Prefer headers.  
+The `Group/{ID}/all/$export` requires an access token as well as Accept and Prefer headers.  
 
-The Prefer header is **NOT** required for `/Patient/{id}/$everything`, but it DOES require an X-Provenance header whereas the `/Group/{id}/$export` endpoint does not. The format is defined by the FHIR Bulk Data Export spec. Consult the [FHIR Datatypes](https://www.hl7.org/fhir/datatypes.html#instant) page for more information.
+The Prefer header is **NOT** required for `/Patient/{ID}/$everything`, but it DOES require an X-Provenance header whereas the `/Group/{ID}/$export` endpoint does not. The format is defined by the FHIR Bulk Data Export spec. Consult the [FHIR Datatypes](https://www.hl7.org/fhir/datatypes.html#instant) page for more information.
 
 
 {% include alert.html variant="warning" heading="Caution" text="Be wary of requesting data from before 02-12-2020" classNames="measure-6" %}

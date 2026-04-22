@@ -70,7 +70,7 @@ GET /api/v1/Token
 **Example cURL command**
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Token \
-    -H 'Authorization: Bearer {access_token}' \
+    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'Accept: application/json' \
     -H 'Content-Type: application/json' \
     -X GET

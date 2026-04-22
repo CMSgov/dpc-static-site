@@ -18,12 +18,12 @@ Include the following to avoid a `422 - Unprocessable Entity` error.
 
 - First and last name
 - Birth date in YYYY-MM-DD
-- Gender*
-- Medicare Beneficiary Identifier (MBI)**
+- Gender<sup><a href="#fn1">*</a></sup>
+- Medicare Beneficiary Identifier (MBI)<sup><a href="#fn2">**</a></sup>
 
-\*DPC uses the Patient.gender property to represent the sex of the patient as maintained on record at CMS. When registering a patient to your organization, you’ll need to submit the Patient.gender property following the corresponding value set. The input provided may be used by DPC to match and validate the patient against CMS records.
+<sup id="fn1">*</sup> DPC uses the `Patient.gender` property to represent the sex of the patient as maintained on record at CMS. When registering a patient to your organization, you’ll need to submit the `Patient.gender` property following the corresponding value set. The input provided may be used by DPC to match and validate the patient against CMS records.
 
-\*\*[Medicare Beneficiary Identifier](https://www.cms.gov/training-education/partner-outreach-resources/new-medicare-card/medical-beneficiary-identifiers-mbis), an 11-character code assigned to all Medicare beneficiaries. 
+<sup id="fn2">**</sup> [Medicare Beneficiary Identifier](https://www.cms.gov/training-education/partner-outreach-resources/new-medicare-card/medical-beneficiary-identifiers-mbis), an 11-character code assigned to all Medicare beneficiaries. 
 
 **Note:** If an existing patient is found with the same MBI, the `/patient` endpoint will return that same patient.
 

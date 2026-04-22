@@ -23,7 +23,7 @@ Specify which of the FHIR resources to download using the `_type` query paramete
 Choose to download data obtained after a certain date by adding the `_since` parameter (e.g., only show data Patient data from January 7, 2027 to the present). 
 
 #### Get all of a patient’s data  
-Use the `/Patient/{id}/$everything` \[link to sub-page\] for 7 years’ historical data including Patient, Coverage, and ExplanationOfBenefit Resources. 
+Use the `/Patient/{ID}/$everything` \[link to sub-page\] for 7 years’ historical data including Patient, Coverage, and ExplanationOfBenefit Resources. 
 
 ## Initiating an export job
 
@@ -77,14 +77,14 @@ Content-Location: https://sandbox.dpc.cms.gov/api/v1/Jobs/{JOB_ID}
 
 You can check the status of your job using the {unique ID of the export job}. This is retrieved from the Content-Location header of the response as shown in the previous section. The status of the job will change from 202 Accepted to 200 OK when the export job is complete and the data is ready to be downloaded.
 
-### Example check status request
+***Example check status request***
 
 {% capture snippet %}
 GET https://sandbox.dpc.cms.gov/api/v1/Jobs/{EXPORT_JOB_ID}
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" %}
 
-### Check status cURL command
+**Example cURL command**
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Jobs/{EXPORT_JOB_ID} \
@@ -92,11 +92,11 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Jobs/{EXPORT_JOB_ID} \
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-### Response
+**Response**
 
 If the request was successful, the status of the job will change from 202 Accepted to 200 OK when the export job is complete and the data is ready to be downloaded.
 
-### Example: Bulk Export Job
+**Example: Bulk Export Job**
 
 {% capture snippet %}
 {
@@ -131,7 +131,7 @@ If the request was successful, the status of the job will change from 202 Accept
 
 Claims data can be found at the URLs within the output field.
 
-The output includes file integrity information in an extension array. It contains https://dpc.cms.gov/checksum (a checksum in the format algorithm:checksum) and https://dpc.cms.gov/file_length (the file length in bytes).
+The output includes file integrity information in an extension array. It contains `https://dpc.cms.gov/checksum` (a checksum in the format algorithm:checksum) and `https://dpc.cms.gov/file_length` (the file length in bytes).
 
 The number 42 in the example data file URLs is the same job ID from the Content-Location header URL when you initiate an export job. If some of the data cannot be exported due to errors, details of the errors can be found at the URLs in the error field. The errors are provided in [NDJSON](https://github.com/ndjson/ndjson-spec) files as FHIR [OperationOutcome](http://hl7.org/fhir/STU3/operationoutcome.html) resources.
 
@@ -141,14 +141,14 @@ To obtain the exported Explanation of Benefit data as NDJSON, make a GET request
 
 The Data endpoint is not a FHIR resource and doesn't require the Accept header to be set to application/fhir+json.
 
-### Example request for NDJSON files
+**Example request for NDJSON files**
 
 {% capture snippet %}
 GET https://sandbox.dpc.cms.gov/api/v1/Data/{FILE_NAME}
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" %}
 
-### Example cURL command
+**Example cURL command**
 
 {% capture snippet %}
 curl https://sandbox.dpc.cms.gov/api/v1/Data/{FILE_NAME} \
@@ -158,7 +158,7 @@ curl https://sandbox.dpc.cms.gov/api/v1/Data/{FILE_NAME} \
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-### Example: Explanation of Benefit Resource
+**Example: Explanation of Benefit Resource**
 
 {% capture snippet %}
 {

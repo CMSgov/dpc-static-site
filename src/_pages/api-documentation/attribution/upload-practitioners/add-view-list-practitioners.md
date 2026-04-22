@@ -16,11 +16,12 @@ The GET `/Practitioner` operation lets you retrieve a [bundle](https://www.hl7.o
 {% capture snippet %}
 GET /api/v1/Practitioner
 {% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" %}
 
 **Example cURL command**
 {% capture snippet %}
 curl -v 'https://sandbox.dpc.cms.gov/api/v1/Practitioner' \
- -H 'Authorization: Bearer {access_token}' \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Accept: application/fhir+json' \
  -X GET
 {% endcapture %}
@@ -39,7 +40,7 @@ GET /api/v1/Practitioner?identifier={PRACTITIONER_NPI}
 **Example cURL command**
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Practitioner?identifier={PRACTITIONER_NPI} \
- -H 'Authorization: Bearer {access_token}' \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Accept: application/fhir+json' \
  -H 'Content-Type: application/fhir+json' \
  -X GET

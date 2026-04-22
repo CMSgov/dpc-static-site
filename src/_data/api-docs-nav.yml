@@ -19,18 +19,20 @@
       url: /api-documentation/attribution.html
       children:
 
-      - name: Attestation
-        url: /api-documentation/attribution/attestation.html
-
       - name: Upload Practitioners
         url: /api-documentation/attribution/upload-practitioners.html
-        children:
 
-        - name: Add, View, and Edit Practitioners
-          url: /api-documentation/attribution/upload-practitioners/add-view-list-practitioners.html
+      - name: Add, View, and Edit Practitioners
+        url: /api-documentation/attribution/upload-practitioners/add-view-list-practitioners.html
 
       - name: Upload Patients
         url: /api-documentation/attribution/upload-patients.html
+
+      - name: Add, View, and Edit Patients
+        url: /api-documentation/attribution/upload-patients/add-view-list-patients.html
+
+      - name: Attestation
+        url: /api-documentation/attribution/attestation.html
 
     - name: Export Data
       url: /api-documentation/export-data.html
