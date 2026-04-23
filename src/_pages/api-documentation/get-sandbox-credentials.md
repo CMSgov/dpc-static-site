@@ -46,7 +46,7 @@ Public keys verify that access token requests come from an authorized applicatio
 
 {% include alert.html variant="warning" text="Store the files you’ll create in the following steps in one folder. These include a private.pem, public.pem, snippet.txt, snippet.txt.sig, and signature.sig file." slim="true" classNames="measure-6" %}
 
-### Steps to creating a public key
+### Steps to create a public key
 
 1. Select “Add key” from the DPC Sandbox
 2. Follow the sequential steps on screen to:
@@ -96,6 +96,6 @@ Select **copy** on the DPC Sandbox site or copy the command invocation below.
 5. Paste the contents of the `signature.sig` file you created in step 4 into the “Signature Snippet” field.
 6. Select **Add key**.
 
-## What's Next?
+## What's next?
 
-[Get an access token](/api-documentation/get-access-token)
+[Get an access token]({{ "/api-documentation/get-access-token" | relative_url }})

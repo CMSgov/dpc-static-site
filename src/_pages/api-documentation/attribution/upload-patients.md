@@ -10,7 +10,7 @@ in-page-nav: true
 
 The Beneficiary FHIR Data Server (BFD) maintains a list of fictitious patients that match synthetic sandbox data.
 
-<a class="usa-button" href="{{ "https://github.com/CMSgov/dpc-app/blob/main/dpc-web/public/patient_bundle.json" | relative_url }}" target="_blank">Download sample patients</a>
+<a class="usa-button" href="https://github.com/CMSgov/dpc-app/blob/main/dpc-web/public/patient_bundle.json" target="_blank">Download sample patients</a>
 
 **Minimum patient requirements**
 
@@ -23,16 +23,16 @@ Include the following to avoid a `422 - Unprocessable Entity` error.
 - Medicare Beneficiary Identifier (MBI)
   - [Medicare Beneficiary Identifier](https://www.cms.gov/training-education/partner-outreach-resources/new-medicare-card/medical-beneficiary-identifiers-mbis), an 11-character code assigned to all Medicare beneficiaries. 
 
-**Note:** If an existing patient is found with the same MBI, the `/patient` endpoint will return that same patient.
+**Note:** If an existing patient is found with the same MBI, the `/Patient` endpoint will return that same patient.
 
 ## Add a patient bundle
-The `$submit` operation lets you upload a bundle of patients for registration in a single batch using the `/patient` endpoint.
+The `$submit` operation lets you upload a bundle of patients for registration in a single batch using the `/Patient` endpoint.
 
-**Example to add multiple patient request**
+**Example request**
 {% capture snippet %}
 POST /api/v1/Patient/$submit
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 {% capture snippet %}

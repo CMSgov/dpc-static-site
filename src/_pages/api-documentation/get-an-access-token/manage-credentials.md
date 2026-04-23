@@ -20,7 +20,7 @@ The expiration will appear as `"expiresAt": "2020-11-04T11:49:55.095-05:00"` in 
 
 Client tokens expire after one year. We recommend you generate a new client token via the API as part of your ongoing maintenance.
 
-1. Use [the bearer token method]({{ "/api-documentation/get-access-token#2-create-a-bearer-token" | relative_url }}).
+1. Use [the access token method]({{ "/api-documentation/get-access-token#2-create-an-access-token" | relative_url }}).
 2. Make a `POST` request to the `/Token` endpoint.
 
 The `/Token` endpoint accepts two (optional) query parameters: 
@@ -28,11 +28,11 @@ The `/Token` endpoint accepts two (optional) query parameters:
 1. `label`: A human-readable label for the token
 2. `expiration`: A custom expiration for the `client_token`
 
-**Example token request**
+**Example request**
 {% capture curlSnippet %}{% raw %}
 POST /api/v1/Token
 {% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="shell" %}
+{% include copy_snippet.html code=curlSnippet language="http" %}
 
 **Example cURL command**
 {% capture curlSnippet %}{% raw %}
@@ -44,9 +44,9 @@ curl -d '' -v https://sandbox.dpc.cms.gov/api/v1/Token?label={TOKEN_LABEL}&expir
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
-**Example API response**
+The response from the API will include the `{CLIENT_TOKEN}` in the `token` field.
 
-The response from the API will include the **Client Token** in the `token` field.
+**Example response**
 
 {% capture curlSnippet %}{% raw %}
 {
@@ -62,14 +62,14 @@ The response from the API will include the **Client Token** in the `token` field
 
 ## List all client tokens
 
-Make a GET request to the /Token endpoint to list all the client tokens registered by your organization. The list will tell you when they were created, when they expire, and the label associated with each.
+Make a GET request to the `/Token` endpoint to list all the client tokens registered by your organization. The list will tell you when they were created, when they expire, and the label associated with each.
 
-### Token list API request
+**Example request**
 
 {% capture snippet %}
 GET /api/v1/Token
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 
@@ -82,7 +82,7 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Token \
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-**API response with token list**
+**Example response**
 
 {% capture snippet %}
 {
@@ -117,19 +117,16 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Token \
 
 ## Delete client tokens
 
-You may want to delete a client token if a Health IT implementer no longer exists or needs access to the API. There are two ways to do this:
+Send a DELETE request to the `/Token` endpoint using the `{CLIENT_TOKEN_ID}`. That is, the unique ID of the client token, **NOT** the token value itself.
 
-1. Select the delete icon (“x”) associated with each client token listed in the DPC Sandbox.  
-2. Send a DELETE request to the /Token endpoint using the unique ID of the client_token.
-
-**Example DELETE request**
+**Example request**
 
 {% capture snippet %}
 DELETE /api/v1/Token/{CLIENT_TOKEN_ID}
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
-**cURL DELETE command**
+**Example cURL command**
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Token/{CLIENT_TOKEN_ID} \
@@ -146,14 +143,14 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Token/{CLIENT_TOKEN_ID} \
 
 Make a GET request to the /Key endpoint to list all the public keys registered by your organization. This lets you reference IDs, check expiration dates, or delete specific public keys.
 
-**Example request to list public keys**
+**Example request**
 
 {% capture snippet %}
 GET /api/v1/Key
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
-**Example cURL command to list public keys**
+**Example cURL command**
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Key \
@@ -164,7 +161,7 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Key \
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-**Example API response with public keys**
+**Example response**
 
 {% capture snippet %}
 {
@@ -182,18 +179,18 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Key \
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="json" %}
 
-## Show a specific public key
+## Get a specific public key
 
 Make a GET request to the /Key endpoint using a unique public key id. 
 
-**Example request to show a specific public key**
+**Example request**
 
 {% capture snippet %}
 GET /api/v1/Key/{PUBLIC_KEY_ID}
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
-**Example cURL command to show a specific public key**
+**Example cURL command**
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{PUBLIC_KEY_ID} \
@@ -204,7 +201,7 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{PUBLIC_KEY_ID} \
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-**API response with public key**
+**Example response**
 
 {% capture snippet %}
 {
@@ -220,14 +217,14 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{PUBLIC_KEY_ID} \
 
 Public keys can be removed by sending a DELETE request to the /Key endpoint using the unique ID of the public key, which is returned either at creation, or as the result of listing the public keys.
 
-**Example request to delete a public key**
+**Example request**
 
 {% capture snippet %}
 DELETE /api/v1/Key/{PUBLIC_KEY_ID}
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
-**Example cURL command to delete a public key**
+**Example cURL command**
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{PUBLIC_KEY_ID} \
@@ -238,11 +235,11 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{PUBLIC_KEY_ID} \
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-**API response confirmation that key was deleted**
+On success, the API returns `200 OK` with an empty body.
 
-The response from the API will include the client_token in the token field.
+**Example response**
 
 {% capture snippet %}
-200 - Key was removed
+200 OK
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}

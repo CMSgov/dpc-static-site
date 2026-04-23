@@ -16,16 +16,16 @@ Attestations are posted as a [Provenance Resource](https://www.hl7.org/fhir/prov
 
 At a minimum, each attestation must include:
 
-* **Timestamp:** Time when attestation was made  
-* **Reason:** Reason for the attestation (currently only: http://hl7.org/fhir/v3/ActReason\#TREAT is supported)  
-* **Organization ID:** The agent making the attestation referenced by their Organization Resource ID  
-* **Practitioner ID:** The practitioner attached to the attestation referenced by their Practitioner ID
+- **Timestamp:** Time when attestation was made  
+- **Reason:** Reason for the attestation (currently only: http://hl7.org/fhir/v3/ActReason#TREAT is supported)  
+- **Organization ID:** The agent making the attestation referenced by their Organization Resource ID  
+- **Practitioner ID:** The practitioner attached to the attestation referenced by their Practitioner ID
 
 The attestation is then included in the X-Provenance header as part of any operations which add patients to the [Group Resource](https://build.fhir.org/group.html). For more about Provenance Resources reference the [FHIR implementation guide](https://www.hl7.org/fhir/implementationguide.html). 
 
 ## Locate your Organization ID
 
-Sign into the [DPC Sandbox](https://sandbox.dpc.cms.gov/users/sign_in) and locate your Organization ID underneath the Organization name. You can also make a request to /Organization via the sandbox API.
+Log into the [DPC Sandbox](https://sandbox.dpc.cms.gov/users/sign_in) and locate your Organization ID underneath the Organization name. You can also make a request to /Organization via the sandbox API.
 
 ## Locate your Practitioner ID
 
@@ -78,8 +78,8 @@ You'll need to create a Group Resource to link a list of registered [patients]({
 
 **Group Resource requirements**
 
-* [National Provider Identity (NPI)](https://www.cms.gov/Regulations-and-Guidance/Administrative-Simplification/NationalProvIdentStand/) for the practitioner that patients will be attributed to  
-* The DPC ID of the patient(s) that are members of the group. This value is the alphanumeric DPC ID of the Patient Resource in DPC. It is a UUID
+- [National Provider Identity (NPI)](https://www.cms.gov/Regulations-and-Guidance/Administrative-Simplification/NationalProvIdentStand/) for the practitioner that patients will be attributed to  
+- The DPC ID of the patient(s) that are members of the group. This value is the alphanumeric DPC ID of the Patient Resource in DPC. It is a UUID
 
 ### Steps to create a Group Resource
 
@@ -94,14 +94,14 @@ The group response returned by DPC includes additional “period” and “inact
 
 {% include alert.html variant="warning" text="Attribution groups must be updated every 90 days." classNames="measure-6" %}
 
-#### Example create patient group request
+### Example request
 
 {% capture snippet %}
 POST /api/v1/Group
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
-#### cURL example 
+### Example cURL command
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Group \
@@ -114,7 +114,7 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Group \
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-#### Example response 
+### Example response
 
 {% capture snippet %}
 {
@@ -166,14 +166,14 @@ When an attribution relationship between a patient and practitioner has expired,
 
 Use a GET request to the /Group endpoint to identify expired patients. This will return a JSON file with all the patients attributed to the group. Evaluate this JSON for patients with attribution dates greater than 90 days.
 
-#### Example GET request for list of patients in group
+### Example request
 
 {% capture snippet %}
 GET /api/v1/Group?characteristic-value=attributed-to%24{PRACTITIONER_NPI}
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
-#### Example cURL command for list of patients in group
+### Example cURL command
 
 {% capture snippet %}
 curl -v 'https://sandbox.dpc.cms.gov/api/v1/Group?characteristic-value=attributed-to%24{PRACTITIONER_NPI}' \
@@ -182,7 +182,7 @@ curl -v 'https://sandbox.dpc.cms.gov/api/v1/Group?characteristic-value=attribute
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-#### Example response to request for list of patients in group
+### Example response
 
 {% capture snippet %}
 {
@@ -223,14 +223,14 @@ curl -v 'https://sandbox.dpc.cms.gov/api/v1/Group?characteristic-value=attribute
 
 Use $add to add new patients to a group.
 
-### Example add patient request
+### Example request
 
 {% capture snippet %}
 POST /api/v1/Group/{GROUP_ID}/$add
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
-### Example add patient cURL command
+### Example cURL command
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/\$add \
@@ -242,7 +242,7 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/\$add \
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-### Example add patient response
+### Example response
 
 {% capture snippet %}
 "member": [
@@ -274,14 +274,14 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/\$add \
 
 Use a custom $remove operation on the /Group endpoint to remove a patient from a group. The patient’s inactive parameter will then be set to true.
 
-### Example remove patient request
+### Example request
 
 {% capture snippet %}
 POST /api/v1/Group/{GROUP_ID}/$remove
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
-### Example remove patient cURL command
+### Example cURL command
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/\$remove \
@@ -292,7 +292,7 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/\$remove \
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-### Example remove patient response
+### Example response
 
 {% capture snippet %}
 {
@@ -335,14 +335,14 @@ You can submit a Group Resource which overwrites the existing group with members
 
 {% include alert.html variant="warning" text="This endpoint does not merge with the existing membership state, but replaces it." classNames="measure-6" %}
 
-### Example overwrite group membership request
+### Example request
 
 {% capture snippet %}
 PUT /api/v1/Group/{GROUP_ID}
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
-### Example overwrite group membership cURL command
+### Example cURL command
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID} \
@@ -354,7 +354,7 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID} \
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-### Example overwrite group membership response
+### Example response
 
 {% capture snippet %}
 {
@@ -406,7 +406,7 @@ The response will return a [Bundle](https://www.hl7.org/fhir/STU3/bundle.html) R
 
 You can use the Group ID value of the returned resources to [initiate an export job]({{ "/api-documentation/export-data#initiate-an-export-job" | relative_url }}). Find your Group ID by referencing the `id` variable in your group’s resource object.
 
-### Example showing how Group ID is displayed
+### Example Group Resource
 
 {% capture snippet %}
 "resource": {
@@ -416,14 +416,14 @@ You can use the Group ID value of the returned resources to [initiate an export 
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="json" %}
 
-### Example request to obtain attribution group
+### Example request
 
 {% capture snippet %}
 GET /api/v1/Group?characteristic-value=attributed-to%24{PRACTITIONER_NPI}
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
-### Example cURL command to obtain attribution group
+### Example cURL command
 
 {% capture snippet %}
 curl -v 'https://sandbox.dpc.cms.gov/api/v1/Group?characteristic-value=attributed-to%24{PRACTITIONER_NPI}' \
@@ -432,7 +432,7 @@ curl -v 'https://sandbox.dpc.cms.gov/api/v1/Group?characteristic-value=attribute
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-### Example response showing attributed groups
+### Example response
 
 {% capture snippet %}
 {

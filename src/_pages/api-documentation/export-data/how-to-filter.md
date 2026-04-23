@@ -16,27 +16,27 @@ The `_type` query parameter allows you to specify which FHIR Resources you wish 
 
 The following request will export the Patient and Coverage Resources, but NOT the Explanation of Benefit Resource.
 
-**Example request Patient and Coverage**
+**Example request: Patient and Coverage**
 
 {% capture snippet %}
-GET /api/v1/Group/{ID}/$export?_type=Patient,Coverage
+GET /api/v1/Group/{GROUP_ID}/$export?_type=Patient,Coverage
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
 By contrast, the following request will export the Explanation of Benefit Resource but **NOT** the Patient or Coverage Resources.
 
 **Example request: Explanation of Benefit**
 
 {% capture snippet %}
-GET /api/v1/Group/{ID}/$export?_type=ExplanationOfBenefit
+GET /api/v1/Group/{GROUP_ID}/$export?_type=ExplanationOfBenefit
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
 ## Request filtered data with `_since`
 
 You can filter data using the `_since` parameter with either the `/Patient` or `/Group` endpoints. You may want to set `_since` queries as a repeating call or as a way to check for patient updates to avoid downloading duplicate data.
 
-{% include alert.html variant="warning" heading="Download all your data before using _since" text="We recommend running an unfiltered request (without using _since) to all resource types using the /Group/{ID}/$export endpoint in order to retrieve all historical data for your associated beneficiaries. You only need to do this once." classNames="measure-6" %}
+{% include alert.html variant="warning" heading="Download all your data before using _since" text="We recommend running an unfiltered request (without using _since) to all resource types using the /Group/{GROUP_ID}/$export endpoint in order to retrieve all historical data for your associated beneficiaries. You only need to do this once." classNames="measure-6" %}
 
 On subsequent calls you can begin retrieving incremental claims data for your beneficiaries using `_since`. We suggest using the `transactionTime` from your last bulk data request as the `_since` date.
 
@@ -64,9 +64,9 @@ When using the [Postman Collection]({{ "/api-documentation/postman-collection" |
 
 You can do this either by replacing the `+` with `%2B` (e.g., 2020-01-23T04:00:00.000%2B07:00 instead of 2020-01-23T04:00:00.000+07:00), or you can select the value and choose "EncodeURIComponent" from the context menu to have Postman encode the entire parameter automatically.
 
-The `/Group/{ID}/$export` endpoint requires an access token as well as Accept and Prefer headers.  
+The `/Group/{GROUP_ID}/$export` endpoint requires an access token as well as Accept and Prefer headers.  
 
-The Prefer header is **NOT** required for `/Patient/{ID}/$everything`, but it DOES require an X-Provenance header whereas the `/Group/{ID}/$export` endpoint does not. The format is defined by the FHIR Bulk Data Export spec. Consult the [FHIR Datatypes](https://www.hl7.org/fhir/datatypes.html#instant) page for more information.
+The Prefer header is **NOT** required for `/Patient/{PATIENT_ID}/$everything`, but it DOES require an X-Provenance header whereas the `/Group/{GROUP_ID}/$export` endpoint does not. The format is defined by the FHIR Bulk Data Export spec. Consult the [FHIR Datatypes](https://www.hl7.org/fhir/datatypes.html#instant) page for more information.
 
 
 {% include alert.html variant="warning" heading="Caution" text="Be wary of requesting data from before 02-12-2020" classNames="measure-6" %}
@@ -79,12 +79,12 @@ This operation will start a job for filtered data for existing beneficiaries at 
 
 If the request was successful, a `202 Accepted` response code will be returned and the response will include a Content-Location header.
 
-**Example**
+**Example request**
 
 {% capture snippet %}
-GET /api/v1/Group/{ID}/$export?_type=Patient&_since=2021-05-13T08:00:00.000-05:00
+GET /api/v1/Group/{GROUP_ID}/$export?_type=Patient&_since=2021-05-13T08:00:00.000-05:00
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
 **Request headers**
 
@@ -93,21 +93,21 @@ Authorization: Bearer {ACCESS_TOKEN}
 Accept: application/fhir+json
 Prefer: respond-async
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 
 {% capture snippet %}
-curl -X GET 'https://sandbox.dpc.cms.gov/api/v1/Group/{ID}/$export?_since=2021-05-13T08:00:00.000-05:00' \
+curl -X GET 'https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/$export?_since=2021-05-13T08:00:00.000-05:00' \
      -H 'Accept: application/fhir+json' \
      -H 'Prefer: respond-async' \
      -H 'Authorization: Bearer {ACCESS_TOKEN}'
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-**Response example**
+**Example response**
 
 {% capture snippet %}
 202 Accepted
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}

@@ -8,14 +8,14 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-## List a specific patient
+## Get a specific patient
 The GET `/Patient` operation retrieves a single Patient Resource by supplying an MBI. 
 
-**Example specific patient request**
+**Example request**
 {% capture snippet %}
 GET /api/v1/Patient?identifier={PATIENT_MBI}
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 {% capture snippet %}
@@ -74,11 +74,11 @@ curl -v 'https://sandbox.dpc.cms.gov/api/v1/Patient?identifier={PATIENT_MBI}' \
 
 The `GET` `/Patient` operation lets you retrieve a bundle of Patient Resources.
 
-**Example list all patients request**
+**Example request**
 {% capture snippet %}
 GET /api/v1/Patient
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 {% capture snippet %}
@@ -92,11 +92,11 @@ curl -v 'https://sandbox.dpc.cms.gov/api/v1/Patient' \
 ## Paginate patient requests
 The GET `/Patient` operation supports FHIR search parameters `_count` (page size) and `_offset` (starting index) for paginating results. Requests for very large patient rosters are prone to timeouts. For organizations with more than 1000 patients, we recommend using `_count` and `_offset` to paginate in batches of a few hundred patients at a time.  
 
-**Example paginated patient request**
+**Example request**
 {% capture snippet %}
 GET /api/v1/Patient?_count={PAGE_SIZE}&_offset={OFFSET}
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 

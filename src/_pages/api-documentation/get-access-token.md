@@ -8,7 +8,7 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-DPC uses OAuth 2.0 to authorize API access. All API requests require a access token in the Authorization header.
+DPC uses OAuth 2.0 to authorize API access. All API requests require an access token in the Authorization header.
 
 ## 1. Generate a JSON Web Token
 
@@ -18,11 +18,11 @@ Use the following tool to create a JSON Web Token (JWT). A JWT authenticates you
 
 - Your Private Key ([Create Public/Private Keys]({{ "/api-documentation/get-sandbox-credentials#3-create-a-public-key" | relative_url }}))
 - A registered Client Token ([Generate a client token]({{ "/api-documentation/get-sandbox-credentials#2-generate-a-client-token-in-the-sandbox-site" | relative_url }}))
-- Your Public Key ID ([Show a specific public key]({{ "/api-documentation/get-access-token/manage-credentials#show-a-specific-public-key" | relative_url }}))
+- Your Public Key ID ([Get a specific public key]({{ "/api-documentation/get-access-token/manage-credentials#get-a-specific-public-key" | relative_url }}))
 
 <a class="usa-button" href="{{ "/jwt-tool.html" | relative_url }}" target="_blank">JWT Creation Tool</a>
 
-## 2. Create an Access Token
+## 2. Create an access token
 An access token makes sure every request or interaction with the API can be traced back to the person who created the client token.
 
 {% include alert.html variant="warning" text="The access token must be set in the Authorization header in every API request and has a maximum expiration time of 5 minutes." slim="true" classNames="measure-6" %}
@@ -31,15 +31,15 @@ An access token makes sure every request or interaction with the API can be trac
 {% capture snippet %}
 Authorization: Bearer {ACCESS_TOKEN}
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
 To create an `ACCESS_TOKEN`, submit a valid JWT to the `/Token/auth` endpoint via a `POST` request. The `POST` request body’s Content Type must be `application/x-www-form-urlencoded`. The body of the request must be URL encoded.
 
-**Example token request**
+**Example request**
 {% capture snippet %}
 POST /api/v1/Token/auth
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 {% capture snippet %}
@@ -57,7 +57,7 @@ The `{SIGNED_JWT}` above is returned from the JWT Tool.
 
 Each token request needs its own JWT value. Once your access token expires, you will likely need to generate a new JWT to refresh your access token.
 
-**Example API response**
+**Example response**
 
 The endpoint response is a JSON object which contains the access token, the lifetime of the token (in seconds), and the authorized system scopes.
 

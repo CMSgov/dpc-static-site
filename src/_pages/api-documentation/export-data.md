@@ -23,7 +23,7 @@ Specify which of the FHIR resources to download using the `_type` query paramete
 Choose to download data obtained after a certain date by adding the `_since` parameter (e.g., only show Patient data from January 7, 2025 to the present). 
 
 #### Get all of a patient’s data  
-Use [`/Patient/{ID}/$everything`]({{ "/api-documentation/export-data/patient-everything" | relative_url }}) for 7 years’ historical data including Patient, Coverage, and ExplanationOfBenefit Resources. 
+Use [`/Patient/{PATIENT_ID}/$everything`]({{ "/api-documentation/export-data/patient-everything" | relative_url }}) for 7 years’ historical data including Patient, Coverage, and ExplanationOfBenefit Resources. 
 
 ## Initiating an export job
 
@@ -31,7 +31,7 @@ Use [`/Patient/{ID}/$everything`]({{ "/api-documentation/export-data/patient-eve
     
 In order to start a patient data export job, locate your [Group ID]({{ "/api-documentation/attribution/attestation#create-a-patient-group-resource" | relative_url }}) by referencing the `id` variable in the resource object of your group.
 
-**Example**
+**Example Group Resource**
 
 {% capture snippet %}
 "resource": {
@@ -45,44 +45,42 @@ In order to start a patient data export job, locate your [Group ID]({{ "/api-doc
 
 Make a GET request with headers: an access token, an Accept header, and a Prefer header.
 
-**Example GET request**
+**Example request**
 
 {% capture snippet %}
-GET /api/v1/Group/{ID}/$export
+GET /api/v1/Group/{GROUP_ID}/$export
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 
 {% capture snippet %}
-curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{ID}/\$export \
+curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/\$export \
      -H 'Authorization: Bearer {ACCESS_TOKEN}' \
      -H 'Accept: application/fhir+json' \
      -H 'Prefer: respond-async'
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-**Response**
-
 The API returns a `202 Accepted` response code for successful requests. The response will be returned with a Content-Location header. The value of this header indicates the location to monitor your job status and outcomes. The value of the header also contains the export `JOB_ID` of the Job. There is no BODY to the response, only headers.
 
-**Example**
+**Example response: Content-Location header**
 
 {% capture snippet %}
 Content-Location: https://sandbox.dpc.cms.gov/api/v1/Jobs/{JOB_ID}
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
 ## Check status of the export job
 
-You can check the status of your job using the {unique ID of the export job}. This is retrieved from the Content-Location header of the response as shown in the previous section. The status of the job will change from 202 Accepted to 200 OK when the export job is complete and the data is ready to be downloaded.
+You can check the status of your job using the `{EXPORT_JOB_ID}` from the Content-Location header of the response as shown in the previous section. The status of the job will change from `202 Accepted` to `200 OK` when the export job is complete and the data is ready to be downloaded.
 
-**Example check status request**
+**Example request**
 
 {% capture snippet %}
 GET https://sandbox.dpc.cms.gov/api/v1/Jobs/{EXPORT_JOB_ID}
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 
@@ -92,11 +90,9 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Jobs/{EXPORT_JOB_ID} \
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-**Response**
+If the request was successful, the status of the job will change from `202 Accepted` to `200 OK` when the export job is complete and the data is ready to be downloaded.
 
-If the request was successful, the status of the job will change from 202 Accepted to 200 OK when the export job is complete and the data is ready to be downloaded.
-
-**Example: Bulk Export Job**
+**Example response: bulk export job**
 
 {% capture snippet %}
 {
@@ -141,12 +137,12 @@ To obtain the exported Explanation of Benefit data as NDJSON, make a GET request
 
 The Data endpoint is not a FHIR resource and doesn't require the Accept header to be set to application/fhir+json.
 
-**Example request for NDJSON files**
+**Example request**
 
 {% capture snippet %}
 GET https://sandbox.dpc.cms.gov/api/v1/Data/{FILE_NAME}
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 
@@ -158,7 +154,7 @@ curl https://sandbox.dpc.cms.gov/api/v1/Data/{FILE_NAME} \
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-**Example: Explanation of Benefit Resource**
+**Example response: Explanation of Benefit resource**
 
 {% capture snippet %}
 {

@@ -40,13 +40,13 @@ The `PUBLIC_KEY_ID` shown in the example is the one you generated while setting 
 
 The `/Token/validate` endpoint lets you submit your Signed JWT for validation.
 
-**Validate request**
+**Example request**
 {% capture snippet %}
 POST /api/v1/Token/validate
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
-**cURL command**
+**Example cURL command**
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Token/validate \
      -H 'Accept: application/json' \
@@ -56,6 +56,4 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Token/validate \
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-**Response**
-
-The API will return `HTTP 200` if the JWT is valid. If not it will return an error message.
+The API will return `200 OK` if the JWT is valid. If not it will return an error message.

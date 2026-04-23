@@ -12,11 +12,11 @@ in-page-nav: true
 
 The GET `/Practitioner` operation lets you retrieve a [bundle](https://www.hl7.org/fhir/STU3/bundle.html) of Practitioner Resources. 
 
-**Example request for bundled practitioners**
+**Example request**
 {% capture snippet %}
 GET /api/v1/Practitioner
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 {% capture snippet %}
@@ -31,11 +31,11 @@ curl -v 'https://sandbox.dpc.cms.gov/api/v1/Practitioner' \
 
 Retrieve a single practitioner by providing an NPI number. 
 
-**Example request for single practitioner**
+**Example request**
 {% capture snippet %}
 GET /api/v1/Practitioner?identifier={PRACTITIONER_NPI}
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="shell" %}
+{% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 {% capture snippet %}
