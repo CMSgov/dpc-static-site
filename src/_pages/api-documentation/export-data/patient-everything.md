@@ -17,11 +17,11 @@ The `/Patient/{PATIENT_ID}/$everything` endpoint lets you retrieve all resources
 This is a synchronous download. `/Patient/{PATIENT_ID}/$everything` doesn't create a job that needs to be monitored or data files to download. The response body will contain the bundle. This is how it differs from a Group $export operation.
 
 
-**Note:** A Patient record must already exist in the DPC database to complete your request. However, the patient does not need to belong to [a group]({{ "/api-documentation/attribution/attestation#create-a-patient-group-resource" | relative_url }}).
+**Note:** A Patient record must already exist in the DPC database to complete your request. However, the patient does not need to belong to [a group]({{ "/api-documentation/attribution/attestation.html#create-a-patient-group-resource" | relative_url }}).
 
 ## Find a patient’s DPC ID
 
-If you only have the patient’s Medicare Beneficiary Identifier (MBI) you can retrieve the DPC internal ID by first [making a GET request for that specific patient]({{ "/api-documentation/attribution/upload-patients/add-view-list-patients#list-a-specific-patient" | relative_url }}). The UUID is returned in that response.
+If you only have the patient’s Medicare Beneficiary Identifier (MBI) you can retrieve the DPC internal ID by first [making a GET request for that specific patient]({{ "/api-documentation/attribution/upload-patients/add-view-list-patients.html#list-a-specific-patient" | relative_url }}). The UUID is returned in that response.
 
 Learn more about the HL7 FHIR Specification for:
 

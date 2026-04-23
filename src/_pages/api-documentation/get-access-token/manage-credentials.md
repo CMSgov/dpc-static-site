@@ -19,7 +19,7 @@ The expiration will appear as `"expiresAt": "2020-11-04T11:49:55.095-05:00"` in 
 ## Create additional client tokens
 Client tokens expire after one year. We recommend you generate a new client token via the API as part of your ongoing maintenance.
 
-1. Use [the access token method]({{ "/api-documentation/get-access-token#2-create-an-access-token" | relative_url }}).
+1. Use [the access token method]({{ "/api-documentation/get-access-token.html#2-create-an-access-token" | relative_url }}).
 2. Make a `POST` request to the `/Token` endpoint.
 
 The `/Token` endpoint accepts two (optional) query parameters: 

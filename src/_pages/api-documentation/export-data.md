@@ -10,11 +10,11 @@ in-page-nav: true
 
 ## The `/Group/$export` operation 
 
-The FHIR `/Group/$export` operation is the primary interaction with the DPC Sandbox API. It lets you export [Patient, Coverage, and Explanation of Benefit data]({{ "/dpc-data" | relative_url }}) asynchronously and in bulk. Details on the FHIR bulk data operations can be found in the [FHIR Bulk Data Specification](https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-group-export.html). 
+The FHIR `/Group/$export` operation is the primary interaction with the DPC Sandbox API. It lets you export [Patient, Coverage, and Explanation of Benefit data]({{ "/dpc-data.html" | relative_url }}) asynchronously and in bulk. Details on the FHIR bulk data operations can be found in the [FHIR Bulk Data Specification](https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-group-export.html). 
 
 ### Filtering data with `_type` and `_since`
 
-Use `_type` and `_since` to [filter your results]({{ "/api-documentation/export-data/how-to-filter" | relative_url }}) by content, time, and range.
+Use `_type` and `_since` to [filter your results]({{ "/api-documentation/export-data/how-to-filter.html" | relative_url }}) by content, time, and range.
 
 #### Filter by FHIR Resource type with `_type`
 Specify which of the FHIR resources to download using the `_type` query parameter (e.g., `?_type=Patient,Coverage`).
@@ -23,13 +23,13 @@ Specify which of the FHIR resources to download using the `_type` query paramete
 Choose to download data obtained after a certain date by adding the `_since` parameter (e.g., only show Patient data from January 7, 2025 to the present). 
 
 #### Get all of a patient’s data  
-Use [`/Patient/{PATIENT_ID}/$everything`]({{ "/api-documentation/export-data/patient-everything" | relative_url }}) for 7 years’ historical data including Patient, Coverage, and ExplanationOfBenefit Resources. 
+Use [`/Patient/{PATIENT_ID}/$everything`]({{ "/api-documentation/export-data/patient-everything.html" | relative_url }}) for 7 years’ historical data including Patient, Coverage, and ExplanationOfBenefit Resources. 
 
 ## Initiating an export job
 
 ### 1. Locate your Group ID
     
-In order to start a patient data export job, locate your [Group ID]({{ "/api-documentation/attribution/attestation#create-a-patient-group-resource" | relative_url }}) by referencing the `id` variable in the resource object of your group.
+In order to start a patient data export job, locate your [Group ID]({{ "/api-documentation/attribution/attestation.html#create-a-patient-group-resource" | relative_url }}) by referencing the `id` variable in the resource object of your group.
 
 **Example Group Resource**
 

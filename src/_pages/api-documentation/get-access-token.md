@@ -16,9 +16,9 @@ DPC uses OAuth 2.0 to authorize API access. All API requests require an access t
 
 Use the following tool to create a JSON Web Token (JWT). A JWT authenticates your organization with DPC. You'll need: 
 
-- Your Private Key ([Create Public/Private Keys]({{ "/api-documentation/get-sandbox-credentials#3-create-a-public-key" | relative_url }}))
-- A registered Client Token ([Generate a client token]({{ "/api-documentation/get-sandbox-credentials#2-generate-a-client-token-in-the-sandbox-site" | relative_url }}))
-- Your Public Key ID ([Get a specific public key]({{ "/api-documentation/get-access-token/manage-credentials#get-a-specific-public-key" | relative_url }}))
+- Your Private Key ([Create Public/Private Keys]({{ "/api-documentation/get-sandbox-credentials.html#3-create-a-public-key" | relative_url }}))
+- A registered Client Token ([Generate a client token]({{ "/api-documentation/get-sandbox-credentials.html#2-generate-a-client-token-in-the-sandbox-site" | relative_url }}))
+- Your Public Key ID ([Get a specific public key]({{ "/api-documentation/get-access-token/manage-credentials.html#get-a-specific-public-key" | relative_url }}))
 
 <a class="usa-button" href="{{ "/jwt-tool.html" | relative_url }}" target="_blank">JWT Creation Tool</a>
 

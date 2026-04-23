@@ -12,7 +12,7 @@ DPC uses `_type` and `_since` parameters to filter your results by content, time
 
 ## Filter claims data by FHIR Resource with `_type`
 
-The `_type` query parameter allows you to specify which FHIR Resources you wish to export. If you do not specify a `_type` parameter in your request, all three resources will be exported: [Explanation of Benefit, Patient, and Coverage]({{ "/dpc-data" | relative_url }}). You can specify these Resources individually or as a group using a comma delimited list and the syntax `?_type=ExplanationOfBenefit,Patient,Coverage`.
+The `_type` query parameter allows you to specify which FHIR Resources you wish to export. If you do not specify a `_type` parameter in your request, all three resources will be exported: [Explanation of Benefit, Patient, and Coverage]({{ "/dpc-data.html" | relative_url }}). You can specify these Resources individually or as a group using a comma delimited list and the syntax `?_type=ExplanationOfBenefit,Patient,Coverage`.
 
 The following request will export the Patient and Coverage Resources, but NOT the Explanation of Benefit Resource.
 
@@ -43,11 +43,11 @@ On subsequent calls you can begin retrieving incremental claims data for your be
 Two ways to use `_since`:
 
 1. Request the most recent data for all beneficiaries: [Use `_since` within the `/Group` endpoint](#request-data-using-_since-with-the-group-endpoint).  
-2. Request data synchronously for an individual patient: [Use `_since` within the `/Patient` endpoint]({{ "/api-documentation/export-data/patient-everything#requesting-data-using-_since-with-the-patient-endpoint" | relative_url }}).
+2. Request data synchronously for an individual patient: [Use `_since` within the `/Patient` endpoint]({{ "/api-documentation/export-data/patient-everything.html#requesting-data-using-_since-with-the-patient-endpoint" | relative_url }}).
 
 ### Steps to request filtered data
 
-1. Obtain an [access token]({{ "/api-documentation/get-access-token" | relative_url }}).  
+1. Obtain an [access token]({{ "/api-documentation/get-access-token.html" | relative_url }}).  
 2. Start a job to acquire data (you will input the `_since` parameter here. Omit `_since` to download all data).  
 3. Check the job status.  
 4. Download the data.
@@ -60,7 +60,7 @@ Datetimes submitted using `_since` must follow the [FHIR Instant format](https:/
 
 #### The value of the `_since` parameter must be URL encoded
 
-When using the [Postman Collection]({{ "/api-documentation/postman-collection" | relative_url }}), you'll need to manually encode the `_since` parameter when it contains a `+` since Postman does not automatically encode this character.
+When using the [Postman Collection]({{ "/api-documentation/postman-collection.html" | relative_url }}), you'll need to manually encode the `_since` parameter when it contains a `+` since Postman does not automatically encode this character.
 
 You can do this either by replacing the `+` with `%2B` (e.g., 2020-01-23T04:00:00.000%2B07:00 instead of 2020-01-23T04:00:00.000+07:00), or you can select the value and choose "EncodeURIComponent" from the context menu to have Postman encode the entire parameter automatically.
 

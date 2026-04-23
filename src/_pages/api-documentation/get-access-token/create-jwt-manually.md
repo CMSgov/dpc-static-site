@@ -26,7 +26,7 @@ Review these steps if you’d prefer to create a JWT manually without using the 
 
 **Example decoded payload**
 
-The `PUBLIC_KEY_ID` shown in the example is the one you generated while setting up DPC sandbox credentials. See [Create a public key]({{ "/api-documentation/get-sandbox-credentials#3-create-a-public-key" | relative_url }}).
+The `PUBLIC_KEY_ID` shown in the example is the one you generated while setting up DPC sandbox credentials. See [Create a public key]({{ "/api-documentation/get-sandbox-credentials.html#3-create-a-public-key" | relative_url }}).
 
 {% capture snippet %}
 {

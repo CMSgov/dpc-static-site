@@ -29,7 +29,7 @@ Client tokens are issued to your organization and authenticate your access to th
    <li>Copy or download the token displayed on screen.
       {% include alert.html variant="warning" text="This is the only time this client token will be visible. You’ll want to save it for later use." slim="true" classNames="measure-6" %}
       <ul>
-         <li>Make sure to <a href="{{ '/api-documentation/get-access-token/manage-credentials#renew-expired-tokens' | relative_url }}">renew your token</a> every year.</li>
+         <li>Make sure to <a href="{{ '/api-documentation/get-access-token/manage-credentials.html#renew-expired-tokens' | relative_url }}">renew your token</a> every year.</li>
          <li>When using production data, you’ll need to create a token for every organization that works with the API.</li>
       </ul>
    </li>
@@ -42,7 +42,7 @@ Client tokens are issued to your organization and authenticate your access to th
 
 ### Why we require a public key
 
-Public keys verify that access token requests come from an authorized application. They ensure the private key used to sign your [JSON Web Token]({{ '/api-documentation/get-access-token#1-generate-a-json-web-token' | relative_url }}) (JWT) matches a public key previously uploaded to DPC. 
+Public keys verify that access token requests come from an authorized application. They ensure the private key used to sign your [JSON Web Token]({{ '/api-documentation/get-access-token.html#1-generate-a-json-web-token' | relative_url }}) (JWT) matches a public key previously uploaded to DPC. 
 
 {% include alert.html variant="warning" text="Store the files you’ll create in the following steps in one folder. These include a private.pem, public.pem, snippet.txt, snippet.txt.sig, and signature.sig file." slim="true" classNames="measure-6" %}
 
@@ -98,4 +98,4 @@ Select **copy** on the DPC Sandbox site or copy the command invocation below.
 
 ## What's next?
 
-[Get an access token]({{ "/api-documentation/get-access-token" | relative_url }})
+[Get an access token]({{ "/api-documentation/get-access-token.html" | relative_url }})
