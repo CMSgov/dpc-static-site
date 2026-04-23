@@ -12,7 +12,7 @@
       url: /api-documentation.html
       
     - name: Attestation & Attribution
-      url: /api-documentation/attestation-attribution.html
+      url: /api-documentation/attribution.html
 
     - name: Postman Collection
       url: /api-documentation/postman-collection.html
@@ -23,14 +23,14 @@
       url: /dpc-data.html
     
     - name: Export Data
-      url: /dpc-data/export-data.html
-    
+      url: /api-documentation/export-data.html
+
 
     - name: Postman Collection
-      url: /dpc-data/postman-collection.html
-      
+      url: /api-documentation/postman-collection.html
+
     - name: /Patient/$everything
-      url: /dpc-data/patient-everything.html
+      url: /api-documentation/export-data/patient-everything.html
 
 - name: Support
   url: /support.html
