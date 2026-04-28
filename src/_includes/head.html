@@ -5,10 +5,6 @@
     content="width=device-width, initial-scale=1.0"
   >
   <meta
-    name="description"
-    content="{{ page.description }}"
-  >
-  <meta
     http-equiv="Content-Type"
     content="text/html; charset=UTF-8"
   >
@@ -20,16 +16,20 @@
   {% assign seo_title = site.title %}
   {% if page.url != '/' %}
   {% if page.seo_title and page.seo_title != '' %}
-  {% assign seo_title = page.seo_title | append: ' | ' | append: site.title %}
+  {% assign seo_title = page.seo_title | append: ' | ' | append: site.short_title %}
   {% else %}
-  {% assign seo_title = page.page_title | append: ' | ' | append: site.title %}
+  {% assign seo_title = page.page_title | append: ' | ' | append: site.short_title %}
   {% endif %}
   {% endif %}
 
   <title>{{ seo_title }}</title>
+
+  {% assign page_url = page.url | absolute_url -%}
+  {% include meta.html title=seo_title description=page.description page_url=page_url %}
+
   <link
     rel="canonical"
-    href="{{ page.url | absolute_url }}"
+    href="{{ page_url }}"
   />
   <link
     rel="icon"
@@ -53,7 +53,7 @@
   />
   <meta
     name="apple-mobile-web-app-title"
-    content="DPC"
+    content="{{ site.short_title }}"
   />
   <link
     rel="manifest"
