@@ -23,7 +23,7 @@
     - name: /Patient/$everything
       url: /api-documentation/export-data/patient-everything.html
   
-- name: Data 
+- name: DPC Data 
   url: /dpc-data.html
 
 - name: Support
