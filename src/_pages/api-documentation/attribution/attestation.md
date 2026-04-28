@@ -70,7 +70,7 @@ Find your Practitioner ID by referencing the {id} variable in the resource objec
  ]
 }
 {% endcapture %}
-{% include copy_snippet.html code=snippet language="json" %}
+{% include copy_snippet.html code=snippet language="json" can_copy=true %}
 
 ## Create a patient Group Resource 
 
