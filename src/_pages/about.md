@@ -35,7 +35,7 @@ show-side-nav: false
 
 Provider claims submitted to Medicare contain valuable historical health information. In 2010, Centers for Medicare & Medicaid Services (CMS) created Blue Button as a way for beneficiaries to access their own health information. In 2019, CMS expanded this tool to create DPC, a new application programming interface (API) that extends this information to Original Medicare (OM) providers. DPC:
 
-- **Informs providers** of a new patient’s past medical history.
+- **Informs providers** of a new patient's past medical history.
 - **Removes the burden on patients** to remember every detail in these histories.
 - **Updates providers** on new procedures, prescriptions, and other services offered to their patients by other providers between visits. 
 - **Gives providers medication insights** including prescription changes and adherence.
@@ -44,7 +44,7 @@ Provider claims submitted to Medicare contain valuable historical health informa
 
 ## DPC is currently a pilot program
 
-Right now a limited number of customers can access DPC data. CMS is not currently bringing new users into this pilot program. We’re finalizing a new authentication and onboarding portal with feedback from pilot participants now. We’ll announce general availability of production data when the portal launches. Meanwhile you can access realistic test data in the [DPC Sandbox](https://sandbox.dpc.cms.gov/users/sign_up).
+Right now a limited number of customers can access DPC data. CMS is not currently bringing new users into this pilot program. We're finalizing a new authentication and onboarding portal with feedback from pilot participants now. We'll announce general availability of production data when the portal launches. Meanwhile you can access realistic test data in the [DPC Sandbox](https://sandbox.dpc.cms.gov/users/sign_up).
 
 ## What are the other CMS claims-based FHIR APIs?
 

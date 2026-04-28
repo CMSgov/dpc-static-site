@@ -8,7 +8,7 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-Review these steps if you’d prefer to create a JWT manually without using the [JWT Tool]({{ "/jwt-tool.html" | relative_url }}).
+Review these steps if you'd prefer to create a JWT manually without using the [JWT Tool]({{ "/jwt-tool.html" | relative_url }}).
 
 **Example decoded header**
 {% capture snippet %}

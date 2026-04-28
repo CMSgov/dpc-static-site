@@ -49,7 +49,7 @@ DPC data does not include clinical notes, lab results, or substance abuse codes.
 
 ## How the data is structured: FHIR resource types
 
-DPC uses FHIR (Fast Healthcare Interoperability Resources) as a standard, compliant way to share Medicare beneficiary data. In FHIR, data is structured into basic building blocks called “Resources.” DPC also has its own bulk FHIR specification to securely handle large numbers of Medicare beneficiary files. 
+DPC uses FHIR (Fast Healthcare Interoperability Resources) as a standard, compliant way to share Medicare beneficiary data. In FHIR, data is structured into basic building blocks called "Resources." DPC also has its own bulk FHIR specification to securely handle large numbers of Medicare beneficiary files. 
 
 ## Applicable FHIR Resources
 

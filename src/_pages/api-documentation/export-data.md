@@ -22,8 +22,8 @@ Specify which of the FHIR resources to download using the `_type` query paramete
 #### Exclude data before a specified date with _since
 Choose to download data obtained after a certain date by adding the `_since` parameter (e.g., only show Patient data from January 7, 2025 to the present). 
 
-#### Get all of a patient’s data  
-Use [`/Patient/{PATIENT_ID}/$everything`]({{ "/api-documentation/export-data/patient-everything.html" | relative_url }}) for 7 years’ historical data including Patient, Coverage, and ExplanationOfBenefit Resources. 
+#### Get all of a patient's data  
+Use [`/Patient/{PATIENT_ID}/$everything`]({{ "/api-documentation/export-data/patient-everything.html" | relative_url }}) for 7 years' historical data including Patient, Coverage, and ExplanationOfBenefit Resources. 
 
 ## Initiating an export job
 

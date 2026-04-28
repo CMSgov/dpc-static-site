@@ -8,7 +8,7 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-CMS requires practitioners to attest that they have a treatment-related relationship with each patient. You'll need to submit an attestation with every API request to create a group. The first step is creating a Group (“Group Resource” or “roster”) of patients. 
+CMS requires practitioners to attest that they have a treatment-related relationship with each patient. You'll need to submit an attestation with every API request to create a group. The first step is creating a Group ("Group Resource" or "roster") of patients. 
 
 Attestations are posted as a [Provenance Resource](https://www.hl7.org/fhir/provenance.html) via the X-Provenance header.
 
@@ -90,7 +90,7 @@ You'll need to create a Group Resource to link a list of registered [patients]({
 
 **DPC response elements**
 
-The group response returned by DPC includes additional “period” and “inactive” elements for each patient. These indicate the time period for which the patient has an active relationship with the practitioner. If the relationship has expired, the time period for which the patient was active will be shown.
+The group response returned by DPC includes additional "period" and "inactive" elements for each patient. These indicate the time period for which the patient has an active relationship with the practitioner. If the relationship has expired, the time period for which the patient was active will be shown.
 
 {% include alert.html variant="warning" text="Attribution groups must be updated every 90 days." classNames="measure-6" %}
 
@@ -158,9 +158,9 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Group \
 
 ### When do attestations expire?
 
-Every 90 days practitioners will need to update their Provenance (attestation) and Group Resources by re-attributing the patient to the practitioner’s group.
+Every 90 days practitioners will need to update their Provenance (attestation) and Group Resources by re-attributing the patient to the practitioner's group.
 
-When an attribution relationship between a patient and practitioner has expired, either due to exceeding the 90-day threshold or being manually removed, the patient’s “inactive” flag will be set to “true.” Patients who are attributed to a practitioner but have their inactive flag set to “true,” will not be included in bulk data exports.
+When an attribution relationship between a patient and practitioner has expired, either due to exceeding the 90-day threshold or being manually removed, the patient's "inactive" flag will be set to "true." Patients who are attributed to a practitioner but have their inactive flag set to "true," will not be included in bulk data exports.
 
 ### Identify expired patients
 
@@ -272,7 +272,7 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/\$add \
 
 ## Remove patients from a group
 
-Use a custom $remove operation on the /Group endpoint to remove a patient from a group. The patient’s inactive parameter will then be set to true.
+Use a custom $remove operation on the /Group endpoint to remove a patient from a group. The patient's inactive parameter will then be set to true.
 
 ### Example request
 
@@ -398,13 +398,13 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID} \
 
 ## How to locate your Group ID
 
-You can only pull data for one practitioner’s patient group at a time. Do this by sending a GET request to the Group endpoint to retrieve the practitioner’s [Attribution Group](https://hl7.org/fhir/STU3/group.html). Use their NPI number as a parameter.
+You can only pull data for one practitioner's patient group at a time. Do this by sending a GET request to the Group endpoint to retrieve the practitioner's [Attribution Group](https://hl7.org/fhir/STU3/group.html). Use their NPI number as a parameter.
 
 {% include alert.html variant="info" text="DPC supports the standard <a href='https://www.hl7.org/fhir/search.html'>FHIR search protocol</a>. Searching for patients associated with a given practitioner makes use of <a href='https://www.hl7.org/fhir/search.html#combining'>composite search parameters</a>." classNames="measure-6" %}
 
 The response will return a [Bundle](https://www.hl7.org/fhir/STU3/bundle.html) Resource which contains attribution Groups for the given practitioner. 
 
-You can use the Group ID value of the returned resources to [initiate an export job]({{ "/api-documentation/export-data.html#initiate-an-export-job" | relative_url }}). Find your Group ID by referencing the `id` variable in your group’s resource object.
+You can use the Group ID value of the returned resources to [initiate an export job]({{ "/api-documentation/export-data.html#initiate-an-export-job" | relative_url }}). Find your Group ID by referencing the `id` variable in your group's resource object.
 
 ### Example Group Resource
 

@@ -39,7 +39,7 @@ This documentation shows you how to connect to synthetic data in the <a href="ht
 
 ## Requirements
 
-To complete these steps you’ll need to:
+To complete these steps you'll need to:
 
 - Sign up for the DPC Sandbox  
 - Use a [command-line interface](https://github.com/resources/articles/what-is-a-cli) (e.g., Terminal)  

@@ -25,7 +25,7 @@ Include the following to avoid a `422 - Unprocessable Entity` error.
 
 ## Add a practitioner bundle
 
-The `$submit` operation lets you upload a bundle of practitioner resources in a single batch using the `/Practitioner` endpoint. If you don’t include the minimum requirements described above, you’ll receive an error.
+The `$submit` operation lets you upload a bundle of practitioner resources in a single batch using the `/Practitioner` endpoint. If you don't include the minimum requirements described above, you'll receive an error.
 
 **Example request**
 

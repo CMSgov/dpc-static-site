@@ -33,7 +33,7 @@ Authorization: Bearer {ACCESS_TOKEN}
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
-To create an `ACCESS_TOKEN`, submit a valid JWT to the `/Token/auth` endpoint via a `POST` request. The `POST` request body’s Content Type must be `application/x-www-form-urlencoded`. The body of the request must be URL encoded.
+To create an `ACCESS_TOKEN`, submit a valid JWT to the `/Token/auth` endpoint via a `POST` request. The `POST` request body's Content Type must be `application/x-www-form-urlencoded`. The body of the request must be URL encoded.
 
 **Example request**
 {% capture snippet %}

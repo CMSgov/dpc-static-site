@@ -8,7 +8,7 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-The `/Patient/{PATIENT_ID}/$everything` endpoint lets you retrieve all resources about a patient using their DPC internal ID (UUID), represented as `{PATIENT_ID}` in the request. They’ll receive a bundle with 7 years’ historical data including:
+The `/Patient/{PATIENT_ID}/$everything` endpoint lets you retrieve all resources about a patient using their DPC internal ID (UUID), represented as `{PATIENT_ID}` in the request. They'll receive a bundle with 7 years' historical data including:
 
 - Patient  
 - Coverage  
@@ -19,9 +19,9 @@ This is a synchronous download. `/Patient/{PATIENT_ID}/$everything` doesn't crea
 
 **Note:** A Patient record must already exist in the DPC database to complete your request. However, the patient does not need to belong to [a group]({{ "/api-documentation/attribution/attestation.html#create-a-patient-group-resource" | relative_url }}).
 
-## Find a patient’s DPC ID
+## Find a patient's DPC ID
 
-If you only have the patient’s Medicare Beneficiary Identifier (MBI) you can retrieve the DPC internal ID by first [making a GET request for that specific patient]({{ "/api-documentation/attribution/upload-patients/add-view-list-patients.html#list-a-specific-patient" | relative_url }}). The UUID is returned in that response.
+If you only have the patient's Medicare Beneficiary Identifier (MBI) you can retrieve the DPC internal ID by first [making a GET request for that specific patient]({{ "/api-documentation/attribution/upload-patients/add-view-list-patients.html#list-a-specific-patient" | relative_url }}). The UUID is returned in that response.
 
 Learn more about the HL7 FHIR Specification for:
 
