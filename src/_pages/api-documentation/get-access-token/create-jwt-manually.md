@@ -2,7 +2,7 @@
 layout: api-docs
 page_title: "Create a JWT Manually"
 seo_title: ""
-description: ""
+description: "Step-by-step instructions for creating a JSON Web Token (JWT) manually for DPC API authentication, without using the JWT Tool."
 in-page-nav: true
 ---
 

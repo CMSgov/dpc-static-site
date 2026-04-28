@@ -2,7 +2,7 @@
 layout: api-docs
 page_title: "Support"
 seo_title: ""
-description: ""
+description: "Feedback channels, troubleshooting resources, and contact information for the Data at the Point of Care (DPC) team."
 show-side-nav: false
 ---
 

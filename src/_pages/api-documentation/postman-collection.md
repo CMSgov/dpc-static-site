@@ -2,7 +2,7 @@
 layout: api-docs
 page_title: "Postman Collection"
 seo_title: ""
-description: ""
+description: "Use the DPC Postman Collection to test API requests against the public endpoints and sandbox environment with auto-generated JWTs and access tokens."
 in-page-nav: true
 ---
 

@@ -2,7 +2,7 @@
 layout: api-docs
 page_title: "Get an Access Token"
 seo_title: ""
-description: ""
+description: "Generate a JSON Web Token and exchange it for an OAuth 2.0 access token to authenticate requests to the DPC API."
 in-page-nav: true
 ---
 

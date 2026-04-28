@@ -2,7 +2,7 @@
 layout: api-docs
 page_title: "About DPC"
 seo_title: ""
-description: ""
+description: "Data at the Point of Care (DPC) is a CMS pilot program that shares Medicare claims data with Original Medicare providers to support coordinated care."
 show-side-nav: false
 ---
 

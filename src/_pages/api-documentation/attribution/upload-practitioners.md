@@ -2,7 +2,7 @@
 layout: api-docs
 page_title: "Upload Practitioners"
 seo_title: ""
-description: ""
+description: "Upload sample practitioner bundles to create a test organization and complete attribution in the DPC Sandbox."
 in-page-nav: true
 ---
 

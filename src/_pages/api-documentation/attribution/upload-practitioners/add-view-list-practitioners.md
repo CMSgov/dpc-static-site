@@ -2,7 +2,7 @@
 layout: api-docs
 page_title: "Add, View, and List Practitioners"
 seo_title: ""
-description: ""
+description: "Add, view, list, update, and remove practitioners in your organization using the DPC API's Practitioner endpoints."
 in-page-nav: true
 ---
 

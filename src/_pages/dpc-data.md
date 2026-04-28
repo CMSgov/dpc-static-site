@@ -2,7 +2,7 @@
 layout: api-docs
 page_title: "DPC Data"
 seo_title: ""
-description: ""
+description: "Overview of the Medicare beneficiary claims data shared through the Data at the Point of Care API, including FHIR Resources and bulk data specifications."
 in-page-nav: true
 ---
 

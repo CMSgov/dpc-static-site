@@ -1,8 +1,8 @@
 ---
 layout: api-docs
-page_title: "Attribution"
+page_title: "Attestation"
 seo_title: ""
-description: ""
+description: "Attestation requirements for attributing patients to a provider group, including how to submit Provenance Resources via the X-Provenance header."
 in-page-nav: true
 ---
 

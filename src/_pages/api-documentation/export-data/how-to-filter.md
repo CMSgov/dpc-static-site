@@ -2,7 +2,7 @@
 layout: api-docs
 page_title: "How to Filter Claims Data"
 seo_title: ""
-description: ""
+description: "Filter exported claims data by FHIR Resource type and date range using the DPC API's _type and _since query parameters."
 in-page-nav: true
 ---
 

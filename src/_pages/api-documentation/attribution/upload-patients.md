@@ -2,7 +2,7 @@
 layout: api-docs
 page_title: "Upload Patients"
 seo_title: ""
-description: ""
+description: "Upload sample patient bundles to your organization in the DPC Sandbox to set up attribution test data."
 in-page-nav: true
 ---
 

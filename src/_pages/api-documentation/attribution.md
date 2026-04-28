@@ -2,7 +2,7 @@
 layout: api-docs
 page_title: "Attribution"
 seo_title: ""
-description: ""
+description: "Establish a valid patient-practitioner relationship with CMS by attributing patients to practitioners in a Group Resource before accessing patient data."
 in-page-nav: true
 ---
 

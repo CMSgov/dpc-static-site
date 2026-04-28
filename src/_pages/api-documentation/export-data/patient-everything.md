@@ -2,7 +2,7 @@
 layout: api-docs
 page_title: "/Patient/$everything"
 seo_title: ""
-description: ""
+description: "Retrieve all FHIR resources for a single patient, including 7 years of historical data, using the DPC API's /Patient/$everything endpoint."
 in-page-nav: true
 ---
 

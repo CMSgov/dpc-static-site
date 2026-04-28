@@ -2,7 +2,7 @@
 layout: api-docs
 page_title: "API Documentation"
 seo_title: ""
-description: ""
+description: "Learn how to use the DPC API to access Medicare claims data, including authentication, attribution, and exporting data from the DPC Sandbox."
 in-page-nav: true
 ---
 

@@ -2,7 +2,7 @@
 layout: api-docs
 page_title: "Manage Credentials"
 seo_title: ""
-description: ""
+description: "View, create, renew, and delete client tokens and public keys for your organization using the DPC API."
 in-page-nav: true
 ---
 

@@ -2,7 +2,7 @@
 layout: api-docs
 page_title: "Get Sandbox Credentials"
 seo_title: ""
-description: ""
+description: "Request access to the DPC Sandbox and create the client tokens and public keys you'll need to authenticate API requests."
 in-page-nav: true
 ---
 
