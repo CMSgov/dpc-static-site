@@ -10,7 +10,8 @@
     "unlighthouse": "npx unlighthouse --site http://localhost:4000",
     "gulp": "gulp",
     "update:npm": "npx taze",
-    "update:gems": "bundle update"
+    "update:gems": "bundle update",
+    "spellcheck": "cspell"
   },
   "dependencies": {
     "@uswds/compile": "^1.3.1",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
+    "cspell-cli": "^10.0.0",
     "pa11y-ci": "^4.1.0",
     "taze": "19.8.1"
   }
