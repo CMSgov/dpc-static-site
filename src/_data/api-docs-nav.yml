@@ -1,51 +1,50 @@
 - name: API Documentation
   url: /api-documentation.html
+
+- name: Get Sandbox Credentials
+  url: /api-documentation/get-sandbox-credentials.html
+
+- name: Get an Access Token
+  url: /api-documentation/get-access-token.html
   children:
 
-    - name: Get Sandbox Credentials
-      url: /api-documentation/get-sandbox-credentials.html
+  - name: Create a JWT Manually
+    url: /api-documentation/get-access-token/create-jwt-manually.html
 
-    - name: Get an Access Token
-      url: /api-documentation/get-access-token.html
-      children:
+  - name: Manage Credentials
+    url: /api-documentation/get-access-token/manage-credentials.html
 
-      - name: Create a JWT Manually
-        url: /api-documentation/get-access-token/create-jwt-manually.html
+- name: Attribution
+  url: /api-documentation/attribution.html
+  children:
 
-      - name: Manage Credentials
-        url: /api-documentation/get-access-token/manage-credentials.html
+  - name: Upload Practitioners
+    url: /api-documentation/attribution/upload-practitioners.html
+    children:
+    - name: Add, View, and List Practitioners
+      url: /api-documentation/attribution/upload-practitioners/add-view-list-practitioners.html
 
-    - name: Attribution
-      url: /api-documentation/attribution.html
-      children:
+  - name: Upload Patients
+    url: /api-documentation/attribution/upload-patients.html
+    children:
+    - name: Add, View, and List Patients
+      url: /api-documentation/attribution/upload-patients/add-view-list-patients.html
 
-      - name: Upload Practitioners
-        url: /api-documentation/attribution/upload-practitioners.html
+  - name: Attestation
+    url: /api-documentation/attribution/attestation.html
 
-      - name: Add, View, and List Practitioners
-        url: /api-documentation/attribution/upload-practitioners/add-view-list-practitioners.html
+- name: Export Data
+  url: /api-documentation/export-data.html
+  children:
 
-      - name: Upload Patients
-        url: /api-documentation/attribution/upload-patients.html
+  - name: How to Filter Claims Data
+    url: /api-documentation/export-data/how-to-filter.html
 
-      - name: Add, View, and List Patients
-        url: /api-documentation/attribution/upload-patients/add-view-list-patients.html
+  - name: /Patient/$everything
+    url: /api-documentation/export-data/patient-everything.html
 
-      - name: Attestation
-        url: /api-documentation/attribution/attestation.html
-
-    - name: Export Data
-      url: /api-documentation/export-data.html
-      children:
-
-      - name: How to Filter Claims Data
-        url: /api-documentation/export-data/how-to-filter.html
-
-      - name: /Patient/$everything
-        url: /api-documentation/export-data/patient-everything.html
-
-    - name: Postman Collection
-      url: /api-documentation/postman-collection.html
+- name: Postman Collection
+  url: /api-documentation/postman-collection.html
 
 - name: DPC Data
   url: /dpc-data.html

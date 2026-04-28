@@ -11,26 +11,20 @@
     - name: Get Started
       url: /api-documentation.html
       
-    - name: Attestation & Attribution
+    - name: Attribution
       url: /api-documentation/attribution.html
 
-    - name: Postman Collection
-      url: /api-documentation/postman-collection.html
-  
-- name: Data 
-  children:
-    - name: DPC Data
-      url: /dpc-data.html
-    
     - name: Export Data
       url: /api-documentation/export-data.html
-
 
     - name: Postman Collection
       url: /api-documentation/postman-collection.html
 
     - name: /Patient/$everything
       url: /api-documentation/export-data/patient-everything.html
+  
+- name: Data 
+  url: /dpc-data.html
 
 - name: Support
   url: /support.html
