@@ -196,3 +196,11 @@ main h6 {
   word-wrap: break-word;
   color: #B9323F;
 }
+
+// Adding this manually, rather than enabling all desktop-lg utilities
+// This is needed because .usa-in-page-nav is hidden at desktop-lg and we want our column to stay in sync
+@media (min-width: 75em) {
+  .desktop-lg\:display-block {
+    display: block;
+  }
+}
