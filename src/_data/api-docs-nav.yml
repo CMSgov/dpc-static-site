@@ -22,13 +22,13 @@
       - name: Upload Practitioners
         url: /api-documentation/attribution/upload-practitioners.html
 
-      - name: Add, View, and Edit Practitioners
+      - name: Add, View, and List Practitioners
         url: /api-documentation/attribution/upload-practitioners/add-view-list-practitioners.html
 
       - name: Upload Patients
         url: /api-documentation/attribution/upload-patients.html
 
-      - name: Add, View, and Edit Patients
+      - name: Add, View, and List Patients
         url: /api-documentation/attribution/upload-patients/add-view-list-patients.html
 
       - name: Attestation
