@@ -6,9 +6,12 @@
   <div class="grid-row">
     <div class="tablet:grid-col-fill">
       <div
-        class="padding-left-2 padding-y-3 {% if can_copy %}padding-right-15{% else %}padding-right-2{% endif %}"
+        class="padding-left-2 padding-y-3"
         tabindex="0"
         style="overflow-x: auto;"
+        {% if can_copy == true %}
+        data-canCopy="true"
+        {% endif %}
       >
         <!-- TODO: Can we pass the language var to avoid these conditionals -->
         {%- if include.language == "json" -%}
