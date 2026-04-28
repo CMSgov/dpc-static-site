@@ -79,7 +79,7 @@ You'll need to create a Group Resource to link a list of registered [patients]({
 **Group Resource requirements**
 
 - [National Provider Identity (NPI)](https://www.cms.gov/Regulations-and-Guidance/Administrative-Simplification/NationalProvIdentStand/) for the practitioner that patients will be attributed to  
-- The DPC ID of the patient(s) that are members of the group. This value is the alphanumeric DPC ID of the Patient Resource in DPC. It is a UUID
+- The DPC ID of the patient(s) that are members of the group. This value is the alphanumeric DPC ID of the Patient Resource in DPC.
 
 ### Steps to create a Group Resource
 
