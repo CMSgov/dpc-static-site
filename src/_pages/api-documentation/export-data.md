@@ -8,13 +8,13 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-## The `/Group/$export` operation 
+## The /Group/$export operation 
 
 The`/Group/$export` operation is how you export bulk claims data from the DPC API. It returns [Patient, Coverage, and Explanation of Benefit data]({{ "/dpc-data.html" | relative_url }}) asynchronously.
 
 Details on the FHIR bulk data operations can be found in the [FHIR Bulk Data Specification](https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-group-export.html). 
 
-### Filtering data with `_type` and `_since`
+### Filtering data with _type and _since
 
 Use `_type` and `_since` to [filter your results]({{ "/api-documentation/export-data/how-to-filter.html" | relative_url }}) by content, time, and range:
 
