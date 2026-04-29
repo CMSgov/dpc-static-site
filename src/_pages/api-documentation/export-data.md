@@ -10,26 +10,23 @@ in-page-nav: true
 
 ## The `/Group/$export` operation 
 
-The FHIR `/Group/$export` operation is the primary interaction with the DPC Sandbox API. It lets you export [Patient, Coverage, and Explanation of Benefit data]({{ "/dpc-data.html" | relative_url }}) asynchronously and in bulk. Details on the FHIR bulk data operations can be found in the [FHIR Bulk Data Specification](https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-group-export.html). 
+The`/Group/$export` operation is how you export bulk claims data from the DPC API. It returns [Patient, Coverage, and Explanation of Benefit data]({{ "/dpc-data.html" | relative_url }}) asynchronously.
+
+Details on the FHIR bulk data operations can be found in the [FHIR Bulk Data Specification](https://build.fhir.org/ig/HL7/bulk-data/OperationDefinition-group-export.html). 
 
 ### Filtering data with `_type` and `_since`
 
-Use `_type` and `_since` to [filter your results]({{ "/api-documentation/export-data/how-to-filter.html" | relative_url }}) by content, time, and range.
+Use `_type` and `_since` to [filter your results]({{ "/api-documentation/export-data/how-to-filter.html" | relative_url }}) by content, time, and range:
 
-#### Filter by FHIR Resource type with `_type`
-Specify which of the FHIR resources to download using the `_type` query parameter (e.g., `?_type=Patient,Coverage`).
-
-#### Exclude data before a specified date with _since
-Choose to download data obtained after a certain date by adding the `_since` parameter (e.g., only show Patient data from January 7, 2025 to the present). 
-
-#### Get all of a patient's data  
-Use [`/Patient/{PATIENT_ID}/$everything`]({{ "/api-documentation/export-data/patient-everything.html" | relative_url }}) for 7 years' historical data including Patient, Coverage, and ExplanationOfBenefit Resources. 
+- `_type` restricts the export to specific FHIR Resources (e.g., `?_type=Patient,Coverage`).
+- `_since` excludes data older than a given date (e.g., `?_since=2025-01-07T00:00:00Z`).
+- For a single patient's full 7-year history including Patient, Coverage, and ExplanationOfBenefit, use [`/Patient/{PATIENT_ID}/$everything`]({{ "/api-documentation/export-data/patient-everything.html" | relative_url }}) instead of `$export`.
 
 ## Initiating an export job
 
-### 1. Locate your Group ID
-    
-In order to start a patient data export job, locate your [Group ID]({{ "/api-documentation/attribution/attestation.html#create-a-patient-group-resource" | relative_url }}) by referencing the `id` variable in the resource object of your group.
+### Locate your Group ID
+
+Each export job operates on a single attribution group. The Group ID is the `id` field of the Group Resource, get it from the [POST /Group response]({{ "/api-documentation/attribution/attestation.html#create-a-group-resource" | relative_url }}) when you create the group, or from a [GET /Group lookup]({{ "/api-documentation/attribution/attestation.html#locate-your-group-id" | relative_url }}) by practitioner NPI.
 
 **Example Group Resource**
 
@@ -41,9 +38,9 @@ In order to start a patient data export job, locate your [Group ID]({{ "/api-doc
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="json" %}
 
-### 2. Make a GET request to the /Group/$export endpoint
+### Initiate the export
 
-Make a GET request with headers: an access token, an Accept header, and a Prefer header.
+Make a GET request to `/Group/{GROUP_ID}/$export` with `Authorization`, `Accept: application/fhir+json`, and `Prefer: respond-async` headers.
 
 **Example request**
 
@@ -62,9 +59,9 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/\$export \
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-The API returns a `202 Accepted` response code for successful requests. The response will be returned with a Content-Location header. The value of this header indicates the location to monitor your job status and outcomes. The value of the header also contains the export `JOB_ID` of the Job. There is no BODY to the response, only headers.
+The API returns `202 Accepted` for successful requests. The response body is empty; the Job URL is returned in the `Content-Location` response header.
 
-**Example response: Content-Location header**
+**Example response header** (`202 Accepted`)
 
 {% capture snippet %}
 Content-Location: https://sandbox.dpc.cms.gov/api/v1/Jobs/{JOB_ID}
@@ -73,32 +70,23 @@ Content-Location: https://sandbox.dpc.cms.gov/api/v1/Jobs/{JOB_ID}
 
 ## Check status of the export job
 
-You can check the status of your job using the `{EXPORT_JOB_ID}` from the Content-Location header of the response as shown in the previous section. The status of the job will change from `202 Accepted` to `200 OK` when the export job is complete and the data is ready to be downloaded.
+{% include alert.html variant="warning" text="Don't send <code>Accept: application/fhir+json</code> to the Jobs endpoint, it returns <code>406 Not Acceptable</code>. Either omit the <code>Accept</code> header or use <code>application/json</code>." classNames="measure-6" %}
 
-**Example request**
+Export jobs are asynchronous. While the job is still running, the same URL returns `202 Accepted` with no body. When the job completes, it returns `200 OK` with a JSON body listing the output files.
 
-{% capture snippet %}
-GET https://sandbox.dpc.cms.gov/api/v1/Jobs/{EXPORT_JOB_ID}
-{% endcapture %}
-{% include copy_snippet.html code=snippet language="http" %}
-
-**Example cURL command**
+**Example cURL command** (use the URL directly from `Content-Location`)
 
 {% capture snippet %}
-curl -v https://sandbox.dpc.cms.gov/api/v1/Jobs/{EXPORT_JOB_ID} \
+curl -v https://sandbox.dpc.cms.gov/api/v1/Jobs/{JOB_ID} \
      -H 'Authorization: Bearer {ACCESS_TOKEN}'
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-{% include alert.html variant="warning" text="Don't send <code>Accept: application/fhir+json</code> to the Jobs endpoint — it returns <code>406 Not Acceptable</code>. Either omit the <code>Accept</code> header or use <code>application/json</code>." classNames="measure-6" %}
-
-If the request was successful, the status of the job will change from `202 Accepted` to `200 OK` when the export job is complete and the data is ready to be downloaded.
-
-**Example response: bulk export job**
+**Example response**
 
 {% capture snippet %}
 {
- "transactionTime": "2018-10-19T21:07:46.876+00:00",
+ "transactionTime": "2026-04-28T21:07:46.876+00:00",
  "request": "https://sandbox.dpc.cms.gov/api/v1/Group/64d0cd85-7767-425a-a3b8-dcc9bdfd5402/$export",
  "requiresAccessToken": true,
  "output": [
@@ -122,47 +110,43 @@ If the request was successful, the status of the job will change from `202 Accep
  "extension": [
    {
      "url": "https://dpc.cms.gov/submit_time",
-     "valueDateTime": "2018-10-19T21:07:46.876+00:00"
+     "valueDateTime": "2026-04-28T21:07:46.876+00:00"
    },
    {
      "url": "https://dpc.cms.gov/complete_time",
-     "valueDateTime": "2018-10-19T21:07:47.488+00:00"
+     "valueDateTime": "2026-04-28T21:07:47.488+00:00"
    }
  ]
 }
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="json" %}
 
-Claims data can be found at the URLs within the `output` field. Each output item also includes a `count` field referring to the number of records (one per line) in the NDJSON file.
-
-The output includes file integrity information in an `extension` array. It contains `https://dpc.cms.gov/checksum` (a checksum in the format `algorithm:checksum`) and `https://dpc.cms.gov/file_length` (the file length in bytes).
-
-The top-level `extension` array contains `submit_time` and `complete_time` for the job. If some of the data cannot be exported due to errors, details of the errors can be found at the URLs in the `error` field (`error: []` when there are none). The errors are provided in [NDJSON](https://github.com/ndjson/ndjson-spec) files as FHIR [OperationOutcome](http://hl7.org/fhir/STU3/operationoutcome.html) resources.
+Each `output` item contains a `count` (the number of records in the NDJSON file) and a checksum/length for integrity verification. The `error` array (empty when there are no errors) lists URLs to NDJSON files containing per-resource [OperationOutcome](http://hl7.org/fhir/STU3/operationoutcome.html) failures.
 
 ## Retrieve the NDJSON output file(s)
 
-To obtain the exported Explanation of Benefit data as NDJSON, make a GET request to the output URLs in the job status response when the job reaches the Completed state. The data will be presented as an [NDJSON](https://github.com/ndjson/ndjson-spec) file of ExplanationOfBenefit Resources.
+{% include alert.html variant="warning" text="The Data endpoint is not a FHIR resource. Don't send <code>Accept: application/fhir+json</code> or <code>application/fhir+ndjson</code>, both return <code>406 Not Acceptable</code>. Omit the <code>Accept</code> header." classNames="measure-6" %}
 
-{% include alert.html variant="warning" text="The Data endpoint is not a FHIR resource. Don't send <code>Accept: application/fhir+json</code> or <code>application/fhir+ndjson</code> — both return <code>406 Not Acceptable</code>. Omit the <code>Accept</code> header." classNames="measure-6" %}
+Fetch each URL in `output[].url` with your access token to download an [NDJSON](https://github.com/ndjson/ndjson-spec) file of FHIR resources (Patient, Coverage, or ExplanationOfBenefit, depending on the entry).
 
 **Example request**
 
 {% capture snippet %}
-GET https://sandbox.dpc.cms.gov/api/v1/Data/{FILE_NAME}
+GET https://sandbox.dpc.cms.gov/api/v1/Data/{NDJSON_FILE}
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 
 {% capture snippet %}
-curl https://sandbox.dpc.cms.gov/api/v1/Data/{FILE_NAME} \
+curl https://sandbox.dpc.cms.gov/api/v1/Data/{NDJSON_FILE} \
      -H 'Authorization: Bearer {ACCESS_TOKEN}' \
      -H 'Accept-Encoding: gzip' \
      --compressed
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
-**Example response: Explanation of Benefit resource**
+**Example response**
 
 {% capture snippet %}
 {
