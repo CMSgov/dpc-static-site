@@ -192,7 +192,7 @@ main h6 {
 // Red applies only outside links so <code> in <a> inherits the link color.
 .usa-prose code:not(.highlight code):not(a code) {
   background-color: #f0f0f0;
-  padding: .125rem .5rem;
+  padding: .125rem .25rem;
   word-wrap: break-word;
   color: #B9323F;
 }
