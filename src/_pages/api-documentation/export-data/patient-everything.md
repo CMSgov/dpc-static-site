@@ -51,16 +51,18 @@ GET /api/v1/Patient/{PATIENT_ID}/$everything?_since=2021-05-13T08:00:00.000-05:0
 {% capture snippet %}
 Authorization: Bearer {ACCESS_TOKEN}
 Accept: application/fhir+json
-X-Provenance: {PROVENANCE_JSON}
+X-Provenance: {"resourceType":"Provenance","recorded":"...","reason":[...],"agent":[...]}
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
+
+The cURL example below uses the `$X_PROVENANCE` shell variable set up in [Build the X-Provenance header]({{ "/api-documentation/attribution/attestation.html#build-the-x-provenance-header" | relative_url }}).
 
 **Example cURL command**
 
 {% capture snippet %}
 curl -X GET 'https://sandbox.dpc.cms.gov/api/v1/Patient/{PATIENT_ID}/$everything?_since=2021-05-13T08:00:00.000-05:00' \
      -H 'Accept: application/fhir+json' \
-     -H 'X-Provenance: {PROVENANCE_JSON}' \
+     -H "X-Provenance: $X_PROVENANCE" \
      -H 'Authorization: Bearer {ACCESS_TOKEN}'
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}

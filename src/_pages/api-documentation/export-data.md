@@ -90,52 +90,60 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Jobs/{EXPORT_JOB_ID} \
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
+{% include alert.html variant="warning" text="Don't send <code>Accept: application/fhir+json</code> to the Jobs endpoint — it returns <code>406 Not Acceptable</code>. Either omit the <code>Accept</code> header or use <code>application/json</code>." classNames="measure-6" %}
+
 If the request was successful, the status of the job will change from `202 Accepted` to `200 OK` when the export job is complete and the data is ready to be downloaded.
 
 **Example response: bulk export job**
 
 {% capture snippet %}
 {
- "transactionTime": "2018-10-19T14:47:33.975024Z",
+ "transactionTime": "2018-10-19T21:07:46.876+00:00",
  "request": "https://sandbox.dpc.cms.gov/api/v1/Group/64d0cd85-7767-425a-a3b8-dcc9bdfd5402/$export",
  "requiresAccessToken": true,
  "output": [
    {
      "type": "ExplanationOfBenefit",
-     "url": "https://sandbox.dpc.cms.gov/api/v1/Data/42/DBBD1CE1-AE24-435C-807D-ED45953077D3.ndjson",
+     "url": "https://sandbox.dpc.cms.gov/api/v1/Data/06abfdd3-dc05-43aa-b07a-361651576c3b-0.explanationofbenefit.ndjson",
+     "count": 45,
      "extension": [
        {
          "url": "https://dpc.cms.gov/checksum",
-         "valueString": "sha256:8b74ba377554fa73de2a2da52cab9e1d160550247053e4d6aba1968624c67b10"
+         "valueString": "sha256:39d130b14dab19ffde88b577b8e422839ba6471426be10405431c2c3fd4cab83"
        },
        {
          "url": "https://dpc.cms.gov/file_length",
-         "valueDecimal": 2468
+         "valueDecimal": 14692
        }
      ]
    }
  ],
- "error": [
+ "error": [],
+ "extension": [
    {
-     "type": "OperationOutcome",
-     "url": "https://sandbox.dpc.cms.gov/api/v1/data/42/DBBD1CE1-AE24-435C-807D-ED45953077D3-error.ndjson"
+     "url": "https://dpc.cms.gov/submit_time",
+     "valueDateTime": "2018-10-19T21:07:46.876+00:00"
+   },
+   {
+     "url": "https://dpc.cms.gov/complete_time",
+     "valueDateTime": "2018-10-19T21:07:47.488+00:00"
    }
  ]
 }
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="json" %}
 
-Claims data can be found at the URLs within the output field.
+Claims data can be found at the URLs within the `output` field. Each output item also includes a `count` field referring to the number of records (one per line) in the NDJSON file.
 
-The output includes file integrity information in an extension array. It contains `https://dpc.cms.gov/checksum` (a checksum in the format algorithm:checksum) and `https://dpc.cms.gov/file_length` (the file length in bytes).
+The output includes file integrity information in an `extension` array. It contains `https://dpc.cms.gov/checksum` (a checksum in the format `algorithm:checksum`) and `https://dpc.cms.gov/file_length` (the file length in bytes).
 
-The number 42 in the example data file URLs is the same job ID from the Content-Location header URL when you initiate an export job. If some of the data cannot be exported due to errors, details of the errors can be found at the URLs in the error field. The errors are provided in [NDJSON](https://github.com/ndjson/ndjson-spec) files as FHIR [OperationOutcome](http://hl7.org/fhir/STU3/operationoutcome.html) resources.
+The top-level `extension` array contains `submit_time` and `complete_time` for the job. If some of the data cannot be exported due to errors, details of the errors can be found at the URLs in the `error` field (`error: []` when there are none). The errors are provided in [NDJSON](https://github.com/ndjson/ndjson-spec) files as FHIR [OperationOutcome](http://hl7.org/fhir/STU3/operationoutcome.html) resources.
 
 ## Retrieve the NDJSON output file(s)
 
 To obtain the exported Explanation of Benefit data as NDJSON, make a GET request to the output URLs in the job status response when the job reaches the Completed state. The data will be presented as an [NDJSON](https://github.com/ndjson/ndjson-spec) file of ExplanationOfBenefit Resources.
 
-The Data endpoint is not a FHIR resource and doesn't require the Accept header to be set to application/fhir+json.
+{% include alert.html variant="warning" text="The Data endpoint is not a FHIR resource. Don't send <code>Accept: application/fhir+json</code> or <code>application/fhir+ndjson</code> — both return <code>406 Not Acceptable</code>. Omit the <code>Accept</code> header." classNames="measure-6" %}
 
 **Example request**
 
