@@ -333,7 +333,7 @@ You can only pull data for one practitioner's patient group at a time. Send a GE
 
 The response will return a [Bundle](https://www.hl7.org/fhir/STU3/bundle.html) Resource which contains attribution groups for the given practitioner.
 
-You can use the Group ID value of the returned resources to [initiate an export job]({{ "/api-documentation/export-data.html#initiate-an-export-job" | relative_url }}). Find your Group ID by referencing the `id` variable in your group's resource object.
+You can use the Group ID value of the returned resources to [initiate an export job]({{ "/api-documentation/export-data.html#initiating-an-export-job" | relative_url }}). Find your Group ID by referencing the `id` variable in your group's resource object.
 
 **Example Group Resource**
 

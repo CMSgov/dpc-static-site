@@ -43,7 +43,7 @@ On subsequent calls you can begin retrieving incremental claims data for your be
 Two ways to use `_since`:
 
 1. Request the most recent data for all beneficiaries: [Use `_since` within the `/Group` endpoint](#request-data-using-_since-with-the-group-endpoint).  
-2. Request data synchronously for an individual patient: [Use `_since` within the `/Patient` endpoint]({{ "/api-documentation/export-data/patient-everything.html#requesting-data-using-_since-with-the-patient-endpoint" | relative_url }}).
+2. Request data synchronously for an individual patient: [Use `_since` within the `/Patient` endpoint]({{ "/api-documentation/export-data/patient-everything.html#request-data-using-_since-with-the-patient-endpoint" | relative_url }}).
 
 ### Steps to request filtered data
 

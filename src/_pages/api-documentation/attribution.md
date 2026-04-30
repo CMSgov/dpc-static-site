@@ -14,7 +14,7 @@ DPC provides you with a bundle of [sample practitioners](https://github.com/CMSg
 
 1. [Upload practitioners]({{ "/api-documentation/attribution/upload-practitioners.html" | relative_url }}) in your organization.  
 2. [Upload patients]({{ "/api-documentation/attribution/upload-patients.html" | relative_url }}) in your care.  
-3. Attribute patients to their practitioners by [creating a group]({{ "/api-documentation/attribution/attestation.html#create-a-patient-group-resource" | relative_url }}) in the Attestation stage.
+3. Attribute patients to their practitioners by [creating a group]({{ "/api-documentation/attribution/attestation.html#create-a-group-resource" | relative_url }}) in the Attestation stage.
 
 ## Attestation
 
