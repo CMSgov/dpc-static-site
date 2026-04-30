@@ -10,7 +10,7 @@ in-page-nav: true
 
 DPC uses `_type` and `_since` parameters to filter your results by content, time, and range.
 
-## Filter claims data by FHIR Resource with `_type`
+## Filter claims data by FHIR Resource with _type
 
 The `_type` query parameter allows you to specify which FHIR Resources you wish to export. If you do not specify a `_type` parameter in your request, all three resources will be exported: [Explanation of Benefit, Patient, and Coverage]({{ "/dpc-data.html" | relative_url }}). You can specify these Resources individually or as a group using a comma delimited list and the syntax `?_type=ExplanationOfBenefit,Patient,Coverage`.
 
@@ -32,11 +32,11 @@ GET /api/v1/Group/{GROUP_ID}/$export?_type=ExplanationOfBenefit
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
-## Request filtered data with `_since`
+## Request filtered data with _since
 
 You can filter data using the `_since` parameter with either the `/Patient` or `/Group` endpoints. You may want to set `_since` queries as a repeating call or as a way to check for patient updates to avoid downloading duplicate data.
 
-{% include alert.html variant="warning" heading="Download all your data before using _since" text="We recommend running an unfiltered request (without using _since) to all resource types using the /Group/{GROUP_ID}/$export endpoint in order to retrieve all historical data for your associated beneficiaries. You only need to do this once." classNames="measure-6" %}
+{% include alert.html variant="warning" heading="Download all your data before using _since" text="We recommend running an unfiltered request (without using <code>_since</code>) to all resource types using the <code>/Group/{GROUP_ID}/$export</code> endpoint in order to retrieve all historical data for your associated beneficiaries. You only need to do this once." classNames="measure-6" %}
 
 On subsequent calls you can begin retrieving incremental claims data for your beneficiaries using `_since`. We suggest using the `transactionTime` from your last bulk data request as the `_since` date.
 
@@ -58,7 +58,7 @@ Datetimes submitted using `_since` must follow the [FHIR Instant format](https:/
 * Formatted Sample: 2020-02-20T12:00:00.000-05:00
 
 
-#### The value of the `_since` parameter must be URL encoded
+#### The value of the _since parameter must be URL encoded
 
 When using the [Postman Collection]({{ "/api-documentation/postman-collection.html" | relative_url }}), you'll need to manually encode the `_since` parameter when it contains a `+` since Postman does not automatically encode this character.
 
@@ -73,7 +73,7 @@ The Prefer header is **NOT** required for `/Patient/{PATIENT_ID}/$everything`, b
 
 Due to limitations in the Beneficiary FHIR Data (BFD) Server, data from before 02-12-2020 is marked with the arbitrary [lastUpdated](https://www.hl7.org/fhir/search.html#lastUpdated) date of 01-01-2020. If you input any dates between 01-01-2020 and 02-11-2020 in the `_since` parameter, you'll receive all historical data for your beneficiaries. Data loads from 02-12-2020 onwards have been marked with accurate dates.
 
-## Request data using `_since` with the `/Group` endpoint
+## Request data using _since with the /Group endpoint
 
 This operation will start a job for filtered data for existing beneficiaries at 8PM ET on May 13th, 2021 and will include all seven years of historical data for all patients in the Group who have a lastUpdated date that falls after the `_since` date. In the example, we request the Patient Resource Type. The steps and format would work similarly for other resource types.
 

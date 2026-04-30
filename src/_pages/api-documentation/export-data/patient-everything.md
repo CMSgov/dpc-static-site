@@ -14,7 +14,7 @@ The `/Patient/{PATIENT_ID}/$everything` endpoint lets you retrieve all resources
 - Coverage  
 - ExplanationOfBenefit 
 
-This is a synchronous download. `/Patient/{PATIENT_ID}/$everything` doesn't create a job that needs to be monitored or data files to download. The response body will contain the bundle. This is how it differs from a Group $export operation.
+This is a synchronous download. `/Patient/{PATIENT_ID}/$everything` doesn't create a job that needs to be monitored or data files to download. The response body will contain the bundle. This is how it differs from a `/Group/$export` operation.
 
 
 **Note:** A Patient record must already exist in the DPC database to complete your request. However, the patient does not need to belong to [a group]({{ "/api-documentation/attribution/attestation.html#create-a-patient-group-resource" | relative_url }}).
@@ -29,11 +29,11 @@ Learn more about the HL7 FHIR Specification for:
 - [Operation Patient Everything (Release v3)](http://hl7.org/fhir/STU3/operation-patient-everything.html)  
 - [Provenance Resource](https://www.hl7.org/fhir/provenance.html)
 
-## Request data using `_since` with the `/Patient` endpoint
+## Request data using _since with the /Patient endpoint
 
 Request data synchronously for an individual patient using the `_since` parameter within the `/Patient/{PATIENT_ID}/$everything` endpoint. 
 
-This operation will return all data for the specified patient since the selected date: May 13, 2021. Notice that we are seeking data from the `/Patient/{PATIENT_ID}/$everything` endpoint. This is a synchronous request for an individual patient referenced by the internal ID (UUID) and would behave differently if it was made from the /Group endpoint as data is returned immediately.
+This operation will return all data for the specified patient since the selected date: May 13, 2021. Notice that we are seeking data from the `/Patient/{PATIENT_ID}/$everything` endpoint. This is a synchronous request for an individual patient referenced by the internal ID (UUID) and would behave differently if it was made from the `/Group/$export` endpoint as data is returned immediately.
 
 ### Successful request
 
