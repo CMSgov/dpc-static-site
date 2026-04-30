@@ -40,9 +40,6 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
-gems:
-  - jekyll-redirect-from
-
 webrick:
   headers:
     Cache-Control: no-cache

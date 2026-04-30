@@ -28,6 +28,4 @@ gem "tzinfo-data", platforms: [:windows, :jruby]
 # Performance-booster for watching directories on Windows
 gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
-gem 'jekyll-redirect-from', '>= 0.15.0'
-
 gem "webrick", "~> 1.8"
