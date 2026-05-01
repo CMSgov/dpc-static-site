@@ -18,7 +18,7 @@ show-side-nav: false
     </div>
     <img
       class="position-relative"
-      src="{{ '/assets/img/person-4.png' | relative_url }}"
+      src="{{ '/assets/img/person-5.png' | relative_url }}"
       aria-hidden="true"
       alt=""
       style="height:400px;padding: 0 40px;"
