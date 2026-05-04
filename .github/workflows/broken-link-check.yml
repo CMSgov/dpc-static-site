@@ -60,7 +60,7 @@ jobs:
           args: --base https://dpc.cms.gov "./**/*.html" --no-progress --exclude ".*/assets/.*" --accept "200..=299, 401, 403, 405, 429"
 
   broken-link-check-dev:
-    if: ${{ (inputs.env == 'staging' && github.event_name == 'workflow_dispatch') || (inputs.env == 'staging' && github.event_name == 'pull_request')  }}
+    if: ${{ inputs.env == 'staging' }}
     permissions:
       id-token: write
     runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}

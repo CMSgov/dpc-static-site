@@ -9,7 +9,7 @@ concurrency:
 
 jobs:
   deploy:
-    if: ${{ !startsWith(github.actor, 'bot-') }}
+    if: github.event.pull_request.user.type != 'Bot'
     with:
       feature_path: ${{ github.event.number }}
     uses: ./.github/workflows/deploy.yml
