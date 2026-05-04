@@ -29,7 +29,7 @@ jobs:
         run: npx pa11y-ci --config pa11yci.ci.json --sitemap ${{ format('https://d16450h30z080t.cloudfront.net/{0}sitemap.xml', env.BASE_PATH) }} --sitemap-exclude "/*.pdf" --sitemap-find https://dpc.cms.gov/ --sitemap-replace https://d16450h30z080t.cloudfront.net/ --json > pa11y-results.json
 
       - name: Save Report to Action Summary
-        uses: actions/github-script@v9
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         # Always return pa11y output, regardless if all pages pass/fail. Job will now fail if errors are found, which is intentional
         if: always() 
         with:
