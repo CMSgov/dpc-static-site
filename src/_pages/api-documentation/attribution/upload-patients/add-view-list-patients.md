@@ -20,7 +20,7 @@ GET /api/v1/Patient?identifier={PATIENT_MBI}
 **Example cURL command**
 {% capture snippet %}
 curl -v 'https://sandbox.dpc.cms.gov/api/v1/Patient?identifier={PATIENT_MBI}' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'Authorization: Bearer {BEARER_TOKEN}' \
     -H 'Accept: application/fhir+json' \
     -X GET
 {% endcapture %}
@@ -83,7 +83,7 @@ GET /api/v1/Patient
 **Example cURL command**
 {% capture snippet %}
 curl -v 'https://sandbox.dpc.cms.gov/api/v1/Patient' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'Authorization: Bearer {BEARER_TOKEN}' \
     -H 'Accept: application/fhir+json' \
     -X GET
 {% endcapture %}
@@ -102,7 +102,7 @@ GET /api/v1/Patient?_count={PAGE_SIZE}&_offset={OFFSET}
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Patient?_count=100&_offset=0 \
-     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+     -H 'Authorization: Bearer {BEARER_TOKEN}' \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -X GET

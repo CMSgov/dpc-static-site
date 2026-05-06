@@ -53,7 +53,7 @@ GET /api/v1/Group/{GROUP_ID}/$export
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/\$export \
-     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+     -H 'Authorization: Bearer {BEARER_TOKEN}' \
      -H 'Accept: application/fhir+json' \
      -H 'Prefer: respond-async'
 {% endcapture %}
@@ -78,7 +78,7 @@ Export jobs are asynchronous. While the job is still running, the same URL retur
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Jobs/{JOB_ID} \
-     -H 'Authorization: Bearer {ACCESS_TOKEN}'
+     -H 'Authorization: Bearer {BEARER_TOKEN}'
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
@@ -127,7 +127,7 @@ Each `output` item contains a `count` (the number of records in the NDJSON file)
 
 {% include alert.html variant="warning" text="The Data endpoint is not a FHIR resource. Don't send <code>Accept: application/fhir+json</code> or <code>application/fhir+ndjson</code>, both return <code>406 Not Acceptable</code>. Omit the <code>Accept</code> header." classNames="measure-6" %}
 
-Fetch each URL in `output[].url` with your access token to download an [NDJSON](https://github.com/ndjson/ndjson-spec) file of FHIR resources (Patient, Coverage, or ExplanationOfBenefit, depending on the entry).
+Fetch each URL in `output[].url` with your bearer token to download an [NDJSON](https://github.com/ndjson/ndjson-spec) file of FHIR resources (Patient, Coverage, or ExplanationOfBenefit, depending on the entry).
 
 **Example request**
 
@@ -140,7 +140,7 @@ GET https://sandbox.dpc.cms.gov/api/v1/Data/{NDJSON_FILE}
 
 {% capture snippet %}
 curl https://sandbox.dpc.cms.gov/api/v1/Data/{NDJSON_FILE} \
-     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+     -H 'Authorization: Bearer {BEARER_TOKEN}' \
      -H 'Accept-Encoding: gzip' \
      --compressed
 {% endcapture %}

@@ -2,7 +2,7 @@
 layout: api-docs
 page_title: "Postman Collection"
 seo_title: ""
-description: "Use the DPC Postman Collection to test API requests against the public endpoints and sandbox environment with auto-generated JWTs and access tokens."
+description: "Use the DPC Postman Collection to test API requests against the public endpoints and sandbox environment with auto-generated JWTs and bearer tokens."
 in-page-nav: true
 ---
 
@@ -15,7 +15,7 @@ DPC provides a collection of example requests to public DPC endpoints, the sandb
 ## Setting up the Postman collection
 
 1. Log into the DPC Sandbox and copy the `PUBLIC_KEY_ID` you created when setting up your [DPC Sandbox credentials]({{ '/api-documentation/get-sandbox-credentials.html' | relative_url }}).
-   - This is the DPC ID of your public key, which is returned to you when the public key is [uploaded to the DPC Sandbox]({{ '/api-documentation/get-sandbox-credentials.html#4-upload-your-public-key-in-the-dpc-sandbox-site' | relative_url }}). You need this to generate a JSON Web Token (JWT) which will be exchanged for an access token.
+   - This is the DPC ID of your public key, which is returned to you when the public key is [uploaded to the DPC Sandbox]({{ '/api-documentation/get-sandbox-credentials.html#4-upload-your-public-key-in-the-dpc-sandbox-site' | relative_url }}). You need this to generate a JSON Web Token (JWT) which will be exchanged for a bearer token.
 2. Open the DPC collection in Postman  
 3. Paste the `PUBLIC_KEY_ID` into the corresponding variable in Postman  
 4. Add the following values to your vault:
@@ -24,4 +24,4 @@ DPC provides a collection of example requests to public DPC endpoints, the sandb
        
 5. Within your vault, go to settings and turn on **Enable support in scripts**.
 
-The JWT and access token are automatically generated before each request vs. having to manually refresh the access token every 5 minutes as described in [Get an access token]({{ '/api-documentation/get-access-token.html' | relative_url }}).
+The JWT and bearer token are automatically generated before each request vs. having to manually refresh the bearer token every 5 minutes as described in [Get a bearer token]({{ '/api-documentation/get-bearer-token.html' | relative_url }}).

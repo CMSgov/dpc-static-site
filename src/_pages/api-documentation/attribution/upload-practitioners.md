@@ -37,7 +37,7 @@ POST /api/v1/Practitioner/$submit
 **Example cURL command**
 {% capture snippet %}
 curl -v 'https://sandbox.dpc.cms.gov/api/v1/Practitioner/$submit' \
-     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+     -H 'Authorization: Bearer {BEARER_TOKEN}' \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -X POST \

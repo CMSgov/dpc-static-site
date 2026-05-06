@@ -30,7 +30,7 @@ This documentation shows you how to connect to synthetic data in the <a href="ht
       </div>
     </div>
     <ol style="margin-top: 1rem;">
-      <li>Get an <a href="{{ '/api-documentation/get-access-token.html' | relative_url }}">access token</a>.</li>
+      <li>Get a <a href="{{ '/api-documentation/get-bearer-token.html' | relative_url }}">bearer token</a>.</li>
       <li>Complete <a href="{{ '/api-documentation/attribution.html' | relative_url }}">attribution</a> by creating patient rosters.</li>
       <li>Initiate a job to <a href="{{ '/api-documentation/export-data.html' | relative_url }}">export data</a>. </li>
     </ol>

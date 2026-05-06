@@ -47,7 +47,7 @@ Two ways to use `_since`:
 
 ### Steps to request filtered data
 
-1. Obtain an [access token]({{ "/api-documentation/get-access-token.html" | relative_url }}).  
+1. Obtain a [bearer token]({{ "/api-documentation/get-bearer-token.html" | relative_url }}).  
 2. Start a job to acquire data (you will input the `_since` parameter here. Omit `_since` to download all data).  
 3. Check the job status.  
 4. Download the data.
@@ -64,7 +64,7 @@ When using the [Postman Collection]({{ "/api-documentation/postman-collection.ht
 
 You can do this either by replacing the `+` with `%2B` (e.g., 2020-01-23T04:00:00.000%2B07:00 instead of 2020-01-23T04:00:00.000+07:00), or you can select the value and choose "EncodeURIComponent" from the context menu to have Postman encode the entire parameter automatically.
 
-The `/Group/{GROUP_ID}/$export` endpoint requires an access token as well as Accept and Prefer headers.  
+The `/Group/{GROUP_ID}/$export` endpoint requires a bearer token as well as Accept and Prefer headers.  
 
 The Prefer header is **NOT** required for `/Patient/{PATIENT_ID}/$everything`, but it DOES require an X-Provenance header whereas the `/Group/{GROUP_ID}/$export` endpoint does not. The format is defined by the FHIR Bulk Data Export spec. Consult the [FHIR Datatypes](https://www.hl7.org/fhir/datatypes.html#instant) page for more information.
 
@@ -89,7 +89,7 @@ GET /api/v1/Group/{GROUP_ID}/$export?_type=Patient&_since=2021-05-13T08:00:00.00
 **Request headers**
 
 {% capture snippet %}
-Authorization: Bearer {ACCESS_TOKEN}
+Authorization: Bearer {BEARER_TOKEN}
 Accept: application/fhir+json
 Prefer: respond-async
 {% endcapture %}
@@ -101,7 +101,7 @@ Prefer: respond-async
 curl -X GET 'https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/$export?_since=2021-05-13T08:00:00.000-05:00' \
      -H 'Accept: application/fhir+json' \
      -H 'Prefer: respond-async' \
-     -H 'Authorization: Bearer {ACCESS_TOKEN}'
+     -H 'Authorization: Bearer {BEARER_TOKEN}'
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 

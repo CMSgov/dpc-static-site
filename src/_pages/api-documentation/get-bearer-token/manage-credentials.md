@@ -19,7 +19,7 @@ The expiration will appear as `"expiresAt": "2020-11-04T11:49:55.095-05:00"` in 
 ## Create additional client tokens
 Client tokens expire after one year. We recommend you generate a new client token via the API as part of your ongoing maintenance.
 
-1. Use [the access token method]({{ "/api-documentation/get-access-token.html#2-create-an-access-token" | relative_url }}).
+1. Use [the bearer token method]({{ "/api-documentation/get-bearer-token.html#2-create-a-bearer-token" | relative_url }}).
 2. Make a `POST` request to the `/Token` endpoint.
 
 The `/Token` endpoint accepts two (optional) query parameters: 
@@ -36,7 +36,7 @@ POST /api/v1/Token
 **Example cURL command**
 {% capture snippet %}
 curl -d '' -v https://sandbox.dpc.cms.gov/api/v1/Token?label={TOKEN_LABEL}&expiration={EXPIRATION_DATETIME} \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'Authorization: Bearer {BEARER_TOKEN}' \
     -H 'Accept: application/json' \
     -H 'Content-Type: application/json' \
     -X POST
@@ -70,7 +70,7 @@ GET /api/v1/Token
 **Example cURL command**
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Token \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'Authorization: Bearer {BEARER_TOKEN}' \
     -H 'Accept: application/json' \
     -H 'Content-Type: application/json' \
     -X GET
@@ -116,7 +116,7 @@ DELETE /api/v1/Token/{TOKEN_ID}
 **Example cURL command**
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Token/{TOKEN_ID} \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'Authorization: Bearer {BEARER_TOKEN}' \
     -H 'Accept: application/json' \
     -H 'Content-Type: application/json' \
     -X DELETE
@@ -137,7 +137,7 @@ GET /api/v1/Key
 **Example cURL command**
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Key \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'Authorization: Bearer {BEARER_TOKEN}' \
     -H 'Accept: application/json' \
     -H 'Content-Type: application/json' \
     -X GET
@@ -177,7 +177,7 @@ GET /api/v1/Key/{PUBLIC_KEY_ID}
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{PUBLIC_KEY_ID} \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'Authorization: Bearer {BEARER_TOKEN}' \
     -H 'Accept: application/json' \
     -H 'Content-Type: application/json' \
     -X GET
@@ -211,7 +211,7 @@ DELETE /api/v1/Key/{PUBLIC_KEY_ID}
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{PUBLIC_KEY_ID} \
-     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+     -H 'Authorization: Bearer {BEARER_TOKEN}' \
      -H 'Accept: application/json' \
      -H 'Content-Type: application/json' \
      -X DELETE

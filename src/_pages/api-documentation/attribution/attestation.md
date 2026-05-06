@@ -40,7 +40,7 @@ GET /api/v1/Organization
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Organization \
-     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+     -H 'Authorization: Bearer {BEARER_TOKEN}' \
      -H 'Accept: application/fhir+json'
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
@@ -86,7 +86,7 @@ GET /api/v1/Practitioner
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Practitioner \
-     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+     -H 'Authorization: Bearer {BEARER_TOKEN}' \
      -H 'Accept: application/fhir+json'
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
@@ -254,7 +254,7 @@ POST /api/v1/Group
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Group \
-     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+     -H 'Authorization: Bearer {BEARER_TOKEN}' \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -H "X-Provenance: $X_PROVENANCE" \
@@ -356,7 +356,7 @@ GET /api/v1/Group?characteristic-value=attributed-to%24{PRACTITIONER_NPI}
 
 {% capture snippet %}
 curl -v 'https://sandbox.dpc.cms.gov/api/v1/Group?characteristic-value=attributed-to%24{PRACTITIONER_NPI}' \
-     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+     -H 'Authorization: Bearer {BEARER_TOKEN}' \
      -H 'Accept: application/fhir+json'
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
@@ -470,7 +470,7 @@ When adding patients to a group, the body must include the same `characteristic`
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/\$add \
-     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+     -H 'Authorization: Bearer {BEARER_TOKEN}' \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -H "X-Provenance: $X_PROVENANCE" \
@@ -577,7 +577,7 @@ Like `$add`, the body must include the practitioner `characteristic`.
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/\$remove \
-     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+     -H 'Authorization: Bearer {BEARER_TOKEN}' \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -X POST \
@@ -697,7 +697,7 @@ PUT /api/v1/Group/{GROUP_ID}
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID} \
-     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+     -H 'Authorization: Bearer {BEARER_TOKEN}' \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -H "X-Provenance: $X_PROVENANCE" \

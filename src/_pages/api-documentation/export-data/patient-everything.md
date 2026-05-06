@@ -49,7 +49,7 @@ GET /api/v1/Patient/{PATIENT_ID}/$everything?_since=2021-05-13T08:00:00.000-05:0
 **Request headers**
 
 {% capture snippet %}
-Authorization: Bearer {ACCESS_TOKEN}
+Authorization: Bearer {BEARER_TOKEN}
 Accept: application/fhir+json
 X-Provenance: {"resourceType":"Provenance","recorded":"...","reason":[...],"agent":[...]}
 {% endcapture %}
@@ -63,7 +63,7 @@ The cURL example below uses the `$X_PROVENANCE` shell variable set up in [Build 
 curl -X GET 'https://sandbox.dpc.cms.gov/api/v1/Patient/{PATIENT_ID}/$everything?_since=2021-05-13T08:00:00.000-05:00' \
      -H 'Accept: application/fhir+json' \
      -H "X-Provenance: $X_PROVENANCE" \
-     -H 'Authorization: Bearer {ACCESS_TOKEN}'
+     -H 'Authorization: Bearer {BEARER_TOKEN}'
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
