@@ -34,8 +34,10 @@ jobs:
             TARGET_BUCKET=/dpc/sandbox/static_site
 
       - name: Download Dev Bucket
+        env:
+          DEPLOY_PATH: ${{ inputs.deploy_path }}
         run: |
-          aws s3 sync s3://${TARGET_BUCKET}/${{ inputs.deploy_path }}/ ./temp-site/
+          aws s3 sync "s3://${TARGET_BUCKET}/${DEPLOY_PATH}/" ./temp-site/
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@ec61189d14ec14c8efccab744f656cffd0e33f37 # v6.1.0

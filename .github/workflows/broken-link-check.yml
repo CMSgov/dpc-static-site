@@ -84,7 +84,7 @@ jobs:
 
       - name: Download Site Contents (Dev)
         run: |
-          aws s3 sync s3://${TARGET_BUCKET}/${{ env.BASE_PATH }} .
+          aws s3 sync "s3://${TARGET_BUCKET}/${BASE_PATH}" .
 
       - name: Check for Broken Dev Links
         id: lychee-dev

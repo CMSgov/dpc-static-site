@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.3.0
 
       - name: Build site
-        run: docker build --build-arg BASE_PATH=${{ env.BASE_PATH }} --target export -o _site .
+        run: docker build --build-arg "BASE_PATH=${BASE_PATH}" --target export -o _site .
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@ec61189d14ec14c8efccab744f656cffd0e33f37 # v6.1.0
@@ -56,7 +56,7 @@ jobs:
         if: ${{ env.BASE_PATH }}
         # This $TARGET_BUCKET comes from a previous step, cmsgov/cdap/actions/aws-params-env-action@main
         run: |
-          aws s3 sync _site/ s3://$TARGET_BUCKET/${{ env.BASE_PATH }} --delete --metadata-directive REPLACE --metadata "lifecycle-transition=ia"
+          aws s3 sync _site/ "s3://${TARGET_BUCKET}/${BASE_PATH}" --delete --metadata-directive REPLACE --metadata "lifecycle-transition=ia"
       
       - name: Invalidate Cloudfront cache
         run: |
