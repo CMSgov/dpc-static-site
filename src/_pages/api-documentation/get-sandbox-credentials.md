@@ -8,7 +8,7 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-## 1. Request access to the DPC Sandbox
+## 1. Sign up for/sign into the DPC Sandbox
 
 You'll enter info about you and your organization and create a password. Then you'll receive an email with a confirmation link. It may take a few minutes to receive this email.
 
@@ -33,7 +33,7 @@ Client tokens are issued to your organization and authenticate your access to th
          <li>When using production data, you'll need to create a token for every organization that works with the API.</li>
       </ul>
    </li>
-   <li>Choose <b>Back to portal</b> to create your public and private keys.</li>
+   <li>Choose <b>Go to portal</b> to create your public and private keys.</li>
 </ol>
 
 ## 3. Create a public key

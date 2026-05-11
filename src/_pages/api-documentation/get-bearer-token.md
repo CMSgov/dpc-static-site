@@ -29,7 +29,7 @@ A bearer token makes sure every request or interaction with the API can be trace
 
 **Example header**
 {% capture snippet %}
-Authorization: Bearer {BEARER_TOKEN}
+Authorization: Bearer $BEARER_TOKEN
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
@@ -47,7 +47,10 @@ curl -v "https://sandbox.dpc.cms.gov/api/v1/Token/auth" \
      -H 'Content-Type: application/x-www-form-urlencoded' \
      -H 'Accept: application/json' \
      -X POST \
-     -d "grant_type=client_credentials&scope=system%2F*.*&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer&client_assertion={SIGNED_JWT}"
+     --data-urlencode "grant_type=client_credentials" \
+     --data-urlencode "scope=system/*.*" \
+     --data-urlencode "client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer" \
+     --data-urlencode "client_assertion={SIGNED_JWT}"
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" %}
 
@@ -70,3 +73,20 @@ The endpoint response is a JSON object which contains the bearer token, the life
 }
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="json" %}
+
+### Extract the token
+
+You can extract the bearer token and store the token as `$BEARER_TOKEN` from the response body using a tool like `jq` in your command line. 
+
+{% capture snippet %}
+BEARER_TOKEN=$(curl -s "https://sandbox.dpc.cms.gov/api/v1/Token/auth" \
+     -H 'Content-Type: application/x-www-form-urlencoded' \
+     -H 'Accept: application/json' \
+     -X POST \
+     --data-urlencode "grant_type=client_credentials" \
+     --data-urlencode "scope=system/*.*" \
+     --data-urlencode "client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer" \
+     --data-urlencode "client_assertion={SIGNED_JWT}" \
+     | jq -r '.access_token')
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="shell" %}

@@ -1,6 +1,6 @@
 ---
 layout: api-docs
-page_title: "Export Data"
+page_title: "Export CMS Claims Data"
 seo_title: ""
 description: "Use the FHIR /Group/$export operation to asynchronously export Patient, Coverage, and Explanation of Benefit data in bulk from the DPC API."
 in-page-nav: true
@@ -53,7 +53,7 @@ GET /api/v1/Group/{GROUP_ID}/$export
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/\$export \
-     -H 'Authorization: Bearer {BEARER_TOKEN}' \
+     -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept: application/fhir+json' \
      -H 'Prefer: respond-async'
 {% endcapture %}
@@ -78,7 +78,7 @@ Export jobs are asynchronous. While the job is still running, the same URL retur
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Jobs/{JOB_ID} \
-     -H 'Authorization: Bearer {BEARER_TOKEN}'
+     -H "Authorization: Bearer $BEARER_TOKEN"
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
@@ -140,7 +140,7 @@ GET https://sandbox.dpc.cms.gov/api/v1/Data/{NDJSON_FILE}
 
 {% capture snippet %}
 curl https://sandbox.dpc.cms.gov/api/v1/Data/{NDJSON_FILE} \
-     -H 'Authorization: Bearer {BEARER_TOKEN}' \
+     -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept-Encoding: gzip' \
      --compressed
 {% endcapture %}

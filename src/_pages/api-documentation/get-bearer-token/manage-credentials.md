@@ -36,7 +36,7 @@ POST /api/v1/Token
 **Example cURL command**
 {% capture snippet %}
 curl -d '' -v https://sandbox.dpc.cms.gov/api/v1/Token?label={TOKEN_LABEL}&expiration={EXPIRATION_DATETIME} \
-    -H 'Authorization: Bearer {BEARER_TOKEN}' \
+    -H "Authorization: Bearer $BEARER_TOKEN" \
     -H 'Accept: application/json' \
     -H 'Content-Type: application/json' \
     -X POST
@@ -70,7 +70,7 @@ GET /api/v1/Token
 **Example cURL command**
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Token \
-    -H 'Authorization: Bearer {BEARER_TOKEN}' \
+    -H "Authorization: Bearer $BEARER_TOKEN" \
     -H 'Accept: application/json' \
     -H 'Content-Type: application/json' \
     -X GET
@@ -116,7 +116,7 @@ DELETE /api/v1/Token/{TOKEN_ID}
 **Example cURL command**
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Token/{TOKEN_ID} \
-    -H 'Authorization: Bearer {BEARER_TOKEN}' \
+    -H "Authorization: Bearer $BEARER_TOKEN" \
     -H 'Accept: application/json' \
     -H 'Content-Type: application/json' \
     -X DELETE
@@ -137,7 +137,7 @@ GET /api/v1/Key
 **Example cURL command**
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Key \
-    -H 'Authorization: Bearer {BEARER_TOKEN}' \
+    -H "Authorization: Bearer $BEARER_TOKEN" \
     -H 'Accept: application/json' \
     -H 'Content-Type: application/json' \
     -X GET
@@ -177,7 +177,7 @@ GET /api/v1/Key/{PUBLIC_KEY_ID}
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{PUBLIC_KEY_ID} \
-    -H 'Authorization: Bearer {BEARER_TOKEN}' \
+    -H "Authorization: Bearer $BEARER_TOKEN" \
     -H 'Accept: application/json' \
     -H 'Content-Type: application/json' \
     -X GET
@@ -211,7 +211,7 @@ DELETE /api/v1/Key/{PUBLIC_KEY_ID}
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{PUBLIC_KEY_ID} \
-     -H 'Authorization: Bearer {BEARER_TOKEN}' \
+     -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept: application/json' \
      -H 'Content-Type: application/json' \
      -X DELETE

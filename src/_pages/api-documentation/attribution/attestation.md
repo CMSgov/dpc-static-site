@@ -16,7 +16,7 @@ The Group Resource is the FHIR object representing a practitioner's roster of at
 
 At a minimum, each attestation must include:
 
-- `recorded`: An ISO 8601 timestamp for when the attestation was made.
+- `recorded`: An ISO 8601 timestamp for when the attestation was made. (e.g., YYYY-MM-DDThh:mm:ssZ)
 - `reason`: Why the attestation is being submitted. Only `http://hl7.org/fhir/v3/ActReason#TREAT` is currently supported.
 - `agent.whoReference`: A reference to the Organization making the attestation, in the form `Organization/{ORGANIZATION_ID}`.
 - `agent.onBehalfOfReference`: A reference to the Practitioner the attestation is on behalf of, in the form `Practitioner/{PRACTITIONER_ID}`.
@@ -40,7 +40,7 @@ GET /api/v1/Organization
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Organization \
-     -H 'Authorization: Bearer {BEARER_TOKEN}' \
+     -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept: application/fhir+json'
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
@@ -86,7 +86,7 @@ GET /api/v1/Practitioner
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Practitioner \
-     -H 'Authorization: Bearer {BEARER_TOKEN}' \
+     -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept: application/fhir+json'
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
@@ -250,11 +250,15 @@ POST /api/v1/Group
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="json" can_copy=true %}
 
+Replace the placeholders before sending:
+- `{PRACTITIONER_NPI}`: the provider’s NPI is found in the identifier element of the Practitioner Resource.
+- `{PATIENT_DPC_ID}`: the `id` of the Patient Resource you want to add to the group.
+
 **Example cURL command**
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Group \
-     -H 'Authorization: Bearer {BEARER_TOKEN}' \
+     -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -H "X-Provenance: $X_PROVENANCE" \
@@ -356,7 +360,7 @@ GET /api/v1/Group?characteristic-value=attributed-to%24{PRACTITIONER_NPI}
 
 {% capture snippet %}
 curl -v 'https://sandbox.dpc.cms.gov/api/v1/Group?characteristic-value=attributed-to%24{PRACTITIONER_NPI}' \
-     -H 'Authorization: Bearer {BEARER_TOKEN}' \
+     -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept: application/fhir+json'
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
@@ -470,7 +474,7 @@ When adding patients to a group, the body must include the same `characteristic`
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/\$add \
-     -H 'Authorization: Bearer {BEARER_TOKEN}' \
+     -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -H "X-Provenance: $X_PROVENANCE" \
@@ -577,7 +581,7 @@ Like `$add`, the body must include the practitioner `characteristic`.
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/\$remove \
-     -H 'Authorization: Bearer {BEARER_TOKEN}' \
+     -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -X POST \
@@ -697,7 +701,7 @@ PUT /api/v1/Group/{GROUP_ID}
 
 {% capture snippet %}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID} \
-     -H 'Authorization: Bearer {BEARER_TOKEN}' \
+     -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -H "X-Provenance: $X_PROVENANCE" \

@@ -52,7 +52,7 @@ Two ways to use `_since`:
 3. Check the job status.  
 4. Download the data.
 
-Datetimes submitted using `_since` must follow the [FHIR Instant format](https://www.hl7.org/fhir/datatypes.html#instant) (e.g. YYYY-MM-DDThh:mm:sss\[-/+\]zz:zz).
+Datetimes submitted using `_since` must follow the [FHIR Instant format](https://www.hl7.org/fhir/datatypes.html#instant) (e.g. YYYY-MM-DDThh:mm:ss.sss+zz:zz).
 
 * Sample Date: February 20, 2020 12:00 PM EST  
 * Formatted Sample: 2020-02-20T12:00:00.000-05:00
@@ -89,7 +89,7 @@ GET /api/v1/Group/{GROUP_ID}/$export?_type=Patient&_since=2021-05-13T08:00:00.00
 **Request headers**
 
 {% capture snippet %}
-Authorization: Bearer {BEARER_TOKEN}
+Authorization: Bearer $BEARER_TOKEN
 Accept: application/fhir+json
 Prefer: respond-async
 {% endcapture %}
@@ -101,7 +101,7 @@ Prefer: respond-async
 curl -X GET 'https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/$export?_since=2021-05-13T08:00:00.000-05:00' \
      -H 'Accept: application/fhir+json' \
      -H 'Prefer: respond-async' \
-     -H 'Authorization: Bearer {BEARER_TOKEN}'
+     -H "Authorization: Bearer $BEARER_TOKEN"
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 

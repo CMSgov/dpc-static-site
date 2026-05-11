@@ -16,8 +16,8 @@ This documentation shows you how to connect to synthetic data in the <a href="ht
   <li class="usa-process-list__item">
     <p class="usa-process-list__heading">Sign up for the DPC Sandbox</p>
     <ol style="margin-top: 1rem;">
-      <li>Request access to the DPC Sandbox. </li>
-      <li>Follow the steps to get <a href="{{ '/api-documentation/get-sandbox-credentials.html' | relative_url }}">DPC Sandbox credentials</a></li>
+      <li>Request access to the DPC Sandbox.</li>
+      <li>Follow the steps to get <a href="{{ '/api-documentation/get-sandbox-credentials.html' | relative_url }}">DPC Sandbox credentials</a>.</li>
     </ol>
   </li>
   <li class="usa-process-list__item docs-final-item">
@@ -32,7 +32,7 @@ This documentation shows you how to connect to synthetic data in the <a href="ht
     <ol style="margin-top: 1rem;">
       <li>Get a <a href="{{ '/api-documentation/get-bearer-token.html' | relative_url }}">bearer token</a>.</li>
       <li>Complete <a href="{{ '/api-documentation/attribution.html' | relative_url }}">attribution</a> by creating patient rosters.</li>
-      <li>Initiate a job to <a href="{{ '/api-documentation/export-data.html' | relative_url }}">export data</a>. </li>
+      <li>Initiate a job to <a href="{{ '/api-documentation/export-data.html' | relative_url }}">export data</a>.</li>
     </ol>
   </li>
 </ol>
@@ -41,8 +41,11 @@ This documentation shows you how to connect to synthetic data in the <a href="ht
 
 To complete these steps you'll need to:
 
-- Sign up for the DPC Sandbox  
-- Use a [command-line interface](https://github.com/resources/articles/what-is-a-cli) (e.g., Terminal)  
-- Create cryptographic key pairs  
-- Construct and interpret JSON  
-- Understand date formats, including ISO
+- Sign up for the DPC Sandbox.
+- Use cURL and openssl with a [command-line interface](https://github.com/resources/articles/what-is-a-cli).
+- Create cryptographic key pairs.
+- Construct and interpret JSON.
+- Understand ISO-8601 date format.
+
+## Reference
+DPC uses <a href="https://www.hl7.org/fhir/overview.html" target="_blank">Fast Healthcare Interoperability Resources (FHIR)</a>, which introduces unique terminology and commands.
