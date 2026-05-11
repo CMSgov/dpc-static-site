@@ -28,7 +28,11 @@ RUN bundle install
 COPY ./src ./src
 COPY --from=node-build /usr/app/src/assets /usr/app/src/assets
 
-RUN bundle exec jekyll build --source ./src ${BASE_PATH:+--baseurl "$BASE_PATH"}
+RUN if [ -n "$BASE_PATH" ]; then \
+      bundle exec jekyll build --source ./src --baseurl "$BASE_PATH"; \
+    else \
+      bundle exec jekyll build --source ./src; \
+    fi
 
 
 FROM scratch AS export
