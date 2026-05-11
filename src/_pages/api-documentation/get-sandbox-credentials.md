@@ -25,8 +25,11 @@ Client tokens are issued to your organization and authenticate your access to th
 <ol>
    <li>Log into the DPC Sandbox.</li>
    <li>Select <b>New Token</b>.</li>
+      <img src="{{ '/assets/img/screenshot-5.png' | relative_url }}" alt="Screenshot of New Token button location on sandbox dashboard" class="margin-top-1 margin-bottom-2 border border-base-lighter" />
    <li>Label the token with a recognizable name. Then select <b>Create token</b>.</li>
+      <img src="{{ '/assets/img/screenshot-7.png' | relative_url }}" alt="Screenshot of Create Token button location in sandbox" class="margin-top-1 margin-bottom-2 border border-base-lighter" />
    <li>Copy or download the token displayed on screen.
+      <img src="{{ '/assets/img/screenshot-2.png' | relative_url }}" alt="Screenshot of token displayed on screen in sandbox" class="margin-top-1 border border-base-lighter" />
       {% include alert.html variant="warning" text="This is the only time this client token will be visible. You'll want to save it for later use." slim="true" classNames="measure-6" %}
       <ul>
          <li>Make sure to <a href="{{ '/api-documentation/get-bearer-token/manage-credentials.html#renew-expired-tokens' | relative_url }}">renew your token</a> every year.</li>
@@ -48,13 +51,14 @@ Public keys verify that bearer token requests come from an authorized applicatio
 
 ### Steps to create a public key
 
-1. Select "Add key" from the DPC Sandbox
+1. Select **Add key** from the Sandbox
+   <img src="{{ '/assets/img/screenshot-3.png' | relative_url }}" alt="Screenshot of Add Key button location on sandbox dashboard" class="margin-top-1 border border-base-lighter" />
 2. Follow the sequential steps on screen to:
    1. Generate a **private** key
-   1. Generate a **public** key
-   1. Create (and verify) a public key snippet
-   1. Generate a verified public key signature 
-
+   2. Generate a **public** key
+   3. Create (and verify) a public key snippet
+   4. Generate a verified public key signature 
+   <img src="{{ '/assets/img/screenshot-6.png' | relative_url }}" alt="Screenshot steps for generating public, private, and key signature in sandbox" class="margin-top-1 border border-base-lighter" />
 
 #### 1. Generate a private key
 
@@ -89,10 +93,12 @@ Select **copy** on the DPC Sandbox site or copy the command invocation below.
 
 ## 4. Upload your public key in the DPC Sandbox site
 
-1. Go to the **Upload Your Public Key** section on the **How to Generate a Public Key** page.
+<img src="{{ '/assets/img/screenshot-1.png' | relative_url }}" alt="Screenshot of Upload Your Public Key section in sandbox" class="margin-top-1 border border-base-lighter" />
+
+1. Go to the **Upload Your Public Key** section.
 2. Create a label for your public key. Make the label easy to recognize.
 3. Paste the `public.pem` file you created into the "Public Key" field.
-4. Include "BEGIN PUBLIC KEY" and "END PUBLIC KEY" before and after your key.  
+4. Include `BEGIN PUBLIC KEY` and `END PUBLIC KEY` before and after your key.  
 5. Paste the contents of the `signature.sig` file you created into the "Signature Snippet" field.
 6. Select **Add key**.
 
