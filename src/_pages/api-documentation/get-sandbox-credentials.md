@@ -8,14 +8,14 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-## 1. Sign up for/sign into the DPC Sandbox
+## 1. Create a DPC Sandbox login
 
 You'll enter info about you and your organization and create a password. Then you'll receive an email with a confirmation link. It may take a few minutes to receive this email.
 
 <a href="https://sandbox.dpc.cms.gov/users/sign_in"
   class="usa-button usa-button--accent-warm margin-top-1"
   type="button">
-  Visit the Sandbox {% include sprite.html icon="launch" size="2" %}
+  Create Sandbox login {% include sprite.html icon="launch" size="2" %}
 </a>
 
 ## 2. Generate a client token in the Sandbox site
@@ -91,9 +91,9 @@ Select **copy** on the DPC Sandbox site or copy the command invocation below.
 
 1. Go to the **Upload Your Public Key** section on the **How to Generate a Public Key** page.
 2. Create a label for your public key. Make the label easy to recognize.
-3. Paste the `public.pem` file you created in step 2 into the "Public Key" field.
+3. Paste the `public.pem` file you created into the "Public Key" field.
 4. Include "BEGIN PUBLIC KEY" and "END PUBLIC KEY" before and after your key.  
-5. Paste the contents of the `signature.sig` file you created in step 4 into the "Signature Snippet" field.
+5. Paste the contents of the `signature.sig` file you created into the "Signature Snippet" field.
 6. Select **Add key**.
 
 ## What's next?

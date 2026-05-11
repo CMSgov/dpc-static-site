@@ -98,7 +98,7 @@ Prefer: respond-async
 **Example cURL command**
 
 {% capture snippet %}
-curl -X GET 'https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/$export?_since=2021-05-13T08:00:00.000-05:00' \
+curl 'https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/$export?_since=2021-05-13T08:00:00.000-05:00' \
      -H 'Accept: application/fhir+json' \
      -H 'Prefer: respond-async' \
      -H "Authorization: Bearer $BEARER_TOKEN"
