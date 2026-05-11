@@ -69,7 +69,7 @@ The `/Group/{GROUP_ID}/$export` endpoint requires a bearer token as well as Acce
 The Prefer header is **NOT** required for `/Patient/{PATIENT_ID}/$everything`, but it DOES require an X-Provenance header whereas the `/Group/{GROUP_ID}/$export` endpoint does not. The format is defined by the FHIR Bulk Data Export spec. Consult the [FHIR Datatypes](https://www.hl7.org/fhir/datatypes.html#instant) page for more information.
 
 
-{% include alert.html variant="warning" heading="Caution" text="Be wary of requesting data from before 02-12-2020" classNames="measure-6" %}
+{% include alert.html variant="warning" heading="Note" text="If you input dates between 01-01-2020 and 02-11-2020 in the `_since` parameter, you'll receive all historical data for your beneficiaries." classNames="measure-6" %}
 
 Due to limitations in the Beneficiary FHIR Data (BFD) Server, data from before 02-12-2020 is marked with the arbitrary [lastUpdated](https://www.hl7.org/fhir/search.html#lastUpdated) date of 01-01-2020. If you input any dates between 01-01-2020 and 02-11-2020 in the `_since` parameter, you'll receive all historical data for your beneficiaries. Data loads from 02-12-2020 onwards have been marked with accurate dates.
 
