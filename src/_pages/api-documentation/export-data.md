@@ -26,7 +26,7 @@ Use `_type` and `_since` to [filter your results]({{ "/api-documentation/export-
 
 ### Locate your Group ID
 
-Each export job operates on a single attribution group. The Group ID is the `id` field of the Group Resource, get it from the [POST /Group response]({{ "/api-documentation/attribution/attestation.html#create-a-group-resource" | relative_url }}) when you create the group, or from a [GET /Group lookup]({{ "/api-documentation/attribution/attestation.html#locate-your-group-id" | relative_url }}) by practitioner NPI.
+Each export job operates on a single attribution group. The Group ID is the `id` field of the Group Resource, get it from the [/Group creation response]({{ "/api-documentation/attribution/attestation.html#create-a-group-resource" | relative_url }}) when you create the group, or from a [/Group lookup]({{ "/api-documentation/attribution/attestation.html#locate-your-group-id" | relative_url }}) by practitioner NPI.
 
 **Example Group Resource**
 
@@ -40,7 +40,7 @@ Each export job operates on a single attribution group. The Group ID is the `id`
 
 ### Initiate the export
 
-Make a GET request to `/Group/{GROUP_ID}/$export` with `Authorization`, `Accept: application/fhir+json`, and `Prefer: respond-async` headers.
+Make a `GET` request to `/Group/{GROUP_ID}/$export` with `Authorization`, `Accept: application/fhir+json`, and `Prefer: respond-async` headers.
 
 **Example request**
 

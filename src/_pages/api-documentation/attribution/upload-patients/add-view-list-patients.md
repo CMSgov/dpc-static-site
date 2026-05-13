@@ -9,7 +9,7 @@ in-page-nav: true
 # {{ page.page_title }}
 
 ## Get a specific patient
-The GET `/Patient` operation retrieves a single Patient Resource by supplying an MBI. 
+The `GET` `/Patient` operation retrieves a single Patient Resource by supplying an MBI. 
 
 **Example request**
 {% capture snippet %}

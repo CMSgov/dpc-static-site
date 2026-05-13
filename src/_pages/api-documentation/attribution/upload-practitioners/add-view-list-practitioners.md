@@ -10,7 +10,7 @@ in-page-nav: true
 
 ## List all practitioners
 
-The GET `/Practitioner` operation lets you retrieve a [bundle](https://www.hl7.org/fhir/STU3/bundle.html) of Practitioner Resources. 
+The `GET` `/Practitioner` operation lets you retrieve a [bundle](https://www.hl7.org/fhir/STU3/bundle.html) of Practitioner Resources. 
 
 **Example request**
 {% capture snippet %}

@@ -73,7 +73,7 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Organization \
 
 ### Locate your Practitioner ID
 
-Send a GET request to `/Practitioner` to retrieve a Bundle of Practitioner Resources for your organization. Find your Practitioner ID by referencing the `id` field in your practitioner's resource object.
+Send a `GET` request to `/Practitioner` to retrieve a Bundle of Practitioner Resources for your organization. Find your Practitioner ID by referencing the `id` field in your practitioner's resource object.
 
 **Example request**
 
@@ -195,7 +195,7 @@ You'll use this header in the next steps when creating and modifying Group Resou
 
 ## Create a Group Resource
 
-You'll need to create a Group Resource to link a list of [registered patients]({{ "/api-documentation/attribution/upload-patients.html" | relative_url }}) to a [registered practitioner]({{ "/api-documentation/attribution/upload-practitioners.html" | relative_url }}). POST a Group Resource that lists the practitioner the patients are being attributed to and the patients themselves.
+You'll need to create a Group Resource to link a list of [registered patients]({{ "/api-documentation/attribution/upload-patients.html" | relative_url }}) to a [registered practitioner]({{ "/api-documentation/attribution/upload-practitioners.html" | relative_url }}). `POST` a Group Resource that lists the practitioner the patients are being attributed to and the patients themselves.
 
 ### Group Resource requirements
 
@@ -333,7 +333,7 @@ When creating a group, DPC sets each member's `period.start` to the time of attr
 
 ## Locate your Group ID
 
-You can only pull data for one practitioner's patient group at a time. Send a GET request to the `/Group` endpoint to retrieve the practitioner's [attribution group](https://hl7.org/fhir/STU3/group.html). Use their NPI number as a parameter.
+You can only pull data for one practitioner's patient group at a time. Send a `GET` request to the `/Group` endpoint to retrieve the practitioner's [attribution group](https://hl7.org/fhir/STU3/group.html). Use their NPI number as a parameter.
 
 The response will return a [Bundle](https://www.hl7.org/fhir/STU3/bundle.html) Resource which contains attribution groups for the given practitioner.
 
@@ -651,7 +651,7 @@ You can submit a Group Resource which overwrites the existing group with members
 
 {% include alert.html variant="warning" text="This endpoint does not merge with the existing membership state, but replaces it." classNames="measure-6" %}
 
-Patients in the existing group that you omit from the PUT body are not deleted, they're retained in the response with `inactive: true` and a shortened `period.end`, just like an explicit `$remove`. Filter by `inactive: false` on subsequent reads to get only currently-attributed patients.
+Patients in the existing group that you omit from the `PUT` body are not deleted, they're retained in the response with `inactive: true` and a shortened `period.end`, just like an explicit `$remove`. Filter by `inactive: false` on subsequent reads to get only currently-attributed patients.
 
 **Example request**
 
@@ -712,7 +712,7 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID} \
 
 **Example response** (`200 OK`)
 
-The response shows the group's full member history. Patients newly listed in the PUT body get a fresh 90-day `period`.
+The response shows the group's full member history. Patients newly listed in the `PUT` body get a fresh 90-day `period`.
 
 {% capture snippet %}
 {

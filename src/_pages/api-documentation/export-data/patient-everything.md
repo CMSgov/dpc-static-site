@@ -21,7 +21,7 @@ This is a synchronous download. `/Patient/{PATIENT_ID}/$everything` doesn't crea
 
 ## Find a patient's DPC ID
 
-If you only have the patient's Medicare Beneficiary Identifier (MBI) you can retrieve the DPC internal ID by first [making a GET request for that specific patient]({{ "/api-documentation/attribution/upload-patients/add-view-list-patients.html#get-a-specific-patient" | relative_url }}). The UUID is returned in that response.
+If you only have the patient's Medicare Beneficiary Identifier (MBI) you can retrieve the DPC internal ID by first [making a `GET` request for that specific patient]({{ "/api-documentation/attribution/upload-patients/add-view-list-patients.html#get-a-specific-patient" | relative_url }}). The UUID is returned in that response.
 
 Learn more about the HL7 FHIR Specification for:
 
