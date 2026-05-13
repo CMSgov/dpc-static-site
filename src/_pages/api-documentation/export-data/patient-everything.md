@@ -27,7 +27,7 @@ Learn more about the HL7 FHIR Specification for:
 
 - [Operation Patient Everything (Release v4)](http://hl7.org/fhir/R4/operation-patient-everything.html)  
 - [Operation Patient Everything (Release v3)](http://hl7.org/fhir/STU3/operation-patient-everything.html)  
-- [Provenance Resource](https://www.hl7.org/fhir/provenance.html)
+- [Provenance Resource](https://www.hl7.org/fhir/STU3/provenance.html)
 
 ## Request data using _since with the /Patient endpoint
 

@@ -8,7 +8,7 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-CMS requires practitioners to attest that they have a treatment-related relationship with every patient they share data on. DPC enforces this by requiring an attestation (a [Provenance Resource](https://www.hl7.org/fhir/provenance.html) in the `X-Provenance` HTTP header) on any request that adds patients to a [Group Resource](https://build.fhir.org/group.html) (or "roster"). 
+CMS requires practitioners to attest that they have a treatment-related relationship with every patient they share data on. DPC enforces this by requiring an attestation (a [Provenance Resource](https://www.hl7.org/fhir/STU3/provenance.html) in the `X-Provenance` HTTP header) on any request that adds patients to a [Group Resource](https://www.hl7.org/fhir/STU3/group.html) (or "roster"). 
 
 The Group Resource is the FHIR object representing a practitioner's roster of attributed patients.
 

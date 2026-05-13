@@ -54,13 +54,13 @@ DPC uses FHIR (Fast Healthcare Interoperability Resources) as a standard, compli
 ## Applicable FHIR Resources
 
 ### ExplanationOfBenefit (EOB)
-[ExplanationOfBenefit](https://hl7.org/fhir/R4/explanationofbenefit.html) stores details about episodes of care, including where and when the service was performed, insurance diagnosis codes, who the provider was, and the cost.
+[ExplanationOfBenefit](https://hl7.org/fhir/STU3/explanationofbenefit.html) stores details about episodes of care, including where and when the service was performed, insurance diagnosis codes, who the provider was, and the cost.
 
 ### Patient
-[Patient](https://hl7.org/fhir/R4/patient.html) stores enrollees' demographic details and updates to their [Medicare Patient Identifiers](https://www.cms.gov/training-education/partner-outreach-resources/new-medicare-card/medical-beneficiary-identifiers-mbis) (MBI).
+[Patient](https://hl7.org/fhir/STU3/patient.html) stores enrollees' demographic details and updates to their [Medicare Patient Identifiers](https://www.cms.gov/training-education/partner-outreach-resources/new-medicare-card/medical-beneficiary-identifiers-mbis) (MBI).
 
 ### Coverage
-[Coverage](https://hl7.org/fhir/R4/coverage.html) provides high-level descriptors of an insurance plan such as that found on an insurance card. 
+[Coverage](https://hl7.org/fhir/STU3/coverage.html) provides high-level descriptors of an insurance plan such as that found on an insurance card. 
 
 ## Download sample files 
 
@@ -72,8 +72,8 @@ These sample DPC data files have similar content and structure to production (re
 
 ## FHIR and JSON resources
 
-- [FHIR/HL7](https://www.hl7.org/fhir/)
-- [Bulk FHIR specification](https://hl7.org/fhir/uv/bulkdata/)
+- [FHIR/HL7](https://www.hl7.org/fhir/STU3/index.html)
+- [Bulk FHIR specification](https://hl7.org/fhir/uv/bulkdata/STU3/en/index.html)
 - [Beneficiary FHIR Data Server (BFD)/ Blue Button API](https://bluebutton.cms.gov/developers/)
 - [Intro to JSON Format](https://www.json.org/json-en.html) and [NDJSON](https://github.com/ndjson/ndjson-spec)
 - [JSON format viewer/validator (raw text/JSON format converter)](https://jsonlint.com/)

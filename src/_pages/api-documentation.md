@@ -48,4 +48,4 @@ To complete these steps you'll need to:
 - Understand ISO-8601 date format.
 
 ## Reference
-DPC uses <a href="https://www.hl7.org/fhir/overview.html" target="_blank">Fast Healthcare Interoperability Resources (FHIR)</a>, which introduces unique terminology and commands.
+DPC uses <a href="https://www.hl7.org/fhir/STU3/overview.html" target="_blank">Fast Healthcare Interoperability Resources (FHIR)</a>, which introduces unique terminology and commands.

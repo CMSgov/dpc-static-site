@@ -52,7 +52,7 @@ Two ways to use `_since`:
 3. Check the job status.  
 4. Download the data.
 
-Datetimes submitted using `_since` must follow the [FHIR Instant format](https://www.hl7.org/fhir/datatypes.html#instant) (e.g. YYYY-MM-DDThh:mm:ss.sss+zz:zz).
+Datetimes submitted using `_since` must follow the [FHIR Instant format](https://www.hl7.org/fhir/STU3/datatypes.html#instant) (e.g. YYYY-MM-DDThh:mm:ss.sss+zz:zz).
 
 * Sample Date: February 20, 2020 12:00 PM EST  
 * Formatted Sample: 2020-02-20T12:00:00.000-05:00
@@ -66,12 +66,12 @@ You can do this either by replacing the `+` with `%2B` (e.g., 2020-01-23T04:00:0
 
 The `/Group/{GROUP_ID}/$export` endpoint requires a bearer token as well as Accept and Prefer headers.  
 
-The Prefer header is **NOT** required for `/Patient/{PATIENT_ID}/$everything`, but it DOES require an X-Provenance header whereas the `/Group/{GROUP_ID}/$export` endpoint does not. The format is defined by the FHIR Bulk Data Export spec. Consult the [FHIR Datatypes](https://www.hl7.org/fhir/datatypes.html#instant) page for more information.
+The Prefer header is **NOT** required for `/Patient/{PATIENT_ID}/$everything`, but it DOES require an X-Provenance header whereas the `/Group/{GROUP_ID}/$export` endpoint does not. The format is defined by the FHIR Bulk Data Export spec. Consult the [FHIR Datatypes](https://www.hl7.org/fhir/STU3/datatypes.html#instant) page for more information.
 
 
 {% include alert.html variant="warning" heading="Note" text="If you input dates between 01-01-2020 and 02-11-2020 in the `_since` parameter, you'll receive all historical data for your beneficiaries." classNames="measure-6" %}
 
-Due to limitations in the Beneficiary FHIR Data (BFD) Server, data from before 02-12-2020 is marked with the arbitrary [lastUpdated](https://www.hl7.org/fhir/search.html#lastUpdated) date of 01-01-2020. If you input any dates between 01-01-2020 and 02-11-2020 in the `_since` parameter, you'll receive all historical data for your beneficiaries. Data loads from 02-12-2020 onwards have been marked with accurate dates.
+Due to limitations in the Beneficiary FHIR Data (BFD) Server, data from before 02-12-2020 is marked with the arbitrary [lastUpdated](https://www.hl7.org/fhir/STU3/search.html#lastUpdated) date of 01-01-2020. If you input any dates between 01-01-2020 and 02-11-2020 in the `_since` parameter, you'll receive all historical data for your beneficiaries. Data loads from 02-12-2020 onwards have been marked with accurate dates.
 
 ## Request data using _since with the /Group endpoint
 
