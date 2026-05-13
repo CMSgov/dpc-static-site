@@ -74,9 +74,11 @@ The endpoint response is a JSON object which contains the bearer token, the life
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="json" %}
 
-### Extract the token
+## Recommended: Extract the token as a variable
 
 You can extract the bearer token and store the token as `$BEARER_TOKEN` from the response body using a tool like `jq` in your command line. 
+
+We'll continue to use the `$BEARER_TOKEN` variable in subsequent cURL examples.
 
 {% capture snippet %}
 BEARER_TOKEN=$(curl -s "https://sandbox.dpc.cms.gov/api/v1/Token/auth" \
