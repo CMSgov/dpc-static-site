@@ -46,7 +46,6 @@ POST /api/v1/Token/auth
 curl -v "https://sandbox.dpc.cms.gov/api/v1/Token/auth" \
      -H 'Content-Type: application/x-www-form-urlencoded' \
      -H 'Accept: application/json' \
-     -X POST \
      --data-urlencode "grant_type=client_credentials" \
      --data-urlencode "scope=system/*.*" \
      --data-urlencode "client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer" \
@@ -84,7 +83,6 @@ We'll continue to use the `$BEARER_TOKEN` variable in subsequent cURL examples.
 BEARER_TOKEN=$(curl -s "https://sandbox.dpc.cms.gov/api/v1/Token/auth" \
      -H 'Content-Type: application/x-www-form-urlencoded' \
      -H 'Accept: application/json' \
-     -X POST \
      --data-urlencode "grant_type=client_credentials" \
      --data-urlencode "scope=system/*.*" \
      --data-urlencode "client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer" \

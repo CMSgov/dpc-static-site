@@ -22,8 +22,7 @@ GET /api/v1/Practitioner
 {% capture snippet %}
 curl -v 'https://sandbox.dpc.cms.gov/api/v1/Practitioner' \
  -H "Authorization: Bearer $BEARER_TOKEN" \
- -H 'Accept: application/fhir+json' \
- -X GET
+ -H 'Accept: application/fhir+json'
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
@@ -42,8 +41,7 @@ GET /api/v1/Practitioner?identifier={PRACTITIONER_NPI}
 curl -v https://sandbox.dpc.cms.gov/api/v1/Practitioner?identifier={PRACTITIONER_NPI} \
  -H "Authorization: Bearer $BEARER_TOKEN" \
  -H 'Accept: application/fhir+json' \
- -H 'Content-Type: application/fhir+json' \
- -X GET
+ -H 'Content-Type: application/fhir+json'
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 

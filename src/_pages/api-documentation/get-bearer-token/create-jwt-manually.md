@@ -59,7 +59,6 @@ POST /api/v1/Token/validate
 curl -v https://sandbox.dpc.cms.gov/api/v1/Token/validate \
      -H 'Accept: application/json' \
      -H 'Content-Type: text/plain' \
-     -X POST \
      -d "{SIGNED_JWT}"
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}

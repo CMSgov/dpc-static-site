@@ -262,7 +262,6 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Group \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -H "X-Provenance: $X_PROVENANCE" \
-     -X POST \
      -d @group.json
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
@@ -478,7 +477,6 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/\$add \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
      -H "X-Provenance: $X_PROVENANCE" \
-     -X POST \
      -d @group_addition.json
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
@@ -584,7 +582,6 @@ curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/\$remove \
      -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
-     -X POST \
      -d @group_removal.json
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}

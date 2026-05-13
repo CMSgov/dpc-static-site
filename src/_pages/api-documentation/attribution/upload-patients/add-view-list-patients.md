@@ -21,8 +21,7 @@ GET /api/v1/Patient?identifier={PATIENT_MBI}
 {% capture snippet %}
 curl -v 'https://sandbox.dpc.cms.gov/api/v1/Patient?identifier={PATIENT_MBI}' \
     -H "Authorization: Bearer $BEARER_TOKEN" \
-    -H 'Accept: application/fhir+json' \
-    -X GET
+    -H 'Accept: application/fhir+json'
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
@@ -84,7 +83,6 @@ GET /api/v1/Patient
 {% capture snippet %}
 curl -v 'https://sandbox.dpc.cms.gov/api/v1/Patient' \
     -H "Authorization: Bearer $BEARER_TOKEN" \
-    -H 'Accept: application/fhir+json' \
-    -X GET
+    -H 'Accept: application/fhir+json'
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
