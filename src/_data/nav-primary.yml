@@ -6,7 +6,7 @@
     - name: Announcements
       url: /announcements.html
 
-- name: Documentation
+- name: API Documentation
   children:
     - name: Get Started
       url: /api-documentation.html
