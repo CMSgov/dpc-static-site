@@ -10,7 +10,7 @@ in-page-nav: true
 
 DPC provides a collection of example requests to public DPC endpoints, the sandbox environment, and global variables. 
 
-<a class="usa-button" href="{{ "/assets/downloads/postman.zip" | relative_url }}">Download Postman Collection</a>
+<a class="usa-button" href="{{ "/assets/data/postman.zip" | relative_url }}">Download Postman Collection</a>
 
 ## Setting up the Postman collection
 
