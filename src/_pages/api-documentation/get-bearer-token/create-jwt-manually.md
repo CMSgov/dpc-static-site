@@ -11,20 +11,6 @@ in-page-nav: true
 Review these steps if you'd prefer to create a JWT manually without using the [JWT Tool]({{ "/jwt-tool.html" | relative_url }}).
 
 **Example decoded header**
-{% capture snippet %}
-{
-  "iss": "{CLIENT_TOKEN}",
-  "sub": "{CLIENT_TOKEN}",
-  "aud": "https://sandbox.dpc.cms.gov/api/v1/Token/auth",
-  "exp": {EXPIRATION_DATETIME} // now + 5 minutes,
-  "jti": "{JWT_ID}"
-}
-{% endcapture %}
-{% include copy_snippet.html code=snippet language="json" %}
-
-{% include alert.html variant="info" heading="Note" text="JWT_ID is a string that needs to be unique to this request and can only be used once." %}
-
-**Example decoded payload**
 
 The `PUBLIC_KEY_ID` shown in the example is the one you generated while setting up DPC sandbox credentials. See [Create a public key]({{ "/api-documentation/get-sandbox-credentials.html#3-create-a-public-key" | relative_url }}).
 
@@ -35,6 +21,28 @@ The `PUBLIC_KEY_ID` shown in the example is the one you generated while setting 
 }
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="json" %}
+
+**Example decoded payload**
+{% capture snippet %}
+{
+  "iss": "{CLIENT_TOKEN}",
+  "sub": "{CLIENT_TOKEN}",
+  "aud": "https://sandbox.dpc.cms.gov/api/v1/Token/auth",
+  "exp": {EXPIRATION_TIMESTAMP},
+  "jti": "{JWT_ID}"
+}
+{% endcapture %}
+{% include copy_snippet.html code=snippet language="json" %}
+
+
+{% capture alertContent %}
+<ul class="padding-left-0">
+  <li><code class="language-plaintext highlighter-rouge">EXPIRATION_TIMESTAMP</code> is a Unix timestamp in seconds, not an ISO 8601 string. Cannot be more than 5 minutes in the future.</li>
+  <li><code class="language-plaintext highlighter-rouge">JWT_ID</code> can be any string, but needs to be unique for every JWT you create.</li>
+</ul>
+{% endcapture %}
+
+{% include alert.html variant="info" heading="Note" text=alertContent classNames="measure-6" %}
 
 ## Validate your JWT
 
