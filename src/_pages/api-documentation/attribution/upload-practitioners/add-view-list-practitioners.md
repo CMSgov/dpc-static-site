@@ -20,7 +20,7 @@ GET /api/v1/Practitioner
 
 **Example cURL command**
 {% capture snippet %}
-curl -v 'https://sandbox.dpc.cms.gov/api/v1/Practitioner' \
+curl 'https://sandbox.dpc.cms.gov/api/v1/Practitioner' \
  -H "Authorization: Bearer $BEARER_TOKEN" \
  -H 'Accept: application/fhir+json'
 {% endcapture %}
@@ -38,7 +38,7 @@ GET /api/v1/Practitioner?identifier={PRACTITIONER_NPI}
 
 **Example cURL command**
 {% capture snippet %}
-curl -v https://sandbox.dpc.cms.gov/api/v1/Practitioner?identifier={PRACTITIONER_NPI} \
+curl 'https://sandbox.dpc.cms.gov/api/v1/Practitioner?identifier={PRACTITIONER_NPI}' \
  -H "Authorization: Bearer $BEARER_TOKEN" \
  -H 'Accept: application/fhir+json' \
  -H 'Content-Type: application/fhir+json'

@@ -36,10 +36,10 @@ POST /api/v1/Patient/$submit
 
 **Example cURL command**
 {% capture snippet %}
-curl -v https://sandbox.dpc.cms.gov/api/v1/Patient/\$submit \
-     -H "Authorization: Bearer $BEARER_TOKEN" \
-     -H 'Accept: application/fhir+json' \
-     -H 'Content-Type: application/fhir+json' \
-     -d @patient_bundle.json
+curl 'https://sandbox.dpc.cms.gov/api/v1/Patient/$submit' \
+    -H "Authorization: Bearer $BEARER_TOKEN" \
+    -H 'Accept: application/fhir+json' \
+    -H 'Content-Type: application/fhir+json' \
+    -d @patient_bundle.json
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}

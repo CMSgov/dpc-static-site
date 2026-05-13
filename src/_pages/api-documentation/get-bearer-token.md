@@ -43,13 +43,13 @@ POST /api/v1/Token/auth
 
 **Example cURL command**
 {% capture snippet %}
-curl -v "https://sandbox.dpc.cms.gov/api/v1/Token/auth" \
+curl 'https://sandbox.dpc.cms.gov/api/v1/Token/auth' \
      -H 'Content-Type: application/x-www-form-urlencoded' \
      -H 'Accept: application/json' \
-     --data-urlencode "grant_type=client_credentials" \
-     --data-urlencode "scope=system/*.*" \
-     --data-urlencode "client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer" \
-     --data-urlencode "client_assertion={SIGNED_JWT}"
+     --data-urlencode 'grant_type=client_credentials' \
+     --data-urlencode 'scope=system/*.*' \
+     --data-urlencode 'client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer' \
+     --data-urlencode 'client_assertion={SIGNED_JWT}'
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" %}
 
@@ -80,13 +80,13 @@ You can extract the bearer token and store the token as `$BEARER_TOKEN` from the
 We'll continue to use the `$BEARER_TOKEN` variable in subsequent cURL examples.
 
 {% capture snippet %}
-BEARER_TOKEN=$(curl -s "https://sandbox.dpc.cms.gov/api/v1/Token/auth" \
+BEARER_TOKEN=$(curl -s 'https://sandbox.dpc.cms.gov/api/v1/Token/auth' \
      -H 'Content-Type: application/x-www-form-urlencoded' \
      -H 'Accept: application/json' \
-     --data-urlencode "grant_type=client_credentials" \
-     --data-urlencode "scope=system/*.*" \
-     --data-urlencode "client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer" \
-     --data-urlencode "client_assertion={SIGNED_JWT}" \
+     --data-urlencode 'grant_type=client_credentials' \
+     --data-urlencode 'scope=system/*.*' \
+     --data-urlencode 'client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer' \
+     --data-urlencode 'client_assertion={SIGNED_JWT}' \
      | jq -r '.access_token')
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" %}

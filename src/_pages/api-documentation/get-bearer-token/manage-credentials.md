@@ -35,10 +35,11 @@ POST /api/v1/Token
 
 **Example cURL command**
 {% capture snippet %}
-curl -d '' -v https://sandbox.dpc.cms.gov/api/v1/Token?label={TOKEN_LABEL}&expiration={EXPIRATION_DATETIME} \
+curl 'https://sandbox.dpc.cms.gov/api/v1/Token?label={TOKEN_LABEL}&expiration={EXPIRATION_DATETIME}' \
     -H "Authorization: Bearer $BEARER_TOKEN" \
     -H 'Accept: application/json' \
     -H 'Content-Type: application/json'
+    -d ''
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
@@ -68,7 +69,7 @@ GET /api/v1/Token
 
 **Example cURL command**
 {% capture snippet %}
-curl -v https://sandbox.dpc.cms.gov/api/v1/Token \
+curl 'https://sandbox.dpc.cms.gov/api/v1/Token' \
     -H "Authorization: Bearer $BEARER_TOKEN" \
     -H 'Accept: application/json' \
     -H 'Content-Type: application/json'
@@ -113,7 +114,7 @@ DELETE /api/v1/Token/{TOKEN_ID}
 
 **Example cURL command**
 {% capture snippet %}
-curl -v https://sandbox.dpc.cms.gov/api/v1/Token/{TOKEN_ID} \
+curl 'https://sandbox.dpc.cms.gov/api/v1/Token/{TOKEN_ID}' \
     -H "Authorization: Bearer $BEARER_TOKEN" \
     -H 'Accept: application/json' \
     -H 'Content-Type: application/json' \
@@ -134,7 +135,7 @@ GET /api/v1/Key
 
 **Example cURL command**
 {% capture snippet %}
-curl -v https://sandbox.dpc.cms.gov/api/v1/Key \
+curl 'https://sandbox.dpc.cms.gov/api/v1/Key' \
     -H "Authorization: Bearer $BEARER_TOKEN" \
     -H 'Accept: application/json' \
     -H 'Content-Type: application/json'
@@ -173,7 +174,7 @@ GET /api/v1/Key/{PUBLIC_KEY_ID}
 **Example cURL command**
 
 {% capture snippet %}
-curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{PUBLIC_KEY_ID} \
+curl 'https://sandbox.dpc.cms.gov/api/v1/Key/{PUBLIC_KEY_ID}' \
     -H "Authorization: Bearer $BEARER_TOKEN" \
     -H 'Accept: application/json' \
     -H 'Content-Type: application/json'
@@ -206,7 +207,7 @@ DELETE /api/v1/Key/{PUBLIC_KEY_ID}
 **Example cURL command**
 
 {% capture snippet %}
-curl -v https://sandbox.dpc.cms.gov/api/v1/Key/{PUBLIC_KEY_ID} \
+curl 'https://sandbox.dpc.cms.gov/api/v1/Key/{PUBLIC_KEY_ID}' \
      -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept: application/json' \
      -H 'Content-Type: application/json' \

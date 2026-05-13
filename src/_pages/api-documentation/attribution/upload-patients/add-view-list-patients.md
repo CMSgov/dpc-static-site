@@ -19,7 +19,7 @@ GET /api/v1/Patient?identifier={PATIENT_MBI}
 
 **Example cURL command**
 {% capture snippet %}
-curl -v 'https://sandbox.dpc.cms.gov/api/v1/Patient?identifier={PATIENT_MBI}' \
+curl 'https://sandbox.dpc.cms.gov/api/v1/Patient?identifier={PATIENT_MBI}' \
     -H "Authorization: Bearer $BEARER_TOKEN" \
     -H 'Accept: application/fhir+json'
 {% endcapture %}
@@ -81,7 +81,7 @@ GET /api/v1/Patient
 
 **Example cURL command**
 {% capture snippet %}
-curl -v 'https://sandbox.dpc.cms.gov/api/v1/Patient' \
+curl 'https://sandbox.dpc.cms.gov/api/v1/Patient' \
     -H "Authorization: Bearer $BEARER_TOKEN" \
     -H 'Accept: application/fhir+json'
 {% endcapture %}

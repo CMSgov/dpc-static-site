@@ -52,7 +52,7 @@ GET /api/v1/Group/{GROUP_ID}/$export
 **Example cURL command**
 
 {% capture snippet %}
-curl -v https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/\$export \
+curl 'https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/$export' \
      -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept: application/fhir+json' \
      -H 'Prefer: respond-async'
@@ -77,7 +77,7 @@ Export jobs are asynchronous. While the job is still running, the same URL retur
 **Example cURL command** (use the URL directly from `Content-Location`)
 
 {% capture snippet %}
-curl -v https://sandbox.dpc.cms.gov/api/v1/Jobs/{JOB_ID} \
+curl 'https://sandbox.dpc.cms.gov/api/v1/Jobs/{JOB_ID}' \
      -H "Authorization: Bearer $BEARER_TOKEN"
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
@@ -139,7 +139,7 @@ GET https://sandbox.dpc.cms.gov/api/v1/Data/{FILE_ID}
 **Example cURL command**
 
 {% capture snippet %}
-curl https://sandbox.dpc.cms.gov/api/v1/Data/{FILE_ID} \
+curl 'https://sandbox.dpc.cms.gov/api/v1/Data/{FILE_ID}' \
      -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept-Encoding: gzip' \
      --compressed

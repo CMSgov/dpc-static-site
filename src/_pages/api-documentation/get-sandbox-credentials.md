@@ -76,7 +76,7 @@ Select **copy** on the DPC Sandbox site or copy the command invocation here:
 
 #### 3a. Download the snippet.txt file
 
-{% capture snippet %}curl -JLO https://raw.githubusercontent.com/CMSgov/dpc-app/main/dpc-web/public/snippet.txt{% endcapture %}
+{% capture snippet %}curl -JLO 'https://raw.githubusercontent.com/CMSgov/dpc-app/main/dpc-web/public/snippet.txt'{% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
 
 #### 3b. Create your public key snippet
