@@ -646,7 +646,7 @@ The removed patient stays in `member` with `inactive: true` and `period.end` set
 
 You can submit a Group Resource which overwrites the existing group with members of a different resource.
 
-{% include alert.html variant="warning" text="This endpoint does not merge with the existing membership state, but replaces it." classNames="measure-6" %}
+{% include alert.html variant="warning" text="This endpoint does not merge with the existing membership state, but replaces it instead." classNames="measure-6" %}
 
 Patients in the existing group that you omit from the `PUT` body are not deleted, they're retained in the response with `inactive: true` and a shortened `period.end`, just like an explicit `$remove`. Filter by `inactive: false` on subsequent reads to get only currently-attributed patients.
 
