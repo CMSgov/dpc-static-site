@@ -132,14 +132,14 @@ Fetch each URL in `output[].url` with your bearer token to download an [NDJSON](
 **Example request**
 
 {% capture snippet %}
-GET https://sandbox.dpc.cms.gov/api/v1/Data/{NDJSON_FILE}
+GET https://sandbox.dpc.cms.gov/api/v1/Data/{FILE_ID}
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 
 {% capture snippet %}
-curl https://sandbox.dpc.cms.gov/api/v1/Data/{NDJSON_FILE} \
+curl https://sandbox.dpc.cms.gov/api/v1/Data/{FILE_ID} \
      -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept-Encoding: gzip' \
      --compressed
