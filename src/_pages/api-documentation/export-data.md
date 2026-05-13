@@ -125,7 +125,7 @@ Each `output` item contains a `count` (the number of records in the NDJSON file)
 
 ## Retrieve the NDJSON output file(s)
 
-{% include alert.html variant="warning" text="The Data endpoint is not a FHIR resource. Don't send <code>Accept: application/fhir+json</code> or <code>application/fhir+ndjson</code>, both return <code>406 Not Acceptable</code>. Omit the <code>Accept</code> header." classNames="measure-6" %}
+{% include alert.html variant="warning" text="The Data endpoint is not a FHIR resource. Don't send <code>Accept: application/fhir+json</code> or <code>application/fhir+ndjson</code>. Both return <code>406 Not Acceptable</code>. Omit the <code>Accept</code> header." classNames="measure-6" %}
 
 Fetch each URL in `output[].url` with your bearer token to download an [NDJSON](https://github.com/ndjson/ndjson-spec) file of FHIR resources (Patient, Coverage, or ExplanationOfBenefit, depending on the entry).
 
