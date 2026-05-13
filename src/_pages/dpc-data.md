@@ -66,9 +66,9 @@ DPC uses FHIR (Fast Healthcare Interoperability Resources) as a standard, compli
 
 These sample DPC data files have similar content and structure to production (real patient) data. Try the DPC sandbox to access test data from the API.
 
-- [Explanation of Benefit](https://bcda.cms.gov/assets/data/ExplanationOfBenefit.ndjson)
-- [Patient](https://bcda.cms.gov/assets/data/Patient.ndjson)
-- [Coverage](https://bcda.cms.gov/assets/data/Coverage.ndjson)
+- [Explanation of Benefit]({{ '/assets/data/ExplanationOfBenefit.ndjson' | relative_url }})
+- [Patient]({{ '/assets/data/Patient.ndjson' | relative_url }})
+- [Coverage]({{ '/assets/data/Coverage.ndjson' | relative_url }})
 
 ## FHIR and JSON resources
 
