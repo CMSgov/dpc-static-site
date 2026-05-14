@@ -4,28 +4,41 @@
     <div class="usa-nav-container">
       <div class="usa-navbar">
         <div class="usa-logo">
-          <a href="{{ '/index.html' | relative_url }}"
+          <a
+            href="{{ '/index.html' | relative_url }}"
             title="DPC"
             data-tealium="main-nav"
             class="display-flex flex-align-center height-6 maxw-card-lg"
-            style="gap: 0.5rem;">
-            <img src="{{ '/assets/img/logo-dpc.svg' | relative_url }}"
+            style="gap: 0.5rem;"
+          >
+            <img
+              src="{{ '/assets/img/logo-dpc.svg' | relative_url }}"
               alt="DPC logo"
               class="width-6 height-6"
-              style="object-fit:contain;" />
-            <span class="font-sans-md text-bold text-black text-balance line-height-sans-2">Data at the <br>Point of Care</span>
+              style="object-fit:contain;"
+            />
+            <span class="font-sans-md text-bold text-black text-balance line-height-sans-2">Data at the <br>Point of
+              Care</span>
           </a>
         </div>
-        <button type="button"
-          class="usa-menu-btn">Menu</button>
+        <button
+          type="button"
+          class="usa-menu-btn"
+        >Menu</button>
       </div>
-      <nav aria-label="Primary navigation"
-        class="usa-nav">
-        <button type="button"
-          class="usa-nav__close">
-          <img src="{{ '/assets/uswds/img/usa-icons/close.svg' | relative_url }}"
+      <nav
+        aria-label="Primary navigation"
+        class="usa-nav"
+      >
+        <button
+          type="button"
+          class="usa-nav__close"
+        >
+          <img
+            src="{{ '/assets/uswds/img/usa-icons/close.svg' | relative_url }}"
             role="img"
-            alt="Close" />
+            alt="Close"
+          />
         </button>
         <ul class="usa-nav__primary usa-accordion">
           {% for item in site.data.nav-primary %}
@@ -40,19 +53,25 @@
 
 
           <li class="usa-nav__primary-item">
-            <button type="button"
+            <button
+              type="button"
               class="usa-accordion__button usa-nav__link {% if is_child_active %}{{ 'usa-current' }}{% endif %}"
               aria-expanded="false"
-              aria-controls="basic-nav-section-{{forloop.index}}">
+              aria-controls="basic-nav-section-{{forloop.index}}"
+            >
               <span>{{- item.name -}}</span>
             </button>
-            <ul id="basic-nav-section-{{forloop.index}}"
+            <ul
+              id="basic-nav-section-{{forloop.index}}"
               class="usa-nav__submenu"
-              hidden>
+              hidden
+            >
               {% for child in item.children %}
-              <li class="usa-nav__submenu-item">
-                <a class="{% if page.url == child.url %}{{ 'usa-current' }}{% endif %}"
-                  href="{{- child.url | relative_url -}}">
+              <li class="usa-nav__submenu-item{% if child.mobile_only %} desktop:display-none{% endif %}">
+                <a
+                  class="{% if page.url == child.url %}{{ 'usa-current' }}{% endif %}"
+                  href="{{- child.url | relative_url -}}"
+                >
                   <span>{{- child.name -}}</span>
                 </a>
               </li>
@@ -61,22 +80,23 @@
           </li>
           {% else %}
           <li class="usa-nav__primary-item">
-            <a href="{{- item.url | relative_url -}}"
+            <a
+              href="{{- item.url | relative_url -}}"
               class="usa-nav-link {% if page.url == item.url %}{{ 'usa-current' }}{% endif %}"
-              data-tealium="navigation"><span>{{- item.name -}}</span>
+              data-tealium="navigation"
+            ><span>{{- item.name -}}</span>
             </a>
           </li>
           {% endif %}
           {% endfor %}
         </ul>
 
-        <div class="padding-left-1">
-          <a href="{{ '/api-documentation.html' | relative_url }}"
-            class="usa-button"
-            type="button"
-            data-tealium="main-nav">
-            Get Started
-          </a>
+        <div class="desktop:padding-left-1 margin-top-4 desktop:margin-top-0">
+          <a
+            href="{{ '/api-documentation' | relative_url }}"
+            class="usa-button margin-x-0 width-full desktop:width-auto"
+            data-tealium="main_nav"
+          >Get Started</a>
         </div>
       </nav>
     </div>
