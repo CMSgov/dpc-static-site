@@ -92,9 +92,14 @@
   <!--DataLayer (utag_data) Snippet
     Within <head> of document at the highest possible point.-->
   <script type="text/javascript">
-    var utag_data = {}
+    var utag_data = {
+      "content_language": "en",
+      "logged_in": false,
+      "page_type": false,
+      "page_name": "{{ seo_title }}",
+      "site_environment": "prod",
+    }
   </script>
-
 
   <!-- Within <head> of document below DataLayer snippet .
     The utag.sync.js script should run as early as possible -->
@@ -105,5 +110,11 @@
       (function (a, b, c, d) {
         a = 'https://tealium-tags.cms.gov/cms-dpc/dev/utag.js'; b = document; c = 'script'; d = b.createElement(c); d.src = a; d.type = 'text/java' + c; d.async = true; a = b.getElementsByTagName(c)[0]; a.parentNode.insertBefore(d, a);
       })();
+  </script>
+
+  <script>
+    window.ENV = {
+      siteUrl: "{{site.url}}"
+    }
   </script>
 </head>
