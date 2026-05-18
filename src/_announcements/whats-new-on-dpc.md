@@ -1,11 +1,11 @@
 ---
 layout: announcement
 page_title: "What's new on DPC.cms.gov"
-description: "We’re excited to announce the launch of a new DPC.cms.gov"
+description: "We’re excited to announce the launch of a new DPC.cms.gov."
 show-side-nav: false
 in-page-nav: true
 published_date: 2026-06-01
-custom_excerpt: "We’re excited to announce the launch of a new DPC.cms.gov"
+custom_excerpt: "We’re excited to announce the launch of a new DPC.cms.gov."
 lead_paragraph: "Welcome to DPC.cms.gov"
 ---
 
