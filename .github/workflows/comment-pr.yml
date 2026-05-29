@@ -5,7 +5,7 @@ on:
 
 jobs:
   comment-pr:
-    runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
+    runs-on: codebuild-dpc-static-site-non-prod-${{github.run_id}}-${{github.run_attempt}}
 
     steps:
       - name: Post or update comment

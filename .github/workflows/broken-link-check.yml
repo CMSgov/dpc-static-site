@@ -30,7 +30,7 @@ jobs:
     if: ${{ (inputs.env == 'prod' && github.event_name == 'workflow_dispatch') ||  github.event_name == 'schedule'  }}
     permissions:
       id-token: write
-    runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
+    runs-on: codebuild-dpc-static-site-prod-${{github.run_id}}-${{github.run_attempt}}
 
     steps:
       - name: Configure Prod AWS Credentials
@@ -63,7 +63,7 @@ jobs:
     if: ${{ inputs.env == 'staging' }}
     permissions:
       id-token: write
-    runs-on: codebuild-dpc-static-site-${{github.run_id}}-${{github.run_attempt}}
+    runs-on: codebuild-dpc-static-site-non-prod-${{github.run_id}}-${{github.run_attempt}}
     env:
       BASE_PATH: ${{ inputs.feature_path && format('feature/{0}/', inputs.feature_path) || '' }}
 
