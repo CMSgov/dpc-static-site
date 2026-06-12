@@ -8,7 +8,7 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-Before accessing patient data, DPC must establish that providers have  valid patient-practitioner relationships with patients with MedicareThis is called attribution. You will “attribute” each patient to a practitioner in a Group Resource.
+Before accessing patient data, DPC must establish that providers have  valid patient-practitioner relationships with patients with Medicare. This is called attribution. You will “attribute” each patient to a practitioner in a Group Resource.
 
 DPC provides you with a bundle of [sample practitioners](https://github.com/CMSgov/dpc-app/blob/main/dpc-web/public/practitioner_bundle.json){:target="_blank"} and [sample patients](https://github.com/CMSgov/dpc-app/blob/main/dpc-web/public/patient_bundle.json){:target="_blank"} to complete attribution in the DPC Sandbox.
 

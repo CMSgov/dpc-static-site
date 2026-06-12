@@ -36,11 +36,11 @@ show-side-nav: false
 
 Provider claims submitted to Medicare contain valuable historical health information. In 2010, Centers for Medicare & Medicaid Services (CMS) created [Blue Button](https://bluebutton.cms.gov/) as a way for people with Medicare to access their own health information. In 2019, CMS expanded this tool to create DPC, a new application programming interface (API) that extends this information to Original Medicare providers. DPC:
 
-* **Informs providers** about the past medical history for new patients with Medicare    
-* **Removes the burden** **on patients** to remember every detail in these histories.  
-* **Updates providers** on new procedures, prescriptions, and other services offered to their patients with Medicare by other providers between visits.   
-* **Gives providers medication insights** including prescription changes and adherence.  
-* **Builds patient relationships** by freeing providers to spend more time talking to their patients with Medicare and less time on paperwork.  
+* **Informs providers** about the past medical history for new patients with Medicare.  
+* **Removes the burden** **on patients** to remember every detail in these histories.
+* **Updates providers** on new procedures, prescriptions, and other services offered to their patients with Medicare by other providers between visits.
+* **Gives providers medication insights** including prescription changes and adherence.
+* **Builds patient relationships** by freeing providers to spend more time talking to their patients with Medicare and less time on paperwork.
 * **Tracks preventive services** such as flu and shingles vaccines.
 
 ## DPC is currently a pilot program
