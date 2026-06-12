@@ -2,17 +2,17 @@
 layout: api-docs
 page_title: "DPC Data"
 seo_title: ""
-description: "Overview of the Medicare beneficiary claims data shared through the Data at the Point of Care API, including FHIR Resources and bulk data specifications."
+description: "Overview of the Medicare claims data shared through the Data at the Point of Care API, including FHIR Resources and bulk data specifications."
 in-page-nav: true
 ---
 
 # {{ page.page_title }}
 
-Data at the Point of Care (DPC) API is a RESTful-based web service that shares Medicare beneficiary claims data with provider organizations. It uses HL7 Fast Healthcare Interoperability Resources (FHIR) to share the data in a standard format. 
+Data at the Point of Care (DPC) API is a RESTful-based web service that shares Medicare claims data with provider organizations. It uses HL7 Fast Healthcare Interoperability Resources (FHIR) to share the data in a standard format. 
 
-## What kind of beneficiary data is shared through DPC?
+## What kind of data is shared through DPC?
 
-CMS provides beneficiary claims data to providers for treatment purposes permitted by HIPAA. Use DPC to develop a service to notify, search, display, analyze, retrieve, view, and otherwise obtain certain information or data about Medicare beneficiaries or synthetic data from CMS. DPC shares large volumes of enrollee data from Medicare Parts A, B, and D claims.
+CMS provides claims data for patients with Medicare to providers for treatment purposes permitted by HIPAA. Use DPC to develop a service to notify, search, display, analyze, retrieve, view, and otherwise obtain certain information or data about patients with Medicare or synthetic data from CMS. DPC shares large volumes of enrollee data from Medicare Parts A, B, and D claims.
 
 
 <table class="usa-table usa-table--borderless usa-table--stacked margin-bottom-4">
@@ -49,7 +49,7 @@ DPC data does not include clinical notes, lab results, or substance abuse codes.
 
 ## How the data is structured: FHIR resource types
 
-DPC uses FHIR (Fast Healthcare Interoperability Resources) as a standard, compliant way to share Medicare beneficiary data. In FHIR, data is structured into basic building blocks called "Resources." DPC also has its own bulk FHIR specification to securely handle large numbers of Medicare beneficiary files. 
+DPC uses FHIR (Fast Healthcare Interoperability Resources) as a standard, compliant way to share Medicare claims data. In FHIR, data is structured into basic building blocks called “Resources.” DPC also has its own bulk FHIR specification to securely handle large numbers of Medicare claim files.
 
 ## Applicable FHIR Resources
 

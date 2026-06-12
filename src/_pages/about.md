@@ -26,21 +26,22 @@ show-side-nav: false
   </div>
   <div class="desktop:grid-col desktop:order-1">
     <h1 class="margin-top-5 desktop:margin-top-0">{{ page.page_title }}</h1>
-    <p>Medicare patients move through a landscape of separate health systems without a continuous record of their care.</p>
-    <p>The Data at the Point of Care (DPC) pilot program puts patients at the center of this system, using a secure, standardized method to share health information across providers. </p>
+    <p class="usa-intro">Patients with Medicare: at the center of a complex healthcare ecosystem</p>
+    <p>Patients with Medicare move through a landscape of different providers, often without a continuous record of their care.</p>
+    <p>The Data at the Point of Care (DPC) pilot program puts them at the center of this system, using a secure, standardized method to share health information across providers.</p>
   </div>
 </div>
 
 ## Cultivating valuable data from Medicare claims
 
-Provider claims submitted to Medicare contain valuable historical health information. In 2010, Centers for Medicare & Medicaid Services (CMS) created Blue Button as a way for beneficiaries to access their own health information. In 2019, CMS expanded this tool to create DPC, a new application programming interface (API) that extends this information to Original Medicare (OM) providers. DPC:
+Provider claims submitted to Medicare contain valuable historical health information. In 2010, Centers for Medicare & Medicaid Services (CMS) created [Blue Button](https://bluebutton.cms.gov/) as a way for people with Medicare to access their own health information. In 2019, CMS expanded this tool to create DPC, a new application programming interface (API) that extends this information to Original Medicare providers. DPC:
 
-- **Informs providers** of a new patient's past medical history.
-- **Removes the burden on patients** to remember every detail in these histories.
-- **Updates providers** on new procedures, prescriptions, and other services offered to their patients by other providers between visits. 
-- **Gives providers medication insights** including prescription changes and adherence.
-- **Builds patient relationships** by freeing providers to spend more time talking to patients and less time on paperwork.
-- **Tracks preventive services** such as flu and shingles vaccines.
+* **Informs providers** about the past medical history for new patients with Medicare    
+* **Removes the burden** **on patients** to remember every detail in these histories.  
+* **Updates providers** on new procedures, prescriptions, and other services offered to their patients with Medicare by other providers between visits.   
+* **Gives providers medication insights** including prescription changes and adherence.  
+* **Builds patient relationships** by freeing providers to spend more time talking to their patients with Medicare and less time on paperwork.  
+* **Tracks preventive services** such as flu and shingles vaccines.
 
 ## DPC is currently a pilot program
 

@@ -17,7 +17,7 @@ Onboarding of existing users and new requests for production access are paused w
 
 ## While you wait: use the DPC sandbox
 
-The DPC sandbox provides a realistic experience using synthetic beneficiary claims data.
+The DPC sandbox provides a realistic experience using synthetic data.
 
 [Request access to the sandbox](https://sandbox.dpc.cms.gov/users/sign_up)
 

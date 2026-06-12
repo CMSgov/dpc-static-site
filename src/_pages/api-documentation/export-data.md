@@ -2,7 +2,7 @@
 layout: api-docs
 page_title: "Export CMS Claims Data"
 seo_title: ""
-description: "Use the FHIR /Group/$export operation to asynchronously export Patient, Coverage, and Explanation of Benefit data in bulk from the DPC API."
+description: "Use the /Group/$export operation to asynchronously export Patient, Coverage, and Explanation of Benefit data in bulk from the DPC API."
 in-page-nav: true
 ---
 

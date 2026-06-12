@@ -36,13 +36,13 @@ GET /api/v1/Group/{GROUP_ID}/$export?_type=ExplanationOfBenefit
 
 You can filter data using the `_since` parameter with either the `/Patient` or `/Group` endpoints. You may want to set `_since` queries as a repeating call or as a way to check for patient updates to avoid downloading duplicate data.
 
-{% include alert.html variant="warning" heading="Download all your data before using _since" text="We recommend running an unfiltered request (without using <code>_since</code>) to all resource types using the <code>/Group/{GROUP_ID}/$export</code> endpoint in order to retrieve all historical data for your associated beneficiaries. You only need to do this once." classNames="measure-6" %}
+{% include alert.html variant="warning" heading="Download all your data before using _since" text="We recommend running an unfiltered request (without using <code>_since</code>) to all resource types using the <code>/Group/{GROUP_ID}/$export</code> endpoint in order to retrieve all historical data for your associated patients. You only need to do this once." classNames="measure-6" %}
 
-On subsequent calls you can begin retrieving incremental claims data for your beneficiaries using `_since`. We suggest using the `transactionTime` from your last bulk data request as the `_since` date.
+On subsequent calls you can begin retrieving incremental claims data for your patients using `_since`. We suggest using the `transactionTime` from your last bulk data request as the `_since` date.
 
 Two ways to use `_since`:
 
-1. Request the most recent data for all beneficiaries: [Use `_since` within the `/Group` endpoint](#request-data-using-_since-with-the-group-endpoint).  
+1. Request the most recent data for all of your patients with Medicare: [Use `_since` within the `/Group` endpoint](#request-data-using-_since-with-the-group-endpoint).  
 2. Request data synchronously for an individual patient: [Use `_since` within the `/Patient` endpoint]({{ "/api-documentation/export-data/patient-everything.html#request-data-using-_since-with-the-patient-endpoint" | relative_url }}).
 
 ### Steps to request filtered data
@@ -69,13 +69,13 @@ The `/Group/{GROUP_ID}/$export` endpoint requires a bearer token as well as Acce
 The Prefer header is **NOT** required for `/Patient/{PATIENT_ID}/$everything`, but it DOES require an X-Provenance header, whereas the `/Group/{GROUP_ID}/$export` endpoint does not. The format is defined by the FHIR Bulk Data Export spec. Consult the [FHIR Datatypes](https://www.hl7.org/fhir/STU3/datatypes.html#instant) page for more information.
 
 
-{% include alert.html variant="warning" heading="Note" text="If you input dates between 01-01-2020 and 02-11-2020 in the `_since` parameter, you'll receive all historical data for your beneficiaries." classNames="measure-6" %}
+{% include alert.html variant="warning" heading="Note" text="If you input dates between 01-01-2020 and 02-11-2020 in the `_since` parameter, you'll receive all historical data for your patients with Medicare." classNames="measure-6" %}
 
-Due to limitations in the Beneficiary FHIR Data (BFD) Server, data from before 02-12-2020 is marked with the arbitrary [lastUpdated](https://www.hl7.org/fhir/STU3/search.html#lastUpdated) date of 01-01-2020. If you input any dates between 01-01-2020 and 02-11-2020 in the `_since` parameter, you'll receive all historical data for your beneficiaries. Data loads from 02-12-2020 onwards have been marked with accurate dates.
+Due to limitations in the Beneficiary FHIR Data (BFD) Server, data from before 02-12-2020 is marked with the arbitrary [lastUpdated](https://www.hl7.org/fhir/STU3/search.html#lastUpdated) date of 01-01-2020. If you input any dates between 01-01-2020 and 02-11-2020 in the `_since` parameter, you'll receive all historical data for your patients with Medicare. Data loads from 02-12-2020 onwards have been marked with accurate dates.
 
 ## Request data using _since with the /Group endpoint
 
-This operation will start a job for filtered data for existing beneficiaries at 8PM ET on May 13th, 2021 and will include all seven years of historical data for all patients in the Group who have a lastUpdated date that falls after the `_since` date. In the example, we request the Patient Resource Type. The steps and format would work similarly for other resource types.
+This operation will start a job for filtered data for existing Medicare patients at 8PM ET on May 13th, 2021 and will include all seven years of historical data for all patients in the Group who have a lastUpdated date that falls after the `_since` date. In the example, we request the Patient Resource Type. The steps and format would work similarly for other resource types.
 
 If the request was successful, a `202 Accepted` response code will be returned and the response will include a Content-Location header.
 
