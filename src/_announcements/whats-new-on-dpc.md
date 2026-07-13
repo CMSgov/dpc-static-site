@@ -6,41 +6,41 @@ show-side-nav: false
 in-page-nav: true
 published_date: 2026-06-01
 custom_excerpt: "We’re excited to announce the launch of a new DPC.cms.gov."
-lead_paragraph: "Welcome to DPC.cms.gov"
+lead_paragraph: "Welcome to the newly designed DPC site."
 ---
 
-We’re excited to announce the launch of a new DPC.cms.gov. Based on feedback from our pilot program, user research, and testing, the new site:
+We've updated DPC.cms.gov to make it easier to find the information you need. Based on feedback from pilot participants, user research, and usability testing, the updated site:
 
-* Updates API documentation for accuracy and ease of use  
-* Provides information on DPC data and FHIR resources  
-* Offers general improvements in look, feel, and user experience
+- Improves API documentation for accuracy and ease of use.  
+- Explains Medicare data available through DPC and FHIR® resource types used to access it.  
+- Enhances navigation and overall user experience.
 
-## How do I use the new DPC website?
+## Explore the new DPC site
 
-The new site offers 4 main pages (as shown on the navigation menu) and links to additional resources:
+The updated site includes 4 main sections, along with links to additional resources.
 
 ### About (formerly “About the pilot”)
 
-Learn the history and background of the DPC pilot. Visit Announcements (formerly “Updates”) for timely news about DPC.
+Learn about the background and purpose of the DPC pilot program. Visit Announcements (formerly Updates) for the latest DPC news.
 
 [Visit About]({{ '/about.html' | relative_url }})
 
 ### API Documentation
 
-Learn how to connect to synthetic data in the DPC sandbox.
+Learn how to connect to realistic test claims data in the DPC sandbox.
 
 [Visit API Documentation]({{ '/api-documentation.html' | relative_url }})
 
 ### DPC Data
 
-Explore the types of Medicare data available through DPC. Review [FHIR resources](https://hl7.org/fhir/STU3/resourcelist.html) that deliver payer and patient information.
+Explore the types of Medicare data available through DPC. Review [HL7® FHIR® standard Resources](https://www.hl7.org/fhir/resourcelist.html) that standardize healthcare data for interoperability.
 
 [Visit DPC Data]({{ '/dpc-data.html' | relative_url }})
 
 ### Support (new)
 
-Review answers to common questions, join our Google Group, and contact the DPC team for help.
+Contact DPC directly or by joining the DPC Google Group.
 
 [Visit Support]({{ '/support.html' | relative_url }})
 
-Questions or feedback about the site? Join our [Google Group](https://groups.google.com/g/dpc-api) or contact our team at [dpcinfo@cms.hhs.gov](mailto:dpcinfo@cms.hhs.gov).
+Questions or feedback about the site? Join the DPC [Google Group](https://groups.google.com/g/dpc-api) or contact the DPC team at [dpcinfo@cms.hhs.gov](mailto:dpcinfo@cms.hhs.gov).

@@ -9,43 +9,33 @@ show-side-nav: false
 <div class="grid-row grid-gap-4 flex-align-center">
  
   <div class="grid-col-auto display-flex flex-align-center desktop:flex-justify-center desktop:order-2">
-    <div class="position-absolute display-flex flex-align-center flex-justify-center width-full">
-      <img
-        src="{{ '/assets/img/blob-1.svg' | relative_url }}"
-        aria-hidden="true"
-        alt=""
-      />
-    </div>
-    <img
+    <!-- <img
       class="position-relative"
       src="{{ '/assets/img/person-5.png' | relative_url }}"
       aria-hidden="true"
       alt=""
       style="height:400px;padding: 0 40px;"
-    />
+    /> -->
   </div>
   <div class="desktop:grid-col desktop:order-1">
     <h1 class="margin-top-5 desktop:margin-top-0">{{ page.page_title }}</h1>
-    <p class="usa-intro">Patients with Medicare: at the center of a complex healthcare ecosystem</p>
-    <p>Patients with Medicare move through a landscape of different providers, often without a continuous record of their care.</p>
-    <p>The Data at the Point of Care (DPC) pilot program puts them at the center of this system, using a secure, standardized method to share health information across providers.</p>
+    <h2>Creating continuity for people with Medicare</h2>
+    <p>People with Medicare can receive care from multiple providers and care settings. As a result, providers may not have a complete picture of a patient's care history when making clinical decisions. The Data at the Point of Care (DPC) pilot program securely shares Medicare claims data in a standardized format, the HL7® FHIR® standard. This helps providers fill information gaps, make more informed clinical decisions, and coordinate care more effectively. By giving care teams a more complete picture of their patients, DPC supports better, more connected care for people with Medicare.</p>
   </div>
 </div>
 
-## Cultivating valuable data from Medicare claims
+## Completing the picture with Medicare claims
 
-Provider claims submitted to Medicare contain valuable historical health information. In 2010, Centers for Medicare & Medicaid Services (CMS) created [Blue Button](https://bluebutton.cms.gov/) as a way for people with Medicare to access their own health information. In 2019, CMS expanded this tool to create DPC, a new application programming interface (API) that extends this information to Original Medicare providers. DPC:
+Medicare claims tell a continuous story about visits, admissions, screenings, services, and medications. The Centers for Medicare & Medicaid Services (CMS) created the DPC pilot program to securely share this information with Original Medicare providers. DPC can:
 
-* **Informs providers** about the past medical history for new patients with Medicare.  
-* **Removes the burden** **on patients** to remember every detail in these histories.
-* **Updates providers** on new procedures, prescriptions, and other services offered to their patients with Medicare by other providers between visits.
-* **Gives providers medication insights** including prescription changes and adherence.
-* **Builds patient relationships** by freeing providers to spend more time talking to their patients with Medicare and less time on paperwork.
-* **Tracks preventive services** such as flu and shingles vaccines.
+- Keep providers informed about services patients receive between visits.
+- Reduce the need for patients to repeatedly share their health histories.
+- Provide insights into prescription refills, medication changes, and adherence.
+- Highlight preventive services such as flu and shingles vaccines.
 
 ## DPC is currently a pilot program
 
-Right now a limited number of customers can access DPC data. CMS is not currently bringing new users into this pilot program. We're finalizing a new authentication and onboarding portal with feedback from pilot participants now. We'll announce general availability of production data when the portal launches. Meanwhile you can access realistic test data in the [DPC Sandbox](https://sandbox.dpc.cms.gov/users/sign_up).
+DPC is currently available to a limited number of pilot participants. We’re finalizing a new authentication and onboarding portal created based on feedback from pilot participants. During this time, CMS won’t be onboarding new production users. We'll announce general availability of production data when the portal launches. In the meantime, developers can continue exploring DPC using realistic test data in the sandbox.
 
 ## What are the other CMS claims-based FHIR APIs?
 

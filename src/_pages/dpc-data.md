@@ -8,8 +8,6 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-Data at the Point of Care (DPC) API is a RESTful-based web service that shares Medicare claims data with provider organizations. It uses HL7 Fast Healthcare Interoperability Resources (FHIR) to share the data in a standard format. 
-
 ## What kind of data is shared through DPC?
 
 CMS provides claims data for patients with Medicare to providers for treatment purposes permitted by HIPAA. Use DPC to develop a service to notify, search, display, analyze, retrieve, view, and otherwise obtain certain information or data about patients with Medicare or synthetic data from CMS. DPC shares large volumes of enrollee data from Medicare Parts A, B, and D claims.
