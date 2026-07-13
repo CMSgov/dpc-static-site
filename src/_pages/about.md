@@ -20,7 +20,7 @@ show-side-nav: false
   <div class="desktop:grid-col desktop:order-1">
     <h1 class="margin-top-5 desktop:margin-top-0">{{ page.page_title }}</h1>
     <h2>Creating continuity for people with Medicare</h2>
-    <p>People with Medicare can receive care from multiple providers and care settings. As a result, providers may not have a complete picture of a patient's care history when making clinical decisions. The Data at the Point of Care (DPC) pilot program securely shares Medicare claims data in a standardized format, the HL7® FHIR® standard. This helps providers fill information gaps, make more informed clinical decisions, and coordinate care more effectively. By giving care teams a more complete picture of their patients, DPC supports better, more connected care for people with Medicare.</p>
+    <p>People with Medicare can receive care from multiple providers and care settings. As a result, providers may not have a complete picture of a patient's care history when making clinical decisions. The Data at the Point of Care (DPC) pilot program securely shares Medicare claims data in a standardized format, the <a href="https://www.hl7.org/fhir/" target="_blank">HL7® FHIR® standard</a>. This helps providers fill information gaps, make more informed clinical decisions, and coordinate care more effectively. By giving care teams a more complete picture of their patients, DPC supports better, more connected care for people with Medicare.</p>
   </div>
 </div>
 

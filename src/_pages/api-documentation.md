@@ -21,13 +21,9 @@ This documentation explains how to connect to realistic test data in the <a href
   </li>
   <li class="usa-process-list__item docs-final-item">
     <p class="usa-process-list__heading">Use the sandbox</p>
-    <div class="usa-alert usa-alert--info usa-alert--slim margin-top-2">
-      <div class="usa-alert__body">
-        <p class="usa-alert__text">
-          Learn how to authenticate, attribute patients, and export DPC data. You can also use the DPC <a href="{{ '/api-documentation/postman-collection.html' | relative_url }}">Postman collection</a> to explore public endpoints with sample requests.
-        </p>
-      </div>
-    </div>
+    <p>
+      Learn how to authenticate, attribute patients, and export DPC data. You can also use the DPC <a href="{{ '/api-documentation/postman-collection.html' | relative_url }}">Postman collection</a> to explore public endpoints with sample requests.
+    </p>
     <ol style="margin-top: 1rem;">
       <li>Get a <a href="{{ '/api-documentation/get-bearer-token.html' | relative_url }}">bearer token</a>.</li>
       <li>Complete <a href="{{ '/api-documentation/attribution.html' | relative_url }}">attribution</a> by creating patient rosters.</li>
