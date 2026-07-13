@@ -107,10 +107,11 @@ main {
 
 // Landing page hero background
 .bg-primary-gradient {
-  background: linear-gradient(30deg, color('blue-warm-70v') 60%, #534b97, #85519f, #b55996, #dd677f, #f97f5b, #ffa328, color('yellow-20v'));
+  background-image: linear-gradient(30deg, color('blue-warm-70v') 60%, #534b97, #85519f, #b55996, #dd677f, #f97f5b, #ffa328, color('yellow-20v'));
 
   @include at-media($theme-site-margins-breakpoint) {
-    background: linear-gradient(90deg, color('blue-warm-70v') 60%, #534b97, #85519f, #b55996, #dd677f, #f97f5b, #ffa328, color('yellow-20v'));
+    background-image: linear-gradient(90deg, color('blue-warm-70v') 60%, #534b97, #85519f, #b55996, #dd677f, #f97f5b, #ffa328, color('yellow-20v'));
+    background-size: 120%;
   }
 }
 
