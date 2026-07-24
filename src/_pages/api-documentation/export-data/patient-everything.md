@@ -8,7 +8,7 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-The `/Patient/{PATIENT_ID}/$everything` endpoint lets you retrieve all resources about a patient using their DPC internal ID (UUID), represented as `{PATIENT_ID}` in the request. They'll receive a bundle with 7 years' historical data including:
+The `/Patient/{PATIENT_ID}/$everything` endpoint lets you retrieve all resources about a patient using their DPC internal ID (UUID), represented as `{PATIENT_ID}` in the request. You'll receive a bundle with 7 years' historical data including:
 
 - Patient  
 - Coverage  

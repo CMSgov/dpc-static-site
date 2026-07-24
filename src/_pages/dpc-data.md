@@ -47,7 +47,7 @@ DPC data does not include clinical notes, lab results, or substance abuse codes.
 
 ## How the data is structured: FHIR resource types
 
-DPC uses FHIR (Fast Healthcare Interoperability Resources) as a standard, compliant way to share Medicare claims data. In FHIR, data is structured into basic building blocks called “Resources.” DPC also has its own bulk FHIR specification to securely handle large numbers of Medicare claim files.
+DPC uses the [HL7® FHIR® standard](https://www.hl7.org/fhir/overview.html) (Fast Healthcare Interoperability Resources) as a standard, compliant way to share Medicare claims data. In FHIR, data is structured into basic building blocks called “Resources.” DPC uses [bulk FHIR](https://hl7.org/fhir/uv/bulkdata/en/) specification to securely handle large numbers of Medicare claim files.
 
 ## Applicable FHIR Resources
 
@@ -58,7 +58,7 @@ DPC uses FHIR (Fast Healthcare Interoperability Resources) as a standard, compli
 [Patient](https://hl7.org/fhir/STU3/patient.html) stores enrollees' demographic details and updates to their [Medicare Patient Identifiers](https://www.cms.gov/training-education/partner-outreach-resources/new-medicare-card/medical-beneficiary-identifiers-mbis) (MBI).
 
 ### Coverage
-[Coverage](https://hl7.org/fhir/STU3/coverage.html) provides high-level descriptors of an insurance plan such as that found on an insurance card. 
+[Coverage](https://hl7.org/fhir/STU3/coverage.html) provides high-level descriptors of an insurance plan such as that found in the enrollee's insurance coverage.
 
 ## Download sample files 
 
@@ -72,7 +72,6 @@ These sample DPC data files have similar content and structure to production (re
 
 - [FHIR/HL7](https://www.hl7.org/fhir/STU3/index.html)
 - [Bulk FHIR specification](https://hl7.org/fhir/uv/bulkdata/STU3/en/index.html)
-- [Beneficiary FHIR Data Server (BFD)/ Blue Button API](https://bluebutton.cms.gov/developers/)
 - [Intro to JSON Format](https://www.json.org/json-en.html) and [NDJSON](https://github.com/ndjson/ndjson-spec)
 - [JSON format viewer/validator (raw text/JSON format converter)](https://jsonlint.com/)
 - [Intro to valid FHIR formats](http://hl7.org/fhir/STU3/validation.html)
