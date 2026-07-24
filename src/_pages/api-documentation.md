@@ -8,7 +8,7 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-Data at the Point of Care (DPC) API is a RESTful-based web service that shares Medicare claims data with Original Medicare provider organizations. It uses [HL7® FHIR® standard](https://www.hl7.org/fhir/) to share this data in a standard format.
+Data at the Point of Care (DPC) API is a RESTful web service that shares Medicare claims data with Original Medicare provider organizations. It uses [HL7® FHIR® resources](https://www.hl7.org/fhir/) to share this data in a standard format.
 
 This documentation explains how to connect to realistic test data in the <a href="https://sandbox.dpc.cms.gov/users/sign_in" target="_blank">DPC Sandbox</a>. The sandbox is available to any Original Medicare provider organization or their assigned Health IT team.
 
