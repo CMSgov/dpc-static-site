@@ -34,9 +34,8 @@ This documentation explains how to connect to realistic test data in the <a href
 
 ## Requirements
 
-Before you begin, you’ll need to
+To complete these steps, you’ll need to:
 
-- Request access to the DPC Sandbox.
 - Use cURL and openssl with a [command-line interface](https://github.com/resources/articles/what-is-a-cli).
 - Create cryptographic key pairs.
 - Construct and interpret JSON.
