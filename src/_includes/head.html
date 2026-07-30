@@ -103,12 +103,12 @@
 
   <!-- Within <head> of document below DataLayer snippet .
     The utag.sync.js script should run as early as possible -->
-  <script src="https://tealium-tags.cms.gov/cms-dpc/dev/utag.sync.js"></script>
+  <script src="https://tealium-tags.cms.gov/cms-dpc/prod/utag.sync.js"></script>
 
   <!-- Loading utag.js script asynchronously -->
   <script type="text/javascript">
       (function (a, b, c, d) {
-        a = 'https://tealium-tags.cms.gov/cms-dpc/dev/utag.js'; b = document; c = 'script'; d = b.createElement(c); d.src = a; d.type = 'text/java' + c; d.async = true; a = b.getElementsByTagName(c)[0]; a.parentNode.insertBefore(d, a);
+        a = 'https://tealium-tags.cms.gov/cms-dpc/prod/utag.js'; b = document; c = 'script'; d = b.createElement(c); d.src = a; d.type = 'text/java' + c; d.async = true; a = b.getElementsByTagName(c)[0]; a.parentNode.insertBefore(d, a);
       })();
   </script>
 
