@@ -6,7 +6,7 @@
       <a
         href="{{ item.url | relative_url }}"
         class="{% if page.url == item.url %}{{ 'usa-current' }}{% endif %}"
-        data-tealium="left-rail"
+        data-tealium="left_rail"
       >
         {%- if item.icon -%}
         {%- include sprite.html icon=item.icon size="3" class="margin-right-05 text-middle" -%}
@@ -19,7 +19,7 @@
           <a
             href="{{ child.url | relative_url }}"
             class="{% if page.url == child.url %}{{ 'usa-current' }}{% endif %}"
-            data-tealium="left-rail"
+            data-tealium="left_rail"
           >{{ child.name }}</a>
           <ul class="usa-sidenav__sublist">
             {% for grandchild in child.children %}
@@ -27,7 +27,7 @@
               <a
                 href="{{ grandchild.url | relative_url }}"
                 class="{% if page.url == grandchild.url %}{{ 'usa-current' }}{% endif %}"
-                data-tealium="left-rail"
+                data-tealium="left_rail"
               >{{ grandchild.name }}</a>
             </li>
             {% endfor %}
@@ -44,7 +44,7 @@
         rel="noopener noreferrer"
         class="usa-nav-link"
         style="display: block !important;" {% comment %} display block is needed here because USWDS adds display: inline to external links {% endcomment %}
-        data-tealium="left-rail"
+        data-tealium="left_rail"
       >
         <span>
           {% include sprite.html icon="github" size="3" class="margin-right-05 text-middle" %}
