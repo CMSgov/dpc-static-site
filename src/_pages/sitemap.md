@@ -29,3 +29,4 @@ show-side-nav: false
 - [DPC Data]({{'/dpc-data.html' | relative_url}})
 - [JWT Generation Tool]({{'/jwt-tool.html' | relative_url}})
 - [Support]({{'/support.html' | relative_url}})
+- [Terms of service]({{'/terms-of-service.html' | relative_url}})
