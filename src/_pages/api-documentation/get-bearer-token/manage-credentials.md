@@ -38,7 +38,8 @@ POST /api/v1/Token
 curl 'https://sandbox.dpc.cms.gov/api/v1/Token?label={TOKEN_LABEL}&expiration={EXPIRATION_DATETIME}' \
     -H "Authorization: Bearer $BEARER_TOKEN" \
     -H 'Accept: application/json' \
-    -H 'Content-Type: application/json'
+    -H 'Content-Type: application/json' \
+    -X POST \
     -d ''
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
