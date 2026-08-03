@@ -17,7 +17,8 @@
   <title>{{ seo_title }}</title>
 
   {% assign page_url = page.url | absolute_url -%}
-  {% include meta.html title=seo_title description=page.description page_url=page_url %}
+  {% assign seo_description = page.description | default: site.description -%}
+  {% include meta.html title=seo_title description=seo_description page_url=page_url %}
 
   <link
     rel="canonical"
