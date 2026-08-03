@@ -1,8 +1,8 @@
 ---
 layout: api-docs
-page_title: "Add, View, and List Patients"
+page_title: "View and List Patients"
 seo_title: ""
-description: "Add, view, list, update, and remove patients in your organization using the DPC API's Patient endpoints."
+description: "View and list patients in your organization using the DPC API's Patient endpoints."
 in-page-nav: true
 ---
 

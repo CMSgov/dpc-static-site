@@ -24,7 +24,7 @@
       url: /api-documentation/attribution/upload-practitioners.html
       mobile_only: true
     
-    - name: Add, View, and List Practitioners
+    - name: View and List Practitioners
       url: /api-documentation/attribution/upload-practitioners/add-view-list-practitioners.html
       mobile_only: true
     
@@ -32,7 +32,7 @@
       url: /api-documentation/attribution/upload-patients.html
       mobile_only: true
     
-    - name: Add, View, and List Patients
+    - name: View and List Patients
       url: /api-documentation/attribution/upload-patients/add-view-list-patients.html
       mobile_only: true
     
