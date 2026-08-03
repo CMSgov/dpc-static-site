@@ -4,7 +4,7 @@ page_title: "What's new on DPC.cms.gov"
 description: "We’re excited to announce the launch of a new DPC.cms.gov."
 show-side-nav: false
 in-page-nav: true
-published_date: 2026-06-01
+published_date: 2026-04-08
 custom_excerpt: "We’re excited to announce the launch of a new DPC.cms.gov."
 lead_paragraph: "Welcome to the newly designed DPC site."
 ---
