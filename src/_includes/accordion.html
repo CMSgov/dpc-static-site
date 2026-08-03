@@ -3,14 +3,14 @@
         <button
         type="button"
         class="usa-accordion__button"
-        aria-expanded={{include.expanded}}
-        aria-controls={{include.id}}
+        aria-expanded="{{ include.expanded }}"
+        aria-controls="{{ include.id }}"
         data-tealium="accordion"
         >
             {{include.heading}}
         </button>
     </h4>
-    <div id={{include.id}} class="usa-accordion__content usa-prose">
+    <div id="{{ include.id }}" class="usa-accordion__content usa-prose">
         {{include.accordionContent}}
     </div>
 </div>
