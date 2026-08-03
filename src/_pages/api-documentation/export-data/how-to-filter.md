@@ -71,7 +71,7 @@ The Prefer header is **NOT** required for `/Patient/{PATIENT_ID}/$everything`, b
 
 {% include alert.html variant="warning" heading="Note" text="If you input dates between 01-01-2020 and 02-11-2020 in the `_since` parameter, you'll receive all historical data for your patients with Medicare." classNames="measure-6" %}
 
-Due to limitations in the Beneficiary FHIR Data (BFD) Server, data from before 02-12-2020 is marked with the arbitrary [lastUpdated](https://www.hl7.org/fhir/STU3/search.html#lastUpdated) date of 01-01-2020. If you input any dates between 01-01-2020 and 02-11-2020 in the `_since` parameter, you'll receive all historical data for your patients with Medicare. Data loads from 02-12-2020 onwards have been marked with accurate dates.
+Due to limitations in the Beneficiary FHIR Data (BFD) Server, data from before 02-12-2020 is marked with the arbitrary [lastUpdated](https://www.hl7.org/fhir/STU3/search.html#lastUpdated) date of 01-01-2020. Data loads from 02-12-2020 onwards have been marked with accurate dates.
 
 ## Request data using _since with the /Group endpoint
 
