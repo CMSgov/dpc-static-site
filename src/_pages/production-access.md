@@ -9,7 +9,7 @@ show-side-nav: false
 
 # {{ page.page_title }}
 
-This is the process for requesting production access to the DPC API. Production access is only available to Original Medicare provider organizations and their assigned Health IT teams.
+This is the process for preparing for production access to the DPC API. Production access is only available to Original Medicare provider organizations and their assigned Health IT teams.
 
 Production data is real Medicare claims data for real patients. Because of that, production access has requirements the [sandbox]({{ '/api-documentation.html' | relative_url }}) doesn't. Work through the steps below in order.
 
