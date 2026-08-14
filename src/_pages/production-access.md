@@ -87,6 +87,6 @@ Keep the following current to avoid losing access to the API
 4. Keep registered IP addresses current  
 5. Keep contact information up-to-date – Update your AO if the official on your enrollment record changes. Remove CDs who change roles or leave.
 
-## **Need help?**
+## Need help?
 
 Send your questions to [dpcinfo@cms.hhs.gov](mailto:dpcinfo@cms.hhs.gov). You can also join the [DPC Google Community](https://groups.google.com/g/dpc-api?pli=1) to ask questions and give and get feedback from other users. Watch announcements for changes to onboarding and the API. 
