@@ -38,4 +38,4 @@ in-page-nav-levels: "h2"
 
 ### Security & compliance
 
-- Which security certifications does your organization hold? See the list of [accepted certifications](https://dpc.cms.gov/terms-of-service#:~:text=In%20order%20to%20access%20DPC,in%20response%20to%20your%20request.)
+- Which security certifications does your organization hold? See the list of [accepted certifications](https://dpc.cms.gov/terms-of-service#(https://dpc.cms.gov/terms-of-service#accountsregistration))
