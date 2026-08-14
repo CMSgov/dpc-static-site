@@ -3,6 +3,8 @@ layout: prod-access
 page_title: "Demo Questions"
 seo_title: ""
 description: ""
+in-page-nav: true
+in-page-nav-levels: "h2"
 ---
 
 # {{ page.page_title }}
