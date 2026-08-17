@@ -3,17 +3,23 @@ name: "pull request"
 on:
   pull_request:
 
+permissions: {}
+
 concurrency:
   group: ${{ github.workflow }}-${{  github.event.number }}
   cancel-in-progress: true
 
 jobs:
   deploy:
-    if: github.event.pull_request.user.type != 'Bot'
+    if: ${{ !startsWith(github.actor, 'bot-') }}
+    permissions:
+      contents: read
+      id-token: write
     with:
       feature_path: ${{ github.event.number }}
     uses: ./.github/workflows/deploy.yml
-    secrets: inherit
+    secrets:
+      PROD_ACCOUNT: ${{ secrets.PROD_ACCOUNT }}
 
   comment-pr:
     needs: deploy
@@ -23,15 +29,19 @@ jobs:
 
   a11y-check:
     needs: deploy
+    permissions: {}
     with: 
       feature_path: ${{ github.event.number }}
     uses: ./.github/workflows/a11y-check.yml
-    secrets: inherit
 
   broken-link-check:
     needs: deploy
+    permissions:
+      id-token: write
     with:
       env: "staging"
       feature_path: ${{ github.event.number }}
     uses: ./.github/workflows/broken-link-check.yml
-    secrets: inherit
+    secrets:
+      PROD_ACCOUNT: ${{ secrets.PROD_ACCOUNT }}
+

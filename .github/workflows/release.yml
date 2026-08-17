@@ -4,11 +4,12 @@ on:
   release:
     types: ['released']
 
+permissions: {}
+
 jobs:
   deploy:
     permissions:
       id-token: write
-    with:
-      deploy_path: "uswds-redesign"
     uses: ./.github/workflows/promote.yml
-    secrets: inherit
+    secrets:
+      PROD_ACCOUNT: ${{ secrets.PROD_ACCOUNT }}

@@ -24,6 +24,9 @@ on:
       feature_path:
         required: true
         type: string
+    secrets:
+      PROD_ACCOUNT:
+        required: true
 
 jobs:
   broken-link-check-prod:

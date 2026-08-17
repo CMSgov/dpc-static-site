@@ -2,15 +2,14 @@ name: "promote"
 
 on:
   workflow_dispatch:
-    inputs:
-      deploy_path:
-        description: "S3 directory deployment location (e.g. s3://s3_bucket/deploy_path/)"
-        default: "uswds-redesign"
   workflow_call:
     inputs:
       deploy_path:
         required: false
         type: string
+    secrets:
+      PROD_ACCOUNT:
+        required: true
 
 jobs:
   promote:
@@ -37,7 +36,7 @@ jobs:
         env:
           DEPLOY_PATH: ${{ inputs.deploy_path }}
         run: |
-          aws s3 sync "s3://${TARGET_BUCKET}/${DEPLOY_PATH}/" ./temp-site/
+          aws s3 sync s3://${TARGET_BUCKET}/ ./temp-site/ --exclude 'feature/*'
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@ec61189d14ec14c8efccab744f656cffd0e33f37 # v6.1.0

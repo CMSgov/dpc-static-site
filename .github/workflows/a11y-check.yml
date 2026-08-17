@@ -2,7 +2,7 @@ name: "Accessibility Check"
 
 on:
   workflow_call:
-    inputs: 
+    inputs:
       feature_path:
         required: true
         type: string
@@ -26,7 +26,7 @@ jobs:
           # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
 
       - name: Run pa11y
-        run: npx pa11y-ci --config pa11yci.ci.json --sitemap ${{ format('https://d16450h30z080t.cloudfront.net/{0}sitemap.xml', env.BASE_PATH) }} --sitemap-exclude "/*.pdf" --sitemap-find https://dpc.cms.gov/ --sitemap-replace https://d16450h30z080t.cloudfront.net/ --json > pa11y-results.json
+        run: npx pa11y-ci --config pa11yci.ci.json --sitemap "https://d16450h30z080t.cloudfront.net/${BASE_PATH}sitemap.xml" --sitemap-exclude "/*.pdf" --sitemap-find https://dpc.cms.gov/ --sitemap-replace https://d16450h30z080t.cloudfront.net/ --json > pa11y-results.json
 
       - name: Save Report to Action Summary
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0

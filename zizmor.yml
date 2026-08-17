@@ -1,0 +1,7 @@
+rules:
+  unpinned-uses:
+    config:
+      policies:
+        # Internally managed - trusted to track main without hash: https://github.com/CMSgov/cdap/tree/main/actions/aws-params-env-action
+        cmsgov/cdap/*: ref-pin
+        "*": hash-pin

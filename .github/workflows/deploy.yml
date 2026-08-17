@@ -13,6 +13,9 @@ on:
         description: "Feature path to deploy (e.g. 123 -> feature/123/); if omitted, deploys to base url"
         required: false
         type: string
+    secrets:
+      PROD_ACCOUNT:
+        required: true
 
 env:
   BASE_PATH: ${{ inputs.feature_path && format('feature/{0}/', inputs.feature_path) || '' }}

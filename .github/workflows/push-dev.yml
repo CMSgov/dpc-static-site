@@ -3,7 +3,9 @@ name: push to dev
 on:
   push:
     branches:
-      - uswds-redesign
+      - main
+
+permissions: {}
 
 concurrency:
   group: ${{ github.workflow }}-${{  github.ref }}
@@ -14,14 +16,6 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    with:
-      feature_path: "uswds-redesign"
     uses: ./.github/workflows/deploy.yml
-    secrets: inherit
-
-  a11y-check:
-    needs: deploy
-    with:
-      feature_path: "uswds-redesign"
-    uses: ./.github/workflows/a11y-check.yml
-    secrets: inherit
+    secrets:
+      PROD_ACCOUNT: ${{ secrets.PROD_ACCOUNT }}
