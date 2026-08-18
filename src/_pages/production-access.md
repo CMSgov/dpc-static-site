@@ -30,17 +30,35 @@ You can set up the sandbox at any time — it doesn't require eligibility approv
 
 Follow the developer [instructions](https://dpc.cms.gov/api-documentation.html) and:
 
-1. Create a sandbox account  
-2. Get sandbox credentials  
-3. Authenticate against the sandbox  
-4. Export claims data for test patients
+<ol class="usa-process-list margin-top-1">
+  <li class="usa-process-list__item">
+    <p class="usa-process-list__heading">Create a sandbox account</p>
+  </li>
+  <li class="usa-process-list__item">
+    <p class="usa-process-list__heading">Get sandbox credentials</p>
+  </li>
+  <li class="usa-process-list__item">
+    <p class="usa-process-list__heading">Authenticate against the sandbox</p>
+  </li>
+  <li class="usa-process-list__item">
+    <p class="usa-process-list__heading">Export claims data for test patients</p>
+  </li>
+</ol>
 
 ## Request production access and demo
 
 Once your sandbox integration works end to end, request production access. The CD, who owns the technical setup, should be prepared to walk through the integration and answer the DPC team's questions.
 
-1. Submit the [production access form](/production-access/request-form.html).
-2. Schedule a demo with the DPC team. Demos allow us to better understand your needs and answer any questions you may have. You’ll be expected to walk through your sandbox integration and [answer questions](/production-access/demo-questions.html) about your implementation.
+<ol class="usa-process-list margin-top-1">
+  <li class="usa-process-list__item">
+    <p class="usa-process-list__heading">Submit the production access form</p>
+    <p>Complete and send the <a href="/production-access/request-form.html">production access form</a>.</p>
+  </li>
+  <li class="usa-process-list__item">
+    <p class="usa-process-list__heading">Schedule a demo with the DPC team</p>
+    <p>Demos allow us to better understand your needs and answer any questions you may have. You’ll be expected to walk through your sandbox integration and <a href="/production-access/demo-questions.html">answer questions</a> about your implementation.</p>
+  </li>
+</ol>
 
 ## Set up production account
 
@@ -51,30 +69,60 @@ Note: every user verifies their identity the same way – using the exact email 
 - Associates that invitation email with an existing account, or  
 - Creates an account with one of the approved authentication providers (ID.me, CLEAR, or Login.gov) using that email address. Creating a new account with an authentication provider requires a state-issued photo ID, a Social Security number, and a mobile device. Allow time for this step.
 
-1. **The AO must create an account in the DPC portal and verify their identity**. *The DPC team will send an invitation to the AO’s email.*   
-2. **The AO must complete registration for the organization in the Portal.** Once your identity is verified, you’ll register the organization. We’ll then review your organization’s NPI-2 ID, ensure the AO is authorized for that NPI in PECOS, and check that neither the organization nor AO appears in the Exclusions Database.
-3. **The AO must sign the DPC Terms of Service**  
-4. **Invite your Credential Delegates**  
-  - A Credential Delegate (CD) manages credentials so the AO does not have to. You can skip this item if your AO will manage credentials directly.   
-  - The AO invites each CD by name and email, and invitations expire in 48 hours.   
-  - Each CD verifies their identity the same way the AO did, using the email address their invitation went to.  
-5. **Register your public IP addresses**  
-  - DPC rejects requests from unregistered IP addresses. Register the public IP of every system that calls the production API, and label each one.  
-6. **Create your production credentials and swap replace your sandbox credentials**  
-  - A CD or the AO repeats the sandbox credential steps  
-  - Your integration code should stay the same
+<ol class="usa-process-list margin-top-1">
+  <li class="usa-process-list__item">
+    <p class="usa-process-list__heading">The AO must create an account in the DPC portal and verify their identity</p>
+    <p><em>The DPC team will send an invitation to the AO’s email.</em></p>
+  </li>
+  <li class="usa-process-list__item">
+    <p class="usa-process-list__heading">The AO must complete registration for the organization in the portal</p>
+    <p>Once your identity is verified, you’ll register the organization. We’ll then review your organization’s NPI-2 ID, ensure the AO is authorized for that NPI in PECOS, and check that neither the organization nor AO appears in the Exclusions Database.</p>
+  </li>
+  <li class="usa-process-list__item">
+    <p class="usa-process-list__heading">The AO must sign the DPC Terms of Service</p>
+  </li>
+  <li class="usa-process-list__item">
+    <p class="usa-process-list__heading">Invite your Credential Delegates</p>
+    <ul>
+      <li>A Credential Delegate (CD) manages credentials so the AO does not have to. You can skip this item if your AO will manage credentials directly.</li>
+      <li>The AO invites each CD by name and email, and invitations expire in 48 hours.</li>
+      <li>Each CD verifies their identity the same way the AO did, using the email address their invitation went to.</li>
+    </ul>
+  </li>
+  <li class="usa-process-list__item">
+    <p class="usa-process-list__heading">Register your public IP addresses</p>
+    <p>DPC rejects requests from unregistered IP addresses. Register the public IP of every system that calls the production API, and label each one.</p>
+  </li>
+  <li class="usa-process-list__item">
+    <p class="usa-process-list__heading">Create your production credentials and replace your sandbox credentials</p>
+    <ul>
+      <li>A CD or the AO repeats the sandbox credential steps.</li>
+      <li>Your integration code should stay the same.</li>
+    </ul>
+  </li>
+</ol>
 
 ## Go live with real data	
 
 This process mirrors your sandbox setup
 
-1. Register your practitioners and patients  
-2. Attest and build your patient rosters  
-  - CMS requires a practitioner to attest to a treatment-related relationship with every patient whose data they access  
-3. Run your first production export  
-  - Start small: For first your export, we recommend starting with one practitioner’s Group ID before pulling data for the whole organization  
-  - Once you’re ready to make your first complete export, we recommend running an unfiltered export to backfill data for your associated patients  
-  - All future exports should use the _since parameter to only retrieve the latest, fresh data
+<ol class="usa-process-list margin-top-1">
+  <li class="usa-process-list__item">
+    <p class="usa-process-list__heading">Register your practitioners and patients</p>
+  </li>
+  <li class="usa-process-list__item">
+    <p class="usa-process-list__heading">Attest and build your patient rosters</p>
+    <p>CMS requires a practitioner to attest to a treatment-related relationship with every patient whose data they access.</p>
+  </li>
+  <li class="usa-process-list__item">
+    <p class="usa-process-list__heading">Run your first production export</p>
+    <ul>
+      <li>Start small: for your first export, we recommend starting with one practitioner’s Group ID before pulling data for the whole organization.</li>
+      <li>Once you’re ready to make your first complete export, we recommend running an unfiltered export to backfill data for your associated patients.</li>
+      <li>All future exports should use the <code>_since</code> parameter to only retrieve the latest, fresh data.</li>
+    </ul>
+  </li>
+</ol>
 
 ## Keep your production access active
 
