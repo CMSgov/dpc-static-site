@@ -204,3 +204,11 @@ main h6 {
     display: block;
   }
 }
+
+.usa-process-list__heading+ul {
+  margin-top: 1rem;
+}
+
+.usa-process-list__heading {
+  line-height: 1.4;
+}

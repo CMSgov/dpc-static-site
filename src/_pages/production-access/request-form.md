@@ -2,40 +2,46 @@
 layout: prod-access
 page_title: "Production Access Request Form"
 seo_title: ""
-description: "A checklist for getting production access to the DPC API, covering Medicare enrollment, sandbox testing, the required demo, and production setup."
+description: "The information the DPC team asks for when you request production access, covering your organization, use case, technical setup, and security certifications."
 in-page-nav: true
 in-page-nav-levels: "h2"
 ---
 
 # {{ page.page_title }}
 
+This form tells the DPC team who your organization is, how you plan to use production data, and how far along your integration is. Gather the information below before you start, then send your responses to [dpcinfo@cms.hhs.gov](mailto:dpcinfo@cms.hhs.gov).
+
 ## Your organization
 
-**For each organization applying for access, please provide:**
+Provide the following for each organization applying for access:
 
-- Organization name  
-- NPI-2 ID (National Provider Identifier)  
-- Authorized Official(s) — name and email (the person with authority to act for your organization and manages your organizations’ Medicare enrollment)
+- Organization name
+- Type 2 National Provider Identifier (NPI)
+- Authorized Official(s): name and email. This is the person with authority to act for your organization and manage its Medicare enrollment.
 
-**Are you working with a third-party technical partner** to build your integration? If so, please provide:
+If a third-party technical partner is building your integration, also provide:
 
-- Company name  
-- Credential Delegate(s) name and email (the person(s) who will manage credentials and technical setup on your behalf)
+- Company name
+- Credential Delegate(s): name and email. These are the people who manage credentials and technical setup on your behalf.
 
 ## How you plan to use the data
 
-- Which best describes your use case? *(Point of care, aggregate population reporting, if other — please describe)*  
-- How often, and at what volume, do you expect to request data?  
-- Approximately how many practitioners are at your organization?  
-- Approximately how many patients does your organization serve?
+- Which best describes your use case: point of care, aggregate population reporting, or something else? If something else, describe it.
+- How often, and at what volume, do you expect to request data?
+- About how many practitioners work at your organization?
+- About how many patients does your organization serve?
 
 ## Technical setup
 
-- Have you completed testing in the DPC sandbox? *(Yes / No)*  
-- Are you ready to demonstrate your integration and answer the required questions?  
-- Our current API version will be updated by June 2027\. Will your team be able to migrate by then?  
-- Which version of FHIR are you currently using?
+- Have you completed testing in the [DPC sandbox]({{ '/api-documentation.html' | relative_url }})?
+- Are you ready to show your integration and [answer the demo questions]({{ '/production-access/demo-questions.html' | relative_url }})?
+- Can your team migrate before the [API version change]({{ '/production-access.html#keep-your-production-access-active' | relative_url }}) planned for June 2027?
+- Which version of Fast Healthcare Interoperability Resources (FHIR) are you using?
 
-## Security & compliance
+## Security and compliance
 
-- Which security certifications does your organization hold? See the list of [accepted certifications](https://dpc.cms.gov/terms-of-service#(https://dpc.cms.gov/terms-of-service#accountsregistration))
+- Which of the [accepted security certifications]({{ '/terms-of-service.html#security' | relative_url }}) does your organization hold? You must hold at least one.
+
+## Next steps
+
+Once the DPC team reviews your form, you'll [schedule a demo]({{ '/production-access/demo-questions.html' | relative_url }}) of your sandbox integration.
