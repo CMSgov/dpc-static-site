@@ -17,21 +17,31 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-      - name: Set up Node.js
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          cache: 'npm'
-          node-version-file: '.nvmrc'
-          # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
+          persist-credentials: false
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@bb05f3f5519dd87d3ba754cc423b652a5edd6d2c # v4.2.0
+
+      # Build the pa11y image to GitHub Actions cache so Chromium is only re-downloaded when Dockerfile.pa11y changes
+      - name: Build pa11y image
+        uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7.3.0
+        with:
+          context: .
+          file: Dockerfile.pa11y
+          tags: bcda-static-site-pa11y-ci
+          load: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # Run pa11y-ci in Docker; BASE_PATH is passed through from the step environment
       - name: Run pa11y
-        run: npx pa11y-ci --config pa11yci.ci.json --sitemap "https://d16450h30z080t.cloudfront.net/${BASE_PATH}sitemap.xml" --sitemap-exclude "/*.pdf" --sitemap-find https://dpc.cms.gov/ --sitemap-replace https://d16450h30z080t.cloudfront.net/ --json > pa11y-results.json
+        run: docker compose run --rm -e BASE_PATH pa11y-ci > pa11y-results.json
 
       - name: Save Report to Action Summary
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         # Always return pa11y output, regardless if all pages pass/fail. Job will now fail if errors are found, which is intentional
-        if: always() 
+        if: always()
         with:
           script: |
             const fs = require('fs');
@@ -48,16 +58,3 @@ jobs:
             });
 
             core.summary.addRaw(body).write();
-
-      # - name: Post to Slack
-      #   uses: slackapi/slack-github-action@v2.0.0
-      #   with:
-      #     method: chat.postMessage
-      #     token: ${{ secrets.SLACK_BOT_TOKEN }}
-      #     # Sends to dpc-deploy
-      #     payload: |
-      #       channel: "C03S23MJFJS"
-      #       attachments:
-      #         - text: "Pa11y Results (/${{env.BASE_PATH}}): <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|Pa11y Action Summary>"
-      #           mrkdown_in:
-      #             - text
