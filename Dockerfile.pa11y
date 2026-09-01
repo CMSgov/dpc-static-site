@@ -1,0 +1,17 @@
+FROM node:24-bookworm
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends chromium \
+  && rm -rf /var/lib/apt/lists/*
+
+# pa11y-ci pulls in Puppeteer; skip its bundled Chromium download
+ENV PUPPETEER_SKIP_DOWNLOAD=true
+RUN npm install -g pa11y-ci@^4.1.1
+
+WORKDIR /app
+
+COPY pa11yci.ci.json ./
+
+ENV BASE_PATH=""
+ENV SITE_URL="https://d16450h30z080t.cloudfront.net/"
+ENTRYPOINT ["sh", "-c", "pa11y-ci --config pa11yci.ci.json --sitemap \"${SITE_URL}${BASE_PATH}sitemap.xml\" --sitemap-exclude \"/*.pdf\" --sitemap-find https://dpc.cms.gov/ --sitemap-replace \"${SITE_URL}\" --json"]
