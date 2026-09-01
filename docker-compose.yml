@@ -1,12 +1,22 @@
 services:
-  static_site:
-    build:
+  site:
+    build: 
       context: .
-      dockerfile: Dockerfiles/Dockerfile.static_site
-    environment:
-      JEKYLL_ENV: ${JEKYLL_ENV:-dev}
-    volumes:
-      - ./common:/dpc-site-static/common
-      - ./_includes:/dpc-site-static/_includes
-      - ./_site:/dpc-site-static/_site
-      - ./.jekyll-cache:/dpc-site-static/.jekyll-cache
+      dockerfile: Dockerfile
+    ports:
+      - 4000:80
+    develop:
+      watch:
+        - action: rebuild
+          path: src
+        - action: rebuild
+          path: Gemfile
+        - action: rebuild
+          path: Gemfile.lock
+        - action: rebuild
+          path: package.json
+        - action: rebuild
+          path: package-lock.json
+        - action: rebuild
+          path: gulpfile.js
+          

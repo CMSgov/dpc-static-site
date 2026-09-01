@@ -1,0 +1,266 @@
+---
+layout: base
+page_title: "JWT Generation Tool"
+description: "Generate a JSON Web Token (JWT) signed with your private key to authenticate with the DPC API."
+show-side-nav: false
+---
+
+<main id="main-content">
+  <div class="grid-container">
+    <div class="grid-row">
+      <div class="grid-col-12 desktop:grid-col-6">
+        <h1 class="font-sans-2xl margin-top-4">JWT Generation Tool</h1>
+
+        <div class="usa-alert usa-alert--info usa-alert--slim">
+          <div class="usa-alert__body">
+            <p class="usa-alert__text">
+              In order to ensure your information <b>remains private</b>, this tool generates a JWT
+              entirely <b>within your browser</b>. It does not send any of your information to a server or over the
+              network.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="grid-container">
+    <div class="grid-row">
+      <div class="grid-col-12 desktop:grid-col-6">
+
+        <form
+          id="jwt-form"
+          class="usa-form width-full maxw-none"
+        >
+          <div class="usa-form-group">
+            <label
+              class="usa-label"
+              for="private-key"
+            >Paste your <b>Private Key</b></label>
+            <textarea
+              class="usa-textarea width-full"
+              id="private-key"
+              name="private-key"
+              required
+            ></textarea>
+          </div>
+
+          <div class="usa-form-group">
+            <label
+              class="usa-label"
+              for="client-token"
+            >Paste your <b>Client Token</b></label>
+            <textarea
+              class="usa-textarea width-full"
+              id="client-token"
+              name="client-token"
+              required
+            ></textarea>
+          </div>
+
+          <div class="usa-form-group">
+            <label
+              class="usa-label"
+              for="public-key"
+            >Paste your <b>Public Key ID</b></label>
+            <input
+              class="usa-input width-full"
+              id="public-key"
+              name="public-key"
+              required
+            />
+          </div>
+
+          <div class="usa-form-group">
+            <label
+              class="usa-label"
+              for="environment"
+            >Select an Environment</label>
+            <select
+              class="usa-select maxw-card-lg"
+              name="environment"
+              id="environment"
+              required
+            >
+              <option
+                selected
+                disabled
+              >-- Select --</option>
+              <option value="sandbox">Sandbox</option>
+              <option value="production">Production</option>
+            </select>
+          </div>
+
+          <div class="usa-form-group">
+            <label
+              class="usa-label"
+              for="api"
+            >API Version</label>
+            <!-- {% comment %}Using a hidden value since v1 is the only option for now and select can't be readonly{% endcomment %} -->
+            <input
+              type="hidden"
+              name="api"
+              value="v1"
+            />
+            <select
+              class="usa-select maxw-card-lg bg-gray-10"
+              id="api"
+              disabled
+            >
+              <option value="v1">v1</option>
+            </select>
+          </div>
+
+          <div class="usa-form-group">
+            <button
+              type="submit"
+              class="usa-button"
+            >Generate JWT</button>
+          </div>
+        </form>
+
+
+        <div class="usa-form-group">
+          <label
+            for="jwt-output"
+            class="usa-label maxw-none"
+          >Generated JWT</label>
+          <div class="position-relative">
+            <div class="position-absolute top-1 right-1 z-100">
+              <button
+                data-tealium="copy_button"
+                class="usa-button usa-button--outline margin-0 bg-base-lightest hover:bg-base-lightest active:bg-base-lightest"
+                id="jwt-output-copy-button"
+                aria-disabled="true"
+              >Copy</button>
+            </div>
+            <textarea
+              id="jwt-output"
+              class="usa-textarea maxw-none bg-gray-10"
+              readonly
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("jwt-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        generateJWT(event.target);
+      });
+
+      // Copy button functionality for JWT output
+      const copyButton = document.getElementById("jwt-output-copy-button");
+      copyButton.addEventListener('click', function () {
+        const copyText = document.getElementById("jwt-output");
+        if (!copyText.value) {
+          // Do nothing if no text
+          return;
+        }
+
+        if ('clipboard' in navigator) {
+          navigator.clipboard.writeText(copyText.value);
+        } else {
+          copyText.select();
+          document.execCommand('copy');
+        }
+      })
+
+    });
+
+    async function generateJWT(form) {
+      const formData = new FormData(form);
+
+      const clientToken = formData.get("client-token").trim();
+      const privateKeyPem = formData.get("private-key").trim();
+      const env = formData.get("environment").trim();
+      const version = formData.get("api").trim();
+
+      const publicKeyId = formData.get("public-key").trim();
+
+      // Create JWT header
+      const header = {
+        alg: 'RS384',
+        kid: publicKeyId,
+        typ: 'JWT'
+      }
+
+      const payload = {
+        "iss": clientToken,
+        "sub": clientToken,
+        "aud": `https://${env}.dpc.cms.gov/api/${version}/Token/auth`,
+        "exp": Math.floor(Date.now() / 1000) + 300, // 5 minutes from now
+        "jti": generateRandomBytes(16),
+      };
+
+      // Base64URL encode header and payload
+      const encodedHeader = base64urlEncode(JSON.stringify(header))
+      const encodedPayload = base64urlEncode(JSON.stringify(payload))
+      const message = `${encodedHeader}.${encodedPayload}`
+
+
+      // Import private key
+      const privateKeyBuffer = Uint8Array.from(
+        atob(privateKeyPem.replace(/-----BEGIN PRIVATE KEY-----/, '').replace(/-----END PRIVATE KEY-----/, '').replace(/\s/g, '')),
+        c => c.charCodeAt(0)
+      )
+
+      const privateKey = await crypto.subtle.importKey(
+        'pkcs8',
+        privateKeyBuffer,
+        {
+          name: 'RSASSA-PKCS1-v1_5',
+          hash: 'SHA-384'
+        },
+        false,
+        ['sign']
+      )
+
+      // Sign the message
+      const encoder = new TextEncoder()
+      const messageBytes = encoder.encode(message)
+      const signature = await crypto.subtle.sign(
+        'RSASSA-PKCS1-v1_5',
+        privateKey,
+        messageBytes
+      )
+
+      // Convert signature to base64url
+      const encodedSignature = arrayBufferToBase64url(signature)
+
+      const outputEl = document.getElementById("jwt-output");
+      outputEl.value = `${message}.${encodedSignature}`;
+
+      const copyButton = document.getElementById("jwt-output-copy-button");
+      copyButton.removeAttribute("aria-disabled");
+    }
+
+    // Base64URL encoding utilities
+    function base64urlEncode(str) {
+      return btoa(str)
+        .replace(/\+/g, '-')
+        .replace(/\//g, '_')
+        .replace(/=/g, '')
+    }
+
+    function arrayBufferToBase64url(buffer) {
+      const uint8Array = new Uint8Array(buffer)
+      const binaryString = Array.from(uint8Array, byte => String.fromCharCode(byte)).join('')
+      return base64urlEncode(binaryString)
+    }
+
+    // Generate random bytes using Web Crypto API
+    function generateRandomBytes(length) {
+      const array = new Uint8Array(length)
+      crypto.getRandomValues(array)
+      return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('')
+    }
+
+  </script>
+</main>

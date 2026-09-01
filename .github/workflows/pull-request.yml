@@ -1,0 +1,47 @@
+name: "pull request"
+
+on:
+  pull_request:
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{  github.event.number }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: ${{ !startsWith(github.actor, 'bot-') }}
+    permissions:
+      contents: read
+      id-token: write
+    with:
+      feature_path: ${{ github.event.number }}
+    uses: ./.github/workflows/deploy.yml
+    secrets:
+      PROD_ACCOUNT: ${{ secrets.PROD_ACCOUNT }}
+
+  comment-pr:
+    needs: deploy
+    permissions:
+      pull-requests: 'write'
+    uses: ./.github/workflows/comment-pr.yml
+
+  a11y-check:
+    needs: deploy
+    permissions: {}
+    with: 
+      feature_path: ${{ github.event.number }}
+    uses: ./.github/workflows/a11y-check.yml
+
+  broken-link-check:
+    needs: deploy
+    permissions:
+      id-token: write
+    with:
+      env: "staging"
+      feature_path: ${{ github.event.number }}
+    uses: ./.github/workflows/broken-link-check.yml
+    secrets:
+      PROD_ACCOUNT: ${{ secrets.PROD_ACCOUNT }}
+

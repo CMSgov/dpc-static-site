@@ -1,0 +1,50 @@
+- name: API Documentation
+  url: /api-documentation.html
+
+- name: Get Sandbox Credentials
+  url: /api-documentation/get-sandbox-credentials.html
+
+- name: Get a Bearer Token
+  url: /api-documentation/get-bearer-token.html
+  children:
+
+  - name: Create a JWT Manually
+    url: /api-documentation/get-bearer-token/create-jwt-manually.html
+
+  - name: Manage Credentials
+    url: /api-documentation/get-bearer-token/manage-credentials.html
+
+- name: Attribution
+  url: /api-documentation/attribution.html
+  children:
+
+  - name: Upload Practitioners
+    url: /api-documentation/attribution/upload-practitioners.html
+    children:
+    - name: View and List Practitioners
+      url: /api-documentation/attribution/upload-practitioners/add-view-list-practitioners.html
+
+  - name: Upload Patients
+    url: /api-documentation/attribution/upload-patients.html
+    children:
+    - name: View and List Patients
+      url: /api-documentation/attribution/upload-patients/add-view-list-patients.html
+
+  - name: Attestation
+    url: /api-documentation/attribution/attestation.html
+
+- name: Export Data
+  url: /api-documentation/export-data.html
+  children:
+
+  - name: How to Filter Claims Data
+    url: /api-documentation/export-data/how-to-filter.html
+
+  - name: /Patient/$everything
+    url: /api-documentation/export-data/patient-everything.html
+
+- name: Postman Collection
+  url: /api-documentation/postman-collection.html
+
+- name: DPC Data
+  url: /dpc-data.html

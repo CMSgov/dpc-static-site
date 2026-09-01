@@ -1,0 +1,113 @@
+<head>
+  <meta charset="utf-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  {% assign seo_title = site.title %}
+  {% if page.url != '/' %}
+  {% if page.seo_title and page.seo_title != '' %}
+  {% assign seo_title = page.seo_title | append: ' | ' | append: site.short_title %}
+  {% else %}
+  {% assign seo_title = page.page_title | append: ' | ' | append: site.short_title %}
+  {% endif %}
+  {% endif %}
+
+  <title>{{ seo_title }}</title>
+
+  {% assign page_url = page.url | absolute_url -%}
+  {% assign seo_description = page.description | default: site.description -%}
+  {% include meta.html title=seo_title description=seo_description page_url=page_url %}
+
+  <link
+    rel="canonical"
+    href="{{ page_url }}"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    href="{{ '/assets/meta/favicon-96x96.png' | relative_url }}"
+    sizes="96x96"
+  />
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="{{ '/assets/meta/favicon.svg' | relative_url }}"
+  />
+  <link
+    rel="shortcut icon"
+    href="{{ '/favicon.ico' | relative_url }}"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="{{ '/assets/meta/apple-touch-icon.png' | relative_url }}"
+  />
+  <meta
+    name="apple-mobile-web-app-title"
+    content="{{ site.short_title }}"
+  />
+  <link
+    rel="manifest"
+    href="{{ '/assets/meta/site.webmanifest' | relative_url }}"
+  />
+  <link
+    rel="sitemap"
+    href="{{ '/sitemap.xml' | relative_url }}"
+  >
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet"
+  >
+  <script src="{{ '/assets/uswds/js/uswds-init.min.js' | relative_url }}"></script>
+  <link
+    href="{{ '/assets/uswds/css/styles.css' | relative_url }}?{{site.time | pubDate: '%s'}}"
+    rel="stylesheet"
+  >
+
+  <!-- CMS Tealium/Google Analytics BEGIN -->
+  <!-- 
+    * PII ALERT: Please be careful not to pass any dynamic values that could
+    * contain any personal information such as first name, last name, email
+    * or address. In these cases, you may use a link descriptor instead.
+    -->
+
+  <!--DataLayer (utag_data) Snippet
+    Within <head> of document at the highest possible point.-->
+  <script type="text/javascript">
+    var utag_data = {
+      "content_language": "en",
+      "logged_in": false,
+      "page_type": false,
+      "page_name": "{{ seo_title }}",
+      "site_environment": "prod",
+    }
+  </script>
+
+  <!-- Within <head> of document below DataLayer snippet .
+    The utag.sync.js script should run as early as possible -->
+  <script src="https://tealium-tags.cms.gov/cms-dpc/prod/utag.sync.js"></script>
+
+  <!-- Loading utag.js script asynchronously -->
+  <script type="text/javascript">
+      (function (a, b, c, d) {
+        a = 'https://tealium-tags.cms.gov/cms-dpc/prod/utag.js'; b = document; c = 'script'; d = b.createElement(c); d.src = a; d.type = 'text/java' + c; d.async = true; a = b.getElementsByTagName(c)[0]; a.parentNode.insertBefore(d, a);
+      })();
+  </script>
+
+  <script>
+    window.ENV = {
+      siteUrl: "{{site.url}}"
+    }
+  </script>
+</head>

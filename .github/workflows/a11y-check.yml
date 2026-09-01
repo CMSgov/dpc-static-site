@@ -1,0 +1,63 @@
+name: "Accessibility Check"
+
+on:
+  workflow_call:
+    inputs:
+      feature_path:
+        required: true
+        type: string
+
+env:
+  BASE_PATH: ${{ inputs.feature_path && format('feature/{0}/', inputs.feature_path) || '' }}
+
+jobs:
+  a11y-check:
+    runs-on: codebuild-dpc-static-site-non-prod-${{github.run_id}}-${{github.run_attempt}}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.3.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          cache: 'npm'
+          node-version-file: '.nvmrc'
+          # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
+
+      - name: Run pa11y
+        run: npx pa11y-ci --config pa11yci.ci.json --sitemap "https://d16450h30z080t.cloudfront.net/${BASE_PATH}sitemap.xml" --sitemap-exclude "/*.pdf" --sitemap-find https://dpc.cms.gov/ --sitemap-replace https://d16450h30z080t.cloudfront.net/ --json > pa11y-results.json
+
+      - name: Save Report to Action Summary
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        # Always return pa11y output, regardless if all pages pass/fail. Job will now fail if errors are found, which is intentional
+        if: always() 
+        with:
+          script: |
+            const fs = require('fs');
+
+            const results = "pa11y-results.json"
+            const data = JSON.parse(fs.readFileSync(results, "utf-8"))
+
+            let body = "## Accessibility Report \n\n";
+            body += "| Status | URL | Errors |\n";
+            body += "| ------ | --- | ------ |\n";
+
+            Object.entries(data.results).forEach(([url, issues]) => {
+              body += `${issues.length > 0 ? '❌' : '✅' } | ${url} | ${issues.length} errors |\n`;
+            });
+
+            core.summary.addRaw(body).write();
+
+      # - name: Post to Slack
+      #   uses: slackapi/slack-github-action@v2.0.0
+      #   with:
+      #     method: chat.postMessage
+      #     token: ${{ secrets.SLACK_BOT_TOKEN }}
+      #     # Sends to dpc-deploy
+      #     payload: |
+      #       channel: "C03S23MJFJS"
+      #       attachments:
+      #         - text: "Pa11y Results (/${{env.BASE_PATH}}): <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|Pa11y Action Summary>"
+      #           mrkdown_in:
+      #             - text
