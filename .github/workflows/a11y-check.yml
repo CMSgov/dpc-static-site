@@ -20,15 +20,24 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Get build cache bucket name from SSM
+        uses: ./actions/aws-params-env-action
+        env:
+          AWS_REGION: ${{ vars.AWS_REGION }}
+        with:
+          params: |
+            BUILD_CACHE_BUCKET=/dpc-static-site/non-prod/buildcachebucket
+
+      - name: Restore Buildx cache from S3
+        run: |
+          mkdir -p /tmp/.buildx-cache
+          aws s3 sync "s3://${BUILD_CACHE_BUCKET}/buildx-cache/" /tmp/.buildx-cache/ || true
+
       - name: Set up Docker Buildx
         run: |
           docker buildx create --use --name ci-builder --driver docker-container
           docker buildx inspect --bootstrap
 
-      # Build the pa11y image, caching to/from a local path. CodeBuild's own
-      # S3-backed cache (configured on the CodeBuild project )
-      # syncs this directory in and out of our build-cache S3 bucket, so
-      # Chromium is only re-downloaded when Dockerfile.pa11y changes.
       - name: Build pa11y image
         run: |
           docker buildx build \
@@ -38,6 +47,11 @@ jobs:
             --cache-from type=local,src=/tmp/.buildx-cache \
             --cache-to type=local,dest=/tmp/.buildx-cache,mode=max \
             .
+
+      - name: Save Buildx cache to S3
+        if: always()
+        run: |
+          aws s3 sync /tmp/.buildx-cache/ "s3://${BUILD_CACHE_BUCKET}/buildx-cache/"
 
       # Run pa11y-ci in Docker; BASE_PATH is passed through from the step environment
       - name: Run pa11y
