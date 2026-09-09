@@ -21,18 +21,23 @@ jobs:
           persist-credentials: false
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@bb05f3f5519dd87d3ba754cc423b652a5edd6d2c # v4.2.0
+        run: |
+          docker buildx create --use --name ci-builder --driver docker-container
+          docker buildx inspect --bootstrap
 
-      # Build the pa11y image to GitHub Actions cache so Chromium is only re-downloaded when Dockerfile.pa11y changes
+      # Build the pa11y image, caching to/from a local path. CodeBuild's own
+      # S3-backed cache (configured on the CodeBuild project)
+      # syncs this directory in and out of our build-cache S3 bucket, so
+      # Chromium is only re-downloaded when Dockerfile.pa11y changes.
       - name: Build pa11y image
-        uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7.3.0
-        with:
-          context: .
-          file: Dockerfile.pa11y
-          tags: dpc-static-site-pa11y-ci
-          load: true
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+        run: |
+          docker buildx build \
+            --file Dockerfile.pa11y \
+            --tag dpc-static-site-pa11y-ci \
+            --load \
+            --cache-from type=local,src=/tmp/.buildx-cache \
+            --cache-to type=local,dest=/tmp/.buildx-cache,mode=max \
+            .
 
       # Run pa11y-ci in Docker; BASE_PATH is passed through from the step environment
       - name: Run pa11y
