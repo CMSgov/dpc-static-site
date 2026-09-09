@@ -1,0 +1,65 @@
+name: "Accessibility Check"
+
+on:
+  workflow_call:
+    inputs:
+      feature_path:
+        required: true
+        type: string
+
+env:
+  BASE_PATH: ${{ inputs.feature_path && format('feature/{0}/', inputs.feature_path) || '' }}
+
+jobs:
+  a11y-check:
+    runs-on: codebuild-dpc-static-site-non-prod-${{github.run_id}}-${{github.run_attempt}}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Docker Buildx
+        run: |
+          docker buildx create --use --name ci-builder --driver docker-container
+          docker buildx inspect --bootstrap
+
+      # Build the pa11y image, caching to/from a local path. CodeBuild's own
+      # S3-backed cache (configured on the CodeBuild project )
+      # syncs this directory in and out of our build-cache S3 bucket, so
+      # Chromium is only re-downloaded when Dockerfile.pa11y changes.
+      - name: Build pa11y image
+        run: |
+          docker buildx build \
+            --file Dockerfile.pa11y \
+            --tag dpc-static-site-pa11y-ci \
+            --load \
+            --cache-from type=local,src=/tmp/.buildx-cache \
+            --cache-to type=local,dest=/tmp/.buildx-cache,mode=max \
+            .
+
+      # Run pa11y-ci in Docker; BASE_PATH is passed through from the step environment
+      - name: Run pa11y
+        run: docker compose run --rm -e BASE_PATH pa11y-ci > pa11y-results.json
+
+      - name: Save Report to Action Summary
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        # Always return pa11y output, regardless if all pages pass/fail. Job will now fail if errors are found, which is intentional
+        if: always()
+        with:
+          script: |
+            const fs = require('fs');
+
+            const results = "pa11y-results.json"
+            const data = JSON.parse(fs.readFileSync(results, "utf-8"))
+
+            let body = "## Accessibility Report \n\n";
+            body += "| Status | URL | Errors |\n";
+            body += "| ------ | --- | ------ |\n";
+
+            Object.entries(data.results).forEach(([url, issues]) => {
+              body += `${issues.length > 0 ? '❌' : '✅' } | ${url} | ${issues.length} errors |\n`;
+            });
+
+            core.summary.addRaw(body).write();
