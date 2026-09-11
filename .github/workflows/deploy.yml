@@ -1,151 +1,67 @@
-name: 'Deploy Static Site'
+name: "deploy"
 
 on:
   workflow_dispatch:
     inputs:
-      env:
-        description: Deploy where?
+      feature_path:
+        description: "Feature path to deploy (e.g. 123 -> feature/123/); if omitted, deploys to base url"
         required: false
-        default: 'stage'
-        type: choice
-        options:
-          - stage
-          - prod
-      static_repo_ref:
-        description: Which branch or tag?
-        required: true
-        default: 'main'
-        type: 'string'
+        type: string
   workflow_call:
     inputs:
-      env:
-        description: Deploy where?
+      feature_path:
+        description: "Feature path to deploy (e.g. 123 -> feature/123/); if omitted, deploys to base url"
         required: false
-        default: 'stage'
-        type: 'string'
-      static_repo_ref:
-        description: Which branch or tag?
+        type: string
+    secrets:
+      PROD_ACCOUNT:
         required: true
-        default: 'main'
-        type: 'string'
+
+env:
+  BASE_PATH: ${{ inputs.feature_path && format('feature/{0}/', inputs.feature_path) || '' }}
 
 jobs:
-  deploy_static_site:
-    name: Deploy Static Site
+  deploy-dev:
+    if: github.actor != 'dependabot[bot]'
     permissions:
       contents: read
       id-token: write
-    runs-on: codebuild-dpc-static-site-prod-${{ github.run_id }}-${{ github.run_attempt }}
-    env: # note: "sandbox" env is used for "stage" environment, "prod" is for "prod"
-      AWS_ENV: ${{ inputs.env == 'prod' && 'prod' || 'sandbox' }}
+    runs-on: codebuild-dpc-static-site-non-prod-${{github.run_id}}-${{github.run_attempt}}
+
     steps:
-      - name: "Checkout code"
+      - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.3.0
-        with:
-          repository: 'CMSgov/dpc-static-site'
-          ref: ${{ inputs.static_repo_ref }}
 
-      - name: "Set Version"
-        env:
-          STATIC_REPO_REF: ${{ inputs.static_repo_ref }}
-        run: |
-          echo "version: $STATIC_REPO_REF" >> _version_config.yml
+      - name: Build site
+        run: docker build --build-arg "BASE_PATH=${BASE_PATH}" --target export -o _site .
 
-      - name: "Add dirs"
-        run: mkdir -p _site && mkdir -p .jekyll-cache
-
-      - name: Assert Ownership
-        run: sudo chmod -R 777 .
-
-      - name: 'Build Image'
-        run: docker build . -f Dockerfiles/Dockerfile.static_site -t static_site
-
-      - name: 'Build Site'
-        env:
-          JEKYLL_ENV: ${{ inputs.env }}
-        run: |
-          docker run \
-            -e JEKYLL_ENV=$JEKYLL_ENV \
-            -v ./_site:/dpc-site-static/_site \
-            -v ./.jekyll-cache:/dpc-site-static/.jekyll-cache \
-            --rm static_site
-
-      - name: AWS Credentials
+      - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@ec61189d14ec14c8efccab744f656cffd0e33f37 # v6.1.0
         with:
           aws-region: ${{ vars.AWS_REGION }}
-          role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/dpc-${{ env.AWS_ENV }}-github-actions
-
+          role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/dpc-sandbox-github-actions
+      
       - name: Set env vars from AWS params
         uses: cmsgov/cdap/actions/aws-params-env-action@main
         env:
           AWS_REGION: ${{ vars.AWS_REGION }}
         with:
           params: |
-            SONAR_HOST_URL=/sonarqube/url
-            SONAR_TOKEN=/sonarqube/token
-            TARGET_BUCKET=/dpc/${{ env.AWS_ENV }}/static_site
+            TARGET_BUCKET=/dpc/sandbox/static_site
 
-      - name: Setup Node
-        uses: actions/setup-node@v6
-        with:
-          node-version: 24
-
-      - name: Run quality gate scan
-        if: ${{ inputs.env == 'stage' }}
-        uses: sonarsource/sonarqube-scan-action@299e4b793aaa83bf2aba7c9c14bedbb485688ec4 # 7.1.0
-        with:
-          args:
-            -Dsonar.projectKey=bcda-dpc-static-site
-            -Dsonar.sources=.
-            -Dsonar.working.directory=./sonar_workspace
-            -Dsonar.branch.name=${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
-            -Dsonar.projectVersion=${{ github.ref_name == 'main' && github.sha || 'branch' }}
-            -Dsonar.qualitygate.wait=true
-            -Dsonar.ci.autoconfig.disabled=true
-            -Dsonar.branch.target=${{ github.base_ref }}
-
-      - name: "Sync _site"
-        run: aws s3 sync _site/ s3://"$TARGET_BUCKET"/ $(["${{ inputs.target_environment }}" == 'prod'] && echo "--delete")
-      - name: Upload html files without suffix with content-language set
+      - name: Deploy the site to root url/directory
+        if: ${{ !env.BASE_PATH }}
+        # This $TARGET_BUCKET comes from a previous step, cmsgov/cdap/actions/aws-params-env-action@main
         run: |
-          for file in _site/*.html; do
-            suffixless=`basename ${file/.html}`
-            aws s3 cp $file s3://"$TARGET_BUCKET"/$suffixless --content-language text/html
-          done
+          aws s3 sync _site/ s3://$TARGET_BUCKET/ --delete --exclude 'feature/*' --metadata-directive REPLACE --metadata "lifecycle-transition=ia"
 
+      - name: Deploy the site to feature url/directory
+        if: ${{ env.BASE_PATH }}
+        # This $TARGET_BUCKET comes from a previous step, cmsgov/cdap/actions/aws-params-env-action@main
+        run: |
+          aws s3 sync _site/ "s3://${TARGET_BUCKET}/${BASE_PATH}" --delete --metadata-directive REPLACE --metadata "lifecycle-transition=ia"
+      
       - name: Invalidate Cloudfront cache
         run: |
           DISTRIBUTION_ID=`aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id, OriginId: Origins.Items[0].Id}[?OriginId=='$TARGET_BUCKET'].Id" --output text`
-          aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*'
-
-      - uses: slackapi/slack-github-action@af78098f536edbc4de71162a307590698245be95 # v3.0.1
-        name: Slack Success
-        with:
-          method: chat.postMessage
-          token: ${{ secrets.SLACK_BOT_TOKEN }}
-          # Sends to dpc-deploys
-          payload: |
-            channel: "CMC1E4AEQ"
-            attachments:
-              - color: good
-                text: "SUCCESS: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|static site version> `${{ inputs.static_repo_ref }}` deployed to ${{ inputs.env }} environment."
-                mrkdown_in:
-                  - text
-            text: "SUCCESS: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|static site version> `${{ inputs.static_repo_ref }}` deployed to ${{ inputs.env }} environment."
-
-      - uses: slackapi/slack-github-action@af78098f536edbc4de71162a307590698245be95 # v3.0.1
-        name: Slack failure
-        if: ${{ failure() }}
-        with:
-          method: chat.postMessage
-          token: ${{ secrets.SLACK_BOT_TOKEN }}
-          # Sends to dpc-deploys
-          payload: |
-            channel: "CMC1E4AEQ"
-            attachments:
-              - color: danger
-                text: "FAILURE: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|static site version> `${{ inputs.static_repo_ref }}` deployed to ${{ inputs.env }} environment."
-                mrkdown_in:
-                  - text
-            text: "FAILURE: <${{ github.server_url}}/${{ github.repository}}/actions/runs/${{ github.run_id }}|static site version> `${{ inputs.static_repo_ref }}` deployed to ${{ inputs.env }} environment."
+          aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" --paths "/*"

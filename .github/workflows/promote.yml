@@ -1,0 +1,60 @@
+name: "promote"
+
+on:
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      deploy_path:
+        required: false
+        type: string
+    secrets:
+      PROD_ACCOUNT:
+        required: true
+
+jobs:
+  promote:
+    # environment: 'prod'
+    permissions:
+      contents: read
+      id-token: write
+    runs-on: codebuild-dpc-static-site-non-prod-${{github.run_id}}-${{github.run_attempt}}
+    
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@ec61189d14ec14c8efccab744f656cffd0e33f37 # v6.1.0
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/dpc-sandbox-github-actions
+
+      - name: Fetch Non-Production AWS Parameters
+        uses: cmsgov/cdap/actions/aws-params-env-action@main
+        with:
+          params: |
+            TARGET_BUCKET=/dpc/sandbox/static_site
+
+      - name: Download Dev Bucket
+        env:
+          DEPLOY_PATH: ${{ inputs.deploy_path }}
+        run: |
+          aws s3 sync s3://${TARGET_BUCKET}/ ./temp-site/ --exclude 'feature/*'
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@ec61189d14ec14c8efccab744f656cffd0e33f37 # v6.1.0
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/dpc-prod-github-actions
+
+      - name: Fetch Production AWS Parameters
+        uses: cmsgov/cdap/actions/aws-params-env-action@main
+        with:
+          params: |
+            TARGET_BUCKET=/dpc/prod/static_site
+
+      - name: Copy site to Prod Bucket
+        run: |
+          aws s3 sync ./temp-site/ s3://${TARGET_BUCKET}/ --delete
+
+      - name: Invalidate Prod Distribution
+        run: |
+          DISTRIBUTION_ID=`aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id, OriginId: Origins.Items[0].Id}[?OriginId=='$TARGET_BUCKET'].Id" --output text`
+          aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" --paths "/*"

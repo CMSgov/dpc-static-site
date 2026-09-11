@@ -9,3 +9,34 @@ _site
 vendor
 
 node_modules
+
+### U.S. Web Design System (USWDS) ###
+#
+# 2K+ icons are compiled when Gulp tasks are run locally. But only required
+# icons are tracked and committed. While all icons are packaged into the SVG
+# sprite, icons using `img src=""` must be explicitly included.
+#
+# Ignore unnecessary icon directories
+src/assets/uswds/img/favicons
+src/assets/uswds/img/material-icons
+src/assets/uswds/img/material-icons-deprecated
+src/assets/uswds/img/usa-icons/*
+src/assets/uswds/img/usa-icons-bg/*
+src/assets/uswds/img/uswds-icons/*
+#
+# Track required icons:
+!src/assets/uswds/img/usa-icons/close.svg
+!src/assets/uswds/img/usa-icons/expand_more.svg
+!src/assets/uswds/img/usa-icons/expand_less.svg
+!src/assets/uswds/img/usa-icons/add.svg
+!src/assets/uswds/img/usa-icons/check_circle.svg
+!src/assets/uswds/img/usa-icons/error.svg
+!src/assets/uswds/img/usa-icons/error--white.svg
+!src/assets/uswds/img/usa-icons/info.svg
+!src/assets/uswds/img/usa-icons/launch.svg
+!src/assets/uswds/img/usa-icons/launch--white.svg
+!src/assets/uswds/img/usa-icons/remove.svg
+!src/assets/uswds/img/usa-icons/warning.svg
+!src/assets/uswds/img/usa-icons/unfold_more.svg
+
+.unlighthouse

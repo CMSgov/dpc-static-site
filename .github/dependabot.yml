@@ -2,40 +2,33 @@
 # package ecosystems to update and where the package manifests are located.
 # Please see the documentation for all configuration options:
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
 version: 2
 updates:
-  - package-ecosystem: "gomod"
+  - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
-    open-pull-requests-limit: 0
+      interval: "weekly"
+    cooldown:
+      default-days: 7
 
-  - package-ecosystem: "pip"
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "daily"
-    open-pull-requests-limit: 0
-
-  - package-ecosystem: "maven"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    open-pull-requests-limit: 0
+      interval: "weekly"
+    cooldown:
+      default-days: 7
 
   - package-ecosystem: "bundler"
     directory: "/"
     schedule:
-      interval: "daily"
-    open-pull-requests-limit: 0
-    
+      interval: "weekly"
+    cooldown:
+      default-days: 7
+
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
-      interval: "daily"
-    open-pull-requests-limit: 0
-
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    open-pull-requests-limit: 0
+      interval: "weekly"
+    cooldown:
+      default-days: 7

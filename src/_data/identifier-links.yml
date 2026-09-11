@@ -1,0 +1,44 @@
+- text: About CMS
+  url: https://www.cms.gov/about-cms
+
+- text: Medicare.gov
+  url: https://www.medicare.gov/
+
+- text: Medicaid.gov
+  url: https://www.medicaid.gov/
+
+- text: Healthcare.gov
+  url: https://www.healthcare.gov/
+
+- text: Developer.cms.gov
+  url: http://Developer.cms.gov
+
+- text: CMS Design System
+  url: https://design.cms.gov/
+
+- text: U.S. Web Design System
+  url: https://designsystem.digital.gov/
+
+- text: Freedom of Information Act
+  url: https://www.cms.gov/about-cms/web-policies-important-links/foia
+
+- text: Inspector General
+  url: https://oig.hhs.gov/
+
+- text: No Fear Act
+  url: https://www.cms.gov/about-cms/web-policies-important-links/no-fear-act
+
+- text: Plain Writing
+  url: https://www.medicare.gov/about-us/plain-writing
+
+- text: CMS Privacy Policy
+  url: https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/Privacy-Policy
+
+- text: CMS/HHS Vulnerability Disclosure Policy 
+  url: https://www.cms.gov/vulnerability-disclosure-policy
+  
+- text: Accessibility Statement
+  url: https://www.cms.gov/about-cms/web-policies-important-links/accessibility-nondiscrimination-disabilities-notice
+  
+- text: Performance Reports
+  url: https://www.cms.gov/about-cms/performance-budget/current
