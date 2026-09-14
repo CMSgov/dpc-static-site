@@ -38,7 +38,7 @@ jobs:
           AWS_REGION: ${{ vars.AWS_REGION }}
         with:
           params: |
-            BUILD_CACHE_BUCKET=/dpc-static-site/non-prod/buildcachebucket
+            BUILD_CACHE_BUCKET=/dpc-static-site/prod/buildcachebucket
 
       - name: Restore Buildx cache from S3
         run: |
