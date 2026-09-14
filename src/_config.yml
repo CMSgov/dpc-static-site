@@ -1,0 +1,95 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'.
+# If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Data at the Point of Care
+short_title: DPC
+email: dpc-api@googlegroups.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Data at the Point of Care is a pilot CMS API program that enables
+  healthcare providers to deliver high quality care to Medicare
+  beneficiaries by sharing their patients' Medicare claims data for
+  treatment needs.
+#
+# the subpath of your site, e.g. /blog
+baseurl: ""
+#
+# the base hostname, e.g. http://example.com
+url: "https://dpc.cms.gov"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+webrick:
+  headers:
+    Cache-Control: no-cache
+    Pragma: no-cache
+
+exclude:
+  - assets/uswds/img/favicons
+  - assets/uswds/img/material-icons
+  - assets/uswds/img/material-icons-deprecated
+  - assets/uswds/img/usa-icons/*
+  - assets/uswds/img/usa-icons-bg/*
+  - assets/uswds/img/uswds-icons/*
+  - assets/uswds/components/*
+  - package.json
+  - package-lock.json
+  - gulpfile.js
+  - pa11yci.ci.json
+  - pa11yci.local.json
+  - README.md
+  - Dockerfile
+  - feed.xml
+  - CODE_OF_CONDUCT.md
+  - code.json
+  - COMMUNITY.md
+  - CONTRIBUTING.md
+  - GOVERNANCE.md
+  - LICENSE
+  - SECURITY.md
+
+include:
+  - assets/uswds/img/usa-icons/add.svg
+  - assets/uswds/img/usa-icons/check_circle.svg
+  - assets/uswds/img/usa-icons/close.svg
+  - assets/uswds/img/usa-icons/error.svg
+  - assets/uswds/img/usa-icons/error--white.svg
+  - assets/uswds/img/usa-icons/expand_more.svg
+  - assets/uswds/img/usa-icons/expand_less.svg
+  - assets/uswds/img/usa-icons/info.svg
+  - assets/uswds/img/usa-icons/launch.svg
+  - assets/uswds/img/usa-icons/launch--white.svg
+  - assets/uswds/img/usa-icons/remove.svg
+  - assets/uswds/img/usa-icons/warning.svg
+  - assets/uswds/img/usa-icons/unfold_more.svg
+   
+collections:
+  pages:
+    output: true
+    categories: true
+    permalink: /:path:output_ext
+  announcements:
+      output: true
+  features:
+    output: true

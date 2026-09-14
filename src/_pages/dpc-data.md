@@ -1,0 +1,77 @@
+---
+layout: api-docs
+page_title: "DPC Data"
+seo_title: ""
+description: "Overview of the Medicare claims data shared through the Data at the Point of Care API, including FHIR Resources and bulk data specifications."
+in-page-nav: true
+---
+
+# {{ page.page_title }}
+
+## What kind of data is shared through DPC?
+
+CMS provides claims data for patients with Medicare to providers for treatment purposes permitted by HIPAA. Use DPC to develop a service to notify, search, display, analyze, retrieve, view, and otherwise obtain certain information or data about patients with Medicare or synthetic data from CMS. DPC shares large volumes of enrollee data from Medicare Parts A, B, and D claims.
+
+
+<table class="usa-table usa-table--borderless usa-table--stacked margin-bottom-4">
+  <caption class="usa-sr-only">Definitions of Part A, B, and D claims data</caption>
+  <thead>
+    <tr>
+      <th scope="col">Data type</th>
+      <th scope="col">Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Medicare Part A claims data</th>
+      <td>
+        Inpatient hospital stays, care in skilled nursing facilities, and hospice care
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Medicare Part B claims data</th>
+      <td>
+        Doctors' services, outpatient care, preventive services, and durable medical equipment (DME)
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Medicare Part D claims data</th>
+      <td>
+         Prescription drugs prescribed by healthcare providers
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+DPC data does not include clinical notes, lab results, or substance abuse codes. DPC excludes all claims with substance abuse codes (as required by the Confidentiality of Alcohol and Drug Abuse Patient Records Regulations, 42 CFR Part 2).
+
+## How the data is structured: FHIR resource types
+
+DPC uses the [HL7® FHIR® standard](https://www.hl7.org/fhir/overview.html) (Fast Healthcare Interoperability Resources) as a standard, compliant way to share Medicare claims data. In FHIR, data is structured into basic building blocks called “Resources.” DPC uses [bulk FHIR](https://hl7.org/fhir/uv/bulkdata/en/) specification to securely handle large numbers of Medicare claim files.
+
+## Applicable FHIR Resources
+
+### ExplanationOfBenefit (EOB)
+[ExplanationOfBenefit](https://hl7.org/fhir/STU3/explanationofbenefit.html) stores details about episodes of care, including where and when the service was performed, insurance diagnosis codes, who the provider was, and the cost.
+
+### Patient
+[Patient](https://hl7.org/fhir/STU3/patient.html) stores enrollees' demographic details and updates to their [Medicare Patient Identifiers](https://www.cms.gov/training-education/partner-outreach-resources/new-medicare-card/medical-beneficiary-identifiers-mbis) (MBI).
+
+### Coverage
+[Coverage](https://hl7.org/fhir/STU3/coverage.html) provides high-level descriptors of an insurance plan such as that found in the enrollee's insurance coverage.
+
+## Download sample files 
+
+These sample DPC data files have similar content and structure to production (real patient) data. Try the DPC sandbox to access test data from the API.
+
+- [Explanation of Benefit]({{ '/assets/data/ExplanationOfBenefit.ndjson' | relative_url }})
+- [Patient]({{ '/assets/data/Patient.ndjson' | relative_url }})
+- [Coverage]({{ '/assets/data/Coverage.ndjson' | relative_url }})
+
+## FHIR and JSON resources
+
+- [FHIR/HL7](https://www.hl7.org/fhir/STU3/index.html)
+- [Bulk FHIR specification](https://hl7.org/fhir/uv/bulkdata/STU3/en/index.html)
+- [Intro to JSON Format](https://www.json.org/json-en.html) and [NDJSON](https://github.com/ndjson/ndjson-spec)
+- [JSON format viewer/validator (raw text/JSON format converter)](https://jsonlint.com/)
+- [Intro to valid FHIR formats](http://hl7.org/fhir/STU3/validation.html)
