@@ -6,12 +6,18 @@ on:
       feature_path:
         required: true
         type: string
+    secrets:
+      PROD_ACCOUNT:
+        required: true
 
 env:
   BASE_PATH: ${{ inputs.feature_path && format('feature/{0}/', inputs.feature_path) || '' }}
 
 jobs:
   a11y-check:
+    permissions:
+      contents: read
+      id-token: write
     runs-on: codebuild-dpc-static-site-non-prod-${{github.run_id}}-${{github.run_attempt}}
 
     steps:
@@ -20,8 +26,14 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@e6de054238d6b7531b4efff3b6587d9aade6a06c # v6.2.3
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/dpc-sandbox-github-actions
+
       - name: Get build cache bucket name from SSM
-        uses: ./actions/aws-params-env-action
+        uses: cmsgov/cdap/actions/aws-params-env-action@main
         env:
           AWS_REGION: ${{ vars.AWS_REGION }}
         with:
@@ -49,13 +61,13 @@ jobs:
             .
 
       - name: Save Buildx cache to S3
-        if: always()
+        if: ${{ always() && env.BUILD_CACHE_BUCKET }}
         run: |
           aws s3 sync /tmp/.buildx-cache/ "s3://${BUILD_CACHE_BUCKET}/buildx-cache/"
 
       # Run pa11y-ci in Docker; BASE_PATH is passed through from the step environment
       - name: Run pa11y
-        run: docker compose run --rm -e BASE_PATH pa11y-ci > pa11y-results.json
+        run: docker run --rm -e BASE_PATH pa11y-ci > pa11y-results.json
 
       - name: Save Report to Action Summary
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
@@ -66,6 +78,10 @@ jobs:
             const fs = require('fs');
 
             const results = "pa11y-results.json"
+            if (!fs.existsSync(results)) {
+              core.warning(`${results} not found; pa11y did not produce a report.`);
+              return;
+            }
             const data = JSON.parse(fs.readFileSync(results, "utf-8"))
 
             let body = "## Accessibility Report \n\n";
