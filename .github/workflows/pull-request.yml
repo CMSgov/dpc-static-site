@@ -29,10 +29,14 @@ jobs:
 
   a11y-check:
     needs: deploy
-    permissions: {}
+    permissions:
+      contents: read
+      id-token: write
     with: 
       feature_path: ${{ github.event.number }}
     uses: ./.github/workflows/a11y-check.yml
+    secrets:
+      PROD_ACCOUNT: ${{ secrets.PROD_ACCOUNT }}
 
   broken-link-check:
     needs: deploy
