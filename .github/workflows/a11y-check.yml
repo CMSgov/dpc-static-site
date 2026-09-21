@@ -21,11 +21,11 @@ jobs:
           persist-credentials: false
 
       - name: Build pa11y image
-        run: docker build --file Dockerfile.pa11y --tag dpc-static-site-pa11y-ci .
+        run: docker build --file Dockerfile.pa11y --tag pa11y-ci .
 
       # Run pa11y-ci in Docker; BASE_PATH is passed through from the step environment
       - name: Run pa11y
-        run: docker run --rm -e BASE_PATH dpc-static-site-pa11y-ci > pa11y-results.json
+        run: docker run --rm -e BASE_PATH pa11y-ci > pa11y-results.json
 
       - name: Save Report to Action Summary
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
