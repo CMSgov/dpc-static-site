@@ -12,8 +12,6 @@ env:
 
 jobs:
   a11y-check:
-    permissions:
-      contents: read
     runs-on: codebuild-dpc-static-site-non-prod-${{github.run_id}}-${{github.run_attempt}}
 
     steps:
