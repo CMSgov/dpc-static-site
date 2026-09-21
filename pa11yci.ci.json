@@ -13,7 +13,7 @@
       "args": [
         "--no-sandbox"
       ],
-      "executablePath": "/usr/bin/google-chrome"
+      "executablePath": "/usr/bin/chromium"
     }
   },
   "timeout": 240000
