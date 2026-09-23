@@ -18,10 +18,10 @@ jobs:
       contents: read
       id-token: write
     runs-on: codebuild-dpc-static-site-non-prod-${{github.run_id}}-${{github.run_attempt}}
-    
+
     steps:
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@e6de054238d6b7531b4efff3b6587d9aade6a06c # v6.2.3
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
         with:
           aws-region: ${{ vars.AWS_REGION }}
           role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/dpc-sandbox-github-actions
@@ -39,7 +39,7 @@ jobs:
           aws s3 sync s3://${TARGET_BUCKET}/ ./temp-site/ --exclude 'feature/*'
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@e6de054238d6b7531b4efff3b6587d9aade6a06c # v6.2.3
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
         with:
           aws-region: ${{ vars.AWS_REGION }}
           role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/dpc-prod-github-actions
