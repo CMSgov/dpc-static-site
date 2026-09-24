@@ -24,10 +24,12 @@ Client tokens are issued to your organization and authenticate your access to th
 
 <ol>
    <li>Log into the DPC Sandbox.</li>
-   <li>Select <b>New Token</b>.</li>
+   <li>Select <b>New Token</b>.
       <img src="{{ '/assets/img/screenshot-5.png' | relative_url }}" alt="Screenshot of New Token button location on sandbox dashboard" class="margin-top-1 margin-bottom-2 border border-base-lighter" />
-   <li>Label the token with a recognizable name. Then select <b>Create token</b>.</li>
+   </li>
+   <li>Label the token with a recognizable name. Then select <b>Create token</b>.
       <img src="{{ '/assets/img/screenshot-7.png' | relative_url }}" alt="Screenshot of Create Token button location in sandbox" class="margin-top-1 margin-bottom-2 border border-base-lighter" />
+   </li>
    <li>Copy or download the token displayed on screen.
       <img src="{{ '/assets/img/screenshot-2.png' | relative_url }}" alt="Screenshot of token displayed on screen in sandbox" class="margin-top-1 border border-base-lighter" />
       {% include alert.html variant="warning" text="This is the only time this client token will be visible. You'll want to save it for later use." slim="true" classNames="measure-6" %}
