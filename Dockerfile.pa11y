@@ -1,8 +1,8 @@
 FROM node:24-bookworm
 
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends chromium \
-  && rm -rf /var/lib/apt/lists/*
+    && apt-get install -y --no-install-recommends chromium \
+    && rm -rf /var/lib/apt/lists/*
 
 # pa11y-ci pulls in Puppeteer; skip its bundled Chromium download
 ENV PUPPETEER_SKIP_DOWNLOAD=true
