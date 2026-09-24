@@ -1,4 +1,4 @@
-FROM node:24-alpine AS node-build
+FROM node:26-alpine AS node-build
 
 WORKDIR /usr/app
 COPY package.json package-lock.json ./
@@ -13,7 +13,7 @@ COPY gulpfile.js ./
 RUN npm run assets:build
 
 
-FROM ruby:3.2.6 AS ruby-build
+FROM ruby:4.0.6 AS ruby-build
 ARG BASE_PATH
 
 RUN bundle config --global frozen 1
@@ -28,18 +28,14 @@ RUN bundle install
 COPY ./src ./src
 COPY --from=node-build /usr/app/src/assets /usr/app/src/assets
 
-RUN if [ -n "$BASE_PATH" ]; then \
-      bundle exec jekyll build --source ./src --baseurl "$BASE_PATH"; \
-    else \
-      bundle exec jekyll build --source ./src; \
-    fi
+RUN bundle exec jekyll build --source ./src ${BASE_PATH:+--baseurl $BASE_PATH}
 
 
 FROM scratch AS export
 COPY --from=ruby-build /usr/app/_site /
 
 
-FROM nginx:1.29.5-alpine
+FROM nginx:1.31.1-alpine
 
 COPY --from=ruby-build /usr/app/_site /usr/share/nginx/html
 EXPOSE 80
