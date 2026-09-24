@@ -36,11 +36,11 @@ jobs:
         run: docker build --build-arg "BASE_PATH=${BASE_PATH}" --target export -o _site .
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@e6de054238d6b7531b4efff3b6587d9aade6a06c # v6.2.3
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
         with:
           aws-region: ${{ vars.AWS_REGION }}
           role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/dpc-sandbox-github-actions
-      
+
       - name: Set env vars from AWS params
         uses: cmsgov/cdap/actions/aws-params-env-action@main
         env:
@@ -60,7 +60,7 @@ jobs:
         # This $TARGET_BUCKET comes from a previous step, cmsgov/cdap/actions/aws-params-env-action@main
         run: |
           aws s3 sync _site/ "s3://${TARGET_BUCKET}/${BASE_PATH}" --delete --metadata-directive REPLACE --metadata "lifecycle-transition=ia"
-      
+
       - name: Invalidate Cloudfront cache
         run: |
           DISTRIBUTION_ID=`aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id, OriginId: Origins.Items[0].Id}[?OriginId=='$TARGET_BUCKET'].Id" --output text`
