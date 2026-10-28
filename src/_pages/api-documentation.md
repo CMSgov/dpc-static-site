@@ -12,14 +12,14 @@ Data at the Point of Care (DPC) API is a RESTful web service that shares Medicar
 
 This documentation explains how to connect to realistic test data in the <a href="https://sandbox.dpc.cms.gov/users/sign_in" target="_blank">DPC Sandbox</a>. The sandbox is available to any Original Medicare provider organization or their assigned Health IT team.
 
-<ol class="usa-process-list margin-top-1 docs-process-list">
+<ol class="usa-process-list margin-top-1">
   <li class="usa-process-list__item">
     <p class="usa-process-list__heading">Sign up for the DPC Sandbox</p>
     <p style="margin-top: 1rem;">
       Request access to the DPC Sandbox and follow the steps to get <a href="{{ '/api-documentation/get-sandbox-credentials.html' | relative_url }}">DPC Sandbox credentials</a>.
     </p>
   </li>
-  <li class="usa-process-list__item docs-final-item">
+  <li class="usa-process-list__item">
     <p class="usa-process-list__heading">Use the sandbox</p>
     <p>
       Learn how to authenticate, attribute patients, and export DPC data. You can also use the DPC <a href="{{ '/api-documentation/postman-collection.html' | relative_url }}">Postman collection</a> to explore public endpoints with sample requests.
