@@ -1,7 +1,8 @@
 ---
 layout: api-docs
 show-side-nav: false
-title: Terms of service
+title: Terms of Service
+seo_title: "Terms of Service"
 description: "The terms of service for Data at the Point of Care API, including data rights and usage, privacy, security, and liability information."
 ---
 
