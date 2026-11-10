@@ -40,10 +40,7 @@ You can filter data using the `_since` parameter with either the `/Patient` or `
 
 On subsequent calls you can begin retrieving incremental claims data for your patients using `_since`. We suggest using the `transactionTime` from your last bulk data request as the `_since` date.
 
-Two ways to use `_since`:
-
-1. Request the most recent data for all of your patients with Medicare: [Use `_since` within the `/Group` endpoint](#request-data-using-_since-with-the-group-endpoint).  
-2. Request data synchronously for an individual patient: [Use `_since` within the `/Patient` endpoint]({{ "/api-documentation/export-data/patient-everything.html#request-data-using-_since-with-the-patient-endpoint" | relative_url }}).
+You can request the most recent data for all of your patients with Medicare: [Use `_since` within the `/Group` endpoint](#request-data-using-_since-with-the-group-endpoint). 
 
 ### Steps to request filtered data
 

@@ -20,7 +20,6 @@ Use `_type` and `_since` to [filter your results]({{ "/api-documentation/export-
 
 - `_type` restricts the export to specific FHIR Resources (e.g., `?_type=Patient,Coverage`).
 - `_since` excludes data older than a given date (e.g., `?_since=2025-01-07T00:00:00Z`).
-- For a single patient's full 7-year history including Patient, Coverage, and ExplanationOfBenefit, use [`/Patient/{PATIENT_ID}/$everything`]({{ "/api-documentation/export-data/patient-everything.html" | relative_url }}) instead of `$export`.
 
 ## Initiating an export job
 
