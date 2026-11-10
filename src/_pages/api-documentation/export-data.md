@@ -44,14 +44,14 @@ Make a `GET` request to `/Group/{GROUP_ID}/$export` with `Authorization`, `Accep
 **Example request**
 
 {% capture snippet %}
-GET /api/v1/Group/{GROUP_ID}/$export
+GET /api/v3/Group/{GROUP_ID}/$export
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 
 {% capture snippet %}
-curl 'https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/$export' \
+curl 'https://sandbox.dpc.cms.gov/api/v3/Group/{GROUP_ID}/$export' \
      -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept: application/fhir+json' \
      -H 'Prefer: respond-async'
@@ -63,7 +63,7 @@ The API returns `202 Accepted` for successful requests. The response body is emp
 **Example response header** (`202 Accepted`)
 
 {% capture snippet %}
-Content-Location: https://sandbox.dpc.cms.gov/api/v1/Jobs/{JOB_ID}
+Content-Location: https://sandbox.dpc.cms.gov/api/v3/Jobs/{JOB_ID}
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
@@ -76,7 +76,7 @@ Export jobs are asynchronous. While the job is still running, the same URL retur
 **Example cURL command** (use the URL directly from `Content-Location`)
 
 {% capture snippet %}
-curl 'https://sandbox.dpc.cms.gov/api/v1/Jobs/{JOB_ID}' \
+curl 'https://sandbox.dpc.cms.gov/api/v3/Jobs/{JOB_ID}' \
      -H "Authorization: Bearer $BEARER_TOKEN"
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="shell" can_copy=true %}
@@ -86,12 +86,12 @@ curl 'https://sandbox.dpc.cms.gov/api/v1/Jobs/{JOB_ID}' \
 {% capture snippet %}
 {
  "transactionTime": "2026-04-28T21:07:46.876+00:00",
- "request": "https://sandbox.dpc.cms.gov/api/v1/Group/64d0cd85-7767-425a-a3b8-dcc9bdfd5402/$export",
+ "request": "https://sandbox.dpc.cms.gov/api/v3/Group/64d0cd85-7767-425a-a3b8-dcc9bdfd5402/$export",
  "requiresAccessToken": true,
  "output": [
    {
      "type": "ExplanationOfBenefit",
-     "url": "https://sandbox.dpc.cms.gov/api/v1/Data/06abfdd3-dc05-43aa-b07a-361651576c3b-0.explanationofbenefit.ndjson",
+     "url": "https://sandbox.dpc.cms.gov/api/v3/Data/06abfdd3-dc05-43aa-b07a-361651576c3b-0.explanationofbenefit.ndjson",
      "count": 45,
      "extension": [
        {
@@ -131,14 +131,14 @@ Fetch each URL in `output[].url` with your bearer token to download an [NDJSON](
 **Example request**
 
 {% capture snippet %}
-GET https://sandbox.dpc.cms.gov/api/v1/Data/{FILE_ID}
+GET https://sandbox.dpc.cms.gov/api/v3/Data/{FILE_ID}
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 
 {% capture snippet %}
-curl 'https://sandbox.dpc.cms.gov/api/v1/Data/{FILE_ID}' \
+curl 'https://sandbox.dpc.cms.gov/api/v3/Data/{FILE_ID}' \
      -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept-Encoding: gzip' \
      --compressed

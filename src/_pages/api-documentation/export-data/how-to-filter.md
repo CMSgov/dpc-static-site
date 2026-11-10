@@ -19,7 +19,7 @@ The following request will export the Patient and Coverage Resources, but NOT th
 **Example request: Patient and Coverage**
 
 {% capture snippet %}
-GET /api/v1/Group/{GROUP_ID}/$export?_type=Patient,Coverage
+GET /api/v3/Group/{GROUP_ID}/$export?_type=Patient,Coverage
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
@@ -28,7 +28,7 @@ By contrast, the following request will export the Explanation of Benefit Resour
 **Example request: Explanation of Benefit**
 
 {% capture snippet %}
-GET /api/v1/Group/{GROUP_ID}/$export?_type=ExplanationOfBenefit
+GET /api/v3/Group/{GROUP_ID}/$export?_type=ExplanationOfBenefit
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
@@ -79,7 +79,7 @@ If the request was successful, a `202 Accepted` response code will be returned a
 **Example request**
 
 {% capture snippet %}
-GET /api/v1/Group/{GROUP_ID}/$export?_type=Patient&_since=2021-05-13T08:00:00.000-05:00
+GET /api/v3/Group/{GROUP_ID}/$export?_type=Patient&_since=2021-05-13T08:00:00.000-05:00
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
@@ -95,7 +95,7 @@ Prefer: respond-async
 **Example cURL command**
 
 {% capture snippet %}
-curl 'https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/$export?_since=2021-05-13T08:00:00.000-05:00' \
+curl 'https://sandbox.dpc.cms.gov/api/v3/Group/{GROUP_ID}/$export?_since=2021-05-13T08:00:00.000-05:00' \
      -H 'Accept: application/fhir+json' \
      -H 'Prefer: respond-async' \
      -H "Authorization: Bearer $BEARER_TOKEN"

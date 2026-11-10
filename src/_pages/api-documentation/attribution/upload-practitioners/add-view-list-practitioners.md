@@ -14,13 +14,13 @@ The `GET` `/Practitioner` operation lets you retrieve a [bundle](https://www.hl7
 
 **Example request**
 {% capture snippet %}
-GET /api/v1/Practitioner
+GET /api/v3/Practitioner
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 {% capture snippet %}
-curl 'https://sandbox.dpc.cms.gov/api/v1/Practitioner' \
+curl 'https://sandbox.dpc.cms.gov/api/v3/Practitioner' \
  -H "Authorization: Bearer $BEARER_TOKEN" \
  -H 'Accept: application/fhir+json'
 {% endcapture %}
@@ -32,13 +32,13 @@ Retrieve a single practitioner by providing an NPI number.
 
 **Example request**
 {% capture snippet %}
-GET /api/v1/Practitioner?identifier={PRACTITIONER_NPI}
+GET /api/v3/Practitioner?identifier={PRACTITIONER_NPI}
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 {% capture snippet %}
-curl 'https://sandbox.dpc.cms.gov/api/v1/Practitioner?identifier={PRACTITIONER_NPI}' \
+curl 'https://sandbox.dpc.cms.gov/api/v3/Practitioner?identifier={PRACTITIONER_NPI}' \
  -H "Authorization: Bearer $BEARER_TOKEN" \
  -H 'Accept: application/fhir+json' \
  -H 'Content-Type: application/fhir+json'
@@ -60,7 +60,7 @@ curl 'https://sandbox.dpc.cms.gov/api/v1/Practitioner?identifier={PRACTITIONER_N
         "meta": {
           "lastUpdated": "2020-06-10T18:43:14.150+00:00",
           "profile": [
-            "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-practitioner"
+            "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-practitioner"
           ]
         },
         "identifier": [
