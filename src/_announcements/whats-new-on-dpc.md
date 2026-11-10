@@ -21,7 +21,7 @@ The updated site includes 4 main sections, along with links to additional resour
 
 ### About (formerly “About the pilot”)
 
-Learn about the background and purpose of the DPC pilot program. Visit Announcements (formerly Updates) for the latest DPC news.
+Learn about the background and purpose of DPC. Visit Announcements (formerly Updates) for the latest DPC news.
 
 [Visit About]({{ '/about.html' | relative_url }})
 

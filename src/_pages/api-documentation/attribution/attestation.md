@@ -32,14 +32,14 @@ Log into the [DPC Sandbox](https://sandbox.dpc.cms.gov/users/sign_in) and locate
 **Example request**
 
 {% capture snippet %}
-GET /api/v1/Organization
+GET /api/v3/Organization
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 
 {% capture snippet %}
-curl 'https://sandbox.dpc.cms.gov/api/v1/Organization' \
+curl 'https://sandbox.dpc.cms.gov/api/v3/Organization' \
      -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept: application/fhir+json'
 {% endcapture %}
@@ -78,14 +78,14 @@ Send a `GET` request to `/Practitioner` to retrieve a Bundle of Practitioner Res
 **Example request**
 
 {% capture snippet %}
-GET /api/v1/Practitioner
+GET /api/v3/Practitioner
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 
 {% capture snippet %}
-curl 'https://sandbox.dpc.cms.gov/api/v1/Practitioner' \
+curl 'https://sandbox.dpc.cms.gov/api/v3/Practitioner' \
      -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept: application/fhir+json'
 {% endcapture %}
@@ -135,7 +135,7 @@ Combine the Organization ID from the [Organization response](#locate-your-organi
   "resourceType": "Provenance",
   "meta": {
     "profile": [
-      "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-attestation"
+      "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-attestation"
     ]
   },
   "recorded": "{TIMESTAMP}",
@@ -209,7 +209,7 @@ You'll need to create a Group Resource to link a list of [registered patients]({
 **Example request**
 
 {% capture snippet %}
-POST /api/v1/Group
+POST /api/v3/Group
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
@@ -257,7 +257,7 @@ Replace the placeholders before sending:
 **Example cURL command**
 
 {% capture snippet %}
-curl 'https://sandbox.dpc.cms.gov/api/v1/Group' \
+curl 'https://sandbox.dpc.cms.gov/api/v3/Group' \
      -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \
@@ -351,14 +351,14 @@ You can use the Group ID value of the returned resources to [initiate an export 
 **Example request**
 
 {% capture snippet %}
-GET /api/v1/Group?characteristic-value=attributed-to%24{PRACTITIONER_NPI}
+GET /api/v3/Group?characteristic-value=attributed-to%24{PRACTITIONER_NPI}
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 
 {% capture snippet %}
-curl 'https://sandbox.dpc.cms.gov/api/v1/Group?characteristic-value=attributed-to%24{PRACTITIONER_NPI}' \
+curl 'https://sandbox.dpc.cms.gov/api/v3/Group?characteristic-value=attributed-to%24{PRACTITIONER_NPI}' \
      -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept: application/fhir+json'
 {% endcapture %}
@@ -426,7 +426,7 @@ Use the `$add` operation to add new patients to a group.
 **Example request**
 
 {% capture snippet %}
-POST /api/v1/Group/{GROUP_ID}/$add
+POST /api/v3/Group/{GROUP_ID}/$add
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
@@ -472,7 +472,7 @@ When adding patients to a group, the body must include the same `characteristic`
 **Example cURL command**
 
 {% capture snippet %}
-curl 'https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/$add' \
+curl 'https://sandbox.dpc.cms.gov/api/v3/Group/{GROUP_ID}/$add' \
     -H "Authorization: Bearer $BEARER_TOKEN" \
     -H 'Accept: application/fhir+json' \
     -H 'Content-Type: application/fhir+json' \
@@ -532,7 +532,7 @@ Use a custom `$remove` operation on the `/Group` endpoint to remove a patient fr
 **Example request**
 
 {% capture snippet %}
-POST /api/v1/Group/{GROUP_ID}/$remove
+POST /api/v3/Group/{GROUP_ID}/$remove
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
@@ -578,7 +578,7 @@ Like `$add`, the body must include the practitioner `characteristic`.
 **Example cURL command**
 
 {% capture snippet %}
-curl 'https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}/$remove' \
+curl 'https://sandbox.dpc.cms.gov/api/v3/Group/{GROUP_ID}/$remove' \
     -H "Authorization: Bearer $BEARER_TOKEN" \
     -H 'Accept: application/fhir+json' \
     -H 'Content-Type: application/fhir+json' \
@@ -653,7 +653,7 @@ Patients in the existing group that you omit from the `PUT` body are not deleted
 **Example request**
 
 {% capture snippet %}
-PUT /api/v1/Group/{GROUP_ID}
+PUT /api/v3/Group/{GROUP_ID}
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
@@ -697,7 +697,7 @@ PUT /api/v1/Group/{GROUP_ID}
 **Example cURL command**
 
 {% capture snippet %}
-curl 'https://sandbox.dpc.cms.gov/api/v1/Group/{GROUP_ID}' \
+curl 'https://sandbox.dpc.cms.gov/api/v3/Group/{GROUP_ID}' \
     -H "Authorization: Bearer $BEARER_TOKEN" \
     -H 'Accept: application/fhir+json' \
     -H 'Content-Type: application/fhir+json' \

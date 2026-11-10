@@ -2,7 +2,7 @@
 layout: api-docs
 page_title: "About DPC"
 seo_title: ""
-description: "Data at the Point of Care (DPC) is a CMS pilot program that shares Medicare claims data with Original Medicare providers to support coordinated care."
+description: "Data at the Point of Care (DPC) is an API that shares Medicare claims data with Original Medicare providers to support coordinated care."
 show-side-nav: false
 ---
 
@@ -20,22 +20,18 @@ show-side-nav: false
   <div class="desktop:grid-col desktop:order-1">
     <h1 class="margin-top-5 desktop:margin-top-0">{{ page.page_title }}</h1>
     <h2>Creating continuity for people with Medicare</h2>
-    <p>People with Medicare can receive care from multiple providers and care settings. As a result, providers may not have a complete picture of a patient's care history when making clinical decisions. The Data at the Point of Care (DPC) pilot program securely shares Medicare claims data in a standardized format, the <a href="https://www.hl7.org/fhir/" target="_blank">HL7® FHIR® standard</a>. This helps providers fill information gaps, make more informed clinical decisions, and coordinate care more effectively. By giving care teams a more complete picture of their patients, DPC supports better, more connected care for people with Medicare.</p>
+    <p>People with Medicare can receive care from multiple providers and care settings. As a result, providers may not have a complete picture of a patient's care history when making clinical decisions. Data at the Point of Care (DPC) securely shares Medicare claims data in a standardized format, the <a href="https://www.hl7.org/fhir/" target="_blank">HL7® FHIR® standard</a>. This helps providers fill information gaps, make more informed clinical decisions, and coordinate care more effectively. By giving care teams a more complete picture of their patients, DPC supports better, more connected care for people with Medicare.</p>
   </div>
 </div>
 
 ## Completing the picture with Medicare claims
 
-Medicare claims tell a continuous story about visits, admissions, screenings, services, and medications. Centers for Medicare & Medicaid Services (CMS) created the DPC pilot program to securely share this information with Original Medicare providers. DPC can:
+Medicare claims tell a continuous story about visits, admissions, screenings, services, and medications. Centers for Medicare & Medicaid Services (CMS) created DPC to securely share this information with Original Medicare providers. DPC can:
 
 - Keep providers informed about services patients receive between visits, enabling more coordinated and timely care.
 - Reduce the need for patients to repeatedly share their health histories, saving time and improving the patient experience.
 - Provide insights into prescription refills, medication changes, and adherence, supporting better medication management and reducing gaps in treatment.
 - Highlight preventive services such as flu and shingles vaccines, helping providers close care gaps and improve patient health outcomes.
-
-## DPC is currently a pilot program
-
-DPC is currently available to a limited number of pilot participants. We’re finalizing a new authentication and onboarding portal created based on feedback from pilot participants. During this time, CMS won’t be onboarding new production users. We'll announce general availability of production data when the portal launches. In the meantime, developers can continue exploring DPC using realistic test data in the sandbox.
 
 ## What are the other CMS claims-based FHIR APIs?
 
