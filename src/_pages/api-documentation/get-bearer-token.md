@@ -37,13 +37,13 @@ To create a `BEARER_TOKEN`, submit a valid JWT to the `/Token/auth` endpoint via
 
 **Example request**
 {% capture snippet %}
-POST /api/v1/Token/auth
+POST /api/v3/Token/auth
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 {% capture snippet %}
-curl 'https://sandbox.dpc.cms.gov/api/v1/Token/auth' \
+curl 'https://sandbox.dpc.cms.gov/api/v3/Token/auth' \
      -H 'Content-Type: application/x-www-form-urlencoded' \
      -H 'Accept: application/json' \
      --data-urlencode 'grant_type=client_credentials' \
@@ -80,7 +80,7 @@ You can extract the bearer token and store the token as `$BEARER_TOKEN` from the
 We'll continue to use the `$BEARER_TOKEN` variable in subsequent cURL examples.
 
 {% capture snippet %}
-BEARER_TOKEN=$(curl -s 'https://sandbox.dpc.cms.gov/api/v1/Token/auth' \
+BEARER_TOKEN=$(curl -s 'https://sandbox.dpc.cms.gov/api/v3/Token/auth' \
      -H 'Content-Type: application/x-www-form-urlencoded' \
      -H 'Accept: application/json' \
      --data-urlencode 'grant_type=client_credentials' \

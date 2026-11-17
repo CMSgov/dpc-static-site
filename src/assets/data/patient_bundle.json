@@ -16,7 +16,7 @@
                 "versionId": "MTU1NDgxMjczNTM5MjYwMDAwMA",
                 "lastUpdated": "2019-04-09T12:25:35.392600+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -239,7 +239,7 @@
                 "versionId": "MTU1NDgxMjczNjQ1MTMxNjAwMA",
                 "lastUpdated": "2019-04-09T12:25:36.451316+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -462,7 +462,7 @@
                 "versionId": "MTU1NDgxMjczMjE4MzkxMTAwMA",
                 "lastUpdated": "2019-04-09T12:25:32.183911+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -654,7 +654,7 @@
                 "versionId": "MTU1NDgxMjczMzI3NTg1MTAwMA",
                 "lastUpdated": "2019-04-09T12:25:33.275851+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -887,7 +887,7 @@
                 "versionId": "MTU1NDgxMjczMDA0OTU4NDAwMA",
                 "lastUpdated": "2019-04-09T12:25:30.049584+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -1120,7 +1120,7 @@
                 "versionId": "MTU1NDgxMjcyODk3Nzk3MTAwMA",
                 "lastUpdated": "2019-04-09T12:25:28.977971+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -1312,7 +1312,7 @@
                 "versionId": "MTU1NDgxMjcyODM2NTY2MjAwMA",
                 "lastUpdated": "2019-04-09T12:25:28.365662+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -1545,7 +1545,7 @@
                 "versionId": "MTU1NDgxMjcyNzg2ODQwMTAwMA",
                 "lastUpdated": "2019-04-09T12:25:27.868401+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -1768,7 +1768,7 @@
                 "versionId": "MTU1NDgxMjcyNzg5MDgwMDAwMA",
                 "lastUpdated": "2019-04-09T12:25:27.890800+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -2001,7 +2001,7 @@
                 "versionId": "MTU1NDgxMjcyNjI1OTA3MjAwMA",
                 "lastUpdated": "2019-04-09T12:25:26.259072+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -2224,7 +2224,7 @@
                 "versionId": "MTU1NDgxMjcyNjI4MzI0NDAwMA",
                 "lastUpdated": "2019-04-09T12:25:26.283244+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -2457,7 +2457,7 @@
                 "versionId": "MTU1NDgxMjcyNTczMzQ3NTAwMA",
                 "lastUpdated": "2019-04-09T12:25:25.733475+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -2690,7 +2690,7 @@
                 "versionId": "MTU1NDgxMjcyNDY2NzAzMDAwMA",
                 "lastUpdated": "2019-04-09T12:25:24.667030+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -2882,7 +2882,7 @@
                 "versionId": "MTU1NDgxMjcyNTc1MzcwNTAwMA",
                 "lastUpdated": "2019-04-09T12:25:25.753705+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -3115,7 +3115,7 @@
                 "versionId": "MTU1NDgxMjcyNDE1MjU4OTAwMA",
                 "lastUpdated": "2019-04-09T12:25:24.152589+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -3348,7 +3348,7 @@
                 "versionId": "MTU1NDgxMjcyNDE0NzUzNTAwMA",
                 "lastUpdated": "2019-04-09T12:25:24.147535+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -3571,7 +3571,7 @@
                 "versionId": "MTU1NDgxMjcyMzYwNTMwMzAwMA",
                 "lastUpdated": "2019-04-09T12:25:23.605303+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -3794,7 +3794,7 @@
                 "versionId": "MTU1NDgxMjcyMzA5Nzg2OTAwMA",
                 "lastUpdated": "2019-04-09T12:25:23.097869+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -4018,7 +4018,7 @@
                 "versionId": "MTU1NDgxMjcyMjUxODIzMDAwMA",
                 "lastUpdated": "2019-04-09T12:25:22.518230+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -4242,7 +4242,7 @@
                 "versionId": "MTU1NDgxMjcyMTQ0Njg0OTAwMA",
                 "lastUpdated": "2019-04-09T12:25:21.446849+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -4465,7 +4465,7 @@
                 "versionId": "MTU1NDgxMjcxOTM0MjkxMjAwMA",
                 "lastUpdated": "2019-04-09T12:25:19.342912+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -4698,7 +4698,7 @@
                 "versionId": "MTU1NDgxMjcxODI1MDI4NjAwMA",
                 "lastUpdated": "2019-04-09T12:25:18.250286+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -4890,7 +4890,7 @@
                 "versionId": "MTU1NDgxMjcxNzE4MTc2NjAwMA",
                 "lastUpdated": "2019-04-09T12:25:17.181766+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -5123,7 +5123,7 @@
                 "versionId": "MTU1NDgxMjcxNzIwNjQ0MjAwMA",
                 "lastUpdated": "2019-04-09T12:25:17.206442+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -5357,7 +5357,7 @@
                 "versionId": "MTU1NDgxMjcxNjE0MjEzNTAwMA",
                 "lastUpdated": "2019-04-09T12:25:16.142135+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -5550,7 +5550,7 @@
                 "versionId": "MTU1NDgxMjcxNjE2MTQ2OTAwMA",
                 "lastUpdated": "2019-04-09T12:25:16.161469+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -5773,7 +5773,7 @@
                 "versionId": "MTU1NDgxMjcxNTA3Mjk4ODAwMA",
                 "lastUpdated": "2019-04-09T12:25:15.072988+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -5965,7 +5965,7 @@
                 "versionId": "MTU1NDgxMjcxNDAyODg5NTAwMA",
                 "lastUpdated": "2019-04-09T12:25:14.028895+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -6198,7 +6198,7 @@
                 "versionId": "MTU1NDgxMjcxMjk0MTEzMjAwMA",
                 "lastUpdated": "2019-04-09T12:25:12.941132+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -6421,7 +6421,7 @@
                 "versionId": "MTU1NDgxMjcxMTg3MDQ4OTAwMA",
                 "lastUpdated": "2019-04-09T12:25:11.870489+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -6644,7 +6644,7 @@
                 "versionId": "MTU1NDgxMjcwOTc0MzMzMTAwMA",
                 "lastUpdated": "2019-04-09T12:25:09.743331+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -6870,7 +6870,7 @@
                 "versionId": "MTU1NDgxMjcwOTc3MTYwNDAwMA",
                 "lastUpdated": "2019-04-09T12:25:09.771604+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -7093,7 +7093,7 @@
                 "versionId": "MTU1NDgxMjcwODY3NDIxODAwMA",
                 "lastUpdated": "2019-04-09T12:25:08.674218+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -7316,7 +7316,7 @@
                 "versionId": "MTU1NDgxMjcwODcwMDIzNTAwMA",
                 "lastUpdated": "2019-04-09T12:25:08.700235+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -7539,7 +7539,7 @@
                 "versionId": "MTU1NDgxMjcwNzYwMjg1MjAwMA",
                 "lastUpdated": "2019-04-09T12:25:07.602852+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -7762,7 +7762,7 @@
                 "versionId": "MTU1NDgxMjcwNTUwMTU3NTAwMA",
                 "lastUpdated": "2019-04-09T12:25:05.501575+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -7971,7 +7971,7 @@
                 "versionId": "MTU1NDgxMjcwNTQ3MzEzNTAwMA",
                 "lastUpdated": "2019-04-09T12:25:05.473135+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -8194,7 +8194,7 @@
                 "versionId": "MTU1NDgxMjcwMjI5NTY1MDAwMA",
                 "lastUpdated": "2019-04-09T12:25:02.295650+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -8427,7 +8427,7 @@
                 "versionId": "MTU1NDgxMjcwMTIxNjkwODAwMA",
                 "lastUpdated": "2019-04-09T12:25:01.216908+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -8650,7 +8650,7 @@
                 "versionId": "MTU1NDgxMjY5OTEzODU2NjAwMA",
                 "lastUpdated": "2019-04-09T12:24:59.138566+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -8842,7 +8842,7 @@
                 "versionId": "MTU1NDgxMjY5ODA2Nzc1ODAwMA",
                 "lastUpdated": "2019-04-09T12:24:58.067758+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -9034,7 +9034,7 @@
                 "versionId": "MTU1NDgxMjY5Njk3MTg5NjAwMA",
                 "lastUpdated": "2019-04-09T12:24:56.971896+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -9267,7 +9267,7 @@
                 "versionId": "MTU1NDgxMjY5NjkwNTA4OTAwMA",
                 "lastUpdated": "2019-04-09T12:24:56.905089+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -9500,7 +9500,7 @@
                 "versionId": "MTU1NDgxMjY5NDgxNTQ1MjAwMA",
                 "lastUpdated": "2019-04-09T12:24:54.815452+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -9692,7 +9692,7 @@
                 "versionId": "MTU1NDgxMjY5NDg0MjI1OTAwMA",
                 "lastUpdated": "2019-04-09T12:24:54.842259+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -9915,7 +9915,7 @@
                 "versionId": "MTU1NDgxMjY5MzcyMTQzNDAwMA",
                 "lastUpdated": "2019-04-09T12:24:53.721434+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -10138,7 +10138,7 @@
                 "versionId": "MTU1NDgxMjY5MTY0ODA1NDAwMA",
                 "lastUpdated": "2019-04-09T12:24:51.648054+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -10361,7 +10361,7 @@
                 "versionId": "MTU1NDgxMjY5MjY1NzYyNjAwMA",
                 "lastUpdated": "2019-04-09T12:24:52.657626+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -10553,7 +10553,7 @@
                 "versionId": "MTU1NDgxMjY4OTQ5MDk1NDAwMA",
                 "lastUpdated": "2019-04-09T12:24:49.490954+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -10786,7 +10786,7 @@
                 "versionId": "MTU1NDgxMjY4ODQyNDEyNTAwMA",
                 "lastUpdated": "2019-04-09T12:24:48.424125+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -11009,7 +11009,7 @@
                 "versionId": "MTU1NDgxMjY4ODQyOTA5MjAwMA",
                 "lastUpdated": "2019-04-09T12:24:48.429092+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -11233,7 +11233,7 @@
                 "versionId": "MTU1NDgxMjY4NjI5OTQyNjAwMA",
                 "lastUpdated": "2019-04-09T12:24:46.299426+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -11456,7 +11456,7 @@
                 "versionId": "MTU1NDgxMjY4NjI4NjYzNjAwMA",
                 "lastUpdated": "2019-04-09T12:24:46.286636+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -11689,7 +11689,7 @@
                 "versionId": "MTU1NDgxMjY4NTIxMDM0NjAwMA",
                 "lastUpdated": "2019-04-09T12:24:45.210346+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -11922,7 +11922,7 @@
                 "versionId": "MTU1NDgxMjY4NDExNzI5NjAwMA",
                 "lastUpdated": "2019-04-09T12:24:44.117296+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -12155,7 +12155,7 @@
                 "versionId": "MTU1NDgxMjY4MzA0OTExMTAwMA",
                 "lastUpdated": "2019-04-09T12:24:43.049111+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -12388,7 +12388,7 @@
                 "versionId": "MTU1NDgxMjY4MDkzODk5MDAwMA",
                 "lastUpdated": "2019-04-09T12:24:40.938990+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -12580,7 +12580,7 @@
                 "versionId": "MTU1NDgxMjY3OTg1ODA0NDAwMA",
                 "lastUpdated": "2019-04-09T12:24:39.858044+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -12813,7 +12813,7 @@
                 "versionId": "MTU1NDgxMjY3NzczMzU3NzAwMA",
                 "lastUpdated": "2019-04-09T12:24:37.733577+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -13036,7 +13036,7 @@
                 "versionId": "MTU1NDgxMjY3NjY2MTkyMjAwMA",
                 "lastUpdated": "2019-04-09T12:24:36.661922+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -13269,7 +13269,7 @@
                 "versionId": "MTU1NDgxMjY3NTYwNTU1NTAwMA",
                 "lastUpdated": "2019-04-09T12:24:35.605555+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -13492,7 +13492,7 @@
                 "versionId": "MTU1NDgxMjY3NDU1MzM5NjAwMA",
                 "lastUpdated": "2019-04-09T12:24:34.553396+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -13715,7 +13715,7 @@
                 "versionId": "MTU1NDgxMjY3MzQ4MDgxOTAwMA",
                 "lastUpdated": "2019-04-09T12:24:33.480819+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -13938,7 +13938,7 @@
                 "versionId": "MTU1NDgxMjY3MTMzMDg1MDAwMA",
                 "lastUpdated": "2019-04-09T12:24:31.330850+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -14171,7 +14171,7 @@
                 "versionId": "MTU1NDgxMjY3MjQ0ODA0MzAwMA",
                 "lastUpdated": "2019-04-09T12:24:32.448043+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -14394,7 +14394,7 @@
                 "versionId": "MTU1NDgxMjY3MDI5MTEyMzAwMA",
                 "lastUpdated": "2019-04-09T12:24:30.291123+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -14627,7 +14627,7 @@
                 "versionId": "MTU1NDgxMTYyNjk5MDczMzAwMA",
                 "lastUpdated": "2019-04-09T12:07:06.990733+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -14850,7 +14850,7 @@
                 "versionId": "MTU1NDgxMTYyNDkwNTM0NTAwMA",
                 "lastUpdated": "2019-04-09T12:07:04.905345+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -15042,7 +15042,7 @@
                 "versionId": "MTU1NDgxMTYyMzc4NzMzNTAwMA",
                 "lastUpdated": "2019-04-09T12:07:03.787335+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -15265,7 +15265,7 @@
                 "versionId": "MTU1NDgxMTYyMzgzMTY3NTAwMA",
                 "lastUpdated": "2019-04-09T12:07:03.831675+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -15489,7 +15489,7 @@
                 "versionId": "MTU1NDgxMTYxNjMyNjczOTAwMA",
                 "lastUpdated": "2019-04-09T12:06:56.326739+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -15712,7 +15712,7 @@
                 "versionId": "MTU1NDgxMTYwOTQ0NjM1MTAwMA",
                 "lastUpdated": "2019-04-09T12:06:49.446351+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -15935,7 +15935,7 @@
                 "versionId": "MTU1NDgxMTYwODM3ODE4NjAwMA",
                 "lastUpdated": "2019-04-09T12:06:48.378186+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -16159,7 +16159,7 @@
                 "versionId": "MTU1NDgxMTYwNzMzNDU4NDAwMA",
                 "lastUpdated": "2019-04-09T12:06:47.334584+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -16382,7 +16382,7 @@
                 "versionId": "MTU1NDgxMTYwNDEwMjAzNjAwMA",
                 "lastUpdated": "2019-04-09T12:06:44.102036+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -16588,7 +16588,7 @@
                 "versionId": "MTU1NDgxMTYwNTE1NDk5ODAwMA",
                 "lastUpdated": "2019-04-09T12:06:45.154998+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -16811,7 +16811,7 @@
                 "versionId": "MTU1NDgxMTYwNTE2MzA1NDAwMA",
                 "lastUpdated": "2019-04-09T12:06:45.163054+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -17044,7 +17044,7 @@
                 "versionId": "MTU1NDgxMTYwMzI4ODg2MTAwMA",
                 "lastUpdated": "2019-04-09T12:06:43.288861+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -17268,7 +17268,7 @@
                 "versionId": "MTU1NDgxMTYwMTgxMzExNDAwMA",
                 "lastUpdated": "2019-04-09T12:06:41.813114+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -17491,7 +17491,7 @@
                 "versionId": "MTU1NDgxMTYwMDc0NjUwMTAwMA",
                 "lastUpdated": "2019-04-09T12:06:40.746501+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -17683,7 +17683,7 @@
                 "versionId": "MTU1NDgxMTU5ODYxNTA2MzAwMA",
                 "lastUpdated": "2019-04-09T12:06:38.615063+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -17916,7 +17916,7 @@
                 "versionId": "MTU1NDgxMTU5OTcwNzIyNDAwMA",
                 "lastUpdated": "2019-04-09T12:06:39.707224+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -18139,7 +18139,7 @@
                 "versionId": "MTU1NDgxMTU5ODMzMzU2MTAwMA",
                 "lastUpdated": "2019-04-09T12:06:38.333561+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -18372,7 +18372,7 @@
                 "versionId": "MTU1NDgxMTU5NzU0NTgzNzAwMA",
                 "lastUpdated": "2019-04-09T12:06:37.545837+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -18595,7 +18595,7 @@
                 "versionId": "MTU1NDgxMTU5NzI2Nzg2MDAwMA",
                 "lastUpdated": "2019-04-09T12:06:37.267860+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -18787,7 +18787,7 @@
                 "versionId": "MTU1NDgxMTU5NjQ2OTkyNDAwMA",
                 "lastUpdated": "2019-04-09T12:06:36.469924+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -19013,7 +19013,7 @@
                 "versionId": "MTU1NDgxMTU5NjIzOTk1ODAwMA",
                 "lastUpdated": "2019-04-09T12:06:36.239958+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -19236,7 +19236,7 @@
                 "versionId": "MTU1NDgxMTU5NjE4ODc4NTAwMA",
                 "lastUpdated": "2019-04-09T12:06:36.188785+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -19442,7 +19442,7 @@
                 "versionId": "MTU1NDgxMTU5NTM5MDU0NDAwMA",
                 "lastUpdated": "2019-04-09T12:06:35.390544+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -19665,7 +19665,7 @@
                 "versionId": "MTU1NDgxMTU5NDMyMDA2MDAwMA",
                 "lastUpdated": "2019-04-09T12:06:34.320060+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -19888,7 +19888,7 @@
                 "versionId": "MTU1NDgxMTU5Mjk5Mjc4MDAwMA",
                 "lastUpdated": "2019-04-09T12:06:32.992780+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -20121,7 +20121,7 @@
                 "versionId": "MTU1NDgxMTU5MzI1MzUwMzAwMA",
                 "lastUpdated": "2019-04-09T12:06:33.253503+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -20344,7 +20344,7 @@
                 "versionId": "MTU1NDgxMTU5MTExNjQwNjAwMA",
                 "lastUpdated": "2019-04-09T12:06:31.116406+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -20567,7 +20567,7 @@
                 "versionId": "MTU1NDgxMTU5MTE0NzIwNDAwMA",
                 "lastUpdated": "2019-04-09T12:06:31.147204+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -20759,7 +20759,7 @@
                 "versionId": "MTU1NDgxMTU4OTc3MjIyMTAwMA",
                 "lastUpdated": "2019-04-09T12:06:29.772221+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -20982,7 +20982,7 @@
                 "versionId": "MTU1NDgxMTU4ODk4MzU0NjAwMA",
                 "lastUpdated": "2019-04-09T12:06:28.983546+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -21215,7 +21215,7 @@
                 "versionId": "MTU1NDgxMTU4NzYxMzAyMDAwMA",
                 "lastUpdated": "2019-04-09T12:06:27.613020+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -21449,7 +21449,7 @@
                 "versionId": "MTU1NDgxMTU4NTc3NTAyOTAwMA",
                 "lastUpdated": "2019-04-09T12:06:25.775029+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -21682,7 +21682,7 @@
                 "versionId": "MTU1NDgxMTU4NDQxODI3NjAwMA",
                 "lastUpdated": "2019-04-09T12:06:24.418276+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {
@@ -21905,7 +21905,7 @@
                 "versionId": "MTU1NDgxMTU4NDM5MDIyMjAwMA",
                 "lastUpdated": "2019-04-09T12:06:24.390222+00:00",
                 "profile": [
-                  "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+                  "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
                 ]
               },
               "text": {

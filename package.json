@@ -26,5 +26,12 @@
     "sirv": "^3.0.2",
     "taze": "^21.3.0",
     "vitest": "^5.0.5"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true,
+    "puppeteer@25.13.0": true
+  },
+  "devDependencies": {
+    "vite": "^8.3.7"
   }
 }

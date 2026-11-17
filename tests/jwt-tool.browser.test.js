@@ -5,7 +5,7 @@ const PAGE_URL = inject('jwtToolUrl');
 
 const test = base.extend({
   browser: [
-    async ({}, use) => {
+    async ({ }, use) => {
       const browser = await chromium.launch();
       await use(browser);
       await browser.close();
@@ -50,7 +50,6 @@ describe('JWT tool page (E2E)', () => {
     await page.getByLabel('Paste your Private Key').fill(privateKeyPem);
     await page.getByLabel('Paste your Client Token').fill('test-client-token');
     await page.getByLabel('Paste your Public Key ID').fill('fd38276d-786a-49ec-9987-5e7b258e77cf');
-    await page.getByLabel('Select an Environment').selectOption('sandbox');
 
     await page.getByRole('button', { name: 'Generate JWT' }).click();
 
@@ -69,7 +68,7 @@ describe('JWT tool page (E2E)', () => {
 
     expect(payload.iss).toBe('test-client-token');
     expect(payload.sub).toBe('test-client-token');
-    expect(payload.aud).toBe('https://sandbox.dpc.cms.gov/api/v1/Token/auth');
+    expect(payload.aud).toBe('https://sandbox.dpc.cms.gov/api/v3/Token/auth');
     expect(typeof payload.exp).toBe('number');
 
     const signature = Uint8Array.from(
@@ -96,7 +95,6 @@ describe('JWT tool page (E2E)', () => {
     await page.getByLabel('Paste your Private Key').fill(privateKeyPem);
     await page.getByLabel('Paste your Client Token').fill('tok');
     await page.getByLabel('Paste your Public Key ID').fill('kid');
-    await page.getByLabel('Select an Environment').selectOption('sandbox');
     await page.getByRole('button', { name: 'Generate JWT' }).click();
 
     await expect.poll(() => copyButton.getAttribute('aria-disabled')).toBeNull();

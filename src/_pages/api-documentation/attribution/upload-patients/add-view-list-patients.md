@@ -13,13 +13,13 @@ The `GET` `/Patient` operation retrieves a single Patient Resource by supplying 
 
 **Example request**
 {% capture snippet %}
-GET /api/v1/Patient?identifier={PATIENT_MBI}
+GET /api/v3/Patient?identifier={PATIENT_MBI}
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 {% capture snippet %}
-curl 'https://sandbox.dpc.cms.gov/api/v1/Patient?identifier={PATIENT_MBI}' \
+curl 'https://sandbox.dpc.cms.gov/api/v3/Patient?identifier={PATIENT_MBI}' \
     -H "Authorization: Bearer $BEARER_TOKEN" \
     -H 'Accept: application/fhir+json'
 {% endcapture %}
@@ -40,7 +40,7 @@ curl 'https://sandbox.dpc.cms.gov/api/v1/Patient?identifier={PATIENT_MBI}' \
         "meta": {
           "lastUpdated": "2020-06-12T15:39:42.834+00:00",
           "profile": [
-            "https://dpc.cms.gov/api/v1/StructureDefinition/dpc-profile-patient"
+            "https://dpc.cms.gov/api/v3/StructureDefinition/dpc-profile-patient"
           ]
         },
         "identifier": [
@@ -75,13 +75,13 @@ The `GET` `/Patient` operation lets you retrieve a bundle of Patient Resources.
 
 **Example request**
 {% capture snippet %}
-GET /api/v1/Patient
+GET /api/v3/Patient
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 {% capture snippet %}
-curl 'https://sandbox.dpc.cms.gov/api/v1/Patient' \
+curl 'https://sandbox.dpc.cms.gov/api/v3/Patient' \
     -H "Authorization: Bearer $BEARER_TOKEN" \
     -H 'Accept: application/fhir+json'
 {% endcapture %}

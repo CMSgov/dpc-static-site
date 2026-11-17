@@ -30,13 +30,13 @@ The `$submit` operation lets you upload a bundle of practitioner resources in a 
 **Example request**
 
 {% capture snippet %}
-POST /api/v1/Practitioner/$submit
+POST /api/v3/Practitioner/$submit
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 {% capture snippet %}
-curl 'https://sandbox.dpc.cms.gov/api/v1/Practitioner/$submit' \
+curl 'https://sandbox.dpc.cms.gov/api/v3/Practitioner/$submit' \
      -H "Authorization: Bearer $BEARER_TOKEN" \
      -H 'Accept: application/fhir+json' \
      -H 'Content-Type: application/fhir+json' \

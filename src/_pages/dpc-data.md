@@ -8,10 +8,8 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-## What kind of data is shared through DPC?
 
-CMS provides claims data for patients with Medicare to providers for treatment purposes permitted by HIPAA. Use DPC to develop a service to notify, search, display, analyze, retrieve, view, and otherwise obtain certain information or data about patients with Medicare or synthetic data from CMS. DPC shares large volumes of enrollee data from Medicare Parts A, B, and D claims.
-
+DPC uses the <a href="https://hl7.org/fhir/R4/overview.html" target="_blank" rel="noopener noreferrer">HL7® FHIR® (R4)</a> specification to share claims data.
 
 <table class="usa-table usa-table--borderless usa-table--stacked margin-bottom-4">
   <caption class="usa-sr-only">Definitions of Part A, B, and D claims data</caption>
@@ -43,13 +41,16 @@ CMS provides claims data for patients with Medicare to providers for treatment p
   </tbody>
 </table>
 
-DPC data does not include clinical notes, lab results, or substance abuse codes. DPC excludes all claims with substance abuse codes (as required by the Confidentiality of Alcohol and Drug Abuse Patient Records Regulations, 42 CFR Part 2).
+<div class="usa-alert usa-alert--info usa-alert--no-icon margin-top-4">
+  <div class="usa-alert__body">
+    <p class="usa-alert__heading text-bold">Confidentiality and medical data sharing</p>
+    <p class="usa-alert__text">
+      DPC data does not include clinical notes, lab results, or substance abuse codes. DPC excludes all claims with substance abuse codes (as required by the Confidentiality of Alcohol and Drug Abuse Patient Records Regulations, 42 CFR Part 2).
+    </p>
+  </div>
+</div>
 
-## How the data is structured: FHIR resource types
-
-DPC uses the [HL7® FHIR® standard](https://www.hl7.org/fhir/overview.html) (Fast Healthcare Interoperability Resources) as a standard, compliant way to share Medicare claims data. In FHIR, data is structured into basic building blocks called “Resources.” DPC uses [bulk FHIR](https://hl7.org/fhir/uv/bulkdata/en/) specification to securely handle large numbers of Medicare claim files.
-
-## Applicable FHIR Resources
+## Resource types
 
 ### ExplanationOfBenefit (EOB)
 [ExplanationOfBenefit](https://hl7.org/fhir/STU3/explanationofbenefit.html) stores details about episodes of care, including where and when the service was performed, insurance diagnosis codes, who the provider was, and the cost.
@@ -60,18 +61,12 @@ DPC uses the [HL7® FHIR® standard](https://www.hl7.org/fhir/overview.html) (Fa
 ### Coverage
 [Coverage](https://hl7.org/fhir/STU3/coverage.html) provides high-level descriptors of an insurance plan such as that found in the enrollee's insurance coverage.
 
-## Download sample files 
+## Sample files 
 
-These sample DPC data files have similar content and structure to production (real patient) data. Try the DPC sandbox to access test data from the API.
+Download sample data files, which share similar content and structure to production data.
 
-- [Explanation of Benefit]({{ '/assets/data/ExplanationOfBenefit.ndjson' | relative_url }})
-- [Patient]({{ '/assets/data/Patient.ndjson' | relative_url }})
-- [Coverage]({{ '/assets/data/Coverage.ndjson' | relative_url }})
-
-## FHIR and JSON resources
-
-- [FHIR/HL7](https://www.hl7.org/fhir/STU3/index.html)
-- [Bulk FHIR specification](https://hl7.org/fhir/uv/bulkdata/STU3/en/index.html)
-- [Intro to JSON Format](https://www.json.org/json-en.html) and [NDJSON](https://github.com/ndjson/ndjson-spec)
-- [JSON format viewer/validator (raw text/JSON format converter)](https://jsonlint.com/)
-- [Intro to valid FHIR formats](http://hl7.org/fhir/STU3/validation.html)
+<ul>
+  <li><a href="{{ '/assets/data/ExplanationOfBenefit.ndjson' | relative_url }}" data-tealium="download">ExplanationOfBenefit.ndjson {% include sprite.html icon="file_download" class="text-middle" size="2" %}</a></li>
+  <li><a href="{{ '/assets/data/Patient.ndjson' | relative_url }}" data-tealium="download">Patient.ndjson {% include sprite.html icon="file_download" class="text-middle" size="2" %}</a></li>
+  <li><a href="{{ '/assets/data/Coverage.ndjson' | relative_url }}" data-tealium="download">Coverage.ndjson {% include sprite.html icon="file_download" class="text-middle" size="2" %}</a></li>
+</ul>

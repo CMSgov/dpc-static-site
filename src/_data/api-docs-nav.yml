@@ -40,9 +40,6 @@
   - name: How to Filter Claims Data
     url: /api-documentation/export-data/how-to-filter.html
 
-  - name: /Patient/$everything
-    url: /api-documentation/export-data/patient-everything.html
-
 - name: Postman Collection
   url: /api-documentation/postman-collection.html
 

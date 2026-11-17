@@ -23,7 +23,7 @@ title: Data at the Point of Care
 short_title: DPC
 email: dpc-api@googlegroups.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Data at the Point of Care is a pilot CMS API program that enables
+  Data at the Point of Care is a CMS API that enables
   healthcare providers to deliver high quality care to Medicare
   beneficiaries by sharing their patients' Medicare claims data for
   treatment needs.

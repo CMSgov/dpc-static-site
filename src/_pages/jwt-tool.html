@@ -72,44 +72,23 @@ show-side-nav: false
             />
           </div>
 
-          <div class="usa-form-group">
-            <label
-              class="usa-label"
-              for="environment"
-            >Select an Environment</label>
-            <select
-              class="usa-select maxw-card-lg"
-              name="environment"
-              id="environment"
-              required
-            >
-              <option
-                selected
-                disabled
-              >-- Select --</option>
-              <option value="sandbox">Sandbox</option>
-              <option value="production">Production</option>
-            </select>
-          </div>
 
           <div class="usa-form-group">
             <label
               class="usa-label"
-              for="api"
-            >API Version</label>
-            <!-- {% comment %}Using a hidden value since v1 is the only option for now and select can't be readonly{% endcomment %} -->
+              for="environment"
+            >Environment</label>
+            <div
+              class="usa-hint"
+              id="env-hint"
+            >This tool can only be used to generate JWT's for the Sandbox environment</div>
             <input
-              type="hidden"
-              name="api"
-              value="v1"
+              class="usa-input width-full bg-gray-10"
+              id="environment"
+              value="Sandbox"
+              readonly
+              aria-describedby="env-hint"
             />
-            <select
-              class="usa-select maxw-card-lg bg-gray-10"
-              id="api"
-              disabled
-            >
-              <option value="v1">v1</option>
-            </select>
           </div>
 
           <div class="usa-form-group">
@@ -179,8 +158,6 @@ show-side-nav: false
 
       const clientToken = formData.get("client-token").trim();
       const privateKeyPem = formData.get("private-key").trim();
-      const env = formData.get("environment").trim();
-      const version = formData.get("api").trim();
 
       const publicKeyId = formData.get("public-key").trim();
 
@@ -194,7 +171,7 @@ show-side-nav: false
       const payload = {
         "iss": clientToken,
         "sub": clientToken,
-        "aud": `https://${env}.dpc.cms.gov/api/${version}/Token/auth`,
+        "aud": `https://sandbox.dpc.cms.gov/api/v3/Token/auth`, // Hard coded v3
         "exp": Math.floor(Date.now() / 1000) + 300, // 5 minutes from now
         "jti": generateRandomBytes(16),
       };

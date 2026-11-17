@@ -27,7 +27,7 @@ The `PUBLIC_KEY_ID` shown in the example is the one you generated while setting 
 {
   "iss": "{CLIENT_TOKEN}",
   "sub": "{CLIENT_TOKEN}",
-  "aud": "https://sandbox.dpc.cms.gov/api/v1/Token/auth",
+  "aud": "https://sandbox.dpc.cms.gov/api/v3/Token/auth",
   "exp": {EXPIRATION_TIMESTAMP},
   "jti": "{JWT_ID}"
 }
@@ -50,13 +50,13 @@ The `/Token/validate` endpoint lets you submit your Signed JWT for validation.
 
 **Example request**
 {% capture snippet %}
-POST /api/v1/Token/validate
+POST /api/v3/Token/validate
 {% endcapture %}
 {% include copy_snippet.html code=snippet language="http" %}
 
 **Example cURL command**
 {% capture snippet %}
-curl 'https://sandbox.dpc.cms.gov/api/v1/Token/validate' \
+curl 'https://sandbox.dpc.cms.gov/api/v3/Token/validate' \
     -H 'Accept: application/json' \
     -H 'Content-Type: text/plain' \
     -d '{SIGNED_JWT}'

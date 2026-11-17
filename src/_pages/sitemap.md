@@ -24,7 +24,6 @@ show-side-nav: false
     - [Attestation]({{'/api-documentation/attribution/attestation.html' | relative_url}})
   - [Export Data]({{'/api-documentation/export-data.html' | relative_url}})
     - [How to Filter Claims Data]({{'/api-documentation/export-data/how-to-filter.html' | relative_url}})
-    - [/Patient/$everything]({{'/api-documentation/export-data/patient-everything.html' | relative_url}})
   - [Postman Collection]({{'/api-documentation/postman-collection.html' | relative_url}})
 - [DPC Data]({{'/dpc-data.html' | relative_url}})
 - [JWT Generation Tool]({{'/jwt-tool.html' | relative_url}})
