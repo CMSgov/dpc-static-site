@@ -168,13 +168,11 @@ curl -X GET "https://sandbox.dpc.cms.gov/api/v3/Group/all/\$export?_typeFilter=E
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
-## The `runout` identifier
+## The runout identifier
 
 The `runout` identifier lets you request runouts data for enrollees attributed to your model entity the previous year, but not the current year. Claims data returned will have a service date no later than December 31 of the previous year.
 
 ### Using the `runout` identifier
-
-The examples below are `GET` requests made to the /Group endpoint. 
 
 #### Example request for 1 resource type using `runout`
 
