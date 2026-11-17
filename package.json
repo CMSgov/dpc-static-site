@@ -20,13 +20,13 @@
     "gulp": "^5.0.1"
   },
   "devDependencies": {
-    "concurrently": "^10.0.6",
+    "concurrently": "^10.0.7",
     "cspell-cli": "^10.4.0",
     "pa11y-ci": "^5.0.0",
-    "playwright": "^1.64.1",
+    "playwright": "^1.65.0",
     "sirv": "^3.0.2",
     "taze": "^21.3.0",
-    "vitest": "^5.0.5"
+    "vitest": "^5.1.0"
   },
   "overrides": {
     "postcss": "^8.5.32"
