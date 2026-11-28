@@ -26,7 +26,7 @@
     "playwright": "^1.65.0",
     "sirv": "^3.0.2",
     "taze": "^21.3.0",
-    "vitest": "^5.1.0"
+    "vitest": "^5.1.1"
   },
   "overrides": {
     "postcss": "^8.5.32"
